@@ -1,4 +1,6 @@
-﻿
+﻿/**
+ * Create by GuoXiaoXing
+ */
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
