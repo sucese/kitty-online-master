@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UserInterface/UserInterface.iml" filepath="$PROJECT_DIR$/UserInterface/UserInterface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android-develop-tool-classes2.iml" filepath="$PROJECT_DIR$/android-develop-tool-classes2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpecialityCore/SpecialityCore.iml" filepath="$PROJECT_DIR$/SpecialityCore/SpecialityCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/speciality.iml" filepath="$PROJECT_DIR$/speciality.iml" />
     </modules>
   </component>
 </project>
