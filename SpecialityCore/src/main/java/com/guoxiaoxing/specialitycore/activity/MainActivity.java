@@ -13,19 +13,24 @@ import com.guoxiaoxing.specialitycore.fragment.CategoryFragment;
 import com.guoxiaoxing.specialitycore.fragment.HomeFragment;
 import com.guoxiaoxing.specialitycore.fragment.MineFragment;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener,
         CategoryFragment.OnFragmentInteractionListener, CartFragment.OnFragmentInteractionListener,
         MineFragment.OnFragmentInteractionListener {
-    private ViewPager mViewPager;
-    private TabLayout mTabLayout;
+
+    @Bind(R.id.main_content_viewpager)
+    ViewPager mViewPager;
+    @Bind(R.id.main_tab_layout)
+    TabLayout mTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mViewPager = (ViewPager) findViewById(R.id.main_content_viewpager);
-        mTabLayout = (TabLayout) findViewById(R.id.main_tab_layout);
+        ButterKnife.bind(this);
 
         mViewPager.setAdapter(new MainPageFragmentAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mViewPager);
