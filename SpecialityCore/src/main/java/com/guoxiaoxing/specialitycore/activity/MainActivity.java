@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         mTabLayout.setupWithViewPager(mViewPager);
 
 
-        mTabLayout.getTabAt(0).setIcon(getResources().getDrawable(R.drawable.ic_shopping_cart_black_24dp));
-        mTabLayout.getTabAt(1).setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
-        mTabLayout.getTabAt(2).setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
-        mTabLayout.getTabAt(3).setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
+        mTabLayout.getTabAt(0).setIcon(R.drawable.main_tab_home_page);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.maini_tab_goods_category);
+        mTabLayout.getTabAt(2).setIcon(R.drawable.main_tab_shopping_cart);
+        mTabLayout.getTabAt(3).setIcon(R.drawable.main_tab_mine_info);
 
         mTabLayout.setOnTabSelectedListener(
                 new TabLayout.OnTabSelectedListener() {
