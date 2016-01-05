@@ -13,6 +13,8 @@ import com.guoxiaoxing.specialitycore.fragment.CartFragment;
 import com.guoxiaoxing.specialitycore.fragment.CategoryFragment;
 import com.guoxiaoxing.specialitycore.fragment.HomeFragment;
 import com.guoxiaoxing.specialitycore.fragment.MineFragment;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //科大讯飞初始化,请勿在“=”与 appid 之间添加任务空字符或者转义符
+        SpeechUtility.createUtility(MainActivity.this, SpeechConstant.APPID + "=568b60b0");
 
         mContext = this;
         ButterKnife.bind(this);
