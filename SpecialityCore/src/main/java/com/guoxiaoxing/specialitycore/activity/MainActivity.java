@@ -1,5 +1,6 @@
 package com.guoxiaoxing.specialitycore.activity;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         CategoryFragment.OnFragmentInteractionListener, CartFragment.OnFragmentInteractionListener,
         MineFragment.OnFragmentInteractionListener {
 
+    private Context mContext;
     @Bind(R.id.main_content_viewpager)
     ViewPager mViewPager;
     @Bind(R.id.main_tab_layout)
@@ -30,16 +32,17 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mContext = this;
         ButterKnife.bind(this);
 
-        mViewPager.setAdapter(new MainPageFragmentAdapter(getSupportFragmentManager()));
+        mViewPager.setAdapter(new MainPageFragmentAdapter(getSupportFragmentManager(), mContext));
         mTabLayout.setupWithViewPager(mViewPager);
 
 
-        mTabLayout.getTabAt(0).setIcon(R.drawable.main_tab_home_page);
-        mTabLayout.getTabAt(1).setIcon(R.drawable.maini_tab_goods_category);
-        mTabLayout.getTabAt(2).setIcon(R.drawable.main_tab_shopping_cart);
-        mTabLayout.getTabAt(3).setIcon(R.drawable.main_tab_mine_info);
+        mTabLayout.getTabAt(0).setIcon(R.drawable.main_tab_home_page).setText("首页");
+        mTabLayout.getTabAt(1).setIcon(R.drawable.maini_tab_goods_category).setText("分类");
+        mTabLayout.getTabAt(2).setIcon(R.drawable.main_tab_shopping_cart).setText("购物车");
+        mTabLayout.getTabAt(3).setIcon(R.drawable.main_tab_mine_info).setText("我的");
 
         mTabLayout.setOnTabSelectedListener(
                 new TabLayout.OnTabSelectedListener() {

@@ -1,10 +1,12 @@
 package com.guoxiaoxing.specialitycore.activity.adapter;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.guoxiaoxing.specialitycore.fragment.CartFragment;
+import com.guoxiaoxing.specialitycore.fragment.CategoryFragment;
 import com.guoxiaoxing.specialitycore.fragment.HomeFragment;
 import com.guoxiaoxing.specialitycore.fragment.MineFragment;
 
@@ -13,18 +15,19 @@ import com.guoxiaoxing.specialitycore.fragment.MineFragment;
  */
 public class MainPageFragmentAdapter extends FragmentPagerAdapter {
 
+    private Context mContext;
     private FragmentManager mFragmentManager;
-    private String[] mTitles = {"首页", "分类", "购物车", "我的"};
 
-    public MainPageFragmentAdapter(FragmentManager fm) {
+    public MainPageFragmentAdapter(FragmentManager fm, Context ctx) {
         super(fm);
         mFragmentManager = fm;
+        mContext = ctx;
     }
 
     @Override
     public Fragment getItem(int position) {
         if (position == 1) {
-            return new CartFragment();
+            return new CategoryFragment();
         } else if (position == 2) {
             return new CartFragment();
         } else if (position == 3) {
@@ -35,11 +38,8 @@ public class MainPageFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return mTitles.length;
+        return 4;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTitles[position];
-    }
+
 }

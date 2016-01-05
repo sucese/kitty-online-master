@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
+    
+
     <android.support.v4.view.ViewPager
         android:id="@+id/main_content_viewpager"
         android:layout_width="match_parent"
