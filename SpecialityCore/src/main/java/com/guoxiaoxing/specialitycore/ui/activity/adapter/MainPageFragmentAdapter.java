@@ -1,14 +1,14 @@
-package com.guoxiaoxing.specialitycore.activity.adapter;
+package com.guoxiaoxing.specialitycore.ui.activity.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.guoxiaoxing.specialitycore.fragment.CartFragment;
-import com.guoxiaoxing.specialitycore.fragment.CategoryFragment;
-import com.guoxiaoxing.specialitycore.fragment.HomeFragment;
-import com.guoxiaoxing.specialitycore.fragment.MineFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.CartFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.CategoryFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.HomeFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.MineFragment;
 
 /**
  * Created by guoxiaoxing on 15-12-29.

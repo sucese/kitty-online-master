@@ -1,10 +1,11 @@
-package com.guoxiaoxing.specialitycore.fragment;
+package com.guoxiaoxing.specialitycore.ui.fragment;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -16,6 +17,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.guoxiaoxing.specialitycore.R;
 import com.guoxiaoxing.specialitycore.util.JsonParser;
 import com.iflytek.cloud.ErrorCode;
@@ -30,8 +34,11 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -44,7 +51,7 @@ import butterknife.ButterKnife;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener, ViewPager.OnPageChangeListener, OnItemClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -56,15 +63,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
     private Context mContext;
+    private List<String> networkImages;
+    private String[] images = {"http://img2.imgtn.bdimg.com/it/u=3093785514,1341050958&fm=21&gp=0.jpg",
+            "http://img2.3lian.com/2014/f2/37/d/40.jpg",
+            "http://d.3987.com/sqmy_131219/001.jpg",
+            "http://img2.3lian.com/2014/f2/37/d/39.jpg",
+            "http://www.8kmm.com/UploadFiles/2012/8/201208140920132659.jpg",
+            "http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg",
+            "http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"
+    };
+
+    //语音搜索相关
     @Bind(R.id.home_header_toolbar)
     Toolbar mToolBar;
-    //语音搜索相关
     @Bind(R.id.search_voice_btn)
     ImageButton mVoiceSearchBtn;
     @Bind(R.id.search_et)
     EditText mSearchWordET;
     private SpeechRecognizer mSpeechRecognizer;
     private HashMap<String, String> mVoiceWordMap = new LinkedHashMap<String, String>();
+
+    //广告栏相关
+    @Bind(R.id.ad_banner)
+    ConvenientBanner mConvenientBanner;
+    private ArrayList<Integer> localImages = new ArrayList<Integer>();
 
 
     public HomeFragment() {
@@ -133,6 +155,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mConvenientBanner.startTurning(5000);
+    }
+
+    //    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        if(isVisibleToUser){
+//            mConvenientBanner.startTurning(5000);
+//
+//        }else{
+//            mConvenientBanner.stopTurning();
+//        }
+//    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+
+        if(!hidden){
+
+        }else{
+
+        }
     }
 
     @Override
@@ -206,6 +256,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 return false;
             }
         });
+
+        //本地图片集合
+        for (int position = 0; position < 7; position++)
+            localImages.add(getResId("ic_test_" + position, R.drawable.class));
+
+        //本地图片例子
+        mConvenientBanner.setPages(
+                new CBViewHolderCreator<LocalImageHolderView>() {
+                    @Override
+                    public LocalImageHolderView createHolder() {
+                        return new LocalImageHolderView();
+                    }
+                }, localImages)
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+                        //设置指示器的方向
+//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
+//                .setOnPageChangeListener(this)//监听翻页事件
+                .setOnItemClickListener(this);
+
+//        convenientBanner.setManualPageable(false);//设置不能手动影响
         return view;
     }
 
@@ -236,6 +307,41 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mSpeechRecognizer.setParameter(SpeechConstant.ASR_DWA, "0");
     }
 
+    /**
+     * 通过文件名获取资源id 例子：getResId("icon", R.drawable.class);
+     *
+     * @param variableName
+     * @param c
+     * @return
+     */
+    public static int getResId(String variableName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(variableName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        Toast.makeText(mContext, "监听到翻到第" + position + "了", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(mContext, "点击了第" + position + "个", Toast.LENGTH_SHORT).show();
+    }
 
     /**
      * This interface must be implemented by activities that contain this

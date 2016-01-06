@@ -1,4 +1,4 @@
-package com.guoxiaoxing.specialitycore.activity;
+package com.guoxiaoxing.specialitycore.ui.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

@@ -1,15 +1,18 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.guoxiaoxing.specialitycore.fragment.HomeFragment">
+    android:orientation="vertical"
+    tools:context=".ui.fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!--主页界面顶部搜索框-->
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/home_header_toolbar"
         android:layout_width="match_parent"
-        android:background="@color/pink_A200"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/pink_A200">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -18,25 +21,39 @@
             <EditText
                 android:id="@+id/search_et"
                 android:layout_width="match_parent"
-                android:background="@color/white"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:singleLine="true"
-                android:inputType="text"/>
+                android:background="@color/white"
+                android:inputType="text"
+                android:singleLine="true" />
 
             <ImageButton
                 android:id="@+id/search_voice_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
                 android:layout_gravity="center_vertical|end"
-                android:src="@drawable/voice_search_selector"/>
+                android:background="@color/transparent"
+                android:src="@drawable/voice_search_selector" />
 
         </FrameLayout>
 
-
-
     </android.support.v7.widget.Toolbar>
 
-</FrameLayout>
+    <!--主页界面内容-->
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/ad_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:canLoop="true" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

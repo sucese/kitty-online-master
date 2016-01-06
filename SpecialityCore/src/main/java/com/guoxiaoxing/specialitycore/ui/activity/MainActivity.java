@@ -1,4 +1,4 @@
-package com.guoxiaoxing.specialitycore.activity;
+package com.guoxiaoxing.specialitycore.ui.activity;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,11 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.guoxiaoxing.specialitycore.R;
-import com.guoxiaoxing.specialitycore.activity.adapter.MainPageFragmentAdapter;
-import com.guoxiaoxing.specialitycore.fragment.CartFragment;
-import com.guoxiaoxing.specialitycore.fragment.CategoryFragment;
-import com.guoxiaoxing.specialitycore.fragment.HomeFragment;
-import com.guoxiaoxing.specialitycore.fragment.MineFragment;
+import com.guoxiaoxing.specialitycore.ui.activity.adapter.MainPageFragmentAdapter;
+import com.guoxiaoxing.specialitycore.ui.fragment.CartFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.CategoryFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.HomeFragment;
+import com.guoxiaoxing.specialitycore.ui.fragment.MineFragment;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 

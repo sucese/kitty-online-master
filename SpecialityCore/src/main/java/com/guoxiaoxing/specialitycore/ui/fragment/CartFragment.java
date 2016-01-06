@@ -1,13 +1,9 @@
-package com.guoxiaoxing.specialitycore.fragment;
+package com.guoxiaoxing.specialitycore.ui.fragment;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +13,12 @@ import com.guoxiaoxing.specialitycore.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MineFragment.OnFragmentInteractionListener} interface
+ * {@link CartFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MineFragment#newInstance} factory method to
+ * Use the {@link CartFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MineFragment extends Fragment {
+public class CartFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -34,9 +30,7 @@ public class MineFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    private Context mContext;
-
-    public MineFragment() {
+    public CartFragment() {
         // Required empty public constructor
     }
 
@@ -46,11 +40,11 @@ public class MineFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MineFragment.
+     * @return A new instance of fragment CartFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MineFragment newInstance(String param1, String param2) {
-        MineFragment fragment = new MineFragment();
+    public static CartFragment newInstance(String param1, String param2) {
+        CartFragment fragment = new CartFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,29 +67,13 @@ public class MineFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-
-        View view = inflater.inflate(R.layout.fragment_mine, container, false);
-
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
-        return view;
+        return inflater.inflate(R.layout.fragment_cart, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onMineFragmentInteraction(uri);
+            mListener.onCartFragmentInteraction(uri);
         }
     }
 
@@ -104,7 +82,6 @@ public class MineFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
-            mContext = context;
         } else {
             throw new RuntimeException(
                     context.toString()
@@ -124,13 +101,13 @@ public class MineFragment extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
+     * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onMineFragmentInteraction(Uri uri);
+        void onCartFragmentInteraction(Uri uri);
     }
 }
