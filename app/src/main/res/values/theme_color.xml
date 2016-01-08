@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- day -->
+    <!--导航栏底色-->
+    <color name="day_colorPrimary">@color/primary</color>
+    <!--状态栏底色-->
+    <color name="day_colorPrimaryDark">@color/primary_dark</color>
+    <color name="day_textColor">#333333</color>
+    <color name="day_infoTextColor">#999999</color>
+    <color name="day_layout_bg_normal">#f6f6f6</color>
+    <color name="day_layout_bg_pressed">#dfdfdf</color>
+    <color name="day_line_color">#e7e7e7</color>
+    <color name="day_windows_bg">#fafafa</color>
+    <color name="day_edit_color">#333333</color>
+    <color name="day_edit_hit_color">#999999</color>
+
+    <!-- night -->
+    <color name="night_colorPrimary">#008000</color>
+    <color name="night_colorPrimaryDark">#0b751e</color>
+    <color name="night_textColor">#b3b3b3</color>
+    <color name="night_infoTextColor">#666666</color>
+    <color name="night_layout_bg_normal">#222222</color>
+    <color name="night_layout_bg_pressed">#0d0e11</color>
+    <color name="night_line_color">#282828</color>
+    <color name="night_windows_bg">#1f1f1f</color>
+    <color name="night_edit_color">#666666</color>
+    <color name="night_edit_hit_color">#999999</color>
+
+</resources>

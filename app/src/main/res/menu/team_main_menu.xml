@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+     <item
+        android:id="@+id/team_new_active"
+        android:icon="@drawable/actionbar_send_icon"
+        android:title="@string/team_new_active"
+        android:visible="true"/>
+    <item
+        android:id="@+id/team_new_issue"
+        android:icon="@drawable/actionbar_send_icon"
+        android:title="@string/team_new_issue"
+        android:visible="true"/>
+    
+</menu>

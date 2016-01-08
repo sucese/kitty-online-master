@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_wrap"
+    android:background="?attr/layout_item_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/title_line"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/infoTextColor"
+            android:layout_marginRight="10dp"
+            android:text="标题" />
+
+        <View
+            style="@style/h_line" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/iv_issue_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="@string/fa_circle_o"
+            android:textColor="@color/main_gray"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/iv_issue_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:text="@string/fa_team"
+            android:textColor="@color/main_gray" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/list_text_title"
+            android:singleLine="true"
+            android:text="任务标题" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_project"
+        style="@style/list_text_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="team_issue - 未同步" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_accept_time"
+            style="@style/list_text_info"
+            android:layout_marginRight="5dp"
+            android:text="完成时间" />
+
+        <TextView
+            android:id="@+id/tv_attachments"
+            style="@style/list_text_info"
+            android:layout_marginRight="5dp"
+            android:text="附件1" />
+
+        <TextView
+            android:id="@+id/tv_childissues"
+            style="@style/list_text_info"
+            android:layout_marginRight="5dp"
+            android:text="子任务(2/10)" />
+
+        <TextView
+            android:id="@+id/tv_relations"
+            style="@style/list_text_info"
+            android:layout_marginRight="5dp"
+            android:text="关联1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/tv_author"
+            style="@style/list_text_info"
+            android:layout_marginRight="@dimen/space_5"
+            android:text="火蚁" />
+
+        <TextView
+            android:id="@+id/tv_to"
+            style="@style/list_text_info"
+            android:layout_marginRight="@dimen/space_5"
+            android:layout_toRightOf="@id/tv_author"
+            android:text="指派给" />
+
+        <TextView
+            android:id="@+id/tv_touser"
+            style="@style/list_text_info"
+            android:layout_toRightOf="@id/tv_to"
+            android:text="火蚁" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <IconTextView
+                style="@style/list_text_info"
+                android:text="{fa-clock-o} " />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_marginRight="10dp"
+                style="@style/list_text_info" />
+
+            <IconTextView
+                style="@style/list_text_info"
+                android:text="{fa-comments-o} " />
+
+            <TextView
+                android:id="@+id/tv_comment_count"
+                style="@style/list_text_info" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

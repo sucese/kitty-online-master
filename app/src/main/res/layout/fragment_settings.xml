@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_loading_img"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/loading_img"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_loading_img"
+                style="@style/option_item_toggleButton"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_notification_settings"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/mes_notice"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_clean_cache"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/clean_cache"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tv_cache_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                tools:text="13M"
+                android:textColor="?attr/infoTextColor"
+                android:textSize="@dimen/text_size_14" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_double_click_exit"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/double_click_exit"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_double_click_exit"
+                style="@style/option_item_toggleButton"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_loading_more"
+            style="@style/option_item_rl"
+            android:visibility="gone" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/loading_more"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_loading_more"
+                style="@style/option_item_toggleButton"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_about"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/about"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_exit"
+            style="@style/option_item_rl" >
+
+            <TextView
+                android:id="@+id/setting_logout"
+                style="@style/option_item_text_parent"
+                android:text="@string/exit"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_wrap"
+    android:background="?attr/layout_item_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="9dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
+    android:paddingTop="10dip" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_face"
+        style="@style/user_face_image"
+        android:layout_marginLeft="@dimen/space_5"
+        android:layout_marginRight="@dimen/space_10" />
+
+    <TextView
+        android:id="@+id/tv_author"
+        style="@style/list_text_title"
+        android:layout_marginBottom="@dimen/space_5"
+        android:layout_toRightOf="@id/iv_face"
+        android:ellipsize="end"
+        android:textColor="?android:textColorLink"
+        android:maxLines="2"
+        android:text="周报作者" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_author"
+        android:layout_marginBottom="@dimen/space_5"
+        android:layout_toRightOf="@id/iv_face"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="我是内容"
+        android:textColor="?attr/infoTextColor" />
+
+    <RelativeLayout
+        android:layout_below="@id/tv_title"
+        android:layout_toRightOf="@id/iv_face"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <IconTextView
+                style="@style/list_text_info"
+                android:text="{fa-clock-o} " />
+
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/list_text_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <IconTextView
+                style="@style/list_text_info"
+                android:text="{fa-comments-o} " />
+
+            <TextView
+                android:id="@+id/tv_count"
+                style="@style/list_text_info" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

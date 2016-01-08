@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/set_pop"
+    style="@style/fill_wrap"
+    android:background="@color/white"
+    android:padding="0dp"
+    android:orientation="vertical" >
+    
+    <ListView 
+        android:id="@+id/lv_list"
+        style="@style/wrap_wrap"
+        android:scrollbars="none" />
+    
+    <net.oschina.app.ui.empty.EmptyLayout 
+        android:id="@+id/error_layout"
+        style="@style/fill_fill" />
+
+</RelativeLayout>

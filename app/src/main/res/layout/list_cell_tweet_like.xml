@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:padding="@dimen/space_8" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/user_face_image"
+        android:layout_marginRight="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_3" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_2"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:textColor="@color/lightblue"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:layout_marginRight="@dimen/space_10"
+        android:text="赞了我的动弹"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_12"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ly_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_action"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:background="?attr/comment_reply_container_bg"
+        android:visibility="visible" >
+
+        <net.oschina.app.widget.TweetTextView
+            android:id="@+id/tv_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_4"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/text_size_13" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_reply"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/space_10"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:drawableLeft="@drawable/platform"
+        android:drawablePadding="@dimen/space_5"
+        android:gravity="center_vertical"
+        android:text="Android"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_12" />
+
+</RelativeLayout>

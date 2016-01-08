@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:background="?attr/layout_item_bg" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/comment_user_face_image"
+        android:layout_marginRight="@dimen/space_10" />
+    
+    <net.oschina.app.widget.TweetTextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:text="评论内容"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/list_text_info"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:text="火蚁"
+        android:layout_marginRight="5dp"
+        android:layout_below="@id/tv_content" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/list_text_info"
+        android:layout_toRightOf="@id/tv_name"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_below="@id/tv_content"
+        android:text="时间" />
+    
+    <TextView
+        android:id="@+id/tv_from"
+        style="@style/list_text_info"
+        android:layout_below="@id/tv_content"
+        android:layout_toRightOf="@id/tv_time"
+        android:gravity="center_vertical"
+        android:text="android"
+        android:visibility="visible" />
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_8" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_link"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        android:id="@+id/tv_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:padding="@dimen/space_8"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/space_4"
+        android:layout_marginTop="@dimen/space_4"
+        android:background="@color/list_divider_color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_reson"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        android:id="@+id/tv_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_8"
+        android:drawableRight="@drawable/ic_item_goto_right_tip"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/space_4"
+        android:layout_marginTop="@dimen/space_4"
+        android:background="@color/list_divider_color" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comment_edittext_selector"
+        android:gravity="top"
+        android:hint="@string/hint_report_desc"
+        android:minLines="2"
+        android:padding="@dimen/space_4"
+        android:textColor="@color/main_black"
+        android:textColorHint="@color/main_gray"
+        android:textSize="@dimen/text_size_14" />
+
+</LinearLayout>

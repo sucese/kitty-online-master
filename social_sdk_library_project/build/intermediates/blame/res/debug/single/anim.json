@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_edit_anim.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_edit_anim.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_dlg_alpha.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_dlg_alpha.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_slide_in_from_bottom.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_shareboard_animation_out.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_shareboard_animation_out.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_dlg_scale.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_dlg_scale.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_shareboard_animation_in.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_shareboard_animation_in.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_imageview_rotate.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_imageview_rotate.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_fade_out.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_fade_out.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_slide_out_from_bottom.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_slide_out_from_bottom.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_cycle_5.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_cycle_5.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/shake_umeng_socialize_scrshot_dlg.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/shake_umeng_socialize_scrshot_dlg.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/anim/umeng_socialize_fade_in.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/anim/umeng_socialize_fade_in.xml"
+    }
+]

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edittext"
+        android:gravity="top|left|center"
+        android:hint="@string/str_feedback_et_hint"
+        android:lines="2"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/text_color_account_info"
+        android:textColorHint="@color/edittext_hint_color"
+        android:textSize="@dimen/text_size_account_info" />
+
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:singleLine="true"
+        android:text="@string/str_feedback_contact"
+        android:textColor="@color/text_color_account_info"
+        android:textSize="@dimen/text_size_account_info" />
+
+    <EditText
+        android:id="@+id/et_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext"
+        android:gravity="center_vertical"
+        android:hint="@string/str_feedback_contact_hint"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/text_color_account_info"
+        android:textColorHint="@color/edittext_hint_color"
+        android:textSize="@dimen/text_size_account_info" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:shadowColor="#ffffffff"
+        android:shadowDx="1.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="0.5"
+        android:text="@string/str_feedback_tip"
+        android:textColor="#ffa49e88"
+        android:textSize="14sp" />
+
+</LinearLayout>

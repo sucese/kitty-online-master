@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SocialSDK_scrshot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/SocialSDK_scrshot.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

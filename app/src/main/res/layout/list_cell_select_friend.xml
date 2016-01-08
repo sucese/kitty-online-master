@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:padding="@dimen/space_8">
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/user_face_image"
+        android:layout_marginRight="@dimen/space_8"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:layout_centerVertical="true"
+        android:textColor="?attr/textColor"
+        android:textSize="@dimen/text_size_16"/>
+
+    <CheckBox
+        android:id="@+id/cb_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:focusable="false"
+        android:checked="false"/>
+
+</RelativeLayout>

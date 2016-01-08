@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:background="?attr/windows_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="top|left"
+        android:hint="@string/tweet_hint"
+        android:padding="@dimen/space_12"
+        android:textColor="?android:editTextColor"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:padding="@dimen/space_8" >
+
+        <RelativeLayout
+            android:id="@+id/rl_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/light_gray"
+                android:clickable="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/iv_clear_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/ib_clear_image_selector" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rl_img"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/compose_clear_selector"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/text_size_14" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <ImageButton
+            android:id="@+id/ib_picture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:padding="@dimen/space_8"
+            android:src="@drawable/compose_toolbar_picture_selector" />
+
+        <ImageButton
+            android:id="@+id/ib_mention"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:padding="@dimen/space_8"
+            android:src="@drawable/compose_toolbar_mention_selector" />
+
+        <ImageButton
+            android:id="@+id/ib_trend_software"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:padding="@dimen/space_8"
+            android:src="@drawable/compose_toolbar_trend_selector" />
+
+        <ImageButton
+            android:id="@+id/ib_emoji_keyboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:padding="@dimen/space_8"
+            android:src="@drawable/compose_toolbar_emoji_selector" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+    
+    <FrameLayout
+        android:id="@+id/emoji_keyboard_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
+</LinearLayout>

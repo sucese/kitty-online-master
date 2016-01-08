@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/emoji_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/emoji_title_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/btn_opt_text_to_tools_selector"
+        android:button="@null"
+        android:checked="false"
+        android:contentDescription="@null"
+        android:focusable="false" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?android:editTextBackground"
+        android:gravity="center_vertical">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/emoji_titile_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="说点什么吧"
+            android:minHeight="35dp"
+            android:textColor="?android:editTextColor"
+            android:textSize="17sp" />
+
+        <CheckBox
+            android:id="@+id/emoji_title_menu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/selector_keyboard"
+            android:button="@null"
+            android:checked="false"
+            android:contentDescription="表情输入法切换"
+            android:focusable="false" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/emoji_title_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:contentDescription="@null"
+        android:src="@drawable/selector_send" />
+
+</LinearLayout>

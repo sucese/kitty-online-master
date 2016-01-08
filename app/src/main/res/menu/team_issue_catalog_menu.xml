@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:osc="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/team_new_issue"
+        android:icon="@drawable/actionbar_icon_add"
+        android:title="@string/team_new_issue"
+        android:visible="true"
+        osc:showAsAction="always"/>
+
+</menu>

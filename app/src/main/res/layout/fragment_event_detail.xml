@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/windows_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <net.oschina.app.widget.CustomerScrollView
+        android:id="@+id/sv_news_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_event_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_20"
+                android:textColor="?attr/textColor"
+                tools:text="奔跑吧，OpenStack"
+                android:textSize="17sp" />
+
+            <View
+                style="@style/h_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_10" >
+
+                <TextView
+                    android:id="@+id/tv_event_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999" />
+
+                <TextView
+                    android:id="@+id/tv_event_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_event_start_time"
+                    android:textColor="#999" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/rl_event_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/layout_item_bg"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_10" >
+
+                <TextView
+                    android:id="@+id/tv_event_spot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?android:textColorLink"
+                    tools:text="深圳南山"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/detail_map_guide" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_event_attend"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/btn_small_green_selector"
+                android:text="出席人员"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/bt_event_apply"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@drawable/btn_small_green_selector"
+                android:text="我要报名"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_event_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_10"
+                android:text="你的报名已确认，现场可以扫描二维码签到！"
+                android:textColor="?attr/infoTextColor"
+                android:visibility="gone" />
+
+            <View
+                style="@style/h_line"
+                android:layout_marginTop="@dimen/space_10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_10"
+                android:text="活动详情"
+                android:textColor="#999" />
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10" />
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </net.oschina.app.widget.CustomerScrollView>
+
+    <net.oschina.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

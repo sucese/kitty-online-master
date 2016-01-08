@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/windows_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/layout_item_bg"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" >
+
+                <net.oschina.app.widget.AvatarView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/widget_dface" />
+
+                <TextView
+                    android:id="@+id/team_myissue_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_avatar"
+                    android:text="火蚁，上午好"
+                    android:textColor="?attr/textColor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/team_myissue_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/team_myissue_name"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@id/iv_avatar"
+                    android:text="今天是 星期二，2015年03月12日"
+                    android:textColor="?attr/infoTextColor"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/fill_wrap"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/team_myissue_waitdo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/team_myissue_wait_num"
+                            style="@style/myissue_text_num"
+                            android:textColor="#f9aa47" />
+
+                        <TextView
+                            style="@style/myissue_text"
+                            android:text="待完成"
+                            android:textColor="#f9aa47" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/lineColor" />
+
+                    <LinearLayout
+                        android:id="@+id/team_myissue_outdate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/team_myissue_outdate_num"
+                            style="@style/myissue_text_num"
+                            android:textColor="#ed6732" />
+
+                        <TextView
+                            style="@style/myissue_text"
+                            android:text="过期的"
+                            android:textColor="#ed6732" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/lineColor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/team_myissue_ing"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/team_myissue_ing_num"
+                            style="@style/myissue_text_num"
+                            android:textColor="#7fb86e" />
+
+                        <TextView
+                            style="@style/myissue_text"
+                            android:text="进行中"
+                            android:textColor="#7fb86e" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/lineColor" />
+
+                    <LinearLayout
+                        android:id="@+id/team_myissue_all"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/team_myissue_all_num"
+                            style="@style/myissue_text_num"
+                            android:textColor="#999" />
+
+                        <TextView
+                            style="@style/myissue_text"
+                            android:text="已完成"
+                            android:textColor="#999" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" >
+
+            <LinearLayout
+                android:id="@+id/ll_team_active"
+                style="@style/option_item_rl" >
+
+                <TextView
+                    android:id="@+id/tv_team_active"
+                    style="@style/option_item_text_fa"
+                    android:text="@string/fa_home" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team_actvie" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="?attr/lineColor"
+                android:layout_marginLeft="@dimen/space_14" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_project"
+                style="@style/option_item_rl" >
+
+                <TextView
+                    android:id="@+id/tv_team_project"
+                    style="@style/option_item_text_fa"
+                    android:text="@string/fa_inbox" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team_project" />
+            </LinearLayout>
+
+             <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                 android:background="?attr/lineColor"
+                android:layout_marginLeft="@dimen/space_14" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_issue"
+                style="@style/option_item_rl"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tv_team_issue"
+                    style="@style/option_item_text_fa"
+                    android:text="@string/fa_tasks" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team_issue" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="?attr/lineColor"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_discuss"
+                style="@style/option_item_rl" >
+
+                <TextView
+                    android:id="@+id/tv_team_discuss"
+                    style="@style/option_item_text_fa"
+                    android:text="@string/fa_comments" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team_discuss" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/space_14"
+                android:background="?attr/lineColor" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_diary"
+                style="@style/option_item_rl" >
+
+                <TextView
+                    android:id="@+id/tv_team_diary"
+                    style="@style/option_item_text_fa"
+                    android:text="@string/fa_file_text_o" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team_diary" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:padding="@dimen/space_10" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/comment_user_face_image"
+        android:layout_marginRight="@dimen/space_10" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:text="火蚁"
+        android:textColor="?android:textColorLink"
+        android:textSize="@dimen/text_size_13" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="?attr/infoTextColor"
+        android:textSize="@dimen/text_size_10" />
+
+    <net.oschina.app.widget.TweetTextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:text="评论内容"
+        android:textColor="?attr/textColor"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:drawableLeft="@drawable/platform"
+        android:drawablePadding="@dimen/space_4"
+        android:gravity="center_vertical"
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/text_size_11"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ly_relies"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_from"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:orientation="vertical"
+        android:visibility="visible" >
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:osc="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/chat_friend_home"
+        android:icon="@drawable/icon_actionbar_home"
+        android:title="@string/friend_home"
+        android:visible="true"
+        osc:showAsAction="always"/>
+</menu>

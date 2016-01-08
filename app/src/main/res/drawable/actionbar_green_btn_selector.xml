@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2014. kugou.com
+  -->
+
+<!-- 绿色按钮 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/actionbar_green_btn_pressed" android:state_focused="true" android:state_pressed="false"/>
+    <item android:drawable="@drawable/actionbar_green_btn_pressed" android:state_focused="false" android:state_pressed="true"/>
+    <item android:drawable="@drawable/actionbar_green_btn_normal" android:state_focused="false" android:state_pressed="false"/>
+    <item android:drawable="@drawable/actionbar_green_btn_normal" android:state_enabled="false" android:state_window_focused="false"/>
+
+</selector>

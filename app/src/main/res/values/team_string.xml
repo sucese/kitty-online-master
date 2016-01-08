@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="team_dynamic_detail">动态详情</string>
+    <string name="team_issue_detail">任务详情</string>
+    <string name="team_new_issue">新团队任务</string>
+    <string name="team_new_active">新团队动弹</string>
+    <string name="team_active_hint">通过@可以发信息给团队成员</string>
+    <string name="team_issue_setting">项目设置</string>
+    <string name="team_project_list">项目列表</string>
+    
+    <string name="team_empty">还没有加入的团队\n到team上加入一个牛逼的team呗</string>
+    <string name="team_empty_project">还没有项目\n先去team上绑定项目呗</string>
+    <string name="team_empty_issue">还没有任务哦\n去其他地方看看呗</string>
+    <string name="team_empty_project_member">还没有项目成员\n去team上添加呗</string>
+    <string name="team_empty_project_active">还没有项目动态\n</string>
+    
+    <string name="team_actvie">团队动态</string>
+    <string name="team_project">团队项目</string>
+    <string name="team_issue">团队任务</string>
+    <string name="team_discuss">团队讨论</string>
+    <string name="team_diary">团队周报</string>
+    <string name="team_diary_detail">周报详情</string>
+</resources>

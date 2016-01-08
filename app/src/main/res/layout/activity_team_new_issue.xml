@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/windows_bg"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <EditText
+        android:id="@+id/et_issue_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:textColor="?android:editTextColor"
+        android:background="@drawable/edit_select"
+        android:hint="任务标题" />
+
+    <RelativeLayout
+        android:id="@+id/rl_issue_project"
+        android:gravity="center"
+        android:layout_gravity="center"
+        style="@style/team_new_issue_layout" >
+        
+        <TextView 
+            android:id="@+id/tv_fa_project"
+            style="@style/team_new_issue_fa"
+            android:text="@string/fa_inbox" />
+
+        <TextView
+            style="@style/team_new_issue_tip"
+            android:layout_toRightOf="@id/tv_fa_project"
+            android:text="项目" />
+
+        <TextView
+            android:id="@+id/tv_issue_project"
+            style="@style/team_new_issue_info"
+            android:text="不指定项目" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_issue_catalog"
+        style="@style/team_new_issue_layout" >
+        
+        <TextView 
+            android:id="@+id/tv_fa_catalog"
+            style="@style/team_new_issue_fa"
+            android:text="@string/fa_list"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/team_new_issue_tip"
+            android:layout_toRightOf="@id/tv_fa_catalog"
+            android:text="任务分组" />
+
+        <TextView
+            android:id="@+id/tv_issue_catalog"
+            style="@style/team_new_issue_info"
+            android:text="未指定列表" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_issue_touser"
+        style="@style/team_new_issue_layout" >
+        
+        <TextView 
+            android:id="@+id/tv_fa_touser"
+            style="@style/team_new_issue_fa"
+            android:text="@string/fa_user" />
+
+        <TextView
+            style="@style/team_new_issue_tip"
+            android:layout_toRightOf="@id/tv_fa_touser"
+            android:text="指派成员" />
+
+        <TextView
+            android:id="@+id/tv_issue_touser"
+            style="@style/team_new_issue_info"
+            android:text="未指派" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_issue_time"
+        style="@style/team_new_issue_layout" >
+        
+        <TextView 
+            android:id="@+id/tv_fa_time"
+            style="@style/team_new_issue_fa"
+            android:text="@string/fa_clock_o" />
+
+        <TextView
+            style="@style/team_new_issue_tip"
+            android:layout_toRightOf="@id/tv_fa_time"
+            android:text="完成时间" />
+
+        <TextView
+            android:id="@+id/tv_issue_time"
+            style="@style/team_new_issue_info" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+    
+    <RelativeLayout
+        android:id="@+id/rl_issue_push"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       	android:clickable="true"
+       	android:visibility="gone"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/tv_issue_push_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:textColor="?attr/textColor"
+            android:text="同步到Git@OSC" />
+        
+        <CheckBox 
+            android:id="@+id/cb_issue_push_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:checked="false"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    
+    <View
+        android:id="@+id/push_line"
+        style="@style/h_line" />
+
+</LinearLayout>

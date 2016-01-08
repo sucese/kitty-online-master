@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="team_main_menu">
+        <item>主页</item>
+        <item>任务</item>
+        <item>讨论</item>
+        <item>周报</item>
+    </string-array>
+    
+    <string-array name="team_main_viewpager">
+        <item>面板</item>
+        <item>任务</item>
+        <item>成员</item>
+    </string-array>
+    
+    <string-array name="team_issue_state">
+        <item>待办中</item>
+        <item>进行中</item>
+        <item>已完成</item>
+        <item>已验收</item>
+    </string-array>
+    
+    <string-array name="team_issue_state_en">
+        <item>opened</item>
+        <item>underway</item>
+        <item>closed</item>
+        <item>accepted</item>
+    </string-array>
+    
+</resources>

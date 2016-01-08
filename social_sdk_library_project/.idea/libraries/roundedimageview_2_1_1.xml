@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="roundedimageview-2.1.1">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.makeramen/roundedimageview/2.1.1/c42a07f9afdfc9b091a31bf7544bdc3554e58604/roundedimageview-2.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

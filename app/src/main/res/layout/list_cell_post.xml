@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="9dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
+    android:paddingTop="10dip" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_face"
+        android:layout_marginRight="@dimen/space_10"
+        style="@style/user_face_image" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/list_text_title"
+        android:layout_toRightOf="@id/iv_face"
+        android:ellipsize="end"
+        android:layout_marginBottom="@dimen/space_5"
+        android:maxLines="2" />
+    
+    <TextView 
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginBottom="@dimen/space_5"
+        android:layout_toRightOf="@id/iv_face"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:textColor="@color/main_gray" />
+
+    <LinearLayout
+        android:layout_below="@id/tv_description"
+        android:layout_toRightOf="@id/iv_face"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_marginRight="10dp"
+            style="@style/list_text_info" />
+
+        <IconTextView
+            style="@style/list_text_info"
+            android:text="{fa-clock-o} " />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_marginRight="10dp"
+            style="@style/list_text_info" />
+
+        <IconTextView
+            style="@style/list_text_info"
+            android:text="{fa-comments-o} " />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/list_text_info" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

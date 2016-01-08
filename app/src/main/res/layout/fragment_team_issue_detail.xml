@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_fill"
+    android:background="?attr/layout_item_bg">
+
+    <net.oschina.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/content"
+        style="@style/fill_fill"
+        android:visibility="visible" >
+
+        <LinearLayout
+            style="@style/fill_wrap"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ll_issue_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="?attr/lineColor"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/tv_issue_project"
+                    style="@style/list_text_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="?attr/infoTextColor"
+                    android:text="team_issue"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_state_title"
+                style="@style/team_issue_detail_layout"
+                android:layout_gravity="center" >
+
+                <TextView
+                    android:id="@+id/tv_issue_state_title"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_circle_o" />
+
+                <TextView
+                    android:id="@+id/tv_issue_title"
+                    style="@style/list_text_title"
+                    android:text="任务标题"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="?attr/lineColor" />
+
+            <LinearLayout
+                android:id="@+id/ll_issue_child"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_child"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_plus" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="子任务" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_child"
+                        style="@style/team_issue_detail_text"
+                        android:text="点击添加子任务" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_childs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_issue_touser"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_touser"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_user" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="指派给" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_touser"
+                        style="@style/team_issue_detail_text"
+                        android:gravity="right"
+                        android:text="点击设置指派任务" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_die_time"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_die_time"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_calendar"
+                    android:textSize="16sp" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="截止日期" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_die_time"
+                        style="@style/team_issue_detail_text"
+                        android:text="点击设置截止日期" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_cooperate_user"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_cooperate_user"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_users"
+                    android:textSize="16sp" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="协作者" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_cooperate_user"
+                        style="@style/team_issue_detail_text"
+                        android:text="点击添加协作者" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_state"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_state"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_trello" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="阶段" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_state"
+                        style="@style/team_issue_detail_text"
+                        android:text="任务当前阶段" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_labels"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_tags" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_issue_labels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_attachments"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_attachments"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_paperclip" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="附件" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_attachments"
+                        style="@style/team_issue_detail_text"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_issue_relations"
+                style="@style/team_issue_detail_layout" >
+
+                <TextView
+                    android:id="@+id/tv_issue_fa_relations"
+                    style="@style/team_issue_detail_tip_fa"
+                    android:text="@string/fa_link" />
+
+                <LinearLayout style="@style/team_issue_detail_info_layout" >
+
+                    <TextView
+                        style="@style/team_issue_detail_tip"
+                        android:text="关联" />
+
+                    <TextView
+                        android:id="@+id/tv_issue_relations"
+                        style="@style/team_issue_detail_text"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/team_issue_detail_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:text="动态"
+                android:textColor="@color/main_gray"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_issue_active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:text="评论"
+                android:textColor="@color/main_gray"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_issue_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

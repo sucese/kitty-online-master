@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_wrap"
+    android:background="?attr/layout_item_bg"
+    android:gravity="center|left"
+    android:orientation="horizontal"
+    android:padding="@dimen/space_15" >
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/user_face_image"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/wrap_wrap"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="?attr/textColor"
+        android:text="用户名" />
+
+</LinearLayout>

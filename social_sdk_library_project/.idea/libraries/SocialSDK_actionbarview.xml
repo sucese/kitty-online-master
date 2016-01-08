@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SocialSDK_actionbarview">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/SocialSDK_actionbarview.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

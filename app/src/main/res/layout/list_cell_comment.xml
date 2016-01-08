@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/layout_item_bg"
+    android:padding="@dimen/space_10">
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/iv_avatar"
+        style="@style/comment_user_face_image"
+        android:layout_marginRight="@dimen/space_10" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:textColor="?android:textColorLink"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_alignParentRight="true"
+        tools:text="刚刚"
+        style="@style/list_text_info" />
+
+    <net.oschina.app.widget.FloorView
+        android:id="@+id/ly_refers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <net.oschina.app.widget.TweetTextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_refers"
+        android:layout_marginTop="@dimen/space_8"
+        android:layout_toRightOf="@id/iv_avatar"
+        tools:text="评论内容"
+        android:textColor="?attr/textColor"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/ly_relies"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_below="@id/ly_relies"
+        android:layout_marginTop="@dimen/space_8"
+        style="@style/list_text_info"
+        android:layout_toRightOf="@id/iv_avatar"
+        tools:text="Android"
+        android:drawablePadding="@dimen/space_4"
+        android:gravity="center_vertical" />
+
+</RelativeLayout>

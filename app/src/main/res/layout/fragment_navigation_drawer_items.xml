@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#e2e2e2"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/menu_item_quests"
+        style="@style/MenuItemLayoutStyle" >
+
+        <ImageView
+            style="@style/MenuItemImageViewStyle"
+            android:background="@drawable/drawer_menu_icon_quest_nor"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/MenuItemTextViewStyle"
+            android:gravity="center"
+            android:text="@string/menu_quests" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/menu_item_opensoft"
+        style="@style/MenuItemLayoutStyle" >
+
+        <ImageView
+            style="@style/MenuItemImageViewStyle"
+            android:background="@drawable/drawer_menu_icon_opensoft_nor"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/MenuItemTextViewStyle"
+            android:text="@string/menu_opensoft" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/menu_item_blog"
+        style="@style/MenuItemLayoutStyle" >
+
+        <ImageView
+            style="@style/MenuItemImageViewStyle"
+            android:background="@drawable/drawer_menu_icon_blog_nor"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/MenuItemTextViewStyle"
+            android:text="@string/menu_blog" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+    
+    <LinearLayout
+        android:id="@+id/menu_item_gitapp"
+        style="@style/MenuItemLayoutStyle" >
+
+        <ImageView
+            style="@style/MenuItemImageViewStyle"
+            android:background="@drawable/drawer_menu_icon_gitapp_nor"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/MenuItemTextViewStyle"
+            android:text="@string/gitapp" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+</LinearLayout>

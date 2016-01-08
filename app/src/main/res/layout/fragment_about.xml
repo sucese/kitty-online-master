@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.oschina.app.widget.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_5"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/text_size_16" />
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_check_update"
+            style="@style/option_item_rl">
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/update"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pb_loading"
+                    style="@style/loading"
+                    android:layout_width="18dip"
+                    android:layout_height="18dip"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="false"
+                    android:textColor="?attr/textColor"
+                    android:textSize="@dimen/text_size_14"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View style="@style/h_line" />
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip" />
+
+        <RelativeLayout
+            android:id="@+id/rl_feedback"
+            style="@style/option_item_rl">
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/feedback"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_grade"
+            style="@style/option_item_rl">
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/grade"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View style="@style/h_line" />
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip" />
+
+        <RelativeLayout
+            android:id="@+id/rl_gitapp"
+            style="@style/option_item_rl">
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/gitapp"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+
+        <View style="@style/h_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="50dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dip">
+
+            <TextView
+                android:id="@+id/tv_oscsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:text="@string/oscsite"
+                android:textColor="?android:textColorLink" />
+
+
+            <TextView
+                android:id="@+id/tv_knowmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/knowmore"
+                android:textColor="?android:textColorLink" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/copyright"
+            android:textColor="?attr/infoTextColor" />
+    </LinearLayout>
+
+</net.oschina.app.widget.CustomerScrollView>

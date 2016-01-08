@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SocialSDK_tencentWB_2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/SocialSDK_tencentWB_2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

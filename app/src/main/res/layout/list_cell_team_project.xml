@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_wrap"
+    android:background="?attr/layout_item_bg"
+    android:gravity="center|left"
+    android:orientation="horizontal"
+    android:padding="@dimen/space_15" >
+
+    <TextView
+        android:id="@+id/iv_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="@string/fa_gitosc"
+        android:textColor="@color/main_gray"
+        android:padding="3dp"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/tv_project_name"
+        android:layout_toRightOf="@id/iv_source"
+        style="@style/wrap_wrap"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="?attr/textColor"
+        android:text="项目名" />
+    
+    <TextView
+        android:id="@+id/tv_project_issue"
+        android:layout_alignParentRight="true"
+        style="@style/wrap_wrap"
+        android:textSize="14sp"
+        android:textColor="?attr/infoTextColor"
+        android:text="0/0" />
+
+</RelativeLayout>

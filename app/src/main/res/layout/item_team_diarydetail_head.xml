@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="horizontal" >
+
+        <net.oschina.app.widget.AvatarView
+            android:id="@+id/event_listitem_userface"
+            style="@style/UserFaceImageStyle"
+            android:layout_margin="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/event_listitem_username"
+                style="@style/list_cell_text"
+                android:textColor="?android:textColorLink"
+                tools:text="作者"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="13dp" />
+
+            <TextView
+                android:id="@+id/event_listitem_date"
+                style="@style/events_list_data"
+                android:layout_marginTop="5dp"
+                android:textColor="?attr/infoTextColor"
+                tools:text="前天"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="?attr/lineColor" />
+
+    <WebView
+        android:id="@+id/team_diary_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" />
+
+</LinearLayout>

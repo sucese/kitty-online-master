@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <net.oschina.app.widget.AvatarView
+        android:id="@+id/fragment_team_head"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp" />
+
+    <LinearLayout
+        style="@style/wrap_wrap"
+        android:layout_toRightOf="@+id/fragment_team_head"
+        android:orientation="vertical"
+        android:paddingTop="3dp" >
+
+        <TextView
+            android:id="@+id/fragment_team_name"
+            tools:text="火蚁"
+            style="@style/team_user_infor" />
+
+        <TextView
+            android:id="@+id/fragment_team_username"
+            style="@style/team_user_infor"
+            tools:text="火蚁"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/fragment_team_email"
+            tools:text="zhangdeyi@oschina.net"
+            style="@style/team_user_infor" />
+
+        <TextView
+            android:id="@+id/fragment_team_tel"
+            tools:text="110"
+            style="@style/team_user_infor" />
+
+        <TextView
+            android:id="@+id/fragment_team_address"
+            tools:text="南山"
+            style="@style/team_user_infor" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/fragment_team_tv_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_call"
+        android:layout_margin="10dp" />
+
+</RelativeLayout>

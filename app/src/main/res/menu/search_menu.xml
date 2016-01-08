@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:osc="http://schemas.android.com/apk/res-auto" >
+	
+    <item
+        android:id="@+id/search_content"
+        android:icon="@drawable/actionbar_search_icon" 
+        android:title="@string/actionbar_title_search"
+        android:visible="true"
+        osc:actionViewClass="android.support.v7.widget.SearchView"
+        osc:showAsAction="always"/>
+</menu>

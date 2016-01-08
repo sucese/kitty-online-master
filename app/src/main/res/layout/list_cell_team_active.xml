@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 个人动态列表项布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/title_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:text="标题"
+            android:textColor="?attr/infoTextColor" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_centerVertical="true"
+            android:background="?attr/lineColor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_line"
+        android:background="?attr/layout_item_bg"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="horizontal"
+        android:paddingBottom="7dip"
+        android:paddingLeft="6dip"
+        android:paddingRight="6dip"
+        android:paddingTop="8dip">
+
+        <net.oschina.app.widget.AvatarView
+            android:id="@+id/event_listitem_userface"
+            style="@style/UserFaceImageStyle" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/event_listitem_username"
+                style="@style/events_list_title"
+                android:textColor="?android:textColorLink"
+                android:textSize="14sp" />
+
+            <net.oschina.app.widget.TweetTextView
+                android:id="@+id/event_listitem_content"
+                style="@style/events_list_content"
+                android:text="hello" />
+
+            <ImageView
+                android:id="@+id/iv_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_100"
+                android:layout_marginBottom="@dimen/space_5"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="@dimen/space_4"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/pic_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip">
+
+                <TextView
+                    android:id="@+id/event_listitem_client"
+                    android:layout_alignParentLeft="true"
+                    android:visibility="gone"
+                    style="@style/list_text_info" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <IconTextView
+                        style="@style/list_text_info"
+                        android:text="{fa-clock-o} " />
+                    <TextView
+                        android:id="@+id/event_listitem_date"
+                        style="@style/list_text_info" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <IconTextView
+                        style="@style/list_text_info"
+                        android:text="{fa-comments-o} " />
+                    <TextView
+                        android:id="@+id/tv_comment_count"
+                        style="@style/list_text_info" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

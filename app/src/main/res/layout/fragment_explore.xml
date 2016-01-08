@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="25dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_active"
+            style="@style/option_item_rl" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:layout_marginRight="@dimen/space_10"
+                android:background="@drawable/icon_explore_friends"/>
+            
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/active" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="30dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_find_osc"
+            style="@style/option_item_rl" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:layout_marginRight="@dimen/space_10"
+                android:background="@drawable/icon_explore_finduser"/>
+
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/find_oscer" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line"
+            android:visibility="gone" />
+
+        <LinearLayout 
+            android:id="@+id/rl_city"
+            style="@style/option_item_rl"
+            android:visibility="gone" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:background="@drawable/icon_explore_samecity"/>
+
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/friends" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <LinearLayout 
+            android:id="@+id/rl_activities"
+            style="@style/option_item_rl" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:background="@drawable/icon_explore_event"/>
+
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/activities" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line"/>
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="30dp"/>
+
+        <LinearLayout
+            android:id="@+id/rl_scan"
+            style="@style/option_item_rl" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:background="@drawable/icon_explore_scan"/>
+
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/scan" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line" />
+
+        <LinearLayout
+            android:id="@+id/rl_shake"
+            style="@style/option_item_rl" >
+            
+            <ImageView 
+                style="@style/option_item_img"
+                android:contentDescription="@null"
+                android:background="@drawable/icon_explore_shake"/>
+
+            <TextView
+                style="@style/option_item_text"
+                android:text="@string/shake" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>

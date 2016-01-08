@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_gitosc">\uf1d2</string>
+    <string name="fa_team">\uf05a</string>
+    <string name="fa_github">\uf092</string>
+    <string name="fa_list_alt">\uf022</string>
+    <string name="fa_circle_o">\uf10c</string>
+    <string name="fa_dot_circle_o">\uf192</string>
+    <string name="fa_check_circle_o">\uf05d</string>
+    <string name="fa_lock_use">\uf023</string>
+    <string name="fa_tasks">\uf0ae</string>
+    <string name="fa_inbox">\uf01c</string>
+    <string name="fa_file_text_o">\uf0f6</string>
+    <string name="fa_comments">\uf086</string>
+    <string name="fa_home">\uf015</string>
+    <string name="fa_user">\uf007</string>
+    <string name="fa_users">\uf0c0</string>
+    <string name="fa_clock_o">\uf017</string>
+    <string name="fa_tags">\uf02c</string>
+    <string name="fa_plus">\uf067</string>
+    <string name="fa_calendar">\uf073</string>
+    <string name="fa_link">\uf0c1</string>
+    <string name="fa_paperclip">\uf0c6</string>
+    <string name="fa_trello">\uf181</string>
+    <string name="fa_bookmark">\uf02e</string>
+    <string name="fa_mobile">\uf10b</string>
+    <string name="fa_comment">\uf0e5</string>
+    <string name="fa_thumbs_o_up">\uf087</string>
+    <string name="fa_list">\uf03a</string>
+    <string name="fa_icon_phone">\uf095</string>
+    <string name="fa_trash">\uf014</string>
+    <style name="fa_moon">\uf186</style>
+
+</resources>

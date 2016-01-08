@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/space_15"
+    android:background="@drawable/comment_refer_container_bg" >
+    
+
+    <TextView 
+        android:id="@+id/tv_spot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxEms="15"
+        android:layout_marginBottom="@dimen/space_5"
+        android:textColor="#666"/>
+    
+    <Button 
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:textSize="10sp"
+        android:text="到这去"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_blue_selector"/>
+    
+</LinearLayout>

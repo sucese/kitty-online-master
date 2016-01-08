@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.oschina.app.widget.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/layout_item_bg"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_accept"
+            style="@style/option_item_rl" >
+
+
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/notice_accept"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_accept"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"/>
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_voice"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/notice_voice"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_voice"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"/>
+
+        <RelativeLayout 
+            android:id="@+id/rl_vibration"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/notice_vibration"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_vibration"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"/>
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout 
+            android:id="@+id/rl_app_exit"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/notice_app_exit"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/text_size_16" />
+
+            <net.oschina.app.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_app_exit"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <View
+            style="@style/h_line"/>
+    </LinearLayout>
+
+</net.oschina.app.widget.CustomerScrollView>

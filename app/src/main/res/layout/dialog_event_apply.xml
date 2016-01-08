@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_8" >
+
+    <TextView
+        style="@style/dialog_event_apply_text"
+        android:text="姓名* " />
+
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/dialog_event_apply_edittext" />
+
+    <TextView
+        style="@style/dialog_event_apply_text"
+        android:text="性别* " />
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:drawableRight="@drawable/ic_item_goto_right_tip"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_8"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        style="@style/dialog_event_apply_text"
+        android:text="电话*" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        style="@style/dialog_event_apply_edittext"
+        android:inputType="phone" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/list_divider_color"
+        android:layout_marginTop="@dimen/space_10" />
+
+    <TextView
+        style="@style/dialog_event_apply_text"
+        android:text="单位名称" />
+
+    <EditText
+        android:id="@+id/et_company"
+        style="@style/dialog_event_apply_edittext" />
+
+    <TextView
+        style="@style/dialog_event_apply_text"
+        android:text="职业名称" />
+
+    <EditText
+        android:id="@+id/et_job"
+        style="@style/dialog_event_apply_edittext" />
+
+    <TextView
+        android:id="@+id/tv_remarks_tip"
+        style="@style/dialog_event_apply_text"
+        android:visibility="gone"
+        android:text="备注" />
+
+    <TextView
+        android:id="@+id/tv_remarks_selecte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:drawableRight="@drawable/ic_item_goto_right_tip"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_8"
+        android:visibility="gone"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/text_size_12" />
+</LinearLayout>

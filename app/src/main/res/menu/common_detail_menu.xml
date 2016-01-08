@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/refresh"
+        android:icon="@drawable/action_refresh"
+        app:showAsAction="never"
+        android:title="刷新"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/font_size"
+        android:icon="@drawable/action_refresh"
+        app:showAsAction="never"
+        android:title="正文字号"
+        android:visible="true"/>
+</menu>

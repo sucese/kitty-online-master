@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_openid_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColor="?attr/textColor"
+        android:textSize="17sp"
+        tools:text="你好，火蚁" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="如果已经注册过开源中国账号"
+        android:textColor="?attr/infoTextColor" />
+
+    <Button
+        android:id="@+id/bt_bind"
+        style="@style/button_common_blue"
+        android:layout_marginTop="3dp"
+        android:text="绑定到已有账号" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="如果还没有注册过开源中国账号"
+        android:textColor="?attr/infoTextColor" />
+
+    <Button
+        android:id="@+id/bt_reg"
+        style="@style/button_common_blue"
+        android:layout_marginTop="3dp"
+        android:text="立即开启开源之旅" />
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/rootview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include layout="@layout/fragment_my_information_head" />
+
+            <LinearLayout
+                android:id="@+id/rl_message"
+                style="@style/option_item_rl" >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:background="@drawable/icon_my_message"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/message" />
+
+                <TextView
+                    android:id="@+id/tv_mes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:gravity="right" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line" />
+
+            <LinearLayout
+                android:id="@+id/rl_blog"
+                style="@style/option_item_rl" >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:background="@drawable/icon_my_blog"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/blog" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line" />
+
+            <LinearLayout
+                android:id="@+id/rl_note"
+                style="@style/option_item_rl" >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:background="@drawable/icon_my_note"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/note" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line" />
+
+            <LinearLayout
+                android:id="@+id/rl_team"
+                style="@style/option_item_rl" >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:background="@drawable/icon_my_team"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/team" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line" />
+        </LinearLayout>
+    </ScrollView>
+
+    <net.oschina.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

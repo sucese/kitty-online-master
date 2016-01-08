@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#fff2f2f2" android:layout_width="270dp" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="155dp">
+        <include layout="@layout/date_picker_selected_date" />
+    </LinearLayout>
+    <include layout="@layout/date_picker_view_animator" />
+    <View android:background="#ffcccccc" android:layout_width="270dp" android:layout_height="1.0dip" />
+    <include layout="@layout/date_picker_done_button" />
+</LinearLayout>

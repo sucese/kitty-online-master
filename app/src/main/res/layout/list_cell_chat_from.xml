@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/space_10"
+    android:paddingBottom="@dimen/space_10">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/main_gray"
+        android:layout_marginTop="@dimen/space_3"
+        android:layout_marginBottom="@dimen/space_15"
+        android:textSize="13sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/space_10">
+
+        <net.oschina.app.widget.AvatarView
+            android:id="@+id/iv_avatar"
+            style="@style/user_face_image"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/space_5"
+            android:contentDescription="@null"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|left"
+            android:layout_toRightOf="@+id/iv_avatar"
+            android:paddingRight="@dimen/space_28">
+
+            <LinearLayout
+                android:id="@+id/ly_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="0dp"
+                android:background="@drawable/chat_from_bg_selector" >
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:layout_marginTop="@dimen/space_3"
+                    android:layout_marginBottom="@dimen/space_3"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:layout_marginRight="@dimen/space_3"
+                    android:scaleType="fitCenter"
+                    app:riv_corner_radius="14dp"
+                    app:riv_mutate_background="true"
+                    app:riv_tile_mode="clamp"
+                    app:riv_oval="false"
+                    android:visibility="gone"/>
+
+                <net.oschina.app.widget.TweetTextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_dark"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:padding="0dp"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:layout_marginLeft="@dimen/space_18"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:text="你好你好你好你你好你好你好你你好你好你好你你好你好你好你你好你好你好你"/>
+
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_msg_status_panel"
+                android:layout_width="24dip"
+                android:layout_height="24dip"
+                android:layout_marginLeft="@dimen/space_10"
+                android:visibility="invisible">
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="@style/Widget.ProgressBar"
+                    android:layout_width="24dip"
+                    android:layout_height="24dip"
+                    android:visibility="gone"/>
+
+                <IconTextView
+                    android:id="@+id/itv_error"
+                    style="@style/list_text_info"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:text="{fa-exclamation-circle} "/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

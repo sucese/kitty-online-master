@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/layout_item_bg">
+
+    <ListView
+        android:id="@+id/lv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="?attr/lineColor"
+        android:listSelector="@color/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:dividerHeight="1px"
+        android:scrollbars="none"
+        android:scrollingCache="true" />
+
+    <net.oschina.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <net.oschina.app.widget.IndexView
+        android:id="@+id/indexview"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/select_friend_header_height"
+        android:layout_gravity="right"
+        android:textColor="?attr/textColor"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:id="@+id/float_text"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:typeface="monospace"
+        android:textSize="58dp"
+        android:textColor="@color/white"
+        android:background="@drawable/index_float_text_background"/>
+
+    <FrameLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/layout_item_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/search_result_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textColor"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/select_friends_noresult"
+            android:layout_marginTop="@dimen/select_friend_header_height"/>
+
+        <ListView
+            android:id="@+id/search_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="?attr/lineColor"
+            android:listSelector="@color/transparent"
+            android:cacheColorHint="@color/transparent"
+            android:dividerHeight="1px"
+            android:scrollbars="none"
+            android:scrollingCache="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/select_friend_header_height"
+        android:clickable="true"
+        android:background="?attr/layout_item_bg">
+
+        <LinearLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <HorizontalScrollView
+                android:id="@+id/hs_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:scrollbars="none"
+                android:fadeScrollbars="false"
+                android:overScrollMode="never"
+                android:visibility="gone">
+                <LinearLayout
+                    android:id="@+id/select_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/search_icon"/>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_16"
+                android:singleLine="true"
+                android:cursorVisible="false"
+                android:textColor="?attr/textColor"
+                android:textColorHint="@color/edittext_hint_color"
+                android:background="@color/transparent"
+                android:hint="@string/select_friends_search"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom"
+            android:background="?attr/lineColor"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:background="?attr/lineColor"/>
+    </FrameLayout>
+</FrameLayout>

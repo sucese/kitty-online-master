@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="news_viewpage_arrays">
+        <item>资讯</item>
+        <item>热点</item>
+        <item>博客</item>
+        <item>推荐</item>
+    </string-array>
+    <string-array name="tweets_viewpage_arrays">
+        <item>最新动弹</item>
+        <item>热门动弹</item>
+        <item>我的动弹</item>
+    </string-array>
+    <string-array name="quests_viewpage_arrays">
+        <item>提问</item>
+        <item>分享</item>
+        <item>综合</item>
+        <item>职业</item>
+        <item>站务</item>
+    </string-array>
+    <string-array name="blogs_viewpage_arrays">
+        <item>最新博客</item>
+        <item>推荐阅读</item>
+    </string-array>
+    <string-array name="mymes_viewpage_arrays">
+        <item>\@我</item>
+        <item>评论</item>
+        <item>私信</item>
+        <item>粉丝</item>
+        <item>赞过我</item>
+    </string-array>
+    
+    <string-array name="choose_picture">
+        <item>相册</item>
+        <item>相机</item>
+    </string-array>
+    
+    <string-array name="opensourcesoftware">
+        <item>分类</item>
+        <item>推荐</item>
+        <item>最新</item>
+        <item>热门</item>
+        <item>国产</item>
+    </string-array>
+    
+    <string-array name="userfavorite">
+        <item>软件</item>
+        <item>话题</item>
+        <item>代码</item>
+        <item>博客</item>
+        <item>资讯</item>
+    </string-array>
+    
+    <string-array name="search">
+        <item>软件</item>
+        <item>问答</item>
+        <item>博客</item>
+        <item>资讯</item>
+    </string-array>
+    
+    <string-array name="friends_viewpage_arrays">
+        <item>关注</item>
+        <item>粉丝</item>
+    </string-array>
+    
+    <string-array name="message_list_options">
+        <item>复制</item>
+        <item>删除</item>
+    </string-array>
+    
+    <string-array name="report_reason">
+        <item>广告</item>
+        <item>色情</item>
+        <item>翻墙</item>
+        <item>非IT话题</item>
+    </string-array>
+    
+    <string-array name="gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    
+    <string-array name="events">
+        <item>近期活动</item>
+        <item>我的活动</item>
+    </string-array>
+    
+    <string-array name="avatar_option">
+        <item>更换头像</item>
+        <item>查看大头像</item>
+    </string-array>
+
+    <string-array name="font_size">
+        <item>特大号字</item>
+        <item>大号字</item>
+        <item>中号字</item>
+        <item>小号字</item>
+    </string-array>
+    
+</resources>

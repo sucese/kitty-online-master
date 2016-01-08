@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_item_background_normal"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/team_menu_item_main"
+        android:layout_marginTop="50dp"
+        style="@style/TeamMenuItemLayoutStyle">
+        <ImageView
+            style="@style/TeamMenuItemImageViewStyle"
+            android:contentDescription="@null"
+            android:background="@drawable/widget_bar_news_nor" />
+
+        <TextView
+            style="@style/TeamMenuItemTextViewStyle"
+            android:text="首页" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/team_menu_item_issue"
+        style="@style/TeamMenuItemLayoutStyle">
+        
+        <ImageView
+            style="@style/TeamMenuItemImageViewStyle"
+            android:contentDescription="@null"
+            android:background="@drawable/widget_bar_news_nor" />
+
+        <TextView
+            style="@style/TeamMenuItemTextViewStyle"
+            android:text="任务" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/team_menu_item_discuss"
+        style="@style/TeamMenuItemLayoutStyle">
+        <ImageView
+            style="@style/TeamMenuItemImageViewStyle"
+            android:contentDescription="@null"
+            android:background="@drawable/widget_bar_news_nor" />
+
+        <TextView
+            style="@style/TeamMenuItemTextViewStyle"
+            android:text="讨论" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/team_menu_item_diary"
+        style="@style/TeamMenuItemLayoutStyle">
+        <ImageView
+            style="@style/TeamMenuItemImageViewStyle"
+            android:contentDescription="@null"
+            android:background="@drawable/widget_bar_news_nor" />
+
+        <TextView
+            style="@style/TeamMenuItemTextViewStyle"
+            android:text="周报" />
+    </LinearLayout>
+    
+
+</LinearLayout>
