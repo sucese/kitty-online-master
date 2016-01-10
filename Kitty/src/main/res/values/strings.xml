@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">爱尚佳品</string>
+
+    <string name="main_tab_name_news">主页</string>
+    <string name="main_tab_name_tweet">分类</string>
+    <string name="main_tab_name_quick">快速</string>
+    <string name="main_tab_name_question">问答</string>
+    <string name="main_tab_name_my">我的</string>
+    <string name="main_tab_name_explore">发现</string>
+
+    <string name="app_error">应用程序错误</string>
+    <string name="app_error_message">很抱歉，小屁孩耍脾气啦。<br />我们会帮你教训一下这个小屁孩！</string>
+    <string name="submit_report">打报告去</string>
+
+    <!-- slide menu -->
+    <string name="menu_rss">订阅</string>
+    <string name="menu_opensoft">开源软件</string>
+    <string name="menu_blog">博客区</string>
+    <string name="menu_quests">技术问答</string>
+    <string name="menu_setting">设置</string>
+    <string name="menu_theme">夜间</string>
+
+    <!-- qucik option -->
+    <string name="quick_option_text">文字</string>
+    <string name="quick_option_album">相册</string>
+    <string name="quick_option_photo">拍照</string>
+    <string name="quick_option_voice">语音</string>
+    <string name="quick_option_note">便签</string>
+    <string name="quick_option_scan">扫一扫</string>
+    <string name="quick_option_find">找人</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="loading">加载中…</string>
+    <string name="loading_no_more">已加载全部</string>
+
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
+
+    <string name="unlogin">未登录，请先登录</string>
+    <string name="unlogin_tip">您还未登录\r\n或网络延迟</string>
+    <string name="my_information_unlogin_tips">未登录</string>
+
+    <string name="hint_username">输入账号/邮箱</string>
+    <string name="hint_password">密码</string>
+    <string name="login">登录</string>
+    <string name="tip_please_input_username">请输入用户名</string>
+    <string name="tip_illegal_email">请输入正确的email地址</string>
+    <string name="tip_please_input_password">请输入密码</string>
+    <string name="progress_login">正在登录…</string>
+    <string name="tip_login_error_for_network">对不起,无法登录</string>
+    <string name="tip_no_internet">当前没有可用的网络链接</string>
+
+    <string name="actionbar_title_news">资讯详情</string>
+    <string name="actionbar_title_blog">博客详情</string>
+    <string name="actionbar_title_software">软件详情</string>
+    <string name="actionbar_title_question">帖子详情</string>
+    <string name="actionbar_title_tweet">动弹详情</string>
+    <string name="actionbar_title_event_detail">活动详情</string>
+    <string name="actionbar_title_event_location">活动地址</string>
+    <string name="actionbar_title_detail">详情</string>
+    <string name="actionbar_title_active">好友圈</string>
+    <string name="actionbar_title_mes">消息中心</string>
+    <string name="actionbar_title_message_detail">对话</string>
+
+    <string name="friend_home">查看对方资料</string>
+    <string name="share_to">分享到</string>
+    <string name="platform_qq">QQ</string>
+    <string name="platform_copy_link">复制链接</string>
+    <string name="platform_more_option">更多</string>
+    <string name="platform_sina">微博</string>
+    <string name="platform_weichat">微信</string>
+    <string name="platform_weichat_circle">朋友圈</string>
+    <string name="share_title">开源中国分享</string>
+    <string name="share_title_news">开源中国资讯分享</string>
+    <string name="share_title_blog">开源中国博客分享</string>
+    <string name="share_title_soft">开源中国软件分享</string>
+    <string name="share_title_post">开源中国帖子分享</string>
+    <string name="tip_start_share">开始分享…</string>
+    <string name="tip_share_done">分享完成</string>
+
+    <string name="detail_menu_unfavorite">取消收藏</string>
+    <string name="detail_menu_favorite">收藏</string>
+    <string name="detail_menu_for_share">分享</string>
+    <string name="detail_menu_for_report">举报</string>
+
+    <string name="add_favorite_success">收藏成功</string>
+    <string name="add_favorite_faile">收藏失败</string>
+    <string name="del_favorite_success">已取消收藏</string>
+    <string name="del_favorite_faile">取消收藏失败</string>
+
+    <string name="actionbar_title_question_tag">%s相关</string>
+    <string name="comment_count">评论(%s)</string>
+    <string name="comment_empty">暂无评论</string>
+    <string name="answer_count">回复(%s)</string>
+    <string name="post_answer">回复</string>
+    <string name="comment_reply_count">---共有%s条回复---</string>
+    <string name="comment_refer_author">引用来自%s的评论</string>
+    <string name="tip_comment_content_empty">评论内容不能为空</string>
+
+    <!-- notification messages -->
+    <string name="comment_blog">发布评论</string>
+    <string name="comment_publishing">正在发布你的评论…</string>
+    <string name="comment_publish_success">评论成功</string>
+    <string name="comment_publish_faile">评论失败</string>
+
+    <string name="progress_submit">正在提交…</string>
+
+    <string name="tweet_public">发布动弹</string>
+    <string name="tweet_hint">今天你动弹了吗？</string>
+    <string name="tweet_publishing">正在发布你的动弹…</string>
+    <string name="tweet_publish_success">动弹发布成功</string>
+    <string name="tweet_publish_faile">发布动弹失败</string>
+    <string name="tweet_play_faile">动弹播放失败</string>
+    <string name="tweet_audio_faile">语音动弹发布失败</string>
+    <string name="cancle_record">取消录音</string>
+    <string name="record_sound_notfound">找不到录音</string>
+    <string name="record_sound_short">时间太短了</string>
+
+    <string name="ok">确定</string>
+    <string name="cancle">取消</string>
+    <string name="clean_cache_mes">是否清空缓存?</string>
+    <string name="draft_tweet_message">是否保存为草稿?</string>
+    <string name="clearwords">是否清空内容?</string>
+    <string name="choose_picture">选择图片</string>
+    <string name="tip_content_empty">内容不能为空</string>
+    <string name="tip_content_too_long">内容太长</string>
+
+    <string name="actionbar_title_softwarelist">开源软件</string>
+    <string name="actionbar_title_comment">评论列表</string>
+    <string name="actionbar_title_questions">技术问答</string>
+    <string name="actionbar_title_tweetpub">弹一弹</string>
+    <string name="actionbar_title_softtweet">软件动弹列表</string>
+    <string name="actionbar_title_user_center">用户中心</string>
+    <string name="actionbar_title_user_blog">用户博客列表</string>
+    <string name="actionbar_title_user_favorite">用户收藏</string>
+    <string name="actionbar_title_my_information">我的资料</string>
+    <string name="actionbar_title_my_friends">关注/粉丝</string>
+    <string name="actionbar_title_setting">设置</string>
+    <string name="actionbar_title_setting_notification">新消息提醒</string>
+    <string name="actionbar_title_about_osc">关于开源中国</string>
+    <string name="actionbar_title_note">便签</string>
+    <string name="actionbar_title_noteedit">编辑便签</string>
+    <string name="actionbar_title_shake">摇一摇</string>
+    <string name="actionbar_title_search">搜索</string>
+    <!-- 找人不显示标题 -->
+    <string name="actionbar_title_find_user"></string>
+    <string name="actionbar_title_event">活动</string>
+    <string name="actionbar_title_event_apply">活动出席人员</string>
+    <string name="actionbar_title_same_city">同城</string>
+
+    <!-- 博客区 -->
+    <string name="actionbar_title_blog_area">博客区</string>
+
+    <string name="private_message">私信</string>
+    <string name="follow_user">关注</string>
+    <string name="unfollow_user">取消关注</string>
+    <string name="follow_each_other">取消互粉</string>
+    <string name="latest_login_time">最近登录  %s</string>
+
+    <string name="actionbar_title_profile">个人中心</string>
+    <string name="favorite">收藏</string>
+    <string name="following">关注</string>
+    <string name="follower">粉丝</string>
+    <string name="join_time">加入时间:</string>
+    <string name="location">所在地区:</string>
+    <string name="development_platform">开发平台:</string>
+    <string name="academic_focus">专长领域:</string>
+
+    <string name="from_web">网页</string>
+    <string name="from_mobile">手机</string>
+    <string name="from_android">Android</string>
+    <string name="from_iphone">iPhone</string>
+    <string name="from_windows_phone">Windows Phone</string>
+    <string name="from_wechat">微信</string>
+
+    <string name="qr_scan_tips">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="actionbar_title_qr_scan">二维码/条码</string>
+
+    <string name="send_message_to">发送私信给:</string>
+    <string name="hint_user_name">对方昵称</string>
+    <string name="hint_message">私信内容</string>
+    <string name="tip_message_public_success">发送成功</string>
+    <string name="tip_message_public_faile">发送失败</string>
+    <string name="send_to">发给</string>
+    <string name="message_count">%s条私信</string>
+
+    <string name="confirm_delete_message">确定要删除和\"%s\"的所有私信吗?</string>
+    <string name="confirm_delete_one_message">确定要删除这条私信吗?</string>
+    <string name="tip_delete_success">删除成功</string>
+    <string name="tip_delete_faile">无法删除</string>
+
+    <string name="copy">复制</string>
+    <string name="delete">删除</string>
+    <string name="copy_success">复制成功</string>
+    <string name="deleting">正在删除…</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_faile">删除失败</string>
+
+    <string name="message_delete_tweet">是否删除该动弹?</string>
+
+    <!-- software detail -->
+    <string name="software_author">软件作者 :</string>
+    <string name="software_license">开源协议 :</string>
+    <string name="software_language">开发语言 :</string>
+    <string name="software_os">操作系统 :</string>
+    <string name="software_recordtime">收录时间 :</string>
+    <string name="software_index">软件首页</string>
+    <string name="software_download">软件下载</string>
+    <string name="software_document">软件文档</string>
+
+    <string name="you_have_news_messages">你有%s条最新消息</string>
+    <string name="atme_count">\@我(%s) </string>
+    <string name="msg_count">私信(%s) </string>
+    <string name="review_count">评论(%s) </string>
+    <string name="fans_count">新粉丝(%s) </string>
+    <string name="like_count">收到赞(%s) </string>
+
+    <string name="blog">博客</string>
+    <string name="information">资料</string>
+    <string name="qrcode">二维码</string>
+    <string name="message">消息</string>
+    <string name="team">团队</string>
+    <string name="note">便签</string>
+    <string name="bookmarks">收藏夹</string>
+    <string name="user_score">积分</string>
+
+    <string name="active">好友圈</string>
+    <string name="activities">活动</string>
+    <string name="scan">扫一扫</string>
+    <string name="friends">同城</string>
+    <string name="find_oscer">找人</string>
+    <string name="shake">摇一摇</string>
+
+    <string name="add_notebook">新建便签</string>
+    <string name="submit_notebook">保存便签</string>
+
+    <string name="loading_img">加载图片</string>
+    <string name="mes_notice">消息通知</string>
+    <string name="clean_cache">清理缓存</string>
+    <string name="double_click_exit">双击退出</string>
+    <string name="loading_more">自动加载\"更多\"</string>
+    <string name="update">检查新版本</string>
+    <string name="about">关于开源中国</string>
+    <string name="feedback">意见反馈</string>
+    <string name="exit">退出</string>
+    <string name="grade">去评分</string>
+
+    <string name="notice_accept">接收新通知</string>
+    <string name="notice_voice">声音</string>
+    <string name="notice_vibration">震动</string>
+    <string name="notice_app_exit">退出后不提醒</string>
+
+    <string name="tip_logout_success">注销成功</string>
+
+    <string name="oscsite">官网</string>
+    <string name="knowmore">了解更多</string>
+    <string name="gitapp">Git客户端</string>
+    <string name="copyright">Copyright © OSChina All rights reserved.</string>
+
+    <string name="tip_save_image_suc">图片已保存(手机相册-> osc_img)</string>
+    <string name="tip_save_image_faile">无法保存图片</string>
+    <string name="tip_load_image_faile">加载图片失败</string>
+
+    <string name="down_state">正在下载：%s</string>
+
+    <string name="qr_code_tip">扫一扫上面的二维码，加我为好友</string>
+    <string name="qr_code_tip2">(长按保存到本地)</string>
+
+    <string name="event_start_time">开始：%s</string>
+    <string name="event_end_time">结束：%s</string>
+
+    <string name="report">举报</string>
+    <string name="report_link">链接地址</string>
+    <string name="report_reson">举报原因</string>
+    <string name="hint_report_desc">其他原因</string>
+    <string name="tip_report_success">举报成功</string>
+    <string name="tip_report_faile">举报失败</string>
+
+    <string name="tip_double_click_exit">再次点击退出爱尚佳品</string>
+
+
+    <string name="team_dynamic">团队动态</string>
+    <string name="actionbar_dynamic_detail">动态内容</string>
+
+    <!-- 反馈 -->
+    <string name="str_feedback_submit">提交</string>
+    <string name="str_feedback_et_hint">我们将为您不断改进</string>
+    <string name="str_feedback_contact">您的手机号或邮箱：（选填）</string>
+    <string name="str_feedback_contact_hint">方便我们给您答复</string>
+    <string name="str_feedback_succeed">谢谢您的反馈，我们会仔细阅读并及时处理</string>
+    <string name="str_feedback_tip">我们会仔细阅读您的反馈，并尽早给您回复。感谢您的理解与支持。</string>
+    <string name="str_feedback_title">用户反馈</string>
+
+    <string name="str_team_userinfo">用户主页</string>
+    <string name="str_team_select_team">选择团队</string>
+
+    <string name="str_team_my_issue">我的任务</string>
+
+    <!-- 选择好友 -->
+    <string name="actionbar_title_select_friends">选择&#064;好友</string>
+    <string name="select_friends_search">搜索</string>
+    <string name="select_friends_noresult">无结果</string>
+    <string name="select_friends_empty">暂无好友</string>
+    <string name="select_friends_max_tips">最多只能选%1$d个好友哦</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

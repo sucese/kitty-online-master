@@ -208,12 +208,12 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/messenger_button_blue_bg_round.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_sidebar_normal.xml",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_sidebar_normal.xml"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_title_tab_left_normal.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_title_tab_left_normal.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_sidebar_normal.xml",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_sidebar_normal.xml"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/messenger_button_blue_bg_selector.xml",

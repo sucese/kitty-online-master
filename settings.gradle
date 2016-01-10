@@ -1,1 +1,1 @@
-include ':SpecialityCore', ':social_sdk_library_project', ':app'
+include ':SpecialityCore', ':social_sdk_library_project', ':Kitty'
