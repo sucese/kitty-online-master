@@ -1,7 +1,23 @@
 [
     {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_post_share.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_post_share.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_full_alert_dialog.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_full_alert_dialog.xml"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_oauth_dialog.xml",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_ucenter.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_ucenter.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_oauth_dialog.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_oauth_dialog.xml"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_post_share.xml",
@@ -22,5 +38,13 @@
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_full_alert_dialog.xml",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_full_alert_dialog.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_post_comment.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_post_comment.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/layout-sw550dp-large-v13/umeng_socialize_titile_bar.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/layout-sw550dp-large-v13/umeng_socialize_titile_bar.xml"
     }
 ]

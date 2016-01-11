@@ -2,5 +2,9 @@
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/raw/shake_sound.mp3",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/raw/shake_sound.mp3"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/raw/shake_sound.mp3",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/raw/shake_sound.mp3"
     }
 ]

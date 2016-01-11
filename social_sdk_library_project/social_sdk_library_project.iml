@@ -92,11 +92,11 @@
     <orderEntry type="library" exported="" name="umeng_social_sdk" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_scrshot" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_actionbarview" level="project" />
-    <orderEntry type="library" exported="" name="SocialSDK_QQZone_1" level="project" />
-    <orderEntry type="library" exported="" name="SocialSDK_tumblr" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_WeiXin_1" level="project" />
-    <orderEntry type="library" exported="" name="SocialSDK_WeiXin_2" level="project" />
+    <orderEntry type="library" exported="" name="SocialSDK_tumblr" level="project" />
+    <orderEntry type="library" exported="" name="SocialSDK_QQZone_1" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_QQZone_2" level="project" />
+    <orderEntry type="library" exported="" name="SocialSDK_WeiXin_2" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_QQZone_3" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.4" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_tencentWB_1" level="project" />

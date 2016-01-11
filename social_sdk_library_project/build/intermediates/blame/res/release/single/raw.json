@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/raw/shake_sound.mp3",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/raw/shake_sound.mp3"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/raw/shake_sound.mp3",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/raw/shake_sound.mp3"
     }

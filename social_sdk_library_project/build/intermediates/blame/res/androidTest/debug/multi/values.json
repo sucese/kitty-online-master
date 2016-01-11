@@ -3902,5 +3902,3909 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 51,
+                    "endOffset": 102
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 51,
+                        "endOffset": 102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 107,
+                    "endColumn": 70,
+                    "endOffset": 173
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 107,
+                        "endColumn": 70,
+                        "endOffset": 173
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 178,
+                    "endColumn": 79,
+                    "endOffset": 253
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 178,
+                        "endColumn": 79,
+                        "endOffset": 253
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 258,
+                    "endColumn": 78,
+                    "endOffset": 332
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 258,
+                        "endColumn": 78,
+                        "endOffset": 332
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 337,
+                    "endColumn": 84,
+                    "endOffset": 417
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 337,
+                        "endColumn": 84,
+                        "endOffset": 417
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 422,
+                    "endColumn": 83,
+                    "endOffset": 501
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 422,
+                        "endColumn": 83,
+                        "endOffset": 501
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 506,
+                    "endColumn": 91,
+                    "endOffset": 593
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 506,
+                        "endColumn": 91,
+                        "endOffset": 593
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 598,
+                    "endColumn": 75,
+                    "endOffset": 669
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 598,
+                        "endColumn": 75,
+                        "endOffset": 669
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 674,
+                    "endColumn": 83,
+                    "endOffset": 753
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 674,
+                        "endColumn": 83,
+                        "endOffset": 753
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 758,
+                    "endColumn": 76,
+                    "endOffset": 830
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 758,
+                        "endColumn": 76,
+                        "endOffset": 830
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 835,
+                    "endColumn": 74,
+                    "endOffset": 905
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 835,
+                        "endColumn": 74,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 910,
+                    "endColumn": 66,
+                    "endOffset": 972
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 66,
+                        "endOffset": 972
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 977,
+                    "endColumn": 70,
+                    "endOffset": 1043
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 977,
+                        "endColumn": 70,
+                        "endOffset": 1043
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1048,
+                    "endColumn": 61,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1048,
+                        "endColumn": 61,
+                        "endOffset": 1105
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 61,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1110,
+                        "endColumn": 61,
+                        "endOffset": 1167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1172,
+                    "endColumn": 57,
+                    "endOffset": 1225
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1172,
+                        "endColumn": 57,
+                        "endOffset": 1225
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1230,
+                    "endColumn": 57,
+                    "endOffset": 1283
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1230,
+                        "endColumn": 57,
+                        "endOffset": 1283
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1288,
+                    "endColumn": 67,
+                    "endOffset": 1351
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1288,
+                        "endColumn": 67,
+                        "endOffset": 1351
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1356,
+                    "endColumn": 67,
+                    "endOffset": 1419
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1356,
+                        "endColumn": 67,
+                        "endOffset": 1419
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1424,
+                    "endColumn": 69,
+                    "endOffset": 1489
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1424,
+                        "endColumn": 69,
+                        "endOffset": 1489
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1494,
+                    "endColumn": 67,
+                    "endOffset": 1557
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1494,
+                        "endColumn": 67,
+                        "endOffset": 1557
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1562,
+                    "endColumn": 68,
+                    "endOffset": 1626
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1562,
+                        "endColumn": 68,
+                        "endOffset": 1626
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1631,
+                    "endColumn": 59,
+                    "endOffset": 1686
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1631,
+                        "endColumn": 59,
+                        "endOffset": 1686
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1691,
+                    "endColumn": 60,
+                    "endOffset": 1747
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1691,
+                        "endColumn": 60,
+                        "endOffset": 1747
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1752,
+                    "endColumn": 62,
+                    "endOffset": 1810
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1752,
+                        "endColumn": 62,
+                        "endOffset": 1810
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1815,
+                    "endColumn": 60,
+                    "endOffset": 1871
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1815,
+                        "endColumn": 60,
+                        "endOffset": 1871
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 3310,
+                    "endColumn": 45,
+                    "endOffset": 3351
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 3310,
+                        "endColumn": 45,
+                        "endOffset": 3351
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 3356,
+                    "endColumn": 73,
+                    "endOffset": 3425
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 3356,
+                        "endColumn": 73,
+                        "endOffset": 3425
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 3430,
+                    "endColumn": 72,
+                    "endOffset": 3498
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 3430,
+                        "endColumn": 72,
+                        "endOffset": 3498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 3503,
+                    "endColumn": 72,
+                    "endOffset": 3571
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 3503,
+                        "endColumn": 72,
+                        "endOffset": 3571
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 3576,
+                    "endColumn": 71,
+                    "endOffset": 3643
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 3576,
+                        "endColumn": 71,
+                        "endOffset": 3643
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 3648,
+                    "endColumn": 72,
+                    "endOffset": 3716
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 4,
+                        "startOffset": 3648,
+                        "endColumn": 72,
+                        "endOffset": 3716
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 3721,
+                    "endColumn": 72,
+                    "endOffset": 3789
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 37,
+                        "startColumn": 4,
+                        "startOffset": 3721,
+                        "endColumn": 72,
+                        "endOffset": 3789
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 3794,
+                    "endColumn": 64,
+                    "endOffset": 3854
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 3794,
+                        "endColumn": 64,
+                        "endOffset": 3854
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 3859,
+                    "endColumn": 68,
+                    "endOffset": 3923
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 3859,
+                        "endColumn": 68,
+                        "endOffset": 3923
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 3928,
+                    "endColumn": 64,
+                    "endOffset": 3988
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 3928,
+                        "endColumn": 64,
+                        "endOffset": 3988
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 3993,
+                    "endColumn": 81,
+                    "endOffset": 4070
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 4,
+                        "startOffset": 3993,
+                        "endColumn": 81,
+                        "endOffset": 4070
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 4075,
+                    "endColumn": 82,
+                    "endOffset": 4153
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 4075,
+                        "endColumn": 82,
+                        "endOffset": 4153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 4158,
+                    "endColumn": 80,
+                    "endOffset": 4234
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 4158,
+                        "endColumn": 80,
+                        "endOffset": 4234
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 4239,
+                    "endColumn": 82,
+                    "endOffset": 4317
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 4239,
+                        "endColumn": 82,
+                        "endOffset": 4317
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 4322,
+                    "endColumn": 71,
+                    "endOffset": 4389
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 4322,
+                        "endColumn": 71,
+                        "endOffset": 4389
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 4394,
+                    "endColumn": 69,
+                    "endOffset": 4459
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 4394,
+                        "endColumn": 69,
+                        "endOffset": 4459
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 4464,
+                    "endColumn": 70,
+                    "endOffset": 4530
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 4464,
+                        "endColumn": 70,
+                        "endOffset": 4530
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 4535,
+                    "endColumn": 68,
+                    "endOffset": 4599
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 4535,
+                        "endColumn": 68,
+                        "endOffset": 4599
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 4604,
+                    "endColumn": 68,
+                    "endOffset": 4668
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 4604,
+                        "endColumn": 68,
+                        "endOffset": 4668
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 4673,
+                    "endColumn": 70,
+                    "endOffset": 4739
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 4673,
+                        "endColumn": 70,
+                        "endOffset": 4739
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 4744,
+                    "endColumn": 66,
+                    "endOffset": 4806
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 4744,
+                        "endColumn": 66,
+                        "endOffset": 4806
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 4811,
+                    "endColumn": 65,
+                    "endOffset": 4872
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 4811,
+                        "endColumn": 65,
+                        "endOffset": 4872
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 4877,
+                    "endColumn": 73,
+                    "endOffset": 4946
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 4877,
+                        "endColumn": 73,
+                        "endOffset": 4946
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 4951,
+                    "endColumn": 114,
+                    "endOffset": 5061
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 4951,
+                        "endColumn": 114,
+                        "endOffset": 5061
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 5066,
+                    "endColumn": 117,
+                    "endOffset": 5179
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 5066,
+                        "endColumn": 117,
+                        "endOffset": 5179
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 5184,
+                    "endColumn": 94,
+                    "endOffset": 5274
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 5184,
+                        "endColumn": 94,
+                        "endOffset": 5274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 5279,
+                    "endColumn": 64,
+                    "endOffset": 5339
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 57,
+                        "startColumn": 4,
+                        "startOffset": 5279,
+                        "endColumn": 64,
+                        "endOffset": 5339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 5344,
+                    "endColumn": 67,
+                    "endOffset": 5407
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 4,
+                        "startOffset": 5344,
+                        "endColumn": 67,
+                        "endOffset": 5407
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 5412,
+                    "endColumn": 59,
+                    "endOffset": 5467
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 5412,
+                        "endColumn": 59,
+                        "endOffset": 5467
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 60,
+                    "startColumn": 4,
+                    "startOffset": 5472,
+                    "endColumn": 71,
+                    "endOffset": 5539
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 5472,
+                        "endColumn": 71,
+                        "endOffset": 5539
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 5544,
+                    "endColumn": 71,
+                    "endOffset": 5611
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 61,
+                        "startColumn": 4,
+                        "startOffset": 5544,
+                        "endColumn": 71,
+                        "endOffset": 5611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 5616,
+                    "endColumn": 90,
+                    "endOffset": 5702
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 5616,
+                        "endColumn": 90,
+                        "endOffset": 5702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 5707,
+                    "endColumn": 73,
+                    "endOffset": 5776
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 63,
+                        "startColumn": 4,
+                        "startOffset": 5707,
+                        "endColumn": 73,
+                        "endOffset": 5776
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 5781,
+                    "endColumn": 73,
+                    "endOffset": 5850
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 5781,
+                        "endColumn": 73,
+                        "endOffset": 5850
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 5855,
+                    "endColumn": 82,
+                    "endOffset": 5933
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 65,
+                        "startColumn": 4,
+                        "startOffset": 5855,
+                        "endColumn": 82,
+                        "endOffset": 5933
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 5938,
+                    "endColumn": 100,
+                    "endOffset": 6034
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 5938,
+                        "endColumn": 100,
+                        "endOffset": 6034
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 6039,
+                    "endColumn": 173,
+                    "endOffset": 6208
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 6039,
+                        "endColumn": 173,
+                        "endOffset": 6208
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 68,
+                    "startColumn": 4,
+                    "startOffset": 6213,
+                    "endColumn": 165,
+                    "endOffset": 6374
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 6213,
+                        "endColumn": 165,
+                        "endOffset": 6374
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 69,
+                    "startColumn": 4,
+                    "startOffset": 6379,
+                    "endColumn": 130,
+                    "endOffset": 6505
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 6379,
+                        "endColumn": 130,
+                        "endOffset": 6505
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 6510,
+                    "endColumn": 62,
+                    "endOffset": 6568
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 6510,
+                        "endColumn": 62,
+                        "endOffset": 6568
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 6573,
+                    "endColumn": 64,
+                    "endOffset": 6633
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 4,
+                        "startOffset": 6573,
+                        "endColumn": 64,
+                        "endOffset": 6633
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 6638,
+                    "endColumn": 128,
+                    "endOffset": 6762
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 72,
+                        "startColumn": 4,
+                        "startOffset": 6638,
+                        "endColumn": 128,
+                        "endOffset": 6762
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 73,
+                    "startColumn": 4,
+                    "startOffset": 6767,
+                    "endColumn": 56,
+                    "endOffset": 6819
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 4,
+                        "startOffset": 6767,
+                        "endColumn": 56,
+                        "endOffset": 6819
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 6824,
+                    "endColumn": 57,
+                    "endOffset": 6877
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 6824,
+                        "endColumn": 57,
+                        "endOffset": 6877
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 75,
+                    "startColumn": 4,
+                    "startOffset": 6882,
+                    "endColumn": 53,
+                    "endOffset": 6931
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 75,
+                        "startColumn": 4,
+                        "startOffset": 6882,
+                        "endColumn": 53,
+                        "endOffset": 6931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 6936,
+                    "endColumn": 50,
+                    "endOffset": 6982
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 76,
+                        "startColumn": 4,
+                        "startOffset": 6936,
+                        "endColumn": 50,
+                        "endOffset": 6982
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 6987,
+                    "endColumn": 62,
+                    "endOffset": 7045
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 6987,
+                        "endColumn": 62,
+                        "endOffset": 7045
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 7050,
+                    "endColumn": 60,
+                    "endOffset": 7106
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 78,
+                        "startColumn": 4,
+                        "startOffset": 7050,
+                        "endColumn": 60,
+                        "endOffset": 7106
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 7111,
+                    "endColumn": 52,
+                    "endOffset": 7159
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 7111,
+                        "endColumn": 52,
+                        "endOffset": 7159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 7164,
+                    "endColumn": 53,
+                    "endOffset": 7213
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 80,
+                        "startColumn": 4,
+                        "startOffset": 7164,
+                        "endColumn": 53,
+                        "endOffset": 7213
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 81,
+                    "startColumn": 4,
+                    "startOffset": 7218,
+                    "endColumn": 53,
+                    "endOffset": 7267
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 81,
+                        "startColumn": 4,
+                        "startOffset": 7218,
+                        "endColumn": 53,
+                        "endOffset": 7267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 7272,
+                    "endColumn": 53,
+                    "endOffset": 7321
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 7272,
+                        "endColumn": 53,
+                        "endOffset": 7321
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 83,
+                    "startColumn": 4,
+                    "startOffset": 7326,
+                    "endColumn": 51,
+                    "endOffset": 7373
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 7326,
+                        "endColumn": 51,
+                        "endOffset": 7373
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 7378,
+                    "endColumn": 46,
+                    "endOffset": 7420
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 7378,
+                        "endColumn": 46,
+                        "endOffset": 7420
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 85,
+                    "startColumn": 4,
+                    "startOffset": 7425,
+                    "endColumn": 59,
+                    "endOffset": 7480
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 85,
+                        "startColumn": 4,
+                        "startOffset": 7425,
+                        "endColumn": 59,
+                        "endOffset": 7480
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 86,
+                    "startColumn": 4,
+                    "startOffset": 7485,
+                    "endColumn": 61,
+                    "endOffset": 7542
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 7485,
+                        "endColumn": 61,
+                        "endOffset": 7542
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 87,
+                    "startColumn": 4,
+                    "startOffset": 7547,
+                    "endColumn": 54,
+                    "endOffset": 7597
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 87,
+                        "startColumn": 4,
+                        "startOffset": 7547,
+                        "endColumn": 54,
+                        "endOffset": 7597
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 7602,
+                    "endColumn": 59,
+                    "endOffset": 7657
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 88,
+                        "startColumn": 4,
+                        "startOffset": 7602,
+                        "endColumn": 59,
+                        "endOffset": 7657
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 89,
+                    "startColumn": 4,
+                    "startOffset": 7662,
+                    "endColumn": 58,
+                    "endOffset": 7716
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 89,
+                        "startColumn": 4,
+                        "startOffset": 7662,
+                        "endColumn": 58,
+                        "endOffset": 7716
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 90,
+                    "startColumn": 4,
+                    "startOffset": 7721,
+                    "endColumn": 57,
+                    "endOffset": 7774
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 90,
+                        "startColumn": 4,
+                        "startOffset": 7721,
+                        "endColumn": 57,
+                        "endOffset": 7774
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 91,
+                    "startColumn": 4,
+                    "startOffset": 7779,
+                    "endColumn": 50,
+                    "endOffset": 7825
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 91,
+                        "startColumn": 4,
+                        "startOffset": 7779,
+                        "endColumn": 50,
+                        "endOffset": 7825
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 92,
+                    "startColumn": 4,
+                    "startOffset": 7830,
+                    "endColumn": 84,
+                    "endOffset": 7910
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 7830,
+                        "endColumn": 84,
+                        "endOffset": 7910
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 93,
+                    "startColumn": 4,
+                    "startOffset": 7915,
+                    "endColumn": 86,
+                    "endOffset": 7997
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 93,
+                        "startColumn": 4,
+                        "startOffset": 7915,
+                        "endColumn": 86,
+                        "endOffset": 7997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 94,
+                    "startColumn": 4,
+                    "startOffset": 8002,
+                    "endColumn": 85,
+                    "endOffset": 8083
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 94,
+                        "startColumn": 4,
+                        "startOffset": 8002,
+                        "endColumn": 85,
+                        "endOffset": 8083
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "startOffset": 8088,
+                    "endColumn": 79,
+                    "endOffset": 8163
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 8088,
+                        "endColumn": 79,
+                        "endOffset": 8163
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 96,
+                    "startColumn": 4,
+                    "startOffset": 8168,
+                    "endColumn": 62,
+                    "endOffset": 8226
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 96,
+                        "startColumn": 4,
+                        "startOffset": 8168,
+                        "endColumn": 62,
+                        "endOffset": 8226
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 97,
+                    "startColumn": 4,
+                    "startOffset": 8231,
+                    "endColumn": 57,
+                    "endOffset": 8284
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 97,
+                        "startColumn": 4,
+                        "startOffset": 8231,
+                        "endColumn": 57,
+                        "endOffset": 8284
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 8289,
+                    "endColumn": 53,
+                    "endOffset": 8338
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 98,
+                        "startColumn": 4,
+                        "startOffset": 8289,
+                        "endColumn": 53,
+                        "endOffset": 8338
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 99,
+                    "startColumn": 4,
+                    "startOffset": 8343,
+                    "endColumn": 50,
+                    "endOffset": 8389
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 99,
+                        "startColumn": 4,
+                        "startOffset": 8343,
+                        "endColumn": 50,
+                        "endOffset": 8389
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 100,
+                    "startColumn": 4,
+                    "startOffset": 8394,
+                    "endColumn": 60,
+                    "endOffset": 8450
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 100,
+                        "startColumn": 4,
+                        "startOffset": 8394,
+                        "endColumn": 60,
+                        "endOffset": 8450
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 101,
+                    "startColumn": 4,
+                    "startOffset": 8455,
+                    "endColumn": 72,
+                    "endOffset": 8523
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 101,
+                        "startColumn": 4,
+                        "startOffset": 8455,
+                        "endColumn": 72,
+                        "endOffset": 8523
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "startOffset": 8528,
+                    "endColumn": 61,
+                    "endOffset": 8585
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 102,
+                        "startColumn": 4,
+                        "startOffset": 8528,
+                        "endColumn": 61,
+                        "endOffset": 8585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 103,
+                    "startColumn": 4,
+                    "startOffset": 8590,
+                    "endColumn": 75,
+                    "endOffset": 8661
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 103,
+                        "startColumn": 4,
+                        "startOffset": 8590,
+                        "endColumn": 75,
+                        "endOffset": 8661
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 104,
+                    "startColumn": 4,
+                    "startOffset": 8666,
+                    "endColumn": 84,
+                    "endOffset": 8746
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 104,
+                        "startColumn": 4,
+                        "startOffset": 8666,
+                        "endColumn": 84,
+                        "endOffset": 8746
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 105,
+                    "startColumn": 4,
+                    "startOffset": 8751,
+                    "endColumn": 61,
+                    "endOffset": 8808
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 105,
+                        "startColumn": 4,
+                        "startOffset": 8751,
+                        "endColumn": 61,
+                        "endOffset": 8808
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 106,
+                    "startColumn": 4,
+                    "startOffset": 8813,
+                    "endColumn": 78,
+                    "endOffset": 8887
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 8813,
+                        "endColumn": 78,
+                        "endOffset": 8887
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 107,
+                    "startColumn": 4,
+                    "startOffset": 8892,
+                    "endColumn": 44,
+                    "endOffset": 8932
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 107,
+                        "startColumn": 4,
+                        "startOffset": 8892,
+                        "endColumn": 44,
+                        "endOffset": 8932
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 108,
+                    "startColumn": 4,
+                    "startOffset": 8937,
+                    "endColumn": 95,
+                    "endOffset": 9028
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 108,
+                        "startColumn": 4,
+                        "startOffset": 8937,
+                        "endColumn": 95,
+                        "endOffset": 9028
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 109,
+                    "startColumn": 4,
+                    "startOffset": 9033,
+                    "endColumn": 52,
+                    "endOffset": 9081
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 109,
+                        "startColumn": 4,
+                        "startOffset": 9033,
+                        "endColumn": 52,
+                        "endOffset": 9081
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 110,
+                    "startColumn": 4,
+                    "startOffset": 9086,
+                    "endColumn": 57,
+                    "endOffset": 9139
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 110,
+                        "startColumn": 4,
+                        "startOffset": 9086,
+                        "endColumn": 57,
+                        "endOffset": 9139
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 111,
+                    "startColumn": 4,
+                    "startOffset": 9144,
+                    "endColumn": 76,
+                    "endOffset": 9216
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 111,
+                        "startColumn": 4,
+                        "startOffset": 9144,
+                        "endColumn": 76,
+                        "endOffset": 9216
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 112,
+                    "startColumn": 4,
+                    "startOffset": 9221,
+                    "endColumn": 76,
+                    "endOffset": 9293
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 112,
+                        "startColumn": 4,
+                        "startOffset": 9221,
+                        "endColumn": 76,
+                        "endOffset": 9293
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 113,
+                    "startColumn": 4,
+                    "startOffset": 9298,
+                    "endColumn": 75,
+                    "endOffset": 9369
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 113,
+                        "startColumn": 4,
+                        "startOffset": 9298,
+                        "endColumn": 75,
+                        "endOffset": 9369
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 114,
+                    "startColumn": 4,
+                    "startOffset": 9374,
+                    "endColumn": 80,
+                    "endOffset": 9450
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 114,
+                        "startColumn": 4,
+                        "startOffset": 9374,
+                        "endColumn": 80,
+                        "endOffset": 9450
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 9455,
+                    "endColumn": 95,
+                    "endOffset": 9546
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 115,
+                        "startColumn": 4,
+                        "startOffset": 9455,
+                        "endColumn": 95,
+                        "endOffset": 9546
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 116,
+                    "startColumn": 4,
+                    "startOffset": 9551,
+                    "endColumn": 72,
+                    "endOffset": 9619
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 116,
+                        "startColumn": 4,
+                        "startOffset": 9551,
+                        "endColumn": 72,
+                        "endOffset": 9619
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 117,
+                    "startColumn": 4,
+                    "startOffset": 9624,
+                    "endColumn": 59,
+                    "endOffset": 9679
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 117,
+                        "startColumn": 4,
+                        "startOffset": 9624,
+                        "endColumn": 59,
+                        "endOffset": 9679
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 9684,
+                    "endColumn": 52,
+                    "endOffset": 9732
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 118,
+                        "startColumn": 4,
+                        "startOffset": 9684,
+                        "endColumn": 52,
+                        "endOffset": 9732
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 119,
+                    "startColumn": 4,
+                    "startOffset": 9737,
+                    "endLine": 121,
+                    "endColumn": 60,
+                    "endOffset": 9963
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 119,
+                        "startColumn": 4,
+                        "startOffset": 9737,
+                        "endLine": 121,
+                        "endColumn": 60,
+                        "endOffset": 9963
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 9968,
+                    "endColumn": 76,
+                    "endOffset": 10040
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 122,
+                        "startColumn": 4,
+                        "startOffset": 9968,
+                        "endColumn": 76,
+                        "endOffset": 10040
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 123,
+                    "startColumn": 4,
+                    "startOffset": 10045,
+                    "endColumn": 61,
+                    "endOffset": 10102
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 123,
+                        "startColumn": 4,
+                        "startOffset": 10045,
+                        "endColumn": 61,
+                        "endOffset": 10102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 10107,
+                    "endColumn": 72,
+                    "endOffset": 10175
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 124,
+                        "startColumn": 4,
+                        "startOffset": 10107,
+                        "endColumn": 72,
+                        "endOffset": 10175
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 10180,
+                    "endColumn": 68,
+                    "endOffset": 10244
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 125,
+                        "startColumn": 4,
+                        "startOffset": 10180,
+                        "endColumn": 68,
+                        "endOffset": 10244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 10249,
+                    "endColumn": 63,
+                    "endOffset": 10308
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 126,
+                        "startColumn": 4,
+                        "startOffset": 10249,
+                        "endColumn": 63,
+                        "endOffset": 10308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 127,
+                    "startColumn": 4,
+                    "startOffset": 10313,
+                    "endColumn": 65,
+                    "endOffset": 10374
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 127,
+                        "startColumn": 4,
+                        "startOffset": 10313,
+                        "endColumn": 65,
+                        "endOffset": 10374
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "startOffset": 10379,
+                    "endColumn": 73,
+                    "endOffset": 10448
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 128,
+                        "startColumn": 4,
+                        "startOffset": 10379,
+                        "endColumn": 73,
+                        "endOffset": 10448
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 10453,
+                    "endColumn": 63,
+                    "endOffset": 10512
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 129,
+                        "startColumn": 4,
+                        "startOffset": 10453,
+                        "endColumn": 63,
+                        "endOffset": 10512
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 10517,
+                    "endColumn": 75,
+                    "endOffset": 10588
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 130,
+                        "startColumn": 4,
+                        "startOffset": 10517,
+                        "endColumn": 75,
+                        "endOffset": 10588
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 10593,
+                    "endColumn": 69,
+                    "endOffset": 10658
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 131,
+                        "startColumn": 4,
+                        "startOffset": 10593,
+                        "endColumn": 69,
+                        "endOffset": 10658
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 10663,
+                    "endColumn": 58,
+                    "endOffset": 10717
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 132,
+                        "startColumn": 4,
+                        "startOffset": 10663,
+                        "endColumn": 58,
+                        "endOffset": 10717
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 133,
+                    "startColumn": 4,
+                    "startOffset": 10722,
+                    "endColumn": 65,
+                    "endOffset": 10783
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 133,
+                        "startColumn": 4,
+                        "startOffset": 10722,
+                        "endColumn": 65,
+                        "endOffset": 10783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 134,
+                    "startColumn": 4,
+                    "startOffset": 10788,
+                    "endColumn": 63,
+                    "endOffset": 10847
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 134,
+                        "startColumn": 4,
+                        "startOffset": 10788,
+                        "endColumn": 63,
+                        "endOffset": 10847
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 135,
+                    "startColumn": 4,
+                    "startOffset": 10852,
+                    "endColumn": 60,
+                    "endOffset": 10908
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 135,
+                        "startColumn": 4,
+                        "startOffset": 10852,
+                        "endColumn": 60,
+                        "endOffset": 10908
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 136,
+                    "startColumn": 4,
+                    "startOffset": 10913,
+                    "endColumn": 65,
+                    "endOffset": 10974
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 136,
+                        "startColumn": 4,
+                        "startOffset": 10913,
+                        "endColumn": 65,
+                        "endOffset": 10974
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 137,
+                    "startColumn": 4,
+                    "startOffset": 10979,
+                    "endColumn": 83,
+                    "endOffset": 11058
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 137,
+                        "startColumn": 4,
+                        "startOffset": 10979,
+                        "endColumn": 83,
+                        "endOffset": 11058
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "startOffset": 11063,
+                    "endColumn": 78,
+                    "endOffset": 11137
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 138,
+                        "startColumn": 4,
+                        "startOffset": 11063,
+                        "endColumn": 78,
+                        "endOffset": 11137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 11142,
+                    "endColumn": 80,
+                    "endOffset": 11218
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 139,
+                        "startColumn": 4,
+                        "startOffset": 11142,
+                        "endColumn": 80,
+                        "endOffset": 11218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 11223,
+                    "endColumn": 106,
+                    "endOffset": 11325
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 140,
+                        "startColumn": 4,
+                        "startOffset": 11223,
+                        "endColumn": 106,
+                        "endOffset": 11325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 11330,
+                    "endColumn": 61,
+                    "endOffset": 11387
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 141,
+                        "startColumn": 4,
+                        "startOffset": 11330,
+                        "endColumn": 61,
+                        "endOffset": 11387
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 142,
+                    "startColumn": 4,
+                    "startOffset": 11392,
+                    "endColumn": 64,
+                    "endOffset": 11452
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 142,
+                        "startColumn": 4,
+                        "startOffset": 11392,
+                        "endColumn": 64,
+                        "endOffset": 11452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 11457,
+                    "endColumn": 59,
+                    "endOffset": 11512
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 143,
+                        "startColumn": 4,
+                        "startOffset": 11457,
+                        "endColumn": 59,
+                        "endOffset": 11512
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 144,
+                    "startColumn": 4,
+                    "startOffset": 11517,
+                    "endColumn": 64,
+                    "endOffset": 11577
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 144,
+                        "startColumn": 4,
+                        "startOffset": 11517,
+                        "endColumn": 64,
+                        "endOffset": 11577
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 11582,
+                    "endColumn": 73,
+                    "endOffset": 11651
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 145,
+                        "startColumn": 4,
+                        "startOffset": 11582,
+                        "endColumn": 73,
+                        "endOffset": 11651
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 11656,
+                    "endColumn": 73,
+                    "endOffset": 11725
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 146,
+                        "startColumn": 4,
+                        "startOffset": 11656,
+                        "endColumn": 73,
+                        "endOffset": 11725
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 147,
+                    "startColumn": 4,
+                    "startOffset": 11730,
+                    "endColumn": 79,
+                    "endOffset": 11805
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 147,
+                        "startColumn": 4,
+                        "startOffset": 11730,
+                        "endColumn": 79,
+                        "endOffset": 11805
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 148,
+                    "startColumn": 4,
+                    "startOffset": 11810,
+                    "endColumn": 69,
+                    "endOffset": 11875
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 148,
+                        "startColumn": 4,
+                        "startOffset": 11810,
+                        "endColumn": 69,
+                        "endOffset": 11875
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 149,
+                    "startColumn": 4,
+                    "startOffset": 11880,
+                    "endColumn": 68,
+                    "endOffset": 11944
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 149,
+                        "startColumn": 4,
+                        "startOffset": 11880,
+                        "endColumn": 68,
+                        "endOffset": 11944
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 11949,
+                    "endColumn": 77,
+                    "endOffset": 12022
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 150,
+                        "startColumn": 4,
+                        "startOffset": 11949,
+                        "endColumn": 77,
+                        "endOffset": 12022
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 151,
+                    "startColumn": 4,
+                    "startOffset": 12027,
+                    "endColumn": 85,
+                    "endOffset": 12108
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 151,
+                        "startColumn": 4,
+                        "startOffset": 12027,
+                        "endColumn": 85,
+                        "endOffset": 12108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 152,
+                    "startColumn": 4,
+                    "startOffset": 12113,
+                    "endColumn": 76,
+                    "endOffset": 12185
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 152,
+                        "startColumn": 4,
+                        "startOffset": 12113,
+                        "endColumn": 76,
+                        "endOffset": 12185
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 153,
+                    "startColumn": 4,
+                    "startOffset": 12190,
+                    "endColumn": 86,
+                    "endOffset": 12272
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 153,
+                        "startColumn": 4,
+                        "startOffset": 12190,
+                        "endColumn": 86,
+                        "endOffset": 12272
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 12277,
+                    "endColumn": 72,
+                    "endOffset": 12345
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 154,
+                        "startColumn": 4,
+                        "startOffset": 12277,
+                        "endColumn": 72,
+                        "endOffset": 12345
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 155,
+                    "startColumn": 4,
+                    "startOffset": 12350,
+                    "endColumn": 62,
+                    "endOffset": 12408
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 155,
+                        "startColumn": 4,
+                        "startOffset": 12350,
+                        "endColumn": 62,
+                        "endOffset": 12408
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 156,
+                    "startColumn": 4,
+                    "startOffset": 12413,
+                    "endColumn": 98,
+                    "endOffset": 12507
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 156,
+                        "startColumn": 4,
+                        "startOffset": 12413,
+                        "endColumn": 98,
+                        "endOffset": 12507
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 157,
+                    "startColumn": 4,
+                    "startOffset": 12512,
+                    "endColumn": 86,
+                    "endOffset": 12594
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 157,
+                        "startColumn": 4,
+                        "startOffset": 12512,
+                        "endColumn": 86,
+                        "endOffset": 12594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 158,
+                    "startColumn": 4,
+                    "startOffset": 12599,
+                    "endColumn": 95,
+                    "endOffset": 12690
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 158,
+                        "startColumn": 4,
+                        "startOffset": 12599,
+                        "endColumn": 95,
+                        "endOffset": 12690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 159,
+                    "startColumn": 4,
+                    "startOffset": 12695,
+                    "endColumn": 98,
+                    "endOffset": 12789
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 159,
+                        "startColumn": 4,
+                        "startOffset": 12695,
+                        "endColumn": 98,
+                        "endOffset": 12789
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 160,
+                    "startColumn": 4,
+                    "startOffset": 12794,
+                    "endColumn": 58,
+                    "endOffset": 12848
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 160,
+                        "startColumn": 4,
+                        "startOffset": 12794,
+                        "endColumn": 58,
+                        "endOffset": 12848
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 161,
+                    "startColumn": 4,
+                    "startOffset": 12853,
+                    "endColumn": 62,
+                    "endOffset": 12911
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 161,
+                        "startColumn": 4,
+                        "startOffset": 12853,
+                        "endColumn": 62,
+                        "endOffset": 12911
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 162,
+                    "startColumn": 4,
+                    "startOffset": 12916,
+                    "endColumn": 55,
+                    "endOffset": 12967
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 162,
+                        "startColumn": 4,
+                        "startOffset": 12916,
+                        "endColumn": 55,
+                        "endOffset": 12967
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 163,
+                    "startColumn": 4,
+                    "startOffset": 12972,
+                    "endColumn": 54,
+                    "endOffset": 13022
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 163,
+                        "startColumn": 4,
+                        "startOffset": 12972,
+                        "endColumn": 54,
+                        "endOffset": 13022
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 164,
+                    "startColumn": 4,
+                    "startOffset": 13027,
+                    "endColumn": 60,
+                    "endOffset": 13083
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 164,
+                        "startColumn": 4,
+                        "startOffset": 13027,
+                        "endColumn": 60,
+                        "endOffset": 13083
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 165,
+                    "startColumn": 4,
+                    "startOffset": 13088,
+                    "endColumn": 55,
+                    "endOffset": 13139
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 165,
+                        "startColumn": 4,
+                        "startOffset": 13088,
+                        "endColumn": 55,
+                        "endOffset": 13139
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 166,
+                    "startColumn": 4,
+                    "startOffset": 13144,
+                    "endColumn": 52,
+                    "endOffset": 13192
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 166,
+                        "startColumn": 4,
+                        "startOffset": 13144,
+                        "endColumn": 52,
+                        "endOffset": 13192
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 167,
+                    "startColumn": 4,
+                    "startOffset": 13197,
+                    "endColumn": 48,
+                    "endOffset": 13241
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 167,
+                        "startColumn": 4,
+                        "startOffset": 13197,
+                        "endColumn": 48,
+                        "endOffset": 13241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 168,
+                    "startColumn": 4,
+                    "startOffset": 13246,
+                    "endLine": 180,
+                    "endColumn": 12,
+                    "endOffset": 13785
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 168,
+                        "startColumn": 4,
+                        "startOffset": 13246,
+                        "endLine": 180,
+                        "endColumn": 12,
+                        "endOffset": 13785
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 181,
+                    "startColumn": 4,
+                    "startOffset": 13790,
+                    "endLine": 183,
+                    "endColumn": 10,
+                    "endOffset": 13878
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 181,
+                        "startColumn": 4,
+                        "startOffset": 13790,
+                        "endLine": 183,
+                        "endColumn": 10,
+                        "endOffset": 13878
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 184,
+                    "startColumn": 4,
+                    "startOffset": 13883,
+                    "endLine": 186,
+                    "endColumn": 10,
+                    "endOffset": 14016
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 184,
+                        "startColumn": 4,
+                        "startOffset": 13883,
+                        "endLine": 186,
+                        "endColumn": 10,
+                        "endOffset": 14016
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 187,
+                    "startColumn": 4,
+                    "startOffset": 14021,
+                    "endLine": 192,
+                    "endColumn": 10,
+                    "endOffset": 14293
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 187,
+                        "startColumn": 4,
+                        "startOffset": 14021,
+                        "endLine": 192,
+                        "endColumn": 10,
+                        "endOffset": 14293
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 193,
+                    "startColumn": 4,
+                    "startOffset": 14298,
+                    "endLine": 196,
+                    "endColumn": 10,
+                    "endOffset": 14452
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 193,
+                        "startColumn": 4,
+                        "startOffset": 14298,
+                        "endLine": 196,
+                        "endColumn": 10,
+                        "endOffset": 14452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 197,
+                    "startColumn": 4,
+                    "startOffset": 14457,
+                    "endLine": 199,
+                    "endColumn": 10,
+                    "endOffset": 14592
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 197,
+                        "startColumn": 4,
+                        "startOffset": 14457,
+                        "endLine": 199,
+                        "endColumn": 10,
+                        "endOffset": 14592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 200,
+                    "startColumn": 4,
+                    "startOffset": 14597,
+                    "endLine": 205,
+                    "endColumn": 10,
+                    "endOffset": 14870
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 200,
+                        "startColumn": 4,
+                        "startOffset": 14597,
+                        "endLine": 205,
+                        "endColumn": 10,
+                        "endOffset": 14870
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 206,
+                    "startColumn": 4,
+                    "startOffset": 14875,
+                    "endLine": 209,
+                    "endColumn": 10,
+                    "endOffset": 15030
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 206,
+                        "startColumn": 4,
+                        "startOffset": 14875,
+                        "endLine": 209,
+                        "endColumn": 10,
+                        "endOffset": 15030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 210,
+                    "startColumn": 4,
+                    "startOffset": 15035,
+                    "endLine": 220,
+                    "endColumn": 10,
+                    "endOffset": 15529
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 210,
+                        "startColumn": 4,
+                        "startOffset": 15035,
+                        "endLine": 220,
+                        "endColumn": 10,
+                        "endOffset": 15529
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 221,
+                    "startColumn": 4,
+                    "startOffset": 15534,
+                    "endLine": 223,
+                    "endColumn": 10,
+                    "endOffset": 15634
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 221,
+                        "startColumn": 4,
+                        "startOffset": 15534,
+                        "endLine": 223,
+                        "endColumn": 10,
+                        "endOffset": 15634
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 224,
+                    "startColumn": 4,
+                    "startOffset": 15639,
+                    "endLine": 226,
+                    "endColumn": 10,
+                    "endOffset": 15779
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 224,
+                        "startColumn": 4,
+                        "startOffset": 15639,
+                        "endLine": 226,
+                        "endColumn": 10,
+                        "endOffset": 15779
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 227,
+                    "startColumn": 4,
+                    "startOffset": 15784,
+                    "endLine": 229,
+                    "endColumn": 10,
+                    "endOffset": 15924
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 227,
+                        "startColumn": 4,
+                        "startOffset": 15784,
+                        "endLine": 229,
+                        "endColumn": 10,
+                        "endOffset": 15924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 230,
+                    "startColumn": 4,
+                    "startOffset": 15929,
+                    "endLine": 232,
+                    "endColumn": 10,
+                    "endOffset": 16030
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 230,
+                        "startColumn": 4,
+                        "startOffset": 15929,
+                        "endLine": 232,
+                        "endColumn": 10,
+                        "endOffset": 16030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 233,
+                    "startColumn": 4,
+                    "startOffset": 16035,
+                    "endLine": 235,
+                    "endColumn": 10,
+                    "endOffset": 16175
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 233,
+                        "startColumn": 4,
+                        "startOffset": 16035,
+                        "endLine": 235,
+                        "endColumn": 10,
+                        "endOffset": 16175
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 236,
+                    "startColumn": 4,
+                    "startOffset": 16180,
+                    "endLine": 238,
+                    "endColumn": 10,
+                    "endOffset": 16320
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 236,
+                        "startColumn": 4,
+                        "startOffset": 16180,
+                        "endLine": 238,
+                        "endColumn": 10,
+                        "endOffset": 16320
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 239,
+                    "startColumn": 4,
+                    "startOffset": 16325,
+                    "endLine": 242,
+                    "endColumn": 12,
+                    "endOffset": 16484
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 239,
+                        "startColumn": 4,
+                        "startOffset": 16325,
+                        "endLine": 242,
+                        "endColumn": 12,
+                        "endOffset": 16484
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 243,
+                    "startColumn": 4,
+                    "startOffset": 16489,
+                    "endColumn": 75,
+                    "endOffset": 16560
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 243,
+                        "startColumn": 4,
+                        "startOffset": 16489,
+                        "endColumn": 75,
+                        "endOffset": 16560
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 244,
+                    "startColumn": 4,
+                    "startOffset": 16565,
+                    "endLine": 247,
+                    "endColumn": 12,
+                    "endOffset": 16778
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 244,
+                        "startColumn": 4,
+                        "startOffset": 16565,
+                        "endLine": 247,
+                        "endColumn": 12,
+                        "endOffset": 16778
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 248,
+                    "startColumn": 4,
+                    "startOffset": 16783,
+                    "endLine": 258,
+                    "endColumn": 12,
+                    "endOffset": 17379
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 248,
+                        "startColumn": 4,
+                        "startOffset": 16783,
+                        "endLine": 258,
+                        "endColumn": 12,
+                        "endOffset": 17379
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 259,
+                    "startColumn": 4,
+                    "startOffset": 17384,
+                    "endLine": 261,
+                    "endColumn": 12,
+                    "endOffset": 17558
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 259,
+                        "startColumn": 4,
+                        "startOffset": 17384,
+                        "endLine": 261,
+                        "endColumn": 12,
+                        "endOffset": 17558
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 17563,
+                    "endLine": 266,
+                    "endColumn": 12,
+                    "endOffset": 17905
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 262,
+                        "startColumn": 4,
+                        "startOffset": 17563,
+                        "endLine": 266,
+                        "endColumn": 12,
+                        "endOffset": 17905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 267,
+                    "startColumn": 4,
+                    "startOffset": 17910,
+                    "endLine": 270,
+                    "endColumn": 12,
+                    "endOffset": 18156
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 267,
+                        "startColumn": 4,
+                        "startOffset": 17910,
+                        "endLine": 270,
+                        "endColumn": 12,
+                        "endOffset": 18156
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 271,
+                    "startColumn": 4,
+                    "startOffset": 18161,
+                    "endLine": 273,
+                    "endColumn": 12,
+                    "endOffset": 18338
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 271,
+                        "startColumn": 4,
+                        "startOffset": 18161,
+                        "endLine": 273,
+                        "endColumn": 12,
+                        "endOffset": 18338
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 274,
+                    "startColumn": 4,
+                    "startOffset": 18343,
+                    "endLine": 278,
+                    "endColumn": 12,
+                    "endOffset": 18662
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 274,
+                        "startColumn": 4,
+                        "startOffset": 18343,
+                        "endLine": 278,
+                        "endColumn": 12,
+                        "endOffset": 18662
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 279,
+                    "startColumn": 4,
+                    "startOffset": 18667,
+                    "endLine": 281,
+                    "endColumn": 12,
+                    "endOffset": 18850
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 279,
+                        "startColumn": 4,
+                        "startOffset": 18667,
+                        "endLine": 281,
+                        "endColumn": 12,
+                        "endOffset": 18850
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 282,
+                    "startColumn": 4,
+                    "startOffset": 18855,
+                    "endLine": 294,
+                    "endColumn": 12,
+                    "endOffset": 19314
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 282,
+                        "startColumn": 4,
+                        "startOffset": 18855,
+                        "endLine": 294,
+                        "endColumn": 12,
+                        "endOffset": 19314
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 295,
+                    "startColumn": 4,
+                    "startOffset": 19319,
+                    "endLine": 304,
+                    "endColumn": 12,
+                    "endOffset": 19905
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 295,
+                        "startColumn": 4,
+                        "startOffset": 19319,
+                        "endLine": 304,
+                        "endColumn": 12,
+                        "endOffset": 19905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 305,
+                    "startColumn": 4,
+                    "startOffset": 19910,
+                    "endLine": 308,
+                    "endColumn": 12,
+                    "endOffset": 20194
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 305,
+                        "startColumn": 4,
+                        "startOffset": 19910,
+                        "endLine": 308,
+                        "endColumn": 12,
+                        "endOffset": 20194
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 309,
+                    "startColumn": 4,
+                    "startOffset": 20199,
+                    "endLine": 316,
+                    "endColumn": 12,
+                    "endOffset": 20554
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 309,
+                        "startColumn": 4,
+                        "startOffset": 20199,
+                        "endLine": 316,
+                        "endColumn": 12,
+                        "endOffset": 20554
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 317,
+                    "startColumn": 4,
+                    "startOffset": 20559,
+                    "endLine": 322,
+                    "endColumn": 12,
+                    "endOffset": 20849
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 317,
+                        "startColumn": 4,
+                        "startOffset": 20559,
+                        "endLine": 322,
+                        "endColumn": 12,
+                        "endOffset": 20849
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 323,
+                    "startColumn": 4,
+                    "startOffset": 20854,
+                    "endLine": 332,
+                    "endColumn": 12,
+                    "endOffset": 21349
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 323,
+                        "startColumn": 4,
+                        "startOffset": 20854,
+                        "endLine": 332,
+                        "endColumn": 12,
+                        "endOffset": 21349
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 333,
+                    "startColumn": 4,
+                    "startOffset": 21354,
+                    "endLine": 341,
+                    "endColumn": 12,
+                    "endOffset": 21810
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 333,
+                        "startColumn": 4,
+                        "startOffset": 21354,
+                        "endLine": 341,
+                        "endColumn": 12,
+                        "endOffset": 21810
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 342,
+                    "startColumn": 4,
+                    "startOffset": 21815,
+                    "endLine": 345,
+                    "endColumn": 12,
+                    "endOffset": 22049
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 342,
+                        "startColumn": 4,
+                        "startOffset": 21815,
+                        "endLine": 345,
+                        "endColumn": 12,
+                        "endOffset": 22049
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 346,
+                    "startColumn": 4,
+                    "startOffset": 22054,
+                    "endLine": 349,
+                    "endColumn": 12,
+                    "endOffset": 22315
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 346,
+                        "startColumn": 4,
+                        "startOffset": 22054,
+                        "endLine": 349,
+                        "endColumn": 12,
+                        "endOffset": 22315
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 350,
+                    "startColumn": 4,
+                    "startOffset": 22320,
+                    "endLine": 354,
+                    "endColumn": 12,
+                    "endOffset": 22564
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 350,
+                        "startColumn": 4,
+                        "startOffset": 22320,
+                        "endLine": 354,
+                        "endColumn": 12,
+                        "endOffset": 22564
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 355,
+                    "startColumn": 4,
+                    "startOffset": 22569,
+                    "endLine": 363,
+                    "endColumn": 12,
+                    "endOffset": 23070
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 355,
+                        "startColumn": 4,
+                        "startOffset": 22569,
+                        "endLine": 363,
+                        "endColumn": 12,
+                        "endOffset": 23070
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 364,
+                    "startColumn": 4,
+                    "startOffset": 23075,
+                    "endLine": 370,
+                    "endColumn": 12,
+                    "endOffset": 23437
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 364,
+                        "startColumn": 4,
+                        "startOffset": 23075,
+                        "endLine": 370,
+                        "endColumn": 12,
+                        "endOffset": 23437
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 371,
+                    "startColumn": 4,
+                    "startOffset": 23442,
+                    "endLine": 380,
+                    "endColumn": 12,
+                    "endOffset": 24039
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 371,
+                        "startColumn": 4,
+                        "startOffset": 23442,
+                        "endLine": 380,
+                        "endColumn": 12,
+                        "endOffset": 24039
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 381,
+                    "startColumn": 4,
+                    "startOffset": 24044,
+                    "endLine": 383,
+                    "endColumn": 12,
+                    "endOffset": 24248
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 381,
+                        "startColumn": 4,
+                        "startOffset": 24044,
+                        "endLine": 383,
+                        "endColumn": 12,
+                        "endOffset": 24248
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 384,
+                    "startColumn": 4,
+                    "startOffset": 24253,
+                    "endLine": 387,
+                    "endColumn": 12,
+                    "endOffset": 24523
+                },
+                "from": {
+                    "file": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 384,
+                        "startColumn": 4,
+                        "startOffset": 24253,
+                        "endLine": 387,
+                        "endColumn": 12,
+                        "endOffset": 24523
+                    }
+                }
+            }
+        ]
     }
 ]
