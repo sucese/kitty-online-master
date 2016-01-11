@@ -8,12 +8,12 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/anim/shake_umeng_socialize_scrshot_dlg.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/anim/shake_umeng_socialize_dlg_alpha.xml",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/anim/shake_umeng_socialize_dlg_alpha.xml"
-    },
-    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/anim/umeng_socialize_shareboard_animation_out.xml",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/anim/umeng_socialize_shareboard_animation_out.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/anim/shake_umeng_socialize_dlg_alpha.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/anim/shake_umeng_socialize_dlg_alpha.xml"
     },
     {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/anim/shake_umeng_socialize_cycle_5.xml",

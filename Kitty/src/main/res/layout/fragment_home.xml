@@ -6,6 +6,7 @@
     tools:context="com.guoxiaoxing.kitty.ui.fragment.HomeFragment">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_home_header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/primary">

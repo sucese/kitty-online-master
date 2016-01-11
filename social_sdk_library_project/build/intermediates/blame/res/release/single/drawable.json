@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_action_back_normal.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_action_back_normal.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_checked.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_checked.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_action_back_normal.png",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_action_back_normal.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_twitter.png",
@@ -32,12 +32,12 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_title_back_bt_normal.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_tumblr_gray.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_tumblr_gray.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_pocket.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_pocket.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_tumblr_gray.png",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_tumblr_gray.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_button_login_pressed.png",
@@ -92,16 +92,16 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_location_off.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_kakao_gray.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_kakao_gray.png"
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_at_normal.png",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_at_normal.png"
     },
     {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_action_share_icon.xml",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_action_share_icon.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_at_normal.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_at_normal.png"
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_kakao_gray.png",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable/umeng_socialize_kakao_gray.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_sms_on.png",

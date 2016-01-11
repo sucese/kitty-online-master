@@ -2,15 +2,22 @@
 <resources>
     <!-- 日间模式 -->
     <style name="AppBaseTheme_Light" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!--导航栏底色-->
         <item name="colorPrimary">@color/day_colorPrimary</item>
+        <!--状态栏死色-->
         <item name="colorPrimaryDark">@color/day_colorPrimaryDark</item>
         <item name="android:textColorLink">#0b9a27</item>
+        <!--CheckBox, RadioButtonhe SwitchCompat等点击选中的颜色-->
         <item name="colorAccent">@color/day_colorPrimary</item>
+        <!--导航栏标题颜色-->
         <item name="android:textColorPrimary">@color/white</item>
+        <!--输入框字体颜色e-->
         <item name="editTextColor">@color/gray</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <!--Activity窗口颜色-->
         <item name="android:windowBackground">@color/window_background</item>
         <item name="actionMenuTextColor">@color/white</item>
+        <!--字体颜色-->
         <item name="textColor">@color/day_textColor</item>
         <item name="infoTextColor">@color/day_infoTextColor</item>
         <item name="layout_bg_normal">@color/day_layout_bg_normal</item>

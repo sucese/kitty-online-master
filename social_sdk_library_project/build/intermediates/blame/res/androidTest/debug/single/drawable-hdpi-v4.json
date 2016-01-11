@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_send_icon.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_send_icon.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png",

@@ -40,12 +40,12 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_tx_off.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/shake_umeng_socialize_preview_edit_corners_style.xml",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/shake_umeng_socialize_preview_edit_corners_style.xml"
-    },
-    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_evernote.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_evernote.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/shake_umeng_socialize_preview_edit_corners_style.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/shake_umeng_socialize_preview_edit_corners_style.xml"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_button_red_blue.xml",
@@ -72,16 +72,16 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_tumblr.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_location_on.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_location_on.png"
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_action_personal_selected.png",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_action_personal_selected.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_title_back_bt_normal.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_title_back_bt_normal.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_action_personal_selected.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_action_personal_selected.png"
+        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_location_on.png",
+        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_location_on.png"
     },
     {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_x_button.png",
@@ -112,12 +112,12 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_action_like.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_comment_item_bg_shape.xml",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_comment_item_bg_shape.xml"
-    },
-    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_location_mark.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_location_mark.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_comment_item_bg_shape.xml",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_comment_item_bg_shape.xml"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_twitter.png",
@@ -152,12 +152,12 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_comment_icon.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/shake_umeng_socialize_close.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/shake_umeng_socialize_close.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_linkedin.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_linkedin.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/shake_umeng_socialize_close.png",
+        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/shake_umeng_socialize_close.png"
     },
     {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_wxcircle.png",
