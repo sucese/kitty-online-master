@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_oauth_check_off.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_oauth_check_off.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_send_icon.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_send_icon.png"
     },
@@ -24,8 +28,32 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_light_bar_bg_pad.9.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_send_icon.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_send_icon.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_oauth_check_on.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_oauth_check_on.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_icon.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_icon.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_bottomnub.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_large_white.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_large_white.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_background.9.png",
@@ -36,8 +64,16 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_white.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_small_blue.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_blue.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_nav_bar_bg_pad.9.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_nav_bar_bg_pad.9.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
@@ -64,6 +100,10 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_close.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_pic.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_pic.png"
     },
@@ -88,8 +128,20 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_white.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_small_white.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_white.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_button_send_round_shadow.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_button_send_round_shadow.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_background.9.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_xout.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_xout.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_large_blue.png",
@@ -112,6 +164,10 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_video.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_pic.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_pic.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_video.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_video.png"
     },
@@ -120,12 +176,20 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_xout.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_video.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_video.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_pic.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_pic.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_light_bar_bg_pad.9.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_light_bar_bg_pad.9.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_button_send_round_shadow.png",
@@ -148,12 +212,20 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_send_icon.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_share_music.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_share_music.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_oauth_check_off.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_oauth_check_off.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_bottomnub.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_background.9.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_background.9.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_oauth_check_on.png",
@@ -164,6 +236,14 @@
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_bottomnub.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_large_blue.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_large_blue.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_small_blue.png",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_blue.png"
     },
@@ -172,8 +252,16 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_large_white.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_background.9.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_background.9.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_nav_bar_bg_pad.9.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/umeng_socialize_nav_bar_bg_pad.9.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_like_icon_selected.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_button_like_icon_selected.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_button_icon.png",
@@ -184,8 +272,16 @@
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_black_xout.png"
     },
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png"
+    },
+    {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/messenger_bubble_small_blue.png",
         "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/messenger_bubble_small_blue.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/com_facebook_close.png",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable-hdpi-v4/com_facebook_close.png"
     },
     {
         "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/umeng_socialize_oauth_check_off.png",

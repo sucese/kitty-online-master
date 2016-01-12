@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/layout-h500dp-normal-v13/umeng_socialize_ucenter.xml",
+        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/layout-h500dp-normal/umeng_socialize_ucenter.xml"
+    },
+    {
         "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/debug/layout-h500dp-normal-v13/umeng_socialize_ucenter.xml",
         "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/layout-h500dp-normal/umeng_socialize_ucenter.xml"
     },
