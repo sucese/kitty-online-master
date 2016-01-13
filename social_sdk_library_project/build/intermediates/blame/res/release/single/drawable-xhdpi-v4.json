@@ -1,230 +1,78 @@
 [
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_background.9.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_background.9.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_send_icon.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_send_icon.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_icon.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_icon.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_topnub.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_topnub.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_choose.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_choose.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_blue.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_blue.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_button_send_round_shadow.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_close.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_close.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_bottomnub.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_choose.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_choose.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_topnub.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_topnub.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_unchoose.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_unchoose.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_white.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_white.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_icon.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_icon.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_button_send_round_shadow.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_white.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_white.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_blue.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_blue.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_xout.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_topnub.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_topnub.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_bottomnub.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_icon.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_icon.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_background.9.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_background.9.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_bottomnub.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_xout.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_background.9.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_background.9.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_background.9.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_background.9.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_blue.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_blue.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_white.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_white.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_send_icon.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_send_icon.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_blue.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_blue.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_topnub.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_topnub.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_topnub.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_topnub.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_like_icon_selected.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_like_icon_selected.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_bottomnub.png"
     },
     {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_white.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_white.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_button_send_round_shadow.png"
     },
     {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_button_send_round_shadow.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_button_send_round_shadow.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_topnub.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_topnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_white.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_white.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_unchoose.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_unchoose.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_choose.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_choose.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_unchoose.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_unchoose.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_topnub.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_topnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_background.9.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_background.9.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_blue.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_blue.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_send_icon.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_send_icon.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_bottomnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_bottomnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_icon.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_icon.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_bottomnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_unchoose.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_unchoose.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_close.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_close.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_topnub.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_topnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_blue.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_blue.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_background.9.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_background.9.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/umeng_socialize_switchimage_choose.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/umeng_socialize_switchimage_choose.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_blue.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_blue.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_close.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_close.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_white.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_white.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_blue.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_blue.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_small_white.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_small_white.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_close.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_close.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_background.9.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_background.9.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_send_icon.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_send_icon.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_like_icon_selected.png",
-        "source": "/home/guoxiaoxing/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_like_icon_selected.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_bottomnub.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
-        "source": "/home/guoxiaoxing/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_black_xout.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_like_icon_selected.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_like_icon_selected.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_tooltip_blue_background.9.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_tooltip_blue_background.9.png"
-    },
-    {
-        "merged": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/messenger_bubble_large_white.png",
-        "source": "/home/guoxiaoxing/Github/speciality/social_sdk_library_project/src/main/res/drawable-xhdpi/messenger_bubble_large_white.png"
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable-xhdpi-v4/com_facebook_button_like_icon_selected.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable-xhdpi/com_facebook_button_like_icon_selected.png"
     }
 ]
