@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.PersistentCookieStore;
-
+import com.avos.avoscloud.AVOSCloud;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.base.BaseApplication;
 import com.guoxiaoxing.kitty.bean.Constants;
@@ -17,6 +15,8 @@ import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.UIHelper;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.PersistentCookieStore;
 
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.http.HttpConfig;
@@ -32,8 +32,8 @@ import static com.guoxiaoxing.kitty.AppConfig.KEY_TWEET_DRAFT;
 
 /**
  * 全局应用程序类：用于保存和调用全局应用配置及访问网络数据
- * @author guoxiaoxing
  *
+ * @author guoxiaoxing
  */
 public class AppContext extends BaseApplication {
 
@@ -55,6 +55,9 @@ public class AppContext extends BaseApplication {
 //        Thread.setDefaultUncaughtExceptionHandler(AppException
 //                .getAppExceptionHandler(this));
         UIHelper.sendBroadcastForNotice(this);
+
+        //初始化LeanCloud云服务
+        AVOSCloud.initialize(this, AppConfig.LEADCLOUD_APP_ID, AppConfig.LEADCLOUD_APP_KEY);
     }
 
     private void init() {

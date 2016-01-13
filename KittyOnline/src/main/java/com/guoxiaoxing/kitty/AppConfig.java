@@ -55,6 +55,11 @@ public class AppConfig {
             + "Kitty"
             + File.separator + "download" + File.separator;
 
+    //LeadCloud云服务
+    public final static String LEADCLOUD_APP_ID = "Ez5wTriuLElSDkXoE3vDF2BL-gzGzoHsz";
+    public final static String LEADCLOUD_APP_KEY = "fxwjo6ioo2NiNiCeHjyAw4To";
+
+
     private Context mContext;
     private static AppConfig mAppConfig;
 

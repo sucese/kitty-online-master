@@ -10,7 +10,7 @@ android {
         targetSdkVersion 23
         versionCode 48
         versionName "2.4.1"
-        // Enabling multidex support.
+        //multidex支持
         multiDexEnabled true
     }
 
