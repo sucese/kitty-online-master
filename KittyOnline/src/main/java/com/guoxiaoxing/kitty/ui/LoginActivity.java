@@ -1,23 +1,5 @@
 package com.guoxiaoxing.kitty.ui;
 
-import com.guoxiaoxing.kitty.AppConfig;
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.LoginUserBean;
-import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
-import com.guoxiaoxing.kitty.util.CyptoUtils;
-import com.guoxiaoxing.kitty.util.DialogHelp;
-import com.guoxiaoxing.kitty.util.TDevice;
-import com.guoxiaoxing.kitty.util.TLog;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-
-import cz.msebera.android.httpclient.Header;
-import org.kymjs.kjframe.http.HttpConfig;
-
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -28,13 +10,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
-import butterknife.InjectView;
-import butterknife.OnClick;
-import cz.msebera.android.httpclient.client.CookieStore;
-import cz.msebera.android.httpclient.client.protocol.ClientContext;
-import cz.msebera.android.httpclient.cookie.Cookie;
-import cz.msebera.android.httpclient.protocol.HttpContext;
-
+import com.guoxiaoxing.kitty.AppConfig;
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.ApiHttpClient;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.Constants;
+import com.guoxiaoxing.kitty.bean.LoginUserBean;
+import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.util.CyptoUtils;
+import com.guoxiaoxing.kitty.util.DialogHelp;
+import com.guoxiaoxing.kitty.util.TDevice;
+import com.guoxiaoxing.kitty.util.TLog;
+import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.tencent.mm.sdk.modelmsg.SendAuth;
@@ -50,8 +39,18 @@ import com.umeng.socialize.controller.listener.SocializeListeners;
 import com.umeng.socialize.exception.SocializeException;
 import com.umeng.socialize.sso.SinaSsoHandler;
 
+import org.kymjs.kjframe.http.HttpConfig;
+
 import java.util.Map;
 import java.util.Set;
+
+import butterknife.Bind;
+import butterknife.OnClick;
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.client.CookieStore;
+import cz.msebera.android.httpclient.client.protocol.ClientContext;
+import cz.msebera.android.httpclient.cookie.Cookie;
+import cz.msebera.android.httpclient.protocol.HttpContext;
 
 /**
  * 用户登录界面
@@ -64,10 +63,10 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     private static final String BUNDLE_KEY_REQUEST_CODE = "BUNDLE_KEY_REQUEST_CODE";
     protected static final String TAG = LoginActivity.class.getSimpleName();
 
-    @InjectView(R.id.et_username)
+    @Bind(R.id.et_username)
     EditText mEtUserName;
 
-    @InjectView(R.id.et_password)
+    @Bind(R.id.et_password)
     EditText mEtPassword;
 
     private final int requestCode = REQUEST_CODE_INIT;
@@ -201,6 +200,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     }
 
     BroadcastReceiver receiver;
+
     /**
      * 微信登陆
      */
@@ -320,8 +320,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     }
 
     /***
-     *
-     * @param catalog 第三方登录的类别
+     * @param catalog    第三方登录的类别
      * @param openIdInfo 第三方的信息
      */
     private void openIdLogin(final String catalog, final String openIdInfo) {
@@ -373,7 +372,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
                     return;
                 }
                 LoginUserBean loginUserBean = (LoginUserBean) data.getSerializableExtra(BUNDLE_KEY_LOGINBEAN);
-                if (loginUserBean !=  null) {
+                if (loginUserBean != null) {
                     handleLoginBean(loginUserBean);
                 }
                 break;

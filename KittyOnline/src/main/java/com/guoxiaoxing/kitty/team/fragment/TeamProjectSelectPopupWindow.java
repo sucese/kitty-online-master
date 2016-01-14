@@ -1,19 +1,5 @@
 package com.guoxiaoxing.kitty.team.fragment;
 
-import java.io.ByteArrayInputStream;
-import java.util.List;
-
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.team.adapter.TeamProjectListAdapter;
-import com.guoxiaoxing.kitty.team.bean.Team;
-import com.guoxiaoxing.kitty.team.bean.TeamGit;
-import com.guoxiaoxing.kitty.team.bean.TeamProject;
-import com.guoxiaoxing.kitty.team.bean.TeamProjectList;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-
-import cz.msebera.android.httpclient.Header;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -27,18 +13,30 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
+import com.guoxiaoxing.kitty.team.adapter.TeamProjectListAdapter;
+import com.guoxiaoxing.kitty.team.bean.Team;
+import com.guoxiaoxing.kitty.team.bean.TeamGit;
+import com.guoxiaoxing.kitty.team.bean.TeamProject;
+import com.guoxiaoxing.kitty.team.bean.TeamProjectList;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
+import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.io.ByteArrayInputStream;
+import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 任务列表项目选择
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2015年1月19日 下午4:31:59
- * 
+ *
+ * @author guoxiaoxing
  */
 public class TeamProjectSelectPopupWindow extends PopupWindow implements
         OnItemClickListener {
-	
+
 
     public interface TeamProjectPopupWindowCallBack {
         public void callBack(TeamProject teamProject);
@@ -71,7 +69,8 @@ public class TeamProjectSelectPopupWindow extends PopupWindow implements
 
         @Override
         public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                Throwable arg3) {}
+                              Throwable arg3) {
+        }
 
         @Override
         public void onFinish() {
@@ -86,7 +85,7 @@ public class TeamProjectSelectPopupWindow extends PopupWindow implements
     };
 
     public TeamProjectSelectPopupWindow(final Activity context, Team team,
-            TeamProjectPopupWindowCallBack callBack) {
+                                        TeamProjectPopupWindowCallBack callBack) {
         super(context);
         this.mTeam = team;
         this.mCallBack = callBack;
@@ -141,7 +140,7 @@ public class TeamProjectSelectPopupWindow extends PopupWindow implements
     private void getProjectsList() {
         OSChinaTeamApi.getTeamProjectList(mTeam.getId(), mHandler);
     }
-    
+
     private void addAllIssueOption(List<TeamProject> list) {
 
         TeamProject unProjectIssue = new TeamProject();
@@ -165,7 +164,7 @@ public class TeamProjectSelectPopupWindow extends PopupWindow implements
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+                            long id) {
         TeamProject project = mAdapter.getItem(position);
         if (mCallBack != null && project != null) {
             mCallBack.callBack(project);

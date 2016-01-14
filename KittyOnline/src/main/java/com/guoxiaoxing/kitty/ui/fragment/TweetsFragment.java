@@ -16,7 +16,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TweetAdapter;
 import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;

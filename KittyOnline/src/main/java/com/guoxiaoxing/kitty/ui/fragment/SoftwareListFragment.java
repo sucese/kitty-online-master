@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.adapter.SoftwareAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Entity;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.SoftwareDec;

@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -24,13 +24,13 @@ import org.kymjs.kjframe.utils.StringUtils;
 import butterknife.ButterKnife;
 
 /**
- * baseActionBar Activity
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年9月25日 上午11:30:15 引用自：tonlin
+ * 应用所有Activity的基类，定义共同的行为和特性
+ *
+ * @author guoxiaoxing
  */
 public abstract class BaseActivity extends AppCompatActivity implements
         DialogControl, View.OnClickListener, BaseViewInterface {
+
     public static final String INTENT_ACTION_EXIT_APP = "INTENT_ACTION_EXIT_APP";
 
     private boolean _isVisible;
@@ -44,7 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     protected void onDestroy() {
         super.onDestroy();
         TDevice.hideSoftKeyboard(getCurrentFocus());
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 
     @Override
@@ -70,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         }
 
         // 通过注解绑定控件
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         init(savedInstanceState);
         initView();
@@ -78,7 +78,8 @@ public abstract class BaseActivity extends AppCompatActivity implements
         _isVisible = true;
     }
 
-    protected void onBeforeSetContentLayout() {}
+    protected void onBeforeSetContentLayout() {
+    }
 
     protected boolean hasActionBar() {
         return true;
@@ -100,7 +101,8 @@ public abstract class BaseActivity extends AppCompatActivity implements
         return false;
     }
 
-    protected void init(Bundle savedInstanceState) {}
+    protected void init(Bundle savedInstanceState) {
+    }
 
     protected void initActionBar(ActionBar actionBar) {
         if (actionBar == null)
@@ -139,12 +141,12 @@ public abstract class BaseActivity extends AppCompatActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        case android.R.id.home:
-            onBackPressed();
-            break;
+            case android.R.id.home:
+                onBackPressed();
+                break;
 
-        default:
-            break;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -10,11 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.Comment.Refer;
 import com.guoxiaoxing.kitty.bean.Comment.Reply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.PlatfromUtil;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.widget.AvatarView;
@@ -25,8 +25,8 @@ import com.guoxiaoxing.kitty.widget.TweetTextView;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class CommentAdapter extends ListBaseAdapter<Comment> {
 
@@ -138,23 +138,23 @@ public class CommentAdapter extends ListBaseAdapter<Comment> {
     }
 
     static class ViewHolder {
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.tv_time)
+        @Bind(R.id.tv_time)
         TextView time;
-        @InjectView(R.id.tv_from)
+        @Bind(R.id.tv_from)
         TextView from;
-        @InjectView(R.id.tv_content)
+        @Bind(R.id.tv_content)
         TweetTextView content;
-        @InjectView(R.id.ly_relies)
+        @Bind(R.id.ly_relies)
         LinearLayout relies;
-        @InjectView(R.id.ly_refers)
+        @Bind(R.id.ly_refers)
         FloorView refers;
 
         ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -19,6 +19,11 @@ import android.widget.Toast;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.util.StringUtils;
+
+/**
+ * Application基类
+ * @author guoxiaoxing
+ */
 
 @SuppressLint("InflateParams")
 public class BaseApplication extends Application {

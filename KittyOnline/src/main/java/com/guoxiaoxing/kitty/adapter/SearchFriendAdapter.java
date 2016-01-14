@@ -17,17 +17,13 @@ import com.guoxiaoxing.kitty.widget.AvatarView;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
- * <p>Created 15/8/27 下午9:29.</p>
- * <p><a href="mailto:730395591@qq.com">Email:730395591@qq.com</a></p>
- * <p><a href="http://www.happycodeboy.com">LeonLee Blog</a></p>
- *
- * @author 李文龙(LeonLee
- *
  * 搜索好友结果适配器
+ *
+ * @author guoxiaoxing
  */
 public class SearchFriendAdapter extends BaseAdapter {
 
@@ -76,15 +72,15 @@ public class SearchFriendAdapter extends BaseAdapter {
     }
 
     static class NormalViewHolder {
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
-        @InjectView(R.id.cb_check)
+        @Bind(R.id.cb_check)
         CheckBox checkBox;
 
         NormalViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
             avatar.setClickable(false);
         }
 

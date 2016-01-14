@@ -10,6 +10,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.Constants;
+import com.guoxiaoxing.kitty.ui.dialog.CommonDialog;
+import com.guoxiaoxing.kitty.util.TDevice;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.bean.ShareType;
 import com.umeng.socialize.controller.UMServiceFactory;
@@ -24,17 +29,10 @@ import com.umeng.socialize.weixin.controller.UMWXHandler;
 import com.umeng.socialize.weixin.media.CircleShareContent;
 import com.umeng.socialize.weixin.media.WeiXinShareContent;
 
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.ui.dialog.CommonDialog;
-import com.guoxiaoxing.kitty.util.TDevice;
-
 /**
  * 分享界面dialog
  *
- * @author kymjs
- *
+ * @author guoxiaoxing
  */
 public class ShareDialog extends CommonDialog implements
         android.view.View.OnClickListener {
@@ -118,7 +116,7 @@ public class ShareDialog extends CommonDialog implements
                 TDevice.copyTextToBoard(this.link);
                 break;
             case R.id.ly_share_more_option:
-                TDevice.showSystemShareOption((Activity)this.context,
+                TDevice.showSystemShareOption((Activity) this.context,
                         this.content, this.title);
                 break;
             default:
@@ -195,13 +193,14 @@ public class ShareDialog extends CommonDialog implements
                         }
 
                         @Override
-                        public void onCancel(SHARE_MEDIA arg0) {}
+                        public void onCancel(SHARE_MEDIA arg0) {
+                        }
                     });
         }
     }
 
     private void shareToQQ() {
-        UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler((Activity)this.context,
+        UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler((Activity) this.context,
                 Constants.QQ_APPID, Constants.QQ_APPKEY);
         qqSsoHandler.setTargetUrl(this.link);
         qqSsoHandler.setTitle(this.title);

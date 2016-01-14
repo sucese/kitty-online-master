@@ -1,22 +1,5 @@
 package com.guoxiaoxing.kitty.team.viewpagefragment;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.cache.CacheManager;
-import com.guoxiaoxing.kitty.team.adapter.TeamDiaryPagerAdapter;
-import com.guoxiaoxing.kitty.team.bean.Team;
-import com.guoxiaoxing.kitty.team.bean.TeamDiaryList;
-import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;
-import com.guoxiaoxing.kitty.util.StringUtils;
-
-import org.kymjs.kjframe.http.KJAsyncTask;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -26,11 +9,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.datetimepicker.DatePickerDialog;
 import com.guoxiaoxing.kitty.datetimepicker.DatePickerDialog.OnDateSetListener;
+import com.guoxiaoxing.kitty.team.adapter.TeamDiaryPagerAdapter;
+import com.guoxiaoxing.kitty.team.bean.Team;
+import com.guoxiaoxing.kitty.team.bean.TeamDiaryList;
+import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.util.StringUtils;
+
+import org.kymjs.kjframe.http.KJAsyncTask;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class TeamDiaryFragment extends BaseFragment implements
         OnDateSetListener {
@@ -38,15 +38,15 @@ public class TeamDiaryFragment extends BaseFragment implements
     public static String DIARYDETAIL_KEY = "team_diary_detail_key";
     public static String TEAMID_KEY = "team_diary_teamid_key";
 
-    @InjectView(R.id.team_diary_pager)
+    @Bind(R.id.team_diary_pager)
     ViewPager mPager;
-    @InjectView(R.id.team_diary_pager_title)
+    @Bind(R.id.team_diary_pager_title)
     TextView mTvTitle;
-    @InjectView(R.id.team_diary_pager_calendar)
+    @Bind(R.id.team_diary_pager_calendar)
     ImageView mImgCalendar;
-    @InjectView(R.id.team_diary_pager_left)
+    @Bind(R.id.team_diary_pager_left)
     ImageView mImgLeft;
-    @InjectView(R.id.team_diary_pager_right)
+    @Bind(R.id.team_diary_pager_right)
     ImageView mImgRight;
 
     private Activity aty;
@@ -59,11 +59,11 @@ public class TeamDiaryFragment extends BaseFragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         aty = getActivity();
         View view = View.inflate(aty, R.layout.fragment_team_diarypager, null);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initData();
         initView(view);
         return view;
@@ -114,20 +114,20 @@ public class TeamDiaryFragment extends BaseFragment implements
             }
 
             @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {}
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+            }
 
             @Override
-            public void onPageScrollStateChanged(int arg0) {}
+            public void onPageScrollStateChanged(int arg0) {
+            }
         });
     }
 
     /**
      * 改变Title
-     * 
-     * @param currentPage
-     *            当前页(从0开始)
-     * @param totalPage
-     *            总共有多少页(从0开始)
+     *
+     * @param currentPage 当前页(从0开始)
+     * @param totalPage   总共有多少页(从0开始)
      */
     private void changeUI(int currentPage, int totalPage) {
         mPager.setCurrentItem(currentPage);
@@ -149,35 +149,35 @@ public class TeamDiaryFragment extends BaseFragment implements
     public void onClick(View v) {
         super.onClick(v);
         switch (v.getId()) {
-        case R.id.team_diary_pager_right:
-            int currentPage1 = mPager.getCurrentItem();
-            if (currentPage1 < mPager.getAdapter().getCount()) {
-                mPager.setCurrentItem(currentPage1 + 1);
-            }
-            break;
-        case R.id.team_diary_pager_left:
-            int currentPage2 = mPager.getCurrentItem();
-            if (currentPage2 > 0) {
-                mPager.setCurrentItem(currentPage2 - 1);
-            }
-            break;
-        case R.id.team_diary_pager_calendar:
-            final DatePickerDialog datePickerDialog = DatePickerDialog
-                    .newInstance(this, calendar.get(Calendar.YEAR),
-                            calendar.get(Calendar.MONTH),
-                            calendar.get(Calendar.DAY_OF_MONTH), false);
-            datePickerDialog.setVibrate(false);
-            datePickerDialog.setYearRange(2014, 2015);
-            datePickerDialog.show(getFragmentManager(), "datepicker");
-            break;
-        default:
-            break;
+            case R.id.team_diary_pager_right:
+                int currentPage1 = mPager.getCurrentItem();
+                if (currentPage1 < mPager.getAdapter().getCount()) {
+                    mPager.setCurrentItem(currentPage1 + 1);
+                }
+                break;
+            case R.id.team_diary_pager_left:
+                int currentPage2 = mPager.getCurrentItem();
+                if (currentPage2 > 0) {
+                    mPager.setCurrentItem(currentPage2 - 1);
+                }
+                break;
+            case R.id.team_diary_pager_calendar:
+                final DatePickerDialog datePickerDialog = DatePickerDialog
+                        .newInstance(this, calendar.get(Calendar.YEAR),
+                                calendar.get(Calendar.MONTH),
+                                calendar.get(Calendar.DAY_OF_MONTH), false);
+                datePickerDialog.setVibrate(false);
+                datePickerDialog.setYearRange(2014, 2015);
+                datePickerDialog.show(getFragmentManager(), "datepicker");
+                break;
+            default:
+                break;
         }
     }
 
     @Override
     public void onDateSet(DatePickerDialog datePickerDialog, int year,
-            int month, int day) {
+                          int month, int day) {
         int[] dateBundle = StringUtils.getCurrentDate();
         if ((dateBundle[0] == year && dateBundle[1] <= month)
                 || (dateBundle[0] == year && dateBundle[1] == month + 1 && dateBundle[2] < day)) {

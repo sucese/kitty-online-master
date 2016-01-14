@@ -6,13 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.Event;
 import com.guoxiaoxing.kitty.bean.EventApplyData;
@@ -23,45 +19,48 @@ import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.EventApplyDialog;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.URLsUtils;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import cz.msebera.android.httpclient.Header;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import butterknife.InjectView;
+import butterknife.Bind;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by 火蚁 on 15/5/28.
  */
 public class EventDetailFragment extends CommonDetailFragment<Post> {
 
-    @InjectView(R.id.tv_event_title)
+    @Bind(R.id.tv_event_title)
     TextView mTvTitle;
 
-    @InjectView(R.id.tv_event_start_time)
+    @Bind(R.id.tv_event_start_time)
     TextView mTvStartTime;
 
-    @InjectView(R.id.tv_event_end_time)
+    @Bind(R.id.tv_event_end_time)
     TextView mTvEndTime;
 
-    @InjectView(R.id.tv_event_spot)
+    @Bind(R.id.tv_event_spot)
     TextView mTvSpot;
 
-    @InjectView(R.id.rl_event_location)
+    @Bind(R.id.rl_event_location)
     View mLocation;
 
-    @InjectView(R.id.bt_event_attend)
+    @Bind(R.id.bt_event_attend)
     Button mBtAttend;// 出席人员
 
-    @InjectView(R.id.bt_event_apply)
+    @Bind(R.id.bt_event_apply)
     Button mBtEventApply;// 活动报名
 
-    @InjectView(R.id.tv_event_tip)
+    @Bind(R.id.tv_event_tip)
     TextView mEventTip;
 
     private EventApplyDialog mEventApplyDialog;

@@ -1,24 +1,5 @@
 package com.guoxiaoxing.kitty.team.fragment;
 
-import java.util.List;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.cache.CacheManager;
-import com.guoxiaoxing.kitty.team.adapter.TeamMemberAdapter;
-import com.guoxiaoxing.kitty.team.bean.Team;
-import com.guoxiaoxing.kitty.team.bean.TeamMember;
-import com.guoxiaoxing.kitty.team.bean.TeamMemberList;
-import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-
-import cz.msebera.android.httpclient.Header;
-import org.kymjs.kjframe.http.KJAsyncTask;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -29,24 +10,42 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.cache.CacheManager;
+import com.guoxiaoxing.kitty.team.adapter.TeamMemberAdapter;
+import com.guoxiaoxing.kitty.team.bean.Team;
+import com.guoxiaoxing.kitty.team.bean.TeamMember;
+import com.guoxiaoxing.kitty.team.bean.TeamMemberList;
+import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.kymjs.kjframe.http.KJAsyncTask;
+
+import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 团队成员界面
- * 
+ *
  * @author kymjs (kymjs123@gmail.com)
- * 
  */
 public class TeamMemberFragment extends BaseFragment {
 
-    @InjectView(R.id.fragment_team_grid)
+    @Bind(R.id.fragment_team_grid)
     GridView mGrid;
-    @InjectView(R.id.fragment_team_empty)
+    @Bind(R.id.fragment_team_empty)
     EmptyLayout mEmpty;
-    @InjectView(R.id.swiperefreshlayout)
+    @Bind(R.id.swiperefreshlayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     private Activity aty;
@@ -74,12 +73,12 @@ public class TeamMemberFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_team_member,
                 container, false);
         aty = getActivity();
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
 
         TeamMemberList list = (TeamMemberList) CacheManager.readObject(aty,
                 TEAM_MEMBER_DATA);
@@ -97,7 +96,8 @@ public class TeamMemberFragment extends BaseFragment {
     }
 
     @Override
-    public void onClick(View v) {}
+    public void onClick(View v) {
+    }
 
     @Override
     public void initView(View view) {
@@ -111,7 +111,7 @@ public class TeamMemberFragment extends BaseFragment {
         mGrid.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
+                                    int position, long id) {
                 UIHelper.showTeamMemberInfo(aty, team.getId(),
                         datas.get(position));
             }
@@ -158,7 +158,7 @@ public class TeamMemberFragment extends BaseFragment {
 
                     @Override
                     public void onSuccess(int arg0, Header[] arg1,
-                            final byte[] arg2) {
+                                          final byte[] arg2) {
                         KJAsyncTask.execute(new Runnable() {
                             @Override
                             public void run() {
@@ -190,7 +190,7 @@ public class TeamMemberFragment extends BaseFragment {
 
                     @Override
                     public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                            Throwable arg3) {
+                                          Throwable arg3) {
                         AppContext.showToast("成员信息获取失败");
                         if (isFirst) {
                             mEmpty.setErrorType(EmptyLayout.NETWORK_ERROR);

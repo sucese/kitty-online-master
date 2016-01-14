@@ -6,28 +6,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import cz.msebera.android.httpclient.Header;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 第三方登陆账号绑定操作
- * Created by zhangdeyi on 15/7/21.
+ *
+ * @author guoxiaoxing
  */
 public class LoginAccountBindOpenIdActivity extends BaseActivity {
 
-    @InjectView(R.id.et_username)
+    @Bind(R.id.et_username)
     EditText etUsername;
-    @InjectView(R.id.et_password)
+    @Bind(R.id.et_password)
     EditText etPassword;
 
     private String catalog;

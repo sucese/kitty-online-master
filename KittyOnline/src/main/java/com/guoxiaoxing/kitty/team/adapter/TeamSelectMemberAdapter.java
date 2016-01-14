@@ -1,29 +1,31 @@
 package com.guoxiaoxing.kitty.team.adapter;
 
-import java.util.List;
-
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.team.bean.TeamMember;
-import com.guoxiaoxing.kitty.widget.AvatarView;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.team.bean.TeamMember;
+import com.guoxiaoxing.kitty.widget.AvatarView;
+
+import java.util.List;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class TeamSelectMemberAdapter extends BaseAdapter {
 
     static class ViewHolder {
-	@InjectView(R.id.iv_avatar)
+	@Bind(R.id.iv_avatar)
 	AvatarView aView;
-	@InjectView(R.id.tv_name)
+	@Bind(R.id.tv_name)
 	TextView name;
 
 	ViewHolder(View view) {
-	    ButterKnife.inject(this, view);
+	    ButterKnife.bind(this, view);
 	}
     }
 

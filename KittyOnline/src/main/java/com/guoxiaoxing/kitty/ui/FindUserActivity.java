@@ -9,26 +9,24 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.FindUserAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.FindUserList;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
-
-import cz.msebera.android.httpclient.Header;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
 
-import butterknife.InjectView;
+import butterknife.Bind;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by 火蚁 on 15/5/27.
@@ -37,10 +35,10 @@ public class FindUserActivity extends BaseActivity implements AdapterView.OnItem
 
     private SearchView mSearchView;
 
-    @InjectView(R.id.lv_list)
+    @Bind(R.id.lv_list)
     ListView mListView;
 
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
 
     private FindUserAdapter mAdapter;

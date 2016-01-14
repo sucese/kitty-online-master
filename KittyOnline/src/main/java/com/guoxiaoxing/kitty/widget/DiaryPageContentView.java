@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.team.adapter.TeamDiaryListAdapter;
 import com.guoxiaoxing.kitty.team.bean.TeamDiary;

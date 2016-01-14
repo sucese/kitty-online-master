@@ -16,8 +16,8 @@
 package com.guoxiaoxing.kitty.emoji;
 
 /**
- * 
- * @author kymjs (http://www.kymjs.com)
+ *
+ * @author guoxiaoxing
  */
 public class Emojicon {
     private final int resId; // 图片资源地址

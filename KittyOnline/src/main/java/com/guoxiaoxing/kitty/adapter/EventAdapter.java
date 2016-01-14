@@ -6,20 +6,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Event;
 import com.guoxiaoxing.kitty.bean.EventList;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 
 import org.kymjs.kjframe.Core;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 活动列表适配器
  *
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年10月9日 下午6:22:54
+ * @author guoxiaoxing
  */
 public class EventAdapter extends ListBaseAdapter<Event> {
 
@@ -27,19 +26,19 @@ public class EventAdapter extends ListBaseAdapter<Event> {
 
     static class ViewHolder {
 
-        @InjectView(R.id.iv_event_status)
+        @Bind(R.id.iv_event_status)
         ImageView status;
-        @InjectView(R.id.iv_event_img)
+        @Bind(R.id.iv_event_img)
         ImageView img;
-        @InjectView(R.id.tv_event_title)
+        @Bind(R.id.tv_event_title)
         TextView title;
-        @InjectView(R.id.tv_event_time)
+        @Bind(R.id.tv_event_time)
         TextView time;
-        @InjectView(R.id.tv_event_spot)
+        @Bind(R.id.tv_event_spot)
         TextView spot;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseApplication;
+import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

@@ -1,21 +1,5 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import java.io.File;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.bean.Tweet;
-import com.guoxiaoxing.kitty.service.ServerTaskUtils;
-import com.guoxiaoxing.kitty.util.StringUtils;
-import com.guoxiaoxing.kitty.util.TDevice;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.widget.RecordButton;
-import com.guoxiaoxing.kitty.widget.RecordButton.OnFinishedRecordListener;
-import com.guoxiaoxing.kitty.widget.RecordButtonUtil.OnPlayListener;
-
-import org.kymjs.kjframe.utils.DensityUtils;
-
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,28 +17,44 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.service.ServerTaskUtils;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.util.StringUtils;
+import com.guoxiaoxing.kitty.util.TDevice;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.widget.RecordButton;
+import com.guoxiaoxing.kitty.widget.RecordButton.OnFinishedRecordListener;
+import com.guoxiaoxing.kitty.widget.RecordButtonUtil.OnPlayListener;
+
+import org.kymjs.kjframe.utils.DensityUtils;
+
+import java.io.File;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 语音动弹发布界面
- * 
+ *
  * @author kymjs(kymjs123@gmail.com)
- * 
  */
 public class TweetRecordFragment extends BaseFragment {
 
-    @InjectView(R.id.tweet_layout_record)
+    @Bind(R.id.tweet_layout_record)
     RelativeLayout mLayout;
-    @InjectView(R.id.tweet_btn_record)
+    @Bind(R.id.tweet_btn_record)
     RecordButton mBtnRecort;
-    @InjectView(R.id.tweet_time_record)
+    @Bind(R.id.tweet_time_record)
     TextView mTvTime;
-    @InjectView(R.id.tweet_text_record)
+    @Bind(R.id.tweet_text_record)
     TextView mTvInputLen;
-    @InjectView(R.id.tweet_edit_record)
+    @Bind(R.id.tweet_edit_record)
     EditText mEtSpeech;
-    @InjectView(R.id.tweet_img_volume)
+    @Bind(R.id.tweet_img_volume)
     ImageView mImgVolume;
 
     public static int MAX_LEN = 160;
@@ -116,7 +116,7 @@ public class TweetRecordFragment extends BaseFragment {
         mEtSpeech.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
-                    int count) {
+                                      int count) {
                 if (s.length() > MAX_LEN) {
                     mTvInputLen.setText("已达到最大长度");
                 } else {
@@ -127,7 +127,8 @@ public class TweetRecordFragment extends BaseFragment {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
-                    int after) {}
+                                          int after) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -142,15 +143,16 @@ public class TweetRecordFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {}
+    public void initData() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.item_tweet_pub_record,
                 container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         initView(rootView);
         initData();
         return rootView;
@@ -170,9 +172,9 @@ public class TweetRecordFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.public_menu_send:
-            handleSubmit(mBtnRecort.getCurrentAudioPath());
-            break;
+            case R.id.public_menu_send:
+                handleSubmit(mBtnRecort.getCurrentAudioPath());
+                break;
         }
         return true;
     }

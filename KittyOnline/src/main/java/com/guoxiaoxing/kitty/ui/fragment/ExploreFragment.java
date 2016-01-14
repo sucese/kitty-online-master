@@ -7,41 +7,39 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseFragment;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.FindUserActivity;
 import com.guoxiaoxing.kitty.ui.ShakeActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 发现页面
  * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年11月4日 下午3:34:07
- * 
+ * @author guoxiaoxing
  */
 
 public class ExploreFragment extends BaseFragment {
 
-    @InjectView(R.id.rl_active)
+    @Bind(R.id.rl_active)
     View mRlActive;
 
-    @InjectView(R.id.rl_find_osc)
+    @Bind(R.id.rl_find_osc)
     View mFindOSCer;
 
-    @InjectView(R.id.rl_city)
+    @Bind(R.id.rl_city)
     View mCity;
 
-    @InjectView(R.id.rl_activities)
+    @Bind(R.id.rl_activities)
     View mActivities;
 
-    @InjectView(R.id.rl_scan)
+    @Bind(R.id.rl_scan)
     View mScan;
 
-    @InjectView(R.id.rl_shake)
+    @Bind(R.id.rl_shake)
     View mShake;
 
     @Override
@@ -49,7 +47,7 @@ public class ExploreFragment extends BaseFragment {
             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_explore, null);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initView(view);
         return view;
     }

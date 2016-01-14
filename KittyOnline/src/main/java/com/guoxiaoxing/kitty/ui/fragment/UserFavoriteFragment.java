@@ -6,7 +6,7 @@ import java.io.Serializable;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.adapter.UserFavoriteAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Favorite;
 import com.guoxiaoxing.kitty.bean.FavoriteList;
 import com.guoxiaoxing.kitty.util.UIHelper;

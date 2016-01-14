@@ -6,20 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
 import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import cz.msebera.android.httpclient.Header;
-
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 账号绑定、账号注册
@@ -58,7 +56,7 @@ public class LoginBindActivityChooseActivity extends BaseActivity {
         }
     }
 
-    @InjectView(R.id.tv_openid_tip)
+    @Bind(R.id.tv_openid_tip)
     TextView tvOpenIdTip;
     private void initCatalogText() {
         if (catalog.equals(OpenIdCatalog.QQ)) {

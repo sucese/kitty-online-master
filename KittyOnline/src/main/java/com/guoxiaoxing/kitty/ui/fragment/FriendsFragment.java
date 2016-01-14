@@ -1,34 +1,33 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import java.io.InputStream;
-import java.io.Serializable;
-import java.util.List;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.adapter.FriendAdapter;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.Entity;
-import com.guoxiaoxing.kitty.bean.Friend;
-import com.guoxiaoxing.kitty.bean.FriendsList;
-import com.guoxiaoxing.kitty.bean.Notice;
-import com.guoxiaoxing.kitty.service.NoticeUtils;
-import com.guoxiaoxing.kitty.ui.MainActivity;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-import com.guoxiaoxing.kitty.viewpagerfragment.NoticeViewPagerFragment;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.adapter.FriendAdapter;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.Friend;
+import com.guoxiaoxing.kitty.bean.FriendsList;
+import com.guoxiaoxing.kitty.bean.Notice;
+import com.guoxiaoxing.kitty.service.NoticeUtils;
+import com.guoxiaoxing.kitty.ui.MainActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.guoxiaoxing.kitty.viewpagerfragment.NoticeViewPagerFragment;
+
+import java.io.InputStream;
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * 关注、粉丝
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年11月6日 上午11:15:37
- * 
+ *
+ * @author guoxiaoxing
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class FriendsFragment extends BaseListFragment<Friend> {
@@ -122,7 +121,7 @@ public class FriendsFragment extends BaseListFragment<Friend> {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+                            long id) {
         Friend item = (Friend) mAdapter.getItem(position);
         if (item != null) {
             if (mUid == AppContext.getInstance().getLoginUid()) {

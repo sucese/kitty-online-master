@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.viewpagefragment;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
-import com.guoxiaoxing.kitty.base.BaseViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.fragment.TeamBoardFragment;
 import com.guoxiaoxing.kitty.team.fragment.TeamIssueFragment;
@@ -20,8 +20,7 @@ import android.view.View;
 /**
  * Team主界面
  * 
- * @author kymjs (https://github.com/kymjs)
- * 
+ * @author guoxiaoxing
  */
 public class TeamMainViewPagerFragment extends BaseViewPagerFragment {
 

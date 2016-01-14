@@ -16,15 +16,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.ImagePreviewActivity;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.ImageUtils;
 import com.guoxiaoxing.kitty.util.KJAnimations;
@@ -35,40 +33,41 @@ import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.widget.AvatarView;
 import com.guoxiaoxing.kitty.widget.MyLinkMovementMethod;
 import com.guoxiaoxing.kitty.widget.TweetTextView;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.utils.DensityUtils;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import cz.msebera.android.httpclient.Header;
 
 public class TweetAdapter extends ListBaseAdapter<Tweet> {
 
     static class ViewHolder {
-        @InjectView(R.id.tv_tweet_name)
+        @Bind(R.id.tv_tweet_name)
         TextView author;
-        @InjectView(R.id.tv_tweet_time)
+        @Bind(R.id.tv_tweet_time)
         TextView time;
-        @InjectView(R.id.tweet_item)
+        @Bind(R.id.tweet_item)
         TweetTextView content;
-        @InjectView(R.id.tv_tweet_comment_count)
+        @Bind(R.id.tv_tweet_comment_count)
         TextView commentcount;
-        @InjectView(R.id.tv_tweet_platform)
+        @Bind(R.id.tv_tweet_platform)
         TextView platform;
-        @InjectView(R.id.iv_tweet_face)
+        @Bind(R.id.iv_tweet_face)
         AvatarView face;
-        @InjectView(R.id.iv_tweet_image)
+        @Bind(R.id.iv_tweet_image)
         ImageView image;
-        @InjectView(R.id.tv_like_state)
+        @Bind(R.id.tv_like_state)
         TextView tvLikeState;
-        @InjectView(R.id.tv_del)
+        @Bind(R.id.tv_del)
         TextView del;
-        @InjectView(R.id.tv_likeusers)
+        @Bind(R.id.tv_likeusers)
         TextView likeUsers;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
             image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

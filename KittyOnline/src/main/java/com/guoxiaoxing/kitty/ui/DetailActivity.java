@@ -7,14 +7,18 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseActivity;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.emoji.KJEmojiFragment;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
 import com.guoxiaoxing.kitty.emoji.ToolbarFragment;
 import com.guoxiaoxing.kitty.emoji.ToolbarFragment.OnActionClickListener;
 import com.guoxiaoxing.kitty.emoji.ToolbarFragment.ToolAction;
+import com.guoxiaoxing.kitty.team.fragment.TeamDiaryDetailFragment;
+import com.guoxiaoxing.kitty.team.fragment.TeamDiscussDetailFragment;
+import com.guoxiaoxing.kitty.team.fragment.TeamIssueDetailFragment;
+import com.guoxiaoxing.kitty.team.fragment.TeamTweetDetailFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.BlogDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
 import com.guoxiaoxing.kitty.ui.fragment.EventDetailFragment;
@@ -22,16 +26,11 @@ import com.guoxiaoxing.kitty.ui.fragment.NewsDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.PostDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.SoftwareDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.TweetDetailFragment;
-import com.guoxiaoxing.kitty.team.fragment.TeamDiaryDetailFragment;
-import com.guoxiaoxing.kitty.team.fragment.TeamDiscussDetailFragment;
-import com.guoxiaoxing.kitty.team.fragment.TeamIssueDetailFragment;
-import com.guoxiaoxing.kitty.team.fragment.TeamTweetDetailFragment;
 
 /**
  * 详情activity（包括：资讯、博客、软件、问答、动弹）
  *
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年10月11日 上午11:18:41
+ * @author guoxiaoxing
  */
 public class DetailActivity extends BaseActivity implements OnSendClickListener {
 

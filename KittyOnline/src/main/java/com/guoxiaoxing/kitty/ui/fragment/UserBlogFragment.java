@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import com.guoxiaoxing.kitty.adapter.BlogAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Blog;
 import com.guoxiaoxing.kitty.bean.BlogList;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -15,9 +15,8 @@ import android.widget.AdapterView;
 
 /**
  * 用户的博客列表(用用户的id来获取)
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年10月29日 下午5:09:13
+ *
+ * @author guoxiaoxing
  *
  */
 public class UserBlogFragment extends BaseListFragment<Blog> {

@@ -27,30 +27,29 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.BuildConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.SearchFriendAdapter;
 import com.guoxiaoxing.kitty.adapter.SelectFriendAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.Friend;
 import com.guoxiaoxing.kitty.bean.FriendsList;
 import com.guoxiaoxing.kitty.cache.CacheManager;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.guoxiaoxing.kitty.widget.AvatarView;
 import com.guoxiaoxing.kitty.widget.IndexView;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
-
 
 import java.io.ByteArrayInputStream;
 import java.io.Serializable;
@@ -60,71 +59,70 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
 
 /**
- * <p>Created 15/8/26 上午11:45.</p>
- * <p><a href="mailto:730395591@qq.com">Email:730395591@qq.com</a></p>
- * <p><a href="http://www.happycodeboy.com">LeonLee Blog</a></p>
- *
- * @author 李文龙(LeonLee)
- *
  * 选择好友界面
  *
+ * @author guoxiaoxing
  */
 public class SelectFriendsActivity extends BaseActivity {
 
     private static final String TAG = "SelectFriendsActivity";
 
-    /** 最大可选择好友的数量*/
+    /**
+     * 最大可选择好友的数量
+     */
     private static final int MAX_SELECTED_SIZE = 10;
 
-    /** 数据缓存有效时间*/
+    /**
+     * 数据缓存有效时间
+     */
     private static final int CACHE_TIME = 2 * 60; //2分钟
 
     private static final String CACHE_KEY_PREFIX = "friend_list_all";
 
-    @InjectView(R.id.lv_list)
+    @Bind(R.id.lv_list)
     ListView mListView;
 
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mEmptyLayout;
 
-    @InjectView(R.id.search_list)
+    @Bind(R.id.search_list)
     ListView mSearchListView;
 
-    @InjectView(R.id.et_search)
+    @Bind(R.id.et_search)
     EditText mSearchEditText;
 
-    @InjectView(R.id.float_text)
+    @Bind(R.id.float_text)
     TextView mFloatTextView;
 
-    @InjectView(R.id.indexview)
+    @Bind(R.id.indexview)
     IndexView mIndexView;
 
-    @InjectView(R.id.top_layout)
+    @Bind(R.id.top_layout)
     View topLayout;
 
-    @InjectView(R.id.hs_container)
+    @Bind(R.id.hs_container)
     HorizontalScrollView mHorizontalScrollView;
 
-    @InjectView(R.id.select_container)
+    @Bind(R.id.select_container)
     ViewGroup mSelectContainer;
 
-    @InjectView(R.id.search_layout)
+    @Bind(R.id.search_layout)
     View mSearchLayout;
 
-    @InjectView(R.id.search_result_text)
+    @Bind(R.id.search_result_text)
     View mSearchResultText;
 
-    @InjectView(R.id.iv_search)
+    @Bind(R.id.iv_search)
     View mSearchIcon;
 
-    @InjectView(R.id.divider1)
+    @Bind(R.id.divider1)
     View mDividerView1;
 
-    @InjectView(R.id.divider2)
+    @Bind(R.id.divider2)
     View mDividerView2;
 
     private TextView mTopRightButton;
@@ -150,13 +148,17 @@ public class SelectFriendsActivity extends BaseActivity {
     private int colorPrimary;
 
     @Override
-    public void onClick(View v) {}
+    public void onClick(View v) {
+    }
 
-    /** 创建一个空白的ListView头部*/
+    /**
+     * 创建一个空白的ListView头部
+     */
     private View createListHeaderView() {
         View view = new View(this);
         int headerHeight = getResources().getDimensionPixelOffset(R.dimen.select_friend_header_height);
-        AbsListView.LayoutParams lp = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, headerHeight);
+        AbsListView.LayoutParams lp = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                headerHeight);
         view.setLayoutParams(lp);
         return view;
     }
@@ -284,7 +286,7 @@ public class SelectFriendsActivity extends BaseActivity {
         //顶部设置透明度
         View selectLayout = findViewById(R.id.select_layout);
         Drawable bg = selectLayout.getBackground();
-        if(bg != null) {
+        if (bg != null) {
             bg.setAlpha(238);
         }
 
@@ -298,7 +300,7 @@ public class SelectFriendsActivity extends BaseActivity {
 
         //添加右上角的按钮
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null) {
+        if (actionBar != null) {
             actionBar.setDisplayShowCustomEnabled(true);
             View view = getLayoutInflater().inflate(R.layout.actionbar_green_button_layout, null);
             mTopRightButton = (TextView) view.findViewById(R.id.button);
@@ -361,14 +363,16 @@ public class SelectFriendsActivity extends BaseActivity {
         return true;
     }
 
-    /** 点击列表*/
+    /**
+     * 点击列表
+     */
     private void itemClick(FriendItem item) {
         boolean isSelected = !item.isSelected;
         int userId = item.friend.getUserid();
         boolean contains = mCheckedFriendIds.contains(userId);
         if (isSelected) {
             if (mCheckedFriendIds.size() < MAX_SELECTED_SIZE) {
-                if(!contains) {
+                if (!contains) {
                     mCheckedFriendIds.add(userId);
                     item.isSelected = isSelected;
                     mAdapter.notifyDataSetChanged();
@@ -395,10 +399,12 @@ public class SelectFriendsActivity extends BaseActivity {
         updateTopButton();
     }
 
-    /** 更新“确定”按钮*/
+    /**
+     * 更新“确定”按钮
+     */
     private void updateTopButton() {
         String ok = getString(R.string.ok);
-        if(mCheckedFriendIds.isEmpty()) {
+        if (mCheckedFriendIds.isEmpty()) {
             mTopRightButton.setEnabled(false);
             mTopRightButton.setText(ok);
         } else {
@@ -407,21 +413,23 @@ public class SelectFriendsActivity extends BaseActivity {
         }
     }
 
-    /** 点击确定*/
+    /**
+     * 点击确定
+     */
     private void clickOk() {
-        if(mCheckedFriendIds.isEmpty()) {
+        if (mCheckedFriendIds.isEmpty()) {
             setResult(RESULT_CANCELED);
         } else {
             Intent result = new Intent();
             int userIds[] = new int[mCheckedFriendIds.size()];
             String names[] = new String[mCheckedFriendIds.size()];
 
-            for(int i = 0; i < mCheckedFriendIds.size(); i ++) {
+            for (int i = 0; i < mCheckedFriendIds.size(); i++) {
                 int id = mCheckedFriendIds.get(i);
                 userIds[i] = id;
 
-                for(FriendItem item : mAllFriendItems) {
-                    if(item.friend.getUserid() == id) {
+                for (FriendItem item : mAllFriendItems) {
+                    if (item.friend.getUserid() == id) {
                         names[i] = item.friend.getName();
                         break;
                     }
@@ -434,63 +442,67 @@ public class SelectFriendsActivity extends BaseActivity {
         finish();
     }
 
-    /** 清空搜索结果*/
+    /**
+     * 清空搜索结果
+     */
     private void resetSearchResult() {
         mSearchResultList.clear();
     }
 
-    /** 根据关键字去搜索*/
+    /**
+     * 根据关键字去搜索
+     */
     private void searchKey(String key) {
         resetSearchResult();
-        if(!TextUtils.isEmpty(key)) {
+        if (!TextUtils.isEmpty(key)) {
             key = key.toLowerCase();
             int len = key.length();
             int keyLength;
             int start;
             for (FriendItem item : mAllFriendItems) {
                 String name = item.name;
-                if(TextUtils.isEmpty(name)) {
+                if (TextUtils.isEmpty(name)) {
                     continue;
                 }
                 keyLength = len;
 
                 //先按名字查找
                 start = name.indexOf(key);
-                if(start == -1) {
+                if (start == -1) {
                     //判断是否是纯英文
-                    if(!key.matches("[a-zA-Z]+")) {
+                    if (!key.matches("[a-zA-Z]+")) {
                         continue;
                     }
                     boolean match = false;
                     //判断是不是拼音
-                    if(!TextUtils.isEmpty(item.pinYin)) {
-                        if(item.pinYin.startsWith(key)) {
+                    if (!TextUtils.isEmpty(item.pinYin)) {
+                        if (item.pinYin.startsWith(key)) {
                             match = true;
                             start = 0;
                             int total = 0;
-                            for(int i = 0; i < item.pinYinArray.length; i ++) {
+                            for (int i = 0; i < item.pinYinArray.length; i++) {
                                 String py = item.pinYinArray[i];
                                 total += py.length();
-                                if(len <= total) {
+                                if (len <= total) {
                                     keyLength = i + 1;
                                     break;
                                 }
                             }
-                        } else if(key.startsWith(item.pinYin)) {
+                        } else if (key.startsWith(item.pinYin)) {
                             match = true;
                             start = -1;
                             keyLength = 0;
                         }
                     }
 
-                    if(!match) {
-                        if(!TextUtils.isEmpty(item.firstPinYin)) {
+                    if (!match) {
+                        if (!TextUtils.isEmpty(item.firstPinYin)) {
                             //判断是不是首字母拼间
                             if (item.firstPinYin.startsWith(key)) {
                                 match = true;
                                 start = 0;
                                 keyLength = len;
-                            } else if(key.startsWith(item.firstPinYin)) {
+                            } else if (key.startsWith(item.firstPinYin)) {
                                 match = true;
                                 start = -1;
                                 keyLength = 0;
@@ -498,7 +510,7 @@ public class SelectFriendsActivity extends BaseActivity {
                         }
                     }
 
-                    if(!match) {
+                    if (!match) {
                         continue;
                     }
                 }
@@ -506,7 +518,7 @@ public class SelectFriendsActivity extends BaseActivity {
                 mSearchResultList.add(new SearchItem(item, start, keyLength, colorPrimary));
             }
         }
-        if(mSearchResultList.isEmpty()) {
+        if (mSearchResultList.isEmpty()) {
             mSearchResultText.setVisibility(View.VISIBLE);
         } else {
             mSearchResultText.setVisibility(View.GONE);
@@ -514,9 +526,11 @@ public class SelectFriendsActivity extends BaseActivity {
         mSearchAdapter.notifyDataSetChanged();
     }
 
-    /** 设置输入模式*/
+    /**
+     * 设置输入模式
+     */
     private void setEditMode(boolean edit) {
-        if(!edit) {
+        if (!edit) {
             //隐藏输入法
             TDevice.hideSoftKeyboard(mSearchEditText);
             resetLastSelectView();
@@ -529,7 +543,9 @@ public class SelectFriendsActivity extends BaseActivity {
         isEditMode = edit;
     }
 
-    /** 添加顶部选中的用户头像*/
+    /**
+     * 添加顶部选中的用户头像
+     */
     private void addHeaderSelectView(Friend friend) {
         mHorizontalScrollView.setVisibility(View.VISIBLE);
         mSearchIcon.setVisibility(View.GONE);
@@ -556,7 +572,7 @@ public class SelectFriendsActivity extends BaseActivity {
 
         //修正HorizontalScrollView的大小
         ViewGroup.LayoutParams layoutParams = mHorizontalScrollView.getLayoutParams();
-        if(size + 10 + mHorizontalScrollView.getWidth() > topLayout.getWidth() - minSize
+        if (size + 10 + mHorizontalScrollView.getWidth() > topLayout.getWidth() - minSize
                 && layoutParams.width == ViewGroup.LayoutParams.WRAP_CONTENT) {
             layoutParams.width = mHorizontalScrollView.getWidth();
             mHorizontalScrollView.setLayoutParams(layoutParams);
@@ -579,43 +595,49 @@ public class SelectFriendsActivity extends BaseActivity {
         });
     }
 
-    /** 移除顶部选中的用户头像*/
+    /**
+     * 移除顶部选中的用户头像
+     */
     private void removeHeaderSelectView(int userId) {
         View view = mSelectContainer.findViewWithTag(userId);
-        if(view != null) {
+        if (view != null) {
             //修正HorizontalScrollView的大小
             ViewGroup.LayoutParams layoutParams = mHorizontalScrollView.getLayoutParams();
-            if(layoutParams.width != ViewGroup.LayoutParams.WRAP_CONTENT) {
+            if (layoutParams.width != ViewGroup.LayoutParams.WRAP_CONTENT) {
                 int minSize = (int) mSearchEditText.getPaint().measureText("搜 索");
-                if(mSelectContainer.getWidth() - view.getWidth() <= topLayout.getWidth() - minSize )
+                if (mSelectContainer.getWidth() - view.getWidth() <= topLayout.getWidth() - minSize)
                     layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
                 mHorizontalScrollView.setLayoutParams(layoutParams);
             }
 
             mSelectContainer.removeView(view);
         }
-        if(mSelectContainer.getChildCount() == 0) {
+        if (mSelectContainer.getChildCount() == 0) {
             mSearchIcon.setVisibility(View.VISIBLE);
             mHorizontalScrollView.setVisibility(View.GONE);
         }
     }
 
-    /** 恢复最后的选中状态的界面的透明度*/
+    /**
+     * 恢复最后的选中状态的界面的透明度
+     */
     private void resetLastSelectView() {
-        if(mSelectContainer.getChildCount() == 0) {
+        if (mSelectContainer.getChildCount() == 0) {
             return;
         }
         View view = mSelectContainer.getChildAt(mSelectContainer.getChildCount() - 1);
         int key = R.id.select_container;
         view.setTag(key, null);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             view.setAlpha(1);
         }
     }
 
-    /** 处理删除按键的事件*/
+    /**
+     * 处理删除按键的事件
+     */
     private void handleDeleteKeyEvent() {
-        if(mSelectContainer.getChildCount() == 0) {
+        if (mSelectContainer.getChildCount() == 0) {
             return;
         }
         View view = mSelectContainer.getChildAt(mSelectContainer.getChildCount() - 1);
@@ -625,9 +647,9 @@ public class SelectFriendsActivity extends BaseActivity {
         Integer count = (Integer) view.getTag(key);
 
         //连续点两次删除键才删除选中的项
-        if(count == null || count == 0) {
+        if (count == null || count == 0) {
             view.setTag(key, 1);
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                 view.setAlpha(0.5f);
             }
         } else {
@@ -635,7 +657,9 @@ public class SelectFriendsActivity extends BaseActivity {
         }
     }
 
-    /** 移除一个已选择的好友*/
+    /**
+     * 移除一个已选择的好友
+     */
     private void removeCheckedFriend(int userId) {
         Iterator<Integer> iterator = mCheckedFriendIds.iterator();
         while (iterator.hasNext()) {
@@ -643,8 +667,8 @@ public class SelectFriendsActivity extends BaseActivity {
                 iterator.remove();
             }
         }
-        for(FriendItem item : mAllFriendItems) {
-            if(item.friend.getUserid() == userId) {
+        for (FriendItem item : mAllFriendItems) {
+            if (item.friend.getUserid() == userId) {
                 item.isSelected = false;
                 break;
             }
@@ -678,8 +702,8 @@ public class SelectFriendsActivity extends BaseActivity {
             this.pinYinArray = pinYinArray;
             this.pinYin = pinYin;
             this.firstPinYin = firstPinYin;
-            
-            if(indexStr != null && indexStr.length() >= 0) {
+
+            if (indexStr != null && indexStr.length() >= 0) {
                 this.firstLetter = indexStr.charAt(0);
             }
         }
@@ -749,18 +773,19 @@ public class SelectFriendsActivity extends BaseActivity {
 
     /***
      * 获取列表数据
-     * @return void
+     *
      * @param refresh
+     * @return void
      */
     private void requestData(boolean refresh) {
         int uid = AppContext.getInstance().getLoginUid();
         String key = getCacheKey(uid);
-        if(refresh) {
+        if (refresh) {
             // 读取新的数据
             sendRequestData(uid, key);
         } else {
             boolean hasCache = CacheManager.isExistDataCache(this, key);
-            if(hasCache) {
+            if (hasCache) {
                 readCacheData(key);
             } else {
                 sendRequestData(uid, key);
@@ -768,19 +793,21 @@ public class SelectFriendsActivity extends BaseActivity {
         }
     }
 
-    /** 请求数据*/
+    /**
+     * 请求数据
+     */
     private void sendRequestData(int uid, String key) {
-        if(uid == 0) {
+        if (uid == 0) {
             mEmptyLayout.setNoDataContent(getString(R.string.select_friends_empty));
             mEmptyLayout.setErrorType(EmptyLayout.NODATA);
         } else {
-            if(TDevice.hasInternet()) {
-                if(mAllFriendItems.isEmpty()) {
+            if (TDevice.hasInternet()) {
+                if (mAllFriendItems.isEmpty()) {
                     mEmptyLayout.setErrorType(EmptyLayout.NETWORK_LOADING);
                 }
                 OSChinaApi.getAllFriendsList(uid, relation, new ResponseHandler(this, key));
             } else {
-                if(mAllFriendItems.isEmpty()) {
+                if (mAllFriendItems.isEmpty()) {
                     mEmptyLayout.setErrorType(EmptyLayout.NETWORK_ERROR);
                 }
             }
@@ -798,10 +825,12 @@ public class SelectFriendsActivity extends BaseActivity {
         mCacheTask.execute();
     }
 
-    /** 回调成功的数据*/
+    /**
+     * 回调成功的数据
+     */
     private void handleResult(String cacheKey, boolean fromCache, List<FriendItem> list) {
-        if(list.isEmpty()) {
-            if(mAllFriendItems.isEmpty()) {
+        if (list.isEmpty()) {
+            if (mAllFriendItems.isEmpty()) {
                 mEmptyLayout.setNoDataContent(getString(R.string.select_friends_empty));
                 mEmptyLayout.setErrorType(EmptyLayout.NODATA);
             } else {
@@ -809,33 +838,37 @@ public class SelectFriendsActivity extends BaseActivity {
             }
         } else {
             mEmptyLayout.setErrorType(EmptyLayout.HIDE_LAYOUT);
-            if(mAllFriendItems.isEmpty() || (!isEditMode && mCheckedFriendIds.isEmpty())) {
+            if (mAllFriendItems.isEmpty() || (!isEditMode && mCheckedFriendIds.isEmpty())) {
                 mAllFriendItems.clear();
                 mAllFriendItems.addAll(list);
                 mAdapter.setFriendItems(mAllFriendItems);
             }
         }
 
-        if(fromCache) {
+        if (fromCache) {
             String lastRefreshTime = AppContext.getLastRefreshTime(cacheKey);
             String currTime = StringUtils.getCurTimeStr();
             long diff = StringUtils.calDateDifferent(lastRefreshTime, currTime);
-            if(diff > CACHE_TIME) { //缓存超过有效时间，则重新请求数据
+            if (diff > CACHE_TIME) { //缓存超过有效时间，则重新请求数据
                 requestData(true);
             }
         }
     }
 
-    /** 回调失败的结果*/
+    /**
+     * 回调失败的结果
+     */
     private void handleFail() {
         //如果为空时，才显示没有数据的提示
-        if(mAllFriendItems.isEmpty()) {
+        if (mAllFriendItems.isEmpty()) {
             mEmptyLayout.setNoDataContent(getString(R.string.select_friends_empty));
             mEmptyLayout.setErrorType(EmptyLayout.NODATA);
         }
     }
 
-    /** 读取缓存任务*/
+    /**
+     * 读取缓存任务
+     */
     private static class CacheTask extends AsyncTask<Void, Void, List<FriendItem>> {
         private final WeakReference<SelectFriendsActivity> mActivity;
         private final String cacheKey;
@@ -848,7 +881,7 @@ public class SelectFriendsActivity extends BaseActivity {
         @Override
         protected List<FriendItem> doInBackground(Void... params) {
             SelectFriendsActivity activity = mActivity.get();
-            if(activity == null) {
+            if (activity == null) {
                 return null;
             }
             return (List<FriendItem>) CacheManager.readObject(activity.getApplicationContext(), cacheKey);
@@ -857,11 +890,11 @@ public class SelectFriendsActivity extends BaseActivity {
         @Override
         protected void onPostExecute(List<FriendItem> list) {
             SelectFriendsActivity activity = mActivity.get();
-            if(activity == null || activity.isFinishing()) {
+            if (activity == null || activity.isFinishing()) {
                 return;
             }
             //如果缓存为空，则读取网络的数据
-            if(list == null || list.isEmpty()) {
+            if (list == null || list.isEmpty()) {
                 activity.requestData(true);
             } else {
                 activity.handleResult(cacheKey, true, list);
@@ -869,7 +902,9 @@ public class SelectFriendsActivity extends BaseActivity {
         }
     }
 
-    /** 网络请求回调*/
+    /**
+     * 网络请求回调
+     */
     private static class ResponseHandler extends AsyncHttpResponseHandler {
 
         private final WeakReference<SelectFriendsActivity> mActivity;
@@ -906,12 +941,12 @@ public class SelectFriendsActivity extends BaseActivity {
                         String name;
                         char[] input;
 
-                        for(Friend friend : friendsList.getList()) {
+                        for (Friend friend : friendsList.getList()) {
                             indexStr.replace(0, indexStr.length(), "");
                             firstPinYin.replace(0, firstPinYin.length(), "");
                             pinYin.replace(0, pinYin.length(), "");
 
-                            if(TextUtils.isEmpty(friend.getName())) {
+                            if (TextUtils.isEmpty(friend.getName())) {
                                 name = "";
                             } else {
                                 name = friend.getName().toLowerCase();
@@ -927,12 +962,13 @@ public class SelectFriendsActivity extends BaseActivity {
                                             String pinyin = temp[0];
                                             if (!TextUtils.isEmpty(pinyin)) {
                                                 indexStr.append(pinyin);
-                                                if(lastCNChar) {
+                                                if (lastCNChar) {
                                                     pinYin.append(pinyin).append(" ");
                                                     firstPinYin.append(pinyin.charAt(0));
                                                 }
                                             }
-                                        }  catch (Exception e){}
+                                        } catch (Exception e) {
+                                        }
                                     } else {
                                         lastCNChar = false;
                                         indexStr.append(str);
@@ -963,10 +999,10 @@ public class SelectFriendsActivity extends BaseActivity {
                 @Override
                 protected void onPostExecute(List<FriendItem> friendItems) {
                     SelectFriendsActivity activity = mActivity.get();
-                    if(activity == null || activity.isFinishing()) {
+                    if (activity == null || activity.isFinishing()) {
                         return;
                     }
-                    if(friendItems == null) {
+                    if (friendItems == null) {
                         onFailure(statusCode, headers, responseBody, null);
                     } else {
                         activity.handleResult(cacheKey, false, friendItems);
@@ -978,7 +1014,7 @@ public class SelectFriendsActivity extends BaseActivity {
         @Override
         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
             SelectFriendsActivity activity = mActivity.get();
-            if(activity == null) {
+            if (activity == null) {
                 return;
             }
             activity.handleFail();

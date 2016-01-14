@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.team.adapter.TeamActiveAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamActive;

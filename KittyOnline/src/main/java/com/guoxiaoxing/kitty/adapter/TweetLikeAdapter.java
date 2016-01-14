@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.TweetLike;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.PlatfromUtil;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -17,14 +17,13 @@ import com.guoxiaoxing.kitty.widget.MyLinkMovementMethod;
 import com.guoxiaoxing.kitty.widget.MyURLSpan;
 import com.guoxiaoxing.kitty.widget.TweetTextView;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
- * 动弹点赞适配器 TweetLikeAdapter.java
+ * 动弹点赞适配器
  *
- * @author 火蚁(http://my.oschina.net/u/253900)
- * @data 2015-4-10 上午10:19:19
+ * @author guoxiaoxing
  */
 public class TweetLikeAdapter extends ListBaseAdapter<TweetLike> {
 
@@ -67,21 +66,21 @@ public class TweetLikeAdapter extends ListBaseAdapter<TweetLike> {
     }
 
     static class ViewHolder {
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.tv_from)
+        @Bind(R.id.tv_from)
         TextView from;
-        @InjectView(R.id.tv_time)
+        @Bind(R.id.tv_time)
         TextView time;
-        @InjectView(R.id.tv_action)
+        @Bind(R.id.tv_action)
         TextView action;
-        @InjectView(R.id.tv_reply)
+        @Bind(R.id.tv_reply)
         TweetTextView reply;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

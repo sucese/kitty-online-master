@@ -1,15 +1,13 @@
 package com.guoxiaoxing.kitty.team.fragment;
 
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+
 /**
- * TeamMemberSelectFragment.java
- * 
- * @author 火蚁(http://my.oschina.net/u/253900)
  *
- * @data 2015-3-10 下午3:54:40
+ * @author guoxiaoxing
  */
 public class TeamProjectMemberSelectFragment extends TeamProjectMemberFragment {
     

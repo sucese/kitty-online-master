@@ -6,63 +6,60 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.team.bean.MyIssueState;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.TypefaceUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.guoxiaoxing.kitty.widget.AvatarView;
-
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.kymjs.kjframe.utils.SystemTool;
 
 import java.io.ByteArrayInputStream;
 import java.util.Calendar;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import cz.msebera.android.httpclient.Header;
 
 /**
  * Team面板界面
- * 
- * @author kymjs (https://github.com/kymjs)
- * 
+ *
+ * @author guoxiaoxing
  */
 public class TeamBoardFragment extends BaseFragment {
 
-    @InjectView(R.id.team_myissue_waitdo)
+    @Bind(R.id.team_myissue_waitdo)
     View mRlWaitDo;
-    @InjectView(R.id.team_myissue_outdate)
+    @Bind(R.id.team_myissue_outdate)
     View mRlWill;
-    @InjectView(R.id.team_myissue_ing)
+    @Bind(R.id.team_myissue_ing)
     View mRlIng;
-    @InjectView(R.id.team_myissue_all)
+    @Bind(R.id.team_myissue_all)
     View mRlAll;
 
-    @InjectView(R.id.team_myissue_wait_num)
+    @Bind(R.id.team_myissue_wait_num)
     TextView mTvWaitDo;
-    @InjectView(R.id.team_myissue_outdate_num)
+    @Bind(R.id.team_myissue_outdate_num)
     TextView mTvOutdate;
-    @InjectView(R.id.team_myissue_ing_num)
+    @Bind(R.id.team_myissue_ing_num)
     TextView mTvIng;
-    @InjectView(R.id.team_myissue_all_num)
+    @Bind(R.id.team_myissue_all_num)
     TextView mTvAll;
 
-    @InjectView(R.id.iv_avatar)
+    @Bind(R.id.iv_avatar)
     AvatarView mIvAvatarView;
-    @InjectView(R.id.team_myissue_name)
+    @Bind(R.id.team_myissue_name)
     TextView mTvName;
-    @InjectView(R.id.team_myissue_date)
+    @Bind(R.id.team_myissue_date)
     TextView mTvDate;
 
     private Team team;
@@ -85,11 +82,11 @@ public class TeamBoardFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_team_board,
                 container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         initData();
         initView(rootView);
         return rootView;
@@ -148,75 +145,75 @@ public class TeamBoardFragment extends BaseFragment {
         int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
         String weekStr = "";
         switch (dayOfWeek) {
-        case 1:
-            weekStr = "星期日";
-            break;
-        case 2:
-            weekStr = "星期一";
-            break;
-        case 3:
-            weekStr = "星期二";
-            break;
-        case 4:
-            weekStr = "星期三";
-            break;
-        case 5:
-            weekStr = "星期四";
-            break;
-        case 6:
-            weekStr = "星期五";
-            break;
-        case 7:
-            weekStr = "星期六";
-            break;
+            case 1:
+                weekStr = "星期日";
+                break;
+            case 2:
+                weekStr = "星期一";
+                break;
+            case 3:
+                weekStr = "星期二";
+                break;
+            case 4:
+                weekStr = "星期三";
+                break;
+            case 5:
+                weekStr = "星期四";
+                break;
+            case 6:
+                weekStr = "星期五";
+                break;
+            case 7:
+                weekStr = "星期六";
+                break;
         }
 
         return weekStr;
     }
 
     @Override
-    @OnClick({ R.id.ll_team_active, R.id.ll_team_project, R.id.ll_team_issue,
-            R.id.ll_team_discuss, R.id.ll_team_diary })
+    @OnClick({R.id.ll_team_active, R.id.ll_team_project, R.id.ll_team_issue,
+            R.id.ll_team_discuss, R.id.ll_team_diary})
     public void onClick(View v) {
         switch (v.getId()) {
-        case R.id.team_myissue_waitdo:
-            UIHelper.showSimpleBack(getActivity(),
-                    SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(0));
-            break;
-        case R.id.team_myissue_ing:
-            UIHelper.showSimpleBack(getActivity(),
-                    SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(1));
-            break;
-        case R.id.team_myissue_outdate:
-            UIHelper.showSimpleBack(getActivity(),
-                    SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(0));
-            break;
-        case R.id.team_myissue_all:
-            UIHelper.showSimpleBack(getActivity(),
-                    SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(2));
-            break;
-        case R.id.ll_team_active:
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_ACTIVE,
-                    getArguments());
-            break;
-        case R.id.ll_team_project:
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_PROJECT,
-                    getArguments());
-            break;
-        case R.id.ll_team_issue:
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_ISSUE,
-                    getBundle());
-            break;
-        case R.id.ll_team_discuss:
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_DISCUSS,
-                    getBundle());
-            break;
-        case R.id.ll_team_diary:
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_DIRAY,
-                    getBundle());
-            break;
-        default:
-            break;
+            case R.id.team_myissue_waitdo:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(0));
+                break;
+            case R.id.team_myissue_ing:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(1));
+                break;
+            case R.id.team_myissue_outdate:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(0));
+                break;
+            case R.id.team_myissue_all:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.MY_ISSUE_PAGER, getMyIssueStateBundle(2));
+                break;
+            case R.id.ll_team_active:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_ACTIVE,
+                        getArguments());
+                break;
+            case R.id.ll_team_project:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_PROJECT,
+                        getArguments());
+                break;
+            case R.id.ll_team_issue:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_ISSUE,
+                        getBundle());
+                break;
+            case R.id.ll_team_discuss:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_DISCUSS,
+                        getBundle());
+                break;
+            case R.id.ll_team_diary:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.TEAM_DIRAY,
+                        getBundle());
+                break;
+            default:
+                break;
         }
     }
 
@@ -254,7 +251,8 @@ public class TeamBoardFragment extends BaseFragment {
 
             @Override
             public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                    Throwable arg3) {}
+                                  Throwable arg3) {
+            }
 
             @Override
             public void onFinish() {

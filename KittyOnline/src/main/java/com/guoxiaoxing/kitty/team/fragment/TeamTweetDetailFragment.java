@@ -22,8 +22,8 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BeseHaveHeaderListFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.ui.base.BeseHaveHeaderListFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.Result;
@@ -61,7 +61,8 @@ import cz.msebera.android.httpclient.Header;
 /**
  * Team动态的详情界面
  *
- * @author kymjs (https://github.com/kymjs)
+ * @author guoxiaoxing
+ *
  */
 public class TeamTweetDetailFragment extends
         BeseHaveHeaderListFragment<TeamReply, TeamActiveDetail> implements

@@ -14,50 +14,50 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.ShakeObject;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.KJAnimations;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TypefaceUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.kymjs.kjframe.Core;
 
 import java.io.ByteArrayInputStream;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
 
 /**
  * 摇一摇界面
- * Created by 火蚁 on 15/5/28.
+ *
+ * @author guoxiaoxing
  */
 public class ShakeActivity extends BaseActivity implements SensorEventListener {
 
-    @InjectView(R.id.shake_img)
+    @Bind(R.id.shake_img)
     ImageView mImgShake;
 
-    @InjectView(R.id.progress)
+    @Bind(R.id.progress)
     ProgressBar mProgress;
-    @InjectView(R.id.shake_bottom)
+    @Bind(R.id.shake_bottom)
     LinearLayout mLayoutBottom;
-    @InjectView(R.id.iv_face)
+    @Bind(R.id.iv_face)
     ImageView mImgHead;
-    @InjectView(R.id.tv_title)
+    @Bind(R.id.tv_title)
     TextView mTvTitle;
-    @InjectView(R.id.tv_description)
+    @Bind(R.id.tv_description)
     TextView mTvDetail;
-    @InjectView(R.id.tv_author)
+    @Bind(R.id.tv_author)
     TextView mTvAuthor;
-    @InjectView(R.id.tv_comment_count)
+    @Bind(R.id.tv_comment_count)
     TextView mTvCommentCount;
-    @InjectView(R.id.tv_time)
+    @Bind(R.id.tv_time)
     TextView mTvDate;
 
     private SensorManager sensorManager = null;

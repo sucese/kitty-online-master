@@ -1,30 +1,5 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import java.io.ByteArrayInputStream;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.MyInformation;
-import com.guoxiaoxing.kitty.bean.Notice;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.bean.User;
-import com.guoxiaoxing.kitty.cache.CacheManager;
-import com.guoxiaoxing.kitty.ui.MainActivity;
-import com.guoxiaoxing.kitty.ui.MyQrodeDialog;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-import com.guoxiaoxing.kitty.util.StringUtils;
-import com.guoxiaoxing.kitty.util.TDevice;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-import com.guoxiaoxing.kitty.widget.AvatarView;
-import com.guoxiaoxing.kitty.widget.BadgeView;
-
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -41,48 +16,70 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import cz.msebera.android.httpclient.Header;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.Constants;
+import com.guoxiaoxing.kitty.bean.MyInformation;
+import com.guoxiaoxing.kitty.bean.Notice;
+import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.cache.CacheManager;
+import com.guoxiaoxing.kitty.ui.MainActivity;
+import com.guoxiaoxing.kitty.ui.MyQrodeDialog;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
+import com.guoxiaoxing.kitty.util.StringUtils;
+import com.guoxiaoxing.kitty.util.TDevice;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.guoxiaoxing.kitty.widget.AvatarView;
+import com.guoxiaoxing.kitty.widget.BadgeView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.io.ByteArrayInputStream;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 登录用户中心页面
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @author kymjs (http://my.oschina.net/kymjs)
- * @version 创建时间：2014年10月30日 下午4:05:47
+ *
+ * @author guoxiaoxing
  */
 public class MineFragment extends BaseFragment {
 
     public static final int sChildView = 9; // 在没有加入TeamList控件时rootview有多少子布局
 
-    @InjectView(R.id.iv_avatar)
+    @Bind(R.id.iv_avatar)
     AvatarView mIvAvatar;
-    @InjectView(R.id.iv_gender)
+    @Bind(R.id.iv_gender)
     ImageView mIvGender;
-    @InjectView(R.id.tv_name)
+    @Bind(R.id.tv_name)
     TextView mTvName;
-    @InjectView(R.id.tv_score)
+    @Bind(R.id.tv_score)
     TextView mTvScore;
-    @InjectView(R.id.tv_favorite)
+    @Bind(R.id.tv_favorite)
     TextView mTvFavorite;
-    @InjectView(R.id.tv_following)
+    @Bind(R.id.tv_following)
     TextView mTvFollowing;
-    @InjectView(R.id.tv_follower)
+    @Bind(R.id.tv_follower)
     TextView mTvFans;
-    @InjectView(R.id.tv_mes)
+    @Bind(R.id.tv_mes)
     View mMesView;
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
-    @InjectView(R.id.iv_qr_code)
+    @Bind(R.id.iv_qr_code)
     ImageView mQrCode;
-    @InjectView(R.id.ll_user_container)
+    @Bind(R.id.ll_user_container)
     View mUserContainer;
-    @InjectView(R.id.rl_user_unlogin)
+    @Bind(R.id.rl_user_unlogin)
     View mUserUnLogin;
-    @InjectView(R.id.rootview)
+    @Bind(R.id.rootview)
     LinearLayout rootView;
 
     private static BadgeView mMesCount;
@@ -193,7 +190,7 @@ public class MineFragment extends BaseFragment {
             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_information,
                 container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initView(view);
         return view;
     }

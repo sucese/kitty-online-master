@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.News;
 import com.guoxiaoxing.kitty.bean.NewsList;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class NewsAdapter extends ListBaseAdapter<News> {
 
@@ -64,21 +64,21 @@ public class NewsAdapter extends ListBaseAdapter<News> {
     }
 
     static class ViewHolder {
-        @InjectView(R.id.tv_title)
+        @Bind(R.id.tv_title)
         TextView title;
-        @InjectView(R.id.tv_description)
+        @Bind(R.id.tv_description)
         TextView description;
-        @InjectView(R.id.tv_source)
+        @Bind(R.id.tv_source)
         TextView source;
-        @InjectView(R.id.tv_time)
+        @Bind(R.id.tv_time)
         TextView time;
-        @InjectView(R.id.tv_comment_count)
+        @Bind(R.id.tv_comment_count)
         TextView comment_count;
-        @InjectView(R.id.iv_tip)
+        @Bind(R.id.iv_tip)
         ImageView tip;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

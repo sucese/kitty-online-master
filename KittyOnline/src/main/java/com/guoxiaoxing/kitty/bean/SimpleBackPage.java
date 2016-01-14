@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kitty.bean;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.ui.fragment.AboutOSCFragment;
+import com.guoxiaoxing.kitty.ui.fragment.AboutUsFragment;
 import com.guoxiaoxing.kitty.ui.fragment.ActiveFragment;
 import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
 import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
@@ -86,7 +86,7 @@ public enum SimpleBackPage {
     SETTING_NOTIFICATION(16, R.string.actionbar_title_setting_notification,
             SettingsNotificationFragment.class),
 
-    ABOUT_OSC(17, R.string.actionbar_title_about_osc, AboutOSCFragment.class),
+    ABOUT_OSC(17, R.string.actionbar_title_about_osc, AboutUsFragment.class),
 
     BLOG(18, R.string.actionbar_title_blog_area, BlogViewPagerFragment.class),
 

@@ -1,32 +1,34 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import com.guoxiaoxing.kitty.AppConfig;
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton;
-import com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton.OnToggleChanged;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.guoxiaoxing.kitty.AppConfig;
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton;
+import com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton.OnToggleChanged;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class SettingsNotificationFragment extends BaseFragment {
 	
-	@InjectView(R.id.tb_accept) ToggleButton mTbAccept;
-	@InjectView(R.id.tb_voice) ToggleButton mTbVoice;
-	@InjectView(R.id.tb_vibration) ToggleButton mTbVibration;
-	@InjectView(R.id.tb_app_exit) ToggleButton mTbAppExit;
+	@Bind(R.id.tb_accept) ToggleButton mTbAccept;
+	@Bind(R.id.tb_voice) ToggleButton mTbVoice;
+	@Bind(R.id.tb_vibration) ToggleButton mTbVibration;
+	@Bind(R.id.tb_app_exit) ToggleButton mTbAppExit;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_settings_notifcation, container,
 				false);
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 		initView(view);
 		initData();
 		return view;

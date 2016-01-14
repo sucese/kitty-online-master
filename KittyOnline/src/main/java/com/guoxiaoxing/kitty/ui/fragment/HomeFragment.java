@@ -11,12 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.guoxiaoxing.kitty.base.BaseFragment;
-
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,9 +39,9 @@ public class HomeFragment extends BaseFragment {
     private OnFragmentInteractionListener mListener;
 
 
-    @InjectView(R.id.tb_home_header)
+    @Bind(R.id.tb_home_header)
     Toolbar mToolBar;
-    @InjectView(R.id.tv_search)
+    @Bind(R.id.tv_search)
     TextView mTVSearch;
 
     public HomeFragment() {
@@ -79,7 +78,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
     }
 
     @Override
@@ -129,7 +128,7 @@ public class HomeFragment extends BaseFragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -6,18 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.widget.PagerSlidingTabStrip;
 
-import com.guoxiaoxing.kitty.R;
-
 /**
  * 带有导航条的基类
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年11月6日 下午4:59:50
- * 
+ *
+ * @author guoxiaoxing
  */
 public abstract class BaseViewPagerFragment extends BaseFragment {
 
@@ -28,7 +25,7 @@ public abstract class BaseViewPagerFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.base_viewpage_fragment, null);
     }
 
@@ -50,7 +47,7 @@ public abstract class BaseViewPagerFragment extends BaseFragment {
         // mViewPager.setCurrentItem(pos, true);
         // }
     }
-    
+
     protected void setScreenPageLimit() {
     }
 

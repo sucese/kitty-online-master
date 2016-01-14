@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.team.adapter.TeamIssueAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamIssue;
@@ -22,8 +22,7 @@ import android.widget.AdapterView;
 /**
  * 我的任务列表界面
  * 
- * @author kymjs (https://github.com/kymjs)
- * 
+ * @author guoxiaoxing
  */
 public class MyIssueFragment extends BaseListFragment<TeamIssue> {
 

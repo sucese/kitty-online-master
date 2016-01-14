@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
 public class ToolbarFragment extends BaseFragment {
 
@@ -36,7 +36,7 @@ public class ToolbarFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,
-            @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_detail_tool_bar,
                 container, false);
         initView(mRootView);
@@ -121,5 +121,6 @@ public class ToolbarFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {}
+    public void initData() {
+    }
 }

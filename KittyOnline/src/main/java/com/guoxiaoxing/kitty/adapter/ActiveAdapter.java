@@ -16,11 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Active.ObjectReply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.ImagePreviewActivity;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.BitmapHelper;
 import com.guoxiaoxing.kitty.util.ImageUtils;
 import com.guoxiaoxing.kitty.util.PlatfromUtil;
@@ -35,8 +35,8 @@ import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.bitmap.BitmapCallBack;
 import org.kymjs.kjframe.utils.DensityUtils;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class ActiveAdapter extends ListBaseAdapter {
     private final static String AT_HOST_PRE = "http://my.oschina.net";
@@ -192,31 +192,31 @@ public class ActiveAdapter extends ListBaseAdapter {
     }
 
     static class ViewHolder {
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.tv_from)
+        @Bind(R.id.tv_from)
         TextView from;
-        @InjectView(R.id.tv_time)
+        @Bind(R.id.tv_time)
         TextView time;
-        @InjectView(R.id.tv_action)
+        @Bind(R.id.tv_action)
         TextView action;
-        @InjectView(R.id.tv_action_name)
+        @Bind(R.id.tv_action_name)
         TextView actionName;
-        @InjectView(R.id.tv_comment_count)
+        @Bind(R.id.tv_comment_count)
         TextView commentCount;
-        @InjectView(R.id.tv_body)
+        @Bind(R.id.tv_body)
         TweetTextView body;
-        @InjectView(R.id.tv_reply)
+        @Bind(R.id.tv_reply)
         TweetTextView reply;
-        @InjectView(R.id.iv_pic)
+        @Bind(R.id.iv_pic)
         ImageView pic;
-        @InjectView(R.id.ly_reply)
+        @Bind(R.id.ly_reply)
         View lyReply;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

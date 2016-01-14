@@ -18,11 +18,11 @@ import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.RecyclingPagerAdapter;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog.OnMenuClickListener;
+import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.widget.HackyViewPager;
@@ -36,7 +36,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 /**
  * 图片预览界面
  *
- * @author kymjs
+ * @author guoxiaoxing
  */
 public class ImagePreviewActivity extends BaseActivity implements
         OnPageChangeListener {

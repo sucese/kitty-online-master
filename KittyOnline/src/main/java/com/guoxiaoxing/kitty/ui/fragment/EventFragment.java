@@ -1,19 +1,5 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import java.io.InputStream;
-import java.io.Serializable;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.adapter.EventAdapter;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.Event;
-import com.guoxiaoxing.kitty.bean.EventList;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,12 +8,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.adapter.EventAdapter;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.Constants;
+import com.guoxiaoxing.kitty.bean.Event;
+import com.guoxiaoxing.kitty.bean.EventList;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
+
+import java.io.InputStream;
+import java.io.Serializable;
+
 /**
  * 活动列表fragment
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年12月8日 下午5:17:32
- * 
+ *
+ * @author guoxiaoxing
  */
 public class EventFragment extends BaseListFragment<Event> {
 
@@ -143,7 +142,7 @@ public class EventFragment extends BaseListFragment<Event> {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+                            long id) {
         Event event = mAdapter.getItem(position);
         if (event != null)
             UIHelper.showEventDetail(view.getContext(), event.getId());

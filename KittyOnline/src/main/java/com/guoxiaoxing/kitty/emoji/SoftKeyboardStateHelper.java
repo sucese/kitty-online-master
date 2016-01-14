@@ -23,8 +23,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 /**
- * 
- * @author kymjs (http://www.kymjs.com)
+ *
+ * @author guoxiaoxing
  */
 public class SoftKeyboardStateHelper implements
         ViewTreeObserver.OnGlobalLayoutListener {

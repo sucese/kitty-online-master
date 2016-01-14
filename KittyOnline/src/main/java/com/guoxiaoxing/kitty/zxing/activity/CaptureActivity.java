@@ -47,7 +47,7 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppException;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.BarCode;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.SingInResult;

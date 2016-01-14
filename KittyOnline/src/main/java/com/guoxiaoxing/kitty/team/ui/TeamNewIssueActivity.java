@@ -15,13 +15,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.team.bean.Team;
@@ -33,46 +29,42 @@ import com.guoxiaoxing.kitty.team.bean.TeamMember;
 import com.guoxiaoxing.kitty.team.bean.TeamMemberList;
 import com.guoxiaoxing.kitty.team.bean.TeamProject;
 import com.guoxiaoxing.kitty.team.bean.TeamProjectList;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.TypefaceUtils;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
-import cz.msebera.android.httpclient.Header;
 import java.util.Calendar;
 import java.util.List;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by 火蚁 on 15/5/28.
  */
 public class TeamNewIssueActivity extends BaseActivity {
 
-    @InjectView(R.id.et_issue_title)
+    @Bind(R.id.et_issue_title)
     EditText mEtTitle;
-
-    @InjectView(R.id.tv_issue_project)
+    @Bind(R.id.tv_issue_project)
     TextView mTvProject;
-
-    @InjectView(R.id.tv_issue_catalog)
+    @Bind(R.id.tv_issue_catalog)
     TextView mTvCatalog;
-
-    @InjectView(R.id.tv_issue_touser)
+    @Bind(R.id.tv_issue_touser)
     TextView mTvToUser;
-
-    @InjectView(R.id.tv_issue_time)
+    @Bind(R.id.tv_issue_time)
     TextView mTvTime;
-
-    @InjectView(R.id.rl_issue_push)
+    @Bind(R.id.rl_issue_push)
     View mRlGitPush;
-    @InjectView(R.id.push_line)
+    @Bind(R.id.push_line)
     View mPushLine;
-
-    @InjectView(R.id.tv_issue_push_source)
+    @Bind(R.id.tv_issue_push_source)
     TextView mTvPushSource;
-
-    @InjectView(R.id.cb_issue_push_check)
+    @Bind(R.id.cb_issue_push_check)
     CheckBox mCbPush;
 
     private Team mTeam;
@@ -178,12 +170,16 @@ public class TeamNewIssueActivity extends BaseActivity {
         @Override
         public void onFinish() {
             hideWaitDialog();
-        };
+        }
+
+        ;
 
         @Override
         public void onStart() {
             showWaitDialog("发布中...");
-        };
+        }
+
+        ;
     };
 
     private void sendPubNewIssue() {

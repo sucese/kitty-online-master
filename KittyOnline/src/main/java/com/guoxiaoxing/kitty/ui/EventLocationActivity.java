@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.ui;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -40,9 +40,7 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 /**
  * 活动地图位置显示
  * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年12月15日 下午1:28:28
- * 
+ * @author guoxiaoxing
  */
 @SuppressLint("InflateParams")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)

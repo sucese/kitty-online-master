@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -14,11 +14,9 @@ import com.guoxiaoxing.kitty.interf.BaseFragmentInterface;
 import com.guoxiaoxing.kitty.ui.dialog.DialogControl;
 
 /**
- * 碎片基类
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年9月25日 上午11:18:46
- * 
+ * Fragment基类
+ *
+ *@author guoxiaoxing
  */
 public class BaseFragment extends Fragment implements
         android.view.View.OnClickListener, BaseFragmentInterface {

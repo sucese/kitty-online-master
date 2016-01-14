@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.team.adapter.TeamActiveAdapter;
 import com.guoxiaoxing.kitty.team.adapter.TeamMemberAdapter;
 import com.guoxiaoxing.kitty.team.bean.TeamActive;

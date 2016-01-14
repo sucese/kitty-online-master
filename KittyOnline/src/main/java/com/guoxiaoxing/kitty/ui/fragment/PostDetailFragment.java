@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.CommonDetailFragment;
+import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.FavoriteList;
 import com.guoxiaoxing.kitty.bean.Post;

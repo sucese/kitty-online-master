@@ -1,22 +1,24 @@
 package com.guoxiaoxing.kitty.adapter;
 
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
-import com.guoxiaoxing.kitty.bean.Favorite;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.Favorite;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class UserFavoriteAdapter extends ListBaseAdapter<Favorite> {
 	
 	static class ViewHolder {
 		
-		@InjectView(R.id.tv_favorite_title) TextView title;
+		@Bind(R.id.tv_favorite_title) TextView title;
 		
 		public ViewHolder(View view) {
-			ButterKnife.inject(this,view);
+			ButterKnife.bind(this,view);
 		}
 	}
 

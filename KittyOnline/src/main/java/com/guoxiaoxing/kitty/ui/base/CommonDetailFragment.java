@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,9 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.TextHttpResponseHandler;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
@@ -37,8 +34,8 @@ import com.guoxiaoxing.kitty.util.HTMLUtil;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
-
-import cz.msebera.android.httpclient.Header;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.TextHttpResponseHandler;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -46,12 +43,15 @@ import java.io.Serializable;
 import java.lang.ref.WeakReference;
 
 import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 通用的详情fragment
- * Created by 火蚁 on 15/5/25.
+ *
+ * @author guoxiaoxing
  */
-public abstract class CommonDetailFragment<T extends Serializable> extends BaseFragment implements OnSendClickListener {
+public abstract class CommonDetailFragment<T extends Serializable> extends BaseFragment
+        implements OnSendClickListener {
 
     protected int mId;
 
@@ -84,7 +84,7 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
         mCommentCount = getActivity().getIntent().getIntExtra("comment_count",
                 0);
         mId = getActivity().getIntent().getIntExtra("id", 0);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initView(view);
         initData();
         requestData(false);
@@ -187,7 +187,7 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
                 if (seri == null) {
                     return null;
                 } else {
-                    return (T)seri;
+                    return (T) seri;
                 }
             }
             return null;
@@ -430,6 +430,7 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
                 });
         dialog.show();
     }
+
     // 分享
     public void handleShare() {
         if (mDetail == null || TextUtils.isEmpty(getShareContent())
@@ -444,6 +445,7 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
         dialog.setShareInfo(getShareTitle(), getShareContent(), getShareUrl());
         dialog.show();
     }
+
     // 显示评论列表
     public void onCilckShowComment() {
         showCommentView();
@@ -488,7 +490,9 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
         @Override
         public void onFinish() {
             ((DetailActivity) getActivity()).emojiFragment.hideAllKeyBoard();
-        };
+        }
+
+        ;
     };
 
     // 发表评论
@@ -532,27 +536,44 @@ public abstract class CommonDetailFragment<T extends Serializable> extends BaseF
 
     // 获取缓存的key
     protected abstract String getCacheKey();
+
     // 从网络中读取数据
     protected abstract void sendRequestDataForNet();
+
     // 解析数据
     protected abstract T parseData(InputStream is);
+
     // 返回填充到webview中的内容
     protected abstract String getWebViewBody(T detail);
+
     // 显示评论列表
     protected abstract void showCommentView();
+
     // 获取评论的类型
     protected abstract int getCommentType();
+
     protected abstract String getShareTitle();
+
     protected abstract String getShareContent();
+
     protected abstract String getShareUrl();
+
     // 返回举报的url
-    protected String getRepotrUrl() {return  "";}
+    protected String getRepotrUrl() {
+        return "";
+    }
+
     // 返回举报的类型
-    protected byte getReportType() {return  Report.TYPE_QUESTION;}
+    protected byte getReportType() {
+        return Report.TYPE_QUESTION;
+    }
 
     // 获取收藏类型（如新闻、博客、帖子）
     protected abstract int getFavoriteTargetType();
+
     protected abstract int getFavoriteState();
+
     protected abstract void updateFavoriteChanged(int newFavoritedState);
+
     protected abstract int getCommentCount();
 }

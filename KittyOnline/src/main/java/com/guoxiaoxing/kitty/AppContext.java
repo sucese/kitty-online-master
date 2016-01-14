@@ -6,7 +6,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.base.BaseApplication;
+import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;

@@ -1,30 +1,31 @@
 package com.guoxiaoxing.kitty.adapter;
 
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
-import com.guoxiaoxing.kitty.bean.Apply;
-import com.guoxiaoxing.kitty.widget.AvatarView;
 import android.annotation.SuppressLint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.Apply;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.widget.AvatarView;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 活动参会人员适配器
- * 
+ *
  * @author FireAnt（http://my.oschina.net/LittleDY）
  * @created 2014年12月12日 下午8:10:43
- * 
  */
 public class EventApplyAdapter extends ListBaseAdapter<Apply> {
 
     @SuppressLint("InflateParams")
     @Override
     protected View getRealView(int position, View convertView,
-            final ViewGroup parent) {
+                               final ViewGroup parent) {
         ViewHolder vh = null;
         if (convertView == null || convertView.getTag() == null) {
             convertView = getLayoutInflater(parent.getContext()).inflate(
@@ -48,18 +49,19 @@ public class EventApplyAdapter extends ListBaseAdapter<Apply> {
 
     static class ViewHolder {
 
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.tv_desc)
+        @Bind(R.id.tv_desc)
         TextView desc;
-        @InjectView(R.id.tv_from) TextView from;
-        @InjectView(R.id.iv_gender)
+        @Bind(R.id.tv_from)
+        TextView from;
+        @Bind(R.id.iv_gender)
         ImageView gender;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

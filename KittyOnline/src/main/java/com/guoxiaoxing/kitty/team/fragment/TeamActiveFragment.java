@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.team.adapter.TeamActiveAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamActive;
@@ -26,8 +26,7 @@ import android.widget.AdapterView;
 /**
  * Team动态界面
  * 
- * @author kymjs (kymjs123@gmail.com)
- * 
+ * @author guoxiaoxing
  */
 public class TeamActiveFragment extends BaseListFragment<TeamActive> {
 

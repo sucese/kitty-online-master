@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.io.Serializable;
 
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.team.adapter.TeamDiscussAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
@@ -20,9 +20,8 @@ import android.widget.AdapterView;
 
 /**
  * team讨论区列表界面
- * 
- * @author fireant(http://my.oschina.net/u/253900)
- * 
+ *
+ * @author guoxiaoxing
  */
 public class TeamDiscussFragment extends BaseListFragment<TeamDiscuss> {
 

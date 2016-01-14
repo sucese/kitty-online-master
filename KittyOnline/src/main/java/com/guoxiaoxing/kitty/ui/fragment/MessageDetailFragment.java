@@ -14,16 +14,11 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MessageDetailAdapter;
 import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.Constants;
@@ -34,14 +29,17 @@ import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.emoji.KJEmojiFragment;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.HTMLUtil;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import cz.msebera.android.httpclient.Header;
 import org.kymjs.kjframe.utils.StringUtils;
 
 import java.io.ByteArrayInputStream;
@@ -51,14 +49,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import cz.msebera.android.httpclient.Header;
+
 /**
  * 与某人的聊天记录界面（私信详情）
  *
- * @author kymjs (http://www.kymjs.com/)
- *
+ * @author guoxiaoxing
  */
 public class MessageDetailFragment extends BaseListFragment<MessageDetail> implements
-        OnItemLongClickListener, OnSendClickListener,MessageDetailAdapter.OnRetrySendMessageListener{
+        OnItemLongClickListener, OnSendClickListener, MessageDetailAdapter.OnRetrySendMessageListener {
     protected static final String TAG = ActiveFragment.class.getSimpleName();
     public static final String BUNDLE_KEY_FID = "BUNDLE_KEY_FID";
     public static final String BUNDLE_KEY_FNAME = "BUNDLE_KEY_FNAME";
@@ -153,6 +152,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
 
     /**
      * 处理时间显示，设置哪些需要显示时间，哪些不需要显示时间
+     *
      * @param list
      */
     private void handleShowDate(List<MessageDetail> list) {
@@ -173,7 +173,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         }
     }
 
-    private boolean isNeedShowDate(long currentTime,long lastTime){
+    private boolean isNeedShowDate(long currentTime, long lastTime) {
         return currentTime - lastTime > TIME_INTERVAL;
     }
 
@@ -182,7 +182,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         super.initView(view);
         mListView.setDivider(null);
         mListView.setDividerHeight(0);
-        if(!AppContext.getNightModeSwitch()) {
+        if (!AppContext.getNightModeSwitch()) {
             mListView.setBackgroundColor(Color.parseColor("#ebebeb"));
         }
         mListView.setOnItemLongClickListener(this);
@@ -254,11 +254,12 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {}
+                            long id) {
+    }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view,
-            int position, long id) {
+                                   int position, long id) {
         final MessageDetail message = mAdapter.getItem(position);
         DialogHelp.getSelectDialog(getActivity(), getResources().getStringArray(R.array.message_list_options), new DialogInterface.OnClickListener() {
             @Override
@@ -285,7 +286,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         if (mState == STATE_REFRESH) {
             return;
         }
-        if(mCurrentPage==mPageCount-1){
+        if (mCurrentPage == mPageCount - 1) {
             AppContext.showToastShort("已加载全部数据！");
             setSwipeRefreshLoadedState();
             return;
@@ -298,7 +299,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         requestData(true);
     }
 
-    public void showFriendUserCenter(){
+    public void showFriendUserCenter() {
         UIHelper.showUserCenter(getActivity(), mFid, mFName);
     }
 
@@ -378,31 +379,33 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
 
     /**
      * 发送消息
+     *
      * @param msg
      */
-    private void sendMessage(MessageDetail msg){
+    private void sendMessage(MessageDetail msg) {
         msg.setStatus(MessageDetail.MessageStatus.SENDING);
         Date date = new Date();
         msg.setPubDate(com.guoxiaoxing.kitty.util.StringUtils.getDateString(date));
         //如果此次发表的时间距离上次的时间达到了 TIME_INTERVAL 的间隔要求，则显示时间
-        if(isNeedShowDate(date.getTime(),mLastShowDate)) {
+        if (isNeedShowDate(date.getTime(), mLastShowDate)) {
             msg.setShowDate(true);
             mLastShowDate = date.getTime();
         }
 
         //如果待发送列表没有此条消息，说明是新消息，不是发送失败再次发送的，不需要再次添加
-        if(mSendingMsgs.indexOfKey(msg.getId())<0) {
+        if (mSendingMsgs.indexOfKey(msg.getId()) < 0) {
             mSendingMsgs.put(msg.getId(), msg);
             mAdapter.addItem(0, msg);
             mListView.setSelection(mListView.getBottom());
-        }else{
+        } else {
             mAdapter.notifyDataSetChanged();
         }
         OSChinaApi.publicMessage(msg.getAuthorId(), mFid, msg.getContent(), new SendMessageResponseHandler(msg.getId()));
     }
 
     @Override
-    public void onClickFlagButton() {}
+    public void onClickFlagButton() {
+    }
 
     @Override
     public void onRetrySendMessage(int msgId) {
@@ -412,7 +415,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         }
     }
 
-    class SendMessageResponseHandler extends AsyncHttpResponseHandler{
+    class SendMessageResponseHandler extends AsyncHttpResponseHandler {
 
         private int msgTag;
 
@@ -453,7 +456,7 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
             error();
         }
 
-        private void error(){
+        private void error() {
             mSendingMsgs.get(this.msgTag).setStatus(MessageDetail.MessageStatus.ERROR);
             mAdapter.notifyDataSetChanged();
         }

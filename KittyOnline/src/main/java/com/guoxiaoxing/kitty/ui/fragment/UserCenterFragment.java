@@ -15,19 +15,17 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ActiveAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.bean.UserInformation;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.StringUtils;
@@ -35,19 +33,18 @@ import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.guoxiaoxing.kitty.widget.AvatarView;
-
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import cz.msebera.android.httpclient.Header;
 
 /**
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年10月29日 下午2:33:18
- * 
+ *
+ * @author guoxiaoxing
  */
 
 public class UserCenterFragment extends BaseFragment implements
@@ -55,10 +52,10 @@ public class UserCenterFragment extends BaseFragment implements
 
     private static final Object FEMALE = "女";
 
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mEmptyView;
 
-    @InjectView(R.id.lv_user_active)
+    @Bind(R.id.lv_user_active)
     ListView mListView;
     private ImageView mIvAvatar, mIvGender;
     private TextView mTvName, mTvFollowing, mTvFollower, mTvSore,
@@ -127,7 +124,7 @@ public class UserCenterFragment extends BaseFragment implements
         mHisUid = args.getInt("his_id", 0);
         mHisName = args.getString("his_name");
         mUid = AppContext.getInstance().getLoginUid();
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initView(view);
 
         return view;

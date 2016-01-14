@@ -13,15 +13,13 @@ import com.guoxiaoxing.kitty.util.TypefaceUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 团队项目适配器
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2015年1月19日 下午6:00:33
- * 
+ *
+ * @author guoxiaoxing
  */
 
 public class TeamProjectListAdapter extends BaseAdapter {
@@ -88,13 +86,13 @@ public class TeamProjectListAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        @InjectView(R.id.iv_source)
+        @Bind(R.id.iv_source)
         TextView source;
-        @InjectView(R.id.tv_project_name)
+        @Bind(R.id.tv_project_name)
         TextView name;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

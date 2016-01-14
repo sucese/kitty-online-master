@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.team.adapter.TeamIssueAdapter;
 import com.guoxiaoxing.kitty.team.bean.TeamIssue;
@@ -14,10 +14,9 @@ import com.guoxiaoxing.kitty.util.XmlUtils;
 
 /**
  * 任务列表界面
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2015年1月14日 下午5:15:46
- * 
+ *
+ * @author guoxiaoxing
+ *
  */
 
 public class IssueListFragment extends BaseListFragment<TeamIssue> {

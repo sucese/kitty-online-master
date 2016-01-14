@@ -1,20 +1,20 @@
 package com.guoxiaoxing.kitty.ui;
 
-import java.util.ArrayList;
-
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+
+import java.util.ArrayList;
+
 /**
  * 对动弹界面的一个封装，用于相应系统分享
- * 
- * @author kymjs (https://github.com/kymjs)
- * 
+ *
+ * @author guoxiaoxing
  */
 public class TweetActivity extends SimpleBackActivity {
     private TweetPubFragment currentFragment;
@@ -33,7 +33,7 @@ public class TweetActivity extends SimpleBackActivity {
 
     /**
      * 响应从图片分享进入的事件
-     * 
+     *
      * @param intent
      */
     private void respondExternal(Intent intent) {
@@ -51,7 +51,7 @@ public class TweetActivity extends SimpleBackActivity {
         } else if (Intent.ACTION_SEND_MULTIPLE.equals(action) && type != null) {
             if (type.startsWith("image/")) {
                 handleSendMultipleImages(intent); // Handle multiple images
-                                                  // being sent
+                // being sent
             }
         } else {
             // Handle other intents, such as being started from the home screen
@@ -84,7 +84,7 @@ public class TweetActivity extends SimpleBackActivity {
 
     protected String getAbsoluteImagePath(Uri uri) {
         // can post image
-        String[] proj = { MediaStore.Images.Media.DATA };
+        String[] proj = {MediaStore.Images.Media.DATA};
         Cursor cursor = managedQuery(uri, proj, // Which columns to return
                 null, // WHERE clause; which rows to return (all rows)
                 null, // WHERE clause selection arguments (none)

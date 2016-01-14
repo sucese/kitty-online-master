@@ -2,8 +2,8 @@ package com.guoxiaoxing.kitty.viewpagerfragment;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.BaseViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
 import com.guoxiaoxing.kitty.bean.FriendsList;
 import com.guoxiaoxing.kitty.ui.fragment.FriendsFragment;
 import android.os.Bundle;

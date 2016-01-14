@@ -33,7 +33,7 @@ import com.guoxiaoxing.kitty.zxing.activity.CaptureActivity;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.Constants;

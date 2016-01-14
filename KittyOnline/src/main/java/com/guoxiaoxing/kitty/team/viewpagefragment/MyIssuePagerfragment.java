@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kitty.team.viewpagefragment;
 
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
-import com.guoxiaoxing.kitty.base.BaseViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
 import com.guoxiaoxing.kitty.team.bean.TeamIssue;
 import com.guoxiaoxing.kitty.team.fragment.MyIssueFragment;
 import com.guoxiaoxing.kitty.team.fragment.TeamBoardFragment;

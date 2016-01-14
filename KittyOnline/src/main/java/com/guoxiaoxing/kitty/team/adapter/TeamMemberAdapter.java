@@ -19,9 +19,10 @@ import android.widget.TextView;
 
 /**
  * 团队成员GridView适配器
+ *
+ * @author guoxiaoxing
  * 
- * @author kymjs (kymjs123@gmail.com)
- * 
+ *
  */
 public class TeamMemberAdapter extends BaseAdapter {
     private final Context cxt;

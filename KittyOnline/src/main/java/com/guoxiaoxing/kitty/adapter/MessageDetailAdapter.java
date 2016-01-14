@@ -13,9 +13,9 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.MessageDetail;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.ChatImageDisplayer;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
@@ -32,8 +32,8 @@ import org.kymjs.kjframe.http.HttpConfig;
 
 import java.lang.reflect.Field;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
@@ -201,23 +201,23 @@ public class MessageDetailAdapter extends ListBaseAdapter<MessageDetail> {
 
     class ViewHolder {
         int type;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
-        @InjectView(R.id.tv_time)
+        @Bind(R.id.tv_time)
         TextView time;
-        @InjectView(R.id.tv_content)
+        @Bind(R.id.tv_content)
         TweetTextView content;
-        @InjectView(R.id.iv_img)
+        @Bind(R.id.iv_img)
         ImageView image;
-        @InjectView(R.id.progress)
+        @Bind(R.id.progress)
         ProgressBar progressBar;
-        @InjectView(R.id.rl_msg_status_panel)
+        @Bind(R.id.rl_msg_status_panel)
         RelativeLayout msgStatusPanel;
-        @InjectView(R.id.itv_error)
+        @Bind(R.id.itv_error)
         IconTextView error;
 
         ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
 
             content.setMovementMethod(MyLinkMovementMethod.a());
             content.setFocusable(false);

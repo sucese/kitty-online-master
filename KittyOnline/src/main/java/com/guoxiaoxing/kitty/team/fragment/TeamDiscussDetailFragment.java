@@ -14,7 +14,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BeseHaveHeaderListFragment;
+import com.guoxiaoxing.kitty.ui.base.BeseHaveHeaderListFragment;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
@@ -35,11 +35,8 @@ import java.io.InputStream;
 import java.io.Serializable;
 
 /**
- * TeamDiscussDetailFragment.java
- * 
- * @author 火蚁(http://my.oschina.net/u/253900)
- * 
- * @data 2015-2-2 下午6:14:15
+ *
+ * @author guoxiaoxing
  */
 public class TeamDiscussDetailFragment extends
         BeseHaveHeaderListFragment<TeamReply, TeamDiscuss> implements

@@ -6,8 +6,8 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
-import com.guoxiaoxing.kitty.base.BaseViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamGit;
 import com.guoxiaoxing.kitty.team.bean.TeamIssueCatalog;
@@ -33,9 +33,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
  * Team 任务列表viewpager
  * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2015年1月14日 下午2:18:25
- * 
+ * @author guoxiaoxing
  */
 
 public class TeamIssueViewPageFragment extends BaseViewPagerFragment {

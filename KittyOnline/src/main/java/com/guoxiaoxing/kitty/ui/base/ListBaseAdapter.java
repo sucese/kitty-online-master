@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.base;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -24,6 +24,12 @@ import com.guoxiaoxing.kitty.widget.TweetTextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Adapter基类
+ *
+ * @param <T>
+ */
 
 public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
     public static final int STATE_EMPTY_ITEM = 0;
@@ -91,8 +97,8 @@ public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
         return getDataSize();
     }
 
-    public int getDataSizePlus1(){
-        if(hasFooterView()){
+    public int getDataSizePlus1() {
+        if (hasFooterView()) {
             return getDataSize() + 1;
         }
         return getDataSize();
@@ -175,7 +181,7 @@ public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
     @SuppressLint("InflateParams")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (position == getCount() - 1&&hasFooterView()) {// 最后一条
+        if (position == getCount() - 1 && hasFooterView()) {// 最后一条
             // if (position < _data.size()) {
             // position = getCount() - 2; // footview
             // }
@@ -192,35 +198,35 @@ public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
                         .findViewById(R.id.progressbar);
                 TextView text = (TextView) mFooterView.findViewById(R.id.text);
                 switch (getState()) {
-                case STATE_LOAD_MORE:
-                    setFooterViewLoading();
-                    break;
-                case STATE_NO_MORE:
-                    mFooterView.setVisibility(View.VISIBLE);
-                    progress.setVisibility(View.GONE);
-                    text.setVisibility(View.VISIBLE);
-                    text.setText(_loadFinishText);
-                    break;
-                case STATE_EMPTY_ITEM:
-                    progress.setVisibility(View.GONE);
-                    mFooterView.setVisibility(View.VISIBLE);
-                    text.setText(_noDateText);
-                    break;
-                case STATE_NETWORK_ERROR:
-                    mFooterView.setVisibility(View.VISIBLE);
-                    progress.setVisibility(View.GONE);
-                    text.setVisibility(View.VISIBLE);
-                    if (TDevice.hasInternet()) {
-                        text.setText("加载出错了");
-                    } else {
-                        text.setText("没有可用的网络");
-                    }
-                    break;
-                default:
-                    progress.setVisibility(View.GONE);
-                    mFooterView.setVisibility(View.GONE);
-                    text.setVisibility(View.GONE);
-                    break;
+                    case STATE_LOAD_MORE:
+                        setFooterViewLoading();
+                        break;
+                    case STATE_NO_MORE:
+                        mFooterView.setVisibility(View.VISIBLE);
+                        progress.setVisibility(View.GONE);
+                        text.setVisibility(View.VISIBLE);
+                        text.setText(_loadFinishText);
+                        break;
+                    case STATE_EMPTY_ITEM:
+                        progress.setVisibility(View.GONE);
+                        mFooterView.setVisibility(View.VISIBLE);
+                        text.setText(_noDateText);
+                        break;
+                    case STATE_NETWORK_ERROR:
+                        mFooterView.setVisibility(View.VISIBLE);
+                        progress.setVisibility(View.GONE);
+                        text.setVisibility(View.VISIBLE);
+                        if (TDevice.hasInternet()) {
+                            text.setText("加载出错了");
+                        } else {
+                            text.setText("没有可用的网络");
+                        }
+                        break;
+                    default:
+                        progress.setVisibility(View.GONE);
+                        mFooterView.setVisibility(View.GONE);
+                        text.setVisibility(View.GONE);
+                        break;
                 }
                 return mFooterView;
             }
@@ -237,7 +243,7 @@ public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
 
     private LinearLayout mFooterView;
 
-    protected boolean hasFooterView(){
+    protected boolean hasFooterView() {
         return true;
     }
 

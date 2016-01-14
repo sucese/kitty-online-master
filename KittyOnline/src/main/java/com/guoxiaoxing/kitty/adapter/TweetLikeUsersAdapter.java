@@ -1,22 +1,20 @@
 package com.guoxiaoxing.kitty.adapter;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.widget.AvatarView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
- * TweetLikeUsersAdapter.java
- * 
- * @author 火蚁(http://my.oschina.net/u/253900)
  *
- * @data 2015-3-26 下午4:11:25
+ *@author guoxiaoxing
  */
 public class TweetLikeUsersAdapter extends ListBaseAdapter<User> {
     
@@ -40,13 +38,13 @@ public class TweetLikeUsersAdapter extends ListBaseAdapter<User> {
     
     static class ViewHolder {
 	
-	@InjectView(R.id.iv_avatar)
+	@Bind(R.id.iv_avatar)
 	AvatarView avatar;
-	@InjectView(R.id.tv_name)
+	@Bind(R.id.tv_name)
 	TextView name;
 	
 	public ViewHolder(View view) {
-	    ButterKnife.inject(this, view);
+	    ButterKnife.bind(this, view);
 	}
     }   
 }

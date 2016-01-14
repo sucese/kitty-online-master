@@ -1,34 +1,31 @@
-package com.guoxiaoxing.kitty.base;
-
-import java.io.ByteArrayInputStream;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-
-import com.guoxiaoxing.kitty.bean.Entity;
-import com.guoxiaoxing.kitty.cache.CacheManager;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-
-import cz.msebera.android.httpclient.Header;
+package com.guoxiaoxing.kitty.ui.base;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import butterknife.ButterKnife;
 
+import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.cache.CacheManager;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.io.ByteArrayInputStream;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+
+import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 需要加入header的BaseListFragment
- * 
- * @desc 应用场景：如动弹详情、团队任务详情这些， 即是头部显示详情，然后下面显示评论列表的
- * 
- *       BeseHaveHeaderListFragment.java
- * 
+ *
  * @author 火蚁(http://my.oschina.net/u/253900)
- * 
- * @data 2015-1-27 下午3:02:42
+ * @desc 应用场景：如动弹详情、团队任务详情这些， 即是头部显示详情，然后下面显示评论列表的
+ * <p/>
+ * BeseHaveHeaderListFragment.java
+ * @author guoxiaoxing
  */
 public abstract class BeseHaveHeaderListFragment<T1 extends Entity, T2 extends Serializable>
         extends BaseListFragment<T1> {
@@ -63,7 +60,7 @@ public abstract class BeseHaveHeaderListFragment<T1 extends Entity, T2 extends S
 
         @Override
         public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                Throwable arg3) {
+                              Throwable arg3) {
             readDetailCacheData(getDetailCacheKey());
         }
     };
@@ -71,7 +68,7 @@ public abstract class BeseHaveHeaderListFragment<T1 extends Entity, T2 extends S
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         // 通过注解绑定控件
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         mListView.addHeaderView(initHeaderView());
         aty = getActivity();
         super.initView(view);

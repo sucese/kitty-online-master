@@ -14,7 +14,7 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ActiveAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.ActiveList;
 import com.guoxiaoxing.kitty.bean.Constants;
@@ -35,10 +35,7 @@ import java.io.Serializable;
 /**
  * 动态fragment
  * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @author kymjs (https://github.com/kymjs)
- * @created 2014年10月22日 下午3:35:43
- * 
+ * @author guoxiaoxing
  */
 public class ActiveFragment extends BaseListFragment<Active> implements
         OnItemLongClickListener {

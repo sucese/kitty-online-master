@@ -16,7 +16,7 @@ import android.widget.TextView.BufferType;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
 import java.util.ArrayList;

@@ -16,16 +16,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
 import com.guoxiaoxing.kitty.bean.MyInformation;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.FileUtil;
@@ -33,6 +31,7 @@ import com.guoxiaoxing.kitty.util.ImageUtils;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.kymjs.kjframe.Core;
 
@@ -42,8 +41,8 @@ import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import cz.msebera.android.httpclient.Header;
 
@@ -59,25 +58,25 @@ public class MineFragmentDetail extends BaseFragment {
     public static final int ACTION_TYPE_ALBUM = 0;
     public static final int ACTION_TYPE_PHOTO = 1;
 
-    @InjectView(R.id.iv_avatar)
+    @Bind(R.id.iv_avatar)
     ImageView mUserFace;
 
-    @InjectView(R.id.tv_name)
+    @Bind(R.id.tv_name)
     TextView mName;
 
-    @InjectView(R.id.tv_join_time)
+    @Bind(R.id.tv_join_time)
     TextView mJoinTime;
 
-    @InjectView(R.id.tv_location)
+    @Bind(R.id.tv_location)
     TextView mFrom;
 
-    @InjectView(R.id.tv_development_platform)
+    @Bind(R.id.tv_development_platform)
     TextView mPlatFrom;
 
-    @InjectView(R.id.tv_academic_focus)
+    @Bind(R.id.tv_academic_focus)
     TextView mFocus;
 
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
 
     private User mUser;
@@ -189,7 +188,7 @@ public class MineFragmentDetail extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         mErrorLayout.setOnLayoutClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,28 +1,5 @@
 package com.guoxiaoxing.kitty.team.fragment;
 
-import java.util.List;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseFragment;
-import com.guoxiaoxing.kitty.bean.NotebookData;
-import com.guoxiaoxing.kitty.bean.NotebookDataList;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.bean.User;
-import com.guoxiaoxing.kitty.db.NoteDatabase;
-import com.guoxiaoxing.kitty.team.adapter.NotebookAdapter;
-import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
-import com.guoxiaoxing.kitty.util.KJAnimations;
-import com.guoxiaoxing.kitty.util.SynchronizeController;
-import com.guoxiaoxing.kitty.util.SynchronizeController.SynchronizeListener;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-import com.guoxiaoxing.kitty.widget.KJDragGridView;
-import com.guoxiaoxing.kitty.widget.KJDragGridView.OnDeleteListener;
-import com.guoxiaoxing.kitty.widget.KJDragGridView.OnMoveListener;
-
-import cz.msebera.android.httpclient.Header;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
@@ -41,26 +18,49 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.NotebookData;
+import com.guoxiaoxing.kitty.bean.NotebookDataList;
+import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.db.NoteDatabase;
+import com.guoxiaoxing.kitty.team.adapter.NotebookAdapter;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
+import com.guoxiaoxing.kitty.util.KJAnimations;
+import com.guoxiaoxing.kitty.util.SynchronizeController;
+import com.guoxiaoxing.kitty.util.SynchronizeController.SynchronizeListener;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.guoxiaoxing.kitty.widget.KJDragGridView;
+import com.guoxiaoxing.kitty.widget.KJDragGridView.OnDeleteListener;
+import com.guoxiaoxing.kitty.widget.KJDragGridView.OnMoveListener;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 便签列表界面
- * 
- * @author kymjs (https://github.com/kymjs)
+ *
+ * @author guoxiaoxing
  */
 public class NoteBookFragment extends BaseFragment implements
         OnItemClickListener, OnRefreshListener {
 
-    @InjectView(R.id.frag_note_list)
+    @Bind(R.id.frag_note_list)
     KJDragGridView mGrid;
-    @InjectView(R.id.frag_note_trash)
+    @Bind(R.id.frag_note_trash)
     ImageView mImgTrash;
-    @InjectView(R.id.swiperefreshlayout)
+    @Bind(R.id.swiperefreshlayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mEmptyLayout;
 
     private NoteDatabase noteDb;
@@ -98,7 +98,7 @@ public class NoteBookFragment extends BaseFragment implements
         View rootView = inflater.inflate(R.layout.fragment_note, container,
                 false);
         aty = getActivity();
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         initData();
         initView(rootView);
         return rootView;

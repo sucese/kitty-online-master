@@ -29,9 +29,6 @@ import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-import com.guoxiaoxing.kitty.ui.fragment.HomeFragment;
-import com.networkbench.agent.impl.NBSAppAgent;
-
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppManager;
@@ -40,17 +37,19 @@ import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.Notice;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
-import com.guoxiaoxing.kitty.ui.fragment.MineFragment;
 import com.guoxiaoxing.kitty.interf.BaseViewInterface;
 import com.guoxiaoxing.kitty.interf.OnTabReselectListener;
 import com.guoxiaoxing.kitty.service.NoticeUtils;
+import com.guoxiaoxing.kitty.ui.fragment.HomeFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MineFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.UpdateManager;
 import com.guoxiaoxing.kitty.widget.BadgeView;
 import com.guoxiaoxing.kitty.widget.MyFragmentTabHost;
+import com.networkbench.agent.impl.NBSAppAgent;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 应用启动入口
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements
     /*左侧抽屉Fragment*/
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
-    @InjectView(android.R.id.tabhost)
+    @Bind(android.R.id.tabhost)
     public MyFragmentTabHost mTabHost;
 
     private BadgeView mBvNotice;
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements
      */
     private CharSequence mTitle;
 
-    @InjectView(R.id.quick_option_iv)
+    @Bind(R.id.quick_option_iv)
     View mAddBt;
 
     @Override
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements
             setTheme(R.style.AppBaseTheme_Light);
         }
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         initView();
         AppManager.getAppManager().addActivity(this);
 

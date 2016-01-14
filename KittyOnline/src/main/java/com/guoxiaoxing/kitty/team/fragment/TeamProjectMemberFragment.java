@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.team.adapter.TeamProjectMemberAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamMember;
@@ -22,11 +22,8 @@ import android.view.View;
 import android.widget.AdapterView;
 
 /**
- * TeamProjectFragment.java
- * 
- * @author 火蚁(http://my.oschina.net/u/253900)
- * 
- * @data 2015-2-28 下午4:08:58
+ *
+ * @author guoxiaoxing
  */
 public class TeamProjectMemberFragment extends
 	BaseListFragment<TeamMember> {

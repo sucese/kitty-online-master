@@ -9,14 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
-import cz.msebera.android.httpclient.Header;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MessageAdapter;
 import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.MessageList;
 import com.guoxiaoxing.kitty.bean.Messages;
@@ -25,6 +23,7 @@ import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.service.NoticeUtils;
 import com.guoxiaoxing.kitty.ui.MainActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.HTMLUtil;
@@ -36,6 +35,8 @@ import com.guoxiaoxing.kitty.viewpagerfragment.NoticeViewPagerFragment;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.Serializable;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MessageFragment extends BaseListFragment<Messages> implements
         OnItemLongClickListener {

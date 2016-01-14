@@ -16,7 +16,7 @@ public enum MainTab {
 	NEWS(0, R.string.main_tab_name_news, R.drawable.sel_main_tab_home,
 			HomeFragment.class),
 
-	TWEET(1, R.string.main_tab_name_tweet, R.drawable.sel_maini_tab_category,
+	TWEET(1, R.string.main_tab_name_category, R.drawable.sel_main_tab_category,
 			TweetsViewPagerFragment.class),
 
 	QUICK(2, R.string.main_tab_name_quick, R.drawable.tab_icon_new,

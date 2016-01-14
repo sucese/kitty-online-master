@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.adapter.NewsAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseListFragment;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.News;
 import com.guoxiaoxing.kitty.bean.NewsList;
 import com.guoxiaoxing.kitty.interf.OnTabReselectListener;

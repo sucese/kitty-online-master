@@ -13,27 +13,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.base.BaseActivity;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamList;
 import com.guoxiaoxing.kitty.team.viewpagefragment.TeamMainViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import cz.msebera.android.httpclient.Header;
 import org.kymjs.kjframe.utils.PreferenceHelper;
 import org.kymjs.kjframe.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * 团队主界面
@@ -60,9 +59,9 @@ public class TeamMainActivity extends BaseActivity implements ActionBar.OnNaviga
 
     private int mCurrentContentIndex = -1;
 
-    @InjectView(R.id.error_layout)
+    @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
-    @InjectView(R.id.main_content)
+    @Bind(R.id.main_content)
     View container;
 
     @Override
@@ -81,7 +80,7 @@ public class TeamMainActivity extends BaseActivity implements ActionBar.OnNaviga
 
     @Override
     public void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         // 隐藏actionbar的标题
         mActionBar.setDisplayShowTitleEnabled(false);
         mErrorLayout.setErrorType(EmptyLayout.NETWORK_LOADING);

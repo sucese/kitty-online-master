@@ -1,24 +1,24 @@
 package com.guoxiaoxing.kitty.adapter;
 
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
-import com.guoxiaoxing.kitty.bean.Friend;
-import com.guoxiaoxing.kitty.util.StringUtils;
-import com.guoxiaoxing.kitty.widget.AvatarView;
 import android.annotation.SuppressLint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.Friend;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.util.StringUtils;
+import com.guoxiaoxing.kitty.widget.AvatarView;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 好友列表适配器
  * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年11月6日 上午11:22:27
- * 
+ * @author guoxiaoxing
  */
 public class FriendAdapter extends ListBaseAdapter<Friend> {
 
@@ -64,19 +64,19 @@ public class FriendAdapter extends ListBaseAdapter<Friend> {
 
     static class ViewHolder {
 
-        @InjectView(R.id.tv_name)
+        @Bind(R.id.tv_name)
         TextView name;
-        @InjectView(R.id.tv_from)
+        @Bind(R.id.tv_from)
         TextView from;
-        @InjectView(R.id.tv_desc)
+        @Bind(R.id.tv_desc)
         TextView desc;
-        @InjectView(R.id.iv_gender)
+        @Bind(R.id.iv_gender)
         ImageView gender;
-        @InjectView(R.id.iv_avatar)
+        @Bind(R.id.iv_avatar)
         AvatarView avatar;
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

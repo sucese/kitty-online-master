@@ -1,16 +1,18 @@
 package com.guoxiaoxing.kitty.adapter;
 
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.base.ListBaseAdapter;
-import com.guoxiaoxing.kitty.bean.SearchResult;
-import com.guoxiaoxing.kitty.util.StringUtils;
 import android.annotation.SuppressLint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.SearchResult;
+import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
+import com.guoxiaoxing.kitty.util.StringUtils;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class SearchAdapter extends ListBaseAdapter<SearchResult> {
 
@@ -56,15 +58,15 @@ public class SearchAdapter extends ListBaseAdapter<SearchResult> {
 	}
 
 	static class ViewHolder {
-		@InjectView(R.id.tv_title)TextView title;
-		@InjectView(R.id.tv_description)TextView description;
-		@InjectView(R.id.tv_source)TextView source;
-		@InjectView(R.id.tv_time)TextView time;
-		@InjectView(R.id.tv_comment_count)TextView comment_count;
-		@InjectView(R.id.iv_tip)ImageView tip;
+		@Bind(R.id.tv_title)TextView title;
+		@Bind(R.id.tv_description)TextView description;
+		@Bind(R.id.tv_source)TextView source;
+		@Bind(R.id.tv_time)TextView time;
+		@Bind(R.id.tv_comment_count)TextView comment_count;
+		@Bind(R.id.iv_tip)ImageView tip;
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

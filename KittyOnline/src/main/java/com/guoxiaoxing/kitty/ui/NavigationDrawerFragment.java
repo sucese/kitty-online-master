@@ -18,21 +18,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.base.BaseFragment;
+import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
-import com.guoxiaoxing.kitty.R;
-
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * 侧滑菜单界面
  *
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年9月25日 下午6:00:05
+ * @author guoxiaoxing
  */
 public class NavigationDrawerFragment extends BaseFragment implements
         OnClickListener {
@@ -59,22 +57,22 @@ public class NavigationDrawerFragment extends BaseFragment implements
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
 
-    @InjectView(R.id.menu_item_quests)
+    @Bind(R.id.menu_item_quests)
     View mMenu_item_quests;
 
-    @InjectView(R.id.menu_item_opensoft)
+    @Bind(R.id.menu_item_opensoft)
     View mMenu_item_opensoft;
 
-    @InjectView(R.id.menu_item_blog)
+    @Bind(R.id.menu_item_blog)
     View mMenu_item_blog;
 
-    @InjectView(R.id.menu_item_gitapp)
+    @Bind(R.id.menu_item_gitapp)
     View mMenu_item_gitapp;
 
-    @InjectView(R.id.menu_item_setting)
+    @Bind(R.id.menu_item_setting)
     View mMenu_item_setting;
 
-    @InjectView(R.id.menu_item_theme)
+    @Bind(R.id.menu_item_theme)
     View mMenu_item_theme;
 
     @Override
@@ -102,7 +100,7 @@ public class NavigationDrawerFragment extends BaseFragment implements
         mDrawerListView = inflater.inflate(R.layout.fragment_navigation_drawer,
                 container, false);
         mDrawerListView.setOnClickListener(this);
-        ButterKnife.inject(this, mDrawerListView);
+        ButterKnife.bind(this, mDrawerListView);
         initView(mDrawerListView);
         initData();
         return mDrawerListView;

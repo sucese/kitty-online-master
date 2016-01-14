@@ -4,7 +4,7 @@
     <string name="app_name">爱尚佳品</string>
 
     <string name="main_tab_name_news">主页</string>
-    <string name="main_tab_name_tweet">分类</string>
+    <string name="main_tab_name_category">分类</string>
     <string name="main_tab_name_quick">快速</string>
     <string name="main_tab_name_question">问答</string>
     <string name="main_tab_name_my">我的</string>
