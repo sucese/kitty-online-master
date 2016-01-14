@@ -15,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -62,19 +63,23 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements
         NavigationDrawerFragment.NavigationDrawerCallbacks,
         OnTabChangeListener, BaseViewInterface, View.OnClickListener,
-        OnTouchListener, HomeFragment.OnFragmentInteractionListener{
-
-    private DoubleClickExitHelper mDoubleClickExit;
-
-    /*左侧抽屉Fragment*/
-    private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    @Bind(android.R.id.tabhost)
-    public MyFragmentTabHost mTabHost;
-
-    private BadgeView mBvNotice;
+        OnTouchListener, HomeFragment.OnFragmentInteractionListener {
 
     public static Notice mNotice;
+
+
+    @Bind(android.R.id.tabhost)
+    MyFragmentTabHost mTabHost;
+    @Bind(R.id.quick_option_iv)
+    View mAddBt;
+
+    private BadgeView mBvNotice;
+    private DoubleClickExitHelper mDoubleClickExit;
+    /*左侧抽屉Fragment*/
+    private NavigationDrawerFragment mNavigationDrawerFragment;
+    /*存储上一个屏幕的标题，被用在{@link #restoreActionBar()}.*/
+    private CharSequence mTitle;
+
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -109,14 +114,6 @@ public class MainActivity extends AppCompatActivity implements
         }
     };
 
-    /**
-     * Used to store the last screen title. For use in
-     * {@link #restoreActionBar()}.
-     */
-    private CharSequence mTitle;
-
-    @Bind(R.id.quick_option_iv)
-    View mAddBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements
      * 处理传进来的intent
      *
      * @param intent
-     * @return void
      */
     private void handleIntent(Intent intent) {
         if (intent == null)
@@ -178,12 +174,13 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void initView() {
+
         mDoubleClickExit = new DoubleClickExitHelper(this);
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-        // Set up the drawer.
+        //设置drawer
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
@@ -206,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements
         NoticeUtils.bindToService(this);
 
         if (AppContext.isFristStart()) {
-            mNavigationDrawerFragment.openDrawerMenu();
+//            mNavigationDrawerFragment.openDrawerMenu();
             DataCleanManager.cleanInternalCache(AppContext.getInstance());
             AppContext.setFristStart(false);
         }

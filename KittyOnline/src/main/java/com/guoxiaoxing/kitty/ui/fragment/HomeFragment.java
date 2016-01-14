@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.util.UIHelper;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,9 +39,9 @@ public class HomeFragment extends BaseFragment {
     private Context mContext;
     private OnFragmentInteractionListener mListener;
 
+    @Bind(R.id.tb_home_fragment)
+    Toolbar mToolbar;
 
-    @Bind(R.id.tb_home_header)
-    Toolbar mToolBar;
     @Bind(R.id.tv_search)
     TextView mTVSearch;
 
@@ -87,14 +88,7 @@ public class HomeFragment extends BaseFragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        if (mToolBar != null) {
-
-            AppCompatActivity activity = (AppCompatActivity) getActivity();
-            activity.setSupportActionBar(mToolBar);
-            activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
+        initView(view);
         return view;
     }
 
@@ -121,6 +115,20 @@ public class HomeFragment extends BaseFragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void initView(View view) {
+        view.findViewById(R.id.tv_search).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        super.onClick(v);
+        if (v.getId() == mTVSearch.getId()) {
+            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+        }
     }
 
     /**

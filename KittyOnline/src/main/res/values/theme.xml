@@ -40,7 +40,7 @@
     </style>
 
     <!-- 夜间模式 -->
-    <style name="AppBaseTheme_Night" parent="@style/Theme.AppCompat">
+    <style name="AppBaseTheme_Night" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/night_colorPrimary</item>
         <item name="colorPrimaryDark">@color/night_colorPrimaryDark</item>
         <item name="android:textColorLink">@color/night_colorPrimary</item>
