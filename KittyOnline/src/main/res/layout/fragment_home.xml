@@ -16,14 +16,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="left|center"
                 android:drawableTop="@drawable/bmp_rich_scan"
                 android:text="@string/rich_scan"
                 android:textColor="@color/white"
@@ -43,12 +42,12 @@
 
 
             <TextView
-                android:id="@+id/tv_search"
+                android:id="@+id/tv_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
-                android:drawableTop="@drawable/bmp_text_seach"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="12dp"
+                android:drawableTop="@drawable/bmp_notification_normal"
                 android:text="@string/text_search"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_12" />

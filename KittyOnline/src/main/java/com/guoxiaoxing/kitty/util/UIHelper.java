@@ -29,11 +29,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ZoomButtonsController;
 
-import com.guoxiaoxing.kitty.zxing.activity.CaptureActivity;
-
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.Constants;
@@ -42,12 +39,6 @@ import com.guoxiaoxing.kitty.bean.Notice;
 import com.guoxiaoxing.kitty.bean.ShakeObject;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.bean.Tweet;
-import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
-import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
-import com.guoxiaoxing.kitty.ui.fragment.FriendsFragment;
-import com.guoxiaoxing.kitty.ui.fragment.MessageDetailFragment;
-import com.guoxiaoxing.kitty.ui.fragment.QuestionTagFragment;
-import com.guoxiaoxing.kitty.ui.fragment.SoftWareTweetsFrament;
 import com.guoxiaoxing.kitty.interf.ICallbackResult;
 import com.guoxiaoxing.kitty.interf.OnWebViewImageListener;
 import com.guoxiaoxing.kitty.service.DownloadService;
@@ -70,8 +61,16 @@ import com.guoxiaoxing.kitty.ui.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.LoginActivity;
 import com.guoxiaoxing.kitty.ui.SimpleBackActivity;
 import com.guoxiaoxing.kitty.ui.TweetActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
+import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
+import com.guoxiaoxing.kitty.ui.fragment.FriendsFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MessageDetailFragment;
+import com.guoxiaoxing.kitty.ui.fragment.QuestionTagFragment;
+import com.guoxiaoxing.kitty.ui.fragment.SoftWareTweetsFrament;
 import com.guoxiaoxing.kitty.viewpagerfragment.FriendsViewPagerFragment;
 import com.guoxiaoxing.kitty.widget.AvatarView;
+import com.guoxiaoxing.kitty.zxing.activity.CaptureActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -80,14 +79,13 @@ import java.net.URLDecoder;
 
 /**
  * 界面帮助类
- * 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年10月10日 下午3:33:36
- * 
+ * @author guoxiaoxing
  */
 public class UIHelper {
 
-    /** 全局web样式 */
+    /**
+     * 全局web样式
+     */
     // 链接样式文件，代码块高亮的处理
     public final static String linkCss = "<script type=\"text/javascript\" src=\"file:///android_asset/shCore.js\"></script>"
             + "<script type=\"text/javascript\" src=\"file:///android_asset/brush.js\"></script>"
@@ -106,7 +104,7 @@ public class UIHelper {
 
     /**
      * 显示登录界面
-     * 
+     *
      * @param context
      */
     public static void showLoginActivity(Context context) {
@@ -116,7 +114,7 @@ public class UIHelper {
 
     /**
      * 显示Team界面
-     * 
+     *
      * @param context
      */
     public static void showTeamMainActivity(Context context) {
@@ -126,12 +124,12 @@ public class UIHelper {
 
     /**
      * 显示新闻详情
-     * 
+     *
      * @param context
      * @param newsId
      */
     public static void showNewsDetail(Context context, int newsId,
-            int commentCount) {
+                                      int commentCount) {
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("id", newsId);
         intent.putExtra("comment_count", commentCount);
@@ -142,7 +140,7 @@ public class UIHelper {
 
     /**
      * 显示博客详情
-     * 
+     *
      * @param context
      * @param blogId
      */
@@ -157,7 +155,7 @@ public class UIHelper {
 
     /**
      * 显示帖子详情
-     * 
+     *
      * @param context
      * @param postId
      */
@@ -172,7 +170,7 @@ public class UIHelper {
 
     /**
      * 显示活动详情
-     * 
+     *
      * @param context
      * @param eventId
      */
@@ -198,7 +196,7 @@ public class UIHelper {
 
     /**
      * 显示动弹详情
-     * 
+     *
      * @param context context
      * @param tweetid 动弹的id
      */
@@ -240,7 +238,7 @@ public class UIHelper {
 
     /**
      * 新闻超链接点击跳转
-     * 
+     *
      * @param context context
      */
     public static void showNewsRedirect(Context context, News news) {
@@ -258,22 +256,22 @@ public class UIHelper {
             int newsType = news.getNewType().getType();
             String objId = news.getNewType().getAttachment();
             switch (newsType) {
-            case News.NEWSTYPE_NEWS:
-                showNewsDetail(context, newsId, news.getCommentCount());
-                break;
-            case News.NEWSTYPE_SOFTWARE:
-                showSoftwareDetail(context, objId);
-                break;
-            case News.NEWSTYPE_POST:
-                showPostDetail(context, StringUtils.toInt(objId),
-                        news.getCommentCount());
-                break;
-            case News.NEWSTYPE_BLOG:
-                showBlogDetail(context, StringUtils.toInt(objId),
-                        news.getCommentCount());
-                break;
-            default:
-                break;
+                case News.NEWSTYPE_NEWS:
+                    showNewsDetail(context, newsId, news.getCommentCount());
+                    break;
+                case News.NEWSTYPE_SOFTWARE:
+                    showSoftwareDetail(context, objId);
+                    break;
+                case News.NEWSTYPE_POST:
+                    showPostDetail(context, StringUtils.toInt(objId),
+                            news.getCommentCount());
+                    break;
+                case News.NEWSTYPE_BLOG:
+                    showBlogDetail(context, StringUtils.toInt(objId),
+                            news.getCommentCount());
+                    break;
+                default:
+                    break;
             }
         } else {
             showUrlRedirect(context, url);
@@ -282,10 +280,10 @@ public class UIHelper {
 
     /**
      * 动态点击跳转到相关新闻、帖子等
-     * 
+     *
      * @param context context
-     * @param active 动态实体类
-     *            0其他 1新闻 2帖子 3动弹 4博客
+     * @param active  动态实体类
+     *                0其他 1新闻 2帖子 3动弹 4博客
      */
     public static void showActiveRedirect(Context context, Active active) {
         String url = active.getUrl();
@@ -294,30 +292,30 @@ public class UIHelper {
             int id = active.getObjectId();
             int catalog = active.getCatalog();
             switch (catalog) {
-            case Active.CATALOG_OTHER:
-                // 其他-无跳转
-                break;
-            case Active.CATALOG_NEWS:
-                showNewsDetail(context, id, active.getCommentCount());
-                break;
-            case Active.CATALOG_POST:
-                showPostDetail(context, id, active.getCommentCount());
-                break;
-            case Active.CATALOG_TWEET:
-                showTweetDetail(context, null, id);
-                break;
-            case Active.CATALOG_BLOG:
-                showBlogDetail(context, id, active.getCommentCount());
-                break;
-            default:
-                break;
+                case Active.CATALOG_OTHER:
+                    // 其他-无跳转
+                    break;
+                case Active.CATALOG_NEWS:
+                    showNewsDetail(context, id, active.getCommentCount());
+                    break;
+                case Active.CATALOG_POST:
+                    showPostDetail(context, id, active.getCommentCount());
+                    break;
+                case Active.CATALOG_TWEET:
+                    showTweetDetail(context, null, id);
+                    break;
+                case Active.CATALOG_BLOG:
+                    showBlogDetail(context, id, active.getCommentCount());
+                    break;
+                default:
+                    break;
             }
         } else {
             showUrlRedirect(context, url);
         }
     }
 
-    @SuppressLint({ "JavascriptInterface", "SetJavaScriptEnabled" })
+    @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
     public static void initWebView(WebView webView) {
         WebSettings settings = webView.getSettings();
         settings.setDefaultFontSize(15);
@@ -337,7 +335,7 @@ public class UIHelper {
     /**
      * 添加网页的点击图片展示支持
      */
-    @SuppressLint({ "JavascriptInterface", "SetJavaScriptEnabled" })
+    @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
     @JavascriptInterface
     public static void addWebImageShow(final Context cxt, WebView wv) {
         wv.getSettings().setJavaScriptEnabled(true);
@@ -346,7 +344,7 @@ public class UIHelper {
             @JavascriptInterface
             public void showImagePreview(String bigImageUrl) {
                 if (bigImageUrl != null && !StringUtils.isEmpty(bigImageUrl)) {
-                    UIHelper.showImagePreview(cxt, new String[] { bigImageUrl });
+                    UIHelper.showImagePreview(cxt, new String[]{bigImageUrl});
                 }
             }
         }, "mWebViewImageListener");
@@ -354,7 +352,7 @@ public class UIHelper {
 
     /**
      * 获取webviewClient对象
-     * 
+     *
      * @return
      */
     public static WebViewClient getWebViewClient() {
@@ -388,7 +386,7 @@ public class UIHelper {
 
     /**
      * 摇一摇点击跳转
-     * 
+     *
      * @param obj
      */
     public static void showUrlShake(Context context, ShakeObject obj) {
@@ -407,7 +405,7 @@ public class UIHelper {
 
     /**
      * url跳转
-     * 
+     *
      * @param context
      * @param url
      */
@@ -442,44 +440,44 @@ public class UIHelper {
     }
 
     public static void showLinkRedirect(Context context, int objType,
-            int objId, String objKey) {
+                                        int objId, String objKey) {
         switch (objType) {
-        case URLsUtils.URL_OBJ_TYPE_NEWS:
-            showNewsDetail(context, objId, -1);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_QUESTION:
-            showPostDetail(context, objId, 0);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_QUESTION_TAG:
-            showPostListByTag(context, objKey);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_SOFTWARE:
-            showSoftwareDetail(context, objKey);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_ZONE:
-            showUserCenter(context, objId, objKey);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_TWEET:
-            showTweetDetail(context, null, objId);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_BLOG:
-            showBlogDetail(context, objId, 0);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_OTHER:
-            openBrowser(context, objKey);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_TEAM:
-            openSysBrowser(context, objKey);
-            break;
-        case URLsUtils.URL_OBJ_TYPE_GIT:
-            openSysBrowser(context, objKey);
-            break;
+            case URLsUtils.URL_OBJ_TYPE_NEWS:
+                showNewsDetail(context, objId, -1);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_QUESTION:
+                showPostDetail(context, objId, 0);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_QUESTION_TAG:
+                showPostListByTag(context, objKey);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_SOFTWARE:
+                showSoftwareDetail(context, objKey);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_ZONE:
+                showUserCenter(context, objId, objKey);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_TWEET:
+                showTweetDetail(context, null, objId);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_BLOG:
+                showBlogDetail(context, objId, 0);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_OTHER:
+                openBrowser(context, objKey);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_TEAM:
+                openSysBrowser(context, objKey);
+                break;
+            case URLsUtils.URL_OBJ_TYPE_GIT:
+                openSysBrowser(context, objKey);
+                break;
         }
     }
 
     /**
      * 打开内置浏览器
-     * 
+     *
      * @param context
      * @param url
      */
@@ -487,7 +485,7 @@ public class UIHelper {
 
         if (StringUtils.isImgUrl(url)) {
             ImagePreviewActivity.showImagePrivew(context, 0,
-                    new String[] { url });
+                    new String[]{url});
             return;
         }
 
@@ -518,7 +516,7 @@ public class UIHelper {
 
     /**
      * 打开系统中的浏览器
-     * 
+     *
      * @param context
      * @param url
      */
@@ -540,12 +538,12 @@ public class UIHelper {
 
     @JavascriptInterface
     public static void showImagePreview(Context context, int index,
-            String[] imageUrls) {
+                                        String[] imageUrls) {
         ImagePreviewActivity.showImagePrivew(context, index, imageUrls);
     }
 
     public static void showSimpleBackForResult(Fragment fragment,
-            int requestCode, SimpleBackPage page, Bundle args) {
+                                               int requestCode, SimpleBackPage page, Bundle args) {
         Intent intent = new Intent(fragment.getActivity(),
                 SimpleBackActivity.class);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_PAGE, page.getValue());
@@ -554,7 +552,7 @@ public class UIHelper {
     }
 
     public static void showSimpleBackForResult(Activity context,
-            int requestCode, SimpleBackPage page, Bundle args) {
+                                               int requestCode, SimpleBackPage page, Bundle args) {
         Intent intent = new Intent(context, SimpleBackActivity.class);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_PAGE, page.getValue());
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_ARGS, args);
@@ -562,7 +560,7 @@ public class UIHelper {
     }
 
     public static void showSimpleBackForResult(Activity context,
-            int requestCode, SimpleBackPage page) {
+                                               int requestCode, SimpleBackPage page) {
         Intent intent = new Intent(context, SimpleBackActivity.class);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_PAGE, page.getValue());
         context.startActivityForResult(intent, requestCode);
@@ -575,7 +573,7 @@ public class UIHelper {
     }
 
     public static void showSimpleBack(Context context, SimpleBackPage page,
-            Bundle args) {
+                                      Bundle args) {
         Intent intent = new Intent(context, SimpleBackActivity.class);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_ARGS, args);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_PAGE, page.getValue());
@@ -583,7 +581,7 @@ public class UIHelper {
     }
 
     public static void showTweetActivity(Context context, SimpleBackPage page,
-            Bundle args) {
+                                         Bundle args) {
         Intent intent = new Intent(context, TweetActivity.class);
         intent.putExtra(TweetActivity.FROM_KEY, 1);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_ARGS, args);
@@ -617,7 +615,7 @@ public class UIHelper {
     }
 
     public static SpannableString parseActiveAction(int objecttype,
-            int objectcatalog, String objecttitle) {
+                                                    int objectcatalog, String objecttitle) {
         String title = "";
         int start = 0;
         int end = 0;
@@ -674,13 +672,13 @@ public class UIHelper {
 
     /**
      * 组合动态的回复文本
-     * 
+     *
      * @param name
      * @param body
      * @return
      */
     public static SpannableStringBuilder parseActiveReply(String name,
-            String body) {
+                                                          String body) {
         Spanned span = Html.fromHtml(body.trim());
         SpannableStringBuilder sp = new SpannableStringBuilder(name + "：");
         sp.append(span);
@@ -695,7 +693,7 @@ public class UIHelper {
 
     /**
      * 发送App异常崩溃报告
-     * 
+     *
      * @param context
      * @param crashReport
      */
@@ -712,7 +710,7 @@ public class UIHelper {
 
     /**
      * 发送通知广播
-     * 
+     *
      * @param context
      * @param notice
      */
@@ -729,7 +727,7 @@ public class UIHelper {
 
     /**
      * 发送通知广播
-     * 
+     *
      * @param context
      */
     public static void sendBroadcastForNotice(Context context) {
@@ -739,14 +737,14 @@ public class UIHelper {
 
     /**
      * 显示用户中心页面
-     * 
+     *
      * @param context
      * @param hisuid
      * @param hisuid
      * @param hisname
      */
     public static void showUserCenter(Context context, int hisuid,
-            String hisname) {
+                                      String hisname) {
         if (hisuid == 0 && hisname.equalsIgnoreCase("匿名")) {
             AppContext.showToast("提醒你，该用户为非会员");
             return;
@@ -759,7 +757,7 @@ public class UIHelper {
 
     /**
      * 显示用户的博客列表
-     * 
+     *
      * @param context
      * @param uid
      */
@@ -771,7 +769,7 @@ public class UIHelper {
 
     /**
      * 显示用户头像大图
-     * 
+     *
      * @param context
      * @param avatarUrl
      */
@@ -780,12 +778,12 @@ public class UIHelper {
             return;
         }
         String url = AvatarView.getLargeAvatar(avatarUrl);
-        ImagePreviewActivity.showImagePrivew(context, 0, new String[] { url });
+        ImagePreviewActivity.showImagePrivew(context, 0, new String[]{url});
     }
 
     /**
      * 显示登陆用户的个人中心页面
-     * 
+     *
      * @param context
      */
     public static void showMyInformation(Context context) {
@@ -794,7 +792,7 @@ public class UIHelper {
 
     /**
      * 显示我的所有动态
-     * 
+     *
      * @param context
      */
     public static void showMyActive(Context context) {
@@ -803,7 +801,7 @@ public class UIHelper {
 
     /**
      * 显示扫一扫界面
-     * 
+     *
      * @param context
      */
     public static void showScanActivity(Context context) {
@@ -813,7 +811,7 @@ public class UIHelper {
 
     /**
      * 显示用户的消息中心
-     * 
+     *
      * @param context
      */
     public static void showMyMes(Context context) {
@@ -822,7 +820,7 @@ public class UIHelper {
 
     /**
      * 显示用户收藏界面
-     * 
+     *
      * @param context
      */
     public static void showUserFavorite(Context context, int uid) {
@@ -846,13 +844,13 @@ public class UIHelper {
 
     /**
      * 显示留言对话页面
-     * 
+     *
      * @param context
      * @param friendid
      * @param friendid
      */
     public static void showMessageDetail(Context context, int friendid,
-            String friendname) {
+                                         String friendname) {
         Bundle args = new Bundle();
         args.putInt(MessageDetailFragment.BUNDLE_KEY_FID, friendid);
         args.putString(MessageDetailFragment.BUNDLE_KEY_FNAME, friendname);
@@ -861,7 +859,7 @@ public class UIHelper {
 
     /**
      * 显示设置界面
-     * 
+     *
      * @param context
      */
     public static void showSetting(Context context) {
@@ -870,7 +868,7 @@ public class UIHelper {
 
     /**
      * 显示通知设置界面
-     * 
+     *
      * @param context
      */
     public static void showSettingNotification(Context context) {
@@ -879,7 +877,7 @@ public class UIHelper {
 
     /**
      * 显示关于界面
-     * 
+     *
      * @param context
      */
     public static void showAboutOSC(Context context) {
@@ -888,7 +886,7 @@ public class UIHelper {
 
     /**
      * 清除app缓存
-     * 
+     *
      * @param activity
      */
     public static void clearAppCache(Activity activity) {
@@ -919,16 +917,18 @@ public class UIHelper {
     }
 
     public static void openDownLoadService(Context context, String downurl,
-            String tilte) {
+                                           String tilte) {
         final ICallbackResult callback = new ICallbackResult() {
 
             @Override
-            public void OnBackResult(Object s) {}
+            public void OnBackResult(Object s) {
+            }
         };
         ServiceConnection conn = new ServiceConnection() {
 
             @Override
-            public void onServiceDisconnected(ComponentName name) {}
+            public void onServiceDisconnected(ComponentName name) {
+            }
 
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
@@ -947,7 +947,7 @@ public class UIHelper {
 
     /**
      * 发送广播告知评论发生变化
-     * 
+     *
      * @param context
      * @param isBlog
      * @param id
@@ -956,8 +956,8 @@ public class UIHelper {
      * @param replyComment
      */
     public static void sendBroadCastCommentChanged(Context context,
-            boolean isBlog, int id, int catalog, int operation,
-            Comment replyComment) {
+                                                   boolean isBlog, int id, int catalog, int operation,
+                                                   Comment replyComment) {
         Intent intent = new Intent(Constants.INTENT_ACTION_COMMENT_CHANGED);
         Bundle args = new Bundle();
         args.putInt(Comment.BUNDLE_KEY_ID, id);
@@ -971,11 +971,11 @@ public class UIHelper {
 
     /**
      * 显示活动地址地图信息
-     * 
+     *
      * @param context
      */
     public static void showEventLocation(Context context, String city,
-            String location) {
+                                         String location) {
         Intent intent = new Intent(context, EventLocationActivity.class);
         intent.putExtra("city", city);
         intent.putExtra("location", location);
@@ -983,7 +983,7 @@ public class UIHelper {
     }
 
     public static void showCreateNewIssue(Context context, Team team,
-            TeamProject project, TeamIssueCatalog catalog) {
+                                          TeamProject project, TeamIssueCatalog catalog) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("team", team);
         if (project != null) {
@@ -1000,16 +1000,15 @@ public class UIHelper {
 
     /***
      * 显示任务详情
-     * 
-     * @author 火蚁 2015-1-30 下午2:59:57
-     * 
-     * @return void
+     *
      * @param context
      * @param team
      * @param issue
+     * @return void
+     * @author 火蚁 2015-1-30 下午2:59:57
      */
     public static void showTeamIssueDetail(Context context, Team team,
-            TeamIssue issue, TeamIssueCatalog catalog) {
+                                           TeamIssue issue, TeamIssueCatalog catalog) {
         Intent intent = new Intent(context, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("teamid", team.getId());
@@ -1025,16 +1024,15 @@ public class UIHelper {
 
     /**
      * 显示讨论贴详情
-     * 
-     * @author 火蚁 2015-2-2 下午6:37:53
-     * 
-     * @return void
+     *
      * @param context
      * @param team
      * @param discuss
+     * @return void
+     * @author 火蚁 2015-2-2 下午6:37:53
      */
     public static void showTeamDiscussDetail(Context context, Team team,
-            TeamDiscuss discuss) {
+                                             TeamDiscuss discuss) {
         Intent intent = new Intent(context, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("teamid", team.getId());
@@ -1047,7 +1045,7 @@ public class UIHelper {
 
     /**
      * 显示周报详情
-     * 
+     *
      * @param context
      * @param data
      */
@@ -1060,7 +1058,7 @@ public class UIHelper {
     }
 
     public static void showTeamMemberInfo(Context context, int teamId,
-            TeamMember teamMember) {
+                                          TeamMember teamMember) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(TeamMemberAdapter.TEAM_MEMBER_KEY, teamMember);
         bundle.putInt(TeamMemberAdapter.TEAM_ID_KEY, teamId);
@@ -1069,16 +1067,15 @@ public class UIHelper {
 
     /***
      * 显示团队动态详情
-     * 
-     * @author 火蚁 2015-3-13 下午5:34:50
-     * 
-     * @return void
+     *
      * @param contex
      * @param teamId
      * @param active
+     * @return void
+     * @author 火蚁 2015-3-13 下午5:34:50
      */
     public static void showTeamActiveDetail(Context contex, int teamId,
-            TeamActive active) {
+                                            TeamActive active) {
         Intent intent = new Intent(contex, DetailActivity.class);
 
         Bundle bundle = new Bundle();

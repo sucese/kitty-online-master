@@ -318,6 +318,6 @@
 
     <!--主页-->
     <string name="rich_scan">扫一扫</string>
-    <string name="text_search">搜一搜</string>
+    <string name="text_search">消息</string>
 
 </resources>

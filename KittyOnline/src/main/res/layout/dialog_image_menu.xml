@@ -23,7 +23,7 @@
         android:gravity="center"
         android:padding="15dp"
         android:textColor="?attr/textColor"
-        android:text="发送到动弹"
+        android:text="写说说"
         android:textSize="18sp" />
 
     <TextView

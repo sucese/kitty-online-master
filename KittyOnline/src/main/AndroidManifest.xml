@@ -97,7 +97,7 @@
         </activity>
         <activity
             android:name="com.guoxiaoxing.kitty.ui.TweetActivity"
-            android:label="发送到动弹"
+            android:label="写说说"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />

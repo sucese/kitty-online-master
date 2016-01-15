@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -11,16 +12,22 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.ui.base.BaseActivity;
-import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.fragment.MessageDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
 import com.guoxiaoxing.kitty.ui.fragment.TweetsFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
 import java.lang.ref.WeakReference;
+
+import butterknife.Bind;
+
+/**
+ * 跳转Activity
+ */
 
 public class SimpleBackActivity extends BaseActivity implements
         OnSendClickListener {
@@ -30,6 +37,8 @@ public class SimpleBackActivity extends BaseActivity implements
     private static final String TAG = "FLAG_TAG";
     protected WeakReference<Fragment> mFragment;
     protected int mPageValue = -1;
+    @Bind(R.id.tb_simple_fragment_activity)
+    Toolbar mToolbar;
 
     @Override
     protected int getLayoutId() {
@@ -104,13 +113,13 @@ public class SimpleBackActivity extends BaseActivity implements
                 break;
             case R.id.chat_friend_home:
                 if (mFragment.get() instanceof MessageDetailFragment) {
-                    ((MessageDetailFragment)mFragment.get()).showFriendUserCenter();
+                    ((MessageDetailFragment) mFragment.get()).showFriendUserCenter();
                 } else {
                     return super.onOptionsItemSelected(item);
                 }
                 break;
-        default:
-            break;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -119,7 +128,7 @@ public class SimpleBackActivity extends BaseActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         if (mFragment.get() instanceof TweetsFragment) {
             getMenuInflater().inflate(R.menu.pub_topic_menu, menu);
-        }else if (mFragment.get() instanceof MessageDetailFragment){
+        } else if (mFragment.get() instanceof MessageDetailFragment) {
             getMenuInflater().inflate(R.menu.chat_menu, menu);
         }
         return super.onCreateOptionsMenu(menu);
@@ -165,13 +174,17 @@ public class SimpleBackActivity extends BaseActivity implements
     }
 
     @Override
-    public void onClick(View v) {}
+    public void onClick(View v) {
+    }
 
     @Override
-    public void initView() {}
+    public void initView() {
+        setSupportActionBar(mToolbar);
+    }
 
     @Override
-    public void initData() {}
+    public void initData() {
+    }
 
     @Override
     public void onClickSendButton(Editable str) {
@@ -182,5 +195,6 @@ public class SimpleBackActivity extends BaseActivity implements
     }
 
     @Override
-    public void onClickFlagButton() {}
+    public void onClickFlagButton() {
+    }
 }

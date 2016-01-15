@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
@@ -36,14 +37,17 @@ public class HomeFragment extends BaseFragment {
     private String mParam1;
     private String mParam2;
 
-    private Context mContext;
     private OnFragmentInteractionListener mListener;
 
     @Bind(R.id.tb_home_fragment)
     Toolbar mToolbar;
 
-    @Bind(R.id.tv_search)
-    TextView mTVSearch;
+    @Bind(R.id.tv_notification)
+    TextView tvNotification;
+
+    @Bind(R.id.et_search)
+    EditText etSearch;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -79,7 +83,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+
     }
 
     @Override
@@ -104,7 +108,6 @@ public class HomeFragment extends BaseFragment {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
-            mContext = context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -119,16 +122,28 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        view.findViewById(R.id.tv_search).setOnClickListener(this);
+        ButterKnife.bind(this, view);
+        tvNotification.setOnClickListener(this);
+        etSearch.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
         super.onClick(v);
-        if (v.getId() == mTVSearch.getId()) {
-            UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+
+        switch (v.getId()) {
+            //消息通知
+            case R.id.tv_notification:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+                break;
+            //搜索框
+            case R.id.et_search:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+                break;
         }
+
+
     }
 
     /**

@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_simple_fragment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"/>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
