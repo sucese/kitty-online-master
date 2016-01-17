@@ -37,7 +37,7 @@ public class SimpleBackActivity extends BaseActivity implements
     private static final String TAG = "FLAG_TAG";
     protected WeakReference<Fragment> mFragment;
     protected int mPageValue = -1;
-    @Bind(R.id.tb_simple_fragment_activity)
+    @Bind(R.id.tb_simple_back_activity)
     Toolbar mToolbar;
 
     @Override
@@ -53,6 +53,7 @@ public class SimpleBackActivity extends BaseActivity implements
     @Override
     protected void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
+
         if (mPageValue == -1) {
             mPageValue = getIntent().getIntExtra(BUNDLE_KEY_PAGE, 0);
         }
@@ -177,9 +178,15 @@ public class SimpleBackActivity extends BaseActivity implements
     public void onClick(View v) {
     }
 
+
+    @Override
+    protected void setActionBar() {
+        setSupportActionBar(mToolbar);
+    }
+
     @Override
     public void initView() {
-        setSupportActionBar(mToolbar);
+
     }
 
     @Override

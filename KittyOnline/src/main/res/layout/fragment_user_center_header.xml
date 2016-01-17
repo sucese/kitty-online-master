@@ -10,7 +10,7 @@
         android:id="@+id/ll_user_container"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@drawable/user_center_bg"
+        android:background="@color/primary"
         android:orientation="vertical"
         android:visibility="visible" >
 
@@ -53,7 +53,7 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="3px"
-            android:background="#18be40" />
+            android:background="@color/pink_300" />
 
         <LinearLayout
             android:layout_width="match_parent"

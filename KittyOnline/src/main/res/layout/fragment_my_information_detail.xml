@@ -20,7 +20,7 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@drawable/user_center_bg"
+                android:background="@color/primary"
                 android:padding="@dimen/space_16" >
 
                 <com.guoxiaoxing.kitty.widget.CircleImageView

@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppManager;
@@ -40,12 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     protected ActionBar mActionBar;
     private TextView mTvActionTitle;
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        TDevice.hideSoftKeyboard(getCurrentFocus());
-        ButterKnife.unbind(this);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,26 +52,36 @@ public abstract class BaseActivity extends AppCompatActivity implements
             setTheme(R.style.AppBaseTheme_Light);
         }
         AppManager.getAppManager().addActivity(this);
-        if (!hasActionBar()) {
-            // supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        }
+
         onBeforeSetContentLayout();
         if (getLayoutId() != 0) {
             setContentView(getLayoutId());
         }
-        mActionBar = getSupportActionBar();
         mInflater = getLayoutInflater();
-        if (hasActionBar()) {
-            initActionBar(mActionBar);
-        }
 
         // 通过注解绑定控件
         ButterKnife.bind(this);
+
+        //处理ActionBar
+        if (hasActionBar()) {
+            setActionBar();
+            mActionBar = getSupportActionBar();
+            initActionBar(mActionBar);
+        }
 
         init(savedInstanceState);
         initView();
         initData();
         _isVisible = true;
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        TDevice.hideSoftKeyboard(getCurrentFocus());
+        ButterKnife.unbind(this);
     }
 
     protected void onBeforeSetContentLayout() {
@@ -83,6 +89,18 @@ public abstract class BaseActivity extends AppCompatActivity implements
 
     protected boolean hasActionBar() {
         return true;
+    }
+
+    protected boolean hasBackButton() {
+        return false;
+    }
+
+    protected int getActionBarTitle() {
+        return R.string.app_name;
+    }
+
+    protected void setActionBar(){
+
     }
 
     protected int getLayoutId() {
@@ -93,13 +111,6 @@ public abstract class BaseActivity extends AppCompatActivity implements
         return mInflater.inflate(resId, null);
     }
 
-    protected int getActionBarTitle() {
-        return R.string.app_name;
-    }
-
-    protected boolean hasBackButton() {
-        return false;
-    }
 
     protected void init(Bundle savedInstanceState) {
     }

@@ -97,7 +97,7 @@
 
 	<color name="project_detail_item">#e2e0e0</color>
 	
-	<color name="my_information_option_pressed">#18be40</color>
+	<color name="my_information_option_pressed">@color/primary_dark</color>
 	
 	<!-- 反馈 -->
 	<color name="text_color_account_info">#ff5e5546</color>

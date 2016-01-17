@@ -1,8 +1,10 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
 import com.guoxiaoxing.kitty.bean.Base;
+import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
 /**
  * Created by guoxiaoxing on 16-1-16.
  */
-public class SearchAllFragment extends BaseF {
+public class SearchAllFragment extends BaseFragment {
+}
