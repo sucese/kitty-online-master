@@ -33,6 +33,12 @@
             android:layout_marginTop="20dp"
             android:text="@string/login" />
 
+        <Button
+            android:id="@+id/btn_signin"
+            style="@style/button_common_blue"
+            android:layout_marginTop="20dp"
+            android:text="@string/signin" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

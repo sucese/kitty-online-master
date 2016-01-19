@@ -9,7 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.SignUpCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
@@ -94,13 +98,16 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     }
 
     @Override
-    @OnClick({R.id.btn_login, R.id.iv_qq_login, R.id.iv_wx_login, R.id.iv_sina_login})
+    @OnClick({R.id.btn_login, R.id.btn_signin, R.id.iv_qq_login, R.id.iv_wx_login, R.id.iv_sina_login})
     public void onClick(View v) {
 
         int id = v.getId();
         switch (id) {
             case R.id.btn_login:
                 handleLogin();
+                break;
+            case R.id.btn_signin:
+                handleSignin();
                 break;
             case R.id.iv_qq_login:
                 qqLogin();
@@ -128,6 +135,33 @@ public class LoginActivity extends BaseActivity implements IUiListener {
 
         showWaitDialog(R.string.progress_login);
         OSChinaApi.login(mUserName, mPassword, mHandler);
+    }
+
+    private void handleSignin() {
+
+        AVUser user = new AVUser();
+
+        // if the data has ready
+        mUserName = mEtUserName.getText().toString();
+        mPassword = mEtPassword.getText().toString();
+
+        user.setUsername(mUserName);
+        user.setPassword(mPassword);
+
+        user.signUpInBackground(new SignUpCallback() {
+            @Override
+            public void done(AVException e) {
+
+                if (e == null) {
+                    Toast.makeText(LoginActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
     }
 
     private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
