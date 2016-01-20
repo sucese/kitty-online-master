@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import java.util.List;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -15,7 +15,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("reply")
-public class TeamReply extends Entity {
+public class TeamReply extends BaseEntity {
 
     public final static String REPLY_TYPE_ISSUE = "issue";
     public final static String REPLY_TYPE_DIARY = "diary";

@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.util.StringUtils;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -24,7 +24,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 @SuppressWarnings("serial")
 @XStreamAlias("issue")
-public class TeamIssue extends Entity {
+public class TeamIssue extends BaseEntity {
 
     public final static String TEAM_ISSUE_STATE_OPENED = "opened";
     public final static String TEAM_ISSUE_STATE_UNDERWAY = "underway";

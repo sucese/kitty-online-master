@@ -53,6 +53,7 @@
     <string name="hint_password">密码</string>
     <string name="login">登录</string>
     <string name="signin">注册</string>
+    <string name="forget_password">忘记密码?</string>
     <string name="tip_please_input_username">请输入用户名</string>
     <string name="tip_illegal_email">请输入正确的email地址</string>
     <string name="tip_please_input_password">请输入密码</string>

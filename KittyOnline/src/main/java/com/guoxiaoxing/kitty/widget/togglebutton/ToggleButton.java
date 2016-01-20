@@ -1,11 +1,5 @@
 package com.guoxiaoxing.kitty.widget.togglebutton;
 
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SimpleSpringListener;
-import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.Spring;
-import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringConfig;
-import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringSystem;
-import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringUtil;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -16,6 +10,13 @@ import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SimpleSpringListener;
+import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.Spring;
+import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringConfig;
+import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringSystem;
+import com.guoxiaoxing.kitty.widget.tooglebutton.rebound.SpringUtil;
 
 /**
  * @author ThinkPad
@@ -103,7 +104,7 @@ public class ToggleButton extends View {
 		onColor = typedArray.getColor(R.styleable.ToggleButton_onColor, onColor);
 		spotColor = typedArray.getColor(R.styleable.ToggleButton_spotColor, spotColor);
 		offColor = typedArray.getColor(R.styleable.ToggleButton_offColor, offColor);
-		borderWidth = typedArray.getDimensionPixelSize(R.styleable.ToggleButton_borderWidth, borderWidth);
+		borderWidth = typedArray.getDimensionPixelSize(R.styleable.ToggleButton_mBorderWidth, borderWidth);
 		typedArray.recycle();
 	}
 	

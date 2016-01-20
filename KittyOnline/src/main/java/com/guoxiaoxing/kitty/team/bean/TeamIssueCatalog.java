@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
 @XStreamAlias("catalog")
-public class TeamIssueCatalog extends Entity {
+public class TeamIssueCatalog extends BaseEntity {
 
     @XStreamAlias("title")
     private String title;

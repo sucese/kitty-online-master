@@ -17,7 +17,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("comment")
-public class Comment extends Entity implements Parcelable {
+public class Comment extends BaseEntity implements Parcelable {
 
 	public static final String BUNDLE_KEY_COMMENT = "bundle_key_comment";
 	public static final String BUNDLE_KEY_ID = "bundle_key_id";

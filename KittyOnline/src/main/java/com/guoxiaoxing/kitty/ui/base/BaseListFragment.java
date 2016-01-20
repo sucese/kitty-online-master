@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
@@ -48,7 +48,7 @@ import cz.msebera.android.httpclient.Header;
  */
 
 @SuppressLint("NewApi")
-public abstract class BaseListFragment<T extends Entity> extends BaseFragment
+public abstract class BaseListFragment<T extends BaseEntity> extends BaseFragment
         implements SwipeRefreshLayout.OnRefreshListener, OnItemClickListener,
         OnScrollListener {
 
@@ -418,7 +418,7 @@ public abstract class BaseListFragment<T extends Entity> extends BaseFragment
         return true;
     }
 
-    protected boolean compareTo(List<? extends Entity> data, Entity enity) {
+    protected boolean compareTo(List<? extends BaseEntity> data, BaseEntity enity) {
         int s = data.size();
         if (enity != null) {
             for (int i = 0; i < s; i++) {

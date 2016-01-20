@@ -2,11 +2,11 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 @SuppressWarnings("serial")
 @XStreamAlias("discuss")
-public class TeamDiscuss extends Entity {
+public class TeamDiscuss extends BaseEntity {
 
     @XStreamAlias("type")
     private String type;

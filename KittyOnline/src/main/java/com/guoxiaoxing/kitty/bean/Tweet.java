@@ -32,7 +32,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("tweet")
-public class Tweet extends Entity implements Parcelable {
+public class Tweet extends BaseEntity implements Parcelable {
 
     @XStreamAlias("portrait")
     private String portrait;

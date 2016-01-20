@@ -3,13 +3,13 @@ package com.guoxiaoxing.kitty.team.bean;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 import java.io.Serializable;
 import java.util.List;
 
 @XStreamAlias("detail")
-public class TeamDiaryDetail extends Entity {
+public class TeamDiaryDetail extends BaseEntity {
     @XStreamAlias("sun")
     private DayData sun;
     @XStreamAlias("thu")

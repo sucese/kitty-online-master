@@ -1,12 +1,12 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
 @XStreamAlias("diary")
-public class TeamDiary extends Entity {
+public class TeamDiary extends BaseEntity {
 
     @XStreamAlias("title")
     private String title;

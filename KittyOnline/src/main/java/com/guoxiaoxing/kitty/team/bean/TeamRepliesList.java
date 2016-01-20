@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 
 /**
@@ -16,7 +16,7 @@ import com.guoxiaoxing.kitty.bean.ListEntity;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class TeamRepliesList extends Entity implements ListEntity<TeamReply> {
+public class TeamRepliesList extends BaseEntity implements ListEntity<TeamReply> {
 
     @XStreamAlias("pagesize")
     private int pagesize;

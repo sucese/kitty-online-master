@@ -15,7 +15,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("post")
-public class Post extends Entity {
+public class Post extends BaseEntity {
 
 	public final static int CATALOG_ASK = 1;
 	public final static int CATALOG_SHARE = 2;

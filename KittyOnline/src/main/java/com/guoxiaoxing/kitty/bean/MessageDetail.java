@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("message")
-public class MessageDetail extends Entity  {
+public class MessageDetail extends BaseEntity {
 
     //是否显示时间
     private boolean showDate;

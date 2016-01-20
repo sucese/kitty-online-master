@@ -2,15 +2,13 @@ package com.guoxiaoxing.kitty.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-/** 
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年9月27日 下午2:45:57 
- * 
+/**
+ * @author guoxiaoxing
  */
 
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class LoginUserBean extends Entity {
+public class LoginUserBean extends BaseEntity {
 	
 	@XStreamAlias("result")
 	private Result result;

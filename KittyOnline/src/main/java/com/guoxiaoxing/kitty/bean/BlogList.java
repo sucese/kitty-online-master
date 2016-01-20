@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class BlogList extends Entity implements ListEntity<Blog> {
+public class BlogList extends BaseEntity implements ListEntity<Blog> {
 	
 	public final static String PREF_READED_BLOG_LIST = "readed_blog_list.pref";
 	

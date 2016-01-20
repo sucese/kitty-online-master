@@ -7,7 +7,7 @@ package com.guoxiaoxing.kitty.bean;
  * @version 1.0
  * @created 2014-02-13
  */
-public class Report extends Entity {
+public class Report extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     public static final byte TYPE_QUESTION = 0x02;// 问题

@@ -37,6 +37,10 @@
         <item name="quickoption_icon_voice_selector">@drawable/day_quickoption_icon_voice_selector</item>
         <item name="quickoption_icon_scan_selector">@drawable/day_quickoption_icon_scan_selector</item>
         <item name="quickoption_icon_note_selector">@drawable/day_quickoption_icon_note_selector</item>
+
+        <item name="errorTextAppearance">@color/white</item>
+        <item name="counterEnabled">@color/white</item>
+
     </style>
 
     <!-- 夜间模式 -->

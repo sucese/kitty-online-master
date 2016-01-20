@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/windows_bg">
+    android:background="?attr/windows_bg"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,22 +22,42 @@
         android:orientation="vertical"
         android:padding="15dp">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/et_username"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:hint="邮箱/用户名" />
+            android:clipToPadding="false"
+            android:minHeight="?android:attr/actionBarSize"
+            android:transitionGroup="true">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/et_password"
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:hint="邮箱/用户名"
+                android:imeOptions="actionNext" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:hint="密码"
-            android:inputType="textPassword" />
+            android:clipToPadding="false"
+            android:minHeight="?android:attr/actionBarSize"
+            android:transitionGroup="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:hint="密码"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_login"
@@ -38,6 +70,14 @@
             style="@style/button_common_blue"
             android:layout_marginTop="20dp"
             android:text="@string/signin" />
+
+        <TextView
+            android:id="@+id/tv_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:text="@string/forget_password" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,4 +114,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>

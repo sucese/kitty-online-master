@@ -3,7 +3,7 @@ package com.guoxiaoxing.kitty.team.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -15,7 +15,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * 
  */
 @XStreamAlias("oschina")
-public class TeamActives extends Entity implements ListEntity<TeamActive> {
+public class TeamActives extends BaseEntity implements ListEntity<TeamActive> {
     private static final long serialVersionUID = 1L;
 
     @XStreamAlias("actives")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ToggleButton">
-    	<attr name="borderWidth" format="dimension">
+    	<attr name="mBorderWidth" format="dimension">
     	</attr>
     	<attr name="offBorderColor" format="reference|color">
     	</attr>

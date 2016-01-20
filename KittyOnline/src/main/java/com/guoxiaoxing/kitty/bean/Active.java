@@ -13,7 +13,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("active")
-public class Active extends Entity {
+public class Active extends BaseEntity {
 
 	public final static int CATALOG_OTHER = 0;// 其他
 	public final static int CATALOG_NEWS = 1;// 新闻

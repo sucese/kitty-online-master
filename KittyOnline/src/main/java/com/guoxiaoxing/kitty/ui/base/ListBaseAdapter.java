@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
@@ -31,7 +31,7 @@ import java.util.List;
  * @param <T>
  */
 
-public class ListBaseAdapter<T extends Entity> extends BaseAdapter {
+public class ListBaseAdapter<T extends BaseEntity> extends BaseAdapter {
     public static final int STATE_EMPTY_ITEM = 0;
     public static final int STATE_LOAD_MORE = 1;
     public static final int STATE_NO_MORE = 2;

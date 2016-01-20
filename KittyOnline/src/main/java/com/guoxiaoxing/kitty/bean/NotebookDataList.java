@@ -6,7 +6,7 @@ import java.util.List;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("oschina")
-public class NotebookDataList extends Entity implements
+public class NotebookDataList extends BaseEntity implements
         ListEntity<NotebookData> {
 
     private static final long serialVersionUID = 1L;

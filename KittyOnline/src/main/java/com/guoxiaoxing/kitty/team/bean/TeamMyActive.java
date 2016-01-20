@@ -1,12 +1,12 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
 @XStreamAlias("active")
-public class TeamMyActive extends Entity {
+public class TeamMyActive extends BaseEntity {
 
     @XStreamAlias("type")
     private String type;
@@ -60,7 +60,7 @@ public class TeamMyActive extends Entity {
     }
 
     @XStreamAlias("body")
-    class Body extends Entity {
+    class Body extends BaseEntity {
         @XStreamAlias("detail")
         private String detail;
         @XStreamAlias("code")
@@ -115,7 +115,7 @@ public class TeamMyActive extends Entity {
     }
 
     @XStreamAlias("author")
-    class Author extends Entity {
+    class Author extends BaseEntity {
         @XStreamAlias("name")
         private String name;
         @XStreamAlias("portrait")

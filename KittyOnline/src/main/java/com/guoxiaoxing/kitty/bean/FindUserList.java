@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class FindUserList extends Entity implements ListEntity<User> {
+public class FindUserList extends BaseEntity implements ListEntity<User> {
 
 	public final static int TYPE_FANS = 0x00;
 	public final static int TYPE_FOLLOWER = 0x01;

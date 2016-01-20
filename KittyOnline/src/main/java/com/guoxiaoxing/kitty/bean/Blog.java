@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("blog")
-public class Blog extends Entity {
+public class Blog extends BaseEntity {
 	
 	public final static int DOC_TYPE_REPASTE = 0;//转帖
 	public final static int DOC_TYPE_ORIGINAL = 1;//原创

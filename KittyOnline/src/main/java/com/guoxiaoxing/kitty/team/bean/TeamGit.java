@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 /**
  * @author FireAnt（http://my.oschina.net/LittleDY）
@@ -12,7 +12,7 @@ import com.guoxiaoxing.kitty.bean.Entity;
 
 @SuppressWarnings("serial")
 @XStreamAlias("git")
-public class TeamGit extends Entity {
+public class TeamGit extends BaseEntity {
 
     @XStreamAlias("name")
     private String name;

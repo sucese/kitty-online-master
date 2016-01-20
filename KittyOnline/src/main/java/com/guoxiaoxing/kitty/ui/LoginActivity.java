@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -59,7 +60,7 @@ import cz.msebera.android.httpclient.protocol.HttpContext;
 /**
  * 用户登录界面
  *
- * @author kymjs (http://www.kymjs.com/)
+ * @author guoxiaoxing
  */
 public class LoginActivity extends BaseActivity implements IUiListener {
 
@@ -73,6 +74,9 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     @Bind(R.id.et_password)
     EditText mEtPassword;
 
+    @Bind(R.id.tb_login_activity)
+    Toolbar mToolbar;
+
     private final int requestCode = REQUEST_CODE_INIT;
     private String mUserName = "";
     private String mPassword = "";
@@ -85,6 +89,11 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     @Override
     public void initView() {
 
+    }
+
+    @Override
+    protected void setActionBar() {
+        setSupportActionBar(mToolbar);
     }
 
     @Override

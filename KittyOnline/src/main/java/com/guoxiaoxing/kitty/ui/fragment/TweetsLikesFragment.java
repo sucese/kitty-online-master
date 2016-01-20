@@ -10,7 +10,7 @@ import com.guoxiaoxing.kitty.adapter.TweetLikeAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.Entity;
+import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.bean.Notice;
 import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.bean.TweetLike;
@@ -167,7 +167,7 @@ public class TweetsLikesFragment extends BaseListFragment<TweetLike> {
 	}
     }
     
-    protected boolean compareTo(List<? extends Entity> data, Entity enity) {
+    protected boolean compareTo(List<? extends BaseEntity> data, BaseEntity enity) {
         int s = data.size();
         
         if (enity != null && enity instanceof TweetLike) {

@@ -4,12 +4,14 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  * 登录用户实体类
- * @author guoxiaoxing
  *
+ * @author liux (http://my.oschina.net/liux)
+ * @version 1.0
+ * @created 2012-3-21
  */
 @SuppressWarnings("serial")
 @XStreamAlias("user")
-public class User extends Entity {
+public class User extends BaseEntity {
 
     public final static int RELATION_ACTION_DELETE = 0x00;// 取消关注
     public final static int RELATION_ACTION_ADD = 0x01;// 加关注
@@ -71,158 +73,158 @@ public class User extends Entity {
     private boolean isRememberMe;
 
     public int getId() {
-	return id;
+        return id;
     }
 
     public void setId(int id) {
-	this.id = id;
+        this.id = id;
     }
 
     public String getLocation() {
-	return location;
+        return location;
     }
 
     public void setLocation(String location) {
-	this.location = location;
+        this.location = location;
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public int getFollowers() {
-	return followers;
+        return followers;
     }
 
     public void setFollowers(int followers) {
-	this.followers = followers;
+        this.followers = followers;
     }
 
     public int getFans() {
-	return fans;
+        return fans;
     }
 
     public void setFans(int fans) {
-	this.fans = fans;
+        this.fans = fans;
     }
 
     public int getScore() {
-	return score;
+        return score;
     }
 
     public void setScore(int score) {
-	this.score = score;
+        this.score = score;
     }
 
     public String getPortrait() {
-	return portrait;
+        return portrait;
     }
 
     public void setPortrait(String portrait) {
-	this.portrait = portrait;
+        this.portrait = portrait;
     }
 
     public String getJointime() {
-	return jointime;
+        return jointime;
     }
 
     public void setJointime(String jointime) {
-	this.jointime = jointime;
+        this.jointime = jointime;
     }
 
     public String getGender() {
-	return gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-	this.gender = gender;
+        this.gender = gender;
     }
 
     public String getDevplatform() {
-	return devplatform;
+        return devplatform;
     }
 
     public void setDevplatform(String devplatform) {
-	this.devplatform = devplatform;
+        this.devplatform = devplatform;
     }
 
     public String getExpertise() {
-	return expertise;
+        return expertise;
     }
 
     public void setExpertise(String expertise) {
-	this.expertise = expertise;
+        this.expertise = expertise;
     }
 
     public int getRelation() {
-	return relation;
+        return relation;
     }
 
     public void setRelation(int relation) {
-	this.relation = relation;
+        this.relation = relation;
     }
 
     public String getLatestonline() {
-	return latestonline;
+        return latestonline;
     }
 
     public void setLatestonline(String latestonline) {
-	this.latestonline = latestonline;
+        this.latestonline = latestonline;
     }
 
     public String getFrom() {
-	return from;
+        return from;
     }
 
     public void setFrom(String from) {
-	this.from = from;
+        this.from = from;
     }
 
     public int getFavoritecount() {
-	return favoritecount;
+        return favoritecount;
     }
 
     public void setFavoritecount(int favoritecount) {
-	this.favoritecount = favoritecount;
+        this.favoritecount = favoritecount;
     }
 
     public String getAccount() {
-	return account;
+        return account;
     }
 
     public void setAccount(String account) {
-	this.account = account;
+        this.account = account;
     }
 
     public String getPwd() {
-	return pwd;
+        return pwd;
     }
 
     public void setPwd(String pwd) {
-	this.pwd = pwd;
+        this.pwd = pwd;
     }
 
     public boolean isRememberMe() {
-	return isRememberMe;
+        return isRememberMe;
     }
 
     public void setRememberMe(boolean isRememberMe) {
-	this.isRememberMe = isRememberMe;
+        this.isRememberMe = isRememberMe;
     }
 
     @Override
     public String toString() {
-	return "User [uid=" + id + ", location=" + location + ", name=" + name
-		+ ", followers=" + followers + ", fans=" + fans + ", score="
-		+ score + ", portrait=" + portrait + ", jointime=" + jointime
-		+ ", gender=" + gender + ", devplatform=" + devplatform
-		+ ", expertise=" + expertise + ", relation=" + relation
-		+ ", latestonline=" + latestonline + ", from=" + from
-		+ ", favoritecount=" + favoritecount + ", account=" + account
-		+ ", pwd=" + pwd + ", isRememberMe=" + isRememberMe + "]";
+        return "User [uid=" + id + ", location=" + location + ", name=" + name
+                + ", followers=" + followers + ", fans=" + fans + ", score="
+                + score + ", portrait=" + portrait + ", jointime=" + jointime
+                + ", gender=" + gender + ", devplatform=" + devplatform
+                + ", expertise=" + expertise + ", relation=" + relation
+                + ", latestonline=" + latestonline + ", from=" + from
+                + ", favoritecount=" + favoritecount + ", account=" + account
+                + ", pwd=" + pwd + ", isRememberMe=" + isRememberMe + "]";
     }
 }

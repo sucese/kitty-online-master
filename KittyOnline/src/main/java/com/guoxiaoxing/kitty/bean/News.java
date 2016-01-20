@@ -16,7 +16,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("news")
-public class News extends Entity {
+public class News extends BaseEntity {
 	
 	public final static int NEWSTYPE_NEWS = 0x00;//0 新闻
 	public final static int NEWSTYPE_SOFTWARE = 0x01;//1 软件
