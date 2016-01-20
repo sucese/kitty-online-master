@@ -26,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
-            android:minHeight="?android:attr/actionBarSize"
             android:transitionGroup="true">
 
 
@@ -36,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
-                android:hint="邮箱/用户名"
+                android:hint="手机号/邮箱"
                 android:imeOptions="actionNext" />
         </android.support.design.widget.TextInputLayout>
 
@@ -45,7 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
-            android:minHeight="?android:attr/actionBarSize"
             android:transitionGroup="true">
 
             <android.support.v7.widget.AppCompatEditText
@@ -61,13 +59,13 @@
 
         <Button
             android:id="@+id/btn_login"
-            style="@style/button_common_blue"
+            style="@style/button_common_pink"
             android:layout_marginTop="20dp"
             android:text="@string/login" />
 
         <Button
             android:id="@+id/btn_signin"
-            style="@style/button_common_blue"
+            style="@style/button_common_gray"
             android:layout_marginTop="20dp"
             android:text="@string/signin" />
 

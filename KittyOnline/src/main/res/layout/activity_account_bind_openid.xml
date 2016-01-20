@@ -24,7 +24,7 @@
 
     <Button
         android:id="@+id/bt_bind"
-        style="@style/button_common_blue"
+        style="@style/button_common_gray"
         android:layout_marginTop="10dp"
         android:text="确认绑定" />
 

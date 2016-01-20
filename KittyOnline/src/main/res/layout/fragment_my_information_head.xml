@@ -2,14 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="180dp"
     android:background="@color/primary"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/ll_user_container"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:orientation="vertical"
         android:visibility="visible">
 
@@ -22,9 +22,9 @@
 
             <com.guoxiaoxing.kitty.widget.AvatarView
                 android:id="@+id/iv_avatar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_centerHorizontal="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/space_20"
                 android:contentDescription="@null"
                 android:src="@drawable/widget_dface"

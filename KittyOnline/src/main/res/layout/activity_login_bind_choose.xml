@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/bt_bind"
-        style="@style/button_common_blue"
+        style="@style/button_common_gray"
         android:layout_marginTop="3dp"
         android:text="绑定到已有账号" />
 
@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/bt_reg"
-        style="@style/button_common_blue"
+        style="@style/button_common_gray"
         android:layout_marginTop="3dp"
         android:text="立即开启开源之旅" />
 

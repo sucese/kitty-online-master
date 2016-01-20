@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.LogInCallback;
+import com.avos.avoscloud.RequestPasswordResetCallback;
 import com.avos.avoscloud.SignUpCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
@@ -107,7 +109,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
     }
 
     @Override
-    @OnClick({R.id.btn_login, R.id.btn_signin, R.id.iv_qq_login, R.id.iv_wx_login, R.id.iv_sina_login})
+    @OnClick({R.id.btn_login, R.id.btn_signin, R.id.tv_forget_password, R.id.iv_qq_login, R.id.iv_wx_login, R.id.iv_sina_login})
     public void onClick(View v) {
 
         int id = v.getId();
@@ -117,6 +119,9 @@ public class LoginActivity extends BaseActivity implements IUiListener {
                 break;
             case R.id.btn_signin:
                 handleSignin();
+                break;
+            case R.id.tv_forget_password:
+                handleForgetPassword();
                 break;
             case R.id.iv_qq_login:
                 qqLogin();
@@ -143,7 +148,19 @@ public class LoginActivity extends BaseActivity implements IUiListener {
         mPassword = mEtPassword.getText().toString();
 
         showWaitDialog(R.string.progress_login);
-        OSChinaApi.login(mUserName, mPassword, mHandler);
+        AVUser.logInInBackground(mUserName, mPassword, new LogInCallback<AVUser>() {
+            @Override
+            public void done(AVUser avUser, AVException e) {
+                if (e == null) {
+                    //登录成功
+
+
+                } else {
+                    //登录失败
+
+                }
+            }
+        });
     }
 
     private void handleSignin() {
@@ -171,6 +188,19 @@ public class LoginActivity extends BaseActivity implements IUiListener {
         });
 
 
+    }
+
+    private void handleForgetPassword() {
+
+        AVUser.requestPasswordResetInBackground("myemail@example.com", new RequestPasswordResetCallback() {
+            public void done(AVException e) {
+                if (e == null) {
+                    // 已发送一份重置密码的指令到用户的邮箱
+                } else {
+                    // 重置密码出错。
+                }
+            }
+        });
     }
 
     private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
