@@ -44,14 +44,8 @@ public class SettingsFragment extends BaseFragment {
     ToggleButton mTbDoubleClickExit;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_settings, container,
-                false);
-        ButterKnife.bind(this, view);
-        initView(view);
-        initData();
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_settings;
     }
 
     @Override

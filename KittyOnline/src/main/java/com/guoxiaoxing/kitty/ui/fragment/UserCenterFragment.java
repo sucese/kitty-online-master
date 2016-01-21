@@ -113,21 +113,8 @@ public class UserCenterFragment extends BaseFragment implements
     };
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-            @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_user_center, container,
-                false);
-
-        Bundle args = getArguments();
-
-        mHisUid = args.getInt("his_id", 0);
-        mHisName = args.getString("his_name");
-        mUid = AppContext.getInstance().getLoginUid();
-        ButterKnife.bind(this, view);
-        initView(view);
-
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_user_center;
     }
 
     @Override
@@ -170,6 +157,12 @@ public class UserCenterFragment extends BaseFragment implements
 
     @Override
     public void initView(View view) {
+
+        Bundle args = getArguments();
+        mHisUid = args.getInt("his_id", 0);
+        mHisName = args.getString("his_name");
+        mUid = AppContext.getInstance().getLoginUid();
+
         mListView.setOnItemClickListener(this);
         mListView.setOnScrollListener(this);
 

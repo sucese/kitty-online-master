@@ -6,10 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
@@ -28,6 +35,7 @@ import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.DialogHelp;
+import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.XmlUtils;
@@ -52,7 +60,7 @@ import java.util.Map;
 import java.util.Set;
 
 import butterknife.Bind;
-import butterknife.OnClick;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.CookieStore;
 import cz.msebera.android.httpclient.client.protocol.ClientContext;
@@ -64,24 +72,43 @@ import cz.msebera.android.httpclient.protocol.HttpContext;
  *
  * @author guoxiaoxing
  */
-public class LoginActivity extends BaseActivity implements IUiListener {
+public class LoginActivity extends BaseActivity implements IUiListener, TextWatcher {
 
     public static final int REQUEST_CODE_INIT = 0;
-    private static final String BUNDLE_KEY_REQUEST_CODE = "BUNDLE_KEY_REQUEST_CODE";
-    protected static final String TAG = LoginActivity.class.getSimpleName();
+    public static final String BUNDLE_KEY_REQUEST_CODE = "BUNDLE_KEY_REQUEST_CODE";
+    public static final String TAG = LoginActivity.class.getSimpleName();
+    public final int requestCode = REQUEST_CODE_INIT;
 
-    @Bind(R.id.et_username)
-    EditText mEtUserName;
-
-    @Bind(R.id.et_password)
-    EditText mEtPassword;
-
+    @Bind(R.id.tv_tb_title)
+    TextView mTvTitle;
+    @Bind(R.id.btn_signin)
+    TextView mBtnSignin;
     @Bind(R.id.tb_login_activity)
     Toolbar mToolbar;
 
-    private final int requestCode = REQUEST_CODE_INIT;
-    private String mUserName = "";
-    private String mPassword = "";
+    @Bind(R.id.til_user_name)
+    TextInputLayout mTilUserName;
+    @Bind(R.id.til_password)
+    TextInputLayout mTilPassword;
+    @Bind(R.id.et_username)
+    AppCompatEditText mEtUserName;
+    @Bind(R.id.et_password)
+    AppCompatEditText mEtPassword;
+
+    @Bind(R.id.btn_login)
+    Button mBtnLogin;
+    @Bind(R.id.tv_forget_password)
+    TextView mTvForgetPassword;
+    @Bind(R.id.iv_qq_login)
+    ImageView mIvQqLogin;
+    @Bind(R.id.iv_wx_login)
+    ImageView mIvWxLogin;
+    @Bind(R.id.iv_sina_login)
+    ImageView mIvSinaLogin;
+
+    private Context mContext;
+    private String mUserName;
+    private String mPassword;
 
     @Override
     protected int getLayoutId() {
@@ -90,11 +117,20 @@ public class LoginActivity extends BaseActivity implements IUiListener {
 
     @Override
     public void initView() {
-
+        mContext = LoginActivity.this;
+        mBtnSignin.setOnClickListener(this);
+        mBtnLogin.setOnClickListener(this);
+        mTvForgetPassword.setOnClickListener(this);
+        mIvQqLogin.setOnClickListener(this);
+        mIvWxLogin.setOnClickListener(this);
+        mIvSinaLogin.setOnClickListener(this);
+        mEtUserName.addTextChangedListener(this);
+        mEtPassword.addTextChangedListener(this);
     }
 
     @Override
     protected void setActionBar() {
+        mTvTitle.setText(R.string.login);
         setSupportActionBar(mToolbar);
     }
 
@@ -103,13 +139,8 @@ public class LoginActivity extends BaseActivity implements IUiListener {
         return true;
     }
 
-    @Override
-    protected int getActionBarTitle() {
-        return R.string.login;
-    }
 
     @Override
-    @OnClick({R.id.btn_login, R.id.btn_signin, R.id.tv_forget_password, R.id.iv_qq_login, R.id.iv_wx_login, R.id.iv_sina_login})
     public void onClick(View v) {
 
         int id = v.getId();
@@ -137,6 +168,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
         }
     }
 
+
     private void handleLogin() {
 
         if (prepareForLogin()) {
@@ -144,8 +176,7 @@ public class LoginActivity extends BaseActivity implements IUiListener {
         }
 
         // if the data has ready
-        mUserName = mEtUserName.getText().toString();
-        mPassword = mEtPassword.getText().toString();
+        getLoginInfo();
 
         showWaitDialog(R.string.progress_login);
         AVUser.logInInBackground(mUserName, mPassword, new LogInCallback<AVUser>() {
@@ -162,6 +193,16 @@ public class LoginActivity extends BaseActivity implements IUiListener {
             }
         });
     }
+
+    private void getLoginInfo() {
+
+        if (mEtUserName == null || mEtPassword == null) {
+            return;
+        }
+        mUserName = mEtUserName.getText().toString().trim();
+        mPassword = mEtPassword.getText().toString().trim();
+    }
+
 
     private void handleSignin() {
 
@@ -240,16 +281,21 @@ public class LoginActivity extends BaseActivity implements IUiListener {
             return true;
         }
         if (mEtUserName.length() == 0) {
-            mEtUserName.setError("请输入邮箱/用户名");
+            mTilUserName.setError("请输入手机号");
             mEtUserName.requestFocus();
             return true;
+        } else {
+            mTilUserName.setError("");
         }
 
         if (mEtPassword.length() == 0) {
-            mEtPassword.setError("请输入密码");
+            mTilPassword.setError("请输入密码");
             mEtPassword.requestFocus();
             return true;
+        } else {
+            mTilPassword.setError("");
         }
+
 
         return false;
     }
@@ -488,5 +534,33 @@ public class LoginActivity extends BaseActivity implements IUiListener {
             AppContext.getInstance().cleanLoginInfo();
             AppContext.showToast(loginUserBean.getResult().getErrorMessage());
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        getLoginInfo();
+        if (!StringUtils.isEmpty(mUserName) && !StringUtils.isEmpty(mPassword)) {
+            mBtnLogin.setBackground(ContextCompat.getDrawable(mContext, R.drawable.rip_btn_pink));
+        } else {
+            mBtnLogin.setBackgroundColor(ContextCompat.getColor(mContext, R.color.gray_300));
+        }
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 }

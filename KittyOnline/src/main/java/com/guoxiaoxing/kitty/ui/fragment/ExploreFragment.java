@@ -42,14 +42,10 @@ public class ExploreFragment extends BaseFragment {
     @Bind(R.id.rl_shake)
     View mShake;
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_explore, null);
-        ButterKnife.bind(this, view);
-        initView(view);
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_explore;
     }
 
     @Override

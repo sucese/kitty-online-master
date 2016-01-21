@@ -3,54 +3,28 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
-import com.guoxiaoxing.kitty.util.UIHelper;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 注册Fragment
+ * @author guoxiaoxing
  */
-public class HomeFragment extends BaseFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class SigninFragment extends BaseFragment {
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    @Bind(R.id.tb_home_fragment)
-    Toolbar mToolbar;
-
-    @Bind(R.id.tv_notification)
-    TextView tvNotification;
-
-    @Bind(R.id.et_search)
-    EditText etSearch;
-
-
-    public HomeFragment() {
-        // Required empty public constructor
+    public SigninFragment() {
     }
 
     /**
@@ -59,16 +33,21 @@ public class HomeFragment extends BaseFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
+     * @return A new instance of fragment SigninFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static SigninFragment newInstance(String param1, String param2) {
+        SigninFragment fragment = new SigninFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_signin;
     }
 
     @Override
@@ -81,21 +60,16 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_signin, container, false);
     }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_home;
-    }
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onHomeFragmentInteraction(uri);
+            mListener.onFragmentInteraction(uri);
         }
     }
 
@@ -116,31 +90,6 @@ public class HomeFragment extends BaseFragment {
         mListener = null;
     }
 
-    @Override
-    public void initView(View view) {
-        tvNotification.setOnClickListener(this);
-        etSearch.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        super.onClick(v);
-
-        switch (v.getId()) {
-            //消息通知
-            case R.id.tv_notification:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
-            //搜索框
-            case R.id.et_search:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
-        }
-
-
-    }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -153,6 +102,6 @@ public class HomeFragment extends BaseFragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onHomeFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 }

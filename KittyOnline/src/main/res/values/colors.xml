@@ -6,7 +6,10 @@
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="gray_400">#BDBDBD</color>
     <color name="gray_500">#9E9E9E</color>
+
 
     <!--主题色-->
 

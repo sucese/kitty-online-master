@@ -120,13 +120,8 @@ public class MineFragmentDetail extends BaseFragment {
     };
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        ViewGroup view = (ViewGroup) inflater.inflate(
-                R.layout.fragment_my_information_detail, container, false);
-        initView(view);
-        initData();
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_my_information_detail;
     }
 
     @Override
@@ -188,7 +183,6 @@ public class MineFragmentDetail extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        ButterKnife.bind(this, view);
         mErrorLayout.setOnLayoutClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,14 +8,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
@@ -38,12 +36,11 @@ import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * 浏览器界面
- * 
- * @author kymjs(kymjs123@gmail.com)
+ *
+ * @author guoxiaoxing
  */
 @SuppressLint("NewApi")
 public class BrowserFragment extends BaseFragment {
@@ -76,25 +73,25 @@ public class BrowserFragment extends BaseFragment {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-        case R.id.browser_back:
-            mWebView.goBack();
-            break;
-        case R.id.browser_forward:
-            mWebView.goForward();
-            break;
-        case R.id.browser_refresh:
-            mWebView.loadUrl(mWebView.getUrl());
-            break;
-        case R.id.browser_system_browser:
-            try {
-                // 启用外部浏览器
-                Uri uri = Uri.parse(mCurrentUrl);
-                Intent it = new Intent(Intent.ACTION_VIEW, uri);
-                aty.startActivity(it);
-            } catch (Exception e) {
-                AppContext.showToast("网页地址错误");
-            }
-            break;
+            case R.id.browser_back:
+                mWebView.goBack();
+                break;
+            case R.id.browser_forward:
+                mWebView.goForward();
+                break;
+            case R.id.browser_refresh:
+                mWebView.loadUrl(mWebView.getUrl());
+                break;
+            case R.id.browser_system_browser:
+                try {
+                    // 启用外部浏览器
+                    Uri uri = Uri.parse(mCurrentUrl);
+                    Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                    aty.startActivity(it);
+                } catch (Exception e) {
+                    AppContext.showToast("网页地址错误");
+                }
+                break;
         }
     }
 
@@ -145,22 +142,15 @@ public class BrowserFragment extends BaseFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_browser, container,
-                false);
-        aty = getActivity();
-        ButterKnife.bind(this, rootView);
-        initData();
-        initView(rootView);
-        return rootView;
+    protected int getLayoutId() {
+        return R.layout.fragment_browser;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        aty = getActivity();
     }
 
     @Override
@@ -171,9 +161,9 @@ public class BrowserFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.public_menu_shared:
-            showSharedDialog();
-            break;
+            case R.id.public_menu_shared:
+                showSharedDialog();
+                break;
         }
         return true;
     }
@@ -187,10 +177,12 @@ public class BrowserFragment extends BaseFragment {
                 R.anim.anim_bottom_out);
         animBottomIn.setAnimationListener(new AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
 
             @Override
             public void onAnimationEnd(Animation animation) {
@@ -199,10 +191,12 @@ public class BrowserFragment extends BaseFragment {
         });
         animBottomOut.setAnimationListener(new AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
 
             @Override
             public void onAnimationEnd(Animation animation) {
@@ -225,11 +219,9 @@ public class BrowserFragment extends BaseFragment {
 
     /**
      * 载入链接之前会被调用
-     * 
-     * @param view
-     *            WebView
-     * @param url
-     *            链接地址
+     *
+     * @param view WebView
+     * @param url  链接地址
      */
     protected void onUrlLoading(WebView view, String url) {
         mProgress.setVisibility(View.VISIBLE);
@@ -239,11 +231,9 @@ public class BrowserFragment extends BaseFragment {
 
     /**
      * 链接载入成功后会被调用
-     * 
-     * @param view
-     *            WebView
-     * @param url
-     *            链接地址
+     *
+     * @param view WebView
+     * @param url  链接地址
      */
     protected void onUrlFinished(WebView view, String url) {
         mCurrentUrl = url;
@@ -252,11 +242,9 @@ public class BrowserFragment extends BaseFragment {
 
     /**
      * 当前WebView显示页面的标题
-     * 
-     * @param view
-     *            WebView
-     * @param title
-     *            web页面标题
+     *
+     * @param view  WebView
+     * @param title web页面标题
      */
     protected void onWebTitle(WebView view, String title) {
         if (aty != null && mWebView != null) { // 必须做判断，由于webview加载属于耗时操作，可能会本Activity已经关闭了才被调用
@@ -266,13 +254,12 @@ public class BrowserFragment extends BaseFragment {
 
     /**
      * 当前WebView显示页面的图标
-     * 
-     * @param view
-     *            WebView
-     * @param icon
-     *            web页面图标
+     *
+     * @param view WebView
+     * @param icon web页面图标
      */
-    protected void onWebIcon(WebView view, Bitmap icon) {}
+    protected void onWebIcon(WebView view, Bitmap icon) {
+    }
 
     /**
      * 初始化浏览器设置信息

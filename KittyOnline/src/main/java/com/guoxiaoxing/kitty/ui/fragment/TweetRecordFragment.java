@@ -147,15 +147,8 @@ public class TweetRecordFragment extends BaseFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.item_tweet_pub_record,
-                container, false);
-        ButterKnife.bind(this, rootView);
-        initView(rootView);
-        initData();
-        return rootView;
+    protected int getLayoutId() {
+        return R.layout.item_tweet_pub_record;
     }
 
     @Override

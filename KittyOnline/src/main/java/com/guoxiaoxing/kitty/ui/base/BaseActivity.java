@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppManager;
@@ -40,7 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity implements
     protected LayoutInflater mInflater;
     protected ActionBar mActionBar;
     private TextView mTvActionTitle;
-
 
 
     @Override
@@ -99,7 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         return R.string.app_name;
     }
 
-    protected void setActionBar(){
+    protected void setActionBar() {
 
     }
 
@@ -121,15 +119,11 @@ public abstract class BaseActivity extends AppCompatActivity implements
         if (hasBackButton()) {
             mActionBar.setDisplayHomeAsUpEnabled(true);
             mActionBar.setHomeButtonEnabled(true);
-        } else {
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
-            actionBar.setDisplayUseLogoEnabled(false);
-            int titleRes = getActionBarTitle();
-            if (titleRes != 0) {
-                actionBar.setTitle(titleRes);
-            }
         }
+        actionBar.setDisplayUseLogoEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
     }
+
 
     public void setActionBarTitle(int resId) {
         if (resId != 0) {
@@ -143,9 +137,9 @@ public abstract class BaseActivity extends AppCompatActivity implements
         }
         if (hasActionBar() && mActionBar != null) {
             if (mTvActionTitle != null) {
-                mTvActionTitle.setText(title);
+                mTvActionTitle.setText("");
             }
-            mActionBar.setTitle(title);
+            mActionBar.setTitle("");
         }
     }
 

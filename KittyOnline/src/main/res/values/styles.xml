@@ -153,7 +153,7 @@
 
     <style name="button_common_pink">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">38dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/rip_btn_pink</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/text_size_16</item>
@@ -161,13 +161,22 @@
 
     <style name="button_common_gray">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">38dp</item>
-        <item name="android:background">@drawable/rip_btn_gray</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/gray_300</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 
 
+    <style name="actionbar_tltle_large_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+    <style name="actionbar_tltle_small_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
 
     <style name="list_cell_text">
         <item name="android:textSize">16.0dip</item>

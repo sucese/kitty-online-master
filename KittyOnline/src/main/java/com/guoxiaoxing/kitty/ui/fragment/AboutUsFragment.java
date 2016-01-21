@@ -15,7 +15,6 @@ import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.UpdateManager;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * g关于我们Fragment
@@ -31,14 +30,10 @@ public class AboutUsFragment extends BaseFragment {
     @Bind(R.id.tv_version_name)
     TextView mTvVersionName;
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_about, container, false);
-        ButterKnife.bind(this, view);
-        initView(view);
-        initData();
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_about;
     }
 
     @Override

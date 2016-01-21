@@ -695,7 +695,6 @@ public class UIHelper {
      * 发送App异常崩溃报告
      *
      * @param context
-     * @param crashReport
      */
     public static void sendAppCrashReport(final Context context) {
 

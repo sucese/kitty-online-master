@@ -28,14 +28,10 @@ public class FeedBackFragment extends BaseFragment {
     EditText mEtContact;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_feedback, null);
-        ButterKnife.bind(this, view);
-        initView(view);
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_feedback;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

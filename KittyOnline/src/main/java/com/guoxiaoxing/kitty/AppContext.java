@@ -6,15 +6,18 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
+import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.log.AndroidLogTool;
+import com.guoxiaoxing.kitty.util.log.LogLevel;
+import com.guoxiaoxing.kitty.util.log.Logger;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
 
@@ -74,6 +77,16 @@ public class AppContext extends BaseApplication {
 
         // Bitmap缓存地址
         HttpConfig.CACHEPATH = "OSChina/imagecache";
+
+        //
+        String TAG = "Kitty";
+        Logger.init(TAG)                        // default PRETTYLOGGER or use just init()
+                .methodCount(3)                 // default 2
+                .hideThreadInfo()               // default shown
+                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
+                .methodOffset(2)                // default 0
+                .logTool(new AndroidLogTool()); // custom log tool, optional
+
     }
 
     private void initLogin() {

@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
@@ -24,6 +25,7 @@ import com.guoxiaoxing.kitty.util.UIHelper;
 import java.lang.ref.WeakReference;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * 跳转Activity
@@ -39,6 +41,9 @@ public class SimpleBackActivity extends BaseActivity implements
     protected int mPageValue = -1;
     @Bind(R.id.tb_simple_back_activity)
     Toolbar mToolbar;
+    @Bind(R.id.tv_tb_title)
+    TextView mTvTbTitle;
+
 
     @Override
     protected int getLayoutId() {
@@ -71,7 +76,7 @@ public class SimpleBackActivity extends BaseActivity implements
                     + pageValue);
         }
 
-        setActionBarTitle(page.getTitle());
+        mTvTbTitle.setText(page.getTitle());
 
         try {
             Fragment fragment = (Fragment) page.getClz().newInstance();
@@ -203,5 +208,12 @@ public class SimpleBackActivity extends BaseActivity implements
 
     @Override
     public void onClickFlagButton() {
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

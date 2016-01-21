@@ -217,13 +217,8 @@ public class TweetPubFragment extends BaseFragment implements
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tweet_pub, container,
-                false);
-
-        initView(view);
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_tweet_pub;
     }
 
     @Override
@@ -304,7 +299,6 @@ public class TweetPubFragment extends BaseFragment implements
     @Override
     public void initView(View view) {
         super.initView(view);
-        ButterKnife.bind(this, view);
         setHasOptionsMenu(true);
         mIbEmoji.setOnClickListener(this);
         mIbPicture.setOnClickListener(this);

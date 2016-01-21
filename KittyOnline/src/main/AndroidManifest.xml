@@ -38,12 +38,12 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppBaseTheme_Light" >
+        android:theme="@style/AppBaseTheme_Light">
         <activity
             android:name="com.guoxiaoxing.kitty.AppStart"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppStartLoad" >
+            android:theme="@style/Theme.AppStartLoad">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,7 +53,7 @@
         <activity
             android:name="com.guoxiaoxing.kitty.ui.MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -98,7 +98,7 @@
         <activity
             android:name="com.guoxiaoxing.kitty.ui.TweetActivity"
             android:label="写说说"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -121,21 +121,23 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity android:name="com.guoxiaoxing.kitty.ui.FindUserActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.guoxiaoxing.kitty.ui.FindUserActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.guoxiaoxing.kitty.ui.EventLocationActivity" />
         <activity
             android:name="com.guoxiaoxing.kitty.ui.LoginActivity"
-            android:label="登录"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name="com.guoxiaoxing.kitty.ui.LoginBindActivityChooseActivity"
-            android:screenOrientation="portrait"
-            android:label="登录"/>
-        <activity android:name="com.guoxiaoxing.kitty.ui.LoginAccountBindOpenIdActivity"
-            android:screenOrientation="portrait"
-            android:label="账号绑定"/>
+            android:label="登录"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.guoxiaoxing.kitty.ui.LoginBindActivityChooseActivity"
+            android:label="登录"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.guoxiaoxing.kitty.ui.LoginAccountBindOpenIdActivity"
+            android:label="账号绑定"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.guoxiaoxing.kitty.ui.DetailActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -157,28 +159,30 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name="com.guoxiaoxing.kitty.team.ui.TeamNewIssueActivity"
+        <activity
+            android:name="com.guoxiaoxing.kitty.team.ui.TeamNewIssueActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
             android:label="新团队任务"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.guoxiaoxing.kitty.zxing.activity.CaptureActivity"
             android:label="@string/actionbar_title_qr_scan"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name="com.guoxiaoxing.kitty.ui.ShakeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.guoxiaoxing.kitty.ui.ShakeActivity"
             android:label="@string/actionbar_title_shake"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
-        <activity android:name="com.guoxiaoxing.kitty.ui.SelectFriendsActivity"
-                  android:label="@string/actionbar_title_select_friends"
-                  android:windowSoftInputMode="stateAlwaysHidden"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.guoxiaoxing.kitty.ui.SelectFriendsActivity"
+            android:label="@string/actionbar_title_select_friends"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <service android:name="com.guoxiaoxing.kitty.LogUploadService" />
 
-        <service android:name="com.guoxiaoxing.kitty.service.ServerTaskService" >
+        <service android:name="com.guoxiaoxing.kitty.service.ServerTaskService">
             <intent-filter>
                 <action android:name="net.oschina.app.ACTION_PUB_BLOG_COMMENT" />
             </intent-filter>
@@ -205,8 +209,7 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="53cb520c56240bbd7d076ce5" >
-        </meta-data>
+            android:value="53cb520c56240bbd7d076ce5"></meta-data>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="pIbgtjFevz8LlkbNsYUNl4Qp" />
@@ -214,14 +217,13 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote"></service>
 
         <!-- ############ QQ空间和QQ SSO授权的Activity注册 ############ -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -240,8 +242,8 @@
             android:name="com.guoxiaoxing.kitty.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" />
     </application>
 
 </manifest>

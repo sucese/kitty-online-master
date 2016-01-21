@@ -1,6 +1,8 @@
 package com.guoxiaoxing.kitty.ui.base;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,6 +14,8 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.interf.BaseFragmentInterface;
 import com.guoxiaoxing.kitty.ui.dialog.DialogControl;
+
+import butterknife.ButterKnife;
 
 /**
  * Fragment基类
@@ -34,6 +38,11 @@ public class BaseFragment extends Fragment implements
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -42,7 +51,10 @@ public class BaseFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         this.mInflater = inflater;
-        View view = super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(getLayoutId(), container, false);
+        ButterKnife.bind(this, view);
+        initView(view);
+        initData();
         return view;
     }
 
@@ -59,6 +71,16 @@ public class BaseFragment extends Fragment implements
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 
     protected int getLayoutId() {
