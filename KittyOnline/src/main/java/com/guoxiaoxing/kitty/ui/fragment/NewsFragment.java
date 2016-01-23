@@ -10,7 +10,7 @@ import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.bean.News;
 import com.guoxiaoxing.kitty.bean.NewsList;
-import com.guoxiaoxing.kitty.interf.OnTabReselectListener;
+import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;

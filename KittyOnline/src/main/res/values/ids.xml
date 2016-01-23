@@ -8,5 +8,6 @@
     <item name="restart_preview" type="id"/>
     <item name="quit" type="id"/>
     <item name="return_scan_result" type="id"/>
-
+    <item name="toolbar" type="id"/>
+    <item name="recycler" type="id"/>
 </resources>

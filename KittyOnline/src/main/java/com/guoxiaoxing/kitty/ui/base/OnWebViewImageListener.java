@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.interf;
+package com.guoxiaoxing.kitty.ui.base;
 
 /**
  * 监听webview上的图片

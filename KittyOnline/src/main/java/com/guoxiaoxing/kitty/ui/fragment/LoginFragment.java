@@ -7,19 +7,19 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
@@ -38,6 +38,7 @@ import com.guoxiaoxing.kitty.ui.LoginBindActivityChooseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.DialogHelp;
+import com.guoxiaoxing.kitty.util.SnackBarHelper;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.TLog;
@@ -71,6 +72,7 @@ import cz.msebera.android.httpclient.protocol.HttpContext;
 
 /**
  * 登录Fragment
+ *
  * @author guoxiaoxing
  */
 public class LoginFragment extends BaseFragment implements IUiListener, TextWatcher {
@@ -78,12 +80,13 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     public static final int REQUEST_CODE_OPENID = 1000;
 
     private static final String TAG = "LoginFragment";
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @Bind(R.id.cl_container)
+    CoordinatorLayout mClContainer;
+    @Bind(R.id.ll_root)
+    LinearLayout mLlRoot;
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -113,22 +116,11 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     private String mPassword;
 
 
-
     private OnFragmentInteractionListener mListener;
 
     public LoginFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LoginFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static LoginFragment newInstance(String param1, String param2) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
@@ -136,6 +128,22 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_login;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override
@@ -147,24 +155,21 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         }
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onLoginFragmentInteraction(uri);
-        }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
     @Override
     public void initView(View view) {
         mContext = getActivity();
-
         mBtnLogin.setOnClickListener(this);
         mTvForgetPassword.setOnClickListener(this);
         mIvQqLogin.setOnClickListener(this);
@@ -210,22 +215,6 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     // 获取到QQ授权登陆的信息
     @Override
@@ -264,16 +253,14 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
 
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
+    public void onInteraction(Uri uri) {
+        if (mListener != null) {
+            mListener.onLoginFragmentInteraction(uri);
+        }
+    }
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onLoginFragmentInteraction(Uri uri);
@@ -282,7 +269,8 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
 
     private void handleLogin() {
 
-        if (prepareForLogin()) {
+        if (!prepareForLogin()) {
+            SnackBarHelper.showSnackBar(mLlRoot, "请输入用户名和密码");
             return;
         }
 
@@ -331,9 +319,9 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
             public void done(AVException e) {
 
                 if (e == null) {
-                    Toast.makeText(mContext, "注册成功", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(mClContainer, "注册成功", Snackbar.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(mContext, "注册失败", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(mClContainer, "注册失败", Snackbar.LENGTH_SHORT).show();
                 }
 
             }
@@ -379,7 +367,6 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     };
 
 
-
     private void handleLoginSuccess() {
 
     }
@@ -387,12 +374,12 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     private boolean prepareForLogin() {
         if (!TDevice.hasInternet()) {
             AppContext.showToastShort(R.string.tip_no_internet);
-            return true;
+            return false;
         }
         if (mEtUserName.length() == 0) {
             mTilUserName.setError("请输入手机号");
             mEtUserName.requestFocus();
-            return true;
+            return false;
         } else {
             mTilUserName.setError("");
         }
@@ -400,13 +387,13 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         if (mEtPassword.length() == 0) {
             mTilPassword.setError("请输入密码");
             mEtPassword.requestFocus();
-            return true;
+            return false;
         } else {
             mTilPassword.setError("");
         }
 
 
-        return false;
+        return true;
     }
 
     /**

@@ -8,7 +8,7 @@ import java.net.URL;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.interf.ICallbackResult;
+import com.guoxiaoxing.kitty.ui.base.ICallbackResult;
 import com.guoxiaoxing.kitty.ui.MainActivity;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;

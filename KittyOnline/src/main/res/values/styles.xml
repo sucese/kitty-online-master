@@ -178,6 +178,13 @@
         <item name="android:textSize">@dimen/text_size_14</item>
     </style>
 
+
+    <style name="edittext_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
     <style name="list_cell_text">
         <item name="android:textSize">16.0dip</item>
         <item name="android:textColor">@color/white</item>

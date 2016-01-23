@@ -1,5 +1,6 @@
-package com.guoxiaoxing.kitty.interf;
+package com.guoxiaoxing.kitty.ui.base;
 
+import android.os.Bundle;
 import android.view.View;
 
 
@@ -10,6 +11,8 @@ import android.view.View;
  *
  */
 public interface BaseFragmentInterface {
+
+	public void init(Bundle savedInstanceState);
 	
 	public void initView(View view);
 	

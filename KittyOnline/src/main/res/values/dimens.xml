@@ -71,14 +71,14 @@
     <dimen name="space_3">3.0dip</dimen>
     <dimen name="space_2">2.0dip</dimen>
     <dimen name="space_1">1.0dip</dimen>
-    
+
     <dimen name="dialog_margin">7.0dip</dimen>
     <dimen name="global_padding">8.0dip</dimen>
     <dimen name="global_dialog_padding">15.0dip</dimen>
-   	<dimen name="text_regular_primary_size">14.0dip</dimen>
+    <dimen name="text_regular_primary_size">14.0dip</dimen>
     <dimen name="text_large_secondary_size">12.0dip</dimen>
     <dimen name="text_large_primary_size">16.0dip</dimen>
-    
+
     <dimen name="popo_menu_dialog_width">150dip</dimen>
 
     <dimen name="tweet_item_margin">8dp</dimen>
@@ -88,7 +88,7 @@
     <dimen name="tweet_item_padding_left_right">15dp</dimen>
     <dimen name="tweet_item_profile_info_padd">10dp</dimen>
     <dimen name="tweet_linkview_left">25dp</dimen>
-    
+
     <dimen name="timeline_small_card_icon_width">12.0dip</dimen>
     <dimen name="timeline_small_card_icon_height">12.0dip</dimen>
     <dimen name="timeline_small_card_icon_margin_left">5.0dip</dimen>
@@ -96,21 +96,21 @@
     <dimen name="timeline_small_card_triangle_margin_right">4.0dip</dimen>
     <dimen name="timeline_small_card_title_margin_left">5.0dip</dimen>
     <dimen name="timeline_small_card_title_text_size">12.0sp</dimen>
-    
+
     <dimen name="timeline_small_card_height">20.0dip</dimen>
     <dimen name="timeline_small_card_min_width">66.0dip</dimen>
     <dimen name="timeline_small_card_padding_right">5.0dip</dimen>
-    
+
     <dimen name="ldrawer_drawableSize">50dp</dimen>
     <dimen name="ldrawer_barSize">18dp</dimen>
     <dimen name="ldrawer_topBottomBarArrowSize">11dp</dimen>
     <dimen name="ldrawer_thickness">2dp</dimen>
     <dimen name="ldrawer_gapBetweenBars">3dp</dimen>
     <dimen name="ldrawer_middleBarArrowSize">16dp</dimen>
-    
+
     <!-- 意见反馈 -->
     <dimen name="text_size_account_info">18.0sp</dimen>
-    
+
     <!-- 时间选择dialog -->
     <dimen name="done_label_size">14sp</dimen>
     <dimen name="date_picker_component_width">270dip</dimen>

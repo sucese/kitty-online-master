@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.interf;
+package com.guoxiaoxing.kitty.ui.base;
 
 /** 
  * 当tabHost再次被点击时

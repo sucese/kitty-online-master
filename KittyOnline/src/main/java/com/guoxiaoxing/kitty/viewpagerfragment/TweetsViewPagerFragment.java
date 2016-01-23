@@ -6,7 +6,7 @@ import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
 import com.guoxiaoxing.kitty.bean.TweetsList;
 import com.guoxiaoxing.kitty.ui.fragment.TweetsFragment;
-import com.guoxiaoxing.kitty.interf.OnTabReselectListener;
+import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;

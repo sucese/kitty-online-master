@@ -1,6 +1,5 @@
 package com.guoxiaoxing.kitty.ui.base;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.interf.BaseFragmentInterface;
 import com.guoxiaoxing.kitty.ui.dialog.DialogControl;
 
 import butterknife.ButterKnife;
@@ -45,6 +43,7 @@ public class BaseFragment extends Fragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init(savedInstanceState);
     }
 
     @Override
@@ -81,6 +80,7 @@ public class BaseFragment extends Fragment implements
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     @Override
@@ -130,6 +130,11 @@ public class BaseFragment extends Fragment implements
             return ((DialogControl) activity).showWaitDialog(str);
         }
         return null;
+    }
+
+    @Override
+    public void init(Bundle savedInstanceState) {
+
     }
 
     @Override

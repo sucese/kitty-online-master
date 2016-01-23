@@ -23,6 +23,7 @@ public class SigninFragment extends BaseFragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
     @Bind(R.id.et_username)
     AppCompatEditText mEtUsername;
     @Bind(R.id.til_user_name)
@@ -30,7 +31,7 @@ public class SigninFragment extends BaseFragment {
     @Bind(R.id.et_verification)
     AppCompatEditText mEtVerification;
     @Bind(R.id.tv_get_verification)
-    TextView mTvGetVerification;
+    Button mBtnGetVerification;
     @Bind(R.id.til_verification)
     TextInputLayout mTilVerification;
     @Bind(R.id.et_password)
@@ -51,15 +52,7 @@ public class SigninFragment extends BaseFragment {
     public SigninFragment() {
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SigninFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static SigninFragment newInstance(String param1, String param2) {
         SigninFragment fragment = new SigninFragment();
         Bundle args = new Bundle();
@@ -75,40 +68,6 @@ public class SigninFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onSigninFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mListener.onSigninFragmentInteraction(null);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -120,29 +79,60 @@ public class SigninFragment extends BaseFragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        onInteraction(null);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
+
+
+    @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+
+    public void onInteraction(Uri uri) {
+        if (mListener != null) {
+            mListener.onSigninFragmentInteraction(uri);
+        }
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    @Override
+    public void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+    }
+
+
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onSigninFragmentInteraction(Uri uri);
     }
 }

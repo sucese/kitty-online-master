@@ -22,7 +22,7 @@ import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.bean.TweetsList;
-import com.guoxiaoxing.kitty.interf.OnTabReselectListener;
+import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.HTMLUtil;

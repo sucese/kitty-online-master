@@ -329,5 +329,6 @@
     <string name="text_search">消息</string>
 
     <string name="search_hint">Search</string>
+    <string name="title_activity_s">SActivity</string>
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/windows_bg"
@@ -23,12 +24,12 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/et_username"
+                style="@style/edittext_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:hint="@string/user_name_hint"
-                android:imeOptions="actionNext"
-                android:singleLine="true" />
+                android:imeOptions="actionNext" />
         </android.support.design.widget.TextInputLayout>
 
 
@@ -41,13 +42,13 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/et_password"
+                style="@style/edittext_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:hint="@string/user_password_hint"
                 android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:singleLine="true" />
+                android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -98,5 +99,11 @@
                 android:background="@drawable/share_icon_sinaweibo_selector" />
         </LinearLayout>
     </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/cl_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
 
 </LinearLayout>

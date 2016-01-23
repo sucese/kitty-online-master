@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppManager;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.interf.BaseViewInterface;
 import com.guoxiaoxing.kitty.ui.dialog.CommonToast;
 import com.guoxiaoxing.kitty.ui.dialog.DialogControl;
 import com.guoxiaoxing.kitty.util.DialogHelp;
