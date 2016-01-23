@@ -1,67 +1,27 @@
 package com.guoxiaoxing.kitty.ui;
 
-import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatEditText;
+import android.net.Uri;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVUser;
-import com.avos.avoscloud.LogInCallback;
-import com.avos.avoscloud.RequestPasswordResetCallback;
-import com.avos.avoscloud.SignUpCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
-import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
-import com.guoxiaoxing.kitty.util.CyptoUtils;
-import com.guoxiaoxing.kitty.util.DialogHelp;
-import com.guoxiaoxing.kitty.util.StringUtils;
-import com.guoxiaoxing.kitty.util.TDevice;
+import com.guoxiaoxing.kitty.ui.fragment.LoginFragment;
+import com.guoxiaoxing.kitty.ui.fragment.SigninFragment;
 import com.guoxiaoxing.kitty.util.TLog;
-import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.tencent.mm.sdk.modelmsg.SendAuth;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
-import com.tencent.tauth.IUiListener;
-import com.tencent.tauth.Tencent;
-import com.tencent.tauth.UiError;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.controller.listener.SocializeListeners;
-import com.umeng.socialize.exception.SocializeException;
-import com.umeng.socialize.sso.SinaSsoHandler;
 
 import org.kymjs.kjframe.http.HttpConfig;
 
-import java.util.Map;
-import java.util.Set;
-
 import butterknife.Bind;
-import butterknife.ButterKnife;
-import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.CookieStore;
 import cz.msebera.android.httpclient.client.protocol.ClientContext;
 import cz.msebera.android.httpclient.cookie.Cookie;
@@ -72,12 +32,18 @@ import cz.msebera.android.httpclient.protocol.HttpContext;
  *
  * @author guoxiaoxing
  */
-public class LoginActivity extends BaseActivity implements IUiListener, TextWatcher {
+public class LoginActivity extends BaseActivity implements LoginFragment.OnFragmentInteractionListener,
+        SigninFragment.OnFragmentInteractionListener {
+
 
     public static final int REQUEST_CODE_INIT = 0;
     public static final String BUNDLE_KEY_REQUEST_CODE = "BUNDLE_KEY_REQUEST_CODE";
     public static final String TAG = LoginActivity.class.getSimpleName();
     public final int requestCode = REQUEST_CODE_INIT;
+
+    public static final int REQUEST_CODE_OPENID = 1000;
+    // 登陆实体类
+    public static final String BUNDLE_KEY_LOGINBEAN = "bundle_key_loginbean";
 
     @Bind(R.id.tv_tb_title)
     TextView mTvTitle;
@@ -86,29 +52,8 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
     @Bind(R.id.tb_login_activity)
     Toolbar mToolbar;
 
-    @Bind(R.id.til_user_name)
-    TextInputLayout mTilUserName;
-    @Bind(R.id.til_password)
-    TextInputLayout mTilPassword;
-    @Bind(R.id.et_username)
-    AppCompatEditText mEtUserName;
-    @Bind(R.id.et_password)
-    AppCompatEditText mEtPassword;
-
-    @Bind(R.id.btn_login)
-    Button mBtnLogin;
-    @Bind(R.id.tv_forget_password)
-    TextView mTvForgetPassword;
-    @Bind(R.id.iv_qq_login)
-    ImageView mIvQqLogin;
-    @Bind(R.id.iv_wx_login)
-    ImageView mIvWxLogin;
-    @Bind(R.id.iv_sina_login)
-    ImageView mIvSinaLogin;
-
-    private Context mContext;
-    private String mUserName;
-    private String mPassword;
+    private LoginFragment mLoginFragment;
+    private SigninFragment mSigninFragment;
 
     @Override
     protected int getLayoutId() {
@@ -117,15 +62,22 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
 
     @Override
     public void initView() {
-        mContext = LoginActivity.this;
+
+        if (findViewById(R.id.fl_login_activity_container) != null) {
+
+            mLoginFragment = LoginFragment.newInstance("", "");
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.add(R.id.fl_login_activity_container,
+                    mLoginFragment).commit();
+        }
+
         mBtnSignin.setOnClickListener(this);
-        mBtnLogin.setOnClickListener(this);
-        mTvForgetPassword.setOnClickListener(this);
-        mIvQqLogin.setOnClickListener(this);
-        mIvWxLogin.setOnClickListener(this);
-        mIvSinaLogin.setOnClickListener(this);
-        mEtUserName.addTextChangedListener(this);
-        mEtPassword.addTextChangedListener(this);
+    }
+
+    @Override
+    public void initData() {
+
     }
 
     @Override
@@ -139,348 +91,6 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
         return true;
     }
 
-
-    @Override
-    public void onClick(View v) {
-
-        int id = v.getId();
-        switch (id) {
-            case R.id.btn_login:
-                handleLogin();
-                break;
-            case R.id.btn_signin:
-                handleSignin();
-                break;
-            case R.id.tv_forget_password:
-                handleForgetPassword();
-                break;
-            case R.id.iv_qq_login:
-                qqLogin();
-                break;
-            case R.id.iv_wx_login:
-                wxLogin();
-                break;
-            case R.id.iv_sina_login:
-                sinaLogin();
-                break;
-            default:
-                break;
-        }
-    }
-
-
-    private void handleLogin() {
-
-        if (prepareForLogin()) {
-            return;
-        }
-
-        // if the data has ready
-        getLoginInfo();
-
-        showWaitDialog(R.string.progress_login);
-        AVUser.logInInBackground(mUserName, mPassword, new LogInCallback<AVUser>() {
-            @Override
-            public void done(AVUser avUser, AVException e) {
-                if (e == null) {
-                    //登录成功
-
-
-                } else {
-                    //登录失败
-
-                }
-            }
-        });
-    }
-
-    private void getLoginInfo() {
-
-        if (mEtUserName == null || mEtPassword == null) {
-            return;
-        }
-        mUserName = mEtUserName.getText().toString().trim();
-        mPassword = mEtPassword.getText().toString().trim();
-    }
-
-
-    private void handleSignin() {
-
-        AVUser user = new AVUser();
-
-        // if the data has ready
-        mUserName = mEtUserName.getText().toString();
-        mPassword = mEtPassword.getText().toString();
-
-        user.setUsername(mUserName);
-        user.setPassword(mPassword);
-
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(AVException e) {
-
-                if (e == null) {
-                    Toast.makeText(LoginActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LoginActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-
-    }
-
-    private void handleForgetPassword() {
-
-        AVUser.requestPasswordResetInBackground("myemail@example.com", new RequestPasswordResetCallback() {
-            public void done(AVException e) {
-                if (e == null) {
-                    // 已发送一份重置密码的指令到用户的邮箱
-                } else {
-                    // 重置密码出错。
-                }
-            }
-        });
-    }
-
-    private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
-
-        @Override
-        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-            LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, arg2);
-            if (loginUserBean != null) {
-                handleLoginBean(loginUserBean);
-            }
-        }
-
-        @Override
-        public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                              Throwable arg3) {
-            AppContext.showToast("网络出错" + arg0);
-        }
-
-        @Override
-        public void onFinish() {
-            super.onFinish();
-            hideWaitDialog();
-        }
-    };
-
-    private void handleLoginSuccess() {
-        Intent data = new Intent();
-        data.putExtra(BUNDLE_KEY_REQUEST_CODE, requestCode);
-        setResult(RESULT_OK, data);
-        this.sendBroadcast(new Intent(Constants.INTENT_ACTION_USER_CHANGE));
-        finish();
-    }
-
-    private boolean prepareForLogin() {
-        if (!TDevice.hasInternet()) {
-            AppContext.showToastShort(R.string.tip_no_internet);
-            return true;
-        }
-        if (mEtUserName.length() == 0) {
-            mTilUserName.setError("请输入手机号");
-            mEtUserName.requestFocus();
-            return true;
-        } else {
-            mTilUserName.setError("");
-        }
-
-        if (mEtPassword.length() == 0) {
-            mTilPassword.setError("请输入密码");
-            mEtPassword.requestFocus();
-            return true;
-        } else {
-            mTilPassword.setError("");
-        }
-
-
-        return false;
-    }
-
-    @Override
-    public void initData() {
-
-        mEtUserName.setText(AppContext.getInstance()
-                .getProperty("user.account"));
-        mEtPassword.setText(CyptoUtils.decode("oschinaApp", AppContext
-                .getInstance().getProperty("user.pwd")));
-    }
-
-    /**
-     * QQ登陆
-     */
-    private void qqLogin() {
-        Tencent mTencent = Tencent.createInstance(AppConfig.APP_QQ_KEY,
-                this);
-        mTencent.login(this, "all", this);
-    }
-
-    BroadcastReceiver receiver;
-
-    /**
-     * 微信登陆
-     */
-    private void wxLogin() {
-        IWXAPI api = WXAPIFactory.createWXAPI(this, Constants.WEICHAT_APPID, false);
-        api.registerApp(Constants.WEICHAT_APPID);
-
-        if (!api.isWXAppInstalled()) {
-            AppContext.showToast("手机中没有安装微信客户端");
-            return;
-        }
-        // 唤起微信登录授权
-        final SendAuth.Req req = new SendAuth.Req();
-        req.scope = "snsapi_userinfo";
-        req.state = "wechat_login";
-        api.sendReq(req);
-        // 注册一个广播，监听微信的获取openid返回（类：WXEntryActivity中）
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(OpenIdCatalog.WECHAT);
-        receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (intent != null) {
-                    String openid_info = intent.getStringExtra(LoginBindActivityChooseActivity.BUNDLE_KEY_OPENIDINFO);
-                    openIdLogin(OpenIdCatalog.WECHAT, openid_info);
-                    // 注销这个监听广播
-                    if (receiver != null) {
-                        unregisterReceiver(receiver);
-                    }
-                }
-            }
-        };
-
-        registerReceiver(receiver, intentFilter);
-    }
-
-    /**
-     * 新浪登录
-     */
-    private void sinaLogin() {
-        final UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.login");
-        SinaSsoHandler sinaSsoHandler = new SinaSsoHandler();
-        mController.getConfig().setSsoHandler(sinaSsoHandler);
-        mController.doOauthVerify(this, SHARE_MEDIA.SINA,
-                new SocializeListeners.UMAuthListener() {
-
-                    @Override
-                    public void onStart(SHARE_MEDIA arg0) {
-                    }
-
-                    @Override
-                    public void onError(SocializeException arg0,
-                                        SHARE_MEDIA arg1) {
-                        AppContext.showToast("新浪授权失败");
-                    }
-
-                    @Override
-                    public void onComplete(Bundle value, SHARE_MEDIA arg1) {
-                        if (value != null && !TextUtils.isEmpty(value.getString("uid"))) {
-                            // 获取平台信息
-                            mController.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.SINA, new SocializeListeners.UMDataListener() {
-                                @Override
-                                public void onStart() {
-
-                                }
-
-                                @Override
-                                public void onComplete(int i, Map<String, Object> map) {
-                                    if (i == 200 && map != null) {
-                                        StringBuilder sb = new StringBuilder("{");
-                                        Set<String> keys = map.keySet();
-                                        int index = 0;
-                                        for (String key : keys) {
-                                            index++;
-                                            String jsonKey = key;
-                                            if (jsonKey.equals("uid")) {
-                                                jsonKey = "openid";
-                                            }
-                                            sb.append(String.format("\"%s\":\"%s\"", jsonKey, map.get(key).toString()));
-                                            if (index != map.size()) {
-                                                sb.append(",");
-                                            }
-                                        }
-                                        sb.append("}");
-                                        openIdLogin(OpenIdCatalog.WEIBO, sb.toString());
-                                    } else {
-                                        AppContext.showToast("发生错误：" + i);
-                                    }
-                                }
-                            });
-                        } else {
-                            AppContext.showToast("授权失败");
-                        }
-                    }
-
-                    @Override
-                    public void onCancel(SHARE_MEDIA arg0) {
-                        AppContext.showToast("已取消新浪登陆");
-                    }
-                });
-    }
-
-    // 获取到QQ授权登陆的信息
-    @Override
-    public void onComplete(Object o) {
-        openIdLogin(OpenIdCatalog.QQ, o.toString());
-    }
-
-    @Override
-    public void onError(UiError uiError) {
-
-    }
-
-    @Override
-    public void onCancel() {
-
-    }
-
-    /***
-     * @param catalog    第三方登录的类别
-     * @param openIdInfo 第三方的信息
-     */
-    private void openIdLogin(final String catalog, final String openIdInfo) {
-        final ProgressDialog waitDialog = DialogHelp.getWaitDialog(this, "登陆中...");
-        OSChinaApi.open_login(catalog, openIdInfo, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, responseBody);
-                if (loginUserBean.getResult().OK()) {
-                    handleLoginBean(loginUserBean);
-                } else {
-                    // 前往绑定或者注册操作
-                    Intent intent = new Intent(LoginActivity.this, LoginBindActivityChooseActivity.class);
-                    intent.putExtra(LoginBindActivityChooseActivity.BUNDLE_KEY_CATALOG, catalog);
-                    intent.putExtra(LoginBindActivityChooseActivity.BUNDLE_KEY_OPENIDINFO, openIdInfo);
-                    startActivityForResult(intent, REQUEST_CODE_OPENID);
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                AppContext.showToast("网络出错" + statusCode);
-            }
-
-            @Override
-            public void onStart() {
-                super.onStart();
-                waitDialog.show();
-            }
-
-            @Override
-            public void onFinish() {
-                super.onFinish();
-                waitDialog.dismiss();
-            }
-        });
-    }
-
-    public static final int REQUEST_CODE_OPENID = 1000;
-    // 登陆实体类
-    public static final String BUNDLE_KEY_LOGINBEAN = "bundle_key_loginbean";
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -499,6 +109,43 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
 
                 break;
         }
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        int id = v.getId();
+        switch (id) {
+
+            case R.id.btn_signin:
+                handleSignin();
+                break;
+            case R.id.tv_forget_password:
+
+            default:
+                break;
+        }
+
+    }
+
+    private void handleSignin() {
+        mSigninFragment = SigninFragment.newInstance("", "");
+        mBtnSignin.setVisibility(View.GONE);
+        mTvTitle.setText(R.string.signin);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.addToBackStack(null);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction.replace(R.id.fl_login_activity_container, mSigninFragment);
+        transaction.commit();
+    }
+
+    private void handleLoginSuccess() {
+        Intent data = new Intent();
+        data.putExtra(BUNDLE_KEY_REQUEST_CODE, requestCode);
+        setResult(RESULT_OK, data);
+        this.sendBroadcast(new Intent(Constants.INTENT_ACTION_USER_CHANGE));
+        finish();
     }
 
     // 处理loginBean
@@ -523,9 +170,9 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
                 HttpConfig.sCookie = tmpcookies;
             }
             // 保存登录信息
-            loginUserBean.getUser().setAccount(mUserName);
-            loginUserBean.getUser().setPwd(mPassword);
-            loginUserBean.getUser().setRememberMe(true);
+//            loginUserBean.getUser().setAccount(mUserName);
+//            loginUserBean.getUser().setPwd(mPassword);
+//            loginUserBean.getUser().setRememberMe(true);
             AppContext.getInstance().saveUserInfo(loginUserBean.getUser());
             hideWaitDialog();
             handleLoginSuccess();
@@ -537,30 +184,17 @@ public class LoginActivity extends BaseActivity implements IUiListener, TextWatc
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
-
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    public void onLoginFragmentInteraction(Uri uri) {
 
     }
 
     @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
+    public void onSigninFragmentInteraction(Uri uri) {
 
-        getLoginInfo();
-        if (!StringUtils.isEmpty(mUserName) && !StringUtils.isEmpty(mPassword)) {
-            mBtnLogin.setBackground(ContextCompat.getDrawable(mContext, R.drawable.rip_btn_pink));
-        } else {
-            mBtnLogin.setBackgroundColor(ContextCompat.getColor(mContext, R.color.gray_300));
-        }
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
+        mTvTitle.setText(R.string.login);
+        mBtnSignin.setVisibility(View.VISIBLE);
 
     }
+
+
 }

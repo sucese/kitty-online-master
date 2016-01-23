@@ -53,9 +53,13 @@
     <string name="hint_password">密码</string>
     <string name="login">登录</string>
     <string name="user_name_hint">手机号</string>
+    <string name="user_verification_hint">验证码</string>
+    <string name="get_verificaion">获取验证码</string>
     <string name="user_password_hint">密码</string>
     <string name="signin">注册</string>
+    <string name="signin_agreement">《爱尚佳品用户注册协议》</string>
     <string name="forget_password">忘记密码?</string>
+    <string name="welcome_signin">欢迎来到爱尚佳品</string>
     <string name="tip_please_input_username">请输入用户名</string>
     <string name="tip_illegal_email">请输入正确的email地址</string>
     <string name="tip_please_input_password">请输入密码</string>

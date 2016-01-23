@@ -3,26 +3,50 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.AppCompatEditText;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * 注册Fragment
+ *
  * @author guoxiaoxing
  */
 public class SigninFragment extends BaseFragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @Bind(R.id.et_username)
+    AppCompatEditText mEtUsername;
+    @Bind(R.id.til_user_name)
+    TextInputLayout mTilUserName;
+    @Bind(R.id.et_verification)
+    AppCompatEditText mEtVerification;
+    @Bind(R.id.tv_get_verification)
+    TextView mTvGetVerification;
+    @Bind(R.id.til_verification)
+    TextInputLayout mTilVerification;
+    @Bind(R.id.et_password)
+    AppCompatEditText mEtPassword;
+    @Bind(R.id.til_password)
+    TextInputLayout mTilPassword;
+    @Bind(R.id.btn_signin)
+    Button mBtnSignin;
+    @Bind(R.id.tv_user_agreement)
+    TextView mTvUserAgreement;
 
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
 
     public SigninFragment() {
     }
@@ -59,18 +83,29 @@ public class SigninFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signin, container, false);
-    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onSigninFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mListener.onSigninFragmentInteraction(null);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     @Override
@@ -90,18 +125,24 @@ public class SigninFragment extends BaseFragment {
         mListener = null;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
+     * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onSigninFragmentInteraction(Uri uri);
     }
 }
