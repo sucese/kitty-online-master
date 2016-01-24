@@ -6,7 +6,7 @@ import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.FavoriteList;
 import com.guoxiaoxing.kitty.bean.Post;
 import com.guoxiaoxing.kitty.bean.PostDetail;
-import com.guoxiaoxing.kitty.ui.DetailActivity;
+import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;

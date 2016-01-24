@@ -24,7 +24,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.NotebookData;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.db.NoteDatabase;
-import com.guoxiaoxing.kitty.ui.SimpleBackActivity;
+import com.guoxiaoxing.kitty.ui.activity.SimpleBackActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.KJAnimations;

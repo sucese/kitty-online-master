@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatEditText;
@@ -25,7 +24,6 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.LogInCallback;
 import com.avos.avoscloud.RequestPasswordResetCallback;
-import com.avos.avoscloud.SignUpCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
@@ -34,11 +32,10 @@ import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
 import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
-import com.guoxiaoxing.kitty.ui.LoginBindActivityChooseActivity;
+import com.guoxiaoxing.kitty.ui.activity.LoginBindActivityChooseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.DialogHelp;
-import com.guoxiaoxing.kitty.util.SnackBarHelper;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.TLog;
@@ -90,14 +87,13 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     private String mParam1;
     private String mParam2;
 
-
-    @Bind(R.id.til_user_name)
+    @Bind(R.id.til_user_phone)
     TextInputLayout mTilUserName;
-    @Bind(R.id.til_password)
+    @Bind(R.id.til_user_password)
     TextInputLayout mTilPassword;
-    @Bind(R.id.et_username)
+    @Bind(R.id.et_user_phone)
     AppCompatEditText mEtUserName;
-    @Bind(R.id.et_password)
+    @Bind(R.id.et_user_password)
     AppCompatEditText mEtPassword;
 
     @Bind(R.id.btn_login)
@@ -253,25 +249,36 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
 
     }
 
-
     public void onInteraction(Uri uri) {
         if (mListener != null) {
             mListener.onLoginFragmentInteraction(uri);
         }
     }
 
-
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onLoginFragmentInteraction(Uri uri);
     }
 
-
     private void handleLogin() {
-
-        if (!prepareForLogin()) {
-            SnackBarHelper.showSnackBar(mLlRoot, "请输入用户名和密码");
+        if (!TDevice.hasInternet()) {
+            AppContext.showToastShort(R.string.tip_no_internet);
             return;
+        }
+        if (mEtUserName.length() == 0) {
+            mTilUserName.setError("请输入手机号");
+            mEtUserName.requestFocus();
+            return;
+        } else {
+            mTilUserName.setError("");
+        }
+
+        if (mEtPassword.length() == 0) {
+            mTilPassword.setError("请输入密码");
+            mEtPassword.requestFocus();
+            return;
+        } else {
+            mTilPassword.setError("");
         }
 
         // if the data has ready
@@ -304,28 +311,6 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
 
 
     private void handleSignin() {
-
-        AVUser user = new AVUser();
-
-        // if the data has ready
-        mUserName = mEtUserName.getText().toString();
-        mPassword = mEtPassword.getText().toString();
-
-        user.setUsername(mUserName);
-        user.setPassword(mPassword);
-
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(AVException e) {
-
-                if (e == null) {
-                    Snackbar.make(mClContainer, "注册成功", Snackbar.LENGTH_SHORT).show();
-                } else {
-                    Snackbar.make(mClContainer, "注册失败", Snackbar.LENGTH_SHORT).show();
-                }
-
-            }
-        });
 
 
     }
@@ -372,25 +357,6 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     }
 
     private boolean prepareForLogin() {
-        if (!TDevice.hasInternet()) {
-            AppContext.showToastShort(R.string.tip_no_internet);
-            return false;
-        }
-        if (mEtUserName.length() == 0) {
-            mTilUserName.setError("请输入手机号");
-            mEtUserName.requestFocus();
-            return false;
-        } else {
-            mTilUserName.setError("");
-        }
-
-        if (mEtPassword.length() == 0) {
-            mTilPassword.setError("请输入密码");
-            mEtPassword.requestFocus();
-            return false;
-        } else {
-            mTilPassword.setError("");
-        }
 
 
         return true;

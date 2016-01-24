@@ -35,7 +35,7 @@ import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.bean.TweetDetail;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
-import com.guoxiaoxing.kitty.ui.DetailActivity;
+import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.HTMLUtil;

@@ -96,7 +96,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.TweetActivity"
+            android:name=".ui.activity.TweetActivity"
             android:label="写说说"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -122,33 +122,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.FindUserActivity"
+            android:name=".ui.activity.FindUserActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.EventLocationActivity" />
+        <activity android:name=".ui.activity.EventLocationActivity" />
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:label="登录"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.LoginBindActivityChooseActivity"
+            android:name=".ui.activity.LoginBindActivityChooseActivity"
             android:label="登录"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.LoginAccountBindOpenIdActivity"
+            android:name=".ui.activity.LoginAccountBindOpenIdActivity"
             android:label="账号绑定"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.DetailActivity"
+            android:name=".ui.activity.DetailActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name=".ui.ImagePreviewActivity"
+            android:name=".ui.activity.ImagePreviewActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.SimpleBackActivity"
+            android:name=".ui.activity.SimpleBackActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
         <activity
@@ -170,16 +170,16 @@
             android:label="@string/actionbar_title_qr_scan"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.ShakeActivity"
+            android:name=".ui.activity.ShakeActivity"
             android:label="@string/actionbar_title_shake"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.SelectFriendsActivity"
+            android:name=".ui.activity.SelectFriendsActivity"
             android:label="@string/actionbar_title_select_friends"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <service android:name=".LogUploadService" />
+        <service android:name=".service.LogUploadService" />
         <service android:name=".service.ServerTaskService">
             <intent-filter>
                 <action android:name="net.oschina.app.ACTION_PUB_BLOG_COMMENT" />

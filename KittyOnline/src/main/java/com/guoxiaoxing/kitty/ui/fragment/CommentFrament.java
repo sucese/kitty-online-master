@@ -29,7 +29,7 @@ import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
-import com.guoxiaoxing.kitty.ui.DetailActivity;
+import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.HTMLUtil;
 import com.guoxiaoxing.kitty.util.TDevice;

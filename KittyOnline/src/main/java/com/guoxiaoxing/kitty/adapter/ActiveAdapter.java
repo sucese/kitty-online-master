@@ -19,7 +19,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Active.ObjectReply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
-import com.guoxiaoxing.kitty.ui.ImagePreviewActivity;
+import com.guoxiaoxing.kitty.ui.activity.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.BitmapHelper;
 import com.guoxiaoxing.kitty.util.ImageUtils;

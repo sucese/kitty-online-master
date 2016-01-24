@@ -23,7 +23,7 @@ import com.guoxiaoxing.kitty.team.bean.TeamDiscuss;
 import com.guoxiaoxing.kitty.team.bean.TeamDiscussDetail;
 import com.guoxiaoxing.kitty.team.bean.TeamRepliesList;
 import com.guoxiaoxing.kitty.team.bean.TeamReply;
-import com.guoxiaoxing.kitty.ui.DetailActivity;
+import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;

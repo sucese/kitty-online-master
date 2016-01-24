@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.ui.SelectFriendsActivity;
+import com.guoxiaoxing.kitty.ui.activity.SelectFriendsActivity;
 import com.guoxiaoxing.kitty.widget.AvatarView;
 
 import java.util.ArrayList;

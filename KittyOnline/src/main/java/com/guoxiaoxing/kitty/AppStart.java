@@ -2,6 +2,7 @@ package com.guoxiaoxing.kitty;
 
 import java.io.File;
 
+import com.guoxiaoxing.kitty.service.LogUploadService;
 import com.guoxiaoxing.kitty.ui.MainActivity;
 import com.guoxiaoxing.kitty.util.TDevice;
 

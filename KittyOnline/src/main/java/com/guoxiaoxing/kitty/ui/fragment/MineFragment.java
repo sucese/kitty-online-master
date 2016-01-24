@@ -6,13 +6,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,7 +24,7 @@ import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.ui.MainActivity;
-import com.guoxiaoxing.kitty.ui.MyQrodeDialog;
+import com.guoxiaoxing.kitty.ui.dialog.MyQrodeDialog;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.StringUtils;
@@ -43,7 +40,6 @@ import java.io.Serializable;
 import java.lang.ref.WeakReference;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 /**

@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/et_username"
+        android:id="@+id/et_user_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -14,7 +14,7 @@
         android:hint="邮箱/用户名" />
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/et_password"
+        android:id="@+id/et_user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

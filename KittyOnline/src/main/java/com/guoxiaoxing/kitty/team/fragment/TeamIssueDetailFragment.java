@@ -29,7 +29,7 @@ import com.guoxiaoxing.kitty.team.bean.TeamIssueDetail;
 import com.guoxiaoxing.kitty.team.bean.TeamRepliesList;
 import com.guoxiaoxing.kitty.team.bean.TeamReply;
 import com.guoxiaoxing.kitty.team.bean.TeamReplyBean;
-import com.guoxiaoxing.kitty.ui.DetailActivity;
+import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;

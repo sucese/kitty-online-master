@@ -13,14 +13,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -35,7 +32,7 @@ import com.guoxiaoxing.kitty.emoji.Emojicon;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.emoji.OnEmojiClickListener;
 import com.guoxiaoxing.kitty.service.ServerTaskUtils;
-import com.guoxiaoxing.kitty.ui.SelectFriendsActivity;
+import com.guoxiaoxing.kitty.ui.activity.SelectFriendsActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.FileUtil;
@@ -60,7 +57,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class TweetPubFragment extends BaseFragment implements
         OnEmojiClickListener {

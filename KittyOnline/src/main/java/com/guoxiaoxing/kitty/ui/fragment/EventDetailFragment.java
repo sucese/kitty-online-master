@@ -18,7 +18,7 @@ import com.guoxiaoxing.kitty.bean.PostDetail;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.EventApplyDialog;
+import com.guoxiaoxing.kitty.ui.dialog.EventApplyDialog;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.util.StringUtils;
