@@ -3,7 +3,6 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,7 +25,7 @@ public class HomeFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -33,27 +33,18 @@ public class HomeFragment extends BaseFragment {
 
     @Bind(R.id.tb_home_fragment)
     Toolbar mToolbar;
-
+    @Bind(R.id.tv_scan)
+    TextView mTvScan;
     @Bind(R.id.tv_notification)
-    TextView tvNotification;
-
+    TextView mTvNotification;
     @Bind(R.id.et_search)
-    EditText etSearch;
-
+    EditText mEtSearch;
+    @Bind(R.id.url_home_content)
+    UltimateRecyclerView mUrlHomeContent;
 
     public HomeFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
@@ -84,7 +75,6 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onHomeFragmentInteraction(uri);
@@ -110,8 +100,11 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        tvNotification.setOnClickListener(this);
-        etSearch.setOnClickListener(this);
+        mEtSearch.setFocusable(false);
+        mTvScan.setOnClickListener(this);
+        mTvNotification.setOnClickListener(this);
+        mEtSearch.setOnClickListener(this);
+
     }
 
     @Override
@@ -128,21 +121,31 @@ public class HomeFragment extends BaseFragment {
             case R.id.et_search:
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
                 break;
+            case R.id.tv_scan:
+                UIHelper.showScanActivity(getActivity());
+                break;
+            default:
+                break;
+
         }
 
 
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onHomeFragmentInteraction(Uri uri);

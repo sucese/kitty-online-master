@@ -15,13 +15,13 @@
  */
 package com.guoxiaoxing.kitty.zxing.activity;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.widget.Toolbar;
 import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -33,32 +33,33 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import cz.msebera.android.httpclient.Header;
+import android.widget.TextView;
 
+import com.google.zxing.Result;
+import com.guoxiaoxing.kitty.AppContext;
+import com.guoxiaoxing.kitty.AppException;
+import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.BarCode;
+import com.guoxiaoxing.kitty.bean.ResultBean;
+import com.guoxiaoxing.kitty.bean.SingInResult;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.util.DialogHelp;
+import com.guoxiaoxing.kitty.util.StringUtils;
+import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.util.XmlUtils;
 import com.guoxiaoxing.kitty.zxing.camera.CameraManager;
 import com.guoxiaoxing.kitty.zxing.decode.DecodeThread;
 import com.guoxiaoxing.kitty.zxing.utils.BeepManager;
 import com.guoxiaoxing.kitty.zxing.utils.CaptureActivityHandler;
 import com.guoxiaoxing.kitty.zxing.utils.InactivityTimer;
-import com.google.zxing.Result;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.AppException;
-import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.ui.base.BaseActivity;
-import com.guoxiaoxing.kitty.bean.BarCode;
-import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.SingInResult;
-import com.guoxiaoxing.kitty.util.DialogHelp;
-import com.guoxiaoxing.kitty.util.StringUtils;
-import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.XmlUtils;
-
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+
+import butterknife.Bind;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * This activity opens the camera and does the actual scanning on a background
@@ -73,17 +74,39 @@ public final class CaptureActivity extends BaseActivity implements
         SurfaceHolder.Callback {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
+    @Bind(R.id.tb_scan_activity)
+    Toolbar mTbScanActivity;
+    @Bind(R.id.sv_scan_preview)
+    SurfaceView mSvScanPreview;
+    @Bind(R.id.iv_scan_mask_top)
+    ImageView mIvScanMaskTop;
+    @Bind(R.id.iv_scan_line)
+    ImageView mIvScanLine;
+    @Bind(R.id.rl_scan_crop_view)
+    RelativeLayout mRlScanCropView;
+    @Bind(R.id.iv_scan_mask_bottom)
+    ImageView mIvScanMaskBottom;
+    @Bind(R.id.tv_tip)
+    TextView mTvTip;
+    @Bind(R.id.iv_scan_mask_left)
+    ImageView mIvScanMaskLeft;
+    @Bind(R.id.iv_scan_mask_right)
+    ImageView mIvScanMaskRight;
+    @Bind(R.id.rl_scan_container)
+    RelativeLayout mRlScanContainer;
+    @Bind(R.id.iv_scan_flash)
+    ImageView mIvScanFlash;
 
     private CameraManager cameraManager;
     private CaptureActivityHandler handler;
     private InactivityTimer inactivityTimer;
     private BeepManager beepManager;
 
-    private SurfaceView scanPreview = null;
-    private RelativeLayout scanContainer;
-    private RelativeLayout scanCropView;
-    private ImageView scanLine;
-    private ImageView mFlash;
+//    private SurfaceView mSvScanPreview = null;
+//    private RelativeLayout mRlScanContainer;
+//    private RelativeLayout mRlScanCropView;
+//    private ImageView mIvScanLine;
+//    private ImageView mIvScanFlash;
 
     private Rect mCropRect = null;
 
@@ -98,46 +121,10 @@ public final class CaptureActivity extends BaseActivity implements
     private boolean isHasSurface = false;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-
-        Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_qr_scan);
-
-        scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
-        scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
-        scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
-        scanLine = (ImageView) findViewById(R.id.capture_scan_line);
-        mFlash = (ImageView) findViewById(R.id.capture_flash);
-        mFlash.setOnClickListener(this);
-
-        inactivityTimer = new InactivityTimer(this);
-        beepManager = new BeepManager(this);
-
-        TranslateAnimation animation = new TranslateAnimation(
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.9f);
-        animation.setDuration(4500);
-        animation.setRepeatCount(-1);
-        animation.setRepeatMode(Animation.RESTART);
-        scanLine.startAnimation(animation);
+    protected int getLayoutId() {
+        return R.layout.activity_scan;
     }
 
-    @SuppressLint("NewApi")
-    @Override
-    protected boolean hasActionBar() {
-
-        if (android.os.Build.VERSION.SDK_INT >= 11) {
-            getSupportActionBar().hide();
-            return true;
-        } else {
-            return false;
-        }
-
-    }
 
     @Override
     protected void onResume() {
@@ -158,11 +145,11 @@ public final class CaptureActivity extends BaseActivity implements
             // The activity was paused but not stopped, so the surface still
             // exists. Therefore
             // surfaceCreated() won't be called, so init the camera here.
-            initCamera(scanPreview.getHolder());
+            initCamera(mSvScanPreview.getHolder());
         } else {
             // Install the callback and wait for surfaceCreated() to init the
             // camera.
-            scanPreview.getHolder().addCallback(this);
+            mSvScanPreview.getHolder().addCallback(this);
         }
 
         inactivityTimer.onResume();
@@ -178,7 +165,7 @@ public final class CaptureActivity extends BaseActivity implements
         beepManager.close();
         cameraManager.closeDriver();
         if (!isHasSurface) {
-            scanPreview.getHolder().removeCallback(this);
+            mSvScanPreview.getHolder().removeCallback(this);
         }
         super.onPause();
     }
@@ -209,6 +196,47 @@ public final class CaptureActivity extends BaseActivity implements
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width,
                                int height) {
+
+    }
+
+    @Override
+    protected boolean hasActionBar() {
+        return true;
+    }
+
+    @Override
+    protected boolean hasBackButton() {
+        return true;
+    }
+
+    @Override
+    protected void setActionBar() {
+        super.setActionBar();
+        setSupportActionBar(mTbScanActivity);
+    }
+
+    @Override
+    public void initView() {
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        mIvScanFlash.setOnClickListener(this);
+        inactivityTimer = new InactivityTimer(this);
+        beepManager = new BeepManager(this);
+
+        TranslateAnimation animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, 0.9f);
+        animation.setDuration(4500);
+        animation.setRepeatCount(-1);
+        animation.setRepeatMode(Animation.RESTART);
+        mIvScanLine.startAnimation(animation);
+    }
+
+    @Override
+    public void initData() {
 
     }
 
@@ -490,17 +518,17 @@ public final class CaptureActivity extends BaseActivity implements
 
         /** 获取布局中扫描框的位置信息 */
         int[] location = new int[2];
-        scanCropView.getLocationInWindow(location);
+        mRlScanCropView.getLocationInWindow(location);
 
         int cropLeft = location[0];
         int cropTop = location[1] - getStatusBarHeight();
 
-        int cropWidth = scanCropView.getWidth();
-        int cropHeight = scanCropView.getHeight();
+        int cropWidth = mRlScanCropView.getWidth();
+        int cropHeight = mRlScanCropView.getHeight();
 
         /** 获取布局容器的宽高 */
-        int containerWidth = scanContainer.getWidth();
-        int containerHeight = scanContainer.getHeight();
+        int containerWidth = mRlScanContainer.getWidth();
+        int containerHeight = mRlScanContainer.getHeight();
 
         /** 计算最终截取的矩形的左上角顶点x坐标 */
         int x = cropLeft * cameraWidth / containerWidth;
@@ -533,7 +561,7 @@ public final class CaptureActivity extends BaseActivity implements
     public void onClick(View v) {
         // TODO Auto-generated method stub
         switch (v.getId()) {
-            case R.id.capture_flash:
+            case R.id.iv_scan_flash:
                 light();
                 break;
 
@@ -549,24 +577,14 @@ public final class CaptureActivity extends BaseActivity implements
             flag = false;
             // 开闪光灯
             cameraManager.openLight();
-            mFlash.setBackgroundResource(R.drawable.flash_open);
+            mIvScanFlash.setBackgroundResource(R.drawable.flash_open);
         } else {
             flag = true;
             // 关闪光灯
             cameraManager.offLight();
-            mFlash.setBackgroundResource(R.drawable.flash_default);
+            mIvScanFlash.setBackgroundResource(R.drawable.flash_default);
         }
     }
 
-    @Override
-    public void initView() {
-        // TODO Auto-generated method stub
 
-    }
-
-    @Override
-    public void initData() {
-        // TODO Auto-generated method stub
-
-    }
 }

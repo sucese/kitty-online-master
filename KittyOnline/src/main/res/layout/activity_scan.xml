@@ -3,35 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_scan_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:fitsSystemWindows="true"/>
 
     <SurfaceView
-        android:id="@+id/capture_preview"
+        android:id="@+id/sv_scan_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <RelativeLayout
-        android:id="@+id/capture_container"
+        android:id="@+id/rl_scan_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/capture_mask_top"
+            android:id="@+id/iv_scan_mask_top"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_alignParentTop="true"
             android:background="@drawable/qr_scan_mask" />
 
         <RelativeLayout
-            android:id="@+id/capture_crop_view"
+            android:id="@+id/rl_scan_crop_view"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_below="@id/capture_mask_top"
+            android:layout_below="@id/iv_scan_mask_top"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/qr_capture" >
+            android:background="@drawable/qr_capture">
 
             <ImageView
-                android:id="@+id/capture_scan_line"
+                android:id="@+id/iv_scan_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -44,18 +52,18 @@
 
 
         <ImageView
-            android:id="@+id/capture_mask_bottom"
+            android:id="@+id/iv_scan_mask_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@id/capture_crop_view"
+            android:layout_below="@id/rl_scan_crop_view"
             android:background="@drawable/qr_scan_mask" />
-        
+
         <TextView
             android:id="@+id/tv_tip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/capture_crop_view"
+            android:layout_below="@id/rl_scan_crop_view"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text="@string/qr_scan_tips"
@@ -63,23 +71,23 @@
             android:textSize="13sp" />
 
         <ImageView
-            android:id="@+id/capture_mask_left"
+            android:id="@+id/iv_scan_mask_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_above="@id/capture_mask_bottom"
+            android:layout_above="@id/iv_scan_mask_bottom"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/capture_mask_top"
-            android:layout_toLeftOf="@id/capture_crop_view"
+            android:layout_below="@id/iv_scan_mask_top"
+            android:layout_toLeftOf="@id/rl_scan_crop_view"
             android:background="@drawable/qr_scan_mask" />
 
         <ImageView
-            android:id="@+id/capture_mask_right"
+            android:id="@+id/iv_scan_mask_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_above="@id/capture_mask_bottom"
+            android:layout_above="@id/iv_scan_mask_bottom"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/capture_mask_top"
-            android:layout_toRightOf="@id/capture_crop_view"
+            android:layout_below="@id/iv_scan_mask_top"
+            android:layout_toRightOf="@id/rl_scan_crop_view"
             android:background="@drawable/qr_scan_mask" />
     </RelativeLayout>
 
@@ -89,10 +97,10 @@
         android:layout_alignParentBottom="true"
         android:background="@color/white40"
         android:gravity="center"
-        android:padding="10dip" >
+        android:padding="10dip">
 
         <ImageView
-            android:id="@+id/capture_flash"
+            android:id="@+id/iv_scan_flash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
