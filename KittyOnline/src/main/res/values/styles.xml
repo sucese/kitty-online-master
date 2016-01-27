@@ -519,7 +519,7 @@
     </style>
 
     <style name="Theme.AppStartLoad" parent="android:Theme.Black.NoTitleBar.Fullscreen">
-        <item name="android:windowBackground">@drawable/welcome</item>
+        <item name="android:windowBackground">@color/primary</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 

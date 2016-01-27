@@ -1,8 +1,11 @@
 package com.guoxiaoxing.kitty;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
@@ -47,6 +50,9 @@ public class AppContext extends BaseApplication {
     private int loginUid;
 
     private boolean login;
+
+
+
 
     @Override
     public void onCreate() {
@@ -358,4 +364,5 @@ public class AppContext extends BaseApplication {
     public static void setNightModeSwitch(boolean on) {
         set(KEY_NIGHT_MODE_SWITCH, on);
     }
+
 }

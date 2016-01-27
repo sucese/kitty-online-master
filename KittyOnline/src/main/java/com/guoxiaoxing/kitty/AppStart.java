@@ -2,13 +2,18 @@ package com.guoxiaoxing.kitty;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,6 +23,7 @@ import com.guoxiaoxing.kitty.ui.MainActivity;
 import com.guoxiaoxing.kitty.ui.welcome.outlayer.LoginAnimFragment;
 import com.guoxiaoxing.kitty.ui.welcome.outlayer.WelcomAnimFragment;
 import com.guoxiaoxing.kitty.util.DisplayUtil;
+import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.widget.ParentViewPager;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -25,6 +31,7 @@ import com.nineoldandroids.view.ViewHelper;
 
 import org.kymjs.kjframe.http.KJAsyncTask;
 import org.kymjs.kjframe.utils.FileUtils;
+import org.kymjs.kjframe.utils.PreferenceHelper;
 
 import java.io.File;
 
@@ -60,38 +67,37 @@ public class AppStart extends FragmentActivity {
         // SystemTool.gc(this); //针对性能好的手机使用，加快应用相应速度
 
         setContentView(R.layout.app_start);
-        initView();
-        // 渐变展示启动屏
-//        AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
-//        aa.setDuration(800);
-//        view.startAnimation(aa);
-//        aa.setAnimationListener(new AnimationListener() {
-//            @Override
-//            public void onAnimationEnd(Animation arg0) {
-//                redirectTo();
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {
-//            }
-//
-//            @Override
-//            public void onAnimationStart(Animation animation) {
-//            }
-//        });
+
+        switch (checkAppStart()) {
+            //第一次启动
+            case FIRST_TIME:
+                playUserGuide();
+                break;
+            //新版本发布
+            case FIRST_TIME_VERSION:
+                break;
+            //正常启动
+            case NORMAL:
+                redirectTo();
+                break;
+            default:
+                break;
+        }
+
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-//        int cacheVersion = PreferenceHelper.readInt(this, "first_install",
-//                "first_install", -1);
-//        int currentVersion = TDevice.getVersionCode();
-//        if (cacheVersion < currentVersion) {
-//            PreferenceHelper.write(this, "first_install", "first_install",
-//                    currentVersion);
-//            cleanImageCache();
-//        }
+        int cacheVersion = PreferenceHelper.readInt(this, "first_install",
+                "first_install", -1);
+        int currentVersion = TDevice.getVersionCode();
+        if (cacheVersion < currentVersion) {
+            PreferenceHelper.write(this, "first_install", "first_install",
+                    currentVersion);
+            cleanImageCache();
+        }
     }
 
     private void cleanImageCache() {
@@ -117,7 +123,7 @@ public class AppStart extends FragmentActivity {
         finish();
     }
 
-    private void initView() {
+    private void playUserGuide() {
         iv_logo = (ImageView) findViewById(R.id.iv_logo);
         vp_parent = (ParentViewPager) findViewById(R.id.vp_parent);
         vp_parent.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -233,5 +239,50 @@ public class AppStart extends FragmentActivity {
             }
         }
         return false;
+    }
+
+    public enum AppStartMode {
+        FIRST_TIME, FIRST_TIME_VERSION, NORMAL;
+    }
+
+    //上一次app启动时的version code
+    private static final String LAST_APP_VERSION = "last_app_version";
+
+    public AppStartMode checkAppStart() {
+
+        PackageInfo pInfo;
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        AppStartMode appStartMode = AppStartMode.NORMAL;
+        try {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            int lastVersionCode = sharedPreferences
+                    .getInt(LAST_APP_VERSION, -1);
+            int currentVersionCode = pInfo.versionCode;
+            appStartMode = checkAppStart(currentVersionCode, lastVersionCode);
+            // Update version in preferences
+            sharedPreferences.edit()
+                    .putInt(LAST_APP_VERSION, currentVersionCode).commit();
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("AppContext",
+                    "Unable to determine current app version from pacakge manager. Defenisvely assuming normal app start.");
+        }
+        return appStartMode;
+    }
+
+    public AppStartMode checkAppStart(int currentVersionCode, int lastVersionCode) {
+        if (lastVersionCode == -1) {
+            return AppStartMode.FIRST_TIME;
+        } else if (lastVersionCode < currentVersionCode) {
+            return AppStartMode.FIRST_TIME_VERSION;
+        } else if (lastVersionCode > currentVersionCode) {
+            Log.w("AppContext", "Current version code (" + currentVersionCode
+                    + ") is less then the one recognized on last startup ("
+                    + lastVersionCode
+                    + "). Defenisvely assuming normal app start.");
+            return AppStartMode.NORMAL;
+        } else {
+            return AppStartMode.NORMAL;
+        }
     }
 }
