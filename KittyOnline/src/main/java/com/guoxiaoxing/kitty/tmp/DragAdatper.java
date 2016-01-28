@@ -31,7 +31,7 @@ public class DragAdatper extends DragSortAdapter<MainViewHolder> {
     @Override
     public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.recycler_view_adapter, parent, false);
+        View view = inflater.inflate(R.layout.home_item_content, parent, false);
         MainViewHolder holder = new MainViewHolder(this, view);
         view.setOnClickListener(holder);
         view.setOnLongClickListener(holder);

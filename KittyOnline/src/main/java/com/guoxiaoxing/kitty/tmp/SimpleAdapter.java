@@ -67,7 +67,7 @@ public class SimpleAdapter extends UltimateViewAdapter<SimpleAdapter.SimpleAdapt
     @Override
     public SimpleAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_view_adapter, parent, false);
+                .inflate(R.layout.home_item_content, parent, false);
         SimpleAdapterViewHolder vh = new SimpleAdapterViewHolder(v, true);
         return vh;
     }

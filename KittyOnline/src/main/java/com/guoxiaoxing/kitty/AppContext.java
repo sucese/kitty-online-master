@@ -1,11 +1,8 @@
 package com.guoxiaoxing.kitty;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.preference.PreferenceManager;
-import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
@@ -18,8 +15,6 @@ import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.log.AndroidLogTool;
-import com.guoxiaoxing.kitty.util.log.LogLevel;
 import com.guoxiaoxing.kitty.util.log.Logger;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
@@ -52,8 +47,6 @@ public class AppContext extends BaseApplication {
     private boolean login;
 
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -84,14 +77,12 @@ public class AppContext extends BaseApplication {
         // Bitmap缓存地址
         HttpConfig.CACHEPATH = "OSChina/imagecache";
 
-        //
-        String TAG = "Kitty";
-        Logger.init(TAG)                        // default PRETTYLOGGER or use just init()
-                .methodCount(3)                 // default 2
-                .hideThreadInfo()               // default shown
-                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
-                .methodOffset(2)                // default 0
-                .logTool(new AndroidLogTool()); // custom log tool, optional
+        Logger.init();                      // default PRETTYLOGGER or use just init()
+//                .methodCount(3)                 // default 2
+//                .hideThreadInfo()               // default shown
+//                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
+//                .methodOffset(2);               // default 0
+//                .logTool(new AndroidLogTool()); // custom log tool, optional
 
     }
 

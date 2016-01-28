@@ -46,8 +46,8 @@ public class AppStart extends FragmentActivity {
     private final int FRAGMENT_WELCOMEANIM = 0;
     private final int FRAGMENT_LOGINANIM = 1;
 
-    private ImageView iv_logo;
-    private ParentViewPager vp_parent;
+    private ImageView mIvLogo;
+    private ParentViewPager mVpParent;
 
     private float mLogoY;
     private AnimatorSet mAnimatorSet;
@@ -67,7 +67,6 @@ public class AppStart extends FragmentActivity {
         // SystemTool.gc(this); //针对性能好的手机使用，加快应用相应速度
 
         setContentView(R.layout.app_start);
-
         switch (checkAppStart()) {
             //第一次启动
             case FIRST_TIME:
@@ -75,16 +74,15 @@ public class AppStart extends FragmentActivity {
                 break;
             //新版本发布
             case FIRST_TIME_VERSION:
+                playNewFesture();
                 break;
             //正常启动
             case NORMAL:
-                redirectTo();
+                startApp();
                 break;
             default:
                 break;
         }
-
-
     }
 
     @Override
@@ -113,9 +111,9 @@ public class AppStart extends FragmentActivity {
     }
 
     /**
-     * 跳转到...
+     * 正常启动
      */
-    private void redirectTo() {
+    private void startApp() {
         Intent uploadLog = new Intent(this, LogUploadService.class);
         startService(uploadLog);
         Intent intent = new Intent(this, MainActivity.class);
@@ -123,10 +121,20 @@ public class AppStart extends FragmentActivity {
         finish();
     }
 
+    /**
+     * 显示新版本特性
+     */
+    private void playNewFesture() {
+
+    }
+
+    /**
+     * 第一次启动
+     */
     private void playUserGuide() {
-        iv_logo = (ImageView) findViewById(R.id.iv_logo);
-        vp_parent = (ParentViewPager) findViewById(R.id.vp_parent);
-        vp_parent.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mIvLogo = (ImageView) findViewById(R.id.iv_logo);
+        mVpParent = (ParentViewPager) findViewById(R.id.vp_parent);
+        mVpParent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
             }
@@ -137,17 +145,17 @@ public class AppStart extends FragmentActivity {
                     case FRAGMENT_WELCOMEANIM:
                         break;
                     case FRAGMENT_LOGINANIM:
-                        vp_parent.mLoginPageLock = true;
-                        iv_logo.postDelayed(new Runnable() {
+                        ParentViewPager.mLoginPageLock = true;
+                        mIvLogo.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 if (mLogoY == 0) {
-                                    mLogoY = ViewHelper.getY(iv_logo);
+                                    mLogoY = ViewHelper.getY(mIvLogo);
                                 }
                                 playLogoInAnim();
                             }
                         }, 500);
-                        vp_parent.postDelayed(new Runnable() {
+                        mVpParent.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 mLoginAnimFragment.playInAnim();
@@ -164,13 +172,13 @@ public class AppStart extends FragmentActivity {
 
 
         ParentFragmentStatePagerAdapter adapter = new ParentFragmentStatePagerAdapter(getSupportFragmentManager());
-        vp_parent.setAdapter(adapter);
+        mVpParent.setAdapter(adapter);
     }
 
     private void playLogoInAnim() {
-        ObjectAnimator anim1 = ObjectAnimator.ofFloat(iv_logo, "scaleX", 1.0f, 0.5f);
-        ObjectAnimator anim2 = ObjectAnimator.ofFloat(iv_logo, "scaleY", 1.0f, 0.5f);
-        ObjectAnimator anim3 = ObjectAnimator.ofFloat(iv_logo, "y", mLogoY, DisplayUtil.dip2px(AppStart.this, 15));
+        ObjectAnimator anim1 = ObjectAnimator.ofFloat(mIvLogo, "scaleX", 1.0f, 0.5f);
+        ObjectAnimator anim2 = ObjectAnimator.ofFloat(mIvLogo, "scaleY", 1.0f, 0.5f);
+        ObjectAnimator anim3 = ObjectAnimator.ofFloat(mIvLogo, "y", mLogoY, DisplayUtil.dip2px(AppStart.this, 15));
 
         if (mAnimatorSet != null && mAnimatorSet.isRunning()) {
             mAnimatorSet.cancel();
@@ -194,11 +202,11 @@ public class AppStart extends FragmentActivity {
             switch (position) {
                 case FRAGMENT_WELCOMEANIM:
                     mWelcomAnimFragment = new WelcomAnimFragment();
-                    vp_parent.setWelcomAnimFragment(mWelcomAnimFragment);
+                    mVpParent.setWelcomAnimFragment(mWelcomAnimFragment);
                     mWelcomAnimFragment.setWelcomAnimFragmentInterface(new WelcomAnimFragment.WelcomAnimFragmentInterface() {
                         @Override
                         public void onSkip() {
-                            vp_parent.setCurrentItem(1);
+                            mVpParent.setCurrentItem(1);
                         }
                     });
                     return mWelcomAnimFragment;

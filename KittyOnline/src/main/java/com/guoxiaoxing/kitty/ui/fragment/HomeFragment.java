@@ -9,22 +9,26 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.tmp.SimpleAdapter;
 import com.guoxiaoxing.kitty.tmp.modules.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.widget.convenientbanner.ConvenientBanner;
-import com.guoxiaoxing.kitty.widget.convenientbanner.holder.CBViewHolderCreator;
-import com.guoxiaoxing.kitty.widget.convenientbanner.holder.LocalImageHolderView;
-import com.guoxiaoxing.kitty.widget.convenientbanner.listener.OnItemClickListener;
+import com.guoxiaoxing.kitty.util.log.Logger;
+import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
+import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
+import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
+import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
+import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
 import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
@@ -42,16 +46,6 @@ import butterknife.Bind;
 public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener,
         ViewPager.OnPageChangeListener, OnItemClickListener {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    ConvenientBanner mCbHomeAd;
-
-
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
     @Bind(R.id.tb_home_fragment)
     Toolbar mToolbar;
     @Bind(R.id.tv_scan)
@@ -62,8 +56,17 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     EditText mEtSearch;
     @Bind(R.id.url_home_content)
     UltimateRecyclerView mUrlHomeContent;
+    ConvenientBanner mCbHomeAd;
+    CountdownView mCvSale;
 
     private Context mContext;
+    private String mParam1;
+    private String mParam2;
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    private OnFragmentInteractionListener mListener;
+
 
     SimpleAdapter simpleRecyclerViewAdapter = null;
     LinearLayoutManager linearLayoutManager;
@@ -89,6 +92,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Logger.d("onCreate()");
+        Log.d("TAG", "11111111111111111111111");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -98,14 +103,35 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Logger.d("onViewCreated()");
+        Log.d("TAG", "11111111111111111111111");
 
     }
 
     @Override
     protected int getLayoutId() {
+        Log.d("TAG", "11111111111111111111111");
         return R.layout.fragment_home;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Logger.d("onResume()");
+        Log.d("TAG", "11111111111111111111111");
+        mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
+        long time2 = (long) 30 * 60 * 1000;
+        mCvSale.start(time2);
+
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mCbHomeAd.stopTurning();
+        Log.d("TAG", "11111111111111111111111");
+    }
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -116,6 +142,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        Logger.d("onAttach()");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -124,9 +151,11 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         }
     }
 
+
     @Override
     public void onDetach() {
         super.onDetach();
+        Logger.d("onDetach()");
         mListener = null;
     }
 
@@ -134,8 +163,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     public void initView(View view) {
         initToolbar();
         initContentView();
-
-
     }
 
     @Override
@@ -212,22 +239,20 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     }
 
     private void initToolbar() {
-
         mContext = getActivity();
         mEtSearch.setFocusable(false);
         mTvScan.setOnClickListener(this);
         mTvNotification.setOnClickListener(this);
         mEtSearch.setOnClickListener(this);
-
-
     }
 
     private void initHeaderView() {
 
         //设置HeaderView
-
         headerView = LayoutInflater.from(mContext).inflate(R.layout.common_recyclerview_header, mUrlHomeContent.mRecyclerView, false);
         mCbHomeAd = (ConvenientBanner) headerView.findViewById(R.id.cb_home_ad);
+        mCvSale = (CountdownView) headerView.findViewById(R.id.cv_sale);
+
 
         for (int position = 0; position < 7; position++) {
             localImages.add(getResId("ic_test_" + position, R.drawable.class));
@@ -249,6 +274,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 .setOnItemClickListener(this);
 
 //        mCbHomeAd.setManualPageable(false);//设置不能手动影响
+
+
     }
 
     private void initContentView() {
@@ -261,9 +288,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         mUrlHomeContent.enableLoadmore();
         simpleRecyclerViewAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
                 .inflate(R.layout.custom_bottom_progressbar, null, false));
-
         initHeaderView();
-
         mUrlHomeContent.setNormalHeader(headerView);
         //设置滑动监听事件
         mUrlHomeContent.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {

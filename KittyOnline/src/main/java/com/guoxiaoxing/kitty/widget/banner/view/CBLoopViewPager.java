@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.view;
+package com.guoxiaoxing.kitty.widget.banner.view;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -6,8 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.guoxiaoxing.kitty.widget.convenientbanner.adapter.CBPageAdapter;
-import com.guoxiaoxing.kitty.widget.convenientbanner.listener.OnItemClickListener;
+import com.guoxiaoxing.kitty.widget.banner.adapter.CBPageAdapter;
+import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 
 
 public class CBLoopViewPager extends ViewPager {

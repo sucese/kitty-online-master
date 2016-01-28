@@ -1,7 +1,9 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner;
+package com.guoxiaoxing.kitty.widget.banner;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.PageTransformer;
 import android.util.AttributeSet;
@@ -14,12 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.widget.convenientbanner.adapter.CBPageAdapter;
-import com.guoxiaoxing.kitty.widget.convenientbanner.holder.CBViewHolderCreator;
-import com.guoxiaoxing.kitty.widget.convenientbanner.listener.CBPageChangeListener;
-import com.guoxiaoxing.kitty.widget.convenientbanner.listener.OnItemClickListener;
-import com.guoxiaoxing.kitty.widget.convenientbanner.view.CBLoopViewPager;
+import com.guoxiaoxing.kitty.widget.banner.adapter.CBPageAdapter;
+import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
+import com.guoxiaoxing.kitty.widget.banner.listener.CBPageChangeListener;
+import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
+import com.guoxiaoxing.kitty.widget.banner.view.CBLoopViewPager;
 
+import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,37 +53,70 @@ public class ConvenientBanner<T> extends LinearLayout {
         ALIGN_PARENT_LEFT, ALIGN_PARENT_RIGHT, CENTER_HORIZONTAL
     }
 
+    private AdSwitchTask adSwitchTask;
 
-    private Runnable adSwitchTask = new Runnable() {
-        @Override
-        public void run() {
-            if (viewPager != null && turning) {
-                int page = viewPager.getCurrentItem() + 1;
-                viewPager.setCurrentItem(page);
-                postDelayed(adSwitchTask, autoTurningTime);
-            }
-        }
-    };
-
-    public ConvenientBanner(Context context, boolean canLoop) {
-        this(context, null);
-        this.canLoop = canLoop;
+    public ConvenientBanner(Context context) {
+        super(context);
+        init(context);
     }
 
     public ConvenientBanner(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ConvenientBanner);
         canLoop = a.getBoolean(R.styleable.ConvenientBanner_canLoop, true);
+        a.recycle();
+        init(context);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public ConvenientBanner(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ConvenientBanner);
+        canLoop = a.getBoolean(R.styleable.ConvenientBanner_canLoop, true);
+        a.recycle();
+        init(context);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public ConvenientBanner(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ConvenientBanner);
+        canLoop = a.getBoolean(R.styleable.ConvenientBanner_canLoop, true);
+        a.recycle();
         init(context);
     }
 
     private void init(Context context) {
         View hView = LayoutInflater.from(context).inflate(
-                R.layout.include_viewpager, this, true);
+                R.layout.banner_include_viewpager, this, true);
         viewPager = (CBLoopViewPager) hView.findViewById(R.id.cbLoopViewPager);
         loPageTurningPoint = (ViewGroup) hView
                 .findViewById(R.id.loPageTurningPoint);
         initViewPagerScroll();
+
+        adSwitchTask = new AdSwitchTask(this);
+    }
+
+    static class AdSwitchTask implements Runnable {
+
+        private final WeakReference<ConvenientBanner> reference;
+
+        AdSwitchTask(ConvenientBanner convenientBanner) {
+            this.reference = new WeakReference<ConvenientBanner>(convenientBanner);
+        }
+
+        @Override
+        public void run() {
+            ConvenientBanner convenientBanner = reference.get();
+
+            if (convenientBanner != null) {
+                if (convenientBanner.viewPager != null && convenientBanner.turning) {
+                    int page = convenientBanner.viewPager.getCurrentItem() + 1;
+                    convenientBanner.viewPager.setCurrentItem(page);
+                    convenientBanner.postDelayed(convenientBanner.adSwitchTask, convenientBanner.autoTurningTime);
+                }
+            }
+        }
     }
 
     public ConvenientBanner setPages(CBViewHolderCreator holderCreator, List<T> datas) {

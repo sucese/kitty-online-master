@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.listener;
+package com.guoxiaoxing.kitty.widget.banner.listener;
 
 import android.support.v4.view.ViewPager;
 import android.widget.ImageView;

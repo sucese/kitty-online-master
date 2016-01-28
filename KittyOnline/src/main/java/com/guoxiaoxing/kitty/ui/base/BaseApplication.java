@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.os.Build;
+import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ import com.guoxiaoxing.kitty.util.StringUtils;
  */
 
 @SuppressLint("InflateParams")
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
     private static String PREF_NAME = "creativelocker.pref";
     private static String LAST_REFRESH_TIME = "last_refresh_time.pref";
     static Context _context;

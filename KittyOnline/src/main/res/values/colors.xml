@@ -22,6 +22,18 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
 
+    <color name="a2">#fffc5087</color>
+    <color name="a4">#fffa0e4d</color>
+    <color name="a5">#fff9456a</color>
+    <color name="a6">#ffff4081</color>
+    <color name="uq">#fffc236a</color>
+    <color name="ny">#fffa8195</color>
+    <color name="nz">#fffa5d75</color>
+    <color name="o0">#fffa4765</color>
+    <color name="o1">#fffa3b66</color>
+    <color name="o3">#ffec407a</color>
+    <color name="o4">#ffad1457</color>
+
     <!--粉色系-->
 
     <color name="pink_50">#FCE4EC</color>

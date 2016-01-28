@@ -12,9 +12,8 @@ import java.util.Properties;
 
 /**
  * 应用程序配置类：用于保存用户相关信息及设置
- * 
+ *
  * @author guoxiaoxing
- * 
  */
 public class AppConfig {
 
@@ -37,7 +36,7 @@ public class AppConfig {
 
     public static final String KEY_FRITST_START = "KEY_FRIST_START";
 
-    public static final String KEY_NIGHT_MODE_SWITCH="night_mode_switch";
+    public static final String KEY_NIGHT_MODE_SWITCH = "night_mode_switch";
 
     public static final String APP_QQ_KEY = "100942993";
 
@@ -58,6 +57,9 @@ public class AppConfig {
     //LeadCloud云服务
     public final static String LEADCLOUD_APP_ID = "Ez5wTriuLElSDkXoE3vDF2BL-gzGzoHsz";
     public final static String LEADCLOUD_APP_KEY = "fxwjo6ioo2NiNiCeHjyAw4To";
+
+    /*ViewPager自动轮播间隔时间*/
+    public final static long VIEWPAGER_TRANSFORM_TIME = 3000;
 
 
     private Context mContext;

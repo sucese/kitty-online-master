@@ -66,7 +66,7 @@ public class SimpleAnimationAdapter extends UltimateViewAdapter<RecyclerView.Vie
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_view_adapter, parent, false);
+                .inflate(R.layout.home_item_content, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }

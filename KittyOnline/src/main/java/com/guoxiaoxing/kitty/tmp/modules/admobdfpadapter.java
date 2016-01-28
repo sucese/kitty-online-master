@@ -32,7 +32,7 @@ public class admobdfpadapter extends AdmobAdapter<AdView, String, admobdfpadapte
 
     @Override
     protected int getNormalLayoutResId() {
-        return R.layout.recycler_view_adapter;
+        return R.layout.home_item_content;
     }
 
     @Override

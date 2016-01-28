@@ -1,8 +1,9 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.holder;
+package com.guoxiaoxing.kitty.widget.banner.holder;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
+
 
 /**
  * Created by Sai on 15/8/4.

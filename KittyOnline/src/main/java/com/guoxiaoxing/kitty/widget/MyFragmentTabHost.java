@@ -5,10 +5,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.util.AttributeSet;
 
 /**
- * tabhost
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @version 创建时间：2014年9月28日 下午2:27:51 
- * 
+ * @author guoxiaoxing
  */
 
 public class MyFragmentTabHost extends FragmentTabHost {

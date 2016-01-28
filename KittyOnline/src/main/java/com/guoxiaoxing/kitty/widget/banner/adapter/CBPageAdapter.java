@@ -1,13 +1,13 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.adapter;
+package com.guoxiaoxing.kitty.widget.banner.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.widget.convenientbanner.holder.CBViewHolderCreator;
-import com.guoxiaoxing.kitty.widget.convenientbanner.holder.Holder;
-import com.guoxiaoxing.kitty.widget.convenientbanner.view.CBLoopViewPager;
+import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
+import com.guoxiaoxing.kitty.widget.banner.holder.Holder;
+import com.guoxiaoxing.kitty.widget.banner.view.CBLoopViewPager;
 
 import java.util.List;
 

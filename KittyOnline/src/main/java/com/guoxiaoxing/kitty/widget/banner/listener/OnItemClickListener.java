@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.listener;
+package com.guoxiaoxing.kitty.widget.banner.listener;
 
 /**
  * Created by Sai on 15/11/13.

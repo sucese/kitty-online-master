@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kitty.widget.convenientbanner.holder;
+package com.guoxiaoxing.kitty.widget.banner.holder;
 
 /**
  * Created by Sai on 15/12/14.
