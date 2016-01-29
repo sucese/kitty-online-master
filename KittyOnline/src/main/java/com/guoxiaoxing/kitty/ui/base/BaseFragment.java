@@ -18,10 +18,11 @@ import butterknife.ButterKnife;
 /**
  * Fragment基类
  *
- *@author guoxiaoxing
+ * @author guoxiaoxing
  */
 public class BaseFragment extends Fragment implements
         android.view.View.OnClickListener, BaseFragmentInterface {
+
     public static final int STATE_NONE = 0;
     public static final int STATE_REFRESH = 1;
     public static final int STATE_LOADMORE = 2;
@@ -31,9 +32,6 @@ public class BaseFragment extends Fragment implements
 
     protected LayoutInflater mInflater;
 
-    public AppContext getApplication() {
-        return (AppContext) getActivity().getApplication();
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -48,7 +46,7 @@ public class BaseFragment extends Fragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         this.mInflater = inflater;
         View view = inflater.inflate(getLayoutId(), container, false);
         ButterKnife.bind(this, view);
@@ -93,16 +91,55 @@ public class BaseFragment extends Fragment implements
         super.onDetach();
     }
 
+
+    public boolean onBackPressed() {
+        return false;
+    }
+
+    /**
+     * 创建View前的初始化动作
+     *
+     * @param savedInstanceState
+     */
+    @Override
+    public void init(Bundle savedInstanceState) {
+
+    }
+
+    /**
+     * 初始化View
+     *
+     * @param view
+     */
+    @Override
+    public void initView(View view) {
+
+    }
+
+    /**
+     * 初始化数据
+     */
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    public AppContext getApplication() {
+        return (AppContext) getActivity().getApplication();
+    }
+
+
     protected int getLayoutId() {
         return 0;
     }
 
     protected View inflateView(int resId) {
         return this.mInflater.inflate(resId, null);
-    }
-
-    public boolean onBackPressed() {
-        return false;
     }
 
     protected void hideWaitDialog() {
@@ -130,25 +167,5 @@ public class BaseFragment extends Fragment implements
             return ((DialogControl) activity).showWaitDialog(str);
         }
         return null;
-    }
-
-    @Override
-    public void init(Bundle savedInstanceState) {
-
-    }
-
-    @Override
-    public void initView(View view) {
-
-    }
-
-    @Override
-    public void initData() {
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 }

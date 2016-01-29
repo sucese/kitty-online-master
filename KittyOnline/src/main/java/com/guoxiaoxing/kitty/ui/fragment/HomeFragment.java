@@ -9,9 +9,9 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,8 +19,8 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.tmp.SimpleAdapter;
-import com.guoxiaoxing.kitty.tmp.modules.SampleDataboxset;
+import com.guoxiaoxing.kitty.adapter.SimpleAdapter;
+import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.log.Logger;
@@ -46,6 +46,8 @@ import butterknife.Bind;
 public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener,
         ViewPager.OnPageChangeListener, OnItemClickListener {
 
+    public static final String TAG = "HomeFragment";
+
     @Bind(R.id.tb_home_fragment)
     Toolbar mToolbar;
     @Bind(R.id.tv_scan)
@@ -57,24 +59,22 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Bind(R.id.url_home_content)
     UltimateRecyclerView mUrlHomeContent;
     ConvenientBanner mCbHomeAd;
+    ConvenientBanner mCbSaleAd;
     CountdownView mCvSale;
 
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
     private Context mContext;
     private String mParam1;
     private String mParam2;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private OnFragmentInteractionListener mListener;
-
-
     SimpleAdapter simpleRecyclerViewAdapter = null;
     LinearLayoutManager linearLayoutManager;
     int moreNum = 2;
     boolean isDrag = true;
 
     private ArrayList<Integer> localImages = new ArrayList<Integer>();
-
     private View headerView;
 
     public HomeFragment() {
@@ -92,8 +92,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.d("onCreate()");
-        Log.d("TAG", "11111111111111111111111");
+        Logger.t(TAG).d("onCreate()");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -101,48 +100,9 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        Logger.d("onViewCreated()");
-        Log.d("TAG", "11111111111111111111111");
-
-    }
-
-    @Override
-    protected int getLayoutId() {
-        Log.d("TAG", "11111111111111111111111");
-        return R.layout.fragment_home;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Logger.d("onResume()");
-        Log.d("TAG", "11111111111111111111111");
-        mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-        long time2 = (long) 30 * 60 * 1000;
-        mCvSale.start(time2);
-
-
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mCbHomeAd.stopTurning();
-        Log.d("TAG", "11111111111111111111111");
-    }
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onHomeFragmentInteraction(uri);
-        }
-    }
-
-    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Logger.d("onAttach()");
+        Logger.t(TAG).d("onAttach()");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -151,47 +111,46 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         }
     }
 
-
     @Override
-    public void onDetach() {
-        super.onDetach();
-        Logger.d("onDetach()");
-        mListener = null;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
-    public void initView(View view) {
-        initToolbar();
-        initContentView();
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Logger.t(TAG).d("onViewCreated()");
+
     }
 
     @Override
-    public void onClick(View v) {
+    public void onResume() {
+        super.onResume();
+        Logger.t(TAG).d("onResume()");
+        mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
+        long time2 = (long) 30 * 60 * 1000;
+        mCvSale.start(time2);
+    }
 
-        super.onClick(v);
-
-        switch (v.getId()) {
-            //消息通知
-            case R.id.tv_notification:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
-            //搜索框
-            case R.id.et_search:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
-            case R.id.tv_scan:
-                UIHelper.showScanActivity(getActivity());
-                break;
-            default:
-                break;
-
-        }
+    @Override
+    public void onPause() {
+        super.onPause();
+        Logger.t(TAG).d("onPause()");
+        mCbHomeAd.stopTurning();
     }
 
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        Logger.t(TAG).d("onDestroyView()");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Logger.t(TAG).d("onDetach()");
+        mListener = null;
     }
 
     @Override
@@ -219,8 +178,59 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     }
 
+
+    @Override
+    public void onClick(View v) {
+
+        super.onClick(v);
+
+        switch (v.getId()) {
+            //消息通知
+            case R.id.tv_notification:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+                break;
+            //搜索框
+            case R.id.et_search:
+                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+                break;
+            case R.id.tv_scan:
+                UIHelper.showScanActivity(getActivity());
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_home;
+    }
+
+    @Override
+    public void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+    }
+
+    @Override
+    public void initView(View view) {
+        Logger.t(TAG).d("onCreateView() -- initView()");
+        initToolbar();
+        initContentView();
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
+    }
+
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onHomeFragmentInteraction(uri);
+        }
+    }
+
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onHomeFragmentInteraction(Uri uri);
     }
 
@@ -260,6 +270,24 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
         //本地图片例子
         mCbHomeAd.setPages(
+                new CBViewHolderCreator<LocalImageHolderView>() {
+                    @Override
+                    public LocalImageHolderView createHolder() {
+                        return new LocalImageHolderView();
+                    }
+                }, localImages)
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+                        //设置指示器的方向
+//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
+//                .setOnPageChangeListener(this)//监听翻页事件
+                .setOnItemClickListener(this);
+
+//        mCbHomeAd.setManualPageable(false);//设置不能手动影响
+
+        mCbSaleAd = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
+        //本地图片例子
+        mCbSaleAd.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
                     @Override
                     public LocalImageHolderView createHolder() {

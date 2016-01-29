@@ -50,6 +50,10 @@
     <color name="pink_A400">#F50057</color>
     <color name="pink_A700">#C51162</color>
 
+    <!--红色系-->
+
+    <color name="red_700">#D32F2F</color>
+
     <!-- 常用颜色值 -->
     <color name="white40">#40FFFFFF</color>
     <color name="gray">#808080</color>
