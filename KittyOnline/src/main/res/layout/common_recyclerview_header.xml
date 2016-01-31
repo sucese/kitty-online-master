@@ -10,15 +10,17 @@
 
     <com.guoxiaoxing.kitty.widget.banner.ConvenientBanner
         android:id="@+id/cb_home_ad"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_columnSpan="5"
-        android:layout_gravity="fill"
+        android:layout_gravity="top"
         android:layout_rowSpan="2"
         app:canLoop="true" />
 
 
     <android.support.v7.widget.CardView
         android:layout_columnSpan="2"
-        android:layout_gravity="fill"
+        android:layout_gravity="left"
         android:layout_rowSpan="2"
         app:cardElevation="4dp">
 
@@ -33,8 +35,8 @@
 
         <com.guoxiaoxing.kitty.widget.timecounter.CountdownView
             android:id="@+id/cv_sale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="10dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             app:isHideTimeBackground="false"
@@ -56,12 +58,13 @@
 
     <com.guoxiaoxing.kitty.widget.banner.ConvenientBanner
         android:id="@+id/cb_sale_ad"
+        android:layout_height="100dp"
         android:layout_columnSpan="3"
-        android:layout_gravity="fill" />
-
+        android:layout_gravity="right" />
+/>
 
     <ImageView android:src="@drawable/ic_image_black_48dp" />
-
+    <ImageView android:src="@drawable/ic_image_black_48dp" />
     <ImageView android:src="@drawable/ic_image_black_48dp" />
 
 

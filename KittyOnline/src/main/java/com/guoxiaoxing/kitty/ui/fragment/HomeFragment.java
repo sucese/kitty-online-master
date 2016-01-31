@@ -128,6 +128,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         super.onResume();
         Logger.t(TAG).d("onResume()");
         mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
+        mCbSaleAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
         long time2 = (long) 30 * 60 * 1000;
         mCvSale.start(time2);
     }
@@ -137,6 +138,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         super.onPause();
         Logger.t(TAG).d("onPause()");
         mCbHomeAd.stopTurning();
+        mCbSaleAd.stopTurning();
     }
 
 
