@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:fab="http://schemas.android.com/apk/res-auto">
 
-    <com.marshalchen.ultimaterecyclerview.ui.VerticalSwipeRefreshLayout
+    <com.guoxiaoxingv.smartrecyclerview.ui.VerticalSwipeRefreshLayout
         android:layout_width="fill_parent"
         android:id="@+id/swipe_refresh_layout"
         android:layout_height="fill_parent">
@@ -15,9 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    </com.marshalchen.ultimaterecyclerview.ui.VerticalSwipeRefreshLayout>
+    </com.guoxiaoxingv.smartrecyclerview.ui.VerticalSwipeRefreshLayout>
 
-    <com.marshalchen.ultimaterecyclerview.ui.floatingactionbutton.AddFloatingActionButton
+    <com.guoxiaoxingv.smartrecyclerview.ui.floatingactionbutton.AddFloatingActionButton
         android:id="@+id/defaultFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

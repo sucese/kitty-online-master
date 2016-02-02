@@ -11,8 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
+import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.UltimateViewAdapter;
 
 import java.security.SecureRandom;
 import java.util.List;

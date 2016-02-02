@@ -30,11 +30,11 @@ import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 import com.guoxiaoxing.kitty.widget.banner.transforms.CubeOutTransformer;
 import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
-import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
+import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
+import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
+import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerView;
+import com.guoxiaoxingv.smartrecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
