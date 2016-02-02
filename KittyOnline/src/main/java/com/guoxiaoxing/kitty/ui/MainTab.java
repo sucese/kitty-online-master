@@ -1,10 +1,10 @@
 package com.guoxiaoxing.kitty.ui;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.ui.fragment.ExploreFragment;
-import com.guoxiaoxing.kitty.ui.fragment.MineFragment;
-import com.guoxiaoxing.kitty.ui.fragment.HomeFragment;
-import com.guoxiaoxing.kitty.viewpagerfragment.TweetsViewPagerFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainChatFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainShoppingFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainMineFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainBuyFragment;
 
 /**
  * 主界面tab标签
@@ -13,20 +13,20 @@ import com.guoxiaoxing.kitty.viewpagerfragment.TweetsViewPagerFragment;
 
 public enum MainTab {
 
-	NEWS(0, R.string.main_tab_name_news, R.drawable.sel_main_tab_home,
-			HomeFragment.class),
+	SHOPPING(0, R.string.main_tab_name_shoppoing, R.drawable.sel_main_tab_home,
+			MainShoppingFragment.class),
 
-	TWEET(1, R.string.main_tab_name_category, R.drawable.sel_main_tab_category,
-			TweetsViewPagerFragment.class),
+	BUY(1, R.string.main_tab_name_buy, R.drawable.sel_main_tab_buy,
+			MainBuyFragment.class),
 
 	QUICK(2, R.string.main_tab_name_quick, R.drawable.tab_icon_new,
 			null),
 
-	EXPLORE(3, R.string.main_tab_name_explore, R.drawable.sel_main_tab_shopping_cart,
-			ExploreFragment.class),
+	CHAT(3, R.string.main_tab_name_chat, R.drawable.sel_main_tab_chat,
+			MainChatFragment.class),
 
-	ME(4, R.string.main_tab_name_my, R.drawable.sel_main_tab_mine,
-			MineFragment.class);
+	MINE(4, R.string.main_tab_name_mine, R.drawable.sel_main_tab_mine,
+			MainMineFragment.class);
 
 	private int idx;
 	private int resName;

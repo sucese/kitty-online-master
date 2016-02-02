@@ -1,1 +1,1 @@
-include ':social_sdk_library_project', ':KittyOnline', ':ultimaterecyclerview'
+include ':social_sdk_library_project', ':KittyOnline', ':SmartRecyclerView'

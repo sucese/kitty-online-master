@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.adapter.SimpleAdapter;
 import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -28,13 +28,13 @@ import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
 import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
 import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
+import com.guoxiaoxing.kitty.widget.banner.transforms.CubeOutTransformer;
 import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
 import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
-import com.marshalchen.ultimaterecyclerview.SwipeableRecyclerViewTouchListener;
-import com.marshalchen.ultimaterecyclerview.URLogs;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
@@ -43,10 +43,10 @@ import java.util.ArrayList;
 import butterknife.Bind;
 
 
-public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener,
+public class MainShoppingFragment extends BaseFragment implements AdapterView.OnItemClickListener,
         ViewPager.OnPageChangeListener, OnItemClickListener {
 
-    public static final String TAG = "HomeFragment";
+    public static final String TAG = "MainShoppingFragment";
 
     @Bind(R.id.tb_home_fragment)
     Toolbar mToolbar;
@@ -69,7 +69,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    SimpleAdapter simpleRecyclerViewAdapter = null;
+    MainShoppingAdapter simpleRecyclerViewAdapter = null;
     LinearLayoutManager linearLayoutManager;
     int moreNum = 2;
     boolean isDrag = true;
@@ -77,11 +77,11 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     private ArrayList<Integer> localImages = new ArrayList<Integer>();
     private View headerView;
 
-    public HomeFragment() {
+    public MainShoppingFragment() {
     }
 
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static MainShoppingFragment newInstance(String param1, String param2) {
+        MainShoppingFragment fragment = new MainShoppingFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -206,7 +206,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_home;
+        return R.layout.fragment_main_shopping;
     }
 
     @Override
@@ -280,14 +280,13 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 }, localImages)
                 //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-                        //设置指示器的方向
-//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
 //                .setOnPageChangeListener(this)//监听翻页事件
                 .setOnItemClickListener(this);
 
 //        mCbHomeAd.setManualPageable(false);//设置不能手动影响
 
         mCbSaleAd = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
+        mCbSaleAd.getViewPager().setPageTransformer(true, new CubeOutTransformer());
         //本地图片例子
         mCbSaleAd.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
@@ -296,10 +295,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                         return new LocalImageHolderView();
                     }
                 }, localImages)
-                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-                        //设置指示器的方向
-//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
 //                .setOnPageChangeListener(this)//监听翻页事件
                 .setOnItemClickListener(this);
 
@@ -311,16 +306,19 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     private void initContentView() {
 
         mUrlHomeContent.setHasFixedSize(false);
-        simpleRecyclerViewAdapter = new SimpleAdapter(SampleDataboxset.newList());
+        simpleRecyclerViewAdapter = new MainShoppingAdapter(SampleDataboxset.newList());
         linearLayoutManager = new ScrollSmoothLineaerLayoutManager(mContext, LinearLayoutManager.VERTICAL, false, 300);
         mUrlHomeContent.setLayoutManager(linearLayoutManager);
         mUrlHomeContent.setAdapter(simpleRecyclerViewAdapter);
+
+        //加载更多
         mUrlHomeContent.enableLoadmore();
         simpleRecyclerViewAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
                 .inflate(R.layout.custom_bottom_progressbar, null, false));
+
+        //添加Header View
         initHeaderView();
         mUrlHomeContent.setNormalHeader(headerView);
-        //设置滑动监听事件
         mUrlHomeContent.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {
             @Override
             public void onParallaxScroll(float percentage, float offset, View parallax) {
@@ -329,6 +327,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 //                mToolbar.setBackground(drawable);
             }
         });
+
+        //下拉刷新数据
         mUrlHomeContent.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -345,13 +345,14 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 }, 1000);
             }
         });
+        //上拉加载更多
         mUrlHomeContent.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
-                        SampleDataboxset.insertMore(simpleRecyclerViewAdapter, 10);
+                        SampleDataboxset.insertMoreBuy(simpleRecyclerViewAdapter, 10);
                         //  linearLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
                         //  linearLayoutManager.scrollToPosition(maxLastVisiblePosition);
                     }
@@ -359,33 +360,22 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             }
         });
 
-//        ultimateRecyclerView.setDefaultSwipeToRefreshColorScheme(getResources().getColor(android.R.color.holo_blue_bright),
-//                getResources().getColor(android.R.color.holo_green_light),
-//                getResources().getColor(android.R.color.holo_orange_light),
-//                getResources().getColor(android.R.color.holo_red_light));
-
+        //滑动监听，可以根据不同的状态来显示和隐藏Toolbar和Floating button
         mUrlHomeContent.setScrollViewCallbacks(new ObservableScrollViewCallbacks() {
             @Override
             public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-                URLogs.d("onScrollChanged: " + dragging);
+
+                Logger.t(TAG).d("onDownMotionEvent" + dragging);
             }
 
             @Override
             public void onDownMotionEvent() {
-
+                Logger.t(TAG).d("onDownMotionEvent");
             }
 
             @Override
             public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
-//                if (observableScrollState == ObservableScrollState.DOWN) {
-//                    ultimateRecyclerView.showToolbar(toolbar, ultimateRecyclerView, getScreenHeight());
-//                    ultimateRecyclerView.showFloatingActionMenu();
-//                } else if (observableScrollState == ObservableScrollState.UP) {
-//                    ultimateRecyclerView.hideToolbar(toolbar, ultimateRecyclerView, getScreenHeight());
-//                    ultimateRecyclerView.hideFloatingActionMenu();
-//                } else if (observableScrollState == ObservableScrollState.STOP) {
-//                }
-                URLogs.d("onUpOrCancelMotionEvent");
+                Logger.t(TAG).d("onUpOrCancelMotionEvent");
                 if (observableScrollState == ObservableScrollState.UP) {
                     mUrlHomeContent.hideToolbar(mToolbar, mUrlHomeContent, getScreenHeight());
                     mUrlHomeContent.hideFloatingActionMenu();
@@ -396,31 +386,24 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             }
         });
 
-        mUrlHomeContent.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mUrlHomeContent.mRecyclerView,
-                new SwipeableRecyclerViewTouchListener.SwipeListener() {
-                    @Override
-                    public boolean canSwipe(int position) {
-                        if (position > 0)
-                            return true;
-                        else return false;
-                    }
-
-                    @Override
-                    public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
-                        for (int position : reverseSortedPositions) {
-                            simpleRecyclerViewAdapter.remove(position);
-                        }
-                        simpleRecyclerViewAdapter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
-                        for (int position : reverseSortedPositions) {
-                            simpleRecyclerViewAdapter.remove(position);
-                        }
-                        simpleRecyclerViewAdapter.notifyDataSetChanged();
-                    }
-                }));
+//        mUrlHomeContent.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mUrlHomeContent.mRecyclerView,
+//                new SwipeableRecyclerViewTouchListener.SwipeListener() {
+//                    @Override
+//                    public boolean canSwipe(int position) {
+//                        if (position > 0)
+//                            return true;
+//                        else return false;
+//                    }
+//
+//                    @Override
+//                    public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
+//                    }
+//                }));
 
 
         ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mUrlHomeContent.mRecyclerView,
@@ -431,17 +414,16 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                     @Override
                     public void onItemLongClick(RecyclerView parent, View clickedView, int position) {
-                        URLogs.d("onItemLongClick()" + isDrag);
                         if (isDrag) {
-                            URLogs.d("onItemLongClick()" + isDrag);
-                            //   dragDropTouchListener.startDrag();
-                            //   ultimateRecyclerView.enableDefaultSwipeRefresh(false);
+
                         }
 
                     }
                 });
         mUrlHomeContent.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
 
+        StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(simpleRecyclerViewAdapter);
+        mUrlHomeContent.addItemDecoration(headersDecor);
     }
 
 }

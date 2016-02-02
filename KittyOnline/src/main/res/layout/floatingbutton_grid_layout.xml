@@ -42,7 +42,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+    <com.guoxiaoxing.smartrecyclerview.UltimateRecyclerView
         android:id="@+id/ultimate_recycler_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -52,7 +52,7 @@
         app:recyclerviewEmptyView="@layout/empty_view"
         app:recyclerviewScrollbars="vertical" />
 
-    <com.marshalchen.ultimaterecyclerview.ui.floatingactionbutton.JellyBeanFloatingActionButton
+    <com.guoxiaoxing.smartrecyclerview.ui.floatingactionbutton.JellyBeanFloatingActionButton
         android:id="@+id/custom_urv_add_floating_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

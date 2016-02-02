@@ -20,7 +20,7 @@
               android:layout_height="match_parent"
              >
 
-    <com.marshalchen.ultimaterecyclerview.swipe.SwipeLayout
+    <com.guoxiaoxing.smartrecyclerview.swipe.SwipeLayout
         android:id="@id/recyclerview_swipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -82,5 +82,5 @@
                 android:tag="Hover"/>
         </LinearLayout>
 
-    </com.marshalchen.ultimaterecyclerview.swipe.SwipeLayout>
+    </com.guoxiaoxing.smartrecyclerview.swipe.SwipeLayout>
 </LinearLayout>

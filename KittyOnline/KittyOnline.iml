@@ -126,7 +126,7 @@
     <orderEntry type="library" exported="" name="rxjava-1.0.13" level="project" />
     <orderEntry type="library" exported="" name="avoscloud-push-v3.12.3" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.9" level="project" />
+    <orderEntry type="module" module-name="SmartRecyclerView" exported="" />
     <orderEntry type="module" module-name="social_sdk_library_project" exported="" />
-    <orderEntry type="module" module-name="ultimaterecyclerview" exported="" />
   </component>
 </module>

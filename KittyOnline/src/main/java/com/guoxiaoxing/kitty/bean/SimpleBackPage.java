@@ -9,7 +9,7 @@ import com.guoxiaoxing.kitty.ui.fragment.EventAppliesFragment;
 import com.guoxiaoxing.kitty.ui.fragment.EventFragment;
 import com.guoxiaoxing.kitty.ui.fragment.FeedBackFragment;
 import com.guoxiaoxing.kitty.ui.fragment.MessageDetailFragment;
-import com.guoxiaoxing.kitty.ui.fragment.MineFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainMineFragment;
 import com.guoxiaoxing.kitty.ui.fragment.MineFragmentDetail;
 import com.guoxiaoxing.kitty.ui.fragment.QuestionTagFragment;
 import com.guoxiaoxing.kitty.ui.fragment.SettingsFragment;
@@ -60,7 +60,7 @@ public enum SimpleBackPage {
     USER_BLOG(6, R.string.actionbar_title_user_blog, UserBlogFragment.class),
 
     MY_INFORMATION(7, R.string.actionbar_title_my_information,
-            MineFragment.class),
+            MainMineFragment.class),
 
     MY_ACTIVE(8, R.string.actionbar_title_active, ActiveFragment.class),
 

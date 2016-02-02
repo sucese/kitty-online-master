@@ -4,15 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.guoxiaoxing.kitty.ui.fragment.HomeFragment">
+    tools:context=".ui.fragment.MainShoppingFragment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tb_home_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:fitsSystemWindows="true">
+        style="@style/toolbar_header">
 
         <LinearLayout
             android:layout_width="match_parent"

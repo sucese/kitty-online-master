@@ -44,7 +44,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+    <com.guoxiaoxing.smartrecyclerview.UltimateRecyclerView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/ultimate_recycler_view"

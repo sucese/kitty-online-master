@@ -1,135 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:background="?attr/layout_item_bg"
-    android:layout_height="wrap_content" >
 
-    <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_main_chat_fragment"
+        style="@style/toolbar_header">
+
+        <TextView
+            style="@style/actionbar_tltle_large_text"
+            android:text="@string/chat" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_active"
+        style="@style/card_view_normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_15"
+        app:cardElevation="1dp">
 
-        <View
-            style="@style/h_line"
-            android:layout_marginTop="25dp" />
-
-        <LinearLayout
-            android:id="@+id/rl_active"
-            style="@style/option_item_rl" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:layout_marginRight="@dimen/space_10"
-                android:background="@drawable/icon_explore_friends"/>
-            
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/active" />
-
-        </LinearLayout>
-
-        <View
-            style="@style/h_line" />
-
-        <View
-            style="@style/h_line"
-            android:layout_marginTop="30dp" />
-
-        <LinearLayout
-            android:id="@+id/rl_find_osc"
-            style="@style/option_item_rl" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:layout_marginRight="@dimen/space_10"
-                android:background="@drawable/icon_explore_finduser"/>
-
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/find_oscer" />
-        </LinearLayout>
-
-        <View
-            style="@style/h_line"
-            android:visibility="gone" />
-
-        <LinearLayout 
-            android:id="@+id/rl_city"
-            style="@style/option_item_rl"
-            android:visibility="gone" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:background="@drawable/icon_explore_samecity"/>
-
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/friends" />
-        </LinearLayout>
-
-        <View
-            style="@style/h_line" />
-
-        <LinearLayout 
-            android:id="@+id/rl_activities"
-            style="@style/option_item_rl" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:background="@drawable/icon_explore_event"/>
-
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/activities" />
-        </LinearLayout>
-
-        <View
-            style="@style/h_line"/>
-
-        <View
-            style="@style/h_line"
-            android:layout_marginTop="30dp"/>
-
-        <LinearLayout
-            android:id="@+id/rl_scan"
-            style="@style/option_item_rl" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:background="@drawable/icon_explore_scan"/>
-
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/scan" />
-        </LinearLayout>
-
-        <View
-            style="@style/h_line" />
-
-        <LinearLayout
-            android:id="@+id/rl_shake"
-            style="@style/option_item_rl" >
-            
-            <ImageView 
-                style="@style/option_item_img"
-                android:contentDescription="@null"
-                android:background="@drawable/icon_explore_shake"/>
-
-            <TextView
-                style="@style/option_item_text"
-                android:text="@string/shake" />
-        </LinearLayout>
-
-        <View
-            style="@style/h_line" />
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_active"
+            style="@style/option_item_text"
+            android:drawableLeft="@drawable/icon_explore_friends"
+            android:drawablePadding="@dimen/space_10"
+            android:text="@string/active" />
+    </android.support.v7.widget.CardView>
 
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_find_friend"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="1dp">
+        >
 
-</ScrollView>
+        <TextView
+            android:id="@+id/tv_find_friend"
+            style="@style/option_item_text"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/icon_explore_friends"
+            android:text="@string/find_oscer" />
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_activities"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="1dp">>
+
+        <TextView
+            android:id="@+id/tv_activities"
+            style="@style/option_item_text"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/icon_explore_friends"
+            android:text="@string/activities" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_city"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="1dp">>
+
+        <TextView
+            android:id="@+id/tv_city"
+            style="@style/option_item_text"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/icon_explore_friends"
+            android:text="@string/actionbar_title_same_city" />
+    </android.support.v7.widget.CardView>
+
+
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="30dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_scan"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="1dp">>
+
+        <TextView
+            android:id="@+id/tv_scan"
+            style="@style/option_item_text"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/icon_explore_friends"
+            android:text="@string/scan" />
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_shake"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="1dp">>
+
+        <TextView
+            android:id="@+id/tv_shake"
+            style="@style/option_item_text"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/icon_explore_friends"
+            android:text="@string/shake" />
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+
+

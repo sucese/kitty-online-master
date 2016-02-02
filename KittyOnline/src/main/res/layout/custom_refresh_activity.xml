@@ -44,7 +44,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.marshalchen.ultimaterecyclerview.CustomUltimateRecyclerview
+    <com.guoxiaoxing.smartrecyclerview.CustomUltimateRecyclerview
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/custom_ultimate_recycler_view"
@@ -54,7 +54,7 @@
         app:recyclerviewFloatingActionView="@layout/floating_view"
         android:layout_marginTop="?attr/actionBarSize"/>
 
-    <com.marshalchen.ultimaterecyclerview.ui.floatingactionbutton.AddFloatingActionButton
+    <com.guoxiaoxing.smartrecyclerview.ui.floatingactionbutton.AddFloatingActionButton
         android:layout_width="wrap_content"
         android:id="@+id/custom_urv_add_floating_button"
         android:layout_alignParentRight="true"

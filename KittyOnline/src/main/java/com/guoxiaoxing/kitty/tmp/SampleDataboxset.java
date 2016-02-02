@@ -2,7 +2,8 @@ package com.guoxiaoxing.kitty.tmp;
 
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.adapter.SimpleAdapter;
+import com.guoxiaoxing.kitty.adapter.MainBuyAdapter;
+import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,13 @@ public class SampleDataboxset {
         }
     }
 
-    public static void insertMore(SimpleAdapter sd, int howmany) {
+    public static void insertMore(MainBuyAdapter sd, int howmany) {
+        for (int i = 0; i < howmany; i++) {
+            sd.insert("More " + i, sd.getAdapterItemCount());
+        }
+    }
+
+    public static void insertMoreBuy(MainShoppingAdapter sd, int howmany) {
         for (int i = 0; i < howmany; i++) {
             sd.insert("More " + i, sd.getAdapterItemCount());
         }

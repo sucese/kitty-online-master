@@ -18,19 +18,29 @@ import java.security.SecureRandom;
 import java.util.List;
 
 
-public class SimpleAdapter extends UltimateViewAdapter<SimpleAdapter.SimpleAdapterViewHolder> {
+/**
+ * 首页商品展示Adapter
+ *
+ * @author guoxiaoxing
+ */
+
+
+public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAdapterViewHolder> {
     private List<String> stringList;
 
-    public SimpleAdapter(List<String> stringList) {
+    public MainBuyAdapter(List<String> stringList) {
         this.stringList = stringList;
     }
 
 
     @Override
     public void onBindViewHolder(final SimpleAdapterViewHolder holder, int position) {
-        if (position < getItemCount() && (customHeaderView != null ? position <= stringList.size() : position < stringList.size()) && (customHeaderView != null ? position > 0 : true)) {
 
-            ((SimpleAdapterViewHolder) holder).textViewSample.setText(stringList.get(customHeaderView != null ? position - 1 : position));
+        if (position < getItemCount() && (customHeaderView != null ? position <= stringList.size() :
+                position < stringList.size()) && (customHeaderView != null ? position > 0 : true)) {
+
+            ((SimpleAdapterViewHolder) holder).textViewSample.setText(stringList.get(customHeaderView != null
+                    ? position - 1 : position));
             // ((ViewHolder) holder).itemView.setActivated(selectedItems.get(position, false));
             if (mDragStartListener != null) {
 //                ((ViewHolder) holder).imageViewSample.setOnTouchListener(new View.OnTouchListener() {
@@ -181,7 +191,7 @@ public class SimpleAdapter extends UltimateViewAdapter<SimpleAdapter.SimpleAdapt
         ProgressBar progressBarSample;
         View item_view;
 
-        public  SimpleAdapterViewHolder(View itemView, boolean isItem) {
+        public SimpleAdapterViewHolder(View itemView, boolean isItem) {
             super(itemView);
 //            itemView.setOnTouchListener(new SwipeDismissTouchListener(itemView, null, new SwipeDismissTouchListener.DismissCallbacks() {
 //                @Override

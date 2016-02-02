@@ -47,7 +47,7 @@ import cz.msebera.android.httpclient.Header;
  *
  * @author guoxiaoxing
  */
-public class MineFragment extends BaseFragment {
+public class MainMineFragment extends BaseFragment {
 
     public static final int sChildView = 9; // 在没有加入TeamList控件时rootview有多少子布局
 
@@ -183,7 +183,7 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_mine;
+        return R.layout.fragment_main_mine;
     }
 
     @Override

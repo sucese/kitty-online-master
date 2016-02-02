@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
 
+    android:src="@drawable/ic_shopping_basket_black_24dp"
     android:antialias="true"
     android:dither="true"
     android:filter="true"
-    android:src="@drawable/ic_shopping_cart_black_24dp"
-    android:tint="@color/gray_500">
+    android:tint="@color/pink_A200"
+    >
 
 </bitmap>

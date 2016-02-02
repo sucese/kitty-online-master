@@ -14,11 +14,10 @@ import android.view.View;
 import com.guoxiaoxing.kitty.R;
 
 /**
- * Countdown View
- * Created by iWgang on 15/9/16.
- * https://github.com/iwgang/CountdownView
+ * @author guoxiaoxing
  */
 public class CountdownView extends View {
+
     private static final String DEFAULT_SUFFIX = ":";
     private static final float DEFAULT_SUFFIX_LR_MARGIN = 3; // dp
     private static final float DEFAULT_TIME_BG_DIVISION_LINE_SIZE = 0.5f; // dp

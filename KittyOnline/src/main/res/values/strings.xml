@@ -3,12 +3,13 @@
 
     <string name="app_name">爱尚佳品</string>
 
-    <string name="main_tab_name_news">主页</string>
-    <string name="main_tab_name_category">分类</string>
+    <string name="main_tab_name_shoppoing">逛逛逛</string>
+    <string name="main_tab_name_buy">买买买</string>
     <string name="main_tab_name_quick">快速</string>
+    <string name="main_tab_name_chat">聊聊聊</string>
     <string name="main_tab_name_question">问答</string>
-    <string name="main_tab_name_my">我的</string>
-    <string name="main_tab_name_explore">发现</string>
+    <string name="main_tab_name_mine">我我我</string>
+
 
     <string name="app_error">应用程序错误</string>
     <string name="app_error_message">很抱歉，小屁孩耍脾气啦。<br />我们会帮你教训一下这个小屁孩！</string>
@@ -241,11 +242,12 @@
     <string name="bookmarks">收藏夹</string>
     <string name="user_score">积分</string>
 
+    <string name="chat">聊一聊</string>
     <string name="active">好友圈</string>
-    <string name="activities">活动</string>
+    <string name="activities">优惠活动</string>
     <string name="scan">扫一扫</string>
     <string name="friends">同城</string>
-    <string name="find_oscer">找人</string>
+    <string name="find_oscer">找朋友</string>
     <string name="shake">摇一摇</string>
 
     <string name="add_notebook">新建便签</string>

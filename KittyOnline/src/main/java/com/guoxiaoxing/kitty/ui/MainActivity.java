@@ -42,8 +42,9 @@ import com.guoxiaoxing.kitty.ui.base.BaseViewInterface;
 import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import com.guoxiaoxing.kitty.service.NoticeUtils;
 import com.guoxiaoxing.kitty.ui.dialog.QuickOptionDialog;
-import com.guoxiaoxing.kitty.ui.fragment.HomeFragment;
-import com.guoxiaoxing.kitty.ui.fragment.MineFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainBuyFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainShoppingFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainMineFragment;
 import com.guoxiaoxing.kitty.util.DoubleClickExitHelper;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.UpdateManager;
@@ -65,7 +66,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements
         NavigationDrawerFragment.NavigationDrawerCallbacks,
         OnTabChangeListener, BaseViewInterface, View.OnClickListener,
-        OnTouchListener, HomeFragment.OnFragmentInteractionListener {
+        OnTouchListener, MainShoppingFragment.OnFragmentInteractionListener
+        , MainBuyFragment.OnFragmentInteractionListener{
 
     public static Notice mNotice;
 
@@ -97,8 +99,8 @@ public class MainActivity extends AppCompatActivity implements
                         + newFansCount + newLikeCount;
 
                 Fragment fragment = getCurrentFragment();
-                if (fragment instanceof MineFragment) {
-                    ((MineFragment) fragment).setNotice();
+                if (fragment instanceof MainMineFragment) {
+                    ((MainMineFragment) fragment).setNotice();
                 } else {
                     if (activeCount > 0) {
                         mBvNotice.setText(activeCount + "");
@@ -269,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements
             });
             mTabHost.addTab(tab, mainTab.getClz(), null);
 
-            if (mainTab.equals(MainTab.ME)) {
+            if (mainTab.equals(MainTab.MINE)) {
                 View cn = indicator.findViewById(R.id.tab_mes);
                 mBvNotice = new BadgeView(MainActivity.this, cn);
                 mBvNotice.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
@@ -328,7 +330,7 @@ public class MainActivity extends AppCompatActivity implements
                 v.setSelected(false);
             }
         }
-        if (tabId.equals(getString(MainTab.ME.getResName()))) {
+        if (tabId.equals(getString(MainTab.MINE.getResName()))) {
             mBvNotice.setText("");
             mBvNotice.hide();
         }

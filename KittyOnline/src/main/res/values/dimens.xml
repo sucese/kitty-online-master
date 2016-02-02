@@ -4,13 +4,21 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!--
-         Per the design guidelines, navigation drawers should be between 240dp and 320dp:
-         https://developer.android.com/design/patterns/navigation-drawer.html
-    -->
+
     <dimen name="navigation_drawer_width">240dp</dimen>
 
-    <!-- OSChina APP -->
+    <!--广告栏-->
+
+    <dimen name="banner_large_height">160dp</dimen>
+    <dimen name="banner_small_height">100dp</dimen>
+
+    <!--卡片-->
+    <dimen name="card_view_elevation_none">0dp</dimen>
+    <dimen name="card_view_elevation_small">2dp</dimen>
+    <dimen name="card_view_elevation_middle">4dp</dimen>
+
+    <!--字体-->
+
     <dimen name="text_size_32">32.0dip</dimen>
     <dimen name="text_size_31">31.0dip</dimen>
     <dimen name="text_size_30">30.0dip</dimen>
@@ -37,6 +45,10 @@
     <dimen name="text_size_9">9.0dip</dimen>
     <dimen name="text_size_8">8.0dip</dimen>
     <dimen name="text_size_7">7.0dip</dimen>
+
+
+    <!--间距-->
+
     <dimen name="space_100">100.0dip</dimen>
     <dimen name="space_60">60dp</dimen>
     <dimen name="space_49">49dip</dimen>
@@ -159,7 +171,6 @@
     <dimen name="search_view_text_padding">65dp</dimen>
 
 
-
     <dimen name="margin_standard">16dp</dimen>
     <dimen name="margin_short">8dp</dimen>
     <dimen name="margin_extra_short">4dp</dimen>
@@ -192,7 +203,5 @@
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
 
-
-    <dimen name="margin_nomal">10dp</dimen>
 
 </resources>

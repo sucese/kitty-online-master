@@ -184,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/iv_weibo"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_nomal"
+                        android:layout_marginTop="@dimen/space_10"
                         android:text="@string/welcomanim_title_social_weibo"
                         android:textColor="@color/base_gray"
                         android:textSize="@dimen/text_14"/>
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/iv_wechat"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_nomal"
+                        android:layout_marginTop="@dimen/space_10"
                         android:text="@string/welcomanim_title_social_wechat"
                         android:textColor="@color/base_gray"
                         android:textSize="@dimen/text_14"/>
@@ -236,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/iv_qq"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_nomal"
+                        android:layout_marginTop="@dimen/space_10"
                         android:text="@string/welcomanim_title_social_qq"
                         android:textColor="@color/base_gray"
                         android:textSize="@dimen/text_14"/>

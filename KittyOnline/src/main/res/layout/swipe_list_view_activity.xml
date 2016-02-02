@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+    <com.guoxiaoxing.smartrecyclerview.UltimateRecyclerView
             android:id="@+id/example_lv_list"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

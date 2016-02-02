@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KittyOnline/KittyOnline.iml" filepath="$PROJECT_DIR$/KittyOnline/KittyOnline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartRecyclerView/SmartRecyclerView.iml" filepath="$PROJECT_DIR$/SmartRecyclerView/SmartRecyclerView.iml" />
       <module fileurl="file://$PROJECT_DIR$/kitty-online-master.iml" filepath="$PROJECT_DIR$/kitty-online-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" filepath="$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ultimaterecyclerview/ultimaterecyclerview.iml" filepath="$PROJECT_DIR$/ultimaterecyclerview/ultimaterecyclerview.iml" />
     </modules>
   </component>
 </project>
