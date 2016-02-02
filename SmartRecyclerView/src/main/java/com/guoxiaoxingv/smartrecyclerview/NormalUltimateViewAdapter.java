@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * An abstract adapter which can be extended for Recyclerview
  */
-public abstract class NormalUltimateViewAdapter extends RecyclerView.Adapter<UltimateRecyclerviewViewHolder>
+public abstract class NormalUltimateViewAdapter extends RecyclerView.Adapter<SmartRecyclerviewViewHolder>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder>, ItemTouchHelperAdapter {
 
 
@@ -26,35 +26,35 @@ public abstract class NormalUltimateViewAdapter extends RecyclerView.Adapter<Ult
     /**
      * Set the header view of the adapter.
      */
-    public void setCustomHeaderView(UltimateRecyclerView.CustomRelativeWrapper customHeaderView) {
+    public void setCustomHeaderView(SmartRecyclerView.CustomRelativeWrapper customHeaderView) {
         this.customHeaderView = customHeaderView;
     }
 
-    public UltimateRecyclerView.CustomRelativeWrapper getCustomHeaderView() {
+    public SmartRecyclerView.CustomRelativeWrapper getCustomHeaderView() {
         return customHeaderView;
     }
 
-    protected UltimateRecyclerView.CustomRelativeWrapper customHeaderView = null;
+    protected SmartRecyclerView.CustomRelativeWrapper customHeaderView = null;
 
     @Override
-    public UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         if (viewType == VIEW_TYPES.FOOTER) {
-            UltimateRecyclerviewViewHolder viewHolder = new UltimateRecyclerviewViewHolder(customLoadMoreView);
+            SmartRecyclerviewViewHolder viewHolder = new SmartRecyclerviewViewHolder(customLoadMoreView);
             if (getAdapterItemCount() == 0)
                 viewHolder.itemView.setVisibility(View.GONE);
             return viewHolder;
         } else if (viewType == VIEW_TYPES.HEADER) {
             if (customHeaderView != null)
-                return new UltimateRecyclerviewViewHolder(customHeaderView);
+                return new SmartRecyclerviewViewHolder(customHeaderView);
         } else if (viewType == VIEW_TYPES.CHANGED_FOOTER) {
-            UltimateRecyclerviewViewHolder viewHolder = new UltimateRecyclerviewViewHolder(customLoadMoreView);
+            SmartRecyclerviewViewHolder viewHolder = new SmartRecyclerviewViewHolder(customLoadMoreView);
             if (getAdapterItemCount() == 0)
                 viewHolder.itemView.setVisibility(View.GONE);
             return viewHolder;
         }
 //        else if (viewType==VIEW_TYPES.STICKY_HEADER){
-//            return new UltimateRecyclerviewViewHolder(LayoutInflater.from(parent.getContext())
+//            return new SmartRecyclerviewViewHolder(LayoutInflater.from(parent.getContext())
 //                    .inflate(R.layout.stick_header_item, parent, false));
 //        }
 
@@ -63,7 +63,7 @@ public abstract class NormalUltimateViewAdapter extends RecyclerView.Adapter<Ult
     }
 
 
-    public abstract UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent);
+    public abstract SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent);
 
     /**
      * Using a custom LoadMoreView

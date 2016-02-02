@@ -14,17 +14,17 @@ import com.guoxiaoxingv.smartrecyclerview.ui.floatingactionbutton.FloatingAction
 /**
  * Created by MarshalChen on 15-6-5.
  */
-public class SwipeableUltimateRecyclerview extends UltimateRecyclerView  {
-    public SwipeableUltimateRecyclerview(Context context) {
+public class SwipeableSmartRecyclerview extends SmartRecyclerView {
+    public SwipeableSmartRecyclerview(Context context) {
         super(context);
     }
 
-    public SwipeableUltimateRecyclerview(Context context, AttributeSet attrs) {
+    public SwipeableSmartRecyclerview(Context context, AttributeSet attrs) {
         super(context, attrs);
         ((SwipeListView)mRecyclerView).init(attrs);
     }
 
-    public SwipeableUltimateRecyclerview(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SwipeableSmartRecyclerview(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         ((SwipeListView)mRecyclerView).init(attrs);
     }

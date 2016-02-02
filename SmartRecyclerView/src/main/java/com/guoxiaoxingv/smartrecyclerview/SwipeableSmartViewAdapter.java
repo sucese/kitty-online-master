@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * An abstract adapter which can be extended for Recyclerview
  */
-public abstract class SwipeableUltimateViewAdapter extends UltimateViewAdapter<UltimateRecyclerviewViewHolder> implements SwipeItemManagerInterface {
+public abstract class SwipeableSmartViewAdapter extends SmartViewAdapter<SmartRecyclerviewViewHolder> implements SwipeItemManagerInterface {
 
     protected SwipeItemManagerImpl mItemManger = new SwipeItemManagerImpl(this);
 
@@ -23,7 +23,7 @@ public abstract class SwipeableUltimateViewAdapter extends UltimateViewAdapter<U
      * @param position
      */
     @Override
-    public void onBindViewHolder(UltimateRecyclerviewViewHolder holder, int position) {
+    public void onBindViewHolder(SmartRecyclerviewViewHolder holder, int position) {
         mItemManger.updateConvertView(holder, position);
     }
 

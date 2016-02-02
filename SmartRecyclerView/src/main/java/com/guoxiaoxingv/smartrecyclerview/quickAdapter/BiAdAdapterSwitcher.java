@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerView;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
-import com.guoxiaoxingv.smartrecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.util.ScrollSmoothLineaerLayoutManager;
 
 import java.util.List;
 
@@ -28,13 +28,13 @@ import java.util.List;
  */
 public class BiAdAdapterSwitcher<
         T,
-        B extends UltimateRecyclerviewViewHolder,
+        B extends SmartRecyclerviewViewHolder,
         EASY extends easyRegularAdapter<T, B>,
         V extends ViewGroup,
         ADMOB extends simpleAdmobAdapter<T, B, V>>
 
 {
-    protected UltimateRecyclerView listview;
+    protected SmartRecyclerView listview;
     protected EASY noad;
     protected ADMOB withad;
     protected onLoadMore loading_more;
@@ -46,7 +46,7 @@ public class BiAdAdapterSwitcher<
         max_pages = n;
     }
 
-    public BiAdAdapterSwitcher(UltimateRecyclerView view, EASY adapter_without_ad, ADMOB adapter_with_ad) {
+    public BiAdAdapterSwitcher(SmartRecyclerView view, EASY adapter_without_ad, ADMOB adapter_with_ad) {
         this.listview = view;
         this.noad = adapter_without_ad;
         this.withad = adapter_with_ad;
@@ -188,7 +188,7 @@ public class BiAdAdapterSwitcher<
             final int delay_trigger,
             final onLoadMore loading_more_trigger_interface) {
         loading_more = loading_more_trigger_interface;
-        listview.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
+        listview.setOnLoadMoreListener(new SmartRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(final int itemsCount, final int maxLastVisiblePosition) {
                 Handler handler = new Handler();

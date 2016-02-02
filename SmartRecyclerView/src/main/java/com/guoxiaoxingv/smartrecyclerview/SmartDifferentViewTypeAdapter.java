@@ -11,15 +11,15 @@ import java.util.Map;
 /**
  * An adapter which support different layout
  */
-public abstract class UltimateDifferentViewTypeAdapter<E extends Enum<E>> extends UltimateViewAdapter<UltimateRecyclerviewViewHolder> {
+public abstract class SmartDifferentViewTypeAdapter<E extends Enum<E>> extends SmartViewAdapter<SmartRecyclerviewViewHolder> {
     private Map<E, DataBinder> mBinderMap = new HashMap<>();
 
-    protected class VIEW_TYPES extends UltimateViewAdapter.VIEW_TYPES {
+    protected class VIEW_TYPES extends SmartViewAdapter.VIEW_TYPES {
         public static final int MULTI_VIEWS = 5;
     }
 
     @Override
-    public UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //        if (viewType == VIEW_TYPES.HEADER||viewType ==VIEW_TYPES.FOOTER
 //                ||viewType==VIEW_TYPES.CHANGED_FOOTER) {
 //            return super.onCreateViewHolder(parent, viewType);
@@ -28,7 +28,7 @@ public abstract class UltimateDifferentViewTypeAdapter<E extends Enum<E>> extend
     }
 
     @Override
-    public void onBindViewHolder(UltimateRecyclerviewViewHolder viewHolder, int position) {
+    public void onBindViewHolder(SmartRecyclerviewViewHolder viewHolder, int position) {
         //int binderPosition = getBinderPosition(position);
         getDataBinder(viewHolder.getItemViewType()).bindViewHolder(viewHolder, position);
 

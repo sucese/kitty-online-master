@@ -11,6 +11,33 @@
     <string name="main_tab_name_mine">我我我</string>
 
 
+    <!--买买买-->
+    <string name="buy_market">特色市场</string>
+    <string name="buy_market_title_1">心水好货</string>
+    <string name="buy_market_title_2">红人馆</string>
+    <string name="buy_market_title_3">享廋</string>
+    <string name="buy_market_title_4">设计师</string>
+    <string name="buy_market_title_5">女装</string>
+    <string name="buy_market_title_6">女鞋</string>
+    <string name="buy_market_title_7">充值</string>
+    <string name="buy_market_title_8">小店收藏夹</string>
+
+    <!--全部商品-->
+    <string name="buy_goods">全部商品</string>
+    <string name="buy_goods_title_1">上衣</string>
+    <string name="buy_goods_title_2">裤子</string>
+    <string name="buy_goods_title_3">裙子</string>
+    <string name="buy_goods_title_4">内衣</string>
+    <string name="buy_goods_title_5">女鞋</string>
+    <string name="buy_goods_title_6">包包</string>
+    <string name="buy_goods_title_7">男友</string>
+    <string name="buy_goods_title_8">美妆</string>
+    <string name="buy_goods_title_9">配饰</string>
+    <string name="buy_goods_title_10">母婴</string>
+    <string name="buy_goods_title_11">家具</string>
+    <string name="buy_goods_title_12">个护</string>
+
+
     <string name="app_error">应用程序错误</string>
     <string name="app_error_message">很抱歉，小屁孩耍脾气啦。<br />我们会帮你教训一下这个小屁孩！</string>
     <string name="submit_report">打报告去</string>

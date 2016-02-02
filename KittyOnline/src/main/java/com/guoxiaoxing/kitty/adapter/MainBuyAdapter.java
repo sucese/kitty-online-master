@@ -11,37 +11,42 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
-import com.guoxiaoxingv.smartrecyclerview.UltimateViewAdapter;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartViewAdapter;
 
 import java.security.SecureRandom;
 import java.util.List;
 
 
 /**
- * 首页商品展示Adapter
+ * 买买买页商品展示Adapter
  *
  * @author guoxiaoxing
  */
 
 
-public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAdapterViewHolder> {
+public class MainBuyAdapter extends SmartViewAdapter<MainBuyAdapter.ViewHolder> {
+
     private List<String> stringList;
 
     public MainBuyAdapter(List<String> stringList) {
         this.stringList = stringList;
     }
 
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_buy_recycler_view, parent, false);
+        ViewHolder vh = new ViewHolder(view, true);
+        return vh;
+    }
 
     @Override
-    public void onBindViewHolder(final SimpleAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
         if (position < getItemCount() && (customHeaderView != null ? position <= stringList.size() :
                 position < stringList.size()) && (customHeaderView != null ? position > 0 : true)) {
 
-            ((SimpleAdapterViewHolder) holder).textViewSample.setText(stringList.get(customHeaderView != null
-                    ? position - 1 : position));
-            // ((ViewHolder) holder).itemView.setActivated(selectedItems.get(position, false));
             if (mDragStartListener != null) {
 //                ((ViewHolder) holder).imageViewSample.setOnTouchListener(new View.OnTouchListener() {
 //                    @Override
@@ -53,7 +58,7 @@ public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAda
 //                    }
 //                });
 
-                ((SimpleAdapterViewHolder) holder).item_view.setOnTouchListener(new View.OnTouchListener() {
+                ((ViewHolder) holder).item_view.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         return false;
@@ -62,66 +67,6 @@ public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAda
             }
         }
 
-    }
-
-    @Override
-    public int getAdapterItemCount() {
-        return stringList.size();
-    }
-
-    @Override
-    public SimpleAdapterViewHolder getViewHolder(View view) {
-        return new SimpleAdapterViewHolder(view, false);
-    }
-
-    @Override
-    public SimpleAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.home_item_content, parent, false);
-        SimpleAdapterViewHolder vh = new SimpleAdapterViewHolder(v, true);
-        return vh;
-    }
-
-
-    public void insert(String string, int position) {
-        insert(stringList, string, position);
-    }
-
-    public void remove(int position) {
-        remove(stringList, position);
-    }
-
-    public void clear() {
-        clear(stringList);
-    }
-
-    @Override
-    public void toggleSelection(int pos) {
-        super.toggleSelection(pos);
-    }
-
-    @Override
-    public void setSelected(int pos) {
-        super.setSelected(pos);
-    }
-
-    @Override
-    public void clearSelection(int pos) {
-        super.clearSelection(pos);
-    }
-
-
-    public void swapPositions(int from, int to) {
-        swapPositions(stringList, from, to);
-    }
-
-
-    @Override
-    public long generateHeaderId(int position) {
-        // URLogs.d("position--" + position + "   " + getItem(position));
-        if (getItem(position).length() > 0)
-            return getItem(position).charAt(0);
-        else return -1;
     }
 
     @Override
@@ -156,6 +101,48 @@ public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAda
 
     }
 
+
+    @Override
+    public int getAdapterItemCount() {
+        return stringList.size();
+    }
+
+    @Override
+    public ViewHolder getViewHolder(View view) {
+        return new ViewHolder(view, false);
+    }
+
+
+    @Override
+    public void toggleSelection(int pos) {
+        super.toggleSelection(pos);
+    }
+
+    @Override
+    public void setSelected(int pos) {
+        super.setSelected(pos);
+    }
+
+    @Override
+    public void clearSelection(int pos) {
+        super.clearSelection(pos);
+    }
+
+
+    public void swapPositions(int from, int to) {
+        swapPositions(stringList, from, to);
+    }
+
+
+    @Override
+    public long generateHeaderId(int position) {
+        // URLogs.d("position--" + position + "   " + getItem(position));
+        if (getItem(position).length() > 0)
+            return getItem(position).charAt(0);
+        else return -1;
+    }
+
+
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
         swapPositions(fromPosition, toPosition);
@@ -183,15 +170,26 @@ public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAda
 
     }
 
+    public void insert(String string, int position) {
+        insert(stringList, string, position);
+    }
 
-    public class SimpleAdapterViewHolder extends UltimateRecyclerviewViewHolder {
+    public void remove(int position) {
+        remove(stringList, position);
+    }
+
+    public void clear() {
+        clear(stringList);
+    }
+
+    public class ViewHolder extends SmartRecyclerviewViewHolder {
 
         TextView textViewSample;
         ImageView imageViewSample;
         ProgressBar progressBarSample;
         View item_view;
 
-        public SimpleAdapterViewHolder(View itemView, boolean isItem) {
+        public ViewHolder(View itemView, boolean isItem) {
             super(itemView);
 //            itemView.setOnTouchListener(new SwipeDismissTouchListener(itemView, null, new SwipeDismissTouchListener.DismissCallbacks() {
 //                @Override
@@ -208,12 +206,7 @@ public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.SimpleAda
 //                }
 //            }));
             if (isItem) {
-                textViewSample = (TextView) itemView.findViewById(
-                        R.id.textview);
-                imageViewSample = (ImageView) itemView.findViewById(R.id.imageview);
-                progressBarSample = (ProgressBar) itemView.findViewById(R.id.progressbar);
-                progressBarSample.setVisibility(View.GONE);
-                item_view = itemView.findViewById(R.id.itemview);
+
             }
 
         }

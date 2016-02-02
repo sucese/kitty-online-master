@@ -14,12 +14,12 @@ import java.util.List;
  * JJHESK HKM. MIT LICENSE
  * {@link {https://github.com/jjhesk/MaterialTabsAdavanced/blob/master/LICENSE.md}}
  */
-public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateRecyclerviewViewHolder> extends UltimateViewAdapter<UltimateRecyclerviewViewHolder> {
+public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends SmartRecyclerviewViewHolder> extends SmartViewAdapter<SmartRecyclerviewViewHolder> {
     public interface AdviewListener<Adv extends ViewGroup> {
         Adv onGenerateAdview();
     }
 
-    protected class VIEW_TYPES extends UltimateViewAdapter.VIEW_TYPES {
+    protected class VIEW_TYPES extends SmartViewAdapter.VIEW_TYPES {
         public static final int ADVIEW = 4;
     }
 
@@ -106,7 +106,7 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
         @Override
         public V getViewHolder(View view) { return  }
     */
-    public static class AdHolder extends UltimateRecyclerviewViewHolder {
+    public static class AdHolder extends SmartRecyclerviewViewHolder {
         public AdHolder(AdviewListener adviewlistener) {
             super(adviewlistener.onGenerateAdview());
         }
@@ -119,27 +119,27 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
      * @return the UtimateView
      */
     @Override
-    public UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent) {
+    public SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(getNormalLayoutResId(), parent, false);
         return newViewHolder(v);
     }
 
     @Override
-    public UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //   if (parent == null)
         //       Log.d("getItemCountE2", "parent is null on viewType: " + viewType);
         if (viewType == VIEW_TYPES.ADVIEW) {
-            UltimateRecyclerviewViewHolder adview_holder;
+            SmartRecyclerviewViewHolder adview_holder;
             if (adviewlistener != null) {
                 try {
                     adview_holder = new AdHolder(adviewlistener);
                 } catch (NullPointerException e) {
-                    adview_holder = new UltimateRecyclerviewViewHolder(advertise_view);
+                    adview_holder = new SmartRecyclerviewViewHolder(advertise_view);
                 } catch (Exception e) {
-                    adview_holder = new UltimateRecyclerviewViewHolder(advertise_view);
+                    adview_holder = new SmartRecyclerviewViewHolder(advertise_view);
                 }
             } else {
-                adview_holder = new UltimateRecyclerviewViewHolder(advertise_view);
+                adview_holder = new SmartRecyclerviewViewHolder(advertise_view);
             }
             return adview_holder;
         } else {

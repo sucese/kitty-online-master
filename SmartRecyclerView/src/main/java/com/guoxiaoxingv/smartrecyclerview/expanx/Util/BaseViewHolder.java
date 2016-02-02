@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.guoxiaoxingv.smartrecyclerview.R;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
 import com.guoxiaoxingv.smartrecyclerview.expanx.ExpandableItemData;
 
 /**
@@ -18,7 +18,7 @@ import com.guoxiaoxingv.smartrecyclerview.expanx.ExpandableItemData;
  * PersonalWebsite jjhesk on github
  * Description
  */
-public class BaseViewHolder<T extends ExpandableItemData> extends UltimateRecyclerviewViewHolder {
+public class BaseViewHolder<T extends ExpandableItemData> extends SmartRecyclerviewViewHolder {
 
     public BaseViewHolder(View itemView) {
         super(itemView);

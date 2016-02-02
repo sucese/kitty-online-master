@@ -47,6 +47,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:gridlayout-v7:23.1.1'
     //依赖注入
     compile 'com.github.chrisbanes.photoview:library:1.2.3'
     compile 'com.loopj.android:android-async-http:1.4.9'

@@ -5,7 +5,7 @@ package com.guoxiaoxingv.smartrecyclerview.swipe;
 import android.support.v7.widget.RecyclerView;
 
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ public class SwipeItemManagerImpl implements SwipeItemManagerInterface {
 
 
 
-    private void initialize(UltimateRecyclerviewViewHolder targetViewHolder, int position) {
+    private void initialize(SmartRecyclerviewViewHolder targetViewHolder, int position) {
         targetViewHolder.onLayoutListener = new OnLayoutListener(position);
         targetViewHolder.swipeMemory = new SwipeMemory(position);
         targetViewHolder.position = position;
@@ -61,7 +61,7 @@ public class SwipeItemManagerImpl implements SwipeItemManagerInterface {
     }
 
 
-    public void updateConvertView(UltimateRecyclerviewViewHolder targetViewHolder, int position) {
+    public void updateConvertView(SmartRecyclerviewViewHolder targetViewHolder, int position) {
         if (targetViewHolder.onLayoutListener == null) {
             initialize(targetViewHolder, position);
         }

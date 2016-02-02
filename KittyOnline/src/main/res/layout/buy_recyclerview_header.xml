@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/space_5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy_market" />
+
+    <include layout="@layout/buy_recyclerview_header_market" />
+
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/choice_grid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_10"
+        app:alignmentMode="alignBounds"
+        app:columnCount="3"
+        app:rowCount="2"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
+
+        <android.support.v7.widget.CardView
+            style="@style/card_view_normal"
+            app:cardElevation="@dimen/card_view_elevation_none"
+            app:layout_rowSpan="2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="限时快抢"
+                    android:textColor="@color/red_700"
+                    android:textSize="@dimen/text_size_18" />
+
+                <com.guoxiaoxing.kitty.widget.timecounter.CountdownView
+                    android:id="@+id/cv_sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:isHideTimeBackground="false"
+                    app:isShowDay="false"
+                    app:isShowHour="false"
+                    app:isShowMillisecond="true"
+                    app:isShowMinute="true"
+                    app:isShowSecond="true"
+                    app:suffixGravity="center"
+                    app:suffixTextColor="@color/black"
+                    app:suffixTextSize="30sp"
+                    app:timeBgDivisionLineSize="1dp"
+                    app:timeBgRadius="3dp"
+                    app:timeBgSize="40dp"
+                    app:timeTextColor="@color/white"
+                    app:timeTextSize="20sp" />
+
+                <ImageView
+                    style="@style/rect_image_large"
+                    android:src="@drawable/ic_test_0" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/card_view_normal"
+            app:cardElevation="@dimen/card_view_elevation_none"
+            app:layout_columnSpan="2">
+
+            <com.guoxiaoxing.kitty.widget.banner.ConvenientBanner
+                android:id="@+id/cb_sale_ad"
+                android:layout_width="200dp"
+                android:layout_height="@dimen/banner_small_height" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            style="@style/card_view_normal"
+            app:cardElevation="@dimen/card_view_elevation_none">
+
+            <ImageView
+                style="@style/rect_image_middle"
+                android:src="@drawable/ic_image_black_48dp" />
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            style="@style/card_view_normal"
+            app:cardElevation="@dimen/card_view_elevation_none">
+
+            <ImageView
+                style="@style/rect_image_middle"
+                android:src="@drawable/ic_image_black_48dp" />
+        </android.support.v7.widget.CardView>
+
+    </android.support.v7.widget.GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy_market" />
+
+    <include layout="@layout/buy_recyclerview_header_goods" />
+
+
+</LinearLayout>

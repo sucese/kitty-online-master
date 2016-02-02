@@ -1,4 +1,4 @@
-package com.guoxiaoxingv.smartrecyclerview;
+package com.guoxiaoxingv.smartrecyclerview.util;
 
 import android.util.Log;
 

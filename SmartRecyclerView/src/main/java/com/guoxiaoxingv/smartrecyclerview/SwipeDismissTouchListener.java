@@ -25,6 +25,8 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
+import com.guoxiaoxingv.smartrecyclerview.util.URLogs;
+
 @Deprecated
 public class SwipeDismissTouchListener implements View.OnTouchListener {
     // Cached ViewConfiguration and system-wide constant values

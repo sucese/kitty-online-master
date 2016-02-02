@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/choice_grid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    app:alignmentMode="alignBounds"
+    app:columnCount="4"
+    app:rowCount="2"
+    app:rowOrderPreserved="false"
+    app:useDefaultMargins="true">
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_1"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_2"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_3"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_4"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_5"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_6"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_7"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:drawableTop="@drawable/ic_image_black_48dp"
+        android:gravity="center"
+        android:text="@string/buy_market_title_8"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+</android.support.v7.widget.GridLayout>

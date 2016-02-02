@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -33,8 +34,9 @@ import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerView;
-import com.guoxiaoxingv.smartrecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
+import com.guoxiaoxingv.smartrecyclerview.util.BasicGridLayoutManager;
+import com.guoxiaoxingv.smartrecyclerview.util.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -56,10 +58,10 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Bind(R.id.et_search)
     EditText mEtSearch;
     @Bind(R.id.url_home_content)
-    UltimateRecyclerView mUrlHomeContent;
-    ConvenientBanner mCbHomeAd;
-    ConvenientBanner mCbSaleAd;
-    CountdownView mCvSale;
+
+    SmartRecyclerView mSmartRecyclerView;
+    ConvenientBanner mConvenientBanner;
+    CountdownView mCountdownView;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -70,6 +72,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private OnFragmentInteractionListener mListener;
     MainBuyAdapter simpleRecyclerViewAdapter = null;
     LinearLayoutManager linearLayoutManager;
+    GridLayoutManager mLayoutManager;
     int moreNum = 2;
     boolean isDrag = true;
 
@@ -126,18 +129,16 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     public void onResume() {
         super.onResume();
         Logger.t(TAG).d("onResume()");
-        mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-        mCbSaleAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
+        mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
         long time2 = (long) 30 * 60 * 1000;
-        mCvSale.start(time2);
+        mCountdownView.start(time2);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         Logger.t(TAG).d("onPause()");
-        mCbHomeAd.stopTurning();
-        mCbSaleAd.stopTurning();
+        mConvenientBanner.stopTurning();
     }
 
 
@@ -260,34 +261,19 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private void initHeaderView() {
 
         //设置HeaderView
-        headerView = LayoutInflater.from(mContext).inflate(R.layout.common_recyclerview_header, mUrlHomeContent.mRecyclerView, false);
-        mCbHomeAd = (ConvenientBanner) headerView.findViewById(R.id.cb_home_ad);
-        mCvSale = (CountdownView) headerView.findViewById(R.id.cv_sale);
+        headerView = LayoutInflater.from(mContext).inflate(R.layout.buy_recyclerview_header, mSmartRecyclerView.mRecyclerView, false);
+        mCountdownView = (CountdownView) headerView.findViewById(R.id.cv_sale);
 
 
         for (int position = 0; position < 7; position++) {
             localImages.add(getResId("ic_test_" + position, R.drawable.class));
         }
 
-        //本地图片例子
-        mCbHomeAd.setPages(
-                new CBViewHolderCreator<LocalImageHolderView>() {
-                    @Override
-                    public LocalImageHolderView createHolder() {
-                        return new LocalImageHolderView();
-                    }
-                }, localImages)
-                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-//                .setOnPageChangeListener(this)//监听翻页事件
-                .setOnItemClickListener(this);
 
-//        mCbHomeAd.setManualPageable(false);//设置不能手动影响
-
-        mCbSaleAd = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
-        mCbSaleAd.getViewPager().setPageTransformer(true, new CubeOutTransformer());
+        mConvenientBanner = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
+        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
         //本地图片例子
-        mCbSaleAd.setPages(
+        mConvenientBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
                     @Override
                     public LocalImageHolderView createHolder() {
@@ -304,21 +290,21 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
     private void initContentView() {
 
-        mUrlHomeContent.setHasFixedSize(false);
+        mSmartRecyclerView.setHasFixedSize(false);
         simpleRecyclerViewAdapter = new MainBuyAdapter(SampleDataboxset.newList());
-        linearLayoutManager = new ScrollSmoothLineaerLayoutManager(mContext, LinearLayoutManager.VERTICAL, false, 300);
-        mUrlHomeContent.setLayoutManager(linearLayoutManager);
-        mUrlHomeContent.setAdapter(simpleRecyclerViewAdapter);
+        mLayoutManager = new BasicGridLayoutManager(mContext, 2, simpleRecyclerViewAdapter);
+        mSmartRecyclerView.setLayoutManager(mLayoutManager);
+        mSmartRecyclerView.setAdapter(simpleRecyclerViewAdapter);
 
         //加载更多
-        mUrlHomeContent.enableLoadmore();
+        mSmartRecyclerView.enableLoadmore();
         simpleRecyclerViewAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
                 .inflate(R.layout.custom_bottom_progressbar, null, false));
 
         //添加Header View
         initHeaderView();
-        mUrlHomeContent.setNormalHeader(headerView);
-        mUrlHomeContent.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {
+        mSmartRecyclerView.setNormalHeader(headerView);
+        mSmartRecyclerView.setOnParallaxScroll(new SmartRecyclerView.OnParallaxScroll() {
             @Override
             public void onParallaxScroll(float percentage, float offset, View parallax) {
 //                Drawable drawable = mToolbar.getBackground();
@@ -328,14 +314,14 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
         });
 
         //下拉刷新数据
-        mUrlHomeContent.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        mSmartRecyclerView.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         simpleRecyclerViewAdapter.insert(moreNum++ + "  Refresh things", 0);
-                        mUrlHomeContent.setRefreshing(false);
+                        mSmartRecyclerView.setRefreshing(false);
                         //   ultimateRecyclerView.scrollBy(0, -50);
                         linearLayoutManager.scrollToPosition(0);
 //                        ultimateRecyclerView.setAdapter(simpleRecyclerViewAdapter);
@@ -345,7 +331,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
             }
         });
         //上拉加载更多
-        mUrlHomeContent.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
+        mSmartRecyclerView.setOnLoadMoreListener(new SmartRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
                 Handler handler = new Handler();
@@ -360,7 +346,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
         });
 
         //滑动监听，可以根据不同的状态来显示和隐藏Toolbar和Floating button
-        mUrlHomeContent.setScrollViewCallbacks(new ObservableScrollViewCallbacks() {
+        mSmartRecyclerView.setScrollViewCallbacks(new ObservableScrollViewCallbacks() {
             @Override
             public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
 
@@ -376,16 +362,16 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
             public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
                 Logger.t(TAG).d("onUpOrCancelMotionEvent");
                 if (observableScrollState == ObservableScrollState.UP) {
-                    mUrlHomeContent.hideToolbar(mToolbar, mUrlHomeContent, getScreenHeight());
-                    mUrlHomeContent.hideFloatingActionMenu();
+                    mSmartRecyclerView.hideToolbar(mToolbar, mSmartRecyclerView, getScreenHeight());
+                    mSmartRecyclerView.hideFloatingActionMenu();
                 } else if (observableScrollState == ObservableScrollState.DOWN) {
-                    mUrlHomeContent.showToolbar(mToolbar, mUrlHomeContent, getScreenHeight());
-                    mUrlHomeContent.showFloatingActionMenu();
+                    mSmartRecyclerView.showToolbar(mToolbar, mSmartRecyclerView, getScreenHeight());
+                    mSmartRecyclerView.showFloatingActionMenu();
                 }
             }
         });
 
-//        mUrlHomeContent.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mUrlHomeContent.mRecyclerView,
+//        mSmartRecyclerView.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mSmartRecyclerView.mRecyclerView,
 //                new SwipeableRecyclerViewTouchListener.SwipeListener() {
 //                    @Override
 //                    public boolean canSwipe(int position) {
@@ -405,7 +391,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 //                }));
 
 
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mUrlHomeContent.mRecyclerView,
+        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mSmartRecyclerView.mRecyclerView,
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
@@ -419,7 +405,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
                     }
                 });
-        mUrlHomeContent.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
+        mSmartRecyclerView.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
     }
 
 }

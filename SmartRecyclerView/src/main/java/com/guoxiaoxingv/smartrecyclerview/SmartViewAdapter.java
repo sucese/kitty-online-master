@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * An abstract adapter which can be extended for Recyclerview
  */
-public abstract class UltimateViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH>
+public abstract class SmartViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder>, ItemTouchHelperAdapter {
 
 
@@ -26,15 +26,15 @@ public abstract class UltimateViewAdapter<VH extends RecyclerView.ViewHolder> ex
     /**
      * Set the header view of the adapter.
      */
-    public void setCustomHeaderView(UltimateRecyclerView.CustomRelativeWrapper customHeaderView) {
+    public void setCustomHeaderView(SmartRecyclerView.CustomRelativeWrapper customHeaderView) {
         this.customHeaderView = customHeaderView;
     }
 
-    public UltimateRecyclerView.CustomRelativeWrapper getCustomHeaderView() {
+    public SmartRecyclerView.CustomRelativeWrapper getCustomHeaderView() {
         return customHeaderView;
     }
 
-    protected UltimateRecyclerView.CustomRelativeWrapper customHeaderView = null;
+    protected SmartRecyclerView.CustomRelativeWrapper customHeaderView = null;
 
     @Override
     public VH onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -54,7 +54,7 @@ public abstract class UltimateViewAdapter<VH extends RecyclerView.ViewHolder> ex
             return viewHolder;
         }
 //        else if (viewType==VIEW_TYPES.STICKY_HEADER){
-//            return new UltimateRecyclerviewViewHolder(LayoutInflater.from(parent.getContext())
+//            return new SmartRecyclerviewViewHolder(LayoutInflater.from(parent.getContext())
 //                    .inflate(R.layout.stick_header_item, parent, false));
 //        }
 

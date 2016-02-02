@@ -1,15 +1,15 @@
-package com.guoxiaoxingv.smartrecyclerview.uiUtils;
+package com.guoxiaoxingv.smartrecyclerview.util;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateViewAdapter;
+import com.guoxiaoxingv.smartrecyclerview.SmartViewAdapter;
 
 /**
  * Created by hesk on 24/8/15.
  */
 public class BasicGridLayoutManager extends GridLayoutManager {
-    private final UltimateViewAdapter mAdapter;
+    private final SmartViewAdapter mAdapter;
     protected int headerSpan = 2;
 
     protected class VIEW_TYPES {
@@ -65,13 +65,13 @@ public class BasicGridLayoutManager extends GridLayoutManager {
         return mSpanSizeLookUp;
     }
 
-    public BasicGridLayoutManager(Context context, int spanCount, UltimateViewAdapter mAdapter) {
+    public BasicGridLayoutManager(Context context, int spanCount, SmartViewAdapter mAdapter) {
         super(context, spanCount);
         this.mAdapter = mAdapter;
         setSpanSizeLookup(decideSpanSizeCal());
     }
 
-    public BasicGridLayoutManager(Context context, int spanCount, int orientation, boolean reverseLayout, UltimateViewAdapter mAdapter) {
+    public BasicGridLayoutManager(Context context, int spanCount, int orientation, boolean reverseLayout, SmartViewAdapter mAdapter) {
         super(context, spanCount, orientation, reverseLayout);
         this.mAdapter = mAdapter;
         setSpanSizeLookup(decideSpanSizeCal());

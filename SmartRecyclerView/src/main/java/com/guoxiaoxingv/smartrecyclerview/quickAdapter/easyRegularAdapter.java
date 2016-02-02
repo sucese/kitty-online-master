@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
-import com.guoxiaoxingv.smartrecyclerview.UltimateViewAdapter;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartViewAdapter;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ import java.util.List;
  * This is the normal adapter for implementation on the regular basis
  * Created by hesk on 4/8/15.
  */
-public abstract class easyRegularAdapter<T, BINDHOLDER extends UltimateRecyclerviewViewHolder> extends UltimateViewAdapter {
+public abstract class easyRegularAdapter<T, BINDHOLDER extends SmartRecyclerviewViewHolder> extends SmartViewAdapter {
     private List<T> currentlistsource;
 
     @Override
-    public UltimateRecyclerviewViewHolder getViewHolder(View view) {
-        return new UltimateRecyclerviewViewHolder(view);
+    public SmartRecyclerviewViewHolder getViewHolder(View view) {
+        return new SmartRecyclerviewViewHolder(view);
     }
 
     /**
@@ -41,7 +41,7 @@ public abstract class easyRegularAdapter<T, BINDHOLDER extends UltimateRecyclerv
     protected abstract BINDHOLDER newViewHolder(View view);
 
     @Override
-    public UltimateRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent) {
+    public SmartRecyclerviewViewHolder onCreateViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(getNormalLayoutResId(), parent, false);
         return newViewHolder(v);
     }

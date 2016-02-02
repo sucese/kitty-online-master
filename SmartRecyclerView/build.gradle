@@ -31,7 +31,7 @@ dependencies {
 }
 
 ext {
-    PUBLISH_GROUP_ID = 'com.marshalchen.ultimaterecyclerview'
+    PUBLISH_GROUP_ID = 'com.guoxiaoxing.smartrecyclerview'
     PUBLISH_ARTIFACT_ID = 'library'
     PUBLISH_VERSION = '0.3.18'
 }

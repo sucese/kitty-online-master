@@ -33,9 +33,9 @@ import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerView;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
 import com.guoxiaoxingv.smartrecyclerview.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
-import com.guoxiaoxingv.smartrecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+import com.guoxiaoxingv.smartrecyclerview.util.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Bind(R.id.et_search)
     EditText mEtSearch;
     @Bind(R.id.url_home_content)
-    UltimateRecyclerView mUrlHomeContent;
+    SmartRecyclerView mUrlHomeContent;
     ConvenientBanner mCbHomeAd;
     ConvenientBanner mCbSaleAd;
     CountdownView mCvSale;
@@ -319,7 +319,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         //添加Header View
         initHeaderView();
         mUrlHomeContent.setNormalHeader(headerView);
-        mUrlHomeContent.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {
+        mUrlHomeContent.setOnParallaxScroll(new SmartRecyclerView.OnParallaxScroll() {
             @Override
             public void onParallaxScroll(float percentage, float offset, View parallax) {
 //                Drawable drawable = mToolbar.getBackground();
@@ -329,6 +329,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         });
 
         //下拉刷新数据
+
         mUrlHomeContent.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -346,7 +347,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
             }
         });
         //上拉加载更多
-        mUrlHomeContent.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
+        mUrlHomeContent.setOnLoadMoreListener(new SmartRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
                 Handler handler = new Handler();
@@ -386,7 +387,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
             }
         });
 
-//        mUrlHomeContent.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mUrlHomeContent.mRecyclerView,
+//        mSmartRecyclerView.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mSmartRecyclerView.mRecyclerView,
 //                new SwipeableRecyclerViewTouchListener.SwipeListener() {
 //                    @Override
 //                    public boolean canSwipe(int position) {

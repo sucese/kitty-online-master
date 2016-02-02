@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.guoxiaoxingv.smartrecyclerview.uiUtils;
+package com.guoxiaoxingv.smartrecyclerview.util;
 
 import android.os.Bundle;
 import android.os.Parcelable;

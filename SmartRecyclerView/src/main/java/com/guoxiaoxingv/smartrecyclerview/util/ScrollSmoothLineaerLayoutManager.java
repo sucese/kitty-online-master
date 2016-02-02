@@ -1,4 +1,4 @@
-package com.guoxiaoxingv.smartrecyclerview.uiUtils;
+package com.guoxiaoxingv.smartrecyclerview.util;
 
 import android.content.Context;
 import android.graphics.PointF;

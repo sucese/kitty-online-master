@@ -14,19 +14,19 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 /**
  * Created by cym on 15/3/21.
  */
-public class CustomUltimateRecyclerview extends UltimateRecyclerView {
+public class CustomSmartRecyclerview extends SmartRecyclerView {
 
     public PtrFrameLayout mPtrFrameLayout;
 
-    public CustomUltimateRecyclerview(Context context) {
+    public CustomSmartRecyclerview(Context context) {
         super(context);
     }
 
-    public CustomUltimateRecyclerview(Context context, AttributeSet attrs) {
+    public CustomSmartRecyclerview(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CustomUltimateRecyclerview(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CustomSmartRecyclerview(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

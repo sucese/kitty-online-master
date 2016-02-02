@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateViewAdapter;
+import com.guoxiaoxingv.smartrecyclerview.SmartViewAdapter;
 import com.guoxiaoxingv.smartrecyclerview.expanx.Util.BaseViewHolder;
 import com.guoxiaoxingv.smartrecyclerview.expanx.Util.ChildVH;
 import com.guoxiaoxingv.smartrecyclerview.expanx.Util.ItemDataClickListener;
@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Created by hesk on 16/7/15.
  */
-public abstract class LinearExpanxURVAdapter<T extends ExpandableItemData, G extends parent<T>, H extends child<T>> extends UltimateViewAdapter {
+public abstract class LinearExpanxURVAdapter<T extends ExpandableItemData, G extends parent<T>, H extends child<T>> extends SmartViewAdapter {
 
     public class ExpandableViewTypes extends VIEW_TYPES {
 

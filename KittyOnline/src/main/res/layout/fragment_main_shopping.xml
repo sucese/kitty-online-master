@@ -53,7 +53,7 @@
     </android.support.v7.widget.Toolbar>
 
 
-    <com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerView
+    <com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView
         android:id="@+id/url_home_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

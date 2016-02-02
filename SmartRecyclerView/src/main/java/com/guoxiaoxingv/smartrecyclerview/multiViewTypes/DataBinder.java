@@ -2,19 +2,19 @@ package com.guoxiaoxingv.smartrecyclerview.multiViewTypes;
 
 import android.view.ViewGroup;
 
-import com.guoxiaoxingv.smartrecyclerview.UltimateDifferentViewTypeAdapter;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartDifferentViewTypeAdapter;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
 
 /**
  * Class for binding view and data
  *
  * Created by yqritc on 2015/03/01.
  */
-abstract public class DataBinder<T extends UltimateRecyclerviewViewHolder> {
+abstract public class DataBinder<T extends SmartRecyclerviewViewHolder> {
 
-    private UltimateDifferentViewTypeAdapter mDataBindAdapter;
+    private SmartDifferentViewTypeAdapter mDataBindAdapter;
 
-    public DataBinder(UltimateDifferentViewTypeAdapter dataBindAdapter) {
+    public DataBinder(SmartDifferentViewTypeAdapter dataBindAdapter) {
         mDataBindAdapter = dataBindAdapter;
     }
 

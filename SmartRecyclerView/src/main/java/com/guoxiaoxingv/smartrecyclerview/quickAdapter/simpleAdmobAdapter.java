@@ -5,14 +5,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.guoxiaoxingv.smartrecyclerview.AdmobAdapter;
-import com.guoxiaoxingv.smartrecyclerview.UltimateRecyclerviewViewHolder;
+import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
 
 import java.util.List;
 
 /**
  * Created by hesk on 4/8/15.
  */
-public abstract class simpleAdmobAdapter<T, B extends UltimateRecyclerviewViewHolder, GoogleAdView extends ViewGroup> extends AdmobAdapter<GoogleAdView, T, B> {
+public abstract class simpleAdmobAdapter<T, B extends SmartRecyclerviewViewHolder, GoogleAdView extends ViewGroup> extends AdmobAdapter<GoogleAdView, T, B> {
     public simpleAdmobAdapter(GoogleAdView adview, boolean insertOnce, int setInterval, List<T> L) {
         super(adview, insertOnce, setInterval, L);
     }
@@ -22,12 +22,12 @@ public abstract class simpleAdmobAdapter<T, B extends UltimateRecyclerviewViewHo
     }
 
     @Override
-    public UltimateRecyclerviewViewHolder getViewHolder(View view) {
-        return new UltimateRecyclerviewViewHolder(view);
+    public SmartRecyclerviewViewHolder getViewHolder(View view) {
+        return new SmartRecyclerviewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(UltimateRecyclerviewViewHolder holder, int position) {
+    public void onBindViewHolder(SmartRecyclerviewViewHolder holder, int position) {
         if (onActionToBindData(position, list)) {
             this.withBindHolder((B) holder, this.list.get(position), position);
         }
