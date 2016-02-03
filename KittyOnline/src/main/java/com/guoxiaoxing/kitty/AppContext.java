@@ -5,6 +5,9 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.User;
@@ -19,6 +22,7 @@ import com.guoxiaoxing.kitty.util.log.Logger;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
 
+import io.fabric.sdk.android.Fabric;
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.http.HttpConfig;
 import org.kymjs.kjframe.utils.KJLoger;
@@ -50,6 +54,7 @@ public class AppContext extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         instance = this;
         init();
         initLogin();
@@ -83,6 +88,9 @@ public class AppContext extends BaseApplication {
 //                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
 //                .methodOffset(2);               // default 0
 //                .logTool(new AndroidLogTool()); // custom log tool, optional
+
+        //图片处理库
+        Fresco.initialize(this);
 
     }
 

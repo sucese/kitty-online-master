@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -35,8 +34,9 @@ import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
 import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
+import com.guoxiaoxingv.smartrecyclerview.animator.animators.FadeInAnimator;
+import com.guoxiaoxingv.smartrecyclerview.stickyheader.StickyRecyclerHeadersDecoration;
 import com.guoxiaoxingv.smartrecyclerview.util.BasicGridLayoutManager;
-import com.guoxiaoxingv.smartrecyclerview.util.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -47,9 +47,14 @@ import butterknife.Bind;
 public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemClickListener,
         ViewPager.OnPageChangeListener, OnItemClickListener {
 
-    public static final String TAG = "MainShoppingFragment";
+    private static final String TAG = "MainShoppingFragment";
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+    private Context mContext;
+    private String mParam1;
+    private String mParam2;
 
-    @Bind(R.id.tb_home_fragment)
+    @Bind(R.id.tb_main_buy_fragment)
     Toolbar mToolbar;
     @Bind(R.id.tv_scan)
     TextView mTvScan;
@@ -57,22 +62,17 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     TextView mTvNotification;
     @Bind(R.id.et_search)
     EditText mEtSearch;
-    @Bind(R.id.url_home_content)
-
+    @Bind(R.id.srv_main_buy_fragment)
     SmartRecyclerView mSmartRecyclerView;
+
+
     ConvenientBanner mConvenientBanner;
     CountdownView mCountdownView;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private Context mContext;
-    private String mParam1;
-    private String mParam2;
-
     private OnFragmentInteractionListener mListener;
-    MainBuyAdapter simpleRecyclerViewAdapter = null;
-    LinearLayoutManager linearLayoutManager;
+    MainBuyAdapter mAdapter = null;
     GridLayoutManager mLayoutManager;
+
     int moreNum = 2;
     boolean isDrag = true;
 
@@ -291,14 +291,19 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private void initContentView() {
 
         mSmartRecyclerView.setHasFixedSize(false);
-        simpleRecyclerViewAdapter = new MainBuyAdapter(SampleDataboxset.newList());
-        mLayoutManager = new BasicGridLayoutManager(mContext, 2, simpleRecyclerViewAdapter);
+        mAdapter = new MainBuyAdapter(SampleDataboxset.newList());
+        mLayoutManager = new BasicGridLayoutManager(mContext, 2, mAdapter);
         mSmartRecyclerView.setLayoutManager(mLayoutManager);
-        mSmartRecyclerView.setAdapter(simpleRecyclerViewAdapter);
+        mSmartRecyclerView.setAdapter(mAdapter);
+
+
+        mSmartRecyclerView.setItemAnimator(new FadeInAnimator());
+        mSmartRecyclerView.getItemAnimator().setAddDuration(300);
+        mSmartRecyclerView.getItemAnimator().setRemoveDuration(300);
 
         //加载更多
         mSmartRecyclerView.enableLoadmore();
-        simpleRecyclerViewAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
+        mAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
                 .inflate(R.layout.custom_bottom_progressbar, null, false));
 
         //添加Header View
@@ -320,12 +325,12 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        simpleRecyclerViewAdapter.insert(moreNum++ + "  Refresh things", 0);
+                        mAdapter.insert(moreNum++ + "  Refresh things", 0);
                         mSmartRecyclerView.setRefreshing(false);
                         //   ultimateRecyclerView.scrollBy(0, -50);
-                        linearLayoutManager.scrollToPosition(0);
-//                        ultimateRecyclerView.setAdapter(simpleRecyclerViewAdapter);
-//                        simpleRecyclerViewAdapter.notifyDataSetChanged();
+                        mLayoutManager.scrollToPosition(0);
+//                        ultimateRecyclerView.setAdapter(mAdapter);
+//                        mAdapter.notifyDataSetChanged();
                     }
                 }, 1000);
             }
@@ -337,9 +342,9 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
-                        SampleDataboxset.insertMore(simpleRecyclerViewAdapter, 10);
-                        //  linearLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
-                        //  linearLayoutManager.scrollToPosition(maxLastVisiblePosition);
+                        SampleDataboxset.insertMore(mAdapter, 10);
+                        //  mLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
+                        //  mLayoutManager.scrollToPosition(maxLastVisiblePosition);
                     }
                 }, 2500);
             }
@@ -370,26 +375,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
                 }
             }
         });
-
-//        mSmartRecyclerView.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mSmartRecyclerView.mRecyclerView,
-//                new SwipeableRecyclerViewTouchListener.SwipeListener() {
-//                    @Override
-//                    public boolean canSwipe(int position) {
-//                        if (position > 0)
-//                            return true;
-//                        else return false;
-//                    }
-//
-//                    @Override
-//                    public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
-//                    }
-//                }));
-
 
         ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mSmartRecyclerView.mRecyclerView,
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.guoxiaoxing.kitty.widget.banner.ConvenientBanner
+        android:id="@+id/cb_shopping_ad"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/banner_large_height"
+        android:layout_gravity="top"
+        app:canLoop="true" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+</LinearLayout>

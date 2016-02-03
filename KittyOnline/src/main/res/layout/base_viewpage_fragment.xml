@@ -24,13 +24,13 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
-        style="@style/fill_fill"
+        style="@style/match_match"
         android:layout_below="@id/view_pager_line">
     </android.support.v4.view.ViewPager>
 
     <com.guoxiaoxing.kitty.ui.empty.EmptyLayout
         android:id="@+id/error_layout"
-        style="@style/fill_fill"
+        style="@style/match_match"
         android:visibility="gone" />
 
 </RelativeLayout>

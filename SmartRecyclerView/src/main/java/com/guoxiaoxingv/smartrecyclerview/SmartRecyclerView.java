@@ -1,19 +1,3 @@
-/*
- * Copyright(c) 2015 Marshal Chen
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.guoxiaoxingv.smartrecyclerview;
 
 import android.content.Context;
@@ -41,7 +25,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.guoxiaoxingv.smartrecyclerview.ui.DividerItemDecoration;
+import com.guoxiaoxingv.smartrecyclerview.divider.DividerItemDecoration;
 import com.guoxiaoxingv.smartrecyclerview.ui.VerticalSwipeRefreshLayout;
 import com.guoxiaoxingv.smartrecyclerview.ui.floatingactionbutton.FloatingActionButton;
 import com.guoxiaoxingv.smartrecyclerview.ui.floatingactionbutton.FloatingActionsMenu;
@@ -51,16 +35,30 @@ import com.nineoldandroids.animation.ValueAnimator;
 import com.nineoldandroids.view.ViewHelper;
 
 /**
- * UltimateRecyclerView is a recyclerview which contains many features like  swipe to dismiss,animations,drag drop etc.
+ * @author guoxiaoxing
  */
 public class SmartRecyclerView extends FrameLayout implements Scrollable {
+
+
+    // scrollbars类型
+    private static final int SCROLLBARS_NONE = 0;
+    private static final int SCROLLBARS_VERTICAL = 1;
+    private static final int SCROLLBARS_HORIZONTAL = 2;
+    private int mScrollbarsStyle;
+
+    private int mVisibleItemCount = 0;
+    private int mTotalItemCount = 0;
+    private int previousTotal = 0;
+    private int mFirstVisibleItem;
+
     public RecyclerView mRecyclerView;
 
-    protected FloatingActionButton defaultFloatingActionButton;
-    private OnLoadMoreListener onLoadMoreListener;
-    private int lastVisibleItemPosition;
-    protected RecyclerView.OnScrollListener mOnScrollListener;
     protected LAYOUT_MANAGER_TYPE layoutManagerType;
+
+    private int lastVisibleItemPosition;
+    private OnLoadMoreListener onLoadMoreListener;
+    private RecyclerView.OnScrollListener mOnScrollListener;
+
     private boolean isLoadingMore = false;
     protected int mPadding;
     protected int mPaddingTop;
@@ -69,7 +67,6 @@ public class SmartRecyclerView extends FrameLayout implements Scrollable {
     protected int mPaddingRight;
     protected boolean mClipToPadding;
     private SmartViewAdapter mAdapter;
-
 
     // Fields that should be saved onSaveInstanceState
     private int mPrevFirstVisiblePosition;
@@ -82,7 +79,6 @@ public class SmartRecyclerView extends FrameLayout implements Scrollable {
     // Fields that don't need to be saved onSaveInstanceState
     private ObservableScrollState mObservableScrollState;
     private ObservableScrollViewCallbacks mCallbacks;
-    //private ScrollState mScrollState;
     private boolean mFirstScroll;
     private boolean mDragging;
     private boolean mIntercepted;
@@ -90,30 +86,22 @@ public class SmartRecyclerView extends FrameLayout implements Scrollable {
     private MotionEvent mPrevMoveEvent;
     private ViewGroup mTouchInterceptionViewGroup;
 
-
+    //数据为空或者错误时显示的默认布局
     protected ViewStub mEmpty;
     protected View mEmptyView;
     protected int mEmptyId;
 
+    //FloatingButton布局
     protected ViewStub mFloatingButtonViewStub;
+    protected FloatingActionButton defaultFloatingActionButton;
     protected View mFloatingButtonView;
     protected int mFloatingButtonId;
     protected int[] defaultSwipeToDismissColors = null;
     public int showLoadMoreItemNum = 3;
 
+    //下拉刷新
     public VerticalSwipeRefreshLayout mSwipeRefreshLayout;
 
-    // added by Sevan Joe to support scrollbars
-    private static final int SCROLLBARS_NONE = 0;
-    private static final int SCROLLBARS_VERTICAL = 1;
-    private static final int SCROLLBARS_HORIZONTAL = 2;
-    private int mScrollbarsStyle;
-
-
-    private int mVisibleItemCount = 0;
-    private int mTotalItemCount = 0;
-    private int previousTotal = 0;
-    private int mFirstVisibleItem;
 
     public SmartRecyclerView(Context context) {
         super(context);

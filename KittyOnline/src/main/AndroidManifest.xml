@@ -241,6 +241,9 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c28da46a7e611e9996879561fe1e92d9fd556a6e" />
     </application>
 
 </manifest>

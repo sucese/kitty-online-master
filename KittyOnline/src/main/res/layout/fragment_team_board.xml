@@ -52,7 +52,7 @@
             </RelativeLayout>
 
             <LinearLayout
-                style="@style/fill_wrap"
+                style="@style/match_wrap"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical" >
 

@@ -1499,7 +1499,7 @@ public class SwipeLayout extends FrameLayout {
         setCurrentDragEdge(dragEdge);
     }
 
-    protected void onViewRemoved(View child) {
+    public void onViewRemoved(View child) {
         for (Map.Entry<DragEdge, View> entry : new HashMap<DragEdge, View>(mDragEdges).entrySet()) {
             if (entry.getValue() == child) {
                 mDragEdges.remove(entry.getKey());

@@ -80,7 +80,7 @@ public class MainBuyAdapter extends SmartViewAdapter<MainBuyAdapter.ViewHolder> 
     @Override
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
 
-        TextView textView = (TextView) viewHolder.itemView.findViewById(R.id.stick_text);
+        TextView textView = (TextView) viewHolder.itemView.findViewById(R.id.tv_market_category);
         textView.setText(String.valueOf(getItem(position).charAt(0)));
 //        viewHolder.itemView.setBackgroundColor(Color.parseColor("#AA70DB93"));
         viewHolder.itemView.setBackgroundColor(Color.parseColor("#AAffffff"));

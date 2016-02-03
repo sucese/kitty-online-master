@@ -7,7 +7,7 @@
     tools:context=".ui.fragment.MainShoppingFragment">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_home_fragment"
+        android:id="@+id/tb_main_shopping_fragment"
         style="@style/toolbar_header">
 
         <LinearLayout
@@ -54,7 +54,7 @@
 
 
     <com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView
-        android:id="@+id/url_home_content"
+        android:id="@+id/srv_shopping"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:recyclerviewClipToPadding="true"

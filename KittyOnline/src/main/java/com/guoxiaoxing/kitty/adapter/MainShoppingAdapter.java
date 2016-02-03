@@ -24,13 +24,21 @@ import java.util.List;
  * @author guoxiaoxing
  */
 
-
 public class MainShoppingAdapter extends SmartViewAdapter<MainShoppingAdapter.SimpleAdapterViewHolder> {
 
     private List<String> stringList;
 
     public MainShoppingAdapter(List<String> stringList) {
         this.stringList = stringList;
+    }
+
+
+    @Override
+    public SimpleAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.home_item_content, parent, false);
+        SimpleAdapterViewHolder vh = new SimpleAdapterViewHolder(v, true);
+        return vh;
     }
 
 
@@ -66,6 +74,38 @@ public class MainShoppingAdapter extends SmartViewAdapter<MainShoppingAdapter.Si
     }
 
     @Override
+    public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup viewGroup) {
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.stick_header_item, viewGroup, false);
+        return new RecyclerView.ViewHolder(view) {
+        };
+    }
+
+    @Override
+    public void onBindHeaderViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+
+        TextView textView = (TextView) viewHolder.itemView.findViewById(R.id.tv_market_category);
+        textView.setText(String.valueOf(getItem(position).charAt(0)));
+//        viewHolder.itemView.setBackgroundColor(Color.parseColor("#AA70DB93"));
+        viewHolder.itemView.setBackgroundColor(Color.parseColor("#AAffffff"));
+        ImageView imageView = (ImageView) viewHolder.itemView.findViewById(R.id.stick_img);
+
+        SecureRandom imgGen = new SecureRandom();
+        switch (imgGen.nextInt(3)) {
+            case 0:
+                imageView.setImageResource(R.drawable.test_back1);
+                break;
+            case 1:
+                imageView.setImageResource(R.drawable.test_back2);
+                break;
+            case 2:
+                imageView.setImageResource(R.drawable.test_back);
+                break;
+        }
+
+    }
+
+    @Override
     public int getAdapterItemCount() {
         return stringList.size();
     }
@@ -73,14 +113,6 @@ public class MainShoppingAdapter extends SmartViewAdapter<MainShoppingAdapter.Si
     @Override
     public SimpleAdapterViewHolder getViewHolder(View view) {
         return new SimpleAdapterViewHolder(view, false);
-    }
-
-    @Override
-    public SimpleAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.home_item_content, parent, false);
-        SimpleAdapterViewHolder vh = new SimpleAdapterViewHolder(v, true);
-        return vh;
     }
 
 
@@ -125,37 +157,7 @@ public class MainShoppingAdapter extends SmartViewAdapter<MainShoppingAdapter.Si
         else return -1;
     }
 
-    @Override
-    public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup viewGroup) {
-        View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.stick_header_item, viewGroup, false);
-        return new RecyclerView.ViewHolder(view) {
-        };
-    }
 
-    @Override
-    public void onBindHeaderViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-
-        TextView textView = (TextView) viewHolder.itemView.findViewById(R.id.stick_text);
-        textView.setText(String.valueOf(getItem(position).charAt(0)));
-//        viewHolder.itemView.setBackgroundColor(Color.parseColor("#AA70DB93"));
-        viewHolder.itemView.setBackgroundColor(Color.parseColor("#AAffffff"));
-        ImageView imageView = (ImageView) viewHolder.itemView.findViewById(R.id.stick_img);
-
-        SecureRandom imgGen = new SecureRandom();
-        switch (imgGen.nextInt(3)) {
-            case 0:
-                imageView.setImageResource(R.drawable.test_back1);
-                break;
-            case 1:
-                imageView.setImageResource(R.drawable.test_back2);
-                break;
-            case 2:
-                imageView.setImageResource(R.drawable.test_back);
-                break;
-        }
-
-    }
 
     @Override
     public void onItemMove(int fromPosition, int toPosition) {

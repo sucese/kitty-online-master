@@ -9,13 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.guoxiaoxingv.smartrecyclerview.itemTouchHelper.ItemTouchHelperAdapter;
-import com.guoxiaoxingv.smartrecyclerview.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
+import com.guoxiaoxingv.smartrecyclerview.stickyheader.StickyRecyclerHeadersAdapter;
 
 import java.util.Collections;
 import java.util.List;
 
 /**
- * An abstract adapter which can be extended for Recyclerview
+ * @author guoxiaoxing
+ *
+ * 抽象类，可以继承此类实现RecyclerView的Adapter
  */
 public abstract class SmartViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder>, ItemTouchHelperAdapter {

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.guoxiaoxingv.smartrecyclerview.itemTouchHelper.ItemTouchHelperAdapter;
-import com.guoxiaoxingv.smartrecyclerview.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
+import com.guoxiaoxingv.smartrecyclerview.stickyheader.StickyRecyclerHeadersAdapter;
 
 import java.util.Collections;
 import java.util.List;
