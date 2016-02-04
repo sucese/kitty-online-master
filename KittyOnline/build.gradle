@@ -51,6 +51,10 @@ android {
         exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
     }
 
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
 }
 
 dependencies {

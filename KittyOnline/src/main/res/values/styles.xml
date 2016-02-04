@@ -85,8 +85,8 @@
 
     <!--方形图片小 -->
     <style name="image_rect_small">
-        <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:scaleType">centerCrop</item>
     </style>

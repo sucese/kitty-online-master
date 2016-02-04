@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/set_pop"
-    android:layout_gravity="bottom"
-    android:background="?attr/layout_item_bg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:orientation="vertical">
+
+    <android.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="vertical"
+        android:rowCount="2"
+        android:useDefaultMargins="true">
+
+
+        <TextView
+            android:layout_rowSpan="2"
+            android:text="04"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="星期日" />
+
+        <TextView android:text="2016-2" />
+
+    </android.widget.GridLayout>
+
 
     <LinearLayout
         android:id="@+id/ll_option_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/ly_quick_option_text"
-                style="@style/quick_option_item" >
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -33,7 +56,7 @@
 
             <LinearLayout
                 android:id="@+id/ly_quick_option_album"
-                style="@style/quick_option_item" >
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -46,7 +69,7 @@
 
             <LinearLayout
                 android:id="@+id/ly_quick_option_photo"
-                style="@style/quick_option_item" >
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -62,9 +85,9 @@
             android:id="@+id/ly_quick_option_voice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
-            <LinearLayout style="@style/quick_option_item" >
+            <LinearLayout style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -77,7 +100,7 @@
 
             <LinearLayout
                 android:id="@+id/ly_quick_option_scan"
-                style="@style/quick_option_item" >
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -90,7 +113,7 @@
 
             <LinearLayout
                 android:id="@+id/ly_quick_option_note"
-                style="@style/quick_option_item" >
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -107,11 +130,10 @@
         android:id="@+id/ll_foot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll_option_container"
         android:background="?attr/layout_bg_normal"
         android:gravity="center"
         android:padding="10dip"
-        android:visibility="visible" >
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/iv_close"
@@ -119,8 +141,8 @@
             android:layout_height="35dp"
             android:contentDescription="@null"
             android:focusable="false"
-            android:visibility="gone"
-            android:src="@drawable/btn_quickoption_route" />
+            android:src="@drawable/btn_quickoption_route"
+            android:visibility="gone" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

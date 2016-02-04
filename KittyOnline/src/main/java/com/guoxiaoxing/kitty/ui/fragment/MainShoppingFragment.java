@@ -3,15 +3,17 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +22,6 @@ import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.log.Logger;
@@ -29,15 +30,10 @@ import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
 import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 import com.guoxiaoxing.kitty.widget.banner.transforms.CubeOutTransformer;
-import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
-import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
-import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
-import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
-import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
-import com.guoxiaoxingv.smartrecyclerview.util.ScrollSmoothLineaerLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 
@@ -48,6 +44,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     private static final String TAG = "MainShoppingFragment";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
     private Context mContext;
     private String mParam1;
     private String mParam2;
@@ -60,15 +57,14 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     TextView mTvNotification;
     @Bind(R.id.et_search)
     EditText mEtSearch;
-    @Bind(R.id.srv_shopping)
-    SmartRecyclerView mSrvShopping;
-    @Bind(R.id.vp_shopping)
-    ViewPager mVpShopping;
-
-    ConvenientBanner mCbHomeAd;
-    ConvenientBanner mCbSaleAd;
-    CountdownView mCvSale;
-
+    @Bind(R.id.cb_shopping)
+    ConvenientBanner mConvenientBanner;
+    @Bind(R.id.ctl_layout)
+    CollapsingToolbarLayout mCtlLayout;
+    @Bind(R.id.tb_content)
+    TabLayout mTbContent;
+    @Bind(R.id.vp_title)
+    ViewPager mVpTitle;
 
     private OnFragmentInteractionListener mListener;
     MainShoppingAdapter mAdapter = null;
@@ -113,10 +109,6 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -129,18 +121,14 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     public void onResume() {
         super.onResume();
         Logger.t(TAG).d("onResume()");
-        mCbHomeAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-        mCbSaleAd.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-        long time2 = (long) 30 * 60 * 1000;
-        mCvSale.start(time2);
+        mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         Logger.t(TAG).d("onPause()");
-        mCbHomeAd.stopTurning();
-        mCbSaleAd.stopTurning();
+        mConvenientBanner.stopTurning();
     }
 
 
@@ -228,6 +216,15 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         super.initData();
     }
 
+    @Override
+    public void setToolbar() {
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+        }
+    }
+
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onHomeFragmentInteraction(uri);
@@ -258,14 +255,16 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         mTvScan.setOnClickListener(this);
         mTvNotification.setOnClickListener(this);
         mEtSearch.setOnClickListener(this);
+
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void initHeaderView() {
-
-        //设置HeaderView
-        headerView = LayoutInflater.from(mContext).inflate(R.layout.shopping_recyclerview_header, mSrvShopping.mRecyclerView, false);
-        mCbHomeAd = (ConvenientBanner) headerView.findViewById(R.id.cb_shopping_ad);
-        mCvSale = (CountdownView) headerView.findViewById(R.id.cv_sale);
 
 
         for (int position = 0; position < 7; position++) {
@@ -273,7 +272,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         }
 
         //本地图片例子
-        mCbHomeAd.setPages(
+        mConvenientBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
                     @Override
                     public LocalImageHolderView createHolder() {
@@ -284,147 +283,83 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
 //                .setOnPageChangeListener(this)//监听翻页事件
                 .setOnItemClickListener(this);
-
+        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
 //        mCbHomeAd.setManualPageable(false);//设置不能手动影响
-
-        mCbSaleAd = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
-        mCbSaleAd.getViewPager().setPageTransformer(true, new CubeOutTransformer());
-        //本地图片例子
-        mCbSaleAd.setPages(
-                new CBViewHolderCreator<LocalImageHolderView>() {
-                    @Override
-                    public LocalImageHolderView createHolder() {
-                        return new LocalImageHolderView();
-                    }
-                }, localImages)
-//                .setOnPageChangeListener(this)//监听翻页事件
-                .setOnItemClickListener(this);
-
-//        mCbHomeAd.setManualPageable(false);//设置不能手动影响
-
 
     }
 
     private void initContentView() {
 
-        mSrvShopping.setHasFixedSize(false);
-        mAdapter = new MainShoppingAdapter(SampleDataboxset.newList());
-        mLayoutManager = new ScrollSmoothLineaerLayoutManager(mContext, LinearLayoutManager.VERTICAL, false, 300);
-        mSrvShopping.setLayoutManager(mLayoutManager);
-        mSrvShopping.setAdapter(mAdapter);
-
-        //加载更多
-        mSrvShopping.enableLoadmore();
-        mAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
-                .inflate(R.layout.custom_bottom_progressbar, null, false));
-
-        //添加Header View
         initHeaderView();
-        mSrvShopping.setNormalHeader(headerView);
-        mSrvShopping.setOnParallaxScroll(new SmartRecyclerView.OnParallaxScroll() {
-            @Override
-            public void onParallaxScroll(float percentage, float offset, View parallax) {
-//                Drawable drawable = mToolbar.getBackground();
-//                drawable.setAlpha(Math.round(127 + percentage * 128));
-//                mToolbar.setBackground(drawable);
-            }
-        });
 
-        //下拉刷新数据
-
-        mSrvShopping.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.insert(moreNum++ + "  Refresh things", 0);
-                        mSrvShopping.setRefreshing(false);
-                        //   ultimateRecyclerView.scrollBy(0, -50);
-                        mLayoutManager.scrollToPosition(0);
-//                        ultimateRecyclerView.setAdapter(mAdapter);
-//                        mAdapter.notifyDataSetChanged();
-                    }
-                }, 1000);
-            }
-        });
-        //上拉加载更多
-        mSrvShopping.setOnLoadMoreListener(new SmartRecyclerView.OnLoadMoreListener() {
-            @Override
-            public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        SampleDataboxset.insertMoreBuy(mAdapter, 10);
-                        //  mLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
-                        //  mLayoutManager.scrollToPosition(maxLastVisiblePosition);
-                    }
-                }, 2500);
-            }
-        });
-
-        //滑动监听，可以根据不同的状态来显示和隐藏Toolbar和Floating button
-        mSrvShopping.setScrollViewCallbacks(new ObservableScrollViewCallbacks() {
-            @Override
-            public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-
-                Logger.t(TAG).d("onDownMotionEvent" + dragging);
-            }
-
-            @Override
-            public void onDownMotionEvent() {
-                Logger.t(TAG).d("onDownMotionEvent");
-            }
-
-            @Override
-            public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
-                Logger.t(TAG).d("onUpOrCancelMotionEvent");
-                if (observableScrollState == ObservableScrollState.UP) {
-                    mSrvShopping.hideToolbar(mToolbar, mSrvShopping, getScreenHeight());
-                    mSrvShopping.hideFloatingActionMenu();
-                } else if (observableScrollState == ObservableScrollState.DOWN) {
-                    mSrvShopping.showToolbar(mToolbar, mSrvShopping, getScreenHeight());
-                    mSrvShopping.showFloatingActionMenu();
-                }
-            }
-        });
-
-//        mSmartRecyclerView.addOnItemTouchListener(new SwipeableRecyclerViewTouchListener(mSmartRecyclerView.mRecyclerView,
-//                new SwipeableRecyclerViewTouchListener.SwipeListener() {
-//                    @Override
-//                    public boolean canSwipe(int position) {
-//                        if (position > 0)
-//                            return true;
-//                        else return false;
-//                    }
-//
-//                    @Override
-//                    public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
-//                    }
-//                }));
+        //Toolbar
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mSrvShopping.mRecyclerView,
-                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
-                    @Override
-                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
-                    }
+//使用CollapsingToolbarLayout后，title需要设置到CollapsingToolbarLayout上
+//        mCtlLayout.setTitle("失控");
 
-                    @Override
-                    public void onItemLongClick(RecyclerView parent, View clickedView, int position) {
-                        if (isDrag) {
+//设置ViewPager
+        setupViewPager(mVpTitle);
 
-                        }
+//给TabLayout增加Tab, 并关联ViewPager
+        mTbContent.addTab(mTbContent.newTab().setText("关注"));
+        mTbContent.addTab(mTbContent.newTab().setText("热门"));
+        mTbContent.addTab(mTbContent.newTab().setText("我配"));
+        mTbContent.addTab(mTbContent.newTab().setText("私搭"));
+        mTbContent.addTab(mTbContent.newTab().setText("晒货"));
+        mTbContent.addTab(mTbContent.newTab().setText("星榜"));
+        mTbContent.addTab(mTbContent.newTab().setText("妆呗"));
+        mTbContent.addTab(mTbContent.newTab().setText("男票"));
+        mTbContent.addTab(mTbContent.newTab().setText("好吃"));
+        mTbContent.addTab(mTbContent.newTab().setText("脸赞"));
+        mTbContent.setupWithViewPager(mVpTitle);
+    }
 
-                    }
-                });
-        mSrvShopping.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
+    private void setupViewPager(ViewPager mViewPager) {
+        MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
+        adapter.addFragment(DetailFragment.newInstance(""), "关注");
+        adapter.addFragment(DetailFragment.newInstance(""), "热门");
+        adapter.addFragment(DetailFragment.newInstance(""), "我配");
+        adapter.addFragment(DetailFragment.newInstance(""), "私搭");
+        adapter.addFragment(DetailFragment.newInstance(""), "晒货");
+        adapter.addFragment(DetailFragment.newInstance(""), "星榜");
+        adapter.addFragment(DetailFragment.newInstance(""), "妆呗");
+        adapter.addFragment(DetailFragment.newInstance(""), "男票");
+        adapter.addFragment(DetailFragment.newInstance(""), "好吃");
+        adapter.addFragment(DetailFragment.newInstance(""), "脸赞");
+        mViewPager.setAdapter(adapter);
+    }
 
+    static class MyPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragments = new ArrayList<>();
+        private final List<String> mFragmentTitles = new ArrayList<>();
+
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragments.add(fragment);
+            mFragmentTitles.add(title);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragments.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitles.get(position);
+        }
     }
 
 }

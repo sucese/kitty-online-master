@@ -50,6 +50,7 @@ public class BaseFragment extends Fragment implements
         this.mInflater = inflater;
         View view = inflater.inflate(getLayoutId(), container, false);
         ButterKnife.bind(this, view);
+        setToolbar();
         initView(view);
         initData();
         return view;
@@ -133,6 +134,9 @@ public class BaseFragment extends Fragment implements
         return (AppContext) getActivity().getApplication();
     }
 
+    public void setToolbar(){
+
+    }
 
     protected int getLayoutId() {
         return 0;

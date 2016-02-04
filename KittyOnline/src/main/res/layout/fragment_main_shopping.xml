@@ -1,65 +1,106 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--组织它的子views之间协作的一个Layout，它可以给子View切换提供动画效果。-->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.fragment.MainShoppingFragment">
+    android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_main_shopping_fragment"
-        style="@style/toolbar_header">
+    <!--可以让包含在其中的控件响应被标记了ScrollingViewBehavior的View的滚动事件-->
 
-        <LinearLayout
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--可以控制包含在CollapsingToolbarLayout其中的控件，在响应collapse时是移除屏幕和固定在最上面-->
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctl_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:background="@color/window_background"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <TextView
-                android:id="@+id/tv_scan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:drawableTop="@drawable/bmp_rich_scan"
-                android:text="@string/rich_scan"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_12" />
+            <include layout="@layout/shopping_header" />
 
-            <EditText
-                android:id="@+id/et_search"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:singleLine="true"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_14" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_main_shopping_fragment"
+                style="@style/toolbar_header"
+                app:layout_collapseMode="pin"
+                android:layout_marginTop="10dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_scan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:drawableTop="@drawable/bmp_rich_scan"
+                        android:text="@string/rich_scan"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
 
 
-            <TextView
-                android:id="@+id/tv_notification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center"
-                android:layout_marginEnd="12dp"
-                android:drawableTop="@drawable/bmp_notification_normal"
-                android:text="@string/text_search"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_12" />
-        </LinearLayout>
-    </android.support.v7.widget.Toolbar>
+                    <TextView
+                        android:id="@+id/tv_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="12dp"
+                        android:drawableTop="@drawable/bmp_notification_normal"
+                        android:text="@string/text_search"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12" />
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
 
 
-    <com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView
-        android:id="@+id/srv_shopping"
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:recyclerviewClipToPadding="true"
-        app:recyclerviewDefaultSwipeColor="@array/google_colors"
-        app:recyclerviewEmptyView="@layout/empty_layout"
-        app:recyclerviewScrollbars="vertical" />
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</LinearLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tb_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/primary"
+            app:tabTextColor="@color/gray" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -67,10 +67,9 @@ public class MainActivity extends AppCompatActivity implements
         NavigationDrawerFragment.NavigationDrawerCallbacks,
         OnTabChangeListener, BaseViewInterface, View.OnClickListener,
         OnTouchListener, MainShoppingFragment.OnFragmentInteractionListener
-        , MainBuyFragment.OnFragmentInteractionListener{
+        , MainBuyFragment.OnFragmentInteractionListener {
 
     public static Notice mNotice;
-
 
     @Bind(android.R.id.tabhost)
     MyFragmentTabHost mTabHost;
@@ -79,8 +78,6 @@ public class MainActivity extends AppCompatActivity implements
 
     private BadgeView mBvNotice;
     private DoubleClickExitHelper mDoubleClickExit;
-    /*左侧抽屉Fragment*/
-    private NavigationDrawerFragment mNavigationDrawerFragment;
     /*存储上一个屏幕的标题，被用在{@link #restoreActionBar()}.*/
     private CharSequence mTitle;
 
@@ -180,13 +177,8 @@ public class MainActivity extends AppCompatActivity implements
     public void initView() {
 
         mDoubleClickExit = new DoubleClickExitHelper(this);
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
 
-        //设置drawer
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+        mTitle = getTitle();
 
         mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
         if (android.os.Build.VERSION.SDK_INT > 10) {
@@ -296,30 +288,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.search:
-                UIHelper.showSimpleBack(this, SimpleBackPage.SEARCH);
-                break;
-
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onTabChanged(String tabId) {
         final int size = mTabHost.getTabWidget().getTabCount();
         for (int i = 0; i < size; i++) {
@@ -402,8 +370,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        // TODO Auto-generated method stub
-        // 当 API Level > 11 调用这个方法可能导致奔溃（android.os.Build.VERSION.SDK_INT > 11）
+
     }
 
 
