@@ -16,9 +16,9 @@ import com.guoxiaoxing.kitty.ui.fragment.SettingsFragment;
 import com.guoxiaoxing.kitty.ui.fragment.SettingsNotificationFragment;
 import com.guoxiaoxing.kitty.ui.fragment.SoftWareTweetsFrament;
 import com.guoxiaoxing.kitty.ui.fragment.TweetLikeUsersFragment;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.ui.fragment.TweetRecordFragment;
-import com.guoxiaoxing.kitty.ui.fragment.TweetsFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalksFragment;
 import com.guoxiaoxing.kitty.ui.fragment.UserBlogFragment;
 import com.guoxiaoxing.kitty.ui.fragment.UserCenterFragment;
 import com.guoxiaoxing.kitty.team.fragment.NoteBookFragment;
@@ -49,7 +49,7 @@ public enum SimpleBackPage {
 
     QUEST(2, R.string.actionbar_title_questions, QuestViewPagerFragment.class),
 
-    TWEET_PUB(3, R.string.actionbar_title_tweetpub, TweetPubFragment.class),
+    TALK_PUB(3, R.string.actionbar_title_tweetpub, TalkPubFragment.class),
 
     SOFTWARE_TWEETS(4, R.string.actionbar_title_softtweet,
             SoftWareTweetsFrament.class),
@@ -139,7 +139,7 @@ public enum SimpleBackPage {
 
     TWEET_LIKE_USER_LIST(41, 0, TweetLikeUsersFragment.class),
 
-    TWEET_TOPIC_LIST(42, 0, TweetsFragment.class);
+    TWEET_TOPIC_LIST(42, 0, TalksFragment.class);
 
     private int title;
     private Class<?> clz;

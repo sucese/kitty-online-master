@@ -11,7 +11,7 @@ import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.util.XmlUtils;
 import android.app.IntentService;
 import android.app.Notification;
@@ -105,8 +105,8 @@ public class ServerTaskService extends IntentService {
 	@Override
 	public void onSuccess(int code, ByteArrayInputStream is, Object[] args)
 		throws Exception {
-	    Tweet tweet = (Tweet) args[0];
-	    final int id = tweet.getId();
+	    UserTalk userTalk = (UserTalk) args[0];
+	    final int id = userTalk.getId();
 	    Result res = XmlUtils.toBean(ResultBean.class, is).getResult();
 	    if (res.OK()) {
 		notifySimpleNotifycation(id,
@@ -120,8 +120,8 @@ public class ServerTaskService extends IntentService {
 		    }
 		}, 3000);
 		removePenddingTask(key + id);
-		if (tweet.getImageFilePath() != null) {
-		    File imgFile = new File(tweet.getImageFilePath());
+		if (userTalk.getImageFilePath() != null) {
+		    File imgFile = new File(userTalk.getImageFilePath());
 		    if (imgFile.exists()) {
 			imgFile.delete();
 		    }
@@ -133,8 +133,8 @@ public class ServerTaskService extends IntentService {
 
 	@Override
 	public void onFailure(int code, String errorMessage, Object[] args) {
-	    Tweet tweet = (Tweet) args[0];
-	    int id = tweet.getId();
+	    UserTalk userTalk = (UserTalk) args[0];
+	    int id = userTalk.getId();
 	    notifySimpleNotifycation(id,
 		    getString(R.string.tweet_publish_faile),
 		    getString(R.string.tweet_public),
@@ -200,16 +200,16 @@ public class ServerTaskService extends IntentService {
 	    // publicPost(post);
 	    // }
 	} else if (ACTION_PUB_TWEET.equals(action)) {
-	    Tweet tweet = intent.getParcelableExtra(BUNDLE_PUB_TWEET_TASK);
-	    if (tweet != null) {
-		pubTweet(tweet);
+	    UserTalk userTalk = intent.getParcelableExtra(BUNDLE_PUB_TWEET_TASK);
+	    if (userTalk != null) {
+		pubTweet(userTalk);
 	    }
 	} else if (ACTION_PUB_SOFTWARE_TWEET.equals(action)) {
-	    Tweet tweet = intent
+	    UserTalk userTalk = intent
 		    .getParcelableExtra(BUNDLE_PUB_SOFTWARE_TWEET_TASK);
 	    int softid = intent.getIntExtra(KEY_SOFTID, -1);
-	    if (tweet != null && softid != -1) {
-		pubSoftWareTweet(tweet, softid);
+	    if (userTalk != null && softid != -1) {
+		pubSoftWareTweet(userTalk, softid);
 	    }
 	}
     }
@@ -252,26 +252,26 @@ public class ServerTaskService extends IntentService {
     // post));
     // }
     //
-    private void pubTweet(final Tweet tweet) {
-	tweet.setId((int) System.currentTimeMillis());
-	int id = tweet.getId();
+    private void pubTweet(final UserTalk userTalk) {
+	userTalk.setId((int) System.currentTimeMillis());
+	int id = userTalk.getId();
 	addPenddingTask(KEY_TWEET + id);
 	notifySimpleNotifycation(id, getString(R.string.tweet_publishing),
 		getString(R.string.tweet_public),
 		getString(R.string.tweet_publishing), true, false);
-	OSChinaApi.pubTweet(tweet, new PublicTweetResponseHandler(
-		getMainLooper(), tweet, KEY_TWEET));
+	OSChinaApi.pubTweet(userTalk, new PublicTweetResponseHandler(
+		getMainLooper(), userTalk, KEY_TWEET));
     }
 
-    private void pubSoftWareTweet(final Tweet tweet, int softid) {
-	tweet.setId((int) System.currentTimeMillis());
-	int id = tweet.getId();
+    private void pubSoftWareTweet(final UserTalk userTalk, int softid) {
+	userTalk.setId((int) System.currentTimeMillis());
+	int id = userTalk.getId();
 	addPenddingTask(KEY_SOFTWARE_TWEET + id);
 	notifySimpleNotifycation(id, getString(R.string.tweet_publishing),
 		getString(R.string.tweet_public),
 		getString(R.string.tweet_publishing), true, false);
-	OSChinaApi.pubSoftWareTweet(tweet, softid,
-		new PublicTweetResponseHandler(getMainLooper(), tweet,
+	OSChinaApi.pubSoftWareTweet(userTalk, softid,
+		new PublicTweetResponseHandler(getMainLooper(), userTalk,
 			KEY_SOFTWARE_TWEET));
     }
 

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import com.guoxiaoxing.kitty.AppContext;
@@ -31,7 +32,6 @@ import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.CommentList;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.bean.TweetDetail;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
@@ -76,7 +76,7 @@ public class TweetDetailFragment extends
     private TextView mTvName, mTvFrom, mTvTime, mTvCommentCount;
     private WebView mContent;
     private int mTweetId;
-    private Tweet mTweet;
+    private UserTalk mUserTalk;
     private RelativeLayout mRlRecordSound;
     private final RecordButtonUtil util = new RecordButtonUtil();
 
@@ -136,8 +136,8 @@ public class TweetDetailFragment extends
         mRlRecordSound.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mTweet != null) {
-                    util.startPlay(mTweet.getAttach(), playerTime);
+                if (mUserTalk != null) {
+                    util.startPlay(mUserTalk.getAttach(), playerTime);
                 } else {
                     AppContext.showToast("找不到语音动弹,可能已经被主人删除了");
                 }
@@ -181,14 +181,14 @@ public class TweetDetailFragment extends
     }
 
     private void fillUI() {
-        mIvAvatar.setAvatarUrl(mTweet.getPortrait());
-        mIvAvatar.setUserInfo(mTweet.getAuthorid(), mTweet.getAuthor());
-        mTvName.setText(mTweet.getAuthor());
-        mTvTime.setText(StringUtils.friendly_time(mTweet.getPubDate()));
-        PlatfromUtil.setPlatFromString(mTvFrom, mTweet.getAppclient());
+        mIvAvatar.setAvatarUrl(mUserTalk.getPortrait());
+        mIvAvatar.setUserInfo(mUserTalk.getAuthorid(), mUserTalk.getAuthor());
+        mTvName.setText(mUserTalk.getAuthor());
+        mTvTime.setText(StringUtils.friendly_time(mUserTalk.getPubDate()));
+        PlatfromUtil.setPlatFromString(mTvFrom, mUserTalk.getAppclient());
 
-        mTvCommentCount.setText(mTweet.getCommentCount() + "");
-        if (StringUtils.isEmpty(mTweet.getAttach())) {
+        mTvCommentCount.setText(mUserTalk.getCommentCount() + "");
+        if (StringUtils.isEmpty(mUserTalk.getAttach())) {
             mRlRecordSound.setVisibility(View.GONE);
         } else {
             mRlRecordSound.setVisibility(View.VISIBLE);
@@ -199,8 +199,8 @@ public class TweetDetailFragment extends
     }
 
     private void setLikeState() {
-        if (mTweet != null) {
-            if (mTweet.getIsLike() == 1) {
+        if (mUserTalk != null) {
+            if (mUserTalk.getIsLike() == 1) {
                 mTvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color.day_colorPrimary));
             } else {
                 mTvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color.gray));
@@ -209,12 +209,12 @@ public class TweetDetailFragment extends
     }
 
     private void setLikeUser() {
-        if (mTweet == null || mTweet.getLikeUser() == null
-                || mTweet.getLikeUser().isEmpty()) {
+        if (mUserTalk == null || mUserTalk.getLikeUser() == null
+                || mUserTalk.getLikeUser().isEmpty()) {
             mLikeUser.setVisibility(View.GONE);
         } else {
             mLikeUser.setVisibility(View.VISIBLE);
-            mTweet.setLikeUsers(getActivity(), mLikeUser, false);
+            mUserTalk.setLikeUsers(getActivity(), mLikeUser, false);
         }
     }
 
@@ -226,11 +226,11 @@ public class TweetDetailFragment extends
         body.append(ThemeSwitchUtils.getWebViewBodyString());
         body.append(UIHelper.WEB_STYLE + UIHelper.WEB_LOAD_IMAGES);
 
-        StringBuilder tweetbody = new StringBuilder(mTweet.getBody());
+        StringBuilder tweetbody = new StringBuilder(mUserTalk.getBody());
 
-        String tweetBody = TextUtils.isEmpty(mTweet.getImgSmall()) ? tweetbody
+        String tweetBody = TextUtils.isEmpty(mUserTalk.getImgSmall()) ? tweetbody
                 .toString() : tweetbody.toString() + "<br/><img src=\""
-                + mTweet.getImgSmall() + "\">";
+                + mUserTalk.getImgSmall() + "\">";
         body.append(setHtmlCotentSupportImagePreview(tweetBody));
 
         UIHelper.addWebImageShow(getActivity(), mContent);
@@ -252,7 +252,7 @@ public class TweetDetailFragment extends
         body = body.replaceAll("(<img[^>]*?)\\s+height\\s*=\\s*\\S+", "$1");
         return body.replaceAll("(<img[^>]+src=\")(\\S+)\"",
                 "$1$2\" onClick=\"javascript:mWebViewImageListener.showImagePreview('"
-                        + mTweet.getImgBig() + "')\"");
+                        + mUserTalk.getImgBig() + "')\"");
     }
 
     @Override
@@ -346,9 +346,9 @@ public class TweetDetailFragment extends
 
     private void setTweetCommentCount() {
         mAdapter.notifyDataSetChanged();
-        if (mTweet != null) {
-            mTweet.setCommentCount(mAdapter.getDataSize() + "");
-            mTvCommentCount.setText(mTweet.getCommentCount() + "");
+        if (mUserTalk != null) {
+            mUserTalk.setCommentCount(mAdapter.getDataSize() + "");
+            mTvCommentCount.setText(mUserTalk.getCommentCount() + "");
         }
     }
 
@@ -403,7 +403,7 @@ public class TweetDetailFragment extends
     protected View initHeaderView() {
         Intent args = getActivity().getIntent();
         mTweetId = args.getIntExtra("tweet_id", 0);
-        mTweet = (Tweet) args.getParcelableExtra("tweet");
+        mUserTalk = (UserTalk) args.getParcelableExtra("tweet");
 
         mListView.setOnItemLongClickListener(this);
         View header = LayoutInflater.from(getActivity()).inflate(
@@ -432,7 +432,7 @@ public class TweetDetailFragment extends
     }
 
     private void likeOption() {
-        if (mTweet == null)
+        if (mUserTalk == null)
             return;
         AsyncHttpResponseHandler handler = new AsyncHttpResponseHandler() {
 
@@ -444,24 +444,24 @@ public class TweetDetailFragment extends
                     Throwable arg3) {}
         };
         if (AppContext.getInstance().isLogin()) {
-            if (mTweet.getIsLike() == 1) {
-                mTweet.setIsLike(0);
-                mTweet.getLikeUser().remove(0);
-                mTweet.setLikeCount(mTweet.getLikeCount() - 1);
-                OSChinaApi.pubUnLikeTweet(mTweetId, mTweet.getAuthorid(),
+            if (mUserTalk.getIsLike() == 1) {
+                mUserTalk.setIsLike(0);
+                mUserTalk.getLikeUser().remove(0);
+                mUserTalk.setLikeCount(mUserTalk.getLikeCount() - 1);
+                OSChinaApi.pubUnLikeTweet(mTweetId, mUserTalk.getAuthorid(),
                         handler);
             } else {
                 mTvLikeState.setAnimation(KJAnimations.getScaleAnimation(1.5f,
                         300));
-                mTweet.setIsLike(1);
-                mTweet.getLikeUser().add(0,
+                mUserTalk.setIsLike(1);
+                mUserTalk.getLikeUser().add(0,
                         AppContext.getInstance().getLoginUser());
-                mTweet.setLikeCount(mTweet.getLikeCount() + 1);
+                mUserTalk.setLikeCount(mUserTalk.getLikeCount() + 1);
                 OSChinaApi
-                        .pubLikeTweet(mTweetId, mTweet.getAuthorid(), handler);
+                        .pubLikeTweet(mTweetId, mUserTalk.getAuthorid(), handler);
             }
             setLikeState();
-            mTweet.setLikeUsers(getActivity(), mLikeUser, false);
+            mUserTalk.setLikeUsers(getActivity(), mLikeUser, false);
         } else {
             AppContext.showToast("先登陆再点赞~");
             UIHelper.showLoginActivity(getActivity());
@@ -476,7 +476,7 @@ public class TweetDetailFragment extends
     @Override
     protected void executeOnLoadDetailSuccess(TweetDetail detailBean) {
         mErrorLayout.setErrorType(EmptyLayout.HIDE_LAYOUT);
-        this.mTweet = detailBean.getTweet();
+        this.mUserTalk = detailBean.getUserTalk();
         fillUI();
         mAdapter.setNoDataText(R.string.comment_empty);
     }
@@ -489,7 +489,7 @@ public class TweetDetailFragment extends
     @Override
     protected void executeOnLoadDataSuccess(List<Comment> data) {
         super.executeOnLoadDataSuccess(data);
-        int commentCount = StringUtils.toInt(mTweet == null ? 0 : this.mTweet
+        int commentCount = StringUtils.toInt(mUserTalk == null ? 0 : this.mUserTalk
                 .getCommentCount());
         if (commentCount < (mAdapter.getCount() - 1)) {
             commentCount = mAdapter.getCount() - 1;

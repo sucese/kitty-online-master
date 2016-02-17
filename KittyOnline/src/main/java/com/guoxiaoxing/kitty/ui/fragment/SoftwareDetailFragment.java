@@ -6,11 +6,11 @@ import android.text.TextUtils;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
 import com.guoxiaoxing.kitty.bean.FavoriteList;
 import com.guoxiaoxing.kitty.bean.Software;
 import com.guoxiaoxing.kitty.bean.SoftwareDetail;
-import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
@@ -145,11 +145,11 @@ public class SoftwareDetailFragment extends CommonDetailFragment<Software> {
             AppContext.showToastShort(R.string.tip_comment_content_empty);
             return;
         }
-        Tweet tweet = new Tweet();
-        tweet.setAuthorid(AppContext.getInstance().getLoginUid());
-        tweet.setBody(str.toString());
+        UserTalk userTalk = new UserTalk();
+        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTalk.setBody(str.toString());
         showWaitDialog(R.string.progress_submit);
-        OSChinaApi.pubSoftWareTweet(tweet, mDetail.getId(), mCommentHandler);
+        OSChinaApi.pubSoftWareTweet(userTalk, mDetail.getId(), mCommentHandler);
     }
 
     @Override

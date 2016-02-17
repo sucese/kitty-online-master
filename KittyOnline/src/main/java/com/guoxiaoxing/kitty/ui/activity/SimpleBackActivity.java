@@ -18,25 +18,25 @@ import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.fragment.MessageDetailFragment;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
-import com.guoxiaoxing.kitty.ui.fragment.TweetsFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalksFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
 import java.lang.ref.WeakReference;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
- * 跳转Activity
+ * 跳转Activity,对跳转界面的封装。
  */
 
 public class SimpleBackActivity extends BaseActivity implements
         OnSendClickListener {
 
+    public static final String TAG = "FLAG_TAG";
     public final static String BUNDLE_KEY_PAGE = "BUNDLE_KEY_PAGE";
     public final static String BUNDLE_KEY_ARGS = "BUNDLE_KEY_ARGS";
-    private static final String TAG = "FLAG_TAG";
+
     protected WeakReference<Fragment> mFragment;
     protected int mPageValue = -1;
     @Bind(R.id.tb_simple_back_activity)
@@ -44,10 +44,9 @@ public class SimpleBackActivity extends BaseActivity implements
     @Bind(R.id.tv_tb_title)
     TextView mTvTbTitle;
 
-
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_simple_fragment;
+        return R.layout.activity_simple_back;
     }
 
     @Override
@@ -76,6 +75,7 @@ public class SimpleBackActivity extends BaseActivity implements
                     + pageValue);
         }
 
+        //设置AppBar标题
         mTvTbTitle.setText(page.getTitle());
 
         try {
@@ -86,10 +86,11 @@ public class SimpleBackActivity extends BaseActivity implements
                 fragment.setArguments(args);
             }
 
-            FragmentTransaction trans = getSupportFragmentManager()
+            FragmentTransaction transaction = getSupportFragmentManager()
                     .beginTransaction();
-            trans.replace(R.id.container, fragment, TAG);
-            trans.commitAllowingStateLoss();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.replace(R.id.container, fragment, TAG);
+            transaction.commitAllowingStateLoss();
 
             mFragment = new WeakReference<Fragment>(fragment);
         } catch (Exception e) {
@@ -102,7 +103,7 @@ public class SimpleBackActivity extends BaseActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-        if (mFragment.get() instanceof TweetsFragment) {
+        if (mFragment.get() instanceof TalksFragment) {
             setActionBarTitle("话题");
         }
     }
@@ -111,7 +112,7 @@ public class SimpleBackActivity extends BaseActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.public_menu_send:
-                if (mFragment.get() instanceof TweetsFragment) {
+                if (mFragment.get() instanceof TalksFragment) {
                     sendTopic();
                 } else {
                     return super.onOptionsItemSelected(item);
@@ -132,7 +133,7 @@ public class SimpleBackActivity extends BaseActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (mFragment.get() instanceof TweetsFragment) {
+        if (mFragment.get() instanceof TalksFragment) {
             getMenuInflater().inflate(R.menu.pub_topic_menu, menu);
         } else if (mFragment.get() instanceof MessageDetailFragment) {
             getMenuInflater().inflate(R.menu.chat_menu, menu);
@@ -145,11 +146,11 @@ public class SimpleBackActivity extends BaseActivity implements
      */
     private void sendTopic() {
         Bundle bundle = new Bundle();
-        bundle.putInt(TweetPubFragment.ACTION_TYPE,
-                TweetPubFragment.ACTION_TYPE_TOPIC);
+        bundle.putInt(TalkPubFragment.TALK_TYPE,
+                TalkPubFragment.TALK_TYPE_TOPIC);
         bundle.putString("tweet_topic", "#"
-                + ((TweetsFragment) mFragment.get()).getTopic() + "# ");
-        UIHelper.showTweetActivity(this, SimpleBackPage.TWEET_PUB, bundle);
+                + ((TalksFragment) mFragment.get()).getTopic() + "# ");
+        UIHelper.showTalkActivity(this, SimpleBackPage.TALK_PUB, bundle);
     }
 
     @Override
@@ -208,12 +209,5 @@ public class SimpleBackActivity extends BaseActivity implements
 
     @Override
     public void onClickFlagButton() {
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 }

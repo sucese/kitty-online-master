@@ -23,16 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 动弹实体类
+ * 说说实体类
  *
- * @author liux (http://my.oschina.net/liux),kymjs(kymjs123@gmail.com)
- * @version 1.1 添加语音动弹功能
- * @created 2012-3-21
- * @changed 2014-12-1
+ * @author guoxiaoxing
  */
 @SuppressWarnings("serial")
 @XStreamAlias("tweet")
-public class Tweet extends BaseEntity implements Parcelable {
+public class UserTalk extends BaseEntity implements Parcelable {
 
     @XStreamAlias("portrait")
     private String portrait;
@@ -67,10 +64,10 @@ public class Tweet extends BaseEntity implements Parcelable {
     private String imageFilePath;
     private String audioPath;
 
-    public Tweet() {
+    public UserTalk() {
     }
 
-    public Tweet(Parcel dest) {
+    public UserTalk(Parcel dest) {
         id = dest.readInt();
         portrait = dest.readString();
         author = dest.readString();
@@ -230,16 +227,16 @@ public class Tweet extends BaseEntity implements Parcelable {
         dest.writeInt(isLike);
     }
 
-    public static final Parcelable.Creator<Tweet> CREATOR = new Creator<Tweet>() {
+    public static final Parcelable.Creator<UserTalk> CREATOR = new Creator<UserTalk>() {
 
         @Override
-        public Tweet[] newArray(int size) {
-            return new Tweet[size];
+        public UserTalk[] newArray(int size) {
+            return new UserTalk[size];
         }
 
         @Override
-        public Tweet createFromParcel(Parcel source) {
-            return new Tweet(source);
+        public UserTalk createFromParcel(Parcel source) {
+            return new UserTalk(source);
         }
     };
 

@@ -7,17 +7,18 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 
 import java.util.ArrayList;
 
 /**
- * 对动弹界面的一个封装，用于相应系统分享
+ * 对说说界面的一个封装，用于相应系统分享
  *
  * @author guoxiaoxing
  */
-public class TweetActivity extends SimpleBackActivity {
-    private TweetPubFragment currentFragment;
+public class TalkActivity extends SimpleBackActivity {
+
+    private TalkPubFragment currentFragment;
 
     public static String FROM_KEY = "image_shared_key";
 
@@ -25,7 +26,7 @@ public class TweetActivity extends SimpleBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
         if (intent.getIntExtra(FROM_KEY, -1) != 1) {
-            mPageValue = SimpleBackPage.TWEET_PUB.getValue();
+            mPageValue = SimpleBackPage.TALK_PUB.getValue();
         }
         super.onCreate(savedInstanceState);
         respondExternal(intent);
@@ -37,7 +38,7 @@ public class TweetActivity extends SimpleBackActivity {
      * @param intent
      */
     private void respondExternal(Intent intent) {
-        currentFragment = (TweetPubFragment) mFragment.get();
+        currentFragment = (TalkPubFragment) mFragment.get();
 
         String action = intent.getAction();
         String type = intent.getType();

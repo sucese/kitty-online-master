@@ -96,7 +96,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.TweetActivity"
+            android:name=".ui.activity.TalkActivity"
             android:label="写说说"
             android:screenOrientation="portrait">
             <intent-filter>

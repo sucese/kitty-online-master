@@ -17,10 +17,16 @@ import android.widget.ImageView;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.team.fragment.NoteEditFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
+
+/**
+ * 快速选择Dialog
+ *
+ * @author guoxiaoxing
+ */
 public class QuickOptionDialog extends Dialog implements
         android.view.View.OnClickListener {
 
@@ -39,6 +45,7 @@ public class QuickOptionDialog extends Dialog implements
 
     @SuppressLint("InflateParams")
     private QuickOptionDialog(Context context, int defStyle) {
+
         super(context, defStyle);
         View contentView = getLayoutInflater().inflate(
                 R.layout.dialog_quick_option, null);
@@ -105,13 +112,13 @@ public class QuickOptionDialog extends Dialog implements
                 dismiss();
                 break;
             case R.id.ly_quick_option_text:
-                onClickTweetPub(R.id.ly_quick_option_text);
+                onClickTalkPub(R.id.ly_quick_option_text);
                 break;
             case R.id.ly_quick_option_album:
-                onClickTweetPub(R.id.ly_quick_option_album);
+                onClickTalkPub(R.id.ly_quick_option_album);
                 break;
             case R.id.ly_quick_option_photo:
-                onClickTweetPub(R.id.ly_quick_option_photo);
+                onClickTalkPub(R.id.ly_quick_option_photo);
                 break;
             case R.id.ly_quick_option_voice:
                 UIHelper.showSimpleBack(getContext(), SimpleBackPage.RECORD);
@@ -134,21 +141,21 @@ public class QuickOptionDialog extends Dialog implements
         dismiss();
     }
 
-    private void onClickTweetPub(int id) {
+    private void onClickTalkPub(int id) {
         Bundle bundle = new Bundle();
         int type = -1;
         switch (id) {
             case R.id.ly_quick_option_album:
-                type = TweetPubFragment.ACTION_TYPE_ALBUM;
+                type = TalkPubFragment.TALK_TYPE_ALBUM;
                 break;
             case R.id.ly_quick_option_photo:
-                type = TweetPubFragment.ACTION_TYPE_PHOTO;
+                type = TalkPubFragment.TALK_TYPE_PHOTO;
                 break;
             default:
                 break;
         }
-        bundle.putInt(TweetPubFragment.ACTION_TYPE, type);
-        UIHelper.showTweetActivity(getContext(), SimpleBackPage.TWEET_PUB,
+        bundle.putInt(TalkPubFragment.TALK_TYPE, type);
+        UIHelper.showTalkActivity(getContext(), SimpleBackPage.TALK_PUB,
                 bundle);
     }
 

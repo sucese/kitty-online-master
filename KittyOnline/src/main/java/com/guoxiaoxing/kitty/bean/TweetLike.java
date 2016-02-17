@@ -17,8 +17,8 @@ public class TweetLike extends BaseEntity {
     @XStreamAlias("user")
     private User user;
     
-    @XStreamAlias("tweet")
-    private Tweet tweet;
+    @XStreamAlias("userTalk")
+    private UserTalk userTalk;
     
     @XStreamAlias("datatime")
     private String datatime;
@@ -34,12 +34,12 @@ public class TweetLike extends BaseEntity {
         this.user = user;
     }
 
-    public Tweet getTweet() {
-        return tweet;
+    public UserTalk getUserTalk() {
+        return userTalk;
     }
 
-    public void setTweet(Tweet tweet) {
-        this.tweet = tweet;
+    public void setUserTalk(UserTalk userTalk) {
+        this.userTalk = userTalk;
     }
 
     public String getDatatime() {

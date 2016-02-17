@@ -16,11 +16,11 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TweetAdapter;
 import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.Tweet;
 import com.guoxiaoxing.kitty.bean.TweetsList;
 import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
@@ -35,12 +35,13 @@ import java.io.InputStream;
 import java.io.Serializable;
 
 /**
- * @author kymjs (http://www.kymjs.com)
+ *
+ * @author guoxiaoxing
  */
-public class TweetsFragment extends BaseListFragment<Tweet> implements
+public class TalksFragment extends BaseListFragment<UserTalk> implements
         OnItemLongClickListener, OnTabReselectListener {
 
-    protected static final String TAG = TweetsFragment.class.getSimpleName();
+    private static final String TAG = TalksFragment.class.getSimpleName();
     private static final String CACHE_KEY_PREFIX = "tweetslist_";
 
     class DeleteTweetResponseHandler extends OperationResponseHandler {
@@ -56,8 +57,8 @@ public class TweetsFragment extends BaseListFragment<Tweet> implements
                 Result res = XmlUtils.toBean(ResultBean.class, is).getResult();
                 if (res != null && res.OK()) {
                     AppContext.showToastShort(R.string.delete_success);
-                    Tweet tweet = (Tweet) args[0];
-                    mAdapter.removeItem(tweet);
+                    UserTalk userTalk = (UserTalk) args[0];
+                    mAdapter.removeItem(userTalk);
                     mAdapter.notifyDataSetChanged();
                 } else {
                     onFailure(code, res.getErrorMessage(), args);
@@ -153,9 +154,9 @@ public class TweetsFragment extends BaseListFragment<Tweet> implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
             long id) {
-        Tweet tweet = mAdapter.getItem(position);
-        if (tweet != null) {
-            UIHelper.showTweetDetail(view.getContext(), null, tweet.getId());
+        UserTalk userTalk = mAdapter.getItem(position);
+        if (userTalk != null) {
+            UIHelper.showTweetDetail(view.getContext(), null, userTalk.getId());
         }
     }
 
@@ -218,17 +219,17 @@ public class TweetsFragment extends BaseListFragment<Tweet> implements
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view,
             int position, long id) {
-        Tweet tweet = mAdapter.getItem(position);
-        if (tweet != null) {
-            handleLongClick(tweet);
+        UserTalk userTalk = mAdapter.getItem(position);
+        if (userTalk != null) {
+            handleLongClick(userTalk);
             return true;
         }
         return false;
     }
 
-    private void handleLongClick(final Tweet tweet) {
+    private void handleLongClick(final UserTalk userTalk) {
         String[] items = null;
-        if (AppContext.getInstance().getLoginUid() == tweet.getAuthorid()) {
+        if (AppContext.getInstance().getLoginUid() == userTalk.getAuthorid()) {
             items = new String[] { getResources().getString(R.string.copy),
                     getResources().getString(R.string.delete) };
         } else {
@@ -239,20 +240,20 @@ public class TweetsFragment extends BaseListFragment<Tweet> implements
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (i == 0) {
-                    TDevice.copyTextToBoard(HTMLUtil.delHTMLTag(tweet.getBody()));
+                    TDevice.copyTextToBoard(HTMLUtil.delHTMLTag(userTalk.getBody()));
                 } else if (i == 1) {
-                    handleDeleteTweet(tweet);
+                    handleDeleteTweet(userTalk);
                 }
             }
         }).show();
     }
 
-    private void handleDeleteTweet(final Tweet tweet) {
+    private void handleDeleteTweet(final UserTalk userTalk) {
         DialogHelp.getConfirmDialog(getActivity(), "是否删除该动弹?", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                OSChinaApi.deleteTweet(tweet.getAuthorid(), tweet
-                        .getId(), new DeleteTweetResponseHandler(tweet));
+                OSChinaApi.deleteTweet(userTalk.getAuthorid(), userTalk
+                        .getId(), new DeleteTweetResponseHandler(userTalk));
             }
         }).show();
     }

@@ -38,7 +38,7 @@ import com.guoxiaoxing.kitty.bean.News;
 import com.guoxiaoxing.kitty.bean.Notice;
 import com.guoxiaoxing.kitty.bean.ShakeObject;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.ICallbackResult;
 import com.guoxiaoxing.kitty.ui.base.OnWebViewImageListener;
 import com.guoxiaoxing.kitty.service.DownloadService;
@@ -60,7 +60,7 @@ import com.guoxiaoxing.kitty.ui.activity.EventLocationActivity;
 import com.guoxiaoxing.kitty.ui.activity.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.activity.LoginActivity;
 import com.guoxiaoxing.kitty.ui.activity.SimpleBackActivity;
-import com.guoxiaoxing.kitty.ui.activity.TweetActivity;
+import com.guoxiaoxing.kitty.ui.activity.TalkActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
 import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
@@ -200,14 +200,14 @@ public class UIHelper {
      * @param context context
      * @param tweetid 动弹的id
      */
-    public static void showTweetDetail(Context context, Tweet tweet, int tweetid) {
+    public static void showTweetDetail(Context context, UserTalk userTalk, int tweetid) {
         Intent intent = new Intent(context, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("tweet_id", tweetid);
         bundle.putInt(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
                 DetailActivity.DISPLAY_TWEET);
-        if (tweet != null) {
-            bundle.putParcelable("tweet", tweet);
+        if (userTalk != null) {
+            bundle.putParcelable("userTalk", userTalk);
         }
         intent.putExtras(bundle);
         context.startActivity(intent);
@@ -580,10 +580,10 @@ public class UIHelper {
         context.startActivity(intent);
     }
 
-    public static void showTweetActivity(Context context, SimpleBackPage page,
-                                         Bundle args) {
-        Intent intent = new Intent(context, TweetActivity.class);
-        intent.putExtra(TweetActivity.FROM_KEY, 1);
+    public static void showTalkActivity(Context context, SimpleBackPage page,
+                                        Bundle args) {
+        Intent intent = new Intent(context, TalkActivity.class);
+        intent.putExtra(TalkActivity.FROM_KEY, 1);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_ARGS, args);
         intent.putExtra(SimpleBackActivity.BUNDLE_KEY_PAGE, page.getValue());
         context.startActivity(intent);

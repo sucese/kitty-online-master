@@ -11,7 +11,7 @@ import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.bean.EventApplyData;
 import com.guoxiaoxing.kitty.bean.NewsList;
 import com.guoxiaoxing.kitty.bean.Report;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.util.StringUtils;
 
@@ -422,22 +422,22 @@ public class OSChinaApi {
         ApiHttpClient.post("action/api/blogcomment_pub", params, handler);
     }
 
-    public static void pubTweet(Tweet tweet, AsyncHttpResponseHandler handler) {
+    public static void pubTweet(UserTalk userTalk, AsyncHttpResponseHandler handler) {
         RequestParams params = new RequestParams();
-        params.put("uid", tweet.getAuthorid());
-        params.put("msg", tweet.getBody());
+        params.put("uid", userTalk.getAuthorid());
+        params.put("msg", userTalk.getBody());
 
         // Map<String, File> files = new HashMap<String, File>();
-        if (!TextUtils.isEmpty(tweet.getImageFilePath())) {
+        if (!TextUtils.isEmpty(userTalk.getImageFilePath())) {
             try {
-                params.put("img", new File(tweet.getImageFilePath()));
+                params.put("img", new File(userTalk.getImageFilePath()));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
-        if (!TextUtils.isEmpty(tweet.getAudioPath())) {
+        if (!TextUtils.isEmpty(userTalk.getAudioPath())) {
             try {
-                params.put("amr", new File(tweet.getAudioPath()));
+                params.put("amr", new File(userTalk.getAudioPath()));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -445,11 +445,11 @@ public class OSChinaApi {
         ApiHttpClient.post("action/api/tweet_pub", params, handler);
     }
 
-    public static void pubSoftWareTweet(Tweet tweet, int softid,
+    public static void pubSoftWareTweet(UserTalk userTalk, int softid,
             AsyncHttpResponseHandler handler) {
         RequestParams params = new RequestParams();
-        params.put("uid", tweet.getAuthorid());
-        params.put("msg", tweet.getBody());
+        params.put("uid", userTalk.getAuthorid());
+        params.put("msg", userTalk.getBody());
         params.put("project", softid);
         ApiHttpClient.post("action/api/software_tweet_pub", params, handler);
     }

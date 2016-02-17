@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.emoji.EmojiKeyboardFragment;
 import com.guoxiaoxing.kitty.emoji.Emojicon;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
@@ -58,20 +58,19 @@ import java.util.Date;
 
 import butterknife.Bind;
 
-public class TweetPubFragment extends BaseFragment implements
+public class TalkPubFragment extends BaseFragment implements
         OnEmojiClickListener {
 
-    public static final int ACTION_TYPE_ALBUM = 0;
-    public static final int ACTION_TYPE_PHOTO = 1;
-    public static final int ACTION_TYPE_RECORD = 2; // 录音
-    public static final int ACTION_TYPE_TOPIC = 3; // 录音
+    public static final int TALK_TYPE_ALBUM = 0;
+    public static final int TALK_TYPE_PHOTO = 1;//照片
+    public static final int TALK_TYPE_RECORD = 2; // 录音
+    public static final int TALK_TYPE_TOPIC = 3; // 录音
     public static final String FROM_IMAGEPAGE_KEY = "from_image_page";
+    public static final String TALK_TYPE = "action_type";
 
-    public static final String ACTION_TYPE = "action_type";
-
-    private static final int MAX_TEXT_LENGTH = 160;
-    private static final String TEXT_ATME = "@请输入用户名 ";
-    private static final String TEXT_SOFTWARE = "#请输入软件名#";
+    private static final int MAX_TEXT_LENGTH = 180;
+    private static final String TEXT_ATME = "@请输入用户名";
+    private static final String TEXT_SOFTWARE = "#请输入话题#";
 
     private static final int SELECT_FRIENDS_REEQUEST_CODE = 100;
 
@@ -154,7 +153,7 @@ public class TweetPubFragment extends BaseFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.public_menu_send:
-                handleSubmit();
+                handleSubmitTalk();
                 break;
             default:
                 break;
@@ -179,7 +178,10 @@ public class TweetPubFragment extends BaseFragment implements
         handleImageFile(url);
     }
 
-    private void handleSubmit() {
+    /**
+     * 发布说说
+     */
+    private void handleSubmitTalk() {
         if (!TDevice.hasInternet()) {
             AppContext.showToastShort(R.string.tip_network_error);
             return;
@@ -199,13 +201,13 @@ public class TweetPubFragment extends BaseFragment implements
             return;
         }
 
-        Tweet tweet = new Tweet();
-        tweet.setAuthorid(AppContext.getInstance().getLoginUid());
-        tweet.setBody(content);
+        UserTalk userTalk = new UserTalk();
+        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTalk.setBody(content);
         if (imgFile != null && imgFile.exists()) {
-            tweet.setImageFilePath(imgFile.getAbsolutePath());
+            userTalk.setImageFilePath(imgFile.getAbsolutePath());
         }
-        ServerTaskUtils.pubTweet(getActivity(), tweet);
+        ServerTaskUtils.pubTweet(getActivity(), userTalk);
         if (mIsKeyboardVisible) {
             TDevice.hideSoftKeyboard(getActivity().getCurrentFocus());
         }
@@ -222,7 +224,7 @@ public class TweetPubFragment extends BaseFragment implements
         super.onViewCreated(view, savedInstanceState);
         Bundle bundle = getArguments();
         if (bundle != null) {
-            int action_type = bundle.getInt(ACTION_TYPE, -1);
+            int action_type = bundle.getInt(TALK_TYPE, -1);
             goToSelectPicture(action_type);
             final String imgUrl = bundle.getString(FROM_IMAGEPAGE_KEY);
             handleImageUrl(imgUrl);
@@ -552,7 +554,7 @@ public class TweetPubFragment extends BaseFragment implements
 
     private void goToSelectPicture(int position) {
         switch (position) {
-            case ACTION_TYPE_ALBUM:
+            case TALK_TYPE_ALBUM:
                 Intent intent;
                 if (Build.VERSION.SDK_INT < 19) {
                     intent = new Intent();
@@ -568,7 +570,7 @@ public class TweetPubFragment extends BaseFragment implements
                             ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
                 }
                 break;
-            case ACTION_TYPE_PHOTO:
+            case TALK_TYPE_PHOTO:
                 // 判断是否挂载了SD卡
                 String savePath = "";
                 String storageState = Environment.getExternalStorageState();
@@ -600,7 +602,7 @@ public class TweetPubFragment extends BaseFragment implements
                 startActivityForResult(intent,
                         ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA);
                 break;
-            case ACTION_TYPE_TOPIC:
+            case TALK_TYPE_TOPIC:
                 Bundle bundle = getArguments();
                 if (bundle != null) {
                     String topic = bundle.getString("tweet_topic");

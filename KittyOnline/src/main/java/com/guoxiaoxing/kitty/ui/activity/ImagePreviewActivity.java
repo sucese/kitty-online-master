@@ -22,7 +22,7 @@ import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog.OnMenuClickListener;
-import com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.widget.HackyViewPager;
@@ -149,8 +149,8 @@ public class ImagePreviewActivity extends BaseActivity implements
         if (mAdapter != null && mAdapter.getCount() > 0) {
             String imgUrl = mAdapter.getItem(mCurrentPostion);
             Bundle bundle = new Bundle();
-            bundle.putString(TweetPubFragment.FROM_IMAGEPAGE_KEY, imgUrl);
-            UIHelper.showSimpleBack(this, SimpleBackPage.TWEET_PUB, bundle);
+            bundle.putString(TalkPubFragment.FROM_IMAGEPAGE_KEY, imgUrl);
+            UIHelper.showSimpleBack(this, SimpleBackPage.TALK_PUB, bundle);
             finish();
         }
     }

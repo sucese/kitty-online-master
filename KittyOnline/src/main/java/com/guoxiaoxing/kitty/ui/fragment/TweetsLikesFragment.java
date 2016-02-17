@@ -12,7 +12,7 @@ import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.BaseEntity;
 import com.guoxiaoxing.kitty.bean.Notice;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.bean.TweetLike;
 import com.guoxiaoxing.kitty.bean.TweetLikeList;
 import com.guoxiaoxing.kitty.bean.TweetsList;
@@ -90,9 +90,9 @@ public class TweetsLikesFragment extends BaseListFragment<TweetLike> {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
 	    long id) {
-	Tweet tweet = mAdapter.getItem(position).getTweet();
-	if (tweet != null) {
-	    UIHelper.showTweetDetail(view.getContext(), null, tweet.getId());
+	UserTalk userTalk = mAdapter.getItem(position).getUserTalk();
+	if (userTalk != null) {
+	    UIHelper.showTweetDetail(view.getContext(), null, userTalk.getId());
 	}
     }
 

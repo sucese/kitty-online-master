@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/tweet_content"
-        android:name="com.guoxiaoxing.kitty.ui.fragment.TweetPubFragment"
+        android:name="com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

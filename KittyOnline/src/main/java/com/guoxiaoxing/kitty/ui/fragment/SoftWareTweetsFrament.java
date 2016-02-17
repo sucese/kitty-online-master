@@ -9,7 +9,7 @@ import com.guoxiaoxing.kitty.adapter.TweetAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.Tweet;
+import com.guoxiaoxing.kitty.bean.UserTalk;
 import com.guoxiaoxing.kitty.bean.TweetsList;
 import com.guoxiaoxing.kitty.service.ServerTaskUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -21,7 +21,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-public class SoftWareTweetsFrament extends BaseListFragment<Tweet> implements
+public class SoftWareTweetsFrament extends BaseListFragment<UserTalk> implements
         OnItemLongClickListener {
 
     public static final String BUNDLE_KEY_ID = "BUNDLE_KEY_ID";
@@ -94,18 +94,18 @@ public class SoftWareTweetsFrament extends BaseListFragment<Tweet> implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
             long id) {
-        final Tweet tweet = mAdapter.getItem(position);
-        if (tweet == null) {
+        final UserTalk userTalk = mAdapter.getItem(position);
+        if (userTalk == null) {
             return;
         }
-        UIHelper.showTweetDetail(parent.getContext(), tweet, tweet.getId());
+        UIHelper.showTweetDetail(parent.getContext(), userTalk, userTalk.getId());
     }
 
     private void handleComment(String text) {
-        Tweet tweet = new Tweet();
-        tweet.setAuthorid(AppContext.getInstance().getLoginUid());
-        tweet.setBody(text);
-        ServerTaskUtils.pubSoftWareTweet(getActivity(), tweet, mId);
+        UserTalk userTalk = new UserTalk();
+        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTalk.setBody(text);
+        ServerTaskUtils.pubSoftWareTweet(getActivity(), userTalk, mId);
     }
 
     @Override
