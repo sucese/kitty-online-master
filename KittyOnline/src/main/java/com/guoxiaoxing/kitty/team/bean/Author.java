@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 /**
  * 帖子、任务、讨论的创建者，
@@ -12,7 +12,7 @@ import com.guoxiaoxing.kitty.bean.BaseEntity;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("author")
-public class Author extends BaseEntity {
+public class Author extends BaseObject {
 
     @XStreamAlias("name")
     private String name;

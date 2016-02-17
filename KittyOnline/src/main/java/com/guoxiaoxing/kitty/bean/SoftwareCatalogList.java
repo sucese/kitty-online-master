@@ -13,7 +13,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class SoftwareCatalogList extends BaseEntity implements ListEntity {
+public class SoftwareCatalogList extends BaseObject implements ListEntity {
 	
 	@XStreamAlias("softwarecount")
 	private int softwarecount;
@@ -42,7 +42,7 @@ public class SoftwareCatalogList extends BaseEntity implements ListEntity {
 	}
 	
 	@XStreamAlias("softwareType")
-	public class SoftwareType extends BaseEntity {
+	public class SoftwareType extends BaseObject {
 
 		@XStreamAlias("name")
 		private String name;

@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("friend")
-public class Friend extends BaseEntity {
+public class Friend extends BaseObject {
 	
     @XStreamAlias("userid")
     private int userid;

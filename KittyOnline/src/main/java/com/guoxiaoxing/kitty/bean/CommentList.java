@@ -16,7 +16,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class CommentList extends BaseEntity implements ListEntity<Comment> {
+public class CommentList extends BaseObject implements ListEntity<Comment> {
 
     public final static int CATALOG_NEWS = 1;
     public final static int CATALOG_POST = 2;

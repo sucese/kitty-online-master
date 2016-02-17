@@ -15,7 +15,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.SoftwareAdapter;
 import com.guoxiaoxing.kitty.adapter.SoftwareCatalogListAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 import com.guoxiaoxing.kitty.bean.SoftwareCatalogList;
 import com.guoxiaoxing.kitty.bean.SoftwareCatalogList.SoftwareType;
 import com.guoxiaoxing.kitty.bean.SoftwareDec;
@@ -295,7 +295,7 @@ public class SoftwareCatalogListFragment extends BaseFragment implements
         mSoftwareAdapter.addData(data);
     }
 
-    private boolean compareTo(List<? extends BaseEntity> data, SoftwareDec enity) {
+    private boolean compareTo(List<? extends BaseObject> data, SoftwareDec enity) {
         int s = data.size();
         if (enity != null) {
             for (int i = 0; i < s; i++) {

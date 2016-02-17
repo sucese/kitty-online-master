@@ -13,8 +13,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -27,38 +25,23 @@ import java.util.List;
  *
  * @author guoxiaoxing
  */
-@SuppressWarnings("serial")
-@XStreamAlias("tweet")
-public class UserTalk extends BaseEntity implements Parcelable {
+public class UserTalk extends BaseObject implements Parcelable {
 
-    @XStreamAlias("portrait")
     private String portrait;
-    @XStreamAlias("author")
     private String author;
-    @XStreamAlias("authorid")
     private int authorid;
-    @XStreamAlias("body")
     private String body;
-    @XStreamAlias("appclient")
     private int appclient;
-    @XStreamAlias("commentCount")
     private String commentCount;
-    @XStreamAlias("pubDate")
     private String pubDate;
-    @XStreamAlias("imgSmall")
     private String imgSmall;
-    @XStreamAlias("imgBig")
     private String imgBig;
-    @XStreamAlias("attach")
     private String attach;
 
-    @XStreamAlias("likeCount")
     private int likeCount;
 
-    @XStreamAlias("isLike")
     private int isLike;
 
-    @XStreamAlias("likeList")
     private List<User> likeUser = new ArrayList<User>();
 
     private String imageFilePath;
@@ -280,7 +263,7 @@ public class UserTalk extends BaseEntity implements Parcelable {
         }
 
         for (int i = 0; i < showCunt; i++) {
-            sbBuilder.append(getLikeUser().get(i).getName()).append("、");
+            sbBuilder.append(getLikeUser().get(i).getUsername()).append("、");
         }
 
         String likeUsersStr = sbBuilder.substring(0, sbBuilder.lastIndexOf("、"));
@@ -307,7 +290,7 @@ public class UserTalk extends BaseEntity implements Parcelable {
                     public void onClick(View widget) {
                         User user = getLikeUser().get(index);
                         UIHelper.showUserCenter(context, user.getId(),
-                                user.getName());
+                                user.getUsername());
                     }
 
                     @Override

@@ -1,17 +1,18 @@
 package com.guoxiaoxing.kitty.bean;
 
+import com.avos.avoscloud.AVUser;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.io.Serializable;
 
 /**
  * 登录用户实体类
  *
- * @author liux (http://my.oschina.net/liux)
- * @version 1.0
- * @created 2012-3-21
+ * @author guoxiaoxing
  */
 @SuppressWarnings("serial")
 @XStreamAlias("user")
-public class User extends BaseEntity {
+public class User extends AVUser implements Serializable {
 
     public final static int RELATION_ACTION_DELETE = 0x00;// 取消关注
     public final static int RELATION_ACTION_ADD = 0x01;// 加关注
@@ -21,210 +22,100 @@ public class User extends BaseEntity {
     public final static int RELATION_TYPE_NULL = 0x03;// 互不关注
     public final static int RELATION_TYPE_FANS_ME = 0x04;// 只有他关注我
 
-    @XStreamAlias("uid")
-    private int id;
+    private final static String ID = "id";
+    private final static String FAN = "fan";
+    private final static String ATTENTION = "attention";
+    private final static String RELATIONSHIP = "relationship";
+    private final static String FACE = "face";
+    private final static String GENDER = "gender";
+    private final static String BIRTHDAY = "birthday";
+    private final static String LOCATION = "location";
+    private final static String ADDRESS = "address";
+    private final static String SIGNATURE = "signature";
 
-    @XStreamAlias("location")
-    private String location;
 
-    @XStreamAlias("name")
-    private String name;
-
-    @XStreamAlias("followers")
-    private int followers;
-
-    @XStreamAlias("fans")
-    private int fans;
-
-    @XStreamAlias("score")
-    private int score;
-
-    @XStreamAlias("portrait")
-    private String portrait;
-
-    @XStreamAlias("jointime")
-    private String jointime;
-
-    @XStreamAlias("gender")
-    private String gender;
-
-    @XStreamAlias("devplatform")
-    private String devplatform;
-
-    @XStreamAlias("expertise")
-    private String expertise;
-
-    @XStreamAlias("relation")
-    private int relation;
-
-    @XStreamAlias("latestonline")
-    private String latestonline;
-
-    @XStreamAlias("from")
-    private String from;
-
-    @XStreamAlias("favoritecount")
-    private int favoritecount;
-
-    private String account;
-
-    private String pwd;
-
-    private boolean isRememberMe;
 
     public int getId() {
-        return id;
+        return getInt(ID);
     }
 
     public void setId(int id) {
-        this.id = id;
+        put(ID, id);
     }
 
-    public String getLocation() {
-        return location;
+    public int getFan() {
+        return getInt(FAN);
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setFan(int fan) {
+        put(FAN, fan);
     }
 
-    public String getName() {
-        return name;
+    public int getAttention() {
+        return getInt(ATTENTION);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAttention(int attention) {
+        put(ATTENTION, attention);
     }
 
-    public int getFollowers() {
-        return followers;
+    public int getRelationship() {
+        return getInt(RELATIONSHIP);
     }
 
-    public void setFollowers(int followers) {
-        this.followers = followers;
+    public void setRelationship(int relationship) {
+        put(SIGNATURE, relationship);
     }
 
-    public int getFans() {
-        return fans;
+    public String getFace() {
+        return getString(FACE);
     }
 
-    public void setFans(int fans) {
-        this.fans = fans;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getPortrait() {
-        return portrait;
-    }
-
-    public void setPortrait(String portrait) {
-        this.portrait = portrait;
-    }
-
-    public String getJointime() {
-        return jointime;
-    }
-
-    public void setJointime(String jointime) {
-        this.jointime = jointime;
+    public void setFace(String face) {
+        put(FACE, face);
     }
 
     public String getGender() {
-        return gender;
+        return getString(GENDER);
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        put(GENDER, gender);
     }
 
-    public String getDevplatform() {
-        return devplatform;
+    public String getBirthday() {
+        return getString(BIRTHDAY);
     }
 
-    public void setDevplatform(String devplatform) {
-        this.devplatform = devplatform;
+    public void setBirthday(String birthday) {
+        put(BIRTHDAY, birthday);
     }
 
-    public String getExpertise() {
-        return expertise;
+    public String getLocation() {
+        return getString(LOCATION);
     }
 
-    public void setExpertise(String expertise) {
-        this.expertise = expertise;
+    public void setLocation(String name) {
+        put(LOCATION, name);
     }
 
-    public int getRelation() {
-        return relation;
+    public String getAddress() {
+        return getString(ADDRESS);
     }
 
-    public void setRelation(int relation) {
-        this.relation = relation;
+    public void setAddress(String address) {
+        put(ADDRESS, address);
     }
 
-    public String getLatestonline() {
-        return latestonline;
+    public String getSignature() {
+        return getString(SIGNATURE);
     }
 
-    public void setLatestonline(String latestonline) {
-        this.latestonline = latestonline;
+    public void setSignature(String signature) {
+        put(SIGNATURE, signature);
     }
 
-    public String getFrom() {
-        return from;
-    }
 
-    public void setFrom(String from) {
-        this.from = from;
-    }
 
-    public int getFavoritecount() {
-        return favoritecount;
-    }
 
-    public void setFavoritecount(int favoritecount) {
-        this.favoritecount = favoritecount;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    public boolean isRememberMe() {
-        return isRememberMe;
-    }
-
-    public void setRememberMe(boolean isRememberMe) {
-        this.isRememberMe = isRememberMe;
-    }
-
-    @Override
-    public String toString() {
-        return "User [uid=" + id + ", location=" + location + ", name=" + name
-                + ", followers=" + followers + ", fans=" + fans + ", score="
-                + score + ", portrait=" + portrait + ", jointime=" + jointime
-                + ", gender=" + gender + ", devplatform=" + devplatform
-                + ", expertise=" + expertise + ", relation=" + relation
-                + ", latestonline=" + latestonline + ", from=" + from
-                + ", favoritecount=" + favoritecount + ", account=" + account
-                + ", pwd=" + pwd + ", isRememberMe=" + isRememberMe + "]";
-    }
 }

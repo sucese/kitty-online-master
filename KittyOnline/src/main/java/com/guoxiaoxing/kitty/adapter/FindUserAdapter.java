@@ -39,9 +39,9 @@ public class FindUserAdapter extends ListBaseAdapter<User> {
 
 	final User item = (User) mDatas.get(position);
 
-	vh.name.setText(item.getName());
+	vh.name.setText(item.getUsername());
 
-	vh.from.setText(item.getFrom());
+//	vh.from.setText(item.getFrom());
 	vh.desc.setVisibility(View.GONE);
 	int genderIcon = R.drawable.userinfo_icon_male;
 	if ("女".equals(item.getGender())) {
@@ -50,8 +50,8 @@ public class FindUserAdapter extends ListBaseAdapter<User> {
 
 	vh.gender.setImageResource(genderIcon);
 
-	vh.avatar.setAvatarUrl(item.getPortrait());
-	vh.avatar.setUserInfo(item.getId(), item.getName());
+	vh.avatar.setAvatarUrl(item.getFace());
+	vh.avatar.setUserInfo(item.getId(), item.getUsername());
 
 	return convertView;
     }

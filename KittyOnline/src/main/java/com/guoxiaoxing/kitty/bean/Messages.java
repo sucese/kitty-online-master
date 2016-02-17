@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("message")
-public class Messages extends BaseEntity {
+public class Messages extends BaseObject {
 
 	public final static int CLIENT_MOBILE = 2;
 	public final static int CLIENT_ANDROID = 3;

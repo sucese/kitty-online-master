@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class MyIssueState extends BaseEntity {
+public class MyIssueState extends BaseObject {
     @XStreamAlias("opened")
     private String opened; // 待办中
     @XStreamAlias("outdate")

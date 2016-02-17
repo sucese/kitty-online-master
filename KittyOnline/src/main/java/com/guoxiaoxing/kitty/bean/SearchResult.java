@@ -7,7 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("result")
-public class SearchResult extends BaseEntity {
+public class SearchResult extends BaseObject {
 	
 	@XStreamAlias("objid")
 	private int id;

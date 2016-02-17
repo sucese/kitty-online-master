@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * 
  */
 @XStreamAlias("sticky")
-public class NotebookData extends BaseEntity implements Serializable,
+public class NotebookData extends BaseObject implements Serializable,
         Comparable<NotebookData> {
     private static final long serialVersionUID = 1L;
 

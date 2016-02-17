@@ -370,8 +370,8 @@ public class MessageDetailFragment extends BaseListFragment<MessageDetail> imple
         User user = AppContext.getInstance().getLoginUser();
         int msgTag = mMsgTag++;
         message.setId(msgTag);
-        message.setPortrait(user.getPortrait());
-        message.setAuthor(user.getName());
+        message.setPortrait(user.getFace());
+        message.setAuthor(user.getUsername());
         message.setAuthorId(user.getId());
         message.setContent(str.toString());
         sendMessage(message);

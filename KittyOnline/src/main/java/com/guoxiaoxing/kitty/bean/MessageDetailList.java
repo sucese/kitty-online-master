@@ -12,7 +12,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class MessageDetailList extends BaseEntity implements ListEntity<MessageDetail> {
+public class MessageDetailList extends BaseObject implements ListEntity<MessageDetail> {
 
     @XStreamAlias("allCount")
     private int allCount;

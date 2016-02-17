@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * 
  */
 @XStreamAlias("member")
-public class TeamMember extends BaseEntity {
+public class TeamMember extends BaseObject {
     private static final long serialVersionUID = 1L;
 
     @XStreamAlias("id")

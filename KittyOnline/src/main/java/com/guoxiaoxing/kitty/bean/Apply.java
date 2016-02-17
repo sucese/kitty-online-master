@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("apply")
-public class Apply extends BaseEntity {
+public class Apply extends BaseObject {
 	
 	@XStreamAlias("uid")
 	private int userid;

@@ -1,6 +1,9 @@
 package com.guoxiaoxing.kitty.bean;
 
+import com.avos.avoscloud.AVObject;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.io.Serializable;
 
 /**
  * 操作结果实体类
@@ -11,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class ResultBean extends Base {
+public class ResultBean extends AVObject implements Serializable {
 
     @XStreamAlias("result")
     private Result result;

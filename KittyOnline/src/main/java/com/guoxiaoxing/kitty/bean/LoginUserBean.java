@@ -1,35 +1,30 @@
 package com.guoxiaoxing.kitty.bean;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 /**
+ * 用户登陆结果实体类
+ *
  * @author guoxiaoxing
  */
 
-@SuppressWarnings("serial")
-@XStreamAlias("oschina")
-public class LoginUserBean extends BaseEntity {
-	
-	@XStreamAlias("result")
-	private Result result;
-	
-	@XStreamAlias("user")
-	private User user;
+public class LoginUserBean extends BaseObject {
 
-	public Result getResult() {
-		return result;
-	}
+    private Result result;
+    private User user;
 
-	public void setResult(Result result) {
-		this.result = result;
-	}
+    public Result getResult() {
+        return result;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public void setResult(Result result) {
+        this.result = result;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

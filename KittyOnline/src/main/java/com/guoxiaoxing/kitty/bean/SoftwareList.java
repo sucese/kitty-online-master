@@ -7,7 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class SoftwareList extends BaseEntity implements ListEntity<SoftwareDec> {
+public class SoftwareList extends BaseObject implements ListEntity<SoftwareDec> {
 	
 	public final static String PREF_READED_SOFTWARE_LIST = "readed_software_list.pref";
 	

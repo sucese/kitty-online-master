@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class PostDetail extends BaseEntity {
+public class PostDetail extends BaseObject {
 	
 	@XStreamAlias("post")
 	private Post post;

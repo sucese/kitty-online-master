@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
@@ -48,7 +48,7 @@ import cz.msebera.android.httpclient.Header;
  */
 
 @SuppressLint("NewApi")
-public abstract class BaseListFragment<T extends BaseEntity> extends BaseFragment
+public abstract class BaseListFragment<T> extends BaseFragment
         implements SwipeRefreshLayout.OnRefreshListener, OnItemClickListener,
         OnScrollListener {
 
@@ -381,10 +381,10 @@ public abstract class BaseListFragment<T extends BaseEntity> extends BaseFragmen
         }
 
         for (int i = 0; i < data.size(); i++) {
-            if (compareTo(mAdapter.getData(), data.get(i))) {
-                data.remove(i);
-                i--;
-            }
+//            if (compareTo(mAdapter.getData(), data.get(i))) {
+//                data.remove(i);
+//                i--;
+//            }
         }
         int adapterState = ListBaseAdapter.STATE_EMPTY_ITEM;
         if ((mAdapter.getCount() + data.size()) == 0) {
@@ -418,7 +418,7 @@ public abstract class BaseListFragment<T extends BaseEntity> extends BaseFragmen
         return true;
     }
 
-    protected boolean compareTo(List<? extends BaseEntity> data, BaseEntity enity) {
+    protected boolean compareTo(List<? extends BaseObject> data, BaseObject enity) {
         int s = data.size();
         if (enity != null) {
             for (int i = 0; i < s; i++) {
@@ -509,7 +509,7 @@ public abstract class BaseListFragment<T extends BaseEntity> extends BaseFragmen
             try {
                 ListEntity<T> data = parseList(new ByteArrayInputStream(
                         reponseData));
-                new SaveCacheTask(getActivity(), data, getCacheKey()).execute();
+//                new SaveCacheTask(getActivity(), data, getCacheKey()).execute();
                 list = data.getList();
                 if (list == null) {
                     ResultBean resultBean = XmlUtils.toBean(ResultBean.class,

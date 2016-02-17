@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class ActiveList extends BaseEntity implements ListEntity<Active> {
+public class ActiveList extends BaseObject implements ListEntity<UserActive> {
 
     public final static int CATALOG_LASTEST = 1;// 最新
     public final static int CATALOG_ATME = 2;// @我
@@ -28,7 +28,7 @@ public class ActiveList extends BaseEntity implements ListEntity<Active> {
     private int activeCount;
 
     @XStreamAlias("activies")
-    private List<Active> activelist = new ArrayList<Active>();
+    private List<UserActive> activelist = new ArrayList<UserActive>();
     
     @XStreamAlias("result")
     private Result result;
@@ -41,12 +41,12 @@ public class ActiveList extends BaseEntity implements ListEntity<Active> {
 	return activeCount;
     }
 
-    public List<Active> getActivelist() {
+    public List<UserActive> getActivelist() {
 	return activelist;
     }
 
     @Override
-    public List<Active> getList() {
+    public List<UserActive> getList() {
 	return activelist;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class TweetsList extends BaseEntity implements ListEntity<UserTalk> {
+public class TweetsList extends BaseObject implements ListEntity<UserTalk> {
 
     public final static int CATALOG_LATEST = 0;
     public final static int CATALOG_HOT = -1;

@@ -1,5 +1,6 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -32,6 +33,7 @@ import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
 import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
+import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.ui.activity.LoginBindActivityChooseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
@@ -75,6 +77,10 @@ import cz.msebera.android.httpclient.protocol.HttpContext;
 public class LoginFragment extends BaseFragment implements IUiListener, TextWatcher {
 
     public static final int REQUEST_CODE_OPENID = 1000;
+
+    public static final int REQUEST_CODE_INIT = 0;
+    public static final String BUNDLE_KEY_REQUEST_CODE = "BUNDLE_KEY_REQUEST_CODE";
+    public final int requestCode = REQUEST_CODE_INIT;
 
     private static final String TAG = "LoginFragment";
     private static final String ARG_PARAM1 = "param1";
@@ -290,11 +296,15 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
             public void done(AVUser avUser, AVException e) {
                 if (e == null) {
                     //登录成功
-
-
+                    User user = new User();
+                    user.setUsername(mUserName);
+                    user.setPassword(mPassword);
+                    AppContext.getInstance().saveUserInfo(user);
+                    hideWaitDialog();
+                    handleLoginSuccess();
                 } else {
                     //登录失败
-
+                    AppContext.showToast("网络出错" + e);
                 }
             }
         });
@@ -315,6 +325,7 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
 
     }
 
+
     private void handleForgetPassword() {
 
         AVUser.requestPasswordResetInBackground("myemail@example.com", new RequestPasswordResetCallback() {
@@ -328,38 +339,13 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         });
     }
 
-    private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
-
-        @Override
-        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-            LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, arg2);
-            if (loginUserBean != null) {
-                handleLoginBean(loginUserBean);
-            }
-        }
-
-        @Override
-        public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                              Throwable arg3) {
-            AppContext.showToast("网络出错" + arg0);
-        }
-
-        @Override
-        public void onFinish() {
-            super.onFinish();
-            hideWaitDialog();
-        }
-    };
-
 
     private void handleLoginSuccess() {
-
-    }
-
-    private boolean prepareForLogin() {
-
-
-        return true;
+        Intent data = new Intent();
+        data.putExtra(BUNDLE_KEY_REQUEST_CODE, requestCode);
+        getActivity().setResult(Activity.RESULT_OK, data);
+        getActivity().sendBroadcast(new Intent(Constants.INTENT_ACTION_USER_CHANGE));
+        getActivity().finish();
     }
 
     /**
@@ -487,7 +473,7 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, responseBody);
                 if (loginUserBean.getResult().OK()) {
-                    handleLoginBean(loginUserBean);
+//                    handleLoginBean(loginUserBean);
                 } else {
                     // 前往绑定或者注册操作
                     Intent intent = new Intent(mContext, LoginBindActivityChooseActivity.class);
@@ -516,38 +502,4 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         });
     }
 
-    // 处理loginBean
-    private void handleLoginBean(LoginUserBean loginUserBean) {
-        if (loginUserBean.getResult().OK()) {
-            AsyncHttpClient client = ApiHttpClient.getHttpClient();
-            HttpContext httpContext = client.getHttpContext();
-            CookieStore cookies = (CookieStore) httpContext
-                    .getAttribute(ClientContext.COOKIE_STORE);
-            if (cookies != null) {
-                String tmpcookies = "";
-                for (Cookie c : cookies.getCookies()) {
-                    TLog.log(TAG,
-                            "cookie:" + c.getName() + " " + c.getValue());
-                    tmpcookies += (c.getName() + "=" + c.getValue()) + ";";
-                }
-                TLog.log(TAG, "cookies:" + tmpcookies);
-                AppContext.getInstance().setProperty(AppConfig.CONF_COOKIE,
-                        tmpcookies);
-                ApiHttpClient.setCookie(ApiHttpClient.getCookie(AppContext
-                        .getInstance()));
-                HttpConfig.sCookie = tmpcookies;
-            }
-            // 保存登录信息
-            loginUserBean.getUser().setAccount(mUserName);
-            loginUserBean.getUser().setPwd(mPassword);
-            loginUserBean.getUser().setRememberMe(true);
-            AppContext.getInstance().saveUserInfo(loginUserBean.getUser());
-            hideWaitDialog();
-            handleLoginSuccess();
-
-        } else {
-            AppContext.getInstance().cleanLoginInfo();
-            AppContext.showToast(loginUserBean.getResult().getErrorMessage());
-        }
-    }
 }

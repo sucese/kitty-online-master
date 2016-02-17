@@ -1,8 +1,10 @@
 package com.guoxiaoxing.kitty.bean;
 
-import java.util.List;
-
+import com.avos.avoscloud.AVObject;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.io.Serializable;
+import java.util.List;
 
 /** 
  * 个人信息专用实体类
@@ -12,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class UserInformation extends Base {
+public class UserInformation extends AVObject implements Serializable {
 	
 	@XStreamAlias("user")
 	private User user;
@@ -21,7 +23,7 @@ public class UserInformation extends Base {
 	private int pageSize;
 	
 	@XStreamAlias("activies")
-	private List<Active> activeList;
+	private List<UserActive> userActiveList;
 
 	public User getUser() {
 		return user;
@@ -39,11 +41,11 @@ public class UserInformation extends Base {
 		this.pageSize = pageSize;
 	}
 
-	public List<Active> getActiveList() {
-		return activeList;
+	public List<UserActive> getUserActiveList() {
+		return userActiveList;
 	}
 
-	public void setActiveList(List<Active> activeList) {
-		this.activeList = activeList;
+	public void setUserActiveList(List<UserActive> userActiveList) {
+		this.userActiveList = userActiveList;
 	}
 }

@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -27,7 +27,7 @@ import cz.msebera.android.httpclient.Header;
  * BeseHaveHeaderListFragment.java
  * @author guoxiaoxing
  */
-public abstract class BeseHaveHeaderListFragment<T1 extends BaseEntity, T2 extends Serializable>
+public abstract class BeseHaveHeaderListFragment<T1 extends BaseObject, T2 extends Serializable>
         extends BaseListFragment<T1> {
 
     protected T2 detailBean;// list 头部的详情实体类

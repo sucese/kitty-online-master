@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 /**
  * TeamReplyBean.java
@@ -13,7 +13,7 @@ import com.guoxiaoxing.kitty.bean.BaseEntity;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class TeamReplyBean extends BaseEntity {
+public class TeamReplyBean extends BaseObject {
     
     @XStreamAlias("reply")
     private TeamReply teamReply;

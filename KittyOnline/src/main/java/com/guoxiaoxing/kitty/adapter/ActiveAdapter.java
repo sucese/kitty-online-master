@@ -16,8 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Active;
-import com.guoxiaoxing.kitty.bean.Active.ObjectReply;
+import com.guoxiaoxing.kitty.bean.UserActive;
+import com.guoxiaoxing.kitty.bean.UserActive.ObjectReply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.activity.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
@@ -78,7 +78,7 @@ public class ActiveAdapter extends ListBaseAdapter {
             vh = (ViewHolder) convertView.getTag();
         }
 
-        final Active item = (Active) mDatas.get(position);
+        final UserActive item = (UserActive) mDatas.get(position);
 
         vh.name.setText(item.getAuthor());
 
@@ -154,7 +154,7 @@ public class ActiveAdapter extends ListBaseAdapter {
      * 动态设置图片显示样式
      */
     private void setTweetImage(final ViewGroup parent, final ViewHolder vh,
-                               final Active item) {
+                               final UserActive item) {
         vh.pic.setVisibility(View.VISIBLE);
 
         new Core.Builder().url(item.getTweetimage()).view(vh.pic).loadBitmapRes(R.drawable

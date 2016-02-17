@@ -17,16 +17,15 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ActiveAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.Result;
 import com.guoxiaoxing.kitty.bean.ResultBean;
 import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.bean.UserActive;
 import com.guoxiaoxing.kitty.bean.UserInformation;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
-import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
@@ -74,7 +73,7 @@ public class UserCenterFragment extends BaseFragment implements
                         UserInformation.class, new ByteArrayInputStream(arg2));
                 mUser = information.getUser();
                 fillUI();
-                List<Active> data = information.getActiveList();
+                List<UserActive> data = information.getUserActiveList();
                 if (mState == STATE_REFRESH)
                     mAdapter.clear();
                 mAdapter.addData(data);
@@ -118,7 +117,7 @@ public class UserCenterFragment extends BaseFragment implements
         final int id = v.getId();
         switch (id) {
             case R.id.iv_avatar:
-                UIHelper.showUserAvatar(getActivity(), mUser.getPortrait());
+                UIHelper.showUserAvatar(getActivity(), mUser.getFace());
                 break;
             case R.id.ly_following:
                 UIHelper.showFriends(getActivity(), mUser.getId(), 0);
@@ -221,9 +220,9 @@ public class UserCenterFragment extends BaseFragment implements
 
     private void fillUI() {
         mListView.setVisibility(View.VISIBLE);
-        ((AvatarView) mIvAvatar).setAvatarUrl(mUser.getPortrait());
+        ((AvatarView) mIvAvatar).setAvatarUrl(mUser.getFace());
         mHisUid = mUser.getId();
-        mHisName = mUser.getName();
+        mHisName = mUser.getUsername();
         mTvName.setText(mHisName);
 
         int genderIcon = R.drawable.userinfo_icon_male;
@@ -232,16 +231,16 @@ public class UserCenterFragment extends BaseFragment implements
         }
         mIvGender.setBackgroundResource(genderIcon);
 
-        mTvFollowing.setText(mUser.getFollowers() + "");
-        mTvFollower.setText(mUser.getFans() + "");
-        mTvSore.setText(mUser.getScore() + "");
-        mTvLastestLoginTime.setText(getString(R.string.latest_login_time,
-                StringUtils.friendly_time(mUser.getLatestonline())));
+        mTvFollowing.setText(mUser.getFan() + "");
+        mTvFollower.setText(mUser.getAttention() + "");
+//        mTvSore.setText(mUser.getScore() + "");
+//        mTvLastestLoginTime.setText(getString(R.string.latest_login_time,
+//                StringUtils.friendly_time(mUser.getLatestonline())));
         updateUserRelation();
     }
 
     private void updateUserRelation() {
-        switch (mUser.getRelation()) {
+        switch (mUser.getRelationship()) {
             case User.RELATION_TYPE_BOTH:
                 mBtnFollowUser.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_follow_each_other, 0, 0, 0);
@@ -286,14 +285,14 @@ public class UserCenterFragment extends BaseFragment implements
             mInformationDialog = DialogHelp.getDialog(getActivity()).show();
             View view = LayoutInflater.from(getActivity()).inflate(
                     R.layout.fragment_user_center_information, null);
-            ((TextView) view.findViewById(R.id.tv_join_time))
-                    .setText(StringUtils.friendly_time(mUser.getJointime()));
-            ((TextView) view.findViewById(R.id.tv_location))
-                    .setText(StringUtils.getString(mUser.getFrom()));
-            ((TextView) view.findViewById(R.id.tv_development_platform))
-                    .setText(StringUtils.getString(mUser.getDevplatform()));
-            ((TextView) view.findViewById(R.id.tv_academic_focus))
-                    .setText(StringUtils.getString(mUser.getExpertise()));
+//            ((TextView) view.findViewById(R.id.tv_join_time))
+//                    .setText(StringUtils.friendly_time(mUser.getJointime()));
+//            ((TextView) view.findViewById(R.id.tv_location))
+//                    .setText(StringUtils.getString(mUser.getFrom()));
+//            ((TextView) view.findViewById(R.id.tv_development_platform))
+//                    .setText(StringUtils.getString(mUser.getDevplatform()));
+//            ((TextView) view.findViewById(R.id.tv_academic_focus))
+//                    .setText(StringUtils.getString(mUser.getExpertise()));
             mInformationDialog.setContentView(view);
         }
 
@@ -311,7 +310,7 @@ public class UserCenterFragment extends BaseFragment implements
         }
         String dialogTitle = "";
         int relationAction = 0;
-        switch (mUser.getRelation()) {
+        switch (mUser.getRelationship()) {
             case User.RELATION_TYPE_BOTH:
                 dialogTitle = "确定取消互粉吗？";
                 relationAction = User.RELATION_ACTION_DELETE;
@@ -349,7 +348,7 @@ public class UserCenterFragment extends BaseFragment implements
                             Result result = XmlUtils.toBean(ResultBean.class,
                                     new ByteArrayInputStream(arg2)).getResult();
                             if (result.OK()) {
-                                switch (mUser.getRelation()) {
+                                switch (mUser.getRelationship()) {
                                     case User.RELATION_TYPE_BOTH:
                                         mBtnFollowUser
                                                 .setCompoundDrawablesWithIntrinsicBounds(
@@ -361,7 +360,7 @@ public class UserCenterFragment extends BaseFragment implements
                                                 .getColor(R.color.white));
                                         mBtnFollowUser
                                                 .setBackgroundResource(R.drawable.btn_small_green_selector);
-                                        mUser.setRelation(User.RELATION_TYPE_FANS_ME);
+                                        mUser.setRelationship(User.RELATION_TYPE_FANS_ME);
                                         break;
                                     case User.RELATION_TYPE_FANS_HIM:
                                         mBtnFollowUser
@@ -374,7 +373,7 @@ public class UserCenterFragment extends BaseFragment implements
                                                 .getColor(R.color.white));
                                         mBtnFollowUser
                                                 .setBackgroundResource(R.drawable.btn_small_green_selector);
-                                        mUser.setRelation(User.RELATION_TYPE_NULL);
+                                        mUser.setRelationship(User.RELATION_TYPE_NULL);
                                         break;
                                     case User.RELATION_TYPE_FANS_ME:
                                         mBtnFollowUser
@@ -387,7 +386,7 @@ public class UserCenterFragment extends BaseFragment implements
                                                 .getColor(R.color.black));
                                         mBtnFollowUser
                                                 .setBackgroundResource(R.drawable.btn_small_white_selector);
-                                        mUser.setRelation(User.RELATION_TYPE_BOTH);
+                                        mUser.setRelationship(User.RELATION_TYPE_BOTH);
                                         break;
                                     case User.RELATION_TYPE_NULL:
                                         mBtnFollowUser
@@ -400,7 +399,7 @@ public class UserCenterFragment extends BaseFragment implements
                                                 .getColor(R.color.black));
                                         mBtnFollowUser
                                                 .setBackgroundResource(R.drawable.btn_small_white_selector);
-                                        mUser.setRelation(User.RELATION_TYPE_FANS_HIM);
+                                        mUser.setRelationship(User.RELATION_TYPE_FANS_HIM);
                                         break;
                                 }
                                 int padding = (int) TDevice.dpToPixel(20);
@@ -431,9 +430,9 @@ public class UserCenterFragment extends BaseFragment implements
         if (position - 1 < 0) {
             return;
         }
-        Active active = (Active) mAdapter.getItem(position - 1);
-        if (active != null)
-            UIHelper.showActiveRedirect(view.getContext(), active);
+        UserActive userActive = (UserActive) mAdapter.getItem(position - 1);
+        if (userActive != null)
+            UIHelper.showActiveRedirect(view.getContext(), userActive);
     }
 
     @Override

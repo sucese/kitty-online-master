@@ -97,7 +97,7 @@ public class MainMineFragment extends BaseFragment {
                     mMesCount.hide();
                 }
             } else if (action.equals(Constants.INTENT_ACTION_USER_CHANGE)) {
-                requestData(true);
+                requestUserData(true);
             } else if (action.equals(Constants.INTENT_ACTION_NOTICE)) {
                 setNotice();
             }
@@ -126,7 +126,8 @@ public class MainMineFragment extends BaseFragment {
 
         @Override
         public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                Throwable arg3) {}
+                              Throwable arg3) {
+        }
     };
 
     private void steupUser() {
@@ -189,7 +190,7 @@ public class MainMineFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        requestData(true);
+        requestUserData(true);
         mInfo = AppContext.getInstance().getLoginUser();
         fillUI();
     }
@@ -202,7 +203,7 @@ public class MainMineFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (AppContext.getInstance().isLogin()) {
-                    requestData(true);
+                    requestUserData(true);
                 } else {
                     UIHelper.showLoginActivity(getActivity());
                 }
@@ -247,18 +248,16 @@ public class MainMineFragment extends BaseFragment {
     private void fillUI() {
         if (mInfo == null)
             return;
-        mIvAvatar.setAvatarUrl(mInfo.getPortrait());
-        mTvName.setText(mInfo.getName());
+        mIvAvatar.setAvatarUrl(mInfo.getFace());
+        mTvName.setText(mInfo.getUsername());
         mIvGender
                 .setImageResource(StringUtils.toInt(mInfo.getGender()) != 2 ? R.drawable.userinfo_icon_male
                         : R.drawable.userinfo_icon_female);
-        mTvScore.setText(String.valueOf(mInfo.getScore()));
-        mTvFavorite.setText(String.valueOf(mInfo.getFavoritecount()));
-        mTvFollowing.setText(String.valueOf(mInfo.getFollowers()));
-        mTvFans.setText(String.valueOf(mInfo.getFans()));
+        mTvFollowing.setText(String.valueOf(mInfo.getFan()));
+        mTvFans.setText(String.valueOf(mInfo.getAttention()));
     }
 
-    private void requestData(boolean refresh) {
+    private void requestUserData(boolean refresh) {
         if (AppContext.getInstance().isLogin()) {
             mIsWatingLogin = false;
             String key = getCacheKey();
@@ -353,43 +352,43 @@ public class MainMineFragment extends BaseFragment {
         }
         final int id = v.getId();
         switch (id) {
-        case R.id.iv_avatar:
-            UIHelper.showSimpleBack(getActivity(),
-                    SimpleBackPage.MY_INFORMATION_DETAIL);
-            break;
-        case R.id.iv_qr_code:
-            showMyQrCode();
-            break;
-        case R.id.ly_following:
-            UIHelper.showFriends(getActivity(), AppContext.getInstance()
-                    .getLoginUid(), 0);
-            break;
-        case R.id.ly_follower:
-            UIHelper.showFriends(getActivity(), AppContext.getInstance()
-                    .getLoginUid(), 1);
-            break;
-        case R.id.ly_favorite:
-            UIHelper.showUserFavorite(getActivity(), AppContext.getInstance()
-                    .getLoginUid());
-            break;
-        case R.id.rl_message:
-            UIHelper.showMyMes(getActivity());
-            setNoticeReaded();
-            break;
-        case R.id.rl_team:
-            UIHelper.showTeamMainActivity(getActivity());
-            break;
-        case R.id.rl_blog:
-            UIHelper.showUserBlog(getActivity(), AppContext.getInstance()
-                    .getLoginUid());
-            break;
-        case R.id.rl_user_center:
-            UIHelper.showUserCenter(getActivity(), AppContext.getInstance()
-                    .getLoginUid(), AppContext.getInstance().getLoginUser()
-                    .getName());
-            break;
-        default:
-            break;
+            case R.id.iv_avatar:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.MY_INFORMATION_DETAIL);
+                break;
+            case R.id.iv_qr_code:
+                showMyQrCode();
+                break;
+            case R.id.ly_following:
+                UIHelper.showFriends(getActivity(), AppContext.getInstance()
+                        .getLoginUid(), 0);
+                break;
+            case R.id.ly_follower:
+                UIHelper.showFriends(getActivity(), AppContext.getInstance()
+                        .getLoginUid(), 1);
+                break;
+            case R.id.ly_favorite:
+                UIHelper.showUserFavorite(getActivity(), AppContext.getInstance()
+                        .getLoginUid());
+                break;
+            case R.id.rl_message:
+                UIHelper.showMyMes(getActivity());
+                setNoticeReaded();
+                break;
+            case R.id.rl_team:
+                UIHelper.showTeamMainActivity(getActivity());
+                break;
+            case R.id.rl_blog:
+                UIHelper.showUserBlog(getActivity(), AppContext.getInstance()
+                        .getLoginUid());
+                break;
+            case R.id.rl_user_center:
+                UIHelper.showUserCenter(getActivity(), AppContext.getInstance()
+                        .getLoginUid(), AppContext.getInstance().getLoginUser()
+                        .getUsername());
+                break;
+            default:
+                break;
         }
     }
 
@@ -399,7 +398,8 @@ public class MainMineFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {}
+    public void initData() {
+    }
 
     private void setNoticeReaded() {
         mMesCount.setText("");

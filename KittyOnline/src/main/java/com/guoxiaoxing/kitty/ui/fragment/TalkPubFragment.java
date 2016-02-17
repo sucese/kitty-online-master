@@ -207,10 +207,7 @@ public class TalkPubFragment extends BaseFragment implements
         if (imgFile != null && imgFile.exists()) {
             userTalk.setImageFilePath(imgFile.getAbsolutePath());
         }
-        ServerTaskUtils.pubTweet(getActivity(), userTalk);
-        if (mIsKeyboardVisible) {
-            TDevice.hideSoftKeyboard(getActivity().getCurrentFocus());
-        }
+        userTalk.saveInBackground();
         getActivity().finish();
     }
 

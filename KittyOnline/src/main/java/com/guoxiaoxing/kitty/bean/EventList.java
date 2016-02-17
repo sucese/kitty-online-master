@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class EventList extends BaseEntity implements ListEntity<Event> {
+public class EventList extends BaseObject implements ListEntity<Event> {
 
 	public final static int EVENT_LIST_TYPE_NEW_EVENT = 0X00;// 近期活动
 

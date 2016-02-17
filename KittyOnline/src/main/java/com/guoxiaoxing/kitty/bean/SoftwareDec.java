@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("software")
-public class SoftwareDec extends BaseEntity {
+public class SoftwareDec extends BaseObject {
 	@XStreamAlias("name")
 	private String name;
 	@XStreamAlias("description")

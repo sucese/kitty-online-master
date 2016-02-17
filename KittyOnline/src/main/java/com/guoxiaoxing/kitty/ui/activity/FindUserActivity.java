@@ -143,7 +143,7 @@ public class FindUserActivity extends BaseActivity implements AdapterView.OnItem
         User user = mAdapter.getItem(position);
         if (user != null) {
             UIHelper.showUserCenter(FindUserActivity.this, user.getId(),
-                    user.getName());
+                    user.getUsername());
         }
     }
 

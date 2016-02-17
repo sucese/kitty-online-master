@@ -13,7 +13,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class BlogCommentList extends BaseEntity implements ListEntity<Comment> {
+public class BlogCommentList extends BaseObject implements ListEntity<Comment> {
 	
 	@XStreamAlias("pagesize")
 	private int pageSize;

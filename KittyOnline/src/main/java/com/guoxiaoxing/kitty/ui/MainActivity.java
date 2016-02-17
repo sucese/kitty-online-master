@@ -12,15 +12,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -37,14 +34,14 @@ import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.Notice;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
+import com.guoxiaoxing.kitty.service.NoticeUtils;
 import com.guoxiaoxing.kitty.ui.activity.SimpleBackActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseViewInterface;
 import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
-import com.guoxiaoxing.kitty.service.NoticeUtils;
 import com.guoxiaoxing.kitty.ui.dialog.QuickOptionDialog;
 import com.guoxiaoxing.kitty.ui.fragment.MainBuyFragment;
-import com.guoxiaoxing.kitty.ui.fragment.MainShoppingFragment;
 import com.guoxiaoxing.kitty.ui.fragment.MainMineFragment;
+import com.guoxiaoxing.kitty.ui.fragment.MainShoppingFragment;
 import com.guoxiaoxing.kitty.util.DoubleClickExitHelper;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.UpdateManager;
@@ -87,13 +84,17 @@ public class MainActivity extends AppCompatActivity implements
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Constants.INTENT_ACTION_NOTICE)) {
                 mNotice = (Notice) intent.getSerializableExtra("notice_bean");
-                int atmeCount = mNotice.getAtmeCount();// @我
-                int msgCount = mNotice.getMsgCount();// 留言
-                int reviewCount = mNotice.getReviewCount();// 评论
-                int newFansCount = mNotice.getNewFansCount();// 新粉丝
-                int newLikeCount = mNotice.getNewLikeCount();// 收到赞
-                int activeCount = atmeCount + reviewCount + msgCount
-                        + newFansCount + newLikeCount;
+
+                int activeCount = 0;
+                if (mNotice != null) {
+                    int atmeCount = mNotice.getAtmeCount();// @我
+                    int msgCount = mNotice.getMsgCount();// 留言
+                    int reviewCount = mNotice.getReviewCount();// 评论
+                    int newFansCount = mNotice.getNewFansCount();// 新粉丝
+                    int newLikeCount = mNotice.getNewLikeCount();// 收到赞
+                    activeCount = atmeCount + reviewCount + msgCount
+                            + newFansCount + newLikeCount;
+                }
 
                 Fragment fragment = getCurrentFragment();
                 if (fragment instanceof MainMineFragment) {

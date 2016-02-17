@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class SearchList extends BaseEntity implements ListEntity<SearchResult> {
+public class SearchList extends BaseObject implements ListEntity<SearchResult> {
 
 	public final static String CATALOG_ALL = "all";
 	public final static String CATALOG_NEWS = "news";

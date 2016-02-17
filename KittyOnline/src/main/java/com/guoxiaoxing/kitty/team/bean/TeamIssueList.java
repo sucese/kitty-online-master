@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 
 /**
@@ -16,7 +16,7 @@ import com.guoxiaoxing.kitty.bean.ListEntity;
  */
 @SuppressWarnings({ "serial" })
 @XStreamAlias("oschina")
-public class TeamIssueList extends BaseEntity implements ListEntity<TeamIssue> {
+public class TeamIssueList extends BaseObject implements ListEntity<TeamIssue> {
 
     @XStreamAlias("pagesize")
     private int pageSize;

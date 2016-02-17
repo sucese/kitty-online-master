@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kitty.team.bean;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("team")
-public class Team extends BaseEntity {
+public class Team extends BaseObject {
     @XStreamAlias("type")
     private String type;
     @XStreamAlias("status")
@@ -75,7 +75,7 @@ public class Team extends BaseEntity {
     }
 
     @XStreamAlias("about")
-    public class About extends BaseEntity {
+    public class About extends BaseObject {
         @XStreamAlias("createTime")
         String sign;
         @XStreamAlias("address")

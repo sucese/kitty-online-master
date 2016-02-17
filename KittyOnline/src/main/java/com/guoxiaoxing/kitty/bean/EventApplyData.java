@@ -8,7 +8,7 @@ package com.guoxiaoxing.kitty.bean;
  * 
  */
 @SuppressWarnings("serial")
-public class EventApplyData extends BaseEntity {
+public class EventApplyData extends BaseObject {
 	
 	private int event;// 活动的id
 	

@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("mytweet")
-public class TweetLike extends BaseEntity {
+public class TweetLike extends BaseObject {
     
     @XStreamAlias("user")
     private User user;

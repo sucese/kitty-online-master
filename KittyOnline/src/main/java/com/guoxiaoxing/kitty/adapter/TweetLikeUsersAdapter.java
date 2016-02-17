@@ -31,8 +31,8 @@ public class TweetLikeUsersAdapter extends ListBaseAdapter<User> {
 	    vh = (ViewHolder) convertView.getTag();
 	}
 	User item = mDatas.get(position);
-	vh.avatar.setAvatarUrl(item.getPortrait());
-	vh.name.setText(item.getName());
+	vh.avatar.setAvatarUrl(item.getFace());
+	vh.name.setText(item.getUsername());
         return convertView;
     }
     

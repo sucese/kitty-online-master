@@ -1,6 +1,5 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import com.guoxiaoxing.kitty.bean.Base;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 
 /**

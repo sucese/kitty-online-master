@@ -99,10 +99,10 @@ public class TeamBoardFragment extends BaseFragment {
         mRlIng.setOnClickListener(this);
         mRlAll.setOnClickListener(this);
 
-        mTvName.setText(AppContext.getInstance().getLoginUser().getName() + "，"
+        mTvName.setText(AppContext.getInstance().getLoginUser().getUsername() + "，"
                 + getGreetings());
         mIvAvatarView.setAvatarUrl(AppContext.getInstance().getLoginUser()
-                .getPortrait());
+                .getFace());
         mTvDate.setText("今天是 " + getWeekDay() + "，"
                 + SystemTool.getDataTime("yyyy年MM月dd日"));
 

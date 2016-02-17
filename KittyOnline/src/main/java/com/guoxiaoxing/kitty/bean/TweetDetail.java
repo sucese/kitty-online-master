@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class TweetDetail extends BaseEntity {
+public class TweetDetail extends BaseObject {
 	
 	@XStreamAlias("userTalk")
 	private UserTalk userTalk;

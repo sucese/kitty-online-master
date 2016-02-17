@@ -1,6 +1,9 @@
 package com.guoxiaoxing.kitty.bean;
 
+import com.avos.avoscloud.AVObject;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.io.Serializable;
 
 /** 
  * 我的资料实体类
@@ -11,7 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class MyInformation extends Base {
+public class MyInformation extends AVObject implements Serializable {
 	
 	@XStreamAlias("user")
 	private User user;

@@ -14,8 +14,8 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ActiveAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.bean.UserActive;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.Active;
 import com.guoxiaoxing.kitty.bean.ActiveList;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.Notice;
@@ -37,7 +37,7 @@ import java.io.Serializable;
  * 
  * @author guoxiaoxing
  */
-public class ActiveFragment extends BaseListFragment<Active> implements
+public class ActiveFragment extends BaseListFragment<UserActive> implements
         OnItemLongClickListener {
 
     protected static final String TAG = ActiveFragment.class.getSimpleName();
@@ -177,22 +177,22 @@ public class ActiveFragment extends BaseListFragment<Active> implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
             long id) {
-        Active active = mAdapter.getItem(position);
-        if (active != null)
-            UIHelper.showActiveRedirect(view.getContext(), active);
+        UserActive userActive = mAdapter.getItem(position);
+        if (userActive != null)
+            UIHelper.showActiveRedirect(view.getContext(), userActive);
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view,
             int position, long id) {
-        final Active active = mAdapter.getItem(position);
-        if (active == null)
+        final UserActive userActive = mAdapter.getItem(position);
+        if (userActive == null)
             return false;
         String[] items = new String[] { getResources().getString(R.string.copy) };
         DialogHelp.getSelectDialog(getActivity(), items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                TDevice.copyTextToBoard(HTMLUtil.delHTMLTag(active.getMessage()));
+                TDevice.copyTextToBoard(HTMLUtil.delHTMLTag(userActive.getMessage()));
             }
         }).show();
         return true;

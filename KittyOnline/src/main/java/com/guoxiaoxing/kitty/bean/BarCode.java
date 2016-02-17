@@ -14,7 +14,7 @@ import org.json.JSONObject;
  * @created 2014-3-17
  */
 @SuppressWarnings("serial")
-public class BarCode extends BaseEntity implements Serializable{
+public class BarCode extends BaseObject implements Serializable{
 	
 	public final static String NODE_REQURE_LOGIN = "require_login";
 	public final static String NODE_TYPE = "type"; 

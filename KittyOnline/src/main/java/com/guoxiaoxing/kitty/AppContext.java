@@ -23,6 +23,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
 
 import io.fabric.sdk.android.Fabric;
+
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.http.HttpConfig;
 import org.kymjs.kjframe.utils.KJLoger;
@@ -188,21 +189,16 @@ public class AppContext extends BaseApplication {
         setProperties(new Properties() {
             {
                 setProperty("user.uid", String.valueOf(user.getId()));
-                setProperty("user.name", user.getName());
-                setProperty("user.face", user.getPortrait());// 用户头像-文件名
-                setProperty("user.account", user.getAccount());
-                setProperty("user.pwd",
-                        CyptoUtils.encode("oschinaApp", user.getPwd()));
-                setProperty("user.location", user.getLocation());
-                setProperty("user.followers",
-                        String.valueOf(user.getFollowers()));
-                setProperty("user.fans", String.valueOf(user.getFans()));
-                setProperty("user.score", String.valueOf(user.getScore()));
-                setProperty("user.favoritecount",
-                        String.valueOf(user.getFavoritecount()));
-                setProperty("user.gender", String.valueOf(user.getGender()));
-                setProperty("user.isRememberMe",
-                        String.valueOf(user.isRememberMe()));// 是否记住我的信息
+                setProperty("user.name", user.getUsername());
+//                setProperty("user.face", user.getFace());// 用户头像-文件名
+////                setProperty("user.pwd",
+////                        CyptoUtils.encode("oschinaApp", user.getPwd()));
+//                setProperty("user.location", user.getLocation());
+//                setProperty("user.attention",
+//                        String.valueOf(user.getAttention()));
+//                setProperty("user.fan", String.valueOf(user.getFan()));
+//                setProperty("user.gender", String.valueOf(user.getGender()));
+
             }
         });
     }
@@ -216,14 +212,15 @@ public class AppContext extends BaseApplication {
     public void updateUserInfo(final User user) {
         setProperties(new Properties() {
             {
-                setProperty("user.name", user.getName());
-                setProperty("user.face", user.getPortrait());// 用户头像-文件名
-                setProperty("user.followers",
-                        String.valueOf(user.getFollowers()));
-                setProperty("user.fans", String.valueOf(user.getFans()));
-                setProperty("user.score", String.valueOf(user.getScore()));
-                setProperty("user.favoritecount",
-                        String.valueOf(user.getFavoritecount()));
+                setProperty("user.uid", String.valueOf(user.getId()));
+                setProperty("user.name", user.getUsername());
+                setProperty("user.face", user.getFace());// 用户头像-文件名
+//                setProperty("user.pwd",
+//                        CyptoUtils.encode("oschinaApp", user.getPwd()));
+                setProperty("user.location", user.getLocation());
+                setProperty("user.attention",
+                        String.valueOf(user.getAttention()));
+                setProperty("user.fan", String.valueOf(user.getFan()));
                 setProperty("user.gender", String.valueOf(user.getGender()));
             }
         });
@@ -236,18 +233,12 @@ public class AppContext extends BaseApplication {
      */
     public User getLoginUser() {
         User user = new User();
-        user.setId(StringUtils.toInt(getProperty("user.uid"), 0));
-        user.setName(getProperty("user.name"));
-        user.setPortrait(getProperty("user.face"));
-        user.setAccount(getProperty("user.account"));
-        user.setLocation(getProperty("user.location"));
-        user.setFollowers(StringUtils.toInt(getProperty("user.followers"), 0));
-        user.setFans(StringUtils.toInt(getProperty("user.fans"), 0));
-        user.setScore(StringUtils.toInt(getProperty("user.score"), 0));
-        user.setFavoritecount(StringUtils.toInt(
-                getProperty("user.favoritecount"), 0));
-        user.setRememberMe(StringUtils.toBool(getProperty("user.isRememberMe")));
-        user.setGender(getProperty("user.gender"));
+//        user.setId(StringUtils.toInt(getProperty("user.uid"), 0));
+//        user.setFace(getProperty("user.face"));
+//        user.setLocation(getProperty("user.location"));
+//        user.setFan(StringUtils.toInt(getProperty("user.fan"), 0));
+//        user.setAttention(StringUtils.toInt(getProperty("user.attention"), 0));
+//        user.setGender(getProperty("user.gender"));
         return user;
     }
 

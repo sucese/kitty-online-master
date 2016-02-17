@@ -6,10 +6,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  * 数据操作结果实体类
- * 
- * @author liux (http://my.oschina.net/liux)
- * @version 1.0
- * @created 2012-3-21
+ *
+ * @author guoxiaoxing
  */
 @SuppressWarnings("serial")
 @XStreamAlias("result")
@@ -22,22 +20,22 @@ public class Result implements Serializable {
     private String errorMessage;
 
     public boolean OK() {
-	return errorCode == 1;
+        return errorCode == 1;
     }
 
     public int getErrorCode() {
-	return errorCode;
+        return errorCode;
     }
 
     public void setErrorCode(int errorCode) {
-	this.errorCode = errorCode;
+        this.errorCode = errorCode;
     }
 
     public String getErrorMessage() {
-	return errorMessage;
+        return errorMessage;
     }
 
     public void setErrorMessage(String errorMessage) {
-	this.errorMessage = errorMessage;
+        this.errorMessage = errorMessage;
     }
 }

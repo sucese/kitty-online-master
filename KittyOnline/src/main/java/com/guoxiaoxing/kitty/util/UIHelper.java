@@ -31,7 +31,7 @@ import android.widget.ZoomButtonsController;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.bean.Active;
+import com.guoxiaoxing.kitty.bean.UserActive;
 import com.guoxiaoxing.kitty.bean.Comment;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.News;
@@ -282,30 +282,30 @@ public class UIHelper {
      * 动态点击跳转到相关新闻、帖子等
      *
      * @param context context
-     * @param active  动态实体类
+     * @param userActive  动态实体类
      *                0其他 1新闻 2帖子 3动弹 4博客
      */
-    public static void showActiveRedirect(Context context, Active active) {
-        String url = active.getUrl();
+    public static void showActiveRedirect(Context context, UserActive userActive) {
+        String url = userActive.getUrl();
         // url为空-旧方法
         if (StringUtils.isEmpty(url)) {
-            int id = active.getObjectId();
-            int catalog = active.getCatalog();
+            int id = userActive.getActiveId();
+            int catalog = userActive.getCatalog();
             switch (catalog) {
-                case Active.CATALOG_OTHER:
+                case UserActive.CATALOG_OTHER:
                     // 其他-无跳转
                     break;
-                case Active.CATALOG_NEWS:
-                    showNewsDetail(context, id, active.getCommentCount());
+                case UserActive.CATALOG_NEWS:
+                    showNewsDetail(context, id, userActive.getCommentCount());
                     break;
-                case Active.CATALOG_POST:
-                    showPostDetail(context, id, active.getCommentCount());
+                case UserActive.CATALOG_POST:
+                    showPostDetail(context, id, userActive.getCommentCount());
                     break;
-                case Active.CATALOG_TWEET:
+                case UserActive.CATALOG_TWEET:
                     showTweetDetail(context, null, id);
                     break;
-                case Active.CATALOG_BLOG:
-                    showBlogDetail(context, id, active.getCommentCount());
+                case UserActive.CATALOG_BLOG:
+                    showBlogDetail(context, id, userActive.getCommentCount());
                     break;
                 default:
                     break;

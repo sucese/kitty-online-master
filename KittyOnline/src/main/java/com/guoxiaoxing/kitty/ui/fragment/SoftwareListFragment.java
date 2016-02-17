@@ -7,7 +7,7 @@ import java.util.List;
 import com.guoxiaoxing.kitty.adapter.SoftwareAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 import com.guoxiaoxing.kitty.bean.ListEntity;
 import com.guoxiaoxing.kitty.bean.SoftwareDec;
 import com.guoxiaoxing.kitty.bean.SoftwareList;
@@ -76,7 +76,7 @@ public class SoftwareListFragment extends BaseListFragment<SoftwareDec> {
     }
 
     @Override
-    protected boolean compareTo(List<? extends BaseEntity> data, BaseEntity enity) {
+    protected boolean compareTo(List<? extends BaseObject> data, BaseObject enity) {
 	int s = data.size();
 	if (enity != null) {
 	    for (int i = 0; i < s; i++) {

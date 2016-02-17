@@ -3,7 +3,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseEntity;
+import com.guoxiaoxing.kitty.bean.BaseObject;
 
 /**
  * 团队项目实体类
@@ -15,7 +15,7 @@ import com.guoxiaoxing.kitty.bean.BaseEntity;
 
 @SuppressWarnings("serial")
 @XStreamAlias("project")
-public class TeamProject extends BaseEntity {
+public class TeamProject extends BaseObject {
 
     public final static String GITOSC = "Git@OSC";
     public final static String GITHUB = "GitHub";
@@ -76,7 +76,7 @@ public class TeamProject extends BaseEntity {
     }
 
     @XStreamAlias("issue")
-    public class Issue extends BaseEntity {
+    public class Issue extends BaseObject {
 	@XStreamAlias("opened")
 	private int opened;
 	@XStreamAlias("all")

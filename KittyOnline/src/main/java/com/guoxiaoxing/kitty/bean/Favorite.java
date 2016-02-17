@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("favorite")
-public class Favorite extends BaseEntity {
+public class Favorite extends BaseObject {
 	
 	public static final int CATALOG_ALL = 0;
 	public static final int CATALOG_SOFTWARE = 1;

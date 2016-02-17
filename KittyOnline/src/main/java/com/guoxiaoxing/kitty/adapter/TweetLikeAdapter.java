@@ -43,15 +43,15 @@ public class TweetLikeAdapter extends ListBaseAdapter<TweetLike> {
 
         final TweetLike item = (TweetLike) mDatas.get(position);
 
-        vh.name.setText(item.getUser().getName().trim());
+        vh.name.setText(item.getUser().getUsername().trim());
 
         vh.action.setText("赞了我的动弹");
 
         vh.time.setText(StringUtils.friendly_time(item.getDatatime().trim()));
 
         PlatfromUtil.setPlatFromString(vh.from, item.getAppClient());
-        vh.avatar.setUserInfo(item.getUser().getId(), item.getUser().getName());
-        vh.avatar.setAvatarUrl(item.getUser().getPortrait());
+        vh.avatar.setUserInfo(item.getUser().getId(), item.getUser().getUsername());
+        vh.avatar.setAvatarUrl(item.getUser().getFace());
 
         vh.reply.setMovementMethod(MyLinkMovementMethod.a());
         vh.reply.setFocusable(false);

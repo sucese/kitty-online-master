@@ -1,20 +1,20 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
-import java.io.InputStream;
-import java.io.Serializable;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
 import com.guoxiaoxing.kitty.adapter.TweetLikeUsersAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.ui.base.BaseActivity;
-import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.bean.TweetLikeUserList;
 import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.ui.base.BaseActivity;
+import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.XmlUtils;
+
+import java.io.InputStream;
+import java.io.Serializable;
 
 /**
  * TweetLikeUsersFragment.java
@@ -70,7 +70,7 @@ public class TweetLikeUsersFragment extends BaseListFragment<User> {
         // TODO Auto-generated method stub
 	User item = mAdapter.getItem(position);
 	if (item != null && item.getId() > 0) {
-	    UIHelper.showUserCenter(getActivity(), item.getId(), item.getName());
+	    UIHelper.showUserCenter(getActivity(), item.getId(), item.getUsername());
 	}
     }
 }

@@ -153,7 +153,7 @@ public class MineFragmentDetail extends BaseFragment {
                     handleSelectPicture();
                 } else {
                     UIHelper.showUserAvatar(getActivity(),
-                            mUser.getPortrait());
+                            mUser.getFace());
                 }
             }
         }).show();
@@ -199,13 +199,13 @@ public class MineFragmentDetail extends BaseFragment {
     }
 
     public void fillUI() {
-        Core.getKJBitmap().displayWithLoadBitmap(mUserFace, mUser.getPortrait(),
+        Core.getKJBitmap().displayWithLoadBitmap(mUserFace, mUser.getFace(),
                 R.drawable.widget_dface);
-        mName.setText(mUser.getName());
-        mJoinTime.setText(StringUtils.friendly_time(mUser.getJointime()));
-        mFrom.setText(mUser.getFrom());
-        mPlatFrom.setText(mUser.getDevplatform());
-        mFocus.setText(mUser.getExpertise());
+        mName.setText(mUser.getUsername());
+//        mJoinTime.setText(StringUtils.friendly_time(mUser.getJointime()));
+//        mFrom.setText(mUser.getFrom());
+//        mPlatFrom.setText(mUser.getDevplatform());
+//        mFocus.setText(mUser.getExpertise());
     }
 
     public void sendRequiredData() {

@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("event")
-public class Event extends BaseEntity {
+public class Event extends BaseObject {
 	
 	public final static int EVNET_STATUS_APPLYING = 0x02;
 	public final static int EVNET_STATUS_END = 0x01;

@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class SoftwareDetail extends BaseEntity {
+public class SoftwareDetail extends BaseObject {
 
 	@XStreamAlias("software")
 	private Software software;
