@@ -11,6 +11,7 @@ import com.guoxiaoxing.kitty.ui.activity.FindUserActivity;
 import com.guoxiaoxing.kitty.ui.activity.ShakeActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
+import com.guoxiaoxing.kitty.widget.BadgeView;
 
 import butterknife.Bind;
 
@@ -39,6 +40,9 @@ public class MainChatFragment extends BaseFragment {
     @Bind(R.id.cv_shake)
     CardView mCvShake;
 
+    private static BadgeView mMesCount;
+
+
 
     @Override
     protected int getLayoutId() {
@@ -62,7 +66,7 @@ public class MainChatFragment extends BaseFragment {
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.EVENT_LIST);
                 break;
             case R.id.cv_scan:
-                UIHelper.showScanActivity(getActivity());
+                UIHelper.showMyMes(getActivity());
                 break;
             case R.id.cv_shake:
                 showShake();
@@ -98,5 +102,7 @@ public class MainChatFragment extends BaseFragment {
     public void initData() {
 
     }
+
+
 
 }

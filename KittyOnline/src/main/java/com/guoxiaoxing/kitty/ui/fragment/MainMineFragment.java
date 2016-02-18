@@ -6,10 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,8 +21,8 @@ import com.guoxiaoxing.kitty.bean.SimpleBackPage;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.ui.MainActivity;
-import com.guoxiaoxing.kitty.ui.dialog.MyQrodeDialog;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.ui.dialog.MyQrodeDialog;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
@@ -65,8 +62,7 @@ public class MainMineFragment extends BaseFragment {
     TextView mTvFollowing;
     @Bind(R.id.tv_follower)
     TextView mTvFans;
-    @Bind(R.id.tv_mes)
-    View mMesView;
+
     @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
     @Bind(R.id.iv_qr_code)
@@ -212,17 +208,6 @@ public class MainMineFragment extends BaseFragment {
         view.findViewById(R.id.ly_favorite).setOnClickListener(this);
         view.findViewById(R.id.ly_following).setOnClickListener(this);
         view.findViewById(R.id.ly_follower).setOnClickListener(this);
-        view.findViewById(R.id.rl_message).setOnClickListener(this);
-        view.findViewById(R.id.rl_team).setOnClickListener(this);
-        view.findViewById(R.id.rl_blog).setOnClickListener(this);
-        view.findViewById(R.id.rl_note).setOnClickListener(
-                new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        UIHelper.showSimpleBack(getActivity(),
-                                SimpleBackPage.NOTE);
-                    }
-                });
         mUserUnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,11 +215,11 @@ public class MainMineFragment extends BaseFragment {
             }
         });
 
-        mMesCount = new BadgeView(getActivity(), mMesView);
-        mMesCount.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
-        mMesCount.setBadgePosition(BadgeView.POSITION_CENTER);
-        mMesCount.setGravity(Gravity.CENTER);
-        mMesCount.setBackgroundResource(R.drawable.notification_bg);
+//        mMesCount = new BadgeView(getActivity(), mMesView);
+//        mMesCount.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
+//        mMesCount.setBadgePosition(BadgeView.POSITION_CENTER);
+//        mMesCount.setGravity(Gravity.CENTER);
+//        mMesCount.setBackgroundResource(R.drawable.notification_bg);
         mQrCode.setOnClickListener(this);
         // // 初始化团队列表数据
         // String cache = PreferenceHelper.readString(getActivity(),
@@ -371,17 +356,7 @@ public class MainMineFragment extends BaseFragment {
                 UIHelper.showUserFavorite(getActivity(), AppContext.getInstance()
                         .getLoginUid());
                 break;
-            case R.id.rl_message:
-                UIHelper.showMyMes(getActivity());
-                setNoticeReaded();
-                break;
-            case R.id.rl_team:
-                UIHelper.showTeamMainActivity(getActivity());
-                break;
-            case R.id.rl_blog:
-                UIHelper.showUserBlog(getActivity(), AppContext.getInstance()
-                        .getLoginUid());
-                break;
+
             case R.id.rl_user_center:
                 UIHelper.showUserCenter(getActivity(), AppContext.getInstance()
                         .getLoginUid(), AppContext.getInstance().getLoginUser()

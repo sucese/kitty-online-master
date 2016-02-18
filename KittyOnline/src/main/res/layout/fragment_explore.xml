@@ -112,7 +112,7 @@
             style="@style/option_item_text"
             android:drawablePadding="@dimen/space_10"
             android:drawableStart="@drawable/icon_explore_friends"
-            android:text="@string/scan" />
+            android:text="@string/my_message" />
     </android.support.v7.widget.CardView>
 
 

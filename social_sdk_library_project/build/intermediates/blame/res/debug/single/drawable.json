@@ -4,12 +4,12 @@
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/shake_umeng_socialize_close.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_facebook.png",
-        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_facebook.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_laiwang_gray.png",
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_laiwang_gray.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_facebook.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_facebook.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_facebook_close.png",
@@ -56,12 +56,12 @@
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_title_tab_button_right.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_wechat.png",
-        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_wechat.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_whatsapp.png",
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_whatsapp.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_wechat.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_wechat.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/debug/drawable/umeng_socialize_location_grey.png",
