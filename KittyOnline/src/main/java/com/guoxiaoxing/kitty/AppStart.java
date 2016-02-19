@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -14,17 +13,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.guoxiaoxing.kitty.service.LogUploadService;
 import com.guoxiaoxing.kitty.ui.MainActivity;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.LoginAnimFragment;
+import com.guoxiaoxing.kitty.ui.welcome.base.ParentViewPager;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.AdvertisementFragment;
 import com.guoxiaoxing.kitty.ui.welcome.outlayer.WelcomAnimFragment;
 import com.guoxiaoxing.kitty.util.DisplayUtil;
 import com.guoxiaoxing.kitty.util.TDevice;
-import com.guoxiaoxing.kitty.widget.ParentViewPager;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
@@ -53,7 +50,7 @@ public class AppStart extends FragmentActivity {
     private AnimatorSet mAnimatorSet;
 
     private WelcomAnimFragment mWelcomAnimFragment;
-    private LoginAnimFragment mLoginAnimFragment;
+    private AdvertisementFragment mAdvertisementFragment;
 
 
     @Override
@@ -78,6 +75,7 @@ public class AppStart extends FragmentActivity {
                 break;
             //正常启动
             case NORMAL:
+                playUserGuide();
                 startApp();
                 break;
             default:
@@ -158,9 +156,10 @@ public class AppStart extends FragmentActivity {
                         mVpParent.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                mLoginAnimFragment.playInAnim();
+                                mAdvertisementFragment.playInAnim();
                             }
                         }, 300);
+
                         break;
                 }
             }
@@ -211,8 +210,8 @@ public class AppStart extends FragmentActivity {
                     });
                     return mWelcomAnimFragment;
                 case FRAGMENT_LOGINANIM:
-                    mLoginAnimFragment = new LoginAnimFragment();
-                    return mLoginAnimFragment;
+                    mAdvertisementFragment = new AdvertisementFragment();
+                    return mAdvertisementFragment;
             }
             return null;
         }
@@ -226,28 +225,28 @@ public class AppStart extends FragmentActivity {
     /**
      * 点击返回键退出程序
      */
-    private static Boolean isExit = false;
-    private Handler mHandler = new Handler();
+//    private static Boolean isExit = false;
+//    private Handler mHandler = new Handler();
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (isExit == false) {
-                isExit = true;
-                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        isExit = false;
-                    }
-                }, 2000);
-            } else {
-                finish();
-                System.exit(0);
-            }
-        }
-        return false;
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            if (isExit == false) {
+//                isExit = true;
+//                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//                mHandler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        isExit = false;
+//                    }
+//                }, 2000);
+//            } else {
+//                finish();
+//                System.exit(0);
+//            }
+//        }
+//        return false;
+//    }
 
     public enum AppStartMode {
         FIRST_TIME, FIRST_TIME_VERSION, NORMAL;

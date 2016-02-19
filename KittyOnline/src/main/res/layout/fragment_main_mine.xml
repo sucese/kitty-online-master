@@ -14,4 +14,11 @@
 
         <include layout="@layout/fragment_mine_content" />
     </LinearLayout>
+
+    <com.guoxiaoxing.kitty.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
 </FrameLayout>

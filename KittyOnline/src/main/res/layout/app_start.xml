@@ -1,5 +1,4 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,19 +6,18 @@
         android:id="@+id/iv_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_repeat_bg"
-        />
+        android:background="@drawable/welcome_repeat_bg" />
 
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/welcome_logo"/>
+        android:src="@drawable/welcome_logo" />
 
-    <com.guoxiaoxing.kitty.widget.ParentViewPager
+    <com.guoxiaoxing.kitty.ui.welcome.base.ParentViewPager
         android:id="@+id/vp_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>

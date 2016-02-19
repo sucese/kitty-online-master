@@ -11,6 +11,13 @@
         android:layout_margin="10dp"
         android:text="理财-记录" />
 
+    <TextView
+        android:id="@+id/tv_mes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消息小圆点"
+        android:gravity="right" />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

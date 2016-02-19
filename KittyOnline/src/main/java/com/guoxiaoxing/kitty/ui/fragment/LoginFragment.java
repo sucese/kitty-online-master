@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatEditText;
@@ -28,7 +27,6 @@ import com.avos.avoscloud.RequestPasswordResetCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.LoginUserBean;
@@ -38,12 +36,13 @@ import com.guoxiaoxing.kitty.ui.activity.LoginBindActivityChooseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.DialogHelp;
+import com.guoxiaoxing.kitty.util.DisplayUtil;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TDevice;
-import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.XmlUtils;
-import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.tencent.mm.sdk.modelmsg.SendAuth;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -57,17 +56,11 @@ import com.umeng.socialize.controller.listener.SocializeListeners;
 import com.umeng.socialize.exception.SocializeException;
 import com.umeng.socialize.sso.SinaSsoHandler;
 
-import org.kymjs.kjframe.http.HttpConfig;
-
 import java.util.Map;
 import java.util.Set;
 
 import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.client.CookieStore;
-import cz.msebera.android.httpclient.client.protocol.ClientContext;
-import cz.msebera.android.httpclient.cookie.Cookie;
-import cz.msebera.android.httpclient.protocol.HttpContext;
 
 /**
  * 登录Fragment
@@ -85,13 +78,15 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     private static final String TAG = "LoginFragment";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    @Bind(R.id.cl_container)
-    CoordinatorLayout mClContainer;
+
     @Bind(R.id.ll_root)
     LinearLayout mLlRoot;
 
     private String mParam1;
     private String mParam2;
+
+    @Bind(R.id.ll_parent)
+    LinearLayout mLlParent;
 
     @Bind(R.id.til_user_phone)
     TextInputLayout mTilUserName;
@@ -261,8 +256,19 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         }
     }
 
+    public void playInAnim() {
+        mLlParent.setVisibility(View.VISIBLE);
+        AnimatorSet mAnimatorSet;
+        ObjectAnimator anim3 = ObjectAnimator.ofFloat(mLlParent,
+                "y", DisplayUtil.getDisplayheightPixels(getActivity()), DisplayUtil.dip2px(getActivity(), 160));
+
+        mAnimatorSet = new AnimatorSet();
+        mAnimatorSet.play(anim3);
+        mAnimatorSet.setDuration(1000);
+        mAnimatorSet.start();
+    }
+
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onLoginFragmentInteraction(Uri uri);
     }
 
@@ -291,6 +297,7 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         getLoginInfo();
 
         showWaitDialog(R.string.progress_login);
+
         AVUser.logInInBackground(mUserName, mPassword, new LogInCallback<AVUser>() {
             @Override
             public void done(AVUser avUser, AVException e) {
@@ -299,7 +306,7 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
                     User user = new User();
                     user.setUsername(mUserName);
                     user.setPassword(mPassword);
-                    AppContext.getInstance().saveUserInfo(user);
+                    AppContext.getInstance().saveUserInfo(user);//缓存用户登录信息，并将全局登陆标识位置true
                     hideWaitDialog();
                     handleLoginSuccess();
                 } else {
@@ -320,6 +327,14 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
     }
 
 
+    private void handleLoginSuccess() {
+        Intent data = new Intent();
+        data.putExtra(BUNDLE_KEY_REQUEST_CODE, requestCode);
+        getActivity().setResult(Activity.RESULT_OK, data);
+        getActivity().sendBroadcast(new Intent(Constants.INTENT_ACTION_USER_CHANGE));
+        getActivity().finish();
+    }
+
     private void handleSignin() {
 
 
@@ -339,14 +354,6 @@ public class LoginFragment extends BaseFragment implements IUiListener, TextWatc
         });
     }
 
-
-    private void handleLoginSuccess() {
-        Intent data = new Intent();
-        data.putExtra(BUNDLE_KEY_REQUEST_CODE, requestCode);
-        getActivity().setResult(Activity.RESULT_OK, data);
-        getActivity().sendBroadcast(new Intent(Constants.INTENT_ACTION_USER_CHANGE));
-        getActivity().finish();
-    }
 
     /**
      * QQ登陆

@@ -3,15 +3,17 @@
     android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/windows_bg"
     android:orientation="vertical">
 
 
     <LinearLayout
+        android:id="@+id/ll_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:visibility="gone">
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/til_user_phone"
@@ -99,11 +101,5 @@
                 android:background="@drawable/share_icon_sinaweibo_selector" />
         </LinearLayout>
     </LinearLayout>
-
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/cl_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
 
 </LinearLayout>

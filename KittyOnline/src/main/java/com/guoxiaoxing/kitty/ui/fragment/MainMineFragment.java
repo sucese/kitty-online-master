@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -63,6 +65,8 @@ public class MainMineFragment extends BaseFragment {
     @Bind(R.id.tv_follower)
     TextView mTvFans;
 
+    @Bind(R.id.tv_mes)
+    View mMesView;
     @Bind(R.id.error_layout)
     EmptyLayout mErrorLayout;
     @Bind(R.id.iv_qr_code)
@@ -215,19 +219,19 @@ public class MainMineFragment extends BaseFragment {
             }
         });
 
-//        mMesCount = new BadgeView(getActivity(), mMesView);
-//        mMesCount.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
-//        mMesCount.setBadgePosition(BadgeView.POSITION_CENTER);
-//        mMesCount.setGravity(Gravity.CENTER);
-//        mMesCount.setBackgroundResource(R.drawable.notification_bg);
+        mMesCount = new BadgeView(getActivity(), mMesView);
+        mMesCount.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
+        mMesCount.setBadgePosition(BadgeView.POSITION_CENTER);
+        mMesCount.setGravity(Gravity.CENTER);
+        mMesCount.setBackgroundResource(R.drawable.notification_bg);
         mQrCode.setOnClickListener(this);
-        // // 初始化团队列表数据
-        // String cache = PreferenceHelper.readString(getActivity(),
-        // TEAM_LIST_FILE, TEAM_LIST_KEY);
-        // if (!StringUtils.isEmpty(cache)) {
-        // List<Team> teams = TeamList.toTeamList(cache);
-        // addTeamLayout(teams);
-        // }
+         // 初始化团队列表数据
+//         String cache = PreferenceHelper.readString(getActivity(),
+//                 TEAM_LIST_FILE, TEAM_LIST_KEY);
+//         if (!StringUtils.isEmpty(cache)) {
+//         List<Team> teams = TeamList.toTeamList(cache);
+//         addTeamLayout(teams);
+//         }
     }
 
     private void fillUI() {

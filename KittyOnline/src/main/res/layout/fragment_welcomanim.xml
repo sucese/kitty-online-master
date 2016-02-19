@@ -1,8 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.xingin.xhs.activity.WelcomeActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rl_parent"
@@ -19,14 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/shape_round_red"/>
+            android:background="@drawable/shape_round_red" />
 
         <com.guoxiaoxing.kitty.widget.ChildViewPager
             android:id="@+id/vp_textanim"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_above="@+id/rl_indicator"
-            android:background="#FFF"/>
+            android:background="#FFF" />
 
         <RelativeLayout
             android:id="@+id/rl_indicator"
@@ -42,24 +40,23 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:background="#FFF"
-                android:orientation="vertical">
-            </com.guoxiaoxing.kitty.widget.WelcomeIndicator>
+                android:orientation="vertical" />
 
             <TextView
                 android:id="@+id/tv_skip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
                 android:clickable="true"
-                android:text="跳过"
+                android:paddingBottom="4dp"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
-                android:paddingBottom="4dp"
                 android:paddingTop="4dp"
+                android:text="@string/skip"
                 android:textColor="@color/base_gray_green"
-                android:textSize="@dimen/text_20"/>
+                android:textSize="@dimen/text_20" />
         </RelativeLayout>
     </RelativeLayout>
 </FrameLayout>

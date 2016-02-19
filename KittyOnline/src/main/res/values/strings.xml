@@ -3,6 +3,12 @@
 
     <string name="app_name">爱尚佳品</string>
 
+
+    <!--欢迎界面-->
+    <string name="skip">跳过</string>
+
+    <!--首页-->
+
     <string name="main_tab_name_shoppoing">逛逛逛</string>
     <string name="main_tab_name_buy">买买买</string>
     <string name="main_tab_name_quick">快速</string>

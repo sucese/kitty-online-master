@@ -48,6 +48,7 @@ public class BaseFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         this.mInflater = inflater;
+//        View view = inflater.inflate(getLayoutId(), container, false);
         View view = inflater.inflate(getLayoutId(), container, false);
         ButterKnife.bind(this, view);
         setToolbar();

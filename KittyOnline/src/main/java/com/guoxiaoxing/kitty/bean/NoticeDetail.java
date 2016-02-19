@@ -1,12 +1,17 @@
 package com.guoxiaoxing.kitty.bean;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 /**
  * 通知实体类
  *
  * @author guoxiaoxing
  */
+@SuppressWarnings("serial")
+@XStreamAlias("oschina")
 public class NoticeDetail extends BaseObject {
 
+    @XStreamAlias("result")
     private Result result;
 
     public Result getResult() {
@@ -16,4 +21,5 @@ public class NoticeDetail extends BaseObject {
     public void setResult(Result result) {
         this.result = result;
     }
+
 }
