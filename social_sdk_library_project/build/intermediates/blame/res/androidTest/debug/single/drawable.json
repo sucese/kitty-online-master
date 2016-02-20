@@ -88,12 +88,12 @@
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/btn_red_pressed.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_whatsapp_gray.png",
-        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_whatsapp_gray.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_line_gray.png",
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_line_gray.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_whatsapp_gray.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_whatsapp_gray.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_button_login_pressed.png",
@@ -356,12 +356,12 @@
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/btn_red_unable.xml"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_renren_off.png",
-        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_renren_off.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_x_button.png",
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_x_button.png"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_renren_off.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/bundles/debug/res/drawable/umeng_socialize_renren_off.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/androidTest/debug/drawable/umeng_socialize_ynote_gray.png",
