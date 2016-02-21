@@ -65,9 +65,11 @@
                     app:timeTextColor="@color/white"
                     app:timeTextSize="20sp" />
 
-                <ImageView
+                <com.facebook.drawee.view.SimpleDraweeView
                     style="@style/image_rect_large"
-                    android:src="@drawable/ic_test_0" />
+                    app:placeholderImage="@drawable/ic_kuai_qiang"
+                    app:placeholderImageScaleType="focusCrop" />
+
 
             </LinearLayout>
 
@@ -90,9 +92,12 @@
             style="@style/card_view_normal"
             app:cardElevation="@dimen/card_view_elevation_none">
 
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 style="@style/image_rect_middle"
-                android:src="@drawable/ic_image_black_48dp" />
+                app:placeholderImage="@drawable/ic_tuan_gou"
+                app:placeholderImageScaleType="focusCrop" />
+
+
         </android.support.v7.widget.CardView>
 
 
@@ -100,9 +105,12 @@
             style="@style/card_view_normal"
             app:cardElevation="@dimen/card_view_elevation_none">
 
-            <ImageView
+
+            <com.facebook.drawee.view.SimpleDraweeView
                 style="@style/image_rect_middle"
-                android:src="@drawable/ic_image_black_48dp" />
+                app:placeholderImage="@drawable/ic_tuan_gou"
+                app:placeholderImageScaleType="focusCrop" />
+
         </android.support.v7.widget.CardView>
 
     </android.support.v7.widget.GridLayout>
@@ -110,6 +118,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="@string/buy_market" />
 
     <include layout="@layout/buy_recyclerview_header_goods" />

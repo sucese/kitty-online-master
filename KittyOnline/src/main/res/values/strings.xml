@@ -41,7 +41,7 @@
     <string name="buy_goods_title_9">配饰</string>
     <string name="buy_goods_title_10">母婴</string>
     <string name="buy_goods_title_11">家具</string>
-    <string name="buy_goods_title_12">个护</string>
+    <string name="buy_goods_title_12">百货</string>
 
 
     <string name="app_error">应用程序错误</string>
@@ -290,9 +290,10 @@
     <string name="mes_notice">消息通知</string>
     <string name="clean_cache">清理缓存</string>
     <string name="double_click_exit">双击退出</string>
+    <string name="switch_theme">切换主题</string>
     <string name="loading_more">自动加载\"更多\"</string>
     <string name="update">检查新版本</string>
-    <string name="about">关于开源中国</string>
+    <string name="about">关于爱尚佳品</string>
     <string name="feedback">意见反馈</string>
     <string name="exit">退出</string>
     <string name="grade">去评分</string>

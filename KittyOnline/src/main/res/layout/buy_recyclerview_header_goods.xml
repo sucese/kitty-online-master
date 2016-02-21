@@ -5,94 +5,227 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
+    android:background="@color/white"
     app:alignmentMode="alignBounds"
     app:columnCount="4"
     app:rowCount="3"
     app:rowOrderPreserved="false"
     app:useDefaultMargins="true">
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
+    <LinearLayout
         android:gravity="center"
-        android:text="@string/buy_goods_title_1"
+        android:orientation="vertical"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        app:layout_gravity="fill_horizontal">
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_2"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_shang_yi" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_3"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_1" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_4"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+    </LinearLayout>
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_5"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
+    <LinearLayout
         android:gravity="center"
-        android:text="@string/buy_goods_title_6"
+        android:orientation="vertical"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        app:layout_gravity="fill_horizontal">
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_7"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_ku_zi" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_8"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_2" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_9"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+    </LinearLayout>
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
+    <LinearLayout
         android:gravity="center"
-        android:text="@string/buy_goods_title_10"
+        android:orientation="vertical"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        app:layout_gravity="fill_horizontal">
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
-        android:gravity="center"
-        android:text="@string/buy_goods_title_11"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_qun_zi" />
 
-    <TextView
-        android:drawableTop="@drawable/ic_image_black_48dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_3" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:gravity="center"
-        android:text="@string/buy_goods_title_12"
+        android:orientation="vertical"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal" />
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_nei_yi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_nv_xie" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_bao_baojpg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_nan_you" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_7" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_mei_zhuang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_8" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_pei_shi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_9" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_mu_yin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_10" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_jia_ju" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_11" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal">
+
+        <ImageView
+            style="@style/image_category"
+            android:src="@drawable/ic_bai_huo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/buy_goods_title_12" />
+
+    </LinearLayout>
 
 </android.support.v7.widget.GridLayout>

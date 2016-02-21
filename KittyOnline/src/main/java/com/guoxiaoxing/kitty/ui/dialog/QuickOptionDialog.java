@@ -8,17 +8,17 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.team.fragment.NoteEditFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 
 
@@ -28,9 +28,18 @@ import com.guoxiaoxing.kitty.util.UIHelper;
  * @author guoxiaoxing
  */
 public class QuickOptionDialog extends Dialog implements
-        android.view.View.OnClickListener {
+        View.OnClickListener {
 
-    private ImageView mClose;
+    LinearLayout mLyQuickOptionText;
+    LinearLayout mLyQuickOptionAlbum;
+    LinearLayout mLyQuickOptionPhoto;
+    LinearLayout mLyQuickOptionScan;
+    LinearLayout mLyQuickOptionNote;
+    LinearLayout mLyQuickOptionVoice;
+    LinearLayout mLlOptionContainer;
+    ImageView mIvClose;
+    LinearLayout mLlFoot;
+    LinearLayout mSetPop;
 
     public interface OnQuickOptionformClick {
         void onQuickOptionClick(int id);
@@ -49,29 +58,24 @@ public class QuickOptionDialog extends Dialog implements
         super(context, defStyle);
         View contentView = getLayoutInflater().inflate(
                 R.layout.dialog_quick_option, null);
-        contentView.findViewById(R.id.ly_quick_option_text).setOnClickListener(
-                this);
-        contentView.findViewById(R.id.ly_quick_option_album)
-                .setOnClickListener(this);
-        contentView.findViewById(R.id.ly_quick_option_photo)
-                .setOnClickListener(this);
-        contentView.findViewById(R.id.ly_quick_option_voice)
-                .setOnClickListener(this);
-        contentView.findViewById(R.id.ly_quick_option_scan).setOnClickListener(
-                this);
-        contentView.findViewById(R.id.ly_quick_option_note).setOnClickListener(
-                this);
-        mClose = (ImageView) contentView.findViewById(R.id.iv_close);
 
-        Animation operatingAnim = AnimationUtils.loadAnimation(getContext(),
-                R.anim.quick_option_close);
-        LinearInterpolator lin = new LinearInterpolator();
-        operatingAnim.setInterpolator(lin);
+        mLyQuickOptionText = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_text);
+        mLyQuickOptionAlbum = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_album);
+        mLyQuickOptionPhoto = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_photo);
+        mLyQuickOptionScan = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_scan);
+        mLyQuickOptionNote = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_note);
+        mLyQuickOptionVoice = (LinearLayout) contentView.findViewById(R.id.ly_quick_option_voice);
+        mIvClose = (ImageView) contentView.findViewById(R.id.iv_close);
 
-        mClose.startAnimation(operatingAnim);
 
-        mClose.setOnClickListener(this);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mLyQuickOptionText.setOnClickListener(this);
+        mLyQuickOptionAlbum.setOnClickListener(this);
+        mLyQuickOptionPhoto.setOnClickListener(this);
+        mLyQuickOptionScan.setOnClickListener(this);
+        mLyQuickOptionNote.setOnClickListener(this);
+        mLyQuickOptionVoice.setOnClickListener(this);
+        mIvClose.setOnClickListener(this);
+
         contentView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -83,6 +87,7 @@ public class QuickOptionDialog extends Dialog implements
 
     }
 
+
     public QuickOptionDialog(Context context) {
         this(context, R.style.quick_option_dialog);
     }
@@ -91,13 +96,16 @@ public class QuickOptionDialog extends Dialog implements
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        getWindow().setGravity(Gravity.BOTTOM);
+        getWindow().setGravity(Gravity.CENTER);
 
-        WindowManager m = getWindow().getWindowManager();
-        Display d = m.getDefaultDisplay();
-        WindowManager.LayoutParams p = getWindow().getAttributes();
-        p.width = d.getWidth();
-        getWindow().setAttributes(p);
+        WindowManager manager = getWindow().getWindowManager();
+        Display display = manager.getDefaultDisplay();
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.width = display.getWidth();
+//        params.height = display.getHeight();
+        getWindow().setAttributes(params);
+
+        initView();
     }
 
     public void setOnQuickOptionformClickListener(OnQuickOptionformClick lis) {
@@ -164,5 +172,22 @@ public class QuickOptionDialog extends Dialog implements
         bundle.putInt(NoteEditFragment.NOTE_FROMWHERE_KEY,
                 NoteEditFragment.QUICK_DIALOG);
         UIHelper.showSimpleBack(getContext(), SimpleBackPage.NOTE_EDIT, bundle);
+    }
+
+    private void initView() {
+
+        Animation operatingAnim = AnimationUtils.loadAnimation(getContext(),
+                R.anim.quick_option_close);
+        LinearInterpolator lin = new LinearInterpolator();
+        operatingAnim.setInterpolator(lin);
+        mIvClose.startAnimation(operatingAnim);
+
+
+        Animation iconAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.quick_opton_icon_in);
+        mLyQuickOptionText.startAnimation(iconAnimation);
+        mLyQuickOptionVoice.startAnimation(iconAnimation);
+        mLyQuickOptionPhoto.startAnimation(iconAnimation);
+        mLyQuickOptionNote.startAnimation(iconAnimation);
+
     }
 }

@@ -1,5 +1,6 @@
 package com.guoxiaoxing.kitty.ui.welcome.outlayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.FrameLayout;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.service.LogUploadService;
+import com.guoxiaoxing.kitty.ui.MainActivity;
 
 
 /**
@@ -32,7 +35,27 @@ public class AdvertisementFragment extends Fragment {
 
     public void playInAnim() {
 
-        Animation hyperspaceJump = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_zoom_in);
-        mSimpleDraweeView.startAnimation(hyperspaceJump);
+        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_zoom_in);
+        mSimpleDraweeView.startAnimation(animation);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Intent uploadLog = new Intent(getActivity(), LogUploadService.class);
+                getActivity().startService(uploadLog);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 }

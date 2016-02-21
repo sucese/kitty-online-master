@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -15,57 +16,167 @@
         android:id="@+id/tv_mes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:text="消息小圆点"
-        android:gravity="right" />
+        android:visibility="gone" />
 
-    <GridLayout
-        android:layout_width="match_parent"
+    <android.support.v7.widget.GridLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="2"
-        android:useDefaultMargins="true">
+        android:background="@color/white"
+        app:alignmentMode="alignBounds"
+        app:columnCount="4"
+        app:rowCount="2"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_shang_yi" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_ku_zi" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="理财-记录" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_2" />
 
-    </GridLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_qun_zi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_nei_yi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_nv_xie" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_category"
+                android:src="@drawable/ic_bao_baojpg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_nan_you" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_mei_zhuang" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_8" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.GridLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,11 +185,182 @@
         android:layout_margin="10dp"
         android:text="生活-健康" />
 
+    <android.support.v7.widget.GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:alignmentMode="alignBounds"
+        app:columnCount="4"
+        app:rowCount="1"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_shang_yi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_1" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_ku_zi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_qun_zi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_nei_yi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_4" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.GridLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
         android:text="帮助-服务" />
+
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:alignmentMode="alignBounds"
+        app:columnCount="4"
+        app:rowCount="1"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_shang_yi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_1" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_ku_zi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_qun_zi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
+
+            <ImageView
+                style="@style/image_service"
+                android:src="@drawable/ic_nei_yi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_4" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.GridLayout>
 
 </LinearLayout>

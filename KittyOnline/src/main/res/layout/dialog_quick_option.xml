@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/set_pop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/layout_item_bg"
     android:orientation="vertical">
 
-    <android.widget.GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:orientation="vertical"
-        android:rowCount="2"
-        android:useDefaultMargins="true">
-
-
-        <TextView
-            android:layout_rowSpan="2"
-            android:text="04"
-            android:textSize="50sp" />
-
-        <TextView
-            android:layout_marginTop="10dp"
-            android:text="星期日" />
-
-        <TextView android:text="2016-2" />
-
-    </android.widget.GridLayout>
-
-
     <LinearLayout
         android:id="@+id/ll_option_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -82,12 +59,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ly_quick_option_voice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout style="@style/quick_option_item">
+            <LinearLayout
+                android:id="@+id/ly_quick_option_voice"
+                style="@style/quick_option_item">
 
                 <ImageView
                     style="@style/quick_option_img"
@@ -126,23 +104,16 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_foot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/layout_bg_normal"
-        android:gravity="center"
-        android:padding="10dip"
-        android:visibility="visible">
 
-        <ImageView
-            android:id="@+id/iv_close"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:contentDescription="@null"
-            android:focusable="false"
-            android:src="@drawable/btn_quickoption_route"
-            android:visibility="gone" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@null"
+        android:focusable="false"
+        android:src="@drawable/bmp_add_circle_black_36dp_normal" />
 
-</LinearLayout>
+</RelativeLayout>

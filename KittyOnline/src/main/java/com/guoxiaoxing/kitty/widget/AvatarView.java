@@ -2,6 +2,7 @@ package com.guoxiaoxing.kitty.widget;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -38,7 +39,7 @@ public class AvatarView extends CircleImageView {
     }
 
     private void init(Context context) {
-        aty = (Activity) context;
+        aty = scanForActivity(context);
         setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,5 +99,16 @@ public class AvatarView extends CircleImageView {
         if (source == null)
             return "";
         return source.replaceAll(AVATAR_SIZE_REG, LARGE_SIZE);
+    }
+
+    private static Activity scanForActivity(Context cont) {
+        if (cont == null)
+            return null;
+        else if (cont instanceof Activity)
+            return (Activity) cont;
+        else if (cont instanceof ContextWrapper)
+            return scanForActivity(((ContextWrapper) cont).getBaseContext());
+
+        return null;
     }
 }

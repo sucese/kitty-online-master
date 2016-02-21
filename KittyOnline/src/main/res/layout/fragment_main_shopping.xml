@@ -5,15 +5,13 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <!--可以让包含在其中的控件响应被标记了ScrollingViewBehavior的View的滚动事件-->
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <!--可以控制包含在CollapsingToolbarLayout其中的控件，在响应collapse时是移除屏幕和固定在最上面-->
@@ -23,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/window_background"
-            android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -33,7 +30,6 @@
                 android:id="@+id/tb_main_shopping_fragment"
                 style="@style/toolbar_header"
                 app:layout_collapseMode="pin"
-                android:layout_marginTop="10dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <LinearLayout
@@ -93,7 +89,8 @@
             android:id="@+id/tb_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
+            android:background="@color/white"
+            app:tabGravity="center"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/primary"
             app:tabTextColor="@color/gray" />

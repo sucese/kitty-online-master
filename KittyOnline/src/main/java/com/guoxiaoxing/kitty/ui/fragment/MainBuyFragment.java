@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
@@ -28,14 +27,13 @@ import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
 import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
 import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
-import com.guoxiaoxing.kitty.widget.banner.transforms.CubeOutTransformer;
+import com.guoxiaoxing.kitty.widget.banner.transforms.FlipHorizontalTransformer;
 import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
 import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
 import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
 import com.guoxiaoxingv.smartrecyclerview.animator.animators.FadeInAnimator;
-import com.guoxiaoxingv.smartrecyclerview.stickyheader.StickyRecyclerHeadersDecoration;
 import com.guoxiaoxingv.smartrecyclerview.util.BasicGridLayoutManager;
 
 import java.lang.reflect.Field;
@@ -56,10 +54,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
     @Bind(R.id.tb_main_buy_fragment)
     Toolbar mToolbar;
-    @Bind(R.id.tv_scan)
-    TextView mTvScan;
-    @Bind(R.id.tv_notification)
-    TextView mTvNotification;
     @Bind(R.id.et_search)
     EditText mEtSearch;
     @Bind(R.id.srv_main_buy_fragment)
@@ -187,16 +181,9 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
         super.onClick(v);
 
         switch (v.getId()) {
-            //消息通知
-            case R.id.tv_notification:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
             //搜索框
             case R.id.et_search:
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
-                break;
-            case R.id.tv_scan:
-                UIHelper.showScanActivity(getActivity());
                 break;
             default:
                 break;
@@ -253,8 +240,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private void initToolbar() {
         mContext = getActivity();
         mEtSearch.setFocusable(false);
-        mTvScan.setOnClickListener(this);
-        mTvNotification.setOnClickListener(this);
         mEtSearch.setOnClickListener(this);
     }
 
@@ -266,12 +251,12 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
 
         for (int position = 0; position < 7; position++) {
-            localImages.add(getResId("ic_test_" + position, R.drawable.class));
+            localImages.add(getResId("ic_buy_banner_" + position, R.drawable.class));
         }
 
 
         mConvenientBanner = (ConvenientBanner) headerView.findViewById(R.id.cb_sale_ad);
-        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
+        mConvenientBanner.getViewPager().setPageTransformer(true, new FlipHorizontalTransformer());
         //本地图片例子
         mConvenientBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {

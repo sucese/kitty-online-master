@@ -48,16 +48,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_18" />
 
-            <ImageView
-                android:id="@+id/iv_qr_code"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerVertical="true"
-                android:layout_margin="@dimen/space_10"
-                android:clickable="true"
-                android:src="@drawable/icon_qr_code" />
+
         </RelativeLayout>
 
         <View

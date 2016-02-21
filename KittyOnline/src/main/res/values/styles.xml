@@ -77,8 +77,8 @@
 
     <!--方形图片中 -->
     <style name="image_rect_middle">
-        <item name="android:layout_width">120dp</item>
-        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">90dp</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
@@ -89,6 +89,24 @@
         <item name="android:layout_height">100dp</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!--商品分类图片-->
+    <style name="image_category">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:contentDescription">@null</item>
+    </style>
+
+    <!--服务分类图片-->
+    <style name="image_service">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:contentDescription">@null</item>
     </style>
 
 
@@ -297,6 +315,8 @@
     </style>
 
     <style name="quick_option_dialog" parent="@style/dialog_common">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@color/white40</item>
         <item name="android:windowAnimationStyle">@style/dialog_animation</item>
     </style>

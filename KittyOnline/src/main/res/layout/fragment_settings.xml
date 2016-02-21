@@ -14,25 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <View
-            style="@style/h_line"
-            android:layout_marginTop="20dip"/>
-
-        <RelativeLayout
-            android:id="@+id/rl_loading_img"
-            style="@style/option_item_rl" >
-
-            <TextView
-                style="@style/option_item_text_parent"
-                android:text="@string/loading_img"
-                android:textColor="?attr/textColor"
-                android:textSize="@dimen/text_size_16" />
-
-            <com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton
-                android:id="@+id/tb_loading_img"
-                style="@style/option_item_toggleButton"
-                android:layout_alignParentRight="true" />
-        </RelativeLayout>
 
         <View
             style="@style/h_line" />
@@ -69,6 +50,49 @@
                 tools:text="13M"
                 android:textColor="?attr/infoTextColor"
                 android:textSize="@dimen/text_size_14" />
+        </RelativeLayout>
+
+
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="20dip"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_loading_img"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/loading_img"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_loading_img"
+                style="@style/option_item_toggleButton"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+
+
+        <View
+            style="@style/h_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_theme"
+            style="@style/option_item_rl" >
+
+            <TextView
+                style="@style/option_item_text_parent"
+                android:text="@string/switch_theme"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.guoxiaoxing.kitty.widget.togglebutton.ToggleButton
+                android:id="@+id/tb_switch_theme"
+                style="@style/option_item_toggleButton"
+                android:layout_alignParentRight="true" />
         </RelativeLayout>
 
         <View

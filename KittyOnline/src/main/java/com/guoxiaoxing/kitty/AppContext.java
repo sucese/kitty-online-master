@@ -13,7 +13,6 @@ import com.guoxiaoxing.kitty.bean.Constants;
 import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
 import com.guoxiaoxing.kitty.ui.base.BaseApplication;
-import com.guoxiaoxing.kitty.util.CyptoUtils;
 import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TLog;
@@ -22,14 +21,14 @@ import com.guoxiaoxing.kitty.util.log.Logger;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
 
-import io.fabric.sdk.android.Fabric;
-
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.http.HttpConfig;
 import org.kymjs.kjframe.utils.KJLoger;
 
 import java.util.Properties;
 import java.util.UUID;
+
+import io.fabric.sdk.android.Fabric;
 
 import static com.guoxiaoxing.kitty.AppConfig.KEY_FRITST_START;
 import static com.guoxiaoxing.kitty.AppConfig.KEY_LOAD_IMAGE;
@@ -259,6 +258,10 @@ public class AppContext extends BaseApplication {
 
     public boolean isLogin() {
         return login;
+    }
+
+    public void setLogin() {
+        this.login = true;
     }
 
     /**

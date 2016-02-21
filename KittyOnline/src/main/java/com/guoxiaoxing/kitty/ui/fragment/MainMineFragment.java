@@ -10,7 +10,6 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
@@ -75,8 +74,6 @@ public class MainMineFragment extends BaseFragment {
     View mUserContainer;
     @Bind(R.id.rl_user_unlogin)
     View mUserUnLogin;
-    @Bind(R.id.rootview)
-    LinearLayout rootView;
 
     private static BadgeView mMesCount;
 
@@ -225,7 +222,7 @@ public class MainMineFragment extends BaseFragment {
         mMesCount.setGravity(Gravity.CENTER);
         mMesCount.setBackgroundResource(R.drawable.notification_bg);
         mQrCode.setOnClickListener(this);
-         // 初始化团队列表数据
+        // 初始化团队列表数据
 //         String cache = PreferenceHelper.readString(getActivity(),
 //                 TEAM_LIST_FILE, TEAM_LIST_KEY);
 //         if (!StringUtils.isEmpty(cache)) {
@@ -346,7 +343,8 @@ public class MainMineFragment extends BaseFragment {
                         SimpleBackPage.MY_INFORMATION_DETAIL);
                 break;
             case R.id.iv_qr_code:
-                showMyQrCode();
+                UIHelper.showSetting(getActivity());
+//                showMyQrCode();
                 break;
             case R.id.ly_following:
                 UIHelper.showFriends(getActivity(), AppContext.getInstance()

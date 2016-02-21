@@ -1,11 +1,7 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppConfig;
@@ -25,7 +21,6 @@ import org.kymjs.kjframe.http.HttpConfig;
 import java.io.File;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * 系统设置界面
@@ -42,6 +37,8 @@ public class SettingsFragment extends BaseFragment {
     TextView mTvExit;
     @Bind(R.id.tb_double_click_exit)
     ToggleButton mTbDoubleClickExit;
+    @Bind(R.id.tb_switch_theme)
+    ToggleButton mTbSwitchTheme;
 
     @Override
     protected int getLayoutId() {
@@ -61,6 +58,13 @@ public class SettingsFragment extends BaseFragment {
             @Override
             public void onToggle(boolean on) {
                 AppContext.set(AppConfig.KEY_DOUBLE_CLICK_EXIT, on);
+            }
+        });
+
+        mTbSwitchTheme.setOnToggleChanged(new OnToggleChanged() {
+            @Override
+            public void onToggle(boolean on) {
+                switchTheme();
             }
         });
 
@@ -89,6 +93,12 @@ public class SettingsFragment extends BaseFragment {
             mTbDoubleClickExit.setToggleOn();
         } else {
             mTbDoubleClickExit.setToggleOff();
+        }
+
+        if (AppContext.getNightModeSwitch()) {
+            mTbSwitchTheme.setToggleOn();
+        } else {
+            mTbSwitchTheme.setToggleOff();
         }
 
         caculateCacheSize();
@@ -165,4 +175,20 @@ public class SettingsFragment extends BaseFragment {
         AppManager.getAppManager().AppExit(getActivity());
         getActivity().finish();
     }
+
+    private void switchTheme() {
+        if (AppContext.getNightModeSwitch()) {
+            AppContext.setNightModeSwitch(false);
+        } else {
+            AppContext.setNightModeSwitch(true);
+        }
+
+        if (AppContext.getNightModeSwitch()) {
+            getActivity().setTheme(R.style.AppBaseTheme_Night);
+        } else {
+            getActivity().setTheme(R.style.AppBaseTheme_Light);
+        }
+        getActivity().recreate();
+    }
+
 }

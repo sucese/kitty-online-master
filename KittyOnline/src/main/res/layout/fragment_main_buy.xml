@@ -13,42 +13,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/tv_scan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:drawableTop="@drawable/bmp_rich_scan"
-                android:text="@string/rich_scan"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_12" />
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:hint="春装最新潮衬衫系列"
                 android:singleLine="true"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="@dimen/text_size_14" />
 
-
-            <TextView
-                android:id="@+id/tv_notification"
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|center"
-                android:layout_marginRight="12dp"
-                android:drawableTop="@drawable/bmp_notification_normal"
-                android:text="@string/text_search"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_12" />
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:background="@color/transparent"
+                android:src="@drawable/bmp_shopping_cart" />
+
+
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 

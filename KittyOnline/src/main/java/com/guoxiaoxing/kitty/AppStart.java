@@ -24,7 +24,6 @@ import com.guoxiaoxing.kitty.util.DisplayUtil;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.view.ViewHelper;
 
 import org.kymjs.kjframe.http.KJAsyncTask;
 import org.kymjs.kjframe.utils.FileUtils;
@@ -76,7 +75,7 @@ public class AppStart extends FragmentActivity {
             //正常启动
             case NORMAL:
                 playUserGuide();
-                startApp();
+
                 break;
             default:
                 break;
@@ -144,21 +143,22 @@ public class AppStart extends FragmentActivity {
                         break;
                     case FRAGMENT_LOGINANIM:
                         ParentViewPager.mLoginPageLock = true;
-                        mIvLogo.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (mLogoY == 0) {
-                                    mLogoY = ViewHelper.getY(mIvLogo);
-                                }
-                                playLogoInAnim();
-                            }
-                        }, 500);
+//                        mIvLogo.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                if (mLogoY == 0) {
+//                                    mLogoY = ViewHelper.getY(mIvLogo);
+//                                }
+//                                playLogoInAnim();
+//                            }
+//                        }, 500);
                         mVpParent.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 mAdvertisementFragment.playInAnim();
+//                                startApp();
                             }
-                        }, 300);
+                        }, 100);
 
                         break;
                 }
