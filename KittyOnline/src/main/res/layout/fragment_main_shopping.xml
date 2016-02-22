@@ -38,39 +38,47 @@
                     android:orientation="horizontal"
                     android:weightSum="1">
 
-                    <TextView
-                        android:id="@+id/tv_scan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:drawableTop="@drawable/bmp_rich_scan"
-                        android:text="@string/rich_scan"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_12" />
-
-                    <EditText
-                        android:id="@+id/et_search"
+                    <FrameLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_14" />
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/et_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="懒人必备-脚蹬小白鞋"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_14" />
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="start|center_vertical"-->
+                            <!--android:layout_marginStart="6dp"-->
+                            <!--android:src="@drawable/bmp_text_seach" />-->
 
 
-                    <TextView
-                        android:id="@+id/tv_notification"
+                        <ImageView
+                            android:id="@+id/iv_scan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/bmp_rich_scan" />
+
+                    </FrameLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_notification"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center"
                         android:layout_marginEnd="12dp"
-                        android:drawableTop="@drawable/bmp_notification_normal"
-                        android:text="@string/text_search"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_12" />
+                        android:src="@drawable/bmp_notification_normal" />
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
 

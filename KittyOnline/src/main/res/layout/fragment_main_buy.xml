@@ -24,10 +24,9 @@
                 android:hint="春装最新潮衬衫系列"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="@dimen/text_size_14" />
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

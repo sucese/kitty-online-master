@@ -16,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
@@ -29,7 +29,6 @@ import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
 import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
 import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
-import com.guoxiaoxing.kitty.widget.banner.transforms.CubeOutTransformer;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -51,10 +50,10 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     @Bind(R.id.tb_main_shopping_fragment)
     Toolbar mToolbar;
-    @Bind(R.id.tv_scan)
-    TextView mTvScan;
-    @Bind(R.id.tv_notification)
-    TextView mTvNotification;
+    @Bind(R.id.iv_scan)
+    ImageView mIvScan;
+    @Bind(R.id.iv_notification)
+    ImageView mIvNotification;
     @Bind(R.id.et_search)
     EditText mEtSearch;
     @Bind(R.id.cb_shopping)
@@ -178,14 +177,14 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
         switch (v.getId()) {
             //消息通知
-            case R.id.tv_notification:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
+            case R.id.iv_notification:
+                UIHelper.showMyMes(getActivity());
                 break;
             //搜索框
             case R.id.et_search:
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SEARCH);
                 break;
-            case R.id.tv_scan:
+            case R.id.iv_scan:
                 UIHelper.showScanActivity(getActivity());
                 break;
             default:
@@ -252,8 +251,8 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     private void initToolbar() {
         mContext = getActivity();
         mEtSearch.setFocusable(false);
-        mTvScan.setOnClickListener(this);
-        mTvNotification.setOnClickListener(this);
+        mIvScan.setOnClickListener(this);
+        mIvNotification.setOnClickListener(this);
         mEtSearch.setOnClickListener(this);
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -283,7 +282,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
 //                .setOnPageChangeListener(this)//监听翻页事件
                 .setOnItemClickListener(this);
-        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
+//        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
 //        mCbHomeAd.setManualPageable(false);//设置不能手动影响
 
     }

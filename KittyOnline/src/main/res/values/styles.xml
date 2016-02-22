@@ -317,7 +317,8 @@
     <style name="quick_option_dialog" parent="@style/dialog_common">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/white40</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowBackground">@color/white_half</item>
         <item name="android:windowAnimationStyle">@style/dialog_animation</item>
     </style>
 

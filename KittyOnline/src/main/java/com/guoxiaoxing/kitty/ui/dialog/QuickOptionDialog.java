@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -76,13 +75,13 @@ public class QuickOptionDialog extends Dialog implements
         mLyQuickOptionVoice.setOnClickListener(this);
         mIvClose.setOnClickListener(this);
 
-        contentView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                QuickOptionDialog.this.dismiss();
-                return true;
-            }
-        });
+//        contentView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                QuickOptionDialog.this.dismiss();
+//                return true;
+//            }
+//        });
         super.setContentView(contentView);
 
     }
@@ -182,12 +181,15 @@ public class QuickOptionDialog extends Dialog implements
         operatingAnim.setInterpolator(lin);
         mIvClose.startAnimation(operatingAnim);
 
+        Animation iconAnimationslow = AnimationUtils.loadAnimation(getContext(), R.anim.quick_option_icon_in_slow);
+        mLyQuickOptionText.startAnimation(iconAnimationslow);
+        mLyQuickOptionVoice.startAnimation(iconAnimationslow);
+        mLyQuickOptionPhoto.startAnimation(iconAnimationslow);
+        mLyQuickOptionNote.startAnimation(iconAnimationslow);
 
-        Animation iconAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.quick_opton_icon_in);
-        mLyQuickOptionText.startAnimation(iconAnimation);
-        mLyQuickOptionVoice.startAnimation(iconAnimation);
-        mLyQuickOptionPhoto.startAnimation(iconAnimation);
-        mLyQuickOptionNote.startAnimation(iconAnimation);
+        Animation iconAnimationFast = AnimationUtils.loadAnimation(getContext(), R.anim.quick_option_icon_in_fast);
+        mLyQuickOptionAlbum.setAnimation(iconAnimationFast);
+        mLyQuickOptionScan.setAnimation(iconAnimationFast);
 
     }
 }

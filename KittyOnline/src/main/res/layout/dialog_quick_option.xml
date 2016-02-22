@@ -3,14 +3,34 @@
     android:id="@+id/set_pop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/layout_item_bg"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">\
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@null"
+            android:focusable="false"
+            android:src="@drawable/bmp_add_circle_black_36dp_normal" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/ll_option_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_above="@id/ll_close"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -104,16 +124,5 @@
         </LinearLayout>
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/iv_close"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:contentDescription="@null"
-        android:focusable="false"
-        android:src="@drawable/bmp_add_circle_black_36dp_normal" />
 
 </RelativeLayout>

@@ -3,11 +3,11 @@
     android:fillAfter="true">
 
     <rotate
-        android:duration="600"
+        android:duration="300"
         android:fromDegrees="0"
         android:pivotX="50%"
         android:pivotY="50%"
         android:repeatCount="0"
-        android:toDegrees="45" />
+        android:toDegrees="135" />
 
 </set>

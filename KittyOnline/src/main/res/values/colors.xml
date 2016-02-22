@@ -56,6 +56,8 @@
 
     <!-- 常用颜色值 -->
     <color name="white40">#40FFFFFF</color>
+    <color name="white_half">#d2ffffff</color>
+    <color name="white_all">#c8ffffff</color>
     <color name="gray">#808080</color>
     <color name="red">#FF0000</color>
     <color name="gold">#FFD700</color>
