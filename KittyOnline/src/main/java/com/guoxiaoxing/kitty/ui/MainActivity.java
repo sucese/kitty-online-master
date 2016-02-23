@@ -249,11 +249,15 @@ public class MainActivity extends AppCompatActivity implements
             ImageView icon = (ImageView) indicator.findViewById(R.id.tab_icon);
             TextView title = (TextView) indicator.findViewById(R.id.tab_title);
 
-            icon.setImageResource(mainTab.getResIcon());
+            if (icon != null) {
+                icon.setImageResource(mainTab.getResIcon());
+            }
+
             if (i == 2) {
                 indicator.setVisibility(View.INVISIBLE);
                 mTabHost.setNoTabChangedTag(getString(mainTab.getResName()));
             }
+
             title.setText(getString(mainTab.getResName()));
             tab.setIndicator(indicator);
             tab.setContent(new TabContentFactory() {

@@ -27,11 +27,12 @@ import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.log.Logger;
 import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
 import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
-import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
+import com.guoxiaoxing.kitty.widget.banner.holder.NetworkImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -73,6 +74,13 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     private ArrayList<Integer> localImages = new ArrayList<Integer>();
     private View headerView;
+
+    private String[] images = {
+            "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_0.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_1.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_2.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_3.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_4.jpg"};
 
     public MainShoppingFragment() {
     }
@@ -212,7 +220,34 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     @Override
     public void initData() {
-        super.initData();
+
+        //查询广告Banner信息
+//        AVQuery<AdvertisementBanner> query = AVQuery.getQuery(AdvertisementBanner.class);
+//        query.findInBackground(new FindCallback<AdvertisementBanner>() {
+//            @Override
+//            public void done(List<AdvertisementBanner> list, AVException e) {
+//                if (e == null) {
+//
+//                    // 网络加载例子
+//                    ArrayList<String> networkImages = new ArrayList<String>();
+//
+//                    for (int i = 0; i < list.size(); i++) {
+//                        networkImages.add(list.get(i).getImageUrl());
+//                    }
+//                    mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
+//                        @Override
+//                        public NetworkImageHolderView createHolder() {
+//                            return new NetworkImageHolderView();
+//                        }
+//                    }, networkImages)                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                            .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+////                .setOnPageChangeListener(this)//监听翻页事件
+////                            .setOnItemClickListener(this);
+//                    ;
+//                } else {
+//                }
+//            }
+//        });
     }
 
     @Override
@@ -265,32 +300,34 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     private void initHeaderView() {
 
+        List<String> networkImages = Arrays.asList(images);
 
-        for (int position = 0; position < 7; position++) {
-            localImages.add(getResId("ic_test_" + position, R.drawable.class));
-        }
+        mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
+            @Override
+            public NetworkImageHolderView createHolder() {
+                return new NetworkImageHolderView();
+            }
+        }, networkImages)              //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused});
 
         //本地图片例子
-        mConvenientBanner.setPages(
-                new CBViewHolderCreator<LocalImageHolderView>() {
-                    @Override
-                    public LocalImageHolderView createHolder() {
-                        return new LocalImageHolderView();
-                    }
-                }, localImages)
-                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-//                .setOnPageChangeListener(this)//监听翻页事件
-                .setOnItemClickListener(this);
+//        mConvenientBanner.setPages(
+//                new CBViewHolderCreator<LocalImageHolderView>() {
+//                    @Override
+//                    public LocalImageHolderView createHolder() {
+//                        return new LocalImageHolderView();
+//                    }
+//                }, localImages)
+//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+////                .setOnPageChangeListener(this)//监听翻页事件
+//                .setOnItemClickListener(this);
 //        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
 //        mCbHomeAd.setManualPageable(false);//设置不能手动影响
-
     }
 
     private void initContentView() {
-
         initHeaderView();
-
         //Toolbar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -331,6 +368,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         adapter.addFragment(DetailFragment.newInstance(""), "脸赞");
         mViewPager.setAdapter(adapter);
     }
+
 
     static class MyPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
