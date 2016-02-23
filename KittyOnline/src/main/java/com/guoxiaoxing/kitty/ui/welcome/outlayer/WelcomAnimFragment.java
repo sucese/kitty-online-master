@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ImageFragmentStatePagerAdapter;
 import com.guoxiaoxing.kitty.adapter.TextFragmentStatePagerAdapter;
-import com.guoxiaoxing.kitty.bean.TextBean;
+import com.guoxiaoxing.kitty.model.TextBean;
 import com.guoxiaoxing.kitty.ui.welcome.base.LoginAnimImageBaseFragment;
 import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageFristFragment;
 import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageSecondFragment;

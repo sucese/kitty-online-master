@@ -16,8 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.UserActive;
-import com.guoxiaoxing.kitty.bean.UserActive.ObjectReply;
+import com.guoxiaoxing.kitty.model.UserActive;
+import com.guoxiaoxing.kitty.model.UserActive.ObjectReply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.activity.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;

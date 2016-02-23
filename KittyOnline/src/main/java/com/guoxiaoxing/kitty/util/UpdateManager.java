@@ -10,7 +10,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.Update;
+import com.guoxiaoxing.kitty.model.Update;
 
 import cz.msebera.android.httpclient.Header;
 import java.io.ByteArrayInputStream;

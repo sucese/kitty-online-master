@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.bean.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTalk;
 
 public class ServerTaskUtils {
 

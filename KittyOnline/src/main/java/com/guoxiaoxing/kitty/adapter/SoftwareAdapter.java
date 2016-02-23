@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.SoftwareDec;
-import com.guoxiaoxing.kitty.bean.SoftwareList;
+import com.guoxiaoxing.kitty.model.SoftwareDec;
+import com.guoxiaoxing.kitty.model.SoftwareList;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;
 

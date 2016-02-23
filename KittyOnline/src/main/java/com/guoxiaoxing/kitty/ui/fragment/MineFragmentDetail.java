@@ -6,23 +6,20 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.MyInformation;
-import com.guoxiaoxing.kitty.bean.Result;
-import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.model.MyInformation;
+import com.guoxiaoxing.kitty.model.Result;
+import com.guoxiaoxing.kitty.model.ResultBean;
+import com.guoxiaoxing.kitty.model.User;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.DialogHelp;
@@ -42,7 +39,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cz.msebera.android.httpclient.Header;
 

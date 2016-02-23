@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.SoftwareCatalogList.SoftwareType;
+import com.guoxiaoxing.kitty.model.SoftwareCatalogList.SoftwareType;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 
 import butterknife.Bind;

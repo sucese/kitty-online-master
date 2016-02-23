@@ -10,9 +10,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Event;
-import com.guoxiaoxing.kitty.bean.EventApplyData;
-import com.guoxiaoxing.kitty.ui.dialog.CommonDialog;
+import com.guoxiaoxing.kitty.model.Event;
+import com.guoxiaoxing.kitty.model.EventApplyData;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 
 import java.util.List;

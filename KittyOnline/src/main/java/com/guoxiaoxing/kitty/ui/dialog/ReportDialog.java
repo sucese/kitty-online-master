@@ -9,8 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Report;
-import com.guoxiaoxing.kitty.ui.dialog.CommonDialog;
+import com.guoxiaoxing.kitty.model.Report;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.TDevice;
 

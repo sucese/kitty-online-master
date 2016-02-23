@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.bean.NotebookData;
+import com.guoxiaoxing.kitty.model.NotebookData;
 import com.guoxiaoxing.kitty.db.NoteDatabase;
 
 import cz.msebera.android.httpclient.Header;

@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
+import com.guoxiaoxing.kitty.model.BaseObject;
 
 /**
  * 团队任务实体类

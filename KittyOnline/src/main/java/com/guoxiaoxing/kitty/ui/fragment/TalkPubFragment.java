@@ -26,12 +26,11 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.emoji.EmojiKeyboardFragment;
 import com.guoxiaoxing.kitty.emoji.Emojicon;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.emoji.OnEmojiClickListener;
-import com.guoxiaoxing.kitty.service.ServerTaskUtils;
 import com.guoxiaoxing.kitty.ui.activity.SelectFriendsActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.DialogHelp;

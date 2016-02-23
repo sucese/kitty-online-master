@@ -8,10 +8,10 @@ import com.loopj.android.http.RequestParams;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppException;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.bean.EventApplyData;
-import com.guoxiaoxing.kitty.bean.NewsList;
-import com.guoxiaoxing.kitty.bean.Report;
-import com.guoxiaoxing.kitty.bean.UserTalk;
+import com.guoxiaoxing.kitty.model.EventApplyData;
+import com.guoxiaoxing.kitty.model.NewsList;
+import com.guoxiaoxing.kitty.model.Report;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.util.StringUtils;
 

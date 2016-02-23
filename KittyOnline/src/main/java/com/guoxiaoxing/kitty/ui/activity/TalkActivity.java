@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 
 import java.util.ArrayList;

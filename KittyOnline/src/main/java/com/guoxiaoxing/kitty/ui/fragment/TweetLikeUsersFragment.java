@@ -6,8 +6,8 @@ import android.widget.AdapterView;
 
 import com.guoxiaoxing.kitty.adapter.TweetLikeUsersAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.TweetLikeUserList;
-import com.guoxiaoxing.kitty.bean.User;
+import com.guoxiaoxing.kitty.model.TweetLikeUserList;
+import com.guoxiaoxing.kitty.model.User;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;

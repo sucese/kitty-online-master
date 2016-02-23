@@ -3,7 +3,7 @@ package com.guoxiaoxing.kitty.widget;
 import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Comment.Refer;
+import com.guoxiaoxing.kitty.model.Comment.Refer;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;

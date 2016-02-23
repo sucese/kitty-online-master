@@ -18,10 +18,14 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.AdvertisementBanner;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.log.Logger;
@@ -32,7 +36,6 @@ import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -222,32 +225,32 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     public void initData() {
 
         //查询广告Banner信息
-//        AVQuery<AdvertisementBanner> query = AVQuery.getQuery(AdvertisementBanner.class);
-//        query.findInBackground(new FindCallback<AdvertisementBanner>() {
-//            @Override
-//            public void done(List<AdvertisementBanner> list, AVException e) {
-//                if (e == null) {
-//
-//                    // 网络加载例子
-//                    ArrayList<String> networkImages = new ArrayList<String>();
-//
-//                    for (int i = 0; i < list.size(); i++) {
-//                        networkImages.add(list.get(i).getImageUrl());
-//                    }
-//                    mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
-//                        @Override
-//                        public NetworkImageHolderView createHolder() {
-//                            return new NetworkImageHolderView();
-//                        }
-//                    }, networkImages)                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                            .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-////                .setOnPageChangeListener(this)//监听翻页事件
-////                            .setOnItemClickListener(this);
-//                    ;
-//                } else {
-//                }
-//            }
-//        });
+        AVQuery<AdvertisementBanner> query = AVQuery.getQuery(AdvertisementBanner.class);
+        query.findInBackground(new FindCallback<AdvertisementBanner>() {
+            @Override
+            public void done(List<AdvertisementBanner> list, AVException e) {
+                if (e == null) {
+                    // 网络加载例子
+                    ArrayList<String> networkImages = new ArrayList<String>();
+
+                    for (int i = 0; i < list.size(); i++) {
+                        networkImages.add(list.get(i).getImageUrl());
+                    }
+                    mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
+                        @Override
+                        public NetworkImageHolderView createHolder() {
+                            return new NetworkImageHolderView();
+                        }
+                    }, networkImages)                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                            .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+//                .setOnPageChangeListener(this)//监听翻页事件
+//                            .setOnItemClickListener(this);
+                    ;
+                } else {
+
+                }
+            }
+        });
     }
 
     @Override
@@ -300,15 +303,15 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     private void initHeaderView() {
 
-        List<String> networkImages = Arrays.asList(images);
-
-        mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
-            @Override
-            public NetworkImageHolderView createHolder() {
-                return new NetworkImageHolderView();
-            }
-        }, networkImages)              //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused});
+//        List<String> networkImages = Arrays.asList(images);
+//
+//        mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
+//            @Override
+//            public NetworkImageHolderView createHolder() {
+//                return new NetworkImageHolderView();
+//            }
+//        }, networkImages)              //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused});
 
         //本地图片例子
 //        mConvenientBanner.setPages(

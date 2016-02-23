@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.team.bean.MyIssueState;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.ui.TeamMainActivity;

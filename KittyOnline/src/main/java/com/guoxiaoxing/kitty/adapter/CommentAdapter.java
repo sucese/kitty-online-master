@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Comment;
-import com.guoxiaoxing.kitty.bean.Comment.Refer;
-import com.guoxiaoxing.kitty.bean.Comment.Reply;
+import com.guoxiaoxing.kitty.model.Comment;
+import com.guoxiaoxing.kitty.model.Comment.Refer;
+import com.guoxiaoxing.kitty.model.Comment.Reply;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.PlatfromUtil;

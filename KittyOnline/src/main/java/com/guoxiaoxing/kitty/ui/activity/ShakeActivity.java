@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.ShakeObject;
+import com.guoxiaoxing.kitty.model.ShakeObject;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.KJAnimations;
 import com.guoxiaoxing.kitty.util.StringUtils;

@@ -43,7 +43,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center_vertical"
-                        android:layout_marginStart="10dp"
                         android:src="@drawable/bmp_rich_scan" />
 
                     <EditText

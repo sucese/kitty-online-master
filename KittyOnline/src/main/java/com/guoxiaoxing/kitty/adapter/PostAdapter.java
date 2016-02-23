@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Post;
-import com.guoxiaoxing.kitty.bean.PostList;
+import com.guoxiaoxing.kitty.model.Post;
+import com.guoxiaoxing.kitty.model.PostList;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.HTMLUtil;
 import com.guoxiaoxing.kitty.util.StringUtils;

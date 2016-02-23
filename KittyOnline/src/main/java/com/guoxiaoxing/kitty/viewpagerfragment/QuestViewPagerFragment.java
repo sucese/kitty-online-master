@@ -4,7 +4,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
-import com.guoxiaoxing.kitty.bean.Post;
+import com.guoxiaoxing.kitty.model.Post;
 import com.guoxiaoxing.kitty.ui.fragment.PostsFragment;
 import android.os.Bundle;
 import android.view.View;

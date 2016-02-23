@@ -6,8 +6,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Event;
-import com.guoxiaoxing.kitty.bean.EventList;
+import com.guoxiaoxing.kitty.model.Event;
+import com.guoxiaoxing.kitty.model.EventList;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 
 import org.kymjs.kjframe.Core;

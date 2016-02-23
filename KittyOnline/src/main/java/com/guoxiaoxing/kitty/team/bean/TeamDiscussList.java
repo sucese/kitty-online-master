@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
-import com.guoxiaoxing.kitty.bean.ListEntity;
+import com.guoxiaoxing.kitty.model.BaseObject;
+import com.guoxiaoxing.kitty.model.ListEntity;
 
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")

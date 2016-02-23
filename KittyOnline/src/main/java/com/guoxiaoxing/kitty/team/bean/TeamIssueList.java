@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
-import com.guoxiaoxing.kitty.bean.ListEntity;
+import com.guoxiaoxing.kitty.model.BaseObject;
+import com.guoxiaoxing.kitty.model.ListEntity;
 
 /**
  * 团队任务列表实体类

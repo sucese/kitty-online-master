@@ -15,7 +15,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.ListEntity;
+import com.guoxiaoxing.kitty.model.ListEntity;
 import com.guoxiaoxing.kitty.team.adapter.TeamIssueAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamIssue;

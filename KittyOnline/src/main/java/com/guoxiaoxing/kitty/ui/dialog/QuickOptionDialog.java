@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.team.fragment.NoteEditFragment;
 import com.guoxiaoxing.kitty.ui.fragment.TalkPubFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;

@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.team.bean;
 
 import java.util.List;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
+import com.guoxiaoxing.kitty.model.BaseObject;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

@@ -17,10 +17,10 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.BaseObject;
-import com.guoxiaoxing.kitty.bean.ListEntity;
-import com.guoxiaoxing.kitty.bean.Result;
-import com.guoxiaoxing.kitty.bean.ResultBean;
+import com.guoxiaoxing.kitty.model.BaseObject;
+import com.guoxiaoxing.kitty.model.ListEntity;
+import com.guoxiaoxing.kitty.model.Result;
+import com.guoxiaoxing.kitty.model.ResultBean;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.guoxiaoxing.kitty.util.StringUtils;

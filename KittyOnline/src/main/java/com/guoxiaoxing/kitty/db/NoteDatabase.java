@@ -3,7 +3,7 @@ package com.guoxiaoxing.kitty.db;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.guoxiaoxing.kitty.bean.NotebookData;
+import com.guoxiaoxing.kitty.model.NotebookData;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.team.adapter.TeamIssueCatalogAdapter;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.team.bean.TeamIssueCatalog;

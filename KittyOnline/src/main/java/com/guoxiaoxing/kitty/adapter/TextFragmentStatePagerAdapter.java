@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.guoxiaoxing.kitty.bean.TextBean;
+import com.guoxiaoxing.kitty.model.TextBean;
 import com.guoxiaoxing.kitty.ui.welcome.base.LoginAnimTextBaseFragment;
 
 import java.util.ArrayList;

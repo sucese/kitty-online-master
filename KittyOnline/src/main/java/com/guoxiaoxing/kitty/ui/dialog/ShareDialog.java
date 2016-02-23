@@ -12,7 +12,7 @@ import android.view.WindowManager;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Constants;
+import com.guoxiaoxing.kitty.model.Constants;
 import com.guoxiaoxing.kitty.util.TDevice;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.bean.ShareType;

@@ -10,17 +10,18 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.MyInformation;
-import com.guoxiaoxing.kitty.bean.Notice;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
-import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.CacheManager;
+import com.guoxiaoxing.kitty.model.Constants;
+import com.guoxiaoxing.kitty.model.MyInformation;
+import com.guoxiaoxing.kitty.model.Notice;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.User;
 import com.guoxiaoxing.kitty.ui.MainActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.ui.dialog.MyQrodeDialog;
@@ -76,6 +77,33 @@ public class MainMineFragment extends BaseFragment {
     View mUserUnLogin;
 
     private static BadgeView mMesCount;
+
+    @Bind(R.id.ll_shop)
+    LinearLayout mLlShop;
+    @Bind(R.id.ll_wallet)
+    LinearLayout mLlWallet;
+    @Bind(R.id.ll_coupon)
+    LinearLayout mLlCoupon;
+    @Bind(R.id.ll_money)
+    LinearLayout mLlMoney;
+    @Bind(R.id.ll_super_shop)
+    LinearLayout mLlSUperShop;
+    @Bind(R.id.ll_card)
+    LinearLayout mLlCard;
+    @Bind(R.id.ll_note)
+    LinearLayout mLlNote;
+    @Bind(R.id.ll_account)
+    LinearLayout mLlAccount;
+    @Bind(R.id.ll_aunt)
+    LinearLayout mLlAunt;
+    @Bind(R.id.ll_star)
+    LinearLayout mLlStar;
+    @Bind(R.id.ll_food)
+    LinearLayout mLlFood;
+    @Bind(R.id.ll_album)
+    LinearLayout mLlAlbum;
+    @Bind(R.id.ll_service)
+    LinearLayout mLlService;
 
     private boolean mIsWatingLogin;
 
@@ -229,6 +257,20 @@ public class MainMineFragment extends BaseFragment {
 //         List<Team> teams = TeamList.toTeamList(cache);
 //         addTeamLayout(teams);
 //         }
+
+        mLlShop.setOnClickListener(this);
+        mLlWallet.setOnClickListener(this);
+        mLlCoupon.setOnClickListener(this);
+        mLlMoney.setOnClickListener(this);
+        mLlSUperShop.setOnClickListener(this);
+        mLlCard.setOnClickListener(this);
+        mLlNote.setOnClickListener(this);
+        mLlAccount.setOnClickListener(this);
+        mLlAunt.setOnClickListener(this);
+        mLlStar.setOnClickListener(this);
+        mLlFood.setOnClickListener(this);
+        mLlAlbum.setOnClickListener(this);
+        mLlService.setOnClickListener(this);
     }
 
     private void fillUI() {
@@ -278,6 +320,11 @@ public class MainMineFragment extends BaseFragment {
 
     private String getCacheKey() {
         return "my_information" + AppContext.getInstance().getLoginUid();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 
     private class CacheTask extends AsyncTask<String, Void, User> {
@@ -364,6 +411,36 @@ public class MainMineFragment extends BaseFragment {
                         .getLoginUid(), AppContext.getInstance().getLoginUser()
                         .getUsername());
                 break;
+
+            case R.id.ll_shop:
+                break;
+            case R.id.ll_wallet:
+                break;
+            case R.id.ll_coupon:
+                break;
+            case R.id.ll_money:
+                break;
+            case R.id.ll_super_shop:
+                break;
+            case R.id.ll_card:
+                break;
+            case R.id.ll_note:
+                UIHelper.showSimpleBack(getActivity(),
+                        SimpleBackPage.NOTE);
+                break;
+            case R.id.ll_account:
+                break;
+            case R.id.ll_aunt:
+                break;
+            case R.id.ll_star:
+                break;
+            case R.id.ll_food:
+                break;
+            case R.id.ll_album:
+                break;
+            case R.id.ll_service:
+                break;
+
             default:
                 break;
         }

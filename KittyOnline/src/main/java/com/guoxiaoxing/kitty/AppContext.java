@@ -5,13 +5,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.User;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
+import com.guoxiaoxing.kitty.model.AdvertisementBanner;
+import com.guoxiaoxing.kitty.model.Constants;
+import com.guoxiaoxing.kitty.model.User;
 import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
@@ -63,8 +65,6 @@ public class AppContext extends BaseApplication {
 //                .getAppExceptionHandler(this));
         UIHelper.sendBroadcastForNotice(this);
 
-        //初始化LeanCloud云服务
-        AVOSCloud.initialize(this, AppConfig.LEADCLOUD_APP_ID, AppConfig.LEADCLOUD_APP_KEY);
     }
 
     private void init() {
@@ -92,6 +92,16 @@ public class AppContext extends BaseApplication {
         //图片处理库
         Fresco.initialize(this);
 
+
+        //初始化LeanCloud云服务
+        initModelClass();
+        AVOSCloud.initialize(this, AppConfig.LEADCLOUD_APP_ID, AppConfig.LEADCLOUD_APP_KEY);
+        AVOSCloud.setDebugLogEnabled(true);
+
+    }
+
+    private void initModelClass() {
+        AVObject.registerSubclass(AdvertisementBanner.class);
     }
 
     private void initLogin() {

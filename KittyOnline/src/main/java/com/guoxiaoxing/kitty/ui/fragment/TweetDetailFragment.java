@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.guoxiaoxing.kitty.bean.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import com.guoxiaoxing.kitty.AppContext;
@@ -28,11 +28,11 @@ import com.guoxiaoxing.kitty.api.OperationResponseHandler;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.ui.base.BeseHaveHeaderListFragment;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
-import com.guoxiaoxing.kitty.bean.Comment;
-import com.guoxiaoxing.kitty.bean.CommentList;
-import com.guoxiaoxing.kitty.bean.Result;
-import com.guoxiaoxing.kitty.bean.ResultBean;
-import com.guoxiaoxing.kitty.bean.TweetDetail;
+import com.guoxiaoxing.kitty.model.Comment;
+import com.guoxiaoxing.kitty.model.CommentList;
+import com.guoxiaoxing.kitty.model.Result;
+import com.guoxiaoxing.kitty.model.ResultBean;
+import com.guoxiaoxing.kitty.model.TweetDetail;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.emoji.OnSendClickListener;
 import com.guoxiaoxing.kitty.ui.activity.DetailActivity;

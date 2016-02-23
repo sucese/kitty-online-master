@@ -6,7 +6,7 @@ import java.io.Serializable;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.api.remote.OSChinaTeamApi;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.bean.ListEntity;
+import com.guoxiaoxing.kitty.model.ListEntity;
 import com.guoxiaoxing.kitty.team.adapter.TeamIssueAdapter;
 import com.guoxiaoxing.kitty.team.bean.TeamIssue;
 import com.guoxiaoxing.kitty.team.bean.TeamIssueList;

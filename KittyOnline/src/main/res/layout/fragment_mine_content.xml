@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:text="理财-记录" />
 
     <TextView
@@ -31,6 +31,8 @@
         app:useDefaultMargins="true">
 
         <LinearLayout
+            android:id="@+id/ll_shop"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -44,12 +46,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_1" />
+                android:text="@string/mine_xiao_dian" />
 
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/ll_wallet"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -63,11 +66,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_2" />
+                android:text="@string/mine_qian_bao" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_coupon"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -81,11 +85,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_3" />
+                android:text="@string/mine_you_hui_quan" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_money"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -99,11 +104,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_4" />
+                android:text="@string/mine_li_cai" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_super_shop"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -117,11 +123,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_5" />
+                android:text="@string/mine_shang_cheng" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_card"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -135,11 +142,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_6" />
+                android:text="@string/mine_da_ka" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_note"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -153,13 +161,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_7" />
+                android:text="@string/mine_qing_ji" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_account"
             android:gravity="center"
             android:orientation="vertical"
+            android:clickable="true"
             app:layout_columnWeight="1"
             app:layout_gravity="fill_horizontal">
 
@@ -171,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_8" />
+                android:text="@string/mine_ji_zhang" />
 
         </LinearLayout>
 
@@ -182,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:text="生活-健康" />
 
     <android.support.v7.widget.GridLayout
@@ -196,6 +206,7 @@
         app:useDefaultMargins="true">
 
         <LinearLayout
+            android:id="@+id/ll_aunt"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -209,12 +220,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_1" />
+                android:text="@string/mine_da_yi_ma" />
 
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/ll_star"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -228,11 +240,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_2" />
+                android:text="@string/mine_xing_zuo" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_food"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -246,11 +259,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_3" />
+                android:text="@string/mine_mei_shi" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_album"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -264,7 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_4" />
+                android:text="@string/mine_xiang_ce" />
 
         </LinearLayout>
 
@@ -274,7 +288,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:text="帮助-服务" />
 
 
@@ -289,6 +303,7 @@
         app:useDefaultMargins="true">
 
         <LinearLayout
+            android:id="@+id/ll_service"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_columnWeight="1"
@@ -302,7 +317,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_1" />
+                android:text="@string/mine_ke_fu" />
 
         </LinearLayout>
 
@@ -321,7 +336,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_2" />
+                android:text="@string/mine_ke_fu" />
 
         </LinearLayout>
 
@@ -339,7 +354,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_3" />
+                android:text="@string/mine_ke_fu" />
 
         </LinearLayout>
 
@@ -357,7 +372,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/buy_goods_title_4" />
+                android:text="@string/mine_ke_fu" />
 
         </LinearLayout>
 

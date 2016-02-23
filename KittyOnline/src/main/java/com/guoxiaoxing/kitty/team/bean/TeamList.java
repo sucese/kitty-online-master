@@ -3,8 +3,8 @@ package com.guoxiaoxing.kitty.team.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
-import com.guoxiaoxing.kitty.bean.ListEntity;
+import com.guoxiaoxing.kitty.model.BaseObject;
+import com.guoxiaoxing.kitty.model.ListEntity;
 
 import org.kymjs.kjframe.utils.StringUtils;
 

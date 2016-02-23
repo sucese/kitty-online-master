@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.TweetLike;
+import com.guoxiaoxing.kitty.model.TweetLike;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.PlatfromUtil;
 import com.guoxiaoxing.kitty.util.StringUtils;

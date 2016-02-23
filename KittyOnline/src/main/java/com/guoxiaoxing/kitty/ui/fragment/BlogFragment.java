@@ -6,8 +6,8 @@ import android.widget.AdapterView;
 
 import com.guoxiaoxing.kitty.adapter.BlogAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.Blog;
-import com.guoxiaoxing.kitty.bean.BlogList;
+import com.guoxiaoxing.kitty.model.Blog;
+import com.guoxiaoxing.kitty.model.BlogList;
 import com.guoxiaoxing.kitty.ui.base.OnTabReselectListener;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;

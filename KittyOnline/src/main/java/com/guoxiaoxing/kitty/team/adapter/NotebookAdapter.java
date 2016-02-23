@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.NotebookData;
+import com.guoxiaoxing.kitty.model.NotebookData;
 import com.guoxiaoxing.kitty.team.fragment.NoteEditFragment;
 import com.guoxiaoxing.kitty.widget.KJDragGridView.DragGridBaseAdapter;
 

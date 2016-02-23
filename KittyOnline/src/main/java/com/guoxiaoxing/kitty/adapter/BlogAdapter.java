@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.Blog;
-import com.guoxiaoxing.kitty.bean.BlogList;
+import com.guoxiaoxing.kitty.model.Blog;
+import com.guoxiaoxing.kitty.model.BlogList;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;

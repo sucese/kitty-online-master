@@ -2,10 +2,10 @@ package com.guoxiaoxing.kitty.ui.fragment;
 
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.ui.base.CommonDetailFragment;
-import com.guoxiaoxing.kitty.bean.CommentList;
-import com.guoxiaoxing.kitty.bean.FavoriteList;
-import com.guoxiaoxing.kitty.bean.Post;
-import com.guoxiaoxing.kitty.bean.PostDetail;
+import com.guoxiaoxing.kitty.model.CommentList;
+import com.guoxiaoxing.kitty.model.FavoriteList;
+import com.guoxiaoxing.kitty.model.Post;
+import com.guoxiaoxing.kitty.model.PostDetail;
 import com.guoxiaoxing.kitty.ui.activity.DetailActivity;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;

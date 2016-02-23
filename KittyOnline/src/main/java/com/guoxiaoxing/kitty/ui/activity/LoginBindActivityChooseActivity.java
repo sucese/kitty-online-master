@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.bean.LoginUserBean;
-import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
+import com.guoxiaoxing.kitty.model.LoginUserBean;
+import com.guoxiaoxing.kitty.model.OpenIdCatalog;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.XmlUtils;

@@ -44,6 +44,22 @@
     <string name="buy_goods_title_12">百货</string>
 
 
+    <!--我我我-->
+    <string name="mine_xiao_dian">小店</string>
+    <string name="mine_qian_bao">钱包</string>
+    <string name="mine_you_hui_quan">优惠券</string>
+    <string name="mine_li_cai">理财</string>
+    <string name="mine_shang_cheng">蘑豆商城</string>
+    <string name="mine_da_ka">打卡</string>
+    <string name="mine_qing_ji">轻记</string>
+    <string name="mine_ji_zhang">记账</string>
+    <string name="mine_da_yi_ma">大姨妈</string>
+    <string name="mine_xing_zuo">星座</string>
+    <string name="mine_mei_shi">美食</string>
+    <string name="mine_xiang_ce">相册</string>
+    <string name="mine_ke_fu">客服</string>
+
+
     <string name="app_error">应用程序错误</string>
     <string name="app_error_message">很抱歉，小屁孩耍脾气啦。<br />我们会帮你教训一下这个小屁孩！</string>
     <string name="submit_report">打报告去</string>

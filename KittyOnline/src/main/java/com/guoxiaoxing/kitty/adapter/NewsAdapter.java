@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.News;
-import com.guoxiaoxing.kitty.bean.NewsList;
+import com.guoxiaoxing.kitty.model.News;
+import com.guoxiaoxing.kitty.model.NewsList;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.ThemeSwitchUtils;

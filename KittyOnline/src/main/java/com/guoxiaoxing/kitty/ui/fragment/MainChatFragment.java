@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.activity.FindUserActivity;
 import com.guoxiaoxing.kitty.ui.activity.ShakeActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;

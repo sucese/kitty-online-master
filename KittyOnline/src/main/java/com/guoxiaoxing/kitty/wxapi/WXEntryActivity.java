@@ -11,8 +11,8 @@ import com.tencent.mm.sdk.modelmsg.SendAuth;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.ApiHttpClient;
-import com.guoxiaoxing.kitty.bean.Constants;
-import com.guoxiaoxing.kitty.bean.OpenIdCatalog;
+import com.guoxiaoxing.kitty.model.Constants;
+import com.guoxiaoxing.kitty.model.OpenIdCatalog;
 import com.guoxiaoxing.kitty.ui.activity.LoginBindActivityChooseActivity;
 import com.guoxiaoxing.kitty.util.DialogHelp;
 import com.guoxiaoxing.kitty.util.TLog;

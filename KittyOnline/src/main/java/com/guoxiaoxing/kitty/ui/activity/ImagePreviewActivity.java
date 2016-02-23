@@ -18,7 +18,7 @@ import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.RecyclingPagerAdapter;
-import com.guoxiaoxing.kitty.bean.SimpleBackPage;
+import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog;
 import com.guoxiaoxing.kitty.ui.dialog.ImageMenuDialog.OnMenuClickListener;

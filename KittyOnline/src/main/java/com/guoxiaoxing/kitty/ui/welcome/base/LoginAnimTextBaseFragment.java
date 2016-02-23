@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.bean.TextBean;
+import com.guoxiaoxing.kitty.model.TextBean;
 
 
 /**

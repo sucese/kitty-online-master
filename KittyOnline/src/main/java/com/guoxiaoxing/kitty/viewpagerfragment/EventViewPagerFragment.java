@@ -3,7 +3,7 @@ package com.guoxiaoxing.kitty.viewpagerfragment;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.ViewPageFragmentAdapter;
 import com.guoxiaoxing.kitty.ui.base.BaseViewPagerFragment;
-import com.guoxiaoxing.kitty.bean.EventList;
+import com.guoxiaoxing.kitty.model.EventList;
 import com.guoxiaoxing.kitty.ui.fragment.EventFragment;
 import android.os.Bundle;
 import android.view.View;

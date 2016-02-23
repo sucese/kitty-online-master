@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
-import com.guoxiaoxing.kitty.bean.BaseObject;
+import com.guoxiaoxing.kitty.model.BaseObject;
 import com.guoxiaoxing.kitty.cache.CacheManager;
 import com.guoxiaoxing.kitty.ui.empty.EmptyLayout;
 import com.loopj.android.http.AsyncHttpResponseHandler;
