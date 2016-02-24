@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <!--<com.facebook.drawee.view.SimpleDraweeView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--app:actualImageScaleType="focusCrop"-->
+        <!--app:placeholderImage="@drawable/user_logo"-->
+        <!--app:placeholderImageScaleType="focusCrop" />-->
+
+        <ImageButton
+            android:id="@+id/sdv_user_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/user_logo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/sdv_user_logo"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="蘑菇街官方" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/primary"
+                    tools:text="官方认证" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_release_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:text="今天14:03" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:textSize="17sp"
+            tools:text="+关注" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_talk_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:maxLines="3"
+        tools:text="今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么今天买什么" />
+
+    <com.guoxiaoxing.kitty.widget.ExpandGridView
+        android:id="@+id/egv_talk_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/bmp_favourite"
+            android:gravity="center"
+            tools:text="68" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/bmp_tab_main_chat_normal"
+            android:gravity="center"
+            android:text="评论" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:maxLines="1"
+        tools:text="小美：#2016心愿单#美菇，新的一年新的开始新的一年新的开始新的一年新的开始" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:maxLines="1"
+        tools:text="小美：#2016心愿单#美菇，新的一年新的开始新的一年新的开始新的一年新的开始" />
+
+
+    <TextView
+        android:id="@+id/tv_more_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:text="查看所有评论" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</LinearLayout>

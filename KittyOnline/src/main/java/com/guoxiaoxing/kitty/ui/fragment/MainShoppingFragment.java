@@ -3,12 +3,14 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,7 +44,7 @@ import butterknife.Bind;
 
 
 public class MainShoppingFragment extends BaseFragment implements AdapterView.OnItemClickListener,
-        ViewPager.OnPageChangeListener, OnItemClickListener {
+        ViewPager.OnPageChangeListener, OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = "MainShoppingFragment";
     private static final String ARG_PARAM1 = "param1";
@@ -52,6 +54,8 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     private String mParam1;
     private String mParam2;
 
+    @Bind(R.id.srl_root)
+    SwipeRefreshLayout mSrlRoot;
     @Bind(R.id.tb_main_shopping_fragment)
     Toolbar mToolbar;
     @Bind(R.id.iv_scan)
@@ -251,6 +255,8 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
                 }
             }
         });
+
+
     }
 
     @Override
@@ -266,6 +272,16 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         if (mListener != null) {
             mListener.onHomeFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSrlRoot.setRefreshing(false);
+            }
+        }, 3000);
     }
 
     public interface OnFragmentInteractionListener {
@@ -330,7 +346,17 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     }
 
     private void initContentView() {
-        initHeaderView();
+
+//        mSrlRoot.setOnRefreshListener(this);
+//
+//        mSrlRoot.setColorSchemeResources(
+//                android.R.color.holo_blue_bright,
+//                android.R.color.holo_green_light,
+//                android.R.color.holo_orange_light,
+//                android.R.color.holo_red_light);
+//        mSrlRoot.setDistanceToTriggerSync(1000);
+//        mSrlRoot.setSize(SwipeRefreshLayout.DEFAULT);
+//        initHeaderView();
         //Toolbar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);

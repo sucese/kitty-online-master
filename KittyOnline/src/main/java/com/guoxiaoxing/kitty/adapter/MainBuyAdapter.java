@@ -11,8 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerviewViewHolder;
-import com.guoxiaoxingv.smartrecyclerview.SmartViewAdapter;
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
+import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
 
 import java.security.SecureRandom;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 
 
-public class MainBuyAdapter extends SmartViewAdapter<MainBuyAdapter.ViewHolder> {
+public class MainBuyAdapter extends UltimateViewAdapter<MainBuyAdapter.ViewHolder> {
 
     private List<String> stringList;
 
@@ -171,18 +171,18 @@ public class MainBuyAdapter extends SmartViewAdapter<MainBuyAdapter.ViewHolder> 
     }
 
     public void insert(String string, int position) {
-        insert(stringList, string, position);
+        insertInternal(stringList, string, position);
     }
 
     public void remove(int position) {
-        remove(stringList, position);
+        removeInternal(stringList, position);
     }
 
     public void clear() {
-        clear(stringList);
+        clearInternal(stringList);
     }
 
-    public class ViewHolder extends SmartRecyclerviewViewHolder {
+    public class ViewHolder extends UltimateRecyclerviewViewHolder {
 
         TextView textViewSample;
         ImageView imageViewSample;

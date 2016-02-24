@@ -29,12 +29,12 @@ import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 import com.guoxiaoxing.kitty.widget.banner.transforms.FlipHorizontalTransformer;
 import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
-import com.guoxiaoxingv.smartrecyclerview.ItemTouchListenerAdapter;
-import com.guoxiaoxingv.smartrecyclerview.ObservableScrollState;
-import com.guoxiaoxingv.smartrecyclerview.ObservableScrollViewCallbacks;
-import com.guoxiaoxingv.smartrecyclerview.SmartRecyclerView;
-import com.guoxiaoxingv.smartrecyclerview.animator.animators.FadeInAnimator;
-import com.guoxiaoxingv.smartrecyclerview.util.BasicGridLayoutManager;
+import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
+import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
+import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.animators.FadeInAnimator;
+import com.marshalchen.ultimaterecyclerview.uiUtils.BasicGridLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Bind(R.id.et_search)
     EditText mEtSearch;
     @Bind(R.id.srv_main_buy_fragment)
-    SmartRecyclerView mSmartRecyclerView;
+    UltimateRecyclerView mSmartRecyclerView;
 
 
     ConvenientBanner mConvenientBanner;
@@ -294,7 +294,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
         //添加Header View
         initHeaderView();
         mSmartRecyclerView.setNormalHeader(headerView);
-        mSmartRecyclerView.setOnParallaxScroll(new SmartRecyclerView.OnParallaxScroll() {
+        mSmartRecyclerView.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {
             @Override
             public void onParallaxScroll(float percentage, float offset, View parallax) {
 //                Drawable drawable = mToolbar.getBackground();
@@ -321,7 +321,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
             }
         });
         //上拉加载更多
-        mSmartRecyclerView.setOnLoadMoreListener(new SmartRecyclerView.OnLoadMoreListener() {
+        mSmartRecyclerView.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
             @Override
             public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
                 Handler handler = new Handler();

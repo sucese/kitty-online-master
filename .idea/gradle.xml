@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/KittyOnline" />
-            <option value="$PROJECT_DIR$/SmartRecyclerView" />
             <option value="$PROJECT_DIR$/social_sdk_library_project" />
           </set>
         </option>
@@ -18,7 +17,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/KittyOnline" />
-            <option value="$PROJECT_DIR$/SmartRecyclerView" />
             <option value="$PROJECT_DIR$/social_sdk_library_project" />
           </set>
         </option>

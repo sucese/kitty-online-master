@@ -1,95 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--组织它的子views之间协作的一个Layout，它可以给子View切换提供动画效果。-->
-
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/srl_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--可以让包含在其中的控件响应被标记了ScrollingViewBehavior的View的滚动事件-->
-
-    <android.support.design.widget.AppBarLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="match_parent">
 
-        <!--可以控制包含在CollapsingToolbarLayout其中的控件，在响应collapse时是移除屏幕和固定在最上面-->
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/ctl_layout"
+        <!--可以让包含在其中的控件响应被标记了ScrollingViewBehavior的View的滚动事件-->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <!--可以控制包含在CollapsingToolbarLayout其中的控件，在响应collapse时是移除屏幕和固定在最上面-->
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/ctl_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/window_background"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <include layout="@layout/shopping_header" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/tb_main_shopping_fragment"
+                    style="@style/toolbar_header"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/iv_scan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:src="@drawable/bmp_rich_scan" />
+
+                        <EditText
+                            android:id="@+id/et_search"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:hint="懒人必备-脚蹬小白鞋"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_14" />
+
+                        <ImageView
+                            android:id="@+id/iv_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/bmp_notification_normal" />
+                    </LinearLayout>
+                </android.support.v7.widget.Toolbar>
+
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/window_background"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <include layout="@layout/shopping_header" />
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/tb_main_shopping_fragment"
-                style="@style/toolbar_header"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="1">\
-
-                    <ImageView
-                        android:id="@+id/iv_scan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:src="@drawable/bmp_rich_scan" />
-
-                    <EditText
-                        android:id="@+id/et_search"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:hint="懒人必备-脚蹬小白鞋"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_14" />
-
-                    <ImageView
-                        android:id="@+id/iv_notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/bmp_notification_normal" />
-                </LinearLayout>
-            </android.support.v7.widget.Toolbar>
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tb_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:tabGravity="center"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/primary"
+                app:tabTextColor="@color/gray" />
 
-    </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tb_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:tabGravity="center"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/primary"
-            app:tabTextColor="@color/gray" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

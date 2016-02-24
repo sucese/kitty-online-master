@@ -4,6 +4,7 @@ package com.guoxiaoxing.kitty.tmp;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MainBuyAdapter;
 import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
+import com.guoxiaoxing.kitty.adapter.TalkAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +65,13 @@ public class SampleDataboxset {
             sd.insert("More " + i, sd.getAdapterItemCount());
         }
     }
+
+    public static void insertTalk(TalkAdapter sd, int howmany) {
+        for (int i = 0; i < howmany; i++) {
+            sd.insert("More " + i, sd.getAdapterItemCount());
+        }
+    }
+
 
 //    public static int getGirlImageRandom() {
 //        Random e = new Random();
