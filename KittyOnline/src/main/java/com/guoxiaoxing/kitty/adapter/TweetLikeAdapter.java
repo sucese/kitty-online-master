@@ -57,8 +57,8 @@ public class TweetLikeAdapter extends ListBaseAdapter<TweetLike> {
         vh.reply.setFocusable(false);
         vh.reply.setDispatchToParent(true);
         vh.reply.setLongClickable(false);
-        Spanned span = UIHelper.parseActiveReply(item.getUserTalk().getAuthor(),
-                item.getUserTalk().getBody());
+        Spanned span = UIHelper.parseActiveReply(item.getUserTweet().getAuthor(),
+                item.getUserTweet().getBody());
         vh.reply.setText(span);
         MyURLSpan.parseLinkText(vh.reply, span);
 

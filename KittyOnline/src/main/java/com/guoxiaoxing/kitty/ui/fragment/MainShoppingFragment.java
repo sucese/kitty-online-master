@@ -54,8 +54,8 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     private String mParam1;
     private String mParam2;
 
-    @Bind(R.id.srl_root)
-    SwipeRefreshLayout mSrlRoot;
+//    @Bind(R.id.srl_root)
+//    SwipeRefreshLayout mSrlRoot;
     @Bind(R.id.tb_main_shopping_fragment)
     Toolbar mToolbar;
     @Bind(R.id.iv_scan)
@@ -279,7 +279,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mSrlRoot.setRefreshing(false);
+//                mSrlRoot.setRefreshing(false);
             }
         }, 3000);
     }

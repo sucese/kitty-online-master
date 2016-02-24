@@ -17,8 +17,8 @@ public class TweetLike extends BaseObject {
     @XStreamAlias("user")
     private User user;
     
-    @XStreamAlias("userTalk")
-    private UserTalk userTalk;
+    @XStreamAlias("userTweet")
+    private UserTweet userTweet;
     
     @XStreamAlias("datatime")
     private String datatime;
@@ -34,12 +34,12 @@ public class TweetLike extends BaseObject {
         this.user = user;
     }
 
-    public UserTalk getUserTalk() {
-        return userTalk;
+    public UserTweet getUserTweet() {
+        return userTweet;
     }
 
-    public void setUserTalk(UserTalk userTalk) {
-        this.userTalk = userTalk;
+    public void setUserTweet(UserTweet userTweet) {
+        this.userTweet = userTweet;
     }
 
     public String getDatatime() {

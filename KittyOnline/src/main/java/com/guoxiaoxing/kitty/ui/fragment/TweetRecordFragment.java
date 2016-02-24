@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.service.ServerTaskUtils;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.StringUtils;
@@ -195,11 +195,11 @@ public class TweetRecordFragment extends BaseFragment {
         if (!StringUtils.isEmpty(body)) {
             strSpeech = body;
         }
-        UserTalk userTalk = new UserTalk();
-        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
-        userTalk.setAudioPath(audioPath);
-        userTalk.setBody(strSpeech);
-        ServerTaskUtils.pubTweet(getActivity(), userTalk);
+        UserTweet userTweet = new UserTweet();
+        userTweet.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTweet.setAudioPath(audioPath);
+        userTweet.setBody(strSpeech);
+        ServerTaskUtils.pubTweet(getActivity(), userTweet);
         getActivity().finish();
     }
 }

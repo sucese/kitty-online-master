@@ -8,34 +8,45 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.widget.ninelayout.NineGridlayout;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * 用户说说Adapter
  *
  * @author guoxiaoxing
  */
+public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.ViewHolder> {
 
 
-public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterViewHolder> {
+    private List<UserTalk> mTalkList = new ArrayList<>();
 
-    private List<String> mTalkList;
+    public TalkAdapter() {
+    }
 
-    public TalkAdapter(List<String> mTalkList) {
-        this.mTalkList = mTalkList;
+    public void setData(List<UserTalk> talkList) {
+        mTalkList = talkList;
     }
 
     @Override
-    public void onBindViewHolder(final SimpleAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         if (position < getItemCount() && (customHeaderView != null ? position <= mTalkList.size() : position < mTalkList.size()) && (customHeaderView != null ? position > 0 : true)) {
 
-//            ((SimpleAdapterViewHolder) holder).textViewSample.setText(mTalkList.get(customHeaderView != null ? position - 1 : position));
+//            ((ViewHolder) holder).textViewSample.setText(mTalkList.get(customHeaderView != null ? position - 1 : position));
             // ((ViewHolder) holder).itemView.setActivated(selectedItems.get(position, false));
             if (mDragStartListener != null) {
 //                ((ViewHolder) holder).imageViewSample.setOnTouchListener(new View.OnTouchListener() {
@@ -48,7 +59,7 @@ public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterVi
 //                    }
 //                });
 
-                ((SimpleAdapterViewHolder) holder).item_view.setOnTouchListener(new View.OnTouchListener() {
+                ((ViewHolder) holder).item_view.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         return false;
@@ -65,25 +76,20 @@ public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterVi
     }
 
     @Override
-    public SimpleAdapterViewHolder getViewHolder(View view) {
-        return new SimpleAdapterViewHolder(view, false);
+    public ViewHolder getViewHolder(View view) {
+        return new ViewHolder(view, false);
     }
 
     @Override
-    public SimpleAdapterViewHolder onCreateViewHolder(ViewGroup parent) {
-        View v = LayoutInflater.from(parent.getContext())
+    public ViewHolder onCreateViewHolder(ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_user_talk, parent, false);
-        SimpleAdapterViewHolder vh = new SimpleAdapterViewHolder(v, true);
+        ViewHolder vh = new ViewHolder(view, true);
         return vh;
     }
 
-    public void setData() {
-
-    }
-
-
-    public void insert(String string, int position) {
-        insertInternal(mTalkList, string, position);
+    public void insert(UserTalk userTalk, int position) {
+        insertInternal(mTalkList, userTalk, position);
     }
 
     public void remove(int position) {
@@ -117,10 +123,7 @@ public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterVi
 
     @Override
     public long generateHeaderId(int position) {
-        // URLogs.d("position--" + position + "   " + getItem(position));
-        if (getItem(position).length() > 0)
-            return getItem(position).charAt(0);
-        else return -1;
+        return 0;
     }
 
     @Override
@@ -155,44 +158,45 @@ public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterVi
 
     }
 
-    @Override
-    public void onItemMove(int fromPosition, int toPosition) {
-        swapPositions(fromPosition, toPosition);
-//        notifyItemMoved(fromPosition, toPosition);
-        super.onItemMove(fromPosition, toPosition);
-    }
-
-    @Override
-    public void onItemDismiss(int position) {
-        if (position > 0)
-            remove(position);
-        // notifyItemRemoved(position);
-//        notifyDataSetChanged();
-        super.onItemDismiss(position);
-    }
-//
-//    private int getRandomColor() {
-//        SecureRandom rgen = new SecureRandom();
-//        return Color.HSVToColor(150, new float[]{
-//                rgen.nextInt(359), 1, 1
-//        });
-//    }
-
     public void setOnDragStartListener(OnStartDragListener dragStartListener) {
         mDragStartListener = dragStartListener;
 
     }
 
 
-    public class SimpleAdapterViewHolder extends UltimateRecyclerviewViewHolder {
+    public class ViewHolder extends UltimateRecyclerviewViewHolder {
 
-//        TextView textViewSample;
-//        ImageView imageViewSample;
+        @Bind(R.id.sdv_user_logo)
+        SimpleDraweeView mSdvUserLogo;
+        @Bind(R.id.tv_user_name)
+        TextView mTvUserName;
+        @Bind(R.id.tv_release_time)
+        TextView mTvReleaseTime;
+        @Bind(R.id.tv_attention)
+        TextView mTvAttention;
+        @Bind(R.id.ll_user)
+        RelativeLayout mLlUser;
+        @Bind(R.id.tv_talk_content)
+        TextView mTvTalkContent;
+        @Bind(R.id.ngv_talk_image)
+        NineGridlayout mNgvTalkImage;
+        @Bind(R.id.tv_like)
+        TextView mTvLike;
+        @Bind(R.id.tv_comment)
+        TextView mTvComment;
+        @Bind(R.id.tv_first_comment)
+        TextView mTvFirstComment;
+        @Bind(R.id.tv_second_comment)
+        TextView mTvSecondComment;
+        @Bind(R.id.tv_more_comment)
+        TextView mTvMoreComment;
+        @Bind(R.id.progressbar)
         ProgressBar progressBarSample;
         View item_view;
 
-        public SimpleAdapterViewHolder(View itemView, boolean isItem) {
+        public ViewHolder(View itemView, boolean isItem) {
             super(itemView);
+            ButterKnife.bind(itemView);
 //            itemView.setOnTouchListener(new SwipeDismissTouchListener(itemView, null, new SwipeDismissTouchListener.DismissCallbacks() {
 //                @Override
 //                public boolean canDismiss(Object token) {
@@ -229,12 +233,12 @@ public class TalkAdapter extends UltimateViewAdapter<TalkAdapter.SimpleAdapterVi
         }
     }
 
-    public String getItem(int position) {
+    public UserTalk getItem(int position) {
         if (customHeaderView != null)
             position--;
         if (position < mTalkList.size())
             return mTalkList.get(position);
-        else return "";
+        else return null;
     }
 
 }

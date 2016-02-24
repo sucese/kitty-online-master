@@ -11,7 +11,7 @@ import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
 import com.guoxiaoxing.kitty.model.Comment;
 import com.guoxiaoxing.kitty.model.Result;
 import com.guoxiaoxing.kitty.model.ResultBean;
-import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.util.XmlUtils;
 import android.app.IntentService;
 import android.app.Notification;
@@ -105,8 +105,8 @@ public class ServerTaskService extends IntentService {
 	@Override
 	public void onSuccess(int code, ByteArrayInputStream is, Object[] args)
 		throws Exception {
-	    UserTalk userTalk = (UserTalk) args[0];
-	    final int id = userTalk.getId();
+	    UserTweet userTweet = (UserTweet) args[0];
+	    final int id = userTweet.getId();
 	    Result res = XmlUtils.toBean(ResultBean.class, is).getResult();
 	    if (res.OK()) {
 		notifySimpleNotifycation(id,
@@ -120,8 +120,8 @@ public class ServerTaskService extends IntentService {
 		    }
 		}, 3000);
 		removePenddingTask(key + id);
-		if (userTalk.getImageFilePath() != null) {
-		    File imgFile = new File(userTalk.getImageFilePath());
+		if (userTweet.getImageFilePath() != null) {
+		    File imgFile = new File(userTweet.getImageFilePath());
 		    if (imgFile.exists()) {
 			imgFile.delete();
 		    }
@@ -133,8 +133,8 @@ public class ServerTaskService extends IntentService {
 
 	@Override
 	public void onFailure(int code, String errorMessage, Object[] args) {
-	    UserTalk userTalk = (UserTalk) args[0];
-	    int id = userTalk.getId();
+	    UserTweet userTweet = (UserTweet) args[0];
+	    int id = userTweet.getId();
 	    notifySimpleNotifycation(id,
 		    getString(R.string.tweet_publish_faile),
 		    getString(R.string.tweet_public),
@@ -200,16 +200,16 @@ public class ServerTaskService extends IntentService {
 	    // publicPost(post);
 	    // }
 	} else if (ACTION_PUB_TWEET.equals(action)) {
-	    UserTalk userTalk = intent.getParcelableExtra(BUNDLE_PUB_TWEET_TASK);
-	    if (userTalk != null) {
-		pubTweet(userTalk);
+	    UserTweet userTweet = intent.getParcelableExtra(BUNDLE_PUB_TWEET_TASK);
+	    if (userTweet != null) {
+		pubTweet(userTweet);
 	    }
 	} else if (ACTION_PUB_SOFTWARE_TWEET.equals(action)) {
-	    UserTalk userTalk = intent
+	    UserTweet userTweet = intent
 		    .getParcelableExtra(BUNDLE_PUB_SOFTWARE_TWEET_TASK);
 	    int softid = intent.getIntExtra(KEY_SOFTID, -1);
-	    if (userTalk != null && softid != -1) {
-		pubSoftWareTweet(userTalk, softid);
+	    if (userTweet != null && softid != -1) {
+		pubSoftWareTweet(userTweet, softid);
 	    }
 	}
     }
@@ -252,26 +252,26 @@ public class ServerTaskService extends IntentService {
     // post));
     // }
     //
-    private void pubTweet(final UserTalk userTalk) {
-	userTalk.setId((int) System.currentTimeMillis());
-	int id = userTalk.getId();
+    private void pubTweet(final UserTweet userTweet) {
+	userTweet.setId((int) System.currentTimeMillis());
+	int id = userTweet.getId();
 	addPenddingTask(KEY_TWEET + id);
 	notifySimpleNotifycation(id, getString(R.string.tweet_publishing),
 		getString(R.string.tweet_public),
 		getString(R.string.tweet_publishing), true, false);
-	OSChinaApi.pubTweet(userTalk, new PublicTweetResponseHandler(
-		getMainLooper(), userTalk, KEY_TWEET));
+	OSChinaApi.pubTweet(userTweet, new PublicTweetResponseHandler(
+		getMainLooper(), userTweet, KEY_TWEET));
     }
 
-    private void pubSoftWareTweet(final UserTalk userTalk, int softid) {
-	userTalk.setId((int) System.currentTimeMillis());
-	int id = userTalk.getId();
+    private void pubSoftWareTweet(final UserTweet userTweet, int softid) {
+	userTweet.setId((int) System.currentTimeMillis());
+	int id = userTweet.getId();
 	addPenddingTask(KEY_SOFTWARE_TWEET + id);
 	notifySimpleNotifycation(id, getString(R.string.tweet_publishing),
 		getString(R.string.tweet_public),
 		getString(R.string.tweet_publishing), true, false);
-	OSChinaApi.pubSoftWareTweet(userTalk, softid,
-		new PublicTweetResponseHandler(getMainLooper(), userTalk,
+	OSChinaApi.pubSoftWareTweet(userTweet, softid,
+		new PublicTweetResponseHandler(getMainLooper(), userTweet,
 			KEY_SOFTWARE_TWEET));
     }
 

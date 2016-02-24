@@ -2,7 +2,7 @@ package com.guoxiaoxing.kitty.widget.ninelayout;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.media.Image;
+import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,7 +27,7 @@ public class NineGridlayout extends ViewGroup {
     private int gap = 5;
     private int columns;
     private int rows;
-    private List listData;
+    private List<String> listData;
     private int totalWidth;
 
     public NineGridlayout(Context context) {
@@ -62,13 +63,12 @@ public class NineGridlayout extends ViewGroup {
 
         for (int i = 0; i < childrenCount; i++) {
             SimpleDraweeView childrenView = (SimpleDraweeView) getChildAt(i);
-            childrenView.setImageURI();
+            childrenView.setImageURI(Uri.parse(listData.get(i)));
             int[] position = findPosition(i);
             int left = (singleWidth + gap) * position[1];
             int top = (singleHeight + gap) * position[0];
             int right = left + singleWidth;
             int bottom = top + singleHeight;
-
             childrenView.layout(left, top, right, bottom);
         }
 
@@ -98,7 +98,7 @@ public class NineGridlayout extends ViewGroup {
     }
 
 
-    public void setImagesData(List<Image> lists) {
+    public void setImagesData(ArrayList<String> lists) {
         if (lists == null || lists.isEmpty()) {
             return;
         }

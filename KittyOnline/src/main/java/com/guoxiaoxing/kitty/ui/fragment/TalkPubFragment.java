@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.emoji.EmojiKeyboardFragment;
 import com.guoxiaoxing.kitty.emoji.Emojicon;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
@@ -200,13 +200,13 @@ public class TalkPubFragment extends BaseFragment implements
             return;
         }
 
-        UserTalk userTalk = new UserTalk();
-        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
-        userTalk.setBody(content);
+        UserTweet userTweet = new UserTweet();
+        userTweet.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTweet.setBody(content);
         if (imgFile != null && imgFile.exists()) {
-            userTalk.setImageFilePath(imgFile.getAbsolutePath());
+            userTweet.setImageFilePath(imgFile.getAbsolutePath());
         }
-        userTalk.saveInBackground();
+        userTweet.saveInBackground();
         getActivity().finish();
     }
 

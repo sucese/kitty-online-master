@@ -91,17 +91,10 @@ public class NoteBookFragment extends BaseFragment implements
         setHasOptionsMenu(true);
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_note, container,
-                false);
-        aty = getActivity();
-        ButterKnife.bind(this, rootView);
-        initData();
-        initView(rootView);
-        return rootView;
+    protected int getLayoutId() {
+        return R.layout.fragment_note;
     }
 
     @Override
@@ -162,6 +155,7 @@ public class NoteBookFragment extends BaseFragment implements
     @Override
     @SuppressLint("ClickableViewAccessibility")
     public void initView(View view) {
+        aty = getActivity();
         mGrid.setAdapter(adapter);
         mGrid.setOnItemClickListener(this);
         mGrid.setTrashView(mImgTrash);

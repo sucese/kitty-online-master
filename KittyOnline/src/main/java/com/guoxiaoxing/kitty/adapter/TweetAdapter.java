@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
-import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.emoji.InputHelper;
 import com.guoxiaoxing.kitty.ui.activity.ImagePreviewActivity;
 import com.guoxiaoxing.kitty.ui.base.ListBaseAdapter;
@@ -42,7 +42,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
-public class TweetAdapter extends ListBaseAdapter<UserTalk> {
+public class TweetAdapter extends ListBaseAdapter<UserTweet> {
 
     static class ViewHolder {
         @Bind(R.id.tv_tweet_name)
@@ -115,32 +115,32 @@ public class TweetAdapter extends ListBaseAdapter<UserTalk> {
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
-        final UserTalk userTalk = mDatas.get(position);
+        final UserTweet userTweet = mDatas.get(position);
 
-        if (userTalk.getAuthorid() == AppContext.getInstance().getLoginUid()) {
+        if (userTweet.getAuthorid() == AppContext.getInstance().getLoginUid()) {
             vh.del.setVisibility(View.VISIBLE);
             vh.del.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    optionDel(context, userTalk, position);
+                    optionDel(context, userTweet, position);
                 }
             });
         } else {
             vh.del.setVisibility(View.GONE);
         }
 
-        vh.face.setUserInfo(userTalk.getAuthorid(), userTalk.getAuthor());
-        vh.face.setAvatarUrl(userTalk.getPortrait());
-        vh.author.setText(userTalk.getAuthor());
-        vh.time.setText(StringUtils.friendly_time(userTalk.getPubDate()));
+        vh.face.setUserInfo(userTweet.getAuthorid(), userTweet.getAuthor());
+        vh.face.setAvatarUrl(userTweet.getPortrait());
+        vh.author.setText(userTweet.getAuthor());
+        vh.time.setText(StringUtils.friendly_time(userTweet.getPubDate()));
         vh.content.setMovementMethod(MyLinkMovementMethod.a());
         vh.content.setFocusable(false);
         vh.content.setDispatchToParent(true);
         vh.content.setLongClickable(false);
 
-        Spanned span = Html.fromHtml(userTalk.getBody().trim());
+        Spanned span = Html.fromHtml(userTweet.getBody().trim());
 
-        if (!StringUtils.isEmpty(userTalk.getAttach())) {
+        if (!StringUtils.isEmpty(userTweet.getAttach())) {
             if (recordBitmap == null) {
                 initRecordImg(context);
             }
@@ -155,19 +155,19 @@ public class TweetAdapter extends ListBaseAdapter<UserTalk> {
             vh.content.setText(span);
         }
 
-        vh.commentcount.setText(userTalk.getCommentCount());
+        vh.commentcount.setText(userTweet.getCommentCount());
 
-        showTweetImage(vh, userTalk.getImgSmall(), userTalk.getImgBig());
-        userTalk.setLikeUsers(context, vh.likeUsers, true);
+        showTweetImage(vh, userTweet.getImgSmall(), userTweet.getImgBig());
+        userTweet.setLikeUsers(context, vh.likeUsers, true);
 
-        if (userTalk.getLikeUser() == null) {
+        if (userTweet.getLikeUser() == null) {
             vh.tvLikeState.setVisibility(View.GONE);
         } else {
             vh.tvLikeState.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (AppContext.getInstance().isLogin()) {
-                        updateLikeState(vh, userTalk);
+                        updateLikeState(vh, userTweet);
                     } else {
                         AppContext.showToast("先登陆再赞~");
                         UIHelper.showLoginActivity(context);
@@ -177,46 +177,46 @@ public class TweetAdapter extends ListBaseAdapter<UserTalk> {
         }
 
         TypefaceUtils.setTypeface(vh.tvLikeState);
-        if (userTalk.getIsLike() == 1) {
+        if (userTweet.getIsLike() == 1) {
             vh.tvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color
                     .day_colorPrimary));
         } else {
             vh.tvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color
                     .gray));
         }
-        PlatfromUtil.setPlatFromString(vh.platform, userTalk.getAppclient());
+        PlatfromUtil.setPlatFromString(vh.platform, userTweet.getAppclient());
         return convertView;
     }
 
-    private void updateLikeState(ViewHolder vh, UserTalk userTalk) {
-        if (userTalk.getIsLike() == 1) {
-            userTalk.setIsLike(0);
-            userTalk.setLikeCount(userTalk.getLikeCount() - 1);
-            if (!userTalk.getLikeUser().isEmpty()) {
-                userTalk.getLikeUser().remove(0);
+    private void updateLikeState(ViewHolder vh, UserTweet userTweet) {
+        if (userTweet.getIsLike() == 1) {
+            userTweet.setIsLike(0);
+            userTweet.setLikeCount(userTweet.getLikeCount() - 1);
+            if (!userTweet.getLikeUser().isEmpty()) {
+                userTweet.getLikeUser().remove(0);
             }
-            OSChinaApi.pubUnLikeTweet(userTalk.getId(), userTalk.getAuthorid(),
+            OSChinaApi.pubUnLikeTweet(userTweet.getId(), userTweet.getAuthorid(),
                     handler);
             vh.tvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color
                     .gray));
         } else {
             vh.tvLikeState.setAnimation(KJAnimations.getScaleAnimation(1.5f, 300));
-            userTalk.getLikeUser().add(0, AppContext.getInstance().getLoginUser());
-            OSChinaApi.pubLikeTweet(userTalk.getId(), userTalk.getAuthorid(), handler);
+            userTweet.getLikeUser().add(0, AppContext.getInstance().getLoginUser());
+            OSChinaApi.pubLikeTweet(userTweet.getId(), userTweet.getAuthorid(), handler);
             vh.tvLikeState.setTextColor(AppContext.getInstance().getResources().getColor(R.color
                     .day_colorPrimary));
-            userTalk.setIsLike(1);
-            userTalk.setLikeCount(userTalk.getLikeCount() + 1);
+            userTweet.setIsLike(1);
+            userTweet.setLikeCount(userTweet.getLikeCount() + 1);
         }
-        userTalk.setLikeUsers(context, vh.likeUsers, true);
+        userTweet.setLikeUsers(context, vh.likeUsers, true);
     }
 
-    private void optionDel(Context context, final UserTalk userTalk, final int position) {
+    private void optionDel(Context context, final UserTweet userTweet, final int position) {
 
         DialogHelp.getConfirmDialog(context, "确定删除吗?", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                OSChinaApi.deleteTweet(userTalk.getAuthorid(), userTalk.getId(),
+                OSChinaApi.deleteTweet(userTweet.getAuthorid(), userTweet.getId(),
                         new AsyncHttpResponseHandler() {
                             @Override
                             public void onSuccess(int arg0, Header[] arg1,

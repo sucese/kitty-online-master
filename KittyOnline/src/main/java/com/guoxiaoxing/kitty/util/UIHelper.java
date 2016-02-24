@@ -38,7 +38,7 @@ import com.guoxiaoxing.kitty.model.News;
 import com.guoxiaoxing.kitty.model.Notice;
 import com.guoxiaoxing.kitty.model.ShakeObject;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
-import com.guoxiaoxing.kitty.model.UserTalk;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.ui.base.ICallbackResult;
 import com.guoxiaoxing.kitty.ui.base.OnWebViewImageListener;
 import com.guoxiaoxing.kitty.service.DownloadService;
@@ -200,14 +200,14 @@ public class UIHelper {
      * @param context context
      * @param tweetid 动弹的id
      */
-    public static void showTweetDetail(Context context, UserTalk userTalk, int tweetid) {
+    public static void showTweetDetail(Context context, UserTweet userTweet, int tweetid) {
         Intent intent = new Intent(context, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("tweet_id", tweetid);
         bundle.putInt(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
                 DetailActivity.DISPLAY_TWEET);
-        if (userTalk != null) {
-            bundle.putParcelable("userTalk", userTalk);
+        if (userTweet != null) {
+            bundle.putParcelable("userTweet", userTweet);
         }
         intent.putExtras(bundle);
         context.startActivity(intent);

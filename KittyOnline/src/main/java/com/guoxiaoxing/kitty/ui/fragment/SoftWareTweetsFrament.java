@@ -7,9 +7,9 @@ import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TweetAdapter;
 import com.guoxiaoxing.kitty.api.remote.OSChinaApi;
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.guoxiaoxing.kitty.ui.base.BaseActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
-import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.model.TweetsList;
 import com.guoxiaoxing.kitty.service.ServerTaskUtils;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -21,7 +21,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-public class SoftWareTweetsFrament extends BaseListFragment<UserTalk> implements
+public class SoftWareTweetsFrament extends BaseListFragment<UserTweet> implements
         OnItemLongClickListener {
 
     public static final String BUNDLE_KEY_ID = "BUNDLE_KEY_ID";
@@ -94,18 +94,18 @@ public class SoftWareTweetsFrament extends BaseListFragment<UserTalk> implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
             long id) {
-        final UserTalk userTalk = mAdapter.getItem(position);
-        if (userTalk == null) {
+        final UserTweet userTweet = mAdapter.getItem(position);
+        if (userTweet == null) {
             return;
         }
-        UIHelper.showTweetDetail(parent.getContext(), userTalk, userTalk.getId());
+        UIHelper.showTweetDetail(parent.getContext(), userTweet, userTweet.getId());
     }
 
     private void handleComment(String text) {
-        UserTalk userTalk = new UserTalk();
-        userTalk.setAuthorid(AppContext.getInstance().getLoginUid());
-        userTalk.setBody(text);
-        ServerTaskUtils.pubSoftWareTweet(getActivity(), userTalk, mId);
+        UserTweet userTweet = new UserTweet();
+        userTweet.setAuthorid(AppContext.getInstance().getLoginUid());
+        userTweet.setBody(text);
+        ServerTaskUtils.pubSoftWareTweet(getActivity(), userTweet, mId);
     }
 
     @Override

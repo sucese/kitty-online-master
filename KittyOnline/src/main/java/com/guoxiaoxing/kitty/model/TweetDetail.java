@@ -11,13 +11,13 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("oschina")
 public class TweetDetail extends BaseObject {
 	
-	@XStreamAlias("userTalk")
-	private UserTalk userTalk;
+	@XStreamAlias("userTweet")
+	private UserTweet userTweet;
 
-	public UserTalk getUserTalk() {
-		return userTalk;
+	public UserTweet getUserTweet() {
+		return userTweet;
 	}
-	public void setUserTalk(UserTalk userTalk) {
-		this.userTalk = userTalk;
+	public void setUserTweet(UserTweet userTweet) {
+		this.userTweet = userTweet;
 	}
 }

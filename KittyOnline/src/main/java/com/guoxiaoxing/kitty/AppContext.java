@@ -14,6 +14,7 @@ import com.guoxiaoxing.kitty.cache.DataCleanManager;
 import com.guoxiaoxing.kitty.model.AdvertisementBanner;
 import com.guoxiaoxing.kitty.model.Constants;
 import com.guoxiaoxing.kitty.model.User;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.BaseApplication;
 import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
@@ -102,6 +103,7 @@ public class AppContext extends BaseApplication {
 
     private void initModelClass() {
         AVObject.registerSubclass(AdvertisementBanner.class);
+        AVObject.registerSubclass(UserTalk.class);
     }
 
     private void initLogin() {

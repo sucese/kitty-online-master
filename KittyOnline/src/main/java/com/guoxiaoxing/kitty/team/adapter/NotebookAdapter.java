@@ -24,10 +24,9 @@ import android.widget.TextView;
 /**
  * 便签列表适配器
  * 
- * @author kymjs (https://github.com/kymjs)
- * 
  */
 public class NotebookAdapter extends BaseAdapter implements DragGridBaseAdapter {
+
     private List<NotebookData> datas;
     private final Activity aty;
     private int currentHidePosition = -1;

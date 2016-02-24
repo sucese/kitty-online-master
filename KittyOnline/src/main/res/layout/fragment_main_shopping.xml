@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--组织它的子views之间协作的一个Layout，它可以给子View切换提供动画效果。-->
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/srl_root"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
     <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -104,4 +100,3 @@
         </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
-</android.support.v4.widget.SwipeRefreshLayout>

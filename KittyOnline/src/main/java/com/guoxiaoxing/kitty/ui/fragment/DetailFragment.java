@@ -6,13 +6,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TalkAdapter;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -51,20 +54,9 @@ public class DetailFragment extends BaseFragment {
     public void initView(View view) {
         super.initView(view);
         mUltimateRecyclerView.setHasFixedSize(true);
-        final List<String> stringList = new ArrayList<>();
-
-        stringList.add("111");
-        stringList.add("aaa");
-        stringList.add("222");
-        stringList.add("33");
-        stringList.add("44");
-        stringList.add("55");
-        stringList.add("66");
-        stringList.add("11771");
-
 
         mUltimateRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mTalkAdapter = new TalkAdapter(stringList);
+        mTalkAdapter = new TalkAdapter();
         mUltimateRecyclerView.setAdapter(mTalkAdapter);
 
 
@@ -97,5 +89,18 @@ public class DetailFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
+
+        AVQuery<UserTalk> query = AVQuery.getQuery(UserTalk.class);
+        query.findInBackground(new FindCallback<UserTalk>() {
+            @Override
+            public void done(List<UserTalk> list, AVException e) {
+
+                if (e == null) {
+                    mTalkAdapter.setData(list);
+                } else {
+
+                }
+            }
+        });
     }
 }

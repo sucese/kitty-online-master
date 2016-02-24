@@ -2,6 +2,7 @@ package com.guoxiaoxing.kitty.api.remote;
 
 import android.text.TextUtils;
 
+import com.guoxiaoxing.kitty.model.UserTweet;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -11,7 +12,6 @@ import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.model.EventApplyData;
 import com.guoxiaoxing.kitty.model.NewsList;
 import com.guoxiaoxing.kitty.model.Report;
-import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.team.bean.Team;
 import com.guoxiaoxing.kitty.util.StringUtils;
 
@@ -422,22 +422,22 @@ public class OSChinaApi {
         ApiHttpClient.post("action/api/blogcomment_pub", params, handler);
     }
 
-    public static void pubTweet(UserTalk userTalk, AsyncHttpResponseHandler handler) {
+    public static void pubTweet(UserTweet userTweet, AsyncHttpResponseHandler handler) {
         RequestParams params = new RequestParams();
-        params.put("uid", userTalk.getAuthorid());
-        params.put("msg", userTalk.getBody());
+        params.put("uid", userTweet.getAuthorid());
+        params.put("msg", userTweet.getBody());
 
         // Map<String, File> files = new HashMap<String, File>();
-        if (!TextUtils.isEmpty(userTalk.getImageFilePath())) {
+        if (!TextUtils.isEmpty(userTweet.getImageFilePath())) {
             try {
-                params.put("img", new File(userTalk.getImageFilePath()));
+                params.put("img", new File(userTweet.getImageFilePath()));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
-        if (!TextUtils.isEmpty(userTalk.getAudioPath())) {
+        if (!TextUtils.isEmpty(userTweet.getAudioPath())) {
             try {
-                params.put("amr", new File(userTalk.getAudioPath()));
+                params.put("amr", new File(userTweet.getAudioPath()));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -445,11 +445,11 @@ public class OSChinaApi {
         ApiHttpClient.post("action/api/tweet_pub", params, handler);
     }
 
-    public static void pubSoftWareTweet(UserTalk userTalk, int softid,
-            AsyncHttpResponseHandler handler) {
+    public static void pubSoftWareTweet(UserTweet userTweet, int softid,
+                                        AsyncHttpResponseHandler handler) {
         RequestParams params = new RequestParams();
-        params.put("uid", userTalk.getAuthorid());
-        params.put("msg", userTalk.getBody());
+        params.put("uid", userTweet.getAuthorid());
+        params.put("msg", userTweet.getBody());
         params.put("project", softid);
         ApiHttpClient.post("action/api/software_tweet_pub", params, handler);
     }

@@ -10,7 +10,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 @XStreamAlias("oschina")
-public class TweetsList extends BaseObject implements ListEntity<UserTalk> {
+public class TweetsList extends BaseObject implements ListEntity<UserTweet> {
 
     public final static int CATALOG_LATEST = 0;
     public final static int CATALOG_HOT = -1;
@@ -21,7 +21,7 @@ public class TweetsList extends BaseObject implements ListEntity<UserTalk> {
     @XStreamAlias("pagesize")
     private int pagesize;
     @XStreamAlias("tweets")
-    private List<UserTalk> tweetslist = new ArrayList<UserTalk>();
+    private List<UserTweet> tweetslist = new ArrayList<UserTweet>();
 
     public int getTweetCount() {
         return tweetCount;
@@ -39,16 +39,16 @@ public class TweetsList extends BaseObject implements ListEntity<UserTalk> {
         this.pagesize = pagesize;
     }
 
-    public List<UserTalk> getTweetslist() {
+    public List<UserTweet> getTweetslist() {
         return tweetslist;
     }
 
-    public void setTweetslist(List<UserTalk> tweetslist) {
+    public void setTweetslist(List<UserTweet> tweetslist) {
         this.tweetslist = tweetslist;
     }
 
     @Override
-    public List<UserTalk> getList() {
+    public List<UserTweet> getList() {
         return tweetslist;
     }
 

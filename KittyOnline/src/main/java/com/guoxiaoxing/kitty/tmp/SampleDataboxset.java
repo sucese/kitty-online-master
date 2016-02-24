@@ -67,9 +67,9 @@ public class SampleDataboxset {
     }
 
     public static void insertTalk(TalkAdapter sd, int howmany) {
-        for (int i = 0; i < howmany; i++) {
-            sd.insert("More " + i, sd.getAdapterItemCount());
-        }
+//        for (int i = 0; i < howmany; i++) {
+//            sd.insert(sd, sd.getAdapterItemCount());
+//        }
     }
 
 

@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements
             AppContext.setFristStart(false);
         }
 
-        checkUpdate();
+//        checkUpdate();
     }
 
     private void checkUpdate() {
