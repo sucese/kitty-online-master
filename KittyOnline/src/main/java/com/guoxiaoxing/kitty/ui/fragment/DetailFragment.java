@@ -1,9 +1,8 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
-import android.view.LayoutInflater;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.avos.avoscloud.AVException;
@@ -12,9 +11,7 @@ import com.avos.avoscloud.FindCallback;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TalkAdapter;
 import com.guoxiaoxing.kitty.model.UserTalk;
-import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 
 import java.util.List;
 
@@ -22,13 +19,13 @@ import butterknife.Bind;
 
 
 /**
- * Created by Chenyc on 2015/6/29.
+ * @author guoxiaoxing
  */
 public class DetailFragment extends BaseFragment {
 
 
-    @Bind(R.id.urv_container)
-    UltimateRecyclerView mUltimateRecyclerView;
+    @Bind(R.id.rv_container)
+    RecyclerView mRecyclerView;
 
     private TalkAdapter mTalkAdapter;
 
@@ -53,37 +50,10 @@ public class DetailFragment extends BaseFragment {
     @Override
     public void initView(View view) {
         super.initView(view);
-        mUltimateRecyclerView.setHasFixedSize(true);
-
-        mUltimateRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mTalkAdapter = new TalkAdapter();
-        mUltimateRecyclerView.setAdapter(mTalkAdapter);
-
-
-//        mUltimateRecyclerView.setItemAnimator(new FadeInAnimator());
-//        mUltimateRecyclerView.getItemAnimator().setAddDuration(300);
-//        mUltimateRecyclerView.getItemAnimator().setRemoveDuration(300);
-
-        //加载更多
-        mUltimateRecyclerView.enableLoadmore();
-        mTalkAdapter.setCustomLoadMoreView(LayoutInflater.from(getActivity())
-                .inflate(R.layout.custom_bottom_progressbar, null, false));
-
-        //上拉加载更多
-        mUltimateRecyclerView.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
-            @Override
-            public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        SampleDataboxset.insertTalk(mTalkAdapter, 10);
-                        //  mLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
-                        //  mLayoutManager.scrollToPosition(maxLastVisiblePosition);
-                    }
-                }, 2500);
-            }
-        });
-
+        mRecyclerView.setAdapter(mTalkAdapter);
     }
 
     @Override
@@ -97,6 +67,7 @@ public class DetailFragment extends BaseFragment {
 
                 if (e == null) {
                     mTalkAdapter.setData(list);
+                    mTalkAdapter.notifyDataSetChanged();
                 } else {
 
                 }

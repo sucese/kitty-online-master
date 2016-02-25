@@ -21,14 +21,15 @@ import java.util.List;
  */
 public class NineGridlayout extends ViewGroup {
 
-    /**
-     * 图片之间的间隔
-     */
-    private int gap = 5;
+
     private int columns;
     private int rows;
-    private List<String> listData;
+    /*图片之间的间隔*/
+    private int gap = 5;
+    /*屏幕总宽度*/
     private int totalWidth;
+    /*图片数据*/
+    private List<String> listData;
 
     public NineGridlayout(Context context) {
         super(context);
@@ -37,7 +38,8 @@ public class NineGridlayout extends ViewGroup {
     public NineGridlayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         ScreenTools screenTools = ScreenTools.instance(getContext());
-        totalWidth = screenTools.getScreenWidth() - screenTools.dip2px(80);
+//        totalWidth = screenTools.getScreenWidth() - screenTools.dip2px(80);
+        totalWidth = screenTools.getScreenWidth();//全屏显示
     }
 
     @Override
@@ -50,10 +52,38 @@ public class NineGridlayout extends ViewGroup {
 
     }
 
+
+    /**
+     * 根据行列数量计算图片长宽（图片长宽相等）
+     * 对应关系如下
+     * num	row	column
+     * 1	   1	1
+     * 2	   1	2
+     * 3	   1	3
+     * 4	   2	2
+     * 5	   2	3
+     * 6	   2	3
+     * 7	   3	3
+     * 8	   3	3
+     * 9	   3	3
+     */
     private void layoutChildrenView() {
+
         int childrenCount = listData.size();
 
-        int singleWidth = (totalWidth - gap * (3 - 1)) / 3;
+        int singleWidth = 0;
+        switch (columns) {
+            case 1:
+                singleWidth = totalWidth;
+                break;
+            case 2:
+                singleWidth = (totalWidth - gap) / 2;
+                break;
+            case 3:
+                singleWidth = (totalWidth - gap * (3 - 1)) / 3;
+                break;
+        }
+
         int singleHeight = singleWidth;
 
         //根据子view数量确定高度
