@@ -78,33 +78,7 @@ public class MainMineFragment extends BaseFragment {
 
     private static BadgeView mMesCount;
 
-    @Bind(R.id.ll_shop)
-    LinearLayout mLlShop;
-    @Bind(R.id.ll_wallet)
-    LinearLayout mLlWallet;
-    @Bind(R.id.ll_coupon)
-    LinearLayout mLlCoupon;
-    @Bind(R.id.ll_money)
-    LinearLayout mLlMoney;
-    @Bind(R.id.ll_super_shop)
-    LinearLayout mLlSUperShop;
 
-    @Bind(R.id.ll_card)
-    LinearLayout mLlCard;
-    @Bind(R.id.ll_note)
-    LinearLayout mLlNote;
-    @Bind(R.id.ll_account)
-    LinearLayout mLlAccount;
-    @Bind(R.id.ll_aunt)
-    LinearLayout mLlAunt;
-    @Bind(R.id.ll_star)
-    LinearLayout mLlStar;
-    @Bind(R.id.ll_food)
-    LinearLayout mLlFood;
-    @Bind(R.id.ll_album)
-    LinearLayout mLlAlbum;
-    @Bind(R.id.ll_service)
-    LinearLayout mLlService;
 
     private boolean mIsWatingLogin;
 
@@ -259,19 +233,19 @@ public class MainMineFragment extends BaseFragment {
 //         addTeamLayout(teams);
 //         }
 
-        mLlShop.setOnClickListener(this);
-        mLlWallet.setOnClickListener(this);
-        mLlCoupon.setOnClickListener(this);
-        mLlMoney.setOnClickListener(this);
-        mLlSUperShop.setOnClickListener(this);
-        mLlCard.setOnClickListener(this);
-        mLlNote.setOnClickListener(this);
-        mLlAccount.setOnClickListener(this);
-        mLlAunt.setOnClickListener(this);
-        mLlStar.setOnClickListener(this);
-        mLlFood.setOnClickListener(this);
-        mLlAlbum.setOnClickListener(this);
-        mLlService.setOnClickListener(this);
+//        mLlShop.setOnClickListener(this);
+//        mLlWallet.setOnClickListener(this);
+//        mLlCoupon.setOnClickListener(this);
+//        mLlMoney.setOnClickListener(this);
+//        mLlSUperShop.setOnClickListener(this);
+//        mLlCard.setOnClickListener(this);
+//        mLlNote.setOnClickListener(this);
+//        mLlAccount.setOnClickListener(this);
+//        mLlAunt.setOnClickListener(this);
+//        mLlStar.setOnClickListener(this);
+//        mLlFood.setOnClickListener(this);
+//        mLlAlbum.setOnClickListener(this);
+//        mLlService.setOnClickListener(this);
     }
 
     private void fillUI() {
@@ -413,34 +387,7 @@ public class MainMineFragment extends BaseFragment {
                         .getUsername());
                 break;
 
-            case R.id.ll_shop:
-                break;
-            case R.id.ll_wallet:
-                break;
-            case R.id.ll_coupon:
-                break;
-            case R.id.ll_money:
-                break;
-            case R.id.ll_super_shop:
-                break;
-            case R.id.ll_card:
-                break;
-            case R.id.ll_note:
-                UIHelper.showSimpleBack(getActivity(),
-                        SimpleBackPage.NOTE);
-                break;
-            case R.id.ll_account:
-                break;
-            case R.id.ll_aunt:
-                break;
-            case R.id.ll_star:
-                break;
-            case R.id.ll_food:
-                break;
-            case R.id.ll_album:
-                break;
-            case R.id.ll_service:
-                break;
+
 
             default:
                 break;

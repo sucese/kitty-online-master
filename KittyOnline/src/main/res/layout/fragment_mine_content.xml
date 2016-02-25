@@ -1,381 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout style="@style/option_item_rl">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_shopping_cart_pink"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/option_item_text"
+            android:text="我的订单" />
+    </LinearLayout>
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:text="理财-记录" />
+        android:background="?attr/layout_item_bg"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tv_mes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:text="消息小圆点"
-        android:visibility="gone" />
-
-    <android.support.v7.widget.GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:alignmentMode="alignBounds"
-        app:columnCount="4"
-        app:rowCount="2"
-        app:rowOrderPreserved="false"
-        app:useDefaultMargins="true">
-
-        <LinearLayout
-            android:id="@+id/ll_shop"
-            android:clickable="true"
+        <TextView
+            android:id="@+id/tv_paying"
+            style="@style/option_item_text"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/bmp_card"
             android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+            android:text="待付款" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_1" />
+        <View
+            style="@style/v_line"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_xiao_dian" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_wallet"
+        <TextView
+            android:id="@+id/tv_get_goods"
+            style="@style/option_item_text"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/bmp_car"
             android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+            android:text="待收获" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_2" />
+        <View
+            style="@style/v_line"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_qian_bao" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_coupon"
+        <TextView
+            android:id="@+id/tv_comment_goods"
+            style="@style/option_item_text"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/bmp_tab_main_chat_normal"
             android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+            android:text="待评价" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_3" />
+        <View
+            style="@style/v_line"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_you_hui_quan" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_money"
+        <TextView
+            android:id="@+id/tv_goods_service"
+            style="@style/option_item_text"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/bmp_gift_card"
             android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_4" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_li_cai" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_super_shop"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_5" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_shang_cheng" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_card"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_6" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_da_ka" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_note"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_7" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_qing_ji" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_account"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_8" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_ji_zhang" />
-
-        </LinearLayout>
+            android:text="退款/售后" />
 
 
-    </android.support.v7.widget.GridLayout>
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:text="生活-健康" />
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="10dp" />
 
-    <android.support.v7.widget.GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:alignmentMode="alignBounds"
-        app:columnCount="4"
-        app:rowCount="1"
-        app:rowOrderPreserved="false"
-        app:useDefaultMargins="true">
+    <LinearLayout
+        android:id="@+id/ll_card"
+        style="@style/option_item_rl">
 
-        <LinearLayout
-            android:id="@+id/ll_aunt"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_card_pink"
+            android:contentDescription="@null" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_9" />
+        <TextView
+            style="@style/option_item_text"
+            android:text="优惠券" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_da_yi_ma" />
+        <TextView
+            android:id="@+id/tv_mes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_10"
+            android:gravity="right" />
+    </LinearLayout>
 
-        </LinearLayout>
+    <View style="@style/h_line" />
 
+    <LinearLayout
+        android:id="@+id/ll_my_address"
+        style="@style/option_item_rl">
 
-        <LinearLayout
-            android:id="@+id/ll_star"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_place"
+            android:contentDescription="@null" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_10" />
+        <TextView
+            style="@style/option_item_text"
+            android:text="我的收获地址" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_xing_zuo" />
+    <View style="@style/h_line" />
 
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_shop"
+        style="@style/option_item_rl">
 
-        <LinearLayout
-            android:id="@+id/ll_food"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_person_pin"
+            android:contentDescription="@null" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_11" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_mei_shi" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_album"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_12" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_xiang_ce" />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.GridLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:text="帮助-服务" />
+        <TextView
+            style="@style/option_item_text"
+            android:text="我的店铺" />
+    </LinearLayout>
 
 
-    <android.support.v7.widget.GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:alignmentMode="alignBounds"
-        app:columnCount="4"
-        app:rowCount="1"
-        app:rowOrderPreserved="false"
-        app:useDefaultMargins="true">
-
-        <LinearLayout
-            android:id="@+id/ll_service"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
-
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_13" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_ke_fu" />
-
-        </LinearLayout>
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="10dp" />
 
 
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+    <LinearLayout
+        android:id="@+id/ll_share"
+        style="@style/option_item_rl">
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_13" />
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_share"
+            android:contentDescription="@null" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_ke_fu" />
+        <TextView
+            style="@style/option_item_text"
+            android:text="把爱尚佳品分享给朋友" />
+    </LinearLayout>
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="10dp" />
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_13" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_ke_fu" />
+    <LinearLayout
+        android:id="@+id/ll_help"
+        style="@style/option_item_rl">
 
-        </LinearLayout>
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_person"
+            android:contentDescription="@null" />
 
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal">
+        <TextView
+            style="@style/option_item_text"
+            android:text="帮助中心" />
+    </LinearLayout>
 
-            <ImageView
-                style="@style/image_service"
-                android:src="@drawable/ic_category_13" />
+    <View style="@style/h_line" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_ke_fu" />
+    <LinearLayout
+        android:id="@+id/ll_online_service"
+        style="@style/option_item_rl">
 
-        </LinearLayout>
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_people"
+            android:contentDescription="@null" />
 
-    </android.support.v7.widget.GridLayout>
+        <TextView
+            style="@style/option_item_text"
+            android:text="在线客服" />
+    </LinearLayout>
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_feedback"
+        style="@style/option_item_rl">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_tab_main_chat_selected"
+            android:contentDescription="@null" />
+
+        <TextView
+            style="@style/option_item_text"
+            android:text="意见反馈" />
+    </LinearLayout>
+
+    <View style="@style/h_line" />
 
 </LinearLayout>

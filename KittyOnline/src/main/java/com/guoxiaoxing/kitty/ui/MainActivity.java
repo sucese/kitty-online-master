@@ -20,6 +20,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabContentFactory;
@@ -30,10 +32,10 @@ import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
 import com.guoxiaoxing.kitty.AppManager;
 import com.guoxiaoxing.kitty.R;
+import com.guoxiaoxing.kitty.cache.DataCleanManager;
 import com.guoxiaoxing.kitty.model.Constants;
 import com.guoxiaoxing.kitty.model.Notice;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
-import com.guoxiaoxing.kitty.cache.DataCleanManager;
 import com.guoxiaoxing.kitty.service.NoticeUtils;
 import com.guoxiaoxing.kitty.ui.activity.SimpleBackActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseViewInterface;
@@ -238,6 +240,9 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+    ImageView icon;
+    TextView title;
+
     private void initTabs() {
         MainTab[] tabs = MainTab.values();
         final int size = tabs.length;
@@ -246,8 +251,8 @@ public class MainActivity extends AppCompatActivity implements
             TabSpec tab = mTabHost.newTabSpec(getString(mainTab.getResName()));
             View indicator = LayoutInflater.from(getApplicationContext())
                     .inflate(R.layout.tab_indicator, null);
-            ImageView icon = (ImageView) indicator.findViewById(R.id.tab_icon);
-            TextView title = (TextView) indicator.findViewById(R.id.tab_title);
+            icon = (ImageView) indicator.findViewById(R.id.tab_icon);
+            title = (TextView) indicator.findViewById(R.id.tab_title);
 
             if (icon != null) {
                 icon.setImageResource(mainTab.getResIcon());
@@ -297,11 +302,15 @@ public class MainActivity extends AppCompatActivity implements
     public void onTabChanged(String tabId) {
         final int size = mTabHost.getTabWidget().getTabCount();
         for (int i = 0; i < size; i++) {
-            View v = mTabHost.getTabWidget().getChildAt(i);
+            View view = mTabHost.getTabWidget().getChildAt(i);
             if (i == mTabHost.getCurrentTab()) {
-                v.setSelected(true);
+
+                view.setSelected(true);
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.btn_zoom_in);
+                view.startAnimation(animation);
+
             } else {
-                v.setSelected(false);
+                view.setSelected(false);
             }
         }
         if (tabId.equals(getString(MainTab.MINE.getResName()))) {

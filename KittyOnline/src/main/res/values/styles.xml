@@ -1,4 +1,4 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="Widget"></style>
 
@@ -463,7 +463,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">?attr/layout_item_bg</item>
         <item name="android:clickable">true</item>
-        <item name="android:padding">@dimen/space_13</item>
+        <item name="android:padding">@dimen/space_5</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
     </style>
@@ -488,6 +488,7 @@
     <style name="option_item_text" parent="@style/option_item_text_parent">
         <item name="android:drawablePadding">@dimen/space_8</item>
         <item name="android:textColor">?attr/textColor</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
     </style>
@@ -576,7 +577,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/space_2</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/text_size_11</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
     </style>
 
     <style name="user_formation_info" parent="@style/user_formation_text">
