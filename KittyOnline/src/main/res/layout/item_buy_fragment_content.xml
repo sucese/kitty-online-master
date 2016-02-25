@@ -9,9 +9,11 @@
     app:cardUseCompatPadding="true">
 
     <LinearLayout
+        android:id="@+id/ll_goods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_20"
+        android:clickable="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 

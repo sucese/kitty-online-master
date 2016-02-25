@@ -3,9 +3,7 @@ package com.guoxiaoxing.kitty.ui.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -15,11 +13,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 
-import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MainBuyAdapter;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
-import com.guoxiaoxing.kitty.tmp.SampleDataboxset;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
 import com.guoxiaoxing.kitty.util.log.Logger;
@@ -29,12 +25,6 @@ import com.guoxiaoxing.kitty.widget.banner.holder.LocalImageHolderView;
 import com.guoxiaoxing.kitty.widget.banner.listener.OnItemClickListener;
 import com.guoxiaoxing.kitty.widget.banner.transforms.FlipHorizontalTransformer;
 import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
-import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.animators.FadeInAnimator;
-import com.marshalchen.ultimaterecyclerview.uiUtils.BasicGridLayoutManager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -56,21 +46,19 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     Toolbar mToolbar;
     @Bind(R.id.et_search)
     EditText mEtSearch;
-    @Bind(R.id.srv_main_buy_fragment)
-    UltimateRecyclerView mSmartRecyclerView;
-
+    @Bind(R.id.rv_main_buy_fragment)
+    RecyclerView mRecyclerView;
 
     ConvenientBanner mConvenientBanner;
     CountdownView mCountdownView;
 
     private OnFragmentInteractionListener mListener;
-    MainBuyAdapter mAdapter = null;
-    GridLayoutManager mLayoutManager;
+    private MainBuyAdapter mAdapter;
 
     int moreNum = 2;
     boolean isDrag = true;
 
-    private ArrayList<Integer> localImages = new ArrayList<Integer>();
+    private ArrayList<Integer> localImages = new ArrayList<>();
     private View headerView;
 
     public MainBuyFragment() {
@@ -123,16 +111,16 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     public void onResume() {
         super.onResume();
         Logger.t(TAG).d("onResume()");
-        mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-        long time2 = (long) 30 * 60 * 1000;
-        mCountdownView.start(time2);
+//        mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
+//        long time2 = (long) 30 * 60 * 1000;
+//        mCountdownView.start(time2);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         Logger.t(TAG).d("onPause()");
-        mConvenientBanner.stopTurning();
+//        mConvenientBanner.stopTurning();
     }
 
 
@@ -246,7 +234,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private void initHeaderView() {
 
         //设置HeaderView
-        headerView = LayoutInflater.from(mContext).inflate(R.layout.buy_recyclerview_header, mSmartRecyclerView.mRecyclerView, false);
+        headerView = LayoutInflater.from(mContext).inflate(R.layout.item_buy_fragment_header, null, false);
         mCountdownView = (CountdownView) headerView.findViewById(R.id.cv_sale);
 
 
@@ -274,108 +262,11 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     }
 
     private void initContentView() {
-
-        mSmartRecyclerView.setHasFixedSize(false);
-        mAdapter = new MainBuyAdapter(SampleDataboxset.newList());
-        mLayoutManager = new BasicGridLayoutManager(mContext, 2, mAdapter);
-        mSmartRecyclerView.setLayoutManager(mLayoutManager);
-        mSmartRecyclerView.setAdapter(mAdapter);
-
-
-        mSmartRecyclerView.setItemAnimator(new FadeInAnimator());
-        mSmartRecyclerView.getItemAnimator().setAddDuration(300);
-        mSmartRecyclerView.getItemAnimator().setRemoveDuration(300);
-
-        //加载更多
-        mSmartRecyclerView.enableLoadmore();
-        mAdapter.setCustomLoadMoreView(LayoutInflater.from(mContext)
-                .inflate(R.layout.custom_bottom_progressbar, null, false));
-
-        //添加Header View
-        initHeaderView();
-        mSmartRecyclerView.setNormalHeader(headerView);
-        mSmartRecyclerView.setOnParallaxScroll(new UltimateRecyclerView.OnParallaxScroll() {
-            @Override
-            public void onParallaxScroll(float percentage, float offset, View parallax) {
-//                Drawable drawable = mToolbar.getBackground();
-//                drawable.setAlpha(Math.round(127 + percentage * 128));
-//                mToolbar.setBackground(drawable);
-            }
-        });
-
-        //下拉刷新数据
-        mSmartRecyclerView.setDefaultOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.insert(moreNum++ + "  Refresh things", 0);
-                        mSmartRecyclerView.setRefreshing(false);
-                        //   ultimateRecyclerView.scrollBy(0, -50);
-                        mLayoutManager.scrollToPosition(0);
-//                        ultimateRecyclerView.setAdapter(mAdapter);
-//                        mAdapter.notifyDataSetChanged();
-                    }
-                }, 1000);
-            }
-        });
-        //上拉加载更多
-        mSmartRecyclerView.setOnLoadMoreListener(new UltimateRecyclerView.OnLoadMoreListener() {
-            @Override
-            public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        SampleDataboxset.insertMore(mAdapter, 10);
-                        //  mLayoutManager.scrollToPositionWithOffset(maxLastVisiblePosition, -1);
-                        //  mLayoutManager.scrollToPosition(maxLastVisiblePosition);
-                    }
-                }, 2500);
-            }
-        });
-
-        //滑动监听，可以根据不同的状态来显示和隐藏Toolbar和Floating button
-        mSmartRecyclerView.setScrollViewCallbacks(new ObservableScrollViewCallbacks() {
-            @Override
-            public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-
-                Logger.t(TAG).d("onDownMotionEvent" + dragging);
-            }
-
-            @Override
-            public void onDownMotionEvent() {
-                Logger.t(TAG).d("onDownMotionEvent");
-            }
-
-            @Override
-            public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
-                Logger.t(TAG).d("onUpOrCancelMotionEvent");
-                if (observableScrollState == ObservableScrollState.UP) {
-                    mSmartRecyclerView.hideToolbar(mToolbar, mSmartRecyclerView, getScreenHeight());
-                    mSmartRecyclerView.hideFloatingActionMenu();
-                } else if (observableScrollState == ObservableScrollState.DOWN) {
-                    mSmartRecyclerView.showToolbar(mToolbar, mSmartRecyclerView, getScreenHeight());
-                    mSmartRecyclerView.showFloatingActionMenu();
-                }
-            }
-        });
-
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(mSmartRecyclerView.mRecyclerView,
-                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
-                    @Override
-                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
-                    }
-
-                    @Override
-                    public void onItemLongClick(RecyclerView parent, View clickedView, int position) {
-                        if (isDrag) {
-
-                        }
-
-                    }
-                });
-        mSmartRecyclerView.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
+        mRecyclerView.setHasFixedSize(false);
+        mAdapter = new MainBuyAdapter();
+        GridLayoutManager layoutManager = new GridLayoutManager(mContext, 2);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
 }

@@ -39,13 +39,10 @@
     </android.support.v7.widget.Toolbar>
 
 
-    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
-        android:id="@+id/srv_main_buy_fragment"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_main_buy_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:recyclerviewClipToPadding="true"
-        app:recyclerviewDefaultSwipeColor="@array/google_colors"
-        app:recyclerviewEmptyView="@layout/empty_layout"
-        app:recyclerviewScrollbars="vertical" />
+     />
 
 </LinearLayout>

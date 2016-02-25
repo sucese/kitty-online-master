@@ -88,6 +88,7 @@ public class MainMineFragment extends BaseFragment {
     LinearLayout mLlMoney;
     @Bind(R.id.ll_super_shop)
     LinearLayout mLlSUperShop;
+
     @Bind(R.id.ll_card)
     LinearLayout mLlCard;
     @Bind(R.id.ll_note)

@@ -10,9 +10,17 @@
         android:id="@+id/tb_main_chat_fragment"
         style="@style/toolbar_header">
 
-        <TextView
-            style="@style/actionbar_tltle_large_text"
-            android:text="@string/chat" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                style="@style/actionbar_tltle_large_text"
+                android:text="@string/chat" />
+
+        </LinearLayout>
+
 
     </android.support.v7.widget.Toolbar>
 
@@ -25,16 +33,64 @@
         android:layout_marginEnd="@dimen/space_10"
         android:layout_marginStart="@dimen/space_10"
         android:layout_marginTop="@dimen/space_15"
-        app:cardElevation="1dp">
+        app:cardElevation="3dp">
 
         <TextView
             android:id="@+id/tv_active"
             style="@style/option_item_text"
-            android:drawableLeft="@drawable/icon_explore_friends"
+            android:layout_marginStart="10dp"
+            android:drawableLeft="@drawable/bmp_people"
             android:drawablePadding="@dimen/space_10"
             android:text="@string/userActive" />
     </android.support.v7.widget.CardView>
 
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="20dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_scan"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="3dp">>
+
+        <TextView
+            android:id="@+id/tv_scan"
+            style="@style/option_item_text"
+            android:layout_marginStart="10dp"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/bmp_scan"
+            android:text="@string/rich_scan" />
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_shake"
+        style="@style/card_view_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        app:cardElevation="3dp">>
+
+        <TextView
+            android:id="@+id/tv_shake"
+            style="@style/option_item_text"
+            android:layout_marginStart="10dp"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableStart="@drawable/bmp_notification"
+            android:text="@string/shake" />
+    </android.support.v7.widget.CardView>
+
+
+    <View
+        style="@style/h_line"
+        android:layout_marginTop="20dp" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_find_friend"
@@ -44,14 +100,15 @@
         android:layout_marginEnd="@dimen/space_10"
         android:layout_marginStart="@dimen/space_10"
         android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="1dp">
+        app:cardElevation="3dp">
         >
 
         <TextView
             android:id="@+id/tv_find_friend"
             style="@style/option_item_text"
+            android:layout_marginStart="10dp"
             android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/icon_explore_friends"
+            android:drawableStart="@drawable/bmp_people_add"
             android:text="@string/find_oscer" />
     </android.support.v7.widget.CardView>
 
@@ -64,13 +121,14 @@
         android:layout_marginEnd="@dimen/space_10"
         android:layout_marginStart="@dimen/space_10"
         android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="1dp">>
+        app:cardElevation="3dp">>
 
         <TextView
             android:id="@+id/tv_activities"
             style="@style/option_item_text"
+            android:layout_marginStart="10dp"
             android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/icon_explore_friends"
+            android:drawableStart="@drawable/bmp_what_hot"
             android:text="@string/activities" />
     </android.support.v7.widget.CardView>
 
@@ -82,56 +140,15 @@
         android:layout_marginEnd="@dimen/space_10"
         android:layout_marginStart="@dimen/space_10"
         android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="1dp">>
+        app:cardElevation="3dp">>
 
         <TextView
             android:id="@+id/tv_city"
             style="@style/option_item_text"
+            android:layout_marginStart="10dp"
             android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/icon_explore_friends"
+            android:drawableStart="@drawable/bmp_person"
             android:text="@string/actionbar_title_same_city" />
-    </android.support.v7.widget.CardView>
-
-
-    <View
-        style="@style/h_line"
-        android:layout_marginTop="30dp" />
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_scan"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="1dp">>
-
-        <TextView
-            android:id="@+id/tv_scan"
-            style="@style/option_item_text"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/icon_explore_friends"
-            android:text="@string/my_message" />
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_shake"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="1dp">>
-
-        <TextView
-            android:id="@+id/tv_shake"
-            style="@style/option_item_text"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/icon_explore_friends"
-            android:text="@string/shake" />
     </android.support.v7.widget.CardView>
 
 

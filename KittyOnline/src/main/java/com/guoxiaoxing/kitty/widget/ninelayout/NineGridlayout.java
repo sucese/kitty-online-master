@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class NineGridlayout extends ViewGroup {
 
-
     private int columns;
     private int rows;
     /*图片之间的间隔*/
@@ -38,8 +37,7 @@ public class NineGridlayout extends ViewGroup {
     public NineGridlayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         ScreenTools screenTools = ScreenTools.instance(getContext());
-//        totalWidth = screenTools.getScreenWidth() - screenTools.dip2px(80);
-        totalWidth = screenTools.getScreenWidth();//全屏显示
+        totalWidth = screenTools.getScreenWidth() - screenTools.dip2px(30);//去掉屏幕两边的留白
     }
 
     @Override
@@ -51,7 +49,6 @@ public class NineGridlayout extends ViewGroup {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
     }
-
 
     /**
      * 根据行列数量计算图片长宽（图片长宽相等）

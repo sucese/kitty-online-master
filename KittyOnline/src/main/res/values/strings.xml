@@ -213,7 +213,7 @@
     <string name="actionbar_title_find_user"></string>
     <string name="actionbar_title_event">活动</string>
     <string name="actionbar_title_event_apply">活动出席人员</string>
-    <string name="actionbar_title_same_city">同城</string>
+    <string name="actionbar_title_same_city">附近的人</string>
 
     <!-- 博客区 -->
     <string name="actionbar_title_blog_area">博客区</string>
@@ -291,7 +291,7 @@
     <string name="bookmarks">收藏夹</string>
     <string name="user_score">积分</string>
 
-    <string name="chat">聊一聊</string>
+    <string name="chat">聊聊聊</string>
     <string name="userActive">好友圈</string>
     <string name="activities">优惠活动</string>
     <string name="my_message">我的消息</string>

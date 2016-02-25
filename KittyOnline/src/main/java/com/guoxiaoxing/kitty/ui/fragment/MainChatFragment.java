@@ -43,7 +43,6 @@ public class MainChatFragment extends BaseFragment {
     private static BadgeView mMesCount;
 
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_explore;
@@ -66,7 +65,7 @@ public class MainChatFragment extends BaseFragment {
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.EVENT_LIST);
                 break;
             case R.id.cv_scan:
-                UIHelper.showMyMes(getActivity());
+                UIHelper.showScanActivity(getActivity());
                 break;
             case R.id.cv_shake:
                 showShake();
@@ -102,7 +101,6 @@ public class MainChatFragment extends BaseFragment {
     public void initData() {
 
     }
-
 
 
 }

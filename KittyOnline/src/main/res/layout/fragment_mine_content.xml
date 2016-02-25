@@ -40,7 +40,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_shang_yi" />
+                android:src="@drawable/ic_category_1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_ku_zi" />
+                android:src="@drawable/ic_category_2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_qun_zi" />
+                android:src="@drawable/ic_category_3" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_nei_yi" />
+                android:src="@drawable/ic_category_4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_nv_xie" />
+                android:src="@drawable/ic_category_5" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,8 +135,8 @@
             app:layout_gravity="fill_horizontal">
 
             <ImageView
-                style="@style/image_category"
-                android:src="@drawable/ic_bao_baojpg" />
+                style="@style/image_service"
+                android:src="@drawable/ic_category_6" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -155,7 +155,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_nan_you" />
+                android:src="@drawable/ic_category_7" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -167,15 +167,15 @@
 
         <LinearLayout
             android:id="@+id/ll_account"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical"
-            android:clickable="true"
             app:layout_columnWeight="1"
             app:layout_gravity="fill_horizontal">
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_mei_zhuang" />
+                android:src="@drawable/ic_category_8" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_shang_yi" />
+                android:src="@drawable/ic_category_9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -234,7 +234,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_ku_zi" />
+                android:src="@drawable/ic_category_10" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -253,7 +253,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_qun_zi" />
+                android:src="@drawable/ic_category_11" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_nei_yi" />
+                android:src="@drawable/ic_category_12" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -311,7 +311,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_shang_yi" />
+                android:src="@drawable/ic_category_13" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -330,7 +330,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_ku_zi" />
+                android:src="@drawable/ic_category_13" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -348,7 +348,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_qun_zi" />
+                android:src="@drawable/ic_category_13" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -366,7 +366,7 @@
 
             <ImageView
                 style="@style/image_service"
-                android:src="@drawable/ic_nei_yi" />
+                android:src="@drawable/ic_category_13" />
 
             <TextView
                 android:layout_width="wrap_content"
