@@ -54,7 +54,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     private String mParam1;
     private String mParam2;
 
-//    @Bind(R.id.srl_root)
+    //    @Bind(R.id.srl_root)
 //    SwipeRefreshLayout mSrlRoot;
     @Bind(R.id.tb_main_shopping_fragment)
     Toolbar mToolbar;
@@ -246,7 +246,7 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
                             return new NetworkImageHolderView();
                         }
                     }, networkImages)                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                            .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+                            .setPageIndicator(new int[]{R.drawable.shp_cycle_white, R.drawable.shp_circle_pink})
 //                .setOnPageChangeListener(this)//监听翻页事件
 //                            .setOnItemClickListener(this);
                     ;

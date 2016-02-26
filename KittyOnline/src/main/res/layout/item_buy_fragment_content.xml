@@ -3,9 +3,7 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/card_view_normal"
-    app:cardElevation="@dimen/card_view_elevation_none"
-    app:cardMaxElevation="10dp"
-    app:cardPreventCornerOverlap="true"
+    app:cardElevation="@dimen/card_view_elevation"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -20,7 +18,7 @@
         <com.facebook.drawee.view.SimpleDraweeView
             style="@style/image_rect_middle"
             app:placeholderImage="@drawable/ic_test_0"
-            app:placeholderImageScaleType="centerCrop" />
+            app:placeholderImageScaleType="focusCrop" />
 
         <TextView
             style="@style/text_title_middle"
@@ -29,11 +27,6 @@
         <TextView
             style="@style/text_content_small"
             android:text="让这些单品改变你!" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:src="@color/primary" />
 
     </LinearLayout>
 

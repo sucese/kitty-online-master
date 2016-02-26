@@ -13,9 +13,7 @@
     <dimen name="banner_small_height">100dp</dimen>
 
     <!--卡片-->
-    <dimen name="card_view_elevation_none">0dp</dimen>
-    <dimen name="card_view_elevation_small">2dp</dimen>
-    <dimen name="card_view_elevation_middle">4dp</dimen>
+    <dimen name="card_view_elevation">3dp</dimen>
 
     <!--字体-->
 

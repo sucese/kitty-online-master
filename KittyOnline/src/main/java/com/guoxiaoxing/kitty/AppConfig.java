@@ -59,7 +59,7 @@ public class AppConfig {
     public final static String LEADCLOUD_APP_KEY = "fxwjo6ioo2NiNiCeHjyAw4To";
 
     /*ViewPager自动轮播间隔时间*/
-    public final static long VIEWPAGER_TRANSFORM_TIME = 3000;
+    public final static long VIEWPAGER_TRANSFORM_TIME = 2000;
 
 
     private Context mContext;

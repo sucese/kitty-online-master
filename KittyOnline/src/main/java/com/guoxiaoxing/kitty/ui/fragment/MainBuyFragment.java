@@ -54,6 +54,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
     private OnFragmentInteractionListener mListener;
     private MainBuyAdapter mAdapter;
+    private GridLayoutManager mGridLayoutManager;
 
     int moreNum = 2;
     boolean isDrag = true;
@@ -111,9 +112,8 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     public void onResume() {
         super.onResume();
         Logger.t(TAG).d("onResume()");
-//        mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
-//        long time2 = (long) 30 * 60 * 1000;
-//        mCountdownView.start(time2);
+        mAdapter.startBannerTurning();
+
     }
 
     @Override
@@ -128,6 +128,7 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     public void onDestroyView() {
         super.onDestroyView();
         Logger.t(TAG).d("onDestroyView()");
+        mAdapter.stopBannerTurning();
     }
 
     @Override
@@ -263,25 +264,19 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
     private void initContentView() {
         mRecyclerView.setHasFixedSize(false);
-        mAdapter = new MainBuyAdapter();
-        final GridLayoutManager layoutManager = new GridLayoutManager(mContext, 2);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-
+        mGridLayoutManager = new GridLayoutManager(mContext, 2);
         //设置头部及底部占据整行空间
-        if (layoutManager != null) {
+        mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
 
-            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                @Override
-                public int getSpanSize(int position) {
-
-                    return (mAdapter.isHeaderView(position) | mAdapter.isBottomView(position))
-                            ? layoutManager.getSpanCount() : 1;
-                }
-            });
-
-
-        }
+                return (mAdapter.isHeaderView(position) | mAdapter.isBottomView(position))
+                        ? mGridLayoutManager.getSpanCount() : 1;
+            }
+        });
+        mRecyclerView.setLayoutManager(mGridLayoutManager);
+        mAdapter = new MainBuyAdapter();
+        mRecyclerView.setAdapter(mAdapter);
     }
 
 }

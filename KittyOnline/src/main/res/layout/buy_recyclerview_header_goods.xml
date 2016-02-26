@@ -1,231 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/choice_grid"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:background="@color/white"
-    app:alignmentMode="alignBounds"
-    app:columnCount="4"
-    app:rowCount="3"
-    app:rowOrderPreserved="false"
-    app:useDefaultMargins="true">
+    style="@style/card_view_normal"
+    app:cardElevation="@dimen/card_view_elevation">
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_shang_yi" />
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/choice_grid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        app:alignmentMode="alignBounds"
+        app:columnCount="4"
+        app:rowCount="3"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_1" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_shang_yi"
+                app:placeholderImageScaleType="focusCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_1" />
+
+        </LinearLayout>
 
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
-
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_ku_zi" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_2" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_ku_zi"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_2" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_qun_zi" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_3" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_qun_zi"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_3" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_nei_yi" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_4" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_nei_yi"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_4" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_nv_xie" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_5" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_nv_xie"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_5" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_bao_baojpg" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_6" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_bao_bao"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_6" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_nan_you" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_7" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_nan_you"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_mei_zhuang" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_7" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        </LinearLayout>
+
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_8" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_mei_zhuang"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_8" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_pei_shi" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_9" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_pei_shi"
+                app:placeholderImageScaleType="focusCrop" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_mu_yin" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_9" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        </LinearLayout>
+
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_10" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_mu_yin"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_10" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_jia_ju" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_11" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_jia_ju"
+                app:placeholderImageScaleType="focusCrop" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_11" />
 
-        <ImageView
-            style="@style/image_category"
-            android:src="@drawable/ic_bai_huo" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:gravity="center"
-            android:text="@string/buy_goods_title_12" />
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal">
 
-    </LinearLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/image_category"
+                app:actualImageScaleType="focusCrop"
+                app:placeholderImage="@drawable/ic_bai_huo"
+                app:placeholderImageScaleType="focusCrop" />
 
-</android.support.v7.widget.GridLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buy_goods_title_12" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.GridLayout>
+</android.support.v7.widget.CardView>

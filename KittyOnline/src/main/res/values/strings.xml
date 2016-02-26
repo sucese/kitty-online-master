@@ -30,6 +30,8 @@
 
     <!--全部商品-->
     <string name="buy_goods">全部商品</string>
+    <string name="pretty_goods">疯抢好货</string>
+    <string name="hot_goods">热卖单品</string>
     <string name="buy_goods_title_1">上衣</string>
     <string name="buy_goods_title_2">裤子</string>
     <string name="buy_goods_title_3">裙子</string>

@@ -19,6 +19,7 @@ public class UserTalk extends AVObject {
     public static final String USER_LOGO = "userLogo";
     public static final String TALK_TIME = "talkTIme";
     public static final String TALK_CONTENT = "talkContent";
+    public static final String LIKE_TOTAL = "likeTotal";
     public static final String IMAGE_URLS = "imageUrls";
 
 
@@ -38,7 +39,6 @@ public class UserTalk extends AVObject {
         put(USER_LOGO, userLogo);
     }
 
-
     public String getTalkTime() {
         return getString(TALK_TIME);
     }
@@ -53,6 +53,15 @@ public class UserTalk extends AVObject {
 
     public void setTalkContent(String talkContent) {
         put(TALK_CONTENT, talkContent);
+    }
+
+
+    public int getLikeTotal() {
+        return getInt(LIKE_TOTAL);
+    }
+
+    public void setLikeTotal(int likeTotal) {
+        put(LIKE_TOTAL, likeTotal);
     }
 
     public List<String> getImageUrlList() {
