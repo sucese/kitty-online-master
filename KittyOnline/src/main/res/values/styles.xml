@@ -461,7 +461,7 @@
     <style name="option_item_rl">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">?attr/layout_item_bg</item>
+        <item name="android:background">@drawable/rip_btn_white</item>
         <item name="android:clickable">true</item>
         <item name="android:padding">@dimen/space_5</item>
         <item name="android:gravity">center_vertical</item>

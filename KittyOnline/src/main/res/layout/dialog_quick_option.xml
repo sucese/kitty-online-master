@@ -5,32 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/ll_close"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center">\
-
-        <ImageView
-            android:id="@+id/iv_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:contentDescription="@null"
-            android:focusable="false"
-            android:src="@drawable/bmp_add_circle_black_36dp_normal" />
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/ll_option_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/ll_close"
-        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -81,6 +62,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -122,6 +104,17 @@
                     android:text="@string/quick_option_note" />
             </LinearLayout>
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@null"
+            android:focusable="false"
+            android:src="@drawable/bmp_add_circle_black_36dp_normal" />
+
     </LinearLayout>
 
 

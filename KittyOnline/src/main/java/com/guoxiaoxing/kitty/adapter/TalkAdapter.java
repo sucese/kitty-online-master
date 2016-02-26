@@ -50,6 +50,9 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
 
         List<String> list = mTalkList.get(position).getImageUrlList();
         holder.mNgvTalkImage.setImagesData(new ArrayList<>(list));
+        holder.mTvUserName.setText(mTalkList.get(position).getUserName());
+        holder.mTvReleaseTime.setText(mTalkList.get(position).getTalkTime());
+        holder.mTvTalkContent.setText(mTalkList.get(position).getTalkContent());
 
     }
 

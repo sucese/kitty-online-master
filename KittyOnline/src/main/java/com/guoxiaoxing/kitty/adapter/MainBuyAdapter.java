@@ -27,6 +27,8 @@ public class MainBuyAdapter extends BaseMultipleItemAdapter {
     private List<String> mGoodsList = new ArrayList<>();
 
     public MainBuyAdapter() {
+        mHeaderCount = 1;
+        mBottomCount = 1;
     }
 
     public void setData(ArrayList<String> list) {
@@ -66,14 +68,8 @@ public class MainBuyAdapter extends BaseMultipleItemAdapter {
     }
 
     @Override
-    public int getItemCount() {
-        return mGoodsList.size();
-    }
-
-
-    @Override
     public int getContentItemCount() {
-        return 0;
+        return 4;
     }
 
 

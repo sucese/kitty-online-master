@@ -264,9 +264,24 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     private void initContentView() {
         mRecyclerView.setHasFixedSize(false);
         mAdapter = new MainBuyAdapter();
-        GridLayoutManager layoutManager = new GridLayoutManager(mContext, 2);
+        final GridLayoutManager layoutManager = new GridLayoutManager(mContext, 2);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
+
+        //设置头部及底部占据整行空间
+        if (layoutManager != null) {
+
+            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+
+                    return (mAdapter.isHeaderView(position) | mAdapter.isBottomView(position))
+                            ? layoutManager.getSpanCount() : 1;
+                }
+            });
+
+
+        }
     }
 
 }

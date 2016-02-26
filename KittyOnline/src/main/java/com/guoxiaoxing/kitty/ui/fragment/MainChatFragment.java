@@ -1,9 +1,9 @@
 package com.guoxiaoxing.kitty.ui.fragment;
 
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
@@ -27,18 +27,18 @@ public class MainChatFragment extends BaseFragment {
     @Bind(R.id.tb_main_chat_fragment)
     Toolbar mToolbar;
 
-    @Bind(R.id.cv_active)
-    CardView mCvActive;
-    @Bind(R.id.cv_find_friend)
-    CardView mCvFindFriend;
-    @Bind(R.id.cv_activities)
-    CardView mCvActivities;
-    @Bind(R.id.cv_city)
-    CardView mCvCity;
-    @Bind(R.id.cv_scan)
-    CardView mCvScan;
-    @Bind(R.id.cv_shake)
-    CardView mCvShake;
+    @Bind(R.id.ll_active)
+    LinearLayout mLlActive;
+    @Bind(R.id.ll_find_friend)
+    LinearLayout mLlFindFriend;
+    @Bind(R.id.ll_activities)
+    LinearLayout mLlActivities;
+    @Bind(R.id.ll_city)
+    LinearLayout mLlCity;
+    @Bind(R.id.ll_scan)
+    LinearLayout mLlScan;
+    @Bind(R.id.ll_shake)
+    LinearLayout mLlShake;
 
     private static BadgeView mMesCount;
 
@@ -52,22 +52,22 @@ public class MainChatFragment extends BaseFragment {
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case R.id.cv_active:
+            case R.id.ll_active:
                 UIHelper.showMyActive(getActivity());
                 break;
-            case R.id.cv_find_friend:
+            case R.id.ll_find_friend:
                 showFindUser();
                 break;
-            case R.id.cv_city:
+            case R.id.ll_city:
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SAME_CITY);
                 break;
-            case R.id.cv_activities:
+            case R.id.ll_activities:
                 UIHelper.showSimpleBack(getActivity(), SimpleBackPage.EVENT_LIST);
                 break;
-            case R.id.cv_scan:
+            case R.id.ll_scan:
                 UIHelper.showScanActivity(getActivity());
                 break;
-            case R.id.cv_shake:
+            case R.id.ll_shake:
                 showShake();
                 break;
             default:
@@ -89,12 +89,12 @@ public class MainChatFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        mCvActive.setOnClickListener(this);
-        mCvFindFriend.setOnClickListener(this);
-        mCvCity.setOnClickListener(this);
-        mCvActivities.setOnClickListener(this);
-        mCvScan.setOnClickListener(this);
-        mCvShake.setOnClickListener(this);
+        mLlActive.setOnClickListener(this);
+        mLlFindFriend.setOnClickListener(this);
+        mLlCity.setOnClickListener(this);
+        mLlActivities.setOnClickListener(this);
+        mLlScan.setOnClickListener(this);
+        mLlShake.setOnClickListener(this);
     }
 
     @Override

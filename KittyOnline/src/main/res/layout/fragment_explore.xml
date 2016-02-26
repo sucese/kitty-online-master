@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -24,132 +23,125 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <LinearLayout
+        android:id="@+id/ll_active"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_active"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_15"
-        app:cardElevation="3dp">
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_people"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_active"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawableLeft="@drawable/bmp_people"
-            android:drawablePadding="@dimen/space_10"
             android:text="@string/userActive" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <View style="@style/h_line" />
 
     <View
         style="@style/h_line"
         android:layout_marginTop="20dp" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_scan"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="3dp">>
+
+    <LinearLayout
+        android:id="@+id/ll_scan"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_scan"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_scan"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/bmp_scan"
             android:text="@string/rich_scan" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
+    <View style="@style/h_line" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_shake"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="3dp">>
+    <LinearLayout
+        android:id="@+id/ll_shake"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_notification"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_shake"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/bmp_notification"
             android:text="@string/shake" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
+    <View style="@style/h_line" />
 
     <View
         style="@style/h_line"
         android:layout_marginTop="20dp" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_find_friend"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="3dp">
-        >
+    <LinearLayout
+        android:id="@+id/ll_find_friend"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_people_add"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_find_friend"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/bmp_people_add"
             android:text="@string/find_oscer" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <View style="@style/h_line" />
 
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_activities"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="3dp">>
+    <LinearLayout
+        android:id="@+id/ll_activities"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_what_hot"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_activities"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/bmp_what_hot"
             android:text="@string/activities" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_city"
-        style="@style/card_view_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_10"
-        android:layout_marginStart="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_10"
-        app:cardElevation="3dp">>
+    <View style="@style/h_line" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_city"
+        style="@style/option_item_rl"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <ImageView
+            style="@style/option_item_img"
+            android:background="@drawable/bmp_person"
+            android:contentDescription="@null" />
 
         <TextView
-            android:id="@+id/tv_city"
             style="@style/option_item_text"
-            android:layout_marginStart="10dp"
-            android:drawablePadding="@dimen/space_10"
-            android:drawableStart="@drawable/bmp_person"
             android:text="@string/actionbar_title_same_city" />
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <View style="@style/h_line" />
 
 
 </LinearLayout>
