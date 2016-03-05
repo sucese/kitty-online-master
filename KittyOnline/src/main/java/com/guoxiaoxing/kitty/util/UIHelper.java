@@ -31,16 +31,15 @@ import android.widget.ZoomButtonsController;
 
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.AppContext;
-import com.guoxiaoxing.kitty.model.UserActive;
 import com.guoxiaoxing.kitty.model.Comment;
 import com.guoxiaoxing.kitty.model.Constants;
+import com.guoxiaoxing.kitty.model.Goods;
 import com.guoxiaoxing.kitty.model.News;
 import com.guoxiaoxing.kitty.model.Notice;
 import com.guoxiaoxing.kitty.model.ShakeObject;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
-import com.guoxiaoxing.kitty.model.UserTweet;
-import com.guoxiaoxing.kitty.ui.base.ICallbackResult;
-import com.guoxiaoxing.kitty.ui.base.OnWebViewImageListener;
+import com.guoxiaoxing.kitty.model.UserActive;
+import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.service.DownloadService;
 import com.guoxiaoxing.kitty.service.DownloadService.DownloadBinder;
 import com.guoxiaoxing.kitty.service.NoticeService;
@@ -62,6 +61,8 @@ import com.guoxiaoxing.kitty.ui.activity.LoginActivity;
 import com.guoxiaoxing.kitty.ui.activity.SimpleBackActivity;
 import com.guoxiaoxing.kitty.ui.activity.TalkActivity;
 import com.guoxiaoxing.kitty.ui.base.BaseListFragment;
+import com.guoxiaoxing.kitty.ui.base.ICallbackResult;
+import com.guoxiaoxing.kitty.ui.base.OnWebViewImageListener;
 import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
 import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
 import com.guoxiaoxing.kitty.ui.fragment.FriendsFragment;
@@ -79,6 +80,7 @@ import java.net.URLDecoder;
 
 /**
  * 界面帮助类
+ *
  * @author guoxiaoxing
  */
 public class UIHelper {
@@ -198,16 +200,16 @@ public class UIHelper {
      * 显示动弹详情
      *
      * @param context context
-     * @param tweetid 动弹的id
+     * @param talkId  动弹的id
      */
-    public static void showTweetDetail(Context context, UserTweet userTweet, int tweetid) {
+    public static void showTalkDetail(Context context, UserTalk userTalk, int talkId) {
         Intent intent = new Intent(context, DetailActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putInt("tweet_id", tweetid);
+        bundle.putInt("talkId", talkId);
         bundle.putInt(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
                 DetailActivity.DISPLAY_TWEET);
-        if (userTweet != null) {
-            bundle.putParcelable("userTweet", userTweet);
+        if (userTalk != null) {
+            bundle.putParcelable("userTalk", userTalk);
         }
         intent.putExtras(bundle);
         context.startActivity(intent);
@@ -217,13 +219,17 @@ public class UIHelper {
      * 显示软件详情
      *
      * @param context
-     * @param ident
+     * @param goods
      */
-    public static void showSoftwareDetail(Context context, String ident) {
+    public static void showGoodsDetail(Context context, Goods goods) {
         Intent intent = new Intent(context, DetailActivity.class);
-        intent.putExtra("ident", ident);
-        intent.putExtra(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
-                DetailActivity.DISPLAY_SOFTWARE);
+        Bundle bundle = new Bundle();
+        bundle.putInt(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
+                DetailActivity.DISPLAY_GOODS);
+        if (goods != null) {
+            bundle.putParcelable("goods", goods);
+        }
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 
@@ -232,7 +238,7 @@ public class UIHelper {
         intent.putExtra("id", id);
         intent.putExtra("ident", "");
         intent.putExtra(DetailActivity.BUNDLE_KEY_DISPLAY_TYPE,
-                DetailActivity.DISPLAY_SOFTWARE);
+                DetailActivity.DISPLAY_GOODS);
         context.startActivity(intent);
     }
 
@@ -260,7 +266,7 @@ public class UIHelper {
                     showNewsDetail(context, newsId, news.getCommentCount());
                     break;
                 case News.NEWSTYPE_SOFTWARE:
-                    showSoftwareDetail(context, objId);
+//                    showGoodsDetail(context, objId);
                     break;
                 case News.NEWSTYPE_POST:
                     showPostDetail(context, StringUtils.toInt(objId),
@@ -281,9 +287,9 @@ public class UIHelper {
     /**
      * 动态点击跳转到相关新闻、帖子等
      *
-     * @param context context
-     * @param userActive  动态实体类
-     *                0其他 1新闻 2帖子 3动弹 4博客
+     * @param context    context
+     * @param userActive 动态实体类
+     *                   0其他 1新闻 2帖子 3动弹 4博客
      */
     public static void showActiveRedirect(Context context, UserActive userActive) {
         String url = userActive.getUrl();
@@ -302,7 +308,7 @@ public class UIHelper {
                     showPostDetail(context, id, userActive.getCommentCount());
                     break;
                 case UserActive.CATALOG_TWEET:
-                    showTweetDetail(context, null, id);
+                    showTalkDetail(context, null, id);
                     break;
                 case UserActive.CATALOG_BLOG:
                     showBlogDetail(context, id, userActive.getCommentCount());
@@ -452,13 +458,13 @@ public class UIHelper {
                 showPostListByTag(context, objKey);
                 break;
             case URLsUtils.URL_OBJ_TYPE_SOFTWARE:
-                showSoftwareDetail(context, objKey);
+//                showGoodsDetail(context, objKey);
                 break;
             case URLsUtils.URL_OBJ_TYPE_ZONE:
                 showUserCenter(context, objId, objKey);
                 break;
             case URLsUtils.URL_OBJ_TYPE_TWEET:
-                showTweetDetail(context, null, objId);
+                showTalkDetail(context, null, objId);
                 break;
             case URLsUtils.URL_OBJ_TYPE_BLOG:
                 showBlogDetail(context, objId, 0);

@@ -16,8 +16,8 @@
     <color name="day_edit_hit_color">#999999</color>
 
     <!-- night -->
-    <color name="night_colorPrimary">#008000</color>
-    <color name="night_colorPrimaryDark">#0b751e</color>
+    <color name="night_colorPrimary">@color/primary</color>
+    <color name="night_colorPrimaryDark">@color/primary_dark</color>
     <color name="night_textColor">#b3b3b3</color>
     <color name="night_infoTextColor">#666666</color>
     <color name="night_layout_bg_normal">#222222</color>

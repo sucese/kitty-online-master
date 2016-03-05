@@ -13,6 +13,7 @@ import com.guoxiaoxing.kitty.api.ApiHttpClient;
 import com.guoxiaoxing.kitty.cache.DataCleanManager;
 import com.guoxiaoxing.kitty.model.AdvertisementBanner;
 import com.guoxiaoxing.kitty.model.Constants;
+import com.guoxiaoxing.kitty.model.Goods;
 import com.guoxiaoxing.kitty.model.User;
 import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.BaseApplication;
@@ -20,9 +21,9 @@ import com.guoxiaoxing.kitty.util.MethodsCompat;
 import com.guoxiaoxing.kitty.util.StringUtils;
 import com.guoxiaoxing.kitty.util.TLog;
 import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.log.Logger;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
+import com.squareup.leakcanary.LeakCanary;
 
 import org.kymjs.kjframe.Core;
 import org.kymjs.kjframe.http.HttpConfig;
@@ -83,27 +84,23 @@ public class AppContext extends BaseApplication {
         // Bitmap缓存地址
         HttpConfig.CACHEPATH = "OSChina/imagecache";
 
-        Logger.init();                      // default PRETTYLOGGER or use just init()
-//                .methodCount(3)                 // default 2
-//                .hideThreadInfo()               // default shown
-//                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
-//                .methodOffset(2);               // default 0
-//                .logTool(new AndroidLogTool()); // custom log tool, optional
-
         //图片处理库
         Fresco.initialize(this);
-
 
         //初始化LeanCloud云服务
         initModelClass();
         AVOSCloud.initialize(this, AppConfig.LEADCLOUD_APP_ID, AppConfig.LEADCLOUD_APP_KEY);
         AVOSCloud.setDebugLogEnabled(true);
 
+        //内存泄漏分析
+//        LeakCanary.install(this);
+
     }
 
     private void initModelClass() {
         AVObject.registerSubclass(AdvertisementBanner.class);
         AVObject.registerSubclass(UserTalk.class);
+        AVObject.registerSubclass(Goods.class);
     }
 
     private void initLogin() {

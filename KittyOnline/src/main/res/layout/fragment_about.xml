@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="?attr/layout_item_bg"
+    android:visibility="gone"
     android:orientation="vertical"
     android:scrollbars="none">
 
@@ -96,7 +97,8 @@
                 android:textSize="@dimen/text_size_16" />
         </RelativeLayout>
 
-        <View style="@style/h_line" />
+        <View style="@style/h_line"
+            />
 
         <View
             style="@style/h_line"
@@ -104,6 +106,7 @@
 
         <RelativeLayout
             android:id="@+id/rl_gitapp"
+            android:visibility="gone"
             style="@style/option_item_rl">
 
             <TextView
@@ -113,10 +116,12 @@
                 android:textSize="@dimen/text_size_16" />
         </RelativeLayout>
 
-        <View style="@style/h_line" />
+        <View style="@style/h_line"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="50dip"
@@ -143,6 +148,7 @@
 
 
         <TextView
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

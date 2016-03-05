@@ -4,8 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -24,17 +23,26 @@ import butterknife.ButterKnife;
  *
  * @author guoxiaoxing
  */
-public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
+public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> implements View.OnClickListener {
 
 
     private List<UserTalk> mTalkList = new ArrayList<>();
+    private OnRecyclerVIewItemClickListener mOnRecyclerVIewItemClickListener = null;
 
     public TalkAdapter() {
 
     }
 
     public void setData(List<UserTalk> talkList) {
-        mTalkList = talkList;
+        mTalkList.addAll(talkList);
+        mTalkList.addAll(talkList);
+        mTalkList.addAll(talkList);
+        mTalkList.addAll(talkList);
+        mTalkList.addAll(talkList);
+    }
+
+    private List<UserTalk> getData() {
+        return mTalkList;
     }
 
 
@@ -42,7 +50,8 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_user_talk, parent, false);
-        return new ViewHolder(view, true);
+        view.setOnClickListener(this);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -53,6 +62,11 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
         holder.mTvUserName.setText(mTalkList.get(position).getUserName());
         holder.mTvReleaseTime.setText(mTalkList.get(position).getTalkTime());
         holder.mTvTalkContent.setText(mTalkList.get(position).getTalkContent());
+        holder.mTvFirstComment.setText(mTalkList.get(position).getCommentList().get(0));
+        holder.mTvSecondComment.setText(mTalkList.get(position).getCommentList().get(1));
+        holder.mTvLike.setText(String.valueOf(position * 10 + 5));
+        holder.mTvComment.setText(String.valueOf(position * 10 + 8));
+        holder.itemView.setTag(mTalkList.get(position));
 
     }
 
@@ -61,11 +75,17 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
         return mTalkList.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        if (mOnRecyclerVIewItemClickListener != null) {
+            mOnRecyclerVIewItemClickListener.onItemClick(v, (UserTalk) v.getTag());
+        }
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.ll_root_talk)
-        LinearLayout mLlRoot;
+
         @Bind(R.id.sdv_user_logo)
         SimpleDraweeView mSdvUserLogo;
         @Bind(R.id.tv_user_name)
@@ -74,12 +94,12 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
         TextView mTvReleaseTime;
         @Bind(R.id.tv_attention)
         TextView mTvAttention;
-        @Bind(R.id.ll_user)
-        RelativeLayout mLlUser;
         @Bind(R.id.tv_talk_content)
         TextView mTvTalkContent;
         @Bind(R.id.ngv_talk_image)
         NineGridlayout mNgvTalkImage;
+        @Bind(R.id.ib_like)
+        ImageButton mTbLike;
         @Bind(R.id.tv_like)
         TextView mTvLike;
         @Bind(R.id.tv_comment)
@@ -91,12 +111,26 @@ public class TalkAdapter extends RecyclerView.Adapter<TalkAdapter.ViewHolder> {
         @Bind(R.id.tv_more_comment)
         TextView mTvMoreComment;
 
-        public ViewHolder(View itemView, boolean isItem) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            if (isItem) {
+        public ViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
 
-            }
+            mTbLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
+    }
+
+    public void setmOnRecyclerVIewItemClickListener(OnRecyclerVIewItemClickListener listener) {
+        mOnRecyclerVIewItemClickListener = listener;
+    }
+
+    public interface OnRecyclerVIewItemClickListener {
+
+        void onItemClick(View view, UserTalk userTalk);
+
     }
 }

@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageFristFragment;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageSecondFragment;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageThridFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.FristImageFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.SecondImageFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.ThridImageFragment;
 
 import java.util.ArrayList;
 
@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class ImageFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
 
     ArrayList<Fragment> mFragments;
-    LoginAnimImageFristFragment mLoginAnimImageFristFragment;
-    LoginAnimImageSecondFragment mLoginAnimImageSecondFragment;
-    LoginAnimImageThridFragment mLoginAnimImageThridFragment;
+    FristImageFragment mLoginAnimImageFristFragment;
+    SecondImageFragment mLoginAnimImageSecondFragment;
+    ThridImageFragment mLoginAnimImageThridFragment;
 
     public Fragment getFragement(int position) {
         switch (position) {
@@ -38,11 +38,11 @@ public class ImageFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
         super(fm);
         if(mFragments == null){
             mFragments = new ArrayList<Fragment>();
-            mLoginAnimImageFristFragment = new LoginAnimImageFristFragment();
+            mLoginAnimImageFristFragment = new FristImageFragment();
             mFragments.add(mLoginAnimImageFristFragment);
-            mLoginAnimImageSecondFragment = new LoginAnimImageSecondFragment();
+            mLoginAnimImageSecondFragment = new SecondImageFragment();
             mFragments.add(mLoginAnimImageSecondFragment);
-            mLoginAnimImageThridFragment = new LoginAnimImageThridFragment();
+            mLoginAnimImageThridFragment = new ThridImageFragment();
             mFragments.add(mLoginAnimImageThridFragment);
         }
     }

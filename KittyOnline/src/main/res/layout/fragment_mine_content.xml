@@ -149,7 +149,7 @@
 
         <TextView
             style="@style/option_item_text"
-            android:text="把爱尚佳品分享给朋友" />
+            android:text="把秀品分享给朋友" />
     </LinearLayout>
 
 

@@ -17,14 +17,16 @@
                 android:id="@+id/iv_scroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                tools:src="@drawable/welcomeanim_second_scrollbg"/>
 
             <ImageView
                 android:id="@+id/iv_shield"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:visibility="gone"/>
+                tools:src="@drawable/welcome_shield"
+                android:visibility="visible"/>
 
             <ImageView
                 android:id="@+id/iv_goods"

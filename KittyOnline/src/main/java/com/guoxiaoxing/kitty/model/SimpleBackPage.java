@@ -2,9 +2,9 @@ package com.guoxiaoxing.kitty.model;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.ui.fragment.AboutUsFragment;
-import com.guoxiaoxing.kitty.ui.fragment.ActiveFragment;
 import com.guoxiaoxing.kitty.ui.fragment.BrowserFragment;
 import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
+import com.guoxiaoxing.kitty.ui.fragment.TalkFragment;
 import com.guoxiaoxing.kitty.ui.fragment.EventAppliesFragment;
 import com.guoxiaoxing.kitty.ui.fragment.EventFragment;
 import com.guoxiaoxing.kitty.ui.fragment.FeedBackFragment;
@@ -62,7 +62,7 @@ public enum SimpleBackPage {
     MY_INFORMATION(7, R.string.actionbar_title_my_information,
             MainMineFragment.class),
 
-    MY_ACTIVE(8, R.string.actionbar_title_active, ActiveFragment.class),
+    MY_ACTIVE(8, R.string.actionbar_title_active, TalkFragment.class),
 
     MY_MES(9, R.string.actionbar_title_mes, NoticeViewPagerFragment.class),
 

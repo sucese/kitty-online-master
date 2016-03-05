@@ -472,12 +472,12 @@
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_action_personal_normal.png"
     },
     {
-        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_pinterest.png",
-        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_pinterest.png"
-    },
-    {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable/com_facebook_button_login_silver_background.xml",
         "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/com_facebook_button_login_silver_background.xml"
+    },
+    {
+        "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_pinterest.png",
+        "source": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/src/main/res/drawable/umeng_socialize_pinterest.png"
     },
     {
         "merged": "/home/guoxiaoxing/Github/kitty-online-master/social_sdk_library_project/build/intermediates/res/merged/release/drawable/umeng_socialize_button_white_blue.xml",

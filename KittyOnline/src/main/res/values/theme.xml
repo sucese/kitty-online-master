@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/day_colorPrimary</item>
         <!--状态栏死色-->
         <item name="colorPrimaryDark">@color/day_colorPrimaryDark</item>
-        <item name="android:textColorLink">#0b9a27</item>
+        <item name="android:textColorLink">@color/primary</item>
         <!--CheckBox, RadioButtonhe SwitchCompat等点击选中的颜色-->
         <item name="colorAccent">@color/day_colorPrimary</item>
         <!--导航栏标题颜色-->

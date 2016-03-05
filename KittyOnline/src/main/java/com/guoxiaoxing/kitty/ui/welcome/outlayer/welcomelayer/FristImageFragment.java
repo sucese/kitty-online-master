@@ -20,7 +20,7 @@ import com.nineoldandroids.view.ViewHelper;
 /**
  * 第一页动画
  */
-public class LoginAnimImageFristFragment extends LoginAnimImageBaseFragment {
+public class FristImageFragment extends LoginAnimImageBaseFragment {
 
     private final int mScrollToBottomBitmapHeight = 864;
     private final int mScrollBitmapNomalHeight = 1286;

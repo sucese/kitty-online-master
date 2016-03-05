@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">爱尚佳品</string>
+    <string name="app_name">秀品</string>
 
 
     <!--欢迎界面-->
@@ -109,9 +109,9 @@
     <string name="get_verificaion">获取验证码</string>
     <string name="user_password_hint">密码</string>
     <string name="signin">注册</string>
-    <string name="signin_agreement">《爱尚佳品用户注册协议》</string>
+    <string name="signin_agreement">《秀品用户注册协议》</string>
     <string name="forget_password">忘记密码?</string>
-    <string name="welcome_signin">欢迎来到爱尚佳品</string>
+    <string name="welcome_signin">欢迎来到秀品</string>
     <string name="tip_please_input_username">请输入用户名</string>
     <string name="tip_illegal_email">请输入正确的email地址</string>
     <string name="tip_please_input_password">请输入密码</string>
@@ -121,9 +121,9 @@
 
     <string name="actionbar_title_news">资讯详情</string>
     <string name="actionbar_title_blog">博客详情</string>
-    <string name="actionbar_title_software">软件详情</string>
+    <string name="actionbar_title_goods">单品详情</string>
     <string name="actionbar_title_question">帖子详情</string>
-    <string name="actionbar_title_tweet">动弹详情</string>
+    <string name="actionbar_title_talk">说说详情</string>
     <string name="actionbar_title_event_detail">活动详情</string>
     <string name="actionbar_title_event_location">活动地址</string>
     <string name="actionbar_title_detail">详情</string>
@@ -174,13 +174,13 @@
 
     <string name="progress_submit">正在提交…</string>
 
-    <string name="tweet_public">发布动弹</string>
-    <string name="tweet_hint">今天你动弹了吗？</string>
-    <string name="tweet_publishing">正在发布你的动弹…</string>
-    <string name="tweet_publish_success">动弹发布成功</string>
-    <string name="tweet_publish_faile">发布动弹失败</string>
-    <string name="tweet_play_faile">动弹播放失败</string>
-    <string name="tweet_audio_faile">语音动弹发布失败</string>
+    <string name="tweet_public">发布说说</string>
+    <string name="tweet_hint">今天买了什么？</string>
+    <string name="tweet_publishing">正在发布你的说说…</string>
+    <string name="tweet_publish_success">说说发布成功</string>
+    <string name="tweet_publish_faile">发布说说失败</string>
+    <string name="tweet_play_faile">说说播放失败</string>
+    <string name="tweet_audio_faile">语音说说发布失败</string>
     <string name="cancle_record">取消录音</string>
     <string name="record_sound_notfound">找不到录音</string>
     <string name="record_sound_short">时间太短了</string>
@@ -197,8 +197,8 @@
     <string name="actionbar_title_softwarelist">开源软件</string>
     <string name="actionbar_title_comment">评论列表</string>
     <string name="actionbar_title_questions">技术问答</string>
-    <string name="actionbar_title_tweetpub">弹一弹</string>
-    <string name="actionbar_title_softtweet">软件动弹列表</string>
+    <string name="actionbar_title_tweetpub">分享生活</string>
+    <string name="actionbar_title_softtweet">软件说说列表</string>
     <string name="actionbar_title_user_center">用户中心</string>
     <string name="actionbar_title_user_blog">用户博客列表</string>
     <string name="actionbar_title_user_favorite">用户收藏</string>
@@ -206,7 +206,7 @@
     <string name="actionbar_title_my_friends">关注/粉丝</string>
     <string name="actionbar_title_setting">设置</string>
     <string name="actionbar_title_setting_notification">新消息提醒</string>
-    <string name="actionbar_title_about_osc">关于开源中国</string>
+    <string name="actionbar_title_about_osc">关于秀品</string>
     <string name="actionbar_title_note">便签</string>
     <string name="actionbar_title_noteedit">编辑便签</string>
     <string name="actionbar_title_shake">摇一摇</string>
@@ -232,8 +232,8 @@
     <string name="follower">粉丝</string>
     <string name="join_time">加入时间:</string>
     <string name="location">所在地区:</string>
-    <string name="development_platform">开发平台:</string>
-    <string name="academic_focus">专长领域:</string>
+    <string name="development_platform">她的小店:</string>
+    <string name="academic_focus">她喜欢的:</string>
 
     <string name="from_web">网页</string>
     <string name="from_mobile">手机</string>
@@ -265,7 +265,7 @@
     <string name="delete_success">删除成功</string>
     <string name="delete_faile">删除失败</string>
 
-    <string name="message_delete_tweet">是否删除该动弹?</string>
+    <string name="message_delete_tweet">是否删除该说说?</string>
 
     <!-- software detail -->
     <string name="software_author">软件作者 :</string>
@@ -311,7 +311,7 @@
     <string name="switch_theme">切换主题</string>
     <string name="loading_more">自动加载\"更多\"</string>
     <string name="update">检查新版本</string>
-    <string name="about">关于爱尚佳品</string>
+    <string name="about">关于秀品</string>
     <string name="feedback">意见反馈</string>
     <string name="exit">退出</string>
     <string name="grade">去评分</string>
@@ -347,7 +347,7 @@
     <string name="tip_report_success">举报成功</string>
     <string name="tip_report_faile">举报失败</string>
 
-    <string name="tip_double_click_exit">再次点击退出爱尚佳品</string>
+    <string name="tip_double_click_exit">再次点击退出秀品</string>
 
 
     <string name="team_dynamic">团队动态</string>

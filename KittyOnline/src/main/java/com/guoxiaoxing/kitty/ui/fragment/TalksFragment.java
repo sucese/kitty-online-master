@@ -156,7 +156,7 @@ public class TalksFragment extends BaseListFragment<UserTweet> implements
             long id) {
         UserTweet userTweet = mAdapter.getItem(position);
         if (userTweet != null) {
-            UIHelper.showTweetDetail(view.getContext(), null, userTweet.getId());
+            UIHelper.showTalkDetail(view.getContext(), null, userTweet.getId());
         }
     }
 

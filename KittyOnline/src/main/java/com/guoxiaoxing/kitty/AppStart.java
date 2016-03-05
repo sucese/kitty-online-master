@@ -74,8 +74,7 @@ public class AppStart extends FragmentActivity {
                 break;
             //正常启动
             case NORMAL:
-//                playUserGuide();
-                startApp();
+                playUserGuide();
                 break;
             default:
                 break;

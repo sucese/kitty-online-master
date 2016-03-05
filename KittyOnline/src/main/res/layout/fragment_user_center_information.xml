@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/layout_item_bg"
+        android:background="@drawable/rip_btn_white"
         android:clickable="true"
         android:padding="@dimen/space_16" >
 
@@ -41,7 +41,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/layout_item_bg"
+        android:background="@drawable/rip_btn_white"
         android:clickable="true"
         android:orientation="horizontal"
         android:padding="@dimen/space_16" >
@@ -70,7 +70,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?layout_item_bg"
+        android:background="@drawable/rip_btn_white"
         android:clickable="true"
         android:orientation="horizontal"
         android:padding="@dimen/space_16" >
@@ -99,7 +99,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/layout_item_bg"
+        android:background="@drawable/rip_btn_white"
         android:clickable="true"
         android:orientation="horizontal"
         android:padding="@dimen/space_16" >

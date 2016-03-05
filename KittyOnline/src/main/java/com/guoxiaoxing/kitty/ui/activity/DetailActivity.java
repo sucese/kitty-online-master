@@ -2,9 +2,11 @@ package com.guoxiaoxing.kitty.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.emoji.KJEmojiFragment;
@@ -24,8 +26,10 @@ import com.guoxiaoxing.kitty.ui.fragment.CommentFrament;
 import com.guoxiaoxing.kitty.ui.fragment.EventDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.NewsDetailFragment;
 import com.guoxiaoxing.kitty.ui.fragment.PostDetailFragment;
-import com.guoxiaoxing.kitty.ui.fragment.SoftwareDetailFragment;
-import com.guoxiaoxing.kitty.ui.fragment.TweetDetailFragment;
+import com.guoxiaoxing.kitty.ui.fragment.GoodsDetailFragment;
+import com.guoxiaoxing.kitty.ui.fragment.TalkDetailFragment;
+
+import butterknife.Bind;
 
 /**
  * 详情activity（包括：资讯、博客、软件、问答、动弹）
@@ -36,7 +40,7 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
 
     public static final int DISPLAY_NEWS = 0;
     public static final int DISPLAY_BLOG = 1;
-    public static final int DISPLAY_SOFTWARE = 2;
+    public static final int DISPLAY_GOODS = 2;
     public static final int DISPLAY_POST = 3;
     public static final int DISPLAY_TWEET = 4;
     public static final int DISPLAY_EVENT = 5;
@@ -48,6 +52,12 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
 
     public static final String BUNDLE_KEY_DISPLAY_TYPE = "BUNDLE_KEY_DISPLAY_TYPE";
 
+    @Bind(R.id.tb_detail_activity)
+    Toolbar mToolbar;
+
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+
     private OnSendClickListener currentFragment;
     public KJEmojiFragment emojiFragment = new KJEmojiFragment();
     public ToolbarFragment toolFragment = new ToolbarFragment();
@@ -55,6 +65,12 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_detail;
+    }
+
+    @Override
+    protected void setActionBar() {
+        super.setActionBar();
+        setSupportActionBar(mToolbar);
     }
 
     @Override
@@ -83,17 +99,17 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
                 actionBarTitle = R.string.actionbar_title_blog;
                 fragment = new BlogDetailFragment();
                 break;
-            case DISPLAY_SOFTWARE:
-                actionBarTitle = R.string.actionbar_title_software;
-                fragment = new SoftwareDetailFragment();
+            case DISPLAY_GOODS:
+                actionBarTitle = R.string.actionbar_title_goods;
+                fragment = new GoodsDetailFragment();
                 break;
             case DISPLAY_POST:
                 actionBarTitle = R.string.actionbar_title_question;
                 fragment = new PostDetailFragment();
                 break;
             case DISPLAY_TWEET:
-                actionBarTitle = R.string.actionbar_title_tweet;
-                fragment = new TweetDetailFragment();
+                actionBarTitle = R.string.actionbar_title_talk;
+                fragment = TalkDetailFragment.newInstance();
                 break;
             case DISPLAY_EVENT:
                 actionBarTitle = R.string.actionbar_title_event_detail;
@@ -121,7 +137,8 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
             default:
                 break;
         }
-        setActionBarTitle(actionBarTitle);
+//        setActionBarTitle(actionBarTitle);
+        mTvTitle.setText(actionBarTitle);
         FragmentTransaction trans = getSupportFragmentManager()
                 .beginTransaction();
         trans.replace(R.id.container, fragment);
@@ -147,7 +164,7 @@ public class DetailActivity extends BaseActivity implements OnSendClickListener 
 
     @Override
     public void initView() {
-        if (currentFragment instanceof TweetDetailFragment
+        if (currentFragment instanceof TalkDetailFragment
                 || currentFragment instanceof TeamTweetDetailFragment
                 || currentFragment instanceof TeamDiaryDetailFragment
                 || currentFragment instanceof TeamIssueDetailFragment

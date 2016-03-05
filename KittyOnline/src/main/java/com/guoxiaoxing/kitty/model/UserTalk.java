@@ -21,6 +21,8 @@ public class UserTalk extends AVObject {
     public static final String TALK_CONTENT = "talkContent";
     public static final String LIKE_TOTAL = "likeTotal";
     public static final String IMAGE_URLS = "imageUrls";
+    public static final String TALK_COMMENT= "talkComment";
+
 
 
     public String getUserName() {
@@ -70,6 +72,21 @@ public class UserTalk extends AVObject {
 
     public void setImageUrlList(ArrayList<String> imageUrlList) {
         put(IMAGE_URLS, imageUrlList);
+    }
+
+    public List<String> getCommentList(){
+
+        List<String> list = new ArrayList<>();
+        list.addAll(getList(TALK_COMMENT));
+        list.addAll(getList(TALK_COMMENT));
+        list.addAll(getList(TALK_COMMENT));
+        list.addAll(getList(TALK_COMMENT));
+        list.addAll(getList(TALK_COMMENT));
+        return list;
+    }
+
+    public void setCommentList(ArrayList<String> commentList){
+        put(TALK_COMMENT, commentList);
     }
 
 }

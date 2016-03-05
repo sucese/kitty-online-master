@@ -110,39 +110,39 @@ public class ShakeActivity extends BaseActivity implements SensorEventListener {
                 OSChinaApi.shake(new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-                        isRequest = false;
-                        final ShakeObject obj = XmlUtils.toBean(
-                                ShakeObject.class, new ByteArrayInputStream(
-                                        arg2));
-                        if (obj != null) {
-                            if (StringUtils.isEmpty(obj.getAuthor())
-                                    && StringUtils.isEmpty(obj
-                                    .getCommentCount())
-                                    && StringUtils.isEmpty(obj.getPubDate())) {
-                                jokeToast();
-                            } else {
-                                mLayoutBottom.setVisibility(View.VISIBLE);
-                                mLayoutBottom
-                                        .setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                UIHelper.showUrlShake(ShakeActivity.this, obj);
-                                            }
-                                        });
-                                Core.getKJBitmap().displayWithLoadBitmap(mImgHead,
-                                        obj.getImage(), R.drawable.widget_dface);
-                                mTvTitle.setText(obj.getTitle());
-                                mTvDetail.setText(obj.getDetail());
-                                mTvAuthor.setText(obj.getAuthor());
-                                TypefaceUtils.setTypeface(mTvAuthor);
-                                TypefaceUtils.setTypeFaceWithText(mTvCommentCount, R.string
-                                        .fa_comment, obj.getCommentCount() + "");
-                                TypefaceUtils.setTypeFaceWithText(mTvDate, R.string.fa_clock_o,
-                                        StringUtils.friendly_time(obj.getPubDate()));
-                            }
-                        } else {
-                            jokeToast();
-                        }
+//                        isRequest = false;
+//                        final ShakeObject obj = XmlUtils.toBean(
+//                                ShakeObject.class, new ByteArrayInputStream(
+//                                        arg2));
+//                        if (obj != null) {
+//                            if (StringUtils.isEmpty(obj.getAuthor())
+//                                    && StringUtils.isEmpty(obj
+//                                    .getCommentCount())
+//                                    && StringUtils.isEmpty(obj.getPubDate())) {
+//                                jokeToast();
+//                            } else {
+//                                mLayoutBottom.setVisibility(View.VISIBLE);
+//                                mLayoutBottom
+//                                        .setOnClickListener(new View.OnClickListener() {
+//                                            @Override
+//                                            public void onClick(View v) {
+//                                                UIHelper.showUrlShake(ShakeActivity.this, obj);
+//                                            }
+//                                        });
+//                                Core.getKJBitmap().displayWithLoadBitmap(mImgHead,
+//                                        obj.getImage(), R.drawable.widget_dface);
+//                                mTvTitle.setText(obj.getTitle());
+//                                mTvDetail.setText(obj.getDetail());
+//                                mTvAuthor.setText(obj.getAuthor());
+//                                TypefaceUtils.setTypeface(mTvAuthor);
+//                                TypefaceUtils.setTypeFaceWithText(mTvCommentCount, R.string
+//                                        .fa_comment, obj.getCommentCount() + "");
+//                                TypefaceUtils.setTypeFaceWithText(mTvDate, R.string.fa_clock_o,
+//                                        StringUtils.friendly_time(obj.getPubDate()));
+//                            }
+//                        } else {
+//                            jokeToast();
+//                        }
                     }
 
                     @Override

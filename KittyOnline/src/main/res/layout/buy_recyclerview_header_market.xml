@@ -113,7 +113,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:actualImageScaleType="focusCrop"
-                app:placeholderImage="@drawable/bazaar_4"
+                app:placeholderImage="@drawable/bazaar_1"
                 app:placeholderImageScaleType="focusCrop" />
 
             <TextView
@@ -155,7 +155,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:actualImageScaleType="focusCrop"
-                app:placeholderImage="@drawable/bazaar_4"
+                app:placeholderImage="@drawable/bazaar_1"
                 app:placeholderImageScaleType="focusCrop" />
 
             <TextView
@@ -176,7 +176,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:actualImageScaleType="focusCrop"
-                app:placeholderImage="@drawable/bazaar_4"
+                app:placeholderImage="@drawable/bazaar_0"
                 app:placeholderImageScaleType="focusCrop" />
 
             <TextView

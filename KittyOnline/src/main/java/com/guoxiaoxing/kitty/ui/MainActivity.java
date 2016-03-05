@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements
 
     public static Notice mNotice;
 
-    @Bind(android.R.id.tabhost)
+    @Bind(R.id.tabhost)
     MyFragmentTabHost mTabHost;
     @Bind(R.id.quick_option_iv)
     View mAddBt;
@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements
         unregisterReceiver(mReceiver);
         mReceiver = null;
         NoticeUtils.tryToShutDown(this);
+        AppManager.getAppManager().remove(this);
     }
 
     @Override
@@ -260,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements
 
             if (i == 2) {
                 indicator.setVisibility(View.INVISIBLE);
-                mTabHost.setNoTabChangedTag(getString(mainTab.getResName()));
+//                mTabHost.setNoTabChangedTag(getString(mainTab.getResName()));
             }
 
             title.setText(getString(mainTab.getResName()));
@@ -289,13 +290,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-    }
-
-    public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
     }
 
     @Override

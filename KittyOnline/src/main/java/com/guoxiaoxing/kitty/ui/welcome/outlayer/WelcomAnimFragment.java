@@ -14,9 +14,9 @@ import com.guoxiaoxing.kitty.adapter.ImageFragmentStatePagerAdapter;
 import com.guoxiaoxing.kitty.adapter.TextFragmentStatePagerAdapter;
 import com.guoxiaoxing.kitty.model.TextBean;
 import com.guoxiaoxing.kitty.ui.welcome.base.LoginAnimImageBaseFragment;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageFristFragment;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageSecondFragment;
-import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.LoginAnimImageThridFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.FristImageFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.SecondImageFragment;
+import com.guoxiaoxing.kitty.ui.welcome.outlayer.welcomelayer.ThridImageFragment;
 import com.guoxiaoxing.kitty.widget.ChildViewPager;
 import com.guoxiaoxing.kitty.widget.WelcomeIndicator;
 
@@ -28,10 +28,10 @@ import java.util.ArrayList;
  */
 public class WelcomAnimFragment extends Fragment {
 
-    public ChildViewPager imageViewPager ;
-    public ChildViewPager textViewPager ;
-    public WelcomeIndicator view_indicator ;
-    public TextView tv_skip ;
+    public ChildViewPager imageViewPager;
+    public ChildViewPager textViewPager;
+    public WelcomeIndicator view_indicator;
+    public TextView tv_skip;
     public RelativeLayout rl_indicator;
 
     public int mOldPosition = -1;
@@ -55,7 +55,7 @@ public class WelcomAnimFragment extends Fragment {
     }
 
 
-    private void initImageFragmentViewPager(){
+    private void initImageFragmentViewPager() {
         imageViewPager.setOffscreenPageLimit(3);
         mImageFragmentStatePagerAdapter = new ImageFragmentStatePagerAdapter(getChildFragmentManager());
         imageViewPager.setAdapter(mImageFragmentStatePagerAdapter);
@@ -63,69 +63,71 @@ public class WelcomAnimFragment extends Fragment {
 
         imageViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int i, float v, int i2) { }
+            public void onPageScrolled(int i, float v, int i2) {
+            }
 
             @Override
             public void onPageSelected(int i) {
-                if(i == imageViewPager.getAdapter().getCount() - 1){
+                if (i == imageViewPager.getAdapter().getCount() - 1) {
                     mIsMoveParent = true;
-                }
-                else{
+                } else {
                     mIsMoveParent = false;
                 }
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) { }
+            public void onPageScrollStateChanged(int i) {
+            }
         });
     }
 
     /**
      * 初始化文字动画数据
      */
-    private void initTextFragmentViewPager(){
-        ArrayList<TextBean> mTextBeans = new ArrayList<TextBean>();
+    private void initTextFragmentViewPager() {
+        ArrayList<TextBean> mTextBeans = new ArrayList<>();
         TextBean bean0 = new TextBean();
         bean0.mId = 0;
-        bean0.mTitle = "欢迎来到小红书!";
-        bean0.mContent = "在开始您小红书的旅途之前.一起来了解一下小红书购物笔记的几个特色吧";
+        bean0.mTitle = "欢迎来到秀品!";
+        bean0.mContent = "更酷更时尚的购物尽在秀品购物.";
         mTextBeans.add(bean0);
 
         TextBean bean1 = new TextBean();
         bean1.mId = 1;
-        bean1.mTitle = "购物笔记";
-        bean1.mContent = "精选达人笔记,以及所有关注的笔记,尽收眼底.";
+        bean1.mTitle = "商品分类";
+        bean1.mContent = "丰富多彩的商品，满足您的各种时尚需求.";
         mTextBeans.add(bean1);
 
         TextBean bean2 = new TextBean();
         bean2.mId = 2;
-        bean2.mTitle = "福利社";
-        bean2.mContent = "在这里,全世界的好东西都出触手可及!只需轻轻一点,将长草的好物收入囊中.";
+        bean2.mTitle = "推荐商品";
+        bean2.mContent = "时尚大牌，品牌折扣，为你推荐.";
         mTextBeans.add(bean2);
 
         TextBean bean3 = new TextBean();
         bean3.mId = 3;
-        bean3.mTitle = "心愿单!";
-        bean3.mContent = "你可以将其他人的笔记收藏起来啦!不仅如此,还可以订阅达人的心愿单.";
+        bean3.mTitle = "风格商品";
+        bean3.mContent = "各种风格商品标识，让你自由定位心仪商品.";
         mTextBeans.add(bean3);
 
-        TextFragmentStatePagerAdapter adapterText = new TextFragmentStatePagerAdapter(getChildFragmentManager(),mTextBeans);
+        TextFragmentStatePagerAdapter adapterText = new TextFragmentStatePagerAdapter(getChildFragmentManager(), mTextBeans);
         textViewPager.setAdapter(adapterText);
         view_indicator.init(mTextBeans.size());
 
         /**
          * 文字动画层滑动监听
          */
-        textViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        textViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int i, float v, int i2) { }
+            public void onPageScrolled(int i, float v, int i2) {
+            }
 
             @Override
             public void onPageSelected(int p) {
-                if(mOldPosition < 0){
+                if (mOldPosition < 0) {
                     mOldPosition = 0;
                 }
-                view_indicator.play(mOldPosition,p);
+                view_indicator.play(mOldPosition, p);
 
                 /**
                  * 上层图片动画的viewpager有3个子fragment
@@ -133,36 +135,31 @@ public class WelcomAnimFragment extends Fragment {
                  *        0   1   2  -->  图片动画
                  *   0   1   2   3  -->  文字动画
                  */
-                if(p == 0){
+                if (p == 0) {
                     imageViewPager.mIsLockScoll = true;
-                    if(mOldPosition == 1){
+                    if (mOldPosition == 1) {
                         mFristPageSuperLock = true;
                     }
-                }
-                else if(p == 1){
+                } else if (p == 1) {
                     imageViewPager.mIsLockScoll = false;
-                    if(mFristPageSuperLock){
+                    if (mFristPageSuperLock) {
                         mFristPageSuperLock = false;
-                    }
-                    else{
+                    } else {
                         reset();
-                        LoginAnimImageFristFragment fragment = (LoginAnimImageFristFragment)mImageFragmentStatePagerAdapter.getFragement(0);
+                        FristImageFragment fragment = (FristImageFragment) mImageFragmentStatePagerAdapter.getFragement(0);
                         fragment.playInAnim();
                     }
-                }
-                else if(p == 2){
+                } else if (p == 2) {
                     imageViewPager.mIsLockScoll = false;
                     reset();
-                    LoginAnimImageSecondFragment fragment = (LoginAnimImageSecondFragment)mImageFragmentStatePagerAdapter.getFragement(1);
+                    SecondImageFragment fragment = (SecondImageFragment) mImageFragmentStatePagerAdapter.getFragement(1);
                     fragment.playInAnim();
-                }
-                else if(p == 3){
+                } else if (p == 3) {
                     imageViewPager.mIsLockScoll = false;
                     reset();
-                    LoginAnimImageThridFragment fragment = (LoginAnimImageThridFragment)mImageFragmentStatePagerAdapter.getFragement(2);
+                    ThridImageFragment fragment = (ThridImageFragment) mImageFragmentStatePagerAdapter.getFragement(2);
                     fragment.playInAnim();
-                }
-                else{
+                } else {
                     imageViewPager.mIsLockScoll = false;
                     reset();
                 }
@@ -170,16 +167,17 @@ public class WelcomAnimFragment extends Fragment {
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) { }
+            public void onPageScrollStateChanged(int i) {
+            }
         });
     }
 
     /**
      * 非当前展示动画页,停止动画,回复初始状态
      */
-    public void reset(){
-        if(mOldPosition > 0){
-            LoginAnimImageBaseFragment fragment = (LoginAnimImageBaseFragment)mImageFragmentStatePagerAdapter.getFragement(mOldPosition - 1);
+    public void reset() {
+        if (mOldPosition > 0) {
+            LoginAnimImageBaseFragment fragment = (LoginAnimImageBaseFragment) mImageFragmentStatePagerAdapter.getFragement(mOldPosition - 1);
             fragment.reset();
         }
     }
@@ -188,10 +186,12 @@ public class WelcomAnimFragment extends Fragment {
      * 跳过监听
      */
     public WelcomAnimFragmentInterface mWelcomAnimFragmentInterface;
-    public void setWelcomAnimFragmentInterface(WelcomAnimFragmentInterface mInterface){
+
+    public void setWelcomAnimFragmentInterface(WelcomAnimFragmentInterface mInterface) {
         this.mWelcomAnimFragmentInterface = mInterface;
     }
-    public interface WelcomAnimFragmentInterface{
+
+    public interface WelcomAnimFragmentInterface {
         void onSkip();
     }
 }

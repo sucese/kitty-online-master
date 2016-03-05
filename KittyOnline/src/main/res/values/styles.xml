@@ -76,8 +76,8 @@
 
     <!--方形图片中 -->
     <style name="image_rect_middle">
-        <item name="android:layout_width">90dp</item>
-        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">160dp</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
@@ -131,11 +131,11 @@
     </style>
 
     <style name="text_title_small" parent="text_base_title">
-        <item name="android:textSize">@dimen/text_size_15</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
     </style>
 
     <style name="text_title_middle" parent="text_base_title">
-        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textSize">@dimen/text_size_15</item>
     </style>
 
     <style name="text_title_large" parent="text_base_title">

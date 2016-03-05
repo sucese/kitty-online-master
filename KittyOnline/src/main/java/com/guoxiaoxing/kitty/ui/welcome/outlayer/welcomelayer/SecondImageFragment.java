@@ -26,7 +26,7 @@ import com.nineoldandroids.view.ViewHelper;
 /**
  * 第二页动画
  */
-public class LoginAnimImageSecondFragment extends LoginAnimImageBaseFragment {
+public class SecondImageFragment extends LoginAnimImageBaseFragment {
 
     private final int DURATION_GOODS = 1000;
 
@@ -65,7 +65,9 @@ public class LoginAnimImageSecondFragment extends LoginAnimImageBaseFragment {
         Bitmap bitmap = bitmapScale(mImageViewWidth, bmpScroll, BITMAP_SCROLL);
         iv_scroll.setImageBitmap(bitmap);
 
-        iv_goods.setImageBitmap(bitmapScale((int) ((float) (bitmap.getHeight() * mGoodsBitmapNomalHeight) / mScrollBitmapNomalHeight), bmpGoods, BITMAP_SHIELD));
+//        iv_goods.setImageBitmap(bitmapScale((int) ((float) (bitmap.getHeight() * mGoodsBitmapNomalHeight) / mScrollBitmapNomalHeight), bmpGoods, BITMAP_SHIELD));
+        iv_goods.setImageBitmap(bitmapScale(340, bmpGoods, BITMAP_SHIELD));
+        iv_goods.setScaleType(ImageView.ScaleType.CENTER_CROP);
         iv_goods.setVisibility(View.GONE);
 
         bmpBuysIng = bitmapScale(BitmapFactory.decodeResource(getResources(), R.drawable.welcomeanim_second_buging));
@@ -94,7 +96,12 @@ public class LoginAnimImageSecondFragment extends LoginAnimImageBaseFragment {
         ViewHelper.setY(iv_scroll, mAnimStartY);
 
         if (mObjectAnimator == null) {
-            mObjectAnimator = ObjectAnimator.ofFloat(iv_scroll, "y", mAnimStartY, mAnimStartY - mNewScrollBitmapHeight * mScrollBitmapSpitHeight / mScrollBitmapHeight);
+//            mObjectAnimator = ObjectAnimator.ofFloat(iv_scroll, "y", mAnimStartY, mAnimStartY - mNewScrollBitmapHeight *
+//                    mScrollBitmapSpitHeight / mScrollBitmapHeight);
+
+            mObjectAnimator = ObjectAnimator.ofFloat(iv_scroll, "y", mAnimStartY, (mAnimStartY - mNewScrollBitmapHeight *
+                    mScrollBitmapSpitHeight / mScrollBitmapHeight) * 2);
+
             mObjectAnimator.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
@@ -159,6 +166,7 @@ public class LoginAnimImageSecondFragment extends LoginAnimImageBaseFragment {
                                             }
                                         }, 200);
                                         mIsAnimatorSetGoodsStart = false;
+                                        iv_goods.setVisibility(View.GONE);
                                     }
 
                                     @Override

@@ -13,8 +13,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.MainBuyAdapter;
+import com.guoxiaoxing.kitty.model.Goods;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
@@ -28,6 +32,7 @@ import com.guoxiaoxing.kitty.widget.timecounter.CountdownView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 
@@ -77,7 +82,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.t(TAG).d("onCreate()");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -87,7 +91,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Logger.t(TAG).d("onAttach()");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -104,14 +107,12 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Logger.t(TAG).d("onViewCreated()");
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Logger.t(TAG).d("onResume()");
         mAdapter.startBannerTurning();
 
     }
@@ -119,7 +120,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void onPause() {
         super.onPause();
-        Logger.t(TAG).d("onPause()");
 //        mConvenientBanner.stopTurning();
     }
 
@@ -127,14 +127,12 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Logger.t(TAG).d("onDestroyView()");
         mAdapter.stopBannerTurning();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        Logger.t(TAG).d("onDetach()");
         mListener = null;
     }
 
@@ -192,7 +190,6 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
 
     @Override
     public void initView(View view) {
-        Logger.t(TAG).d("onCreateView() -- initView()");
         initToolbar();
         initContentView();
     }
@@ -200,6 +197,19 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
     @Override
     public void initData() {
         super.initData();
+
+        AVQuery<Goods> query = AVQuery.getQuery(Goods.class);
+        query.findInBackground(new FindCallback<Goods>() {
+            @Override
+            public void done(List<Goods> list, AVException e) {
+                if (e == null) {
+                    mAdapter.setData(new ArrayList<>(list));
+                    mAdapter.notifyDataSetChanged();
+                } else {
+
+                }
+            }
+        });
     }
 
     public void onButtonPressed(Uri uri) {
@@ -277,6 +287,14 @@ public class MainBuyFragment extends BaseFragment implements AdapterView.OnItemC
         mRecyclerView.setLayoutManager(mGridLayoutManager);
         mAdapter = new MainBuyAdapter();
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setmOnRecyclerViewItemClickListener(new MainBuyAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, Goods goods) {
+
+                UIHelper.showGoodsDetail(view.getContext(), goods);
+            }
+        });
     }
 
 }

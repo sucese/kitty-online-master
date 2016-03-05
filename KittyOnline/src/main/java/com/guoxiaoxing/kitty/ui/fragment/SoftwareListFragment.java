@@ -68,7 +68,7 @@ public class SoftwareListFragment extends BaseListFragment<SoftwareDec> {
 	SoftwareDec softwaredec = (SoftwareDec) mAdapter.getItem(position);
 	if (softwaredec != null) {
 	    String ident = softwaredec.getUrl().substring(softwaredec.getUrl().lastIndexOf("/") + 1);
-	    UIHelper.showSoftwareDetail(getActivity(), ident);
+//	    UIHelper.showGoodsDetail(getActivity(), ident);
 	    // 放入已读列表
 	    saveToReadedList(view, SoftwareList.PREF_READED_SOFTWARE_LIST,
 		    softwaredec.getName());

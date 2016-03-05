@@ -6,14 +6,13 @@
         android:id="@+id/iv_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_repeat_bg" />
+        android:background="@color/transparent" />
 
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/welcome_logo" />
+        android:layout_gravity="center"/>
 
     <com.guoxiaoxing.kitty.ui.welcome.base.ParentViewPager
         android:id="@+id/vp_parent"

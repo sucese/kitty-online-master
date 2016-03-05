@@ -11,7 +11,7 @@
         <!--可以让包含在其中的控件响应被标记了ScrollingViewBehavior的View的滚动事件-->
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="330dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 

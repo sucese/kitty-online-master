@@ -98,7 +98,7 @@ public class SoftWareTweetsFrament extends BaseListFragment<UserTweet> implement
         if (userTweet == null) {
             return;
         }
-        UIHelper.showTweetDetail(parent.getContext(), userTweet, userTweet.getId());
+//        UIHelper.showTalkDetail(parent.getContext(), userTweet, userTweet.getId());
     }
 
     private void handleComment(String text) {

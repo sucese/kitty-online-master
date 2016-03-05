@@ -79,6 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         super.onDestroy();
         TDevice.hideSoftKeyboard(getCurrentFocus());
         ButterKnife.unbind(this);
+        AppManager.getAppManager().remove(this);
     }
 
     protected void onBeforeSetContentLayout() {

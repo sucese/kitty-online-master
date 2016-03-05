@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/shape_round_red" />
+            android:background="@color/white_half" />
 
         <com.guoxiaoxing.kitty.widget.ChildViewPager
             android:id="@+id/vp_textanim"

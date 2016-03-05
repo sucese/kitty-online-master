@@ -8,19 +8,18 @@
     android:scrollbars="none">
 
 
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
 
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_notification_settings"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -29,12 +28,12 @@
                 android:textSize="@dimen/text_size_16" />
         </RelativeLayout>
 
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_clean_cache"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -47,20 +46,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                tools:text="13M"
                 android:textColor="?attr/infoTextColor"
-                android:textSize="@dimen/text_size_14" />
+                android:textSize="@dimen/text_size_14"
+                tools:text="13M" />
         </RelativeLayout>
-
 
 
         <View
             style="@style/h_line"
-            android:layout_marginTop="20dip"/>
+            android:layout_marginTop="10dip" />
 
         <RelativeLayout
             android:id="@+id/rl_loading_img"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -75,13 +74,12 @@
         </RelativeLayout>
 
 
-
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_switch_theme"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -95,12 +93,12 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
 
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_double_click_exit"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -114,13 +112,12 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
 
-        <View
-            style="@style/h_line"/>
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_loading_more"
             style="@style/option_item_rl"
-            android:visibility="gone" >
+            android:visibility="gone">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -136,11 +133,12 @@
 
         <View
             style="@style/h_line"
-            android:layout_marginTop="20dip"/>
+            android:layout_marginTop="10dip" />
 
         <RelativeLayout
             android:id="@+id/rl_about"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 style="@style/option_item_text_parent"
@@ -149,12 +147,12 @@
                 android:textSize="@dimen/text_size_16" />
         </RelativeLayout>
 
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
 
         <RelativeLayout
             android:id="@+id/rl_exit"
-            style="@style/option_item_rl" >
+            style="@style/option_item_rl"
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/setting_logout"
@@ -164,8 +162,7 @@
                 android:textSize="@dimen/text_size_16" />
         </RelativeLayout>
 
-        <View
-            style="@style/h_line" />
+        <View style="@style/h_line" />
     </LinearLayout>
 
 </ScrollView>

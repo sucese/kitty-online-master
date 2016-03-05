@@ -12,6 +12,7 @@ import com.guoxiaoxing.kitty.R;
 import com.guoxiaoxing.kitty.adapter.TalkAdapter;
 import com.guoxiaoxing.kitty.model.UserTalk;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
+import com.guoxiaoxing.kitty.util.UIHelper;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ import butterknife.Bind;
 /**
  * @author guoxiaoxing
  */
-public class DetailFragment extends BaseFragment {
+public class TalkFragment extends BaseFragment {
 
 
     @Bind(R.id.rv_container)
@@ -29,9 +30,9 @@ public class DetailFragment extends BaseFragment {
 
     private TalkAdapter mTalkAdapter;
 
-    public static DetailFragment newInstance(String info) {
+    public static TalkFragment newInstance(String info) {
         Bundle args = new Bundle();
-        DetailFragment fragment = new DetailFragment();
+        TalkFragment fragment = new TalkFragment();
         args.putString("info", info);
         fragment.setArguments(args);
         return fragment;
@@ -53,7 +54,14 @@ public class DetailFragment extends BaseFragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mTalkAdapter = new TalkAdapter();
+//        mRecyclerView.setAdapter(new AlphaInAnimationAdapter(mTalkAdapter));
         mRecyclerView.setAdapter(mTalkAdapter);
+        mTalkAdapter.setmOnRecyclerVIewItemClickListener(new TalkAdapter.OnRecyclerVIewItemClickListener() {
+            @Override
+            public void onItemClick(View view, UserTalk userTalk) {
+                UIHelper.showTalkDetail(view.getContext(), userTalk, 0);
+            }
+        });
     }
 
     @Override

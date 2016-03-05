@@ -1,13 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/ll_parent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none" >
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,21 +17,22 @@
                 android:id="@+id/iv_scroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                tools:src="@drawable/welcomeanim_thrid_scrollbg" />
 
             <ImageView
                 android:id="@+id/iv_shield"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                tools:src="@drawable/welcomeanim_thrid_shield" />
 
             <ImageView
                 android:id="@+id/iv_care"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/iv_shield"
-                android:visibility="gone"  />
+                tools:src="@drawable/welcomeanim_thrid_shield_care" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

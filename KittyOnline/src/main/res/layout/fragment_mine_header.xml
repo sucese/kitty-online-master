@@ -27,7 +27,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/space_20"
                 android:contentDescription="@null"
-                android:src="@drawable/widget_dface"
+                android:src="@drawable/ic_default_user_logo"
                 app:border_color="@color/white"
                 app:border_width="2dip" />
 
@@ -53,8 +53,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
             android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -63,7 +63,8 @@
 
                 <TextView
                     android:id="@+id/tv_score"
-                    style="@style/user_formation_text" />
+                    style="@style/user_formation_text"
+                    android:text="0" />
 
                 <TextView
                     style="@style/user_formation_info"
@@ -76,7 +77,8 @@
 
                 <TextView
                     android:id="@+id/tv_favorite"
-                    style="@style/user_formation_text" />
+                    style="@style/user_formation_text"
+                    android:text="0" />
 
                 <TextView
                     style="@style/user_formation_info"
@@ -89,7 +91,8 @@
 
                 <TextView
                     android:id="@+id/tv_following"
-                    style="@style/user_formation_text" />
+                    style="@style/user_formation_text"
+                    android:text="0" />
 
                 <TextView
                     style="@style/user_formation_info"
@@ -102,7 +105,8 @@
 
                 <TextView
                     android:id="@+id/tv_follower"
-                    style="@style/user_formation_text" />
+                    style="@style/user_formation_text"
+                    android:text="0" />
 
                 <TextView
                     style="@style/user_formation_info"

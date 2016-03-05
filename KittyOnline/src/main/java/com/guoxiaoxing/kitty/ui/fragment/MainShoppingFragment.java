@@ -23,14 +23,13 @@ import android.widget.ImageView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.FindCallback;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.guoxiaoxing.kitty.AppConfig;
 import com.guoxiaoxing.kitty.R;
-import com.guoxiaoxing.kitty.adapter.MainShoppingAdapter;
 import com.guoxiaoxing.kitty.model.AdvertisementBanner;
 import com.guoxiaoxing.kitty.model.SimpleBackPage;
 import com.guoxiaoxing.kitty.ui.base.BaseFragment;
 import com.guoxiaoxing.kitty.util.UIHelper;
-import com.guoxiaoxing.kitty.util.log.Logger;
 import com.guoxiaoxing.kitty.widget.banner.ConvenientBanner;
 import com.guoxiaoxing.kitty.widget.banner.holder.CBViewHolderCreator;
 import com.guoxiaoxing.kitty.widget.banner.holder.NetworkImageHolderView;
@@ -73,8 +72,14 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Bind(R.id.vp_title)
     ViewPager mVpTitle;
 
+    @Bind(R.id.sdv_first)
+    SimpleDraweeView mSdvFirst;
+    @Bind(R.id.sdv_second)
+    SimpleDraweeView mSdvSecond;
+    @Bind(R.id.sdv_three)
+    SimpleDraweeView mSdvThree;
+
     private OnFragmentInteractionListener mListener;
-    MainShoppingAdapter mAdapter = null;
     LinearLayoutManager mLayoutManager;
     int moreNum = 2;
     boolean isDrag = true;
@@ -88,6 +93,16 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
             "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_2.jpg",
             "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_3.jpg",
             "http://7xq26k.com1.z0.glb.clouddn.com/bannermain_banner_4.jpg"};
+
+    private String[] bazaar = {
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_2.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_3.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_4.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_5.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_6.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_0.jpg",
+            "http://7xq26k.com1.z0.glb.clouddn.com/bazaar_1.jpg"
+    };
 
     public MainShoppingFragment() {
     }
@@ -104,7 +119,6 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.t(TAG).d("onCreate()");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -114,7 +128,6 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Logger.t(TAG).d("onAttach()");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -127,21 +140,18 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Logger.t(TAG).d("onViewCreated()");
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Logger.t(TAG).d("onResume()");
         mConvenientBanner.startTurning(AppConfig.VIEWPAGER_TRANSFORM_TIME);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Logger.t(TAG).d("onPause()");
         mConvenientBanner.stopTurning();
     }
 
@@ -149,13 +159,11 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Logger.t(TAG).d("onDestroyView()");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        Logger.t(TAG).d("onDetach()");
         mListener = null;
     }
 
@@ -220,7 +228,6 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     @Override
     public void initView(View view) {
-        Logger.t(TAG).d("onCreateView() -- initView()");
         initToolbar();
         initContentView();
     }
@@ -317,56 +324,13 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
         });
     }
 
-    private void initHeaderView() {
-
-//        List<String> networkImages = Arrays.asList(images);
-//
-//        mConvenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
-//            @Override
-//            public NetworkImageHolderView createHolder() {
-//                return new NetworkImageHolderView();
-//            }
-//        }, networkImages)              //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused});
-
-        //本地图片例子
-//        mConvenientBanner.setPages(
-//                new CBViewHolderCreator<LocalImageHolderView>() {
-//                    @Override
-//                    public LocalImageHolderView createHolder() {
-//                        return new LocalImageHolderView();
-//                    }
-//                }, localImages)
-//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-////                .setOnPageChangeListener(this)//监听翻页事件
-//                .setOnItemClickListener(this);
-//        mConvenientBanner.getViewPager().setPageTransformer(true, new CubeOutTransformer());
-//        mCbHomeAd.setManualPageable(false);//设置不能手动影响
-    }
-
     private void initContentView() {
 
-//        mSrlRoot.setOnRefreshListener(this);
-//
-//        mSrlRoot.setColorSchemeResources(
-//                android.R.color.holo_blue_bright,
-//                android.R.color.holo_green_light,
-//                android.R.color.holo_orange_light,
-//                android.R.color.holo_red_light);
-//        mSrlRoot.setDistanceToTriggerSync(1000);
-//        mSrlRoot.setSize(SwipeRefreshLayout.DEFAULT);
-//        initHeaderView();
-        //Toolbar
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mSdvFirst.setImageURI(Uri.parse(bazaar[0]));
+        mSdvSecond.setImageURI(Uri.parse(bazaar[1]));
+        mSdvThree.setImageURI(Uri.parse(bazaar[2]));
 
-//使用CollapsingToolbarLayout后，title需要设置到CollapsingToolbarLayout上
-//        mCtlLayout.setTitle("失控");
-
-//设置ViewPager
         setupViewPager(mVpTitle);
 
 //给TabLayout增加Tab, 并关联ViewPager
@@ -385,16 +349,16 @@ public class MainShoppingFragment extends BaseFragment implements AdapterView.On
 
     private void setupViewPager(ViewPager mViewPager) {
         MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(DetailFragment.newInstance(""), "关注");
-        adapter.addFragment(DetailFragment.newInstance(""), "热门");
-        adapter.addFragment(DetailFragment.newInstance(""), "我配");
-        adapter.addFragment(DetailFragment.newInstance(""), "私搭");
-        adapter.addFragment(DetailFragment.newInstance(""), "晒货");
-        adapter.addFragment(DetailFragment.newInstance(""), "星榜");
-        adapter.addFragment(DetailFragment.newInstance(""), "妆呗");
-        adapter.addFragment(DetailFragment.newInstance(""), "男票");
-        adapter.addFragment(DetailFragment.newInstance(""), "好吃");
-        adapter.addFragment(DetailFragment.newInstance(""), "脸赞");
+        adapter.addFragment(TalkFragment.newInstance(""), "关注");
+        adapter.addFragment(TalkFragment.newInstance(""), "热门");
+        adapter.addFragment(TalkFragment.newInstance(""), "我配");
+        adapter.addFragment(TalkFragment.newInstance(""), "私搭");
+        adapter.addFragment(TalkFragment.newInstance(""), "晒货");
+        adapter.addFragment(TalkFragment.newInstance(""), "星榜");
+        adapter.addFragment(TalkFragment.newInstance(""), "妆呗");
+        adapter.addFragment(TalkFragment.newInstance(""), "男票");
+        adapter.addFragment(TalkFragment.newInstance(""), "好吃");
+        adapter.addFragment(TalkFragment.newInstance(""), "脸赞");
         mViewPager.setAdapter(adapter);
     }
 

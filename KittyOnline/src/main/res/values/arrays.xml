@@ -53,10 +53,10 @@
     </string-array>
 
     <string-array name="search">
-        <item>软件</item>
-        <item>问答</item>
-        <item>博客</item>
-        <item>资讯</item>
+        <item>商品</item>
+        <item>用户</item>
+        <item>小店</item>
+        <item>活动</item>
     </string-array>
 
     <string-array name="friends_viewpage_arrays">

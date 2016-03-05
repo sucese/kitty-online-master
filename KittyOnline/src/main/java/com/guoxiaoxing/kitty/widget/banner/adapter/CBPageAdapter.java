@@ -91,7 +91,9 @@ public class CBPageAdapter<T> extends PagerAdapter {
         if (view == null) {
             holder = (Holder) holderCreator.createHolder();
             view = holder.createView(container.getContext());
-            view.setTag(R.id.cb_item_tag, holder);
+            if(view != null){
+                view.setTag(R.id.cb_item_tag, holder);
+            }
         } else {
             holder = (Holder<T>) view.getTag(R.id.cb_item_tag);
         }

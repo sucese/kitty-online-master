@@ -141,7 +141,7 @@ public class TalkPubFragment extends BaseFragment implements
         }
         if (mEtInput.getText().length() == 0) {
             mSendMenu.setEnabled(false);
-            mSendMenu.setIcon(R.drawable.actionbar_unsend_icon);
+            mSendMenu.setIcon(R.drawable.actionbar_send_icon);
         } else {
             mSendMenu.setEnabled(true);
             mSendMenu.setIcon(R.drawable.actionbar_send_icon);

@@ -10,7 +10,7 @@
     <!--广告栏-->
 
     <dimen name="banner_large_height">160dp</dimen>
-    <dimen name="banner_small_height">100dp</dimen>
+    <dimen name="banner_small_height">120dp</dimen>
 
     <!--卡片-->
     <dimen name="card_view_elevation">3dp</dimen>
@@ -200,6 +200,8 @@
     <dimen name="text_17">17sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
+
+    <dimen name="action_bar_title_size">16sp</dimen>
 
 
 </resources>

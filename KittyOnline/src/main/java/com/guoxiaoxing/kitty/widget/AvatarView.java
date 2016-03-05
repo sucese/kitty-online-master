@@ -57,7 +57,7 @@ public class AvatarView extends CircleImageView {
 
     public void setAvatarUrl(String url) {
         if (StringUtils.isEmpty(url)) {
-            setImageResource(R.drawable.widget_dface);
+            setImageResource(R.drawable.ic_default_user_logo);
             return;
         }
         // 由于头像地址默认加了一段参数需要去掉

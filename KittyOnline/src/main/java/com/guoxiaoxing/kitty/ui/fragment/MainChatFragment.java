@@ -56,13 +56,13 @@ public class MainChatFragment extends BaseFragment {
                 UIHelper.showMyActive(getActivity());
                 break;
             case R.id.ll_find_friend:
-                showFindUser();
+                UIHelper.showMyActive(getActivity());
                 break;
             case R.id.ll_city:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.SAME_CITY);
+                UIHelper.showMyActive(getActivity());
                 break;
             case R.id.ll_activities:
-                UIHelper.showSimpleBack(getActivity(), SimpleBackPage.EVENT_LIST);
+                UIHelper.showMyActive(getActivity());
                 break;
             case R.id.ll_scan:
                 UIHelper.showScanActivity(getActivity());

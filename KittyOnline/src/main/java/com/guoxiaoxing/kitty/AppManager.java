@@ -38,6 +38,12 @@ public class AppManager {
         activityStack.add(activity);
     }
 
+    public void remove(Activity activity) {
+        if (activityStack != null) {
+            activityStack.remove(activity);
+        }
+    }
+
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
      */

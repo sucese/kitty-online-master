@@ -21,7 +21,7 @@ import com.nineoldandroids.view.ViewHelper;
 /**
  * 第三页动画
  */
-public class LoginAnimImageThridFragment extends LoginAnimImageBaseFragment {
+public class ThridImageFragment extends LoginAnimImageBaseFragment {
 
     private final int mScrollBitmapSpitHeight = 350;
     private final int mScrollBitmapNomalHeight = 1378;
@@ -51,14 +51,20 @@ public class LoginAnimImageThridFragment extends LoginAnimImageBaseFragment {
 
 
         Bitmap bmpCare= bitmapScale(BitmapFactory.decodeResource(getResources(), R.drawable.welcomeanim_thrid_shield_care));
-        iv_care.setScaleType(ImageView.ScaleType.MATRIX);
+        iv_care.setScaleType(ImageView.ScaleType.CENTER_CROP);
         iv_care.setImageBitmap(bmpCare);
 
         RelativeLayout.LayoutParams paramsGoods = (RelativeLayout.LayoutParams) iv_care.getLayoutParams();
         int goodsMarginTopHeigth = mNewScrollBitmapHeight * mCareToTopHeight / mScrollBitmapNomalHeight ;
         int goodsMarginLeft = mNewScrollBitmapHeight * mCareToLeftHeight / mScrollBitmapNomalHeight ;
-        paramsGoods.topMargin = goodsMarginTopHeigth;
-        paramsGoods.leftMargin = goodsMarginLeft;
+//        paramsGoods.topMargin = goodsMarginTopHeigth;
+//        paramsGoods.leftMargin = goodsMarginLeft;
+
+        paramsGoods.topMargin = 200;
+        paramsGoods.leftMargin = 25;
+        paramsGoods.width = 350;
+        paramsGoods.height = 350;
+
         iv_care.setLayoutParams(paramsGoods);
         iv_care.setVisibility(View.GONE);
         return view;
@@ -72,7 +78,9 @@ public class LoginAnimImageThridFragment extends LoginAnimImageBaseFragment {
         ViewHelper.setY(iv_scroll, mAnimStartY);
 
         if(mObjectAnimator == null){
-            mObjectAnimator = ObjectAnimator.ofFloat(iv_scroll, "y", mAnimStartY, mAnimStartY - mNewScrollBitmapHeight * mScrollBitmapSpitHeight / mScrollBitmapHeight);
+            mObjectAnimator = ObjectAnimator.ofFloat(iv_scroll, "y", mAnimStartY, mAnimStartY - mNewScrollBitmapHeight *
+                    mScrollBitmapSpitHeight / mScrollBitmapHeight);
+
             mObjectAnimator.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) { }
